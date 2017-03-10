@@ -7,6 +7,9 @@ using System.Xml;
 
 namespace ConfigureOneFlag
 {
+    /// <summary>
+    /// Utilities used for staging of data from C1 to SQL databases
+    /// </summary>
     class StagingUtilities
     {
         public static void MapXMLToSQL(XmlDocument xmldoc)
@@ -31,7 +34,7 @@ namespace ConfigureOneFlag
             switch (co.CO_Num == null || co.CO_Num == "")
             {
                 case true:
-                    logEvent = "TRIGGER FIRING ON INSERT";
+                    logEvent = "ORDER NUMBER NOT FOUND: " + co.CO_Num;
                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                     return;
                 default:

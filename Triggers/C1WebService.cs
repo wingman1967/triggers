@@ -10,6 +10,9 @@ using ConfigureOneFlag;
 
 namespace ConfigureOneFlag
 {
+    /// <summary>
+    /// Processing for call to ConfigureOne web service and return for further handling
+    /// </summary>
     class C1WebService
     {
         public static void CallConfigureOne(string key, string payload, string url)
@@ -33,9 +36,7 @@ namespace ConfigureOneFlag
             {
                 postStream.Write(byteData, 0, byteData.Length);
             }
-            // Return response from the ws and display in our textbox
             XmlDocument xmlResult = new XmlDocument();
-
             try
             {
                 //return response from web service (if any)
@@ -52,7 +53,7 @@ namespace ConfigureOneFlag
                 }
                 catch (Exception ex2)
                 {
-                    logEvent = "ERROR RETURNED FROM C1 WEBSERVICE: " + ex2.Message;
+                    logEvent = "ERROR LOADING XML FROM WEB SERVICE: " + ex2.Message;
                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
                     return;
                 }

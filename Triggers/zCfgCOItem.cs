@@ -6,6 +6,9 @@ using System.Text;
 
 namespace ConfigureOneFlag
 {
+    /// <summary>
+    /// Accessor class for the CO Item
+    /// </summary>
     class zCfgCOitem
     {
         private string order_num;

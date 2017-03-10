@@ -8,6 +8,9 @@ using System.Data;
 
 namespace ConfigureOneFlag
 {
+    /// <summary>
+    /// Repository for all database functions and calls on behalf of the assembly
+    /// </summary>
     class DatabaseFactory
     {
         static string SQLCommand;

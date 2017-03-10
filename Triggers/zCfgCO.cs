@@ -6,6 +6,9 @@ using System.Text;
 
 namespace ConfigureOneFlag
 {
+    /// <summary>
+    /// Accessor class for CO object
+    /// </summary>
     class zCfgCO
     {
         private string id;

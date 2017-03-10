@@ -7,6 +7,9 @@ using System.Data.SqlClient;
 
 namespace ConfigureOneFlag
 {
+    /// <summary>
+    /// Primary processor called from C1ORDER trigger for accessing C1 web service and returning/mapping data to SQL where appropriate
+    /// </summary>
     public class Triggers
     {
         static Dictionary<string, string> webmethods = new Dictionary<string, string>();
@@ -27,7 +30,6 @@ namespace ConfigureOneFlag
                                     
             logEvent = "TRIGGER FIRING ON INSERT";
             System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-
             webmethods.Add("getOrder", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getOrder");
             string orderNum;
             string orderValue = "";

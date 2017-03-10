@@ -6,6 +6,9 @@ using System.Text;
 
 namespace ConfigureOneFlag
 {
+    /// <summary>
+    /// Accessor class for the cfg parmValue object (C1 Inputs)
+    /// </summary>
     class zCfgParmVal
     {
         private string order_num;
