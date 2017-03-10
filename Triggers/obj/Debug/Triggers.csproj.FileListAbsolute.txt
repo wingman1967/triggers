@@ -1,0 +1,5 @@
+c:\users\hinesj\documents\visual studio 2015\Projects\Triggers\Triggers\obj\Debug\Triggers.csprojResolveAssemblyReference.cache
+c:\users\hinesj\documents\visual studio 2015\Projects\Triggers\Triggers\bin\Debug\ConfigureOne.dll
+c:\users\hinesj\documents\visual studio 2015\Projects\Triggers\Triggers\bin\Debug\ConfigureOne.pdb
+c:\users\hinesj\documents\visual studio 2015\Projects\Triggers\Triggers\obj\Debug\ConfigureOne.dll
+c:\users\hinesj\documents\visual studio 2015\Projects\Triggers\Triggers\obj\Debug\ConfigureOne.pdb

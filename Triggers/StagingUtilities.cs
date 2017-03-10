@@ -1,0 +1,294 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+//using System.Threading.Tasks;
+using System.Xml;
+
+namespace ConfigureOneFlag
+{
+    class StagingUtilities
+    {
+        public static void MapXMLToSQL(XmlDocument xmldoc)
+        {
+            zCfgCO co = new zCfgCO();
+            zCfgCOitem coitem = new zCfgCOitem();
+            zCfgItem citem = new zCfgItem();
+            zCfgParmVal cfg = new zCfgParmVal();
+            zCfgBOM bom = new zCfgBOM();
+
+            //Load staging-table objects from XML
+            XmlNodeList xnl = xmldoc.GetElementsByTagName("ORDER_NUM");
+            foreach (XmlNode node in xnl)
+            {
+                co.CO_Num = node.InnerText;
+                coitem.CO_Num = node.InnerText;
+                cfg.CO_Num = node.InnerText;
+                citem.CO_Num = node.InnerText;
+                bom.CO_Num = node.InnerText;
+            }
+            switch (co.CO_Num == null || co.CO_Num == "")
+            {
+                case true:
+                    return;
+                default:
+                    //Remove any pre-existing records in SQL for this order
+                    DatabaseFactory.CleanupOrder(co.CO_Num);
+                    break;
+            }
+            //build CO header
+            xnl = xmldoc.GetElementsByTagName("ID");
+            foreach (XmlNode node in xnl)
+            {
+                co.Identifier = node.InnerText;
+                break;          //we want first occurrence, ONLY
+            }
+            xnl = xmldoc.GetElementsByTagName("ORDER_REF_NUM");
+            foreach (XmlNode node in xnl)
+            {
+                co.CORefNum = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("CUST_NAME");
+            foreach (XmlNode node in xnl)
+            {
+                co.CustName = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("CUST_REF_NUM");
+            foreach (XmlNode node in xnl)
+            {
+                co.CustRefNum = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("ACCOUNT_NUM");
+            foreach (XmlNode node in xnl)
+            {
+                co.AccountNum = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("ERP_REFERENCE_NUM");
+            foreach (XmlNode node in xnl)
+            {
+                co.ErpReferenceNum = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("PROJECT");
+            foreach (XmlNode node in xnl)
+            {
+                co.Project = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("PAYMENT_TERMS");
+            foreach (XmlNode node in xnl)
+            {
+                co.PaymentTerms = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("SHIP_VIA");
+            foreach (XmlNode node in xnl)
+            {
+                co.ShipVia = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("SHIPPING_TERMS");
+            foreach (XmlNode node in xnl)
+            {
+                co.ShippingTerms = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("BILL_TO_CONTACT_NAME");
+            foreach (XmlNode node in xnl)
+            {
+                co.BillToContactName = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("BILL_TO_ADDRESS_LINE_1");
+            foreach (XmlNode node in xnl)
+            {
+                co.BillToAddressLine1 = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("BILL_TO_ADDRESS_LINE_2");
+            foreach (XmlNode node in xnl)
+            {
+                co.BillToAddressLine2 = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("BILL_TO_ADDRESS_LINE_3");
+            foreach (XmlNode node in xnl)
+            {
+                co.BillToAddressLine3 = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("BILL_TO_CITY");
+            foreach (XmlNode node in xnl)
+            {
+                co.BillToCity = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("BILL_TO_STATE");
+            foreach (XmlNode node in xnl)
+            {
+                co.BillToState = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("BILL_TO_COUNTRY");
+            foreach (XmlNode node in xnl)
+            {
+                co.BillToCountry = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("BILL_TO_POSTAL_CODE");
+            foreach (XmlNode node in xnl)
+            {
+                co.BillToPostalCode = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("BILL_TO_PHONE_NUMBER");
+            foreach (XmlNode node in xnl)
+            {
+                co.BillToPhoneNumber = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("BILL_TO_FAX_NUMBER");
+            foreach (XmlNode node in xnl)
+            {
+                co.BillToFaxNumber = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("BILL_TO_EMAIL_ADDRESS");
+            foreach (XmlNode node in xnl)
+            {
+                co.BillToEmailAddress = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("BILL_TO_REF_NUM");
+            foreach (XmlNode node in xnl)
+            {
+                co.BillToRefNum = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("SHIP_TO_CONTACT_NAME");
+            foreach (XmlNode node in xnl)
+            {
+                co.ShipToContactName = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("SHIP_TO_ADDRESS_LINE_1");
+            foreach (XmlNode node in xnl)
+            {
+                co.ShipToAddressLine1 = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("SHIP_TO_ADDRESS_LINE_2");
+            foreach (XmlNode node in xnl)
+            {
+                co.ShipToAddressLine2 = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("SHIP_TO_ADDRESS_LINE_3");
+            foreach (XmlNode node in xnl)
+            {
+                co.ShipToAddressLine3 = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("SHIP_TO_CITY");
+            foreach (XmlNode node in xnl)
+            {
+                co.ShipToCity = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("SHIP_TO_STATE");
+            foreach (XmlNode node in xnl)
+            {
+                co.ShipToState = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("SHIP_TO_COUNTRY");
+            foreach (XmlNode node in xnl)
+            {
+                co.ShipToCountry = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("SHIP_TO_POSTAL_CODE");
+            foreach (XmlNode node in xnl)
+            {
+                co.ShipToPostalCode = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("SHIP_TO_PHONE_NUMBER");
+            foreach (XmlNode node in xnl)
+            {
+                co.ShipToPhoneNumber = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("SHIP_TO_FAX_NUMBER");
+            foreach (XmlNode node in xnl)
+            {
+                co.ShipToFaxNumber = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("SHIP_TO_EMAIL_ADDRESS");
+            foreach (XmlNode node in xnl)
+            {
+                co.ShipToEmailAddress = node.InnerText;
+            }
+            xnl = xmldoc.GetElementsByTagName("SHIP_TO_REF_NUM");
+            foreach (XmlNode node in xnl)
+            {
+                co.ShipToRefNum = node.InnerText;
+            }
+            //output CO header to SQL before proceeding to the coitem
+            DatabaseFactory.WriteRecordCO(ref co);
+
+            //build COITEM records, per line
+            xnl = xmldoc.GetElementsByTagName("Detail");
+            foreach (XmlNode node in xnl)
+            {
+                coitem.CO_Line = Convert.ToInt16(node.ChildNodes[0].InnerText);
+                coitem.Serial = node.ChildNodes[2].InnerText;
+                coitem.Item = node.ChildNodes[3].InnerText;
+                coitem.Smartpart = node.ChildNodes[4].InnerText;
+                coitem.Desc = node.ChildNodes[5].InnerText;
+                coitem.UnitPrice = Convert.ToDecimal(node.ChildNodes[7].InnerText);
+                coitem.UnitCost = Convert.ToDecimal(node.ChildNodes[8].InnerText);
+                coitem.Discount = Convert.ToDecimal(node.ChildNodes[9].InnerText);
+                coitem.QTY = Convert.ToDecimal(node.ChildNodes[10].InnerText);
+                //output coitem record
+                DatabaseFactory.WriteRecordCOItem(ref coitem);
+
+                //*** Everything else here builds on the COITEM ***
+
+                //iterate through Inputs for the line
+                XmlNodeList xnli = xmldoc.GetElementsByTagName("Input");
+                foreach (XmlNode nodei in xnli)
+                {
+                    cfg.CO_Line = coitem.CO_Line;
+                    cfg.CName = nodei.ChildNodes[2].InnerText.Replace(" ", "_");
+                    cfg.CValue = nodei.ChildNodes[0].InnerText;
+                    cfg.CType = nodei.ChildNodes[1].InnerText;
+                    cfg.CLabel = nodei.ChildNodes[2].InnerText;
+                    //output cfg (parmval) record
+                    DatabaseFactory.WriteRecordCfg(ref cfg);
+                }
+
+                //item-master for the line we are working with
+                int recordSequence = 1;
+                XmlNodeList xnlim = xmldoc.GetElementsByTagName("ItemMaster");
+                citem.CO_Line = coitem.CO_Line;
+                foreach (XmlNode nodeim in xnlim)
+                {
+                    citem.Sequence = recordSequence;
+                    citem.Smartpart = nodeim.ChildNodes[0].InnerText;
+                    citem.Item = nodeim.ChildNodes[1].InnerText;
+                    citem.Desc = nodeim.ChildNodes[3].InnerText;
+                    string cost = nodeim.ChildNodes[4].InnerText;
+                    string price = nodeim.ChildNodes[5].InnerText;
+                    string sell = nodeim.ChildNodes[6].InnerText;
+                    string weight = nodeim.ChildNodes[9].InnerText;
+                    citem.ItemCost = Convert.ToDecimal(string.IsNullOrEmpty(cost) ? "0" : cost);
+                    citem.ItemPrice = Convert.ToDecimal(string.IsNullOrEmpty(price) ? "0" : price);
+                    citem.ItemSellPrice = Convert.ToDecimal(string.IsNullOrEmpty(sell) ? "0" : sell);
+                    citem.ItemWeight = Convert.ToDecimal(string.IsNullOrEmpty(weight) ? "0" : weight);
+                    citem.UnitOfMeasure = nodeim.ChildNodes[26].InnerText;
+                    recordSequence += 1;
+                    //output item-master record
+                    DatabaseFactory.WriteRecordCItem(ref citem);
+                }
+                //BOM records
+                recordSequence = 0;
+                XmlNodeList xnlb = xmldoc.GetElementsByTagName("Bom");
+                bom.CO_Line = coitem.CO_Line;
+                foreach (XmlNode nodeib in xnlb)
+                {
+                    recordSequence = 1;
+                    bom.Sequence = recordSequence;
+                    var parent = nodeib.SelectSingleNode("..");
+                    string parentID = parent.ChildNodes[0].InnerText;
+                    bom.Parent = parentID == "1" ? null : parentID;
+                    bom.Identifier = nodeib.ChildNodes[0].InnerText;
+                    bom.Item = nodeib.ChildNodes[1].InnerText;
+                    bom.Smartpart = nodeib.ChildNodes[2].InnerText;
+                    bom.UnitPrice = Convert.ToDecimal(string.IsNullOrEmpty(nodeib.ChildNodes[3].InnerText) ? "0" : nodeib.ChildNodes[3].InnerText);
+                    bom.UnitCost = Convert.ToDecimal(string.IsNullOrEmpty(nodeib.ChildNodes[4].InnerText) ? "0" : nodeib.ChildNodes[4].InnerText);
+                    bom.Discount = Convert.ToDecimal(string.IsNullOrEmpty(nodeib.ChildNodes[5].InnerText) ? "0" : nodeib.ChildNodes[5].InnerText);
+                    bom.QTY = Convert.ToDecimal(string.IsNullOrEmpty(nodeib.ChildNodes[6].InnerText) ? "0" : nodeib.ChildNodes[6].InnerText);
+                    //output BOM record
+                    DatabaseFactory.WriteRecordBOM(ref bom);
+                }
+                DatabaseFactory.ResequenceBOM(bom.CO_Num, bom.CO_Line);
+            }
+        }
+    }
+}
+
