@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_configure_one_flag_1_1_c1_web_service">
+<title>ConfigureOneFlag::C1WebService class Reference</title>
+<para>Inheritance diagram for ConfigureOneFlag::C1WebService</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_configure_one_flag_1_1_c1_web_service__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ConfigureOneFlag::C1WebService</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_configure_one_flag_1_1_c1_web_service__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_c1_web_service_ae826903f85694f4cf481680e115076f3_1ae826903f85694f4cf481680e115076f3">CallConfigureOne</link> (
+string key, string payload, string url)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Processing for call to ConfigureOne web service and return for further handling </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 17 of file C1WebService.cs</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>C1WebService.cs</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="class_configure_one_flag_1_1_c1_web_service_ae826903f85694f4cf481680e115076f3_1ae826903f85694f4cf481680e115076f3">
+                <title>static void ConfigureOneFlag.C1WebService.CallConfigureOne (string key, string payload, string url)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

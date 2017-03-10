@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="z_cfg_c_o_item_8cs">
+    <title>zCfgCOItem.cs File Reference</title>
+<para>Include dependency diagram for zCfgCOItem.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="z_cfg_c_o_item_8cs__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for zCfgCOItem.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="z_cfg_c_o_item_8cs__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1z_cfg_c_oitem">ConfigureOneFlag::zCfgCOitem</link></para>
+<para><emphasis>&lt;summary&gt;
+Accessor class for the CO Item
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_configure_one_flag">ConfigureOneFlag</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file C:/Users/hinesj/Documents/Visual Studio 2015/Projects/Triggers/Triggers/zCfgCOItem.cs</para>
+    </simplesect>
+    <literallayout><computeroutput>
+1 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>;
+2 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Collections.Generic;
+3 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Linq;
+4 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Text;
+5 <emphasis class="comment">//using&#32;System.Threading.Tasks;</emphasis>
+6 
+7 <emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>
+8 {
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem">12 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_configure_one_flag_1_1z_cfg_c_oitem">zCfgCOitem</link>
+13 &#32;&#32;&#32;&#32;{
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ae3f27fcf8925f8a93580199555777188_1ae3f27fcf8925f8a93580199555777188">14 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ae3f27fcf8925f8a93580199555777188_1ae3f27fcf8925f8a93580199555777188">order_num</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ace98293868a12f081405afd55db3c362_1ace98293868a12f081405afd55db3c362">15 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ace98293868a12f081405afd55db3c362_1ace98293868a12f081405afd55db3c362">order_line_num</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a9fb2461dcebf8ea596a01e318cb21c00_1a9fb2461dcebf8ea596a01e318cb21c00">16 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a9fb2461dcebf8ea596a01e318cb21c00_1a9fb2461dcebf8ea596a01e318cb21c00">ser_num</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_aeae259422c3ad72109493dede0091eeb_1aeae259422c3ad72109493dede0091eeb">17 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_aeae259422c3ad72109493dede0091eeb_1aeae259422c3ad72109493dede0091eeb">item_num</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a36d1f5862850fceafecfdbe6ab5b2d69_1a36d1f5862850fceafecfdbe6ab5b2d69">18 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a36d1f5862850fceafecfdbe6ab5b2d69_1a36d1f5862850fceafecfdbe6ab5b2d69">smartpart_num</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ae654033e98a250bc562635e7a0864068_1ae654033e98a250bc562635e7a0864068">19 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ae654033e98a250bc562635e7a0864068_1ae654033e98a250bc562635e7a0864068">description</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_adce8defe8fcce99abd6e430540b2da03_1adce8defe8fcce99abd6e430540b2da03">20 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;decimal&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_adce8defe8fcce99abd6e430540b2da03_1adce8defe8fcce99abd6e430540b2da03">unit_price</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ad89962e2bb7c5c9ddcf551a9fe6eb583_1ad89962e2bb7c5c9ddcf551a9fe6eb583">21 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;decimal&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ad89962e2bb7c5c9ddcf551a9fe6eb583_1ad89962e2bb7c5c9ddcf551a9fe6eb583">unit_cost</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a4ae230a86055ce005c05f3a47db8e35f_1a4ae230a86055ce005c05f3a47db8e35f">22 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;decimal&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a4ae230a86055ce005c05f3a47db8e35f_1a4ae230a86055ce005c05f3a47db8e35f">discount_amt</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a3217c99563cd25b45639f2dfad626137_1a3217c99563cd25b45639f2dfad626137">23 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;decimal&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a3217c99563cd25b45639f2dfad626137_1a3217c99563cd25b45639f2dfad626137">quantity</link>;
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a81b1d61f51869b4d7681186d0269e4b4_1a81b1d61f51869b4d7681186d0269e4b4">CO_Num</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a81b1d61f51869b4d7681186d0269e4b4_1a81b1d61f51869b4d7681186d0269e4b4">25 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ae3f27fcf8925f8a93580199555777188_1ae3f27fcf8925f8a93580199555777188">order_num</link>;&#32;}
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;order_num&#32;=&#32;value;&#32;}
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ad404cc47ce25be8df01618c2f1827200_1ad404cc47ce25be8df01618c2f1827200">CO_Line</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ad404cc47ce25be8df01618c2f1827200_1ad404cc47ce25be8df01618c2f1827200">30 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ace98293868a12f081405afd55db3c362_1ace98293868a12f081405afd55db3c362">order_line_num</link>;&#32;}
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;order_line_num&#32;=&#32;value;&#32;}
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ab32f3dab6b3e8d51c58debe13b9761b0_1ab32f3dab6b3e8d51c58debe13b9761b0">Serial</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ab32f3dab6b3e8d51c58debe13b9761b0_1ab32f3dab6b3e8d51c58debe13b9761b0">35 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a9fb2461dcebf8ea596a01e318cb21c00_1a9fb2461dcebf8ea596a01e318cb21c00">ser_num</link>;&#32;}
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ser_num&#32;=&#32;value;&#32;}
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a9a0eb460ce1cd0dc9a4d8ad2d1503e60_1a9a0eb460ce1cd0dc9a4d8ad2d1503e60">Item</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a9a0eb460ce1cd0dc9a4d8ad2d1503e60_1a9a0eb460ce1cd0dc9a4d8ad2d1503e60">40 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_aeae259422c3ad72109493dede0091eeb_1aeae259422c3ad72109493dede0091eeb">item_num</link>;&#32;}
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;item_num&#32;=&#32;value;&#32;}
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a483e5f3a7d282bbb3ebde0af3287a810_1a483e5f3a7d282bbb3ebde0af3287a810">Smartpart</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a483e5f3a7d282bbb3ebde0af3287a810_1a483e5f3a7d282bbb3ebde0af3287a810">45 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a36d1f5862850fceafecfdbe6ab5b2d69_1a36d1f5862850fceafecfdbe6ab5b2d69">smartpart_num</link>;&#32;}
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;smartpart_num&#32;=&#32;value;&#32;}
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a9dd76b402819ba05697e297121c18be5_1a9dd76b402819ba05697e297121c18be5">Desc</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a9dd76b402819ba05697e297121c18be5_1a9dd76b402819ba05697e297121c18be5">50 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ae654033e98a250bc562635e7a0864068_1ae654033e98a250bc562635e7a0864068">description</link>;&#32;}
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;description&#32;=&#32;value;&#32;}
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;decimal&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a3644a18b466314c7c47d5009848be997_1a3644a18b466314c7c47d5009848be997">UnitPrice</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a3644a18b466314c7c47d5009848be997_1a3644a18b466314c7c47d5009848be997">55 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_adce8defe8fcce99abd6e430540b2da03_1adce8defe8fcce99abd6e430540b2da03">unit_price</link>;&#32;}
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;unit_price&#32;=&#32;value;&#32;}
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;decimal&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a696aeb0722def400ba87c8590b9dffb4_1a696aeb0722def400ba87c8590b9dffb4">UnitCost</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a696aeb0722def400ba87c8590b9dffb4_1a696aeb0722def400ba87c8590b9dffb4">60 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ad89962e2bb7c5c9ddcf551a9fe6eb583_1ad89962e2bb7c5c9ddcf551a9fe6eb583">unit_cost</link>;&#32;}
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;unit_cost&#32;=&#32;value;&#32;}
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;decimal&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_adf8e35ad1abe7410175f91aa79c6555f_1adf8e35ad1abe7410175f91aa79c6555f">Discount</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_adf8e35ad1abe7410175f91aa79c6555f_1adf8e35ad1abe7410175f91aa79c6555f">65 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a4ae230a86055ce005c05f3a47db8e35f_1a4ae230a86055ce005c05f3a47db8e35f">discount_amt</link>;&#32;}
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;discount_amt&#32;=&#32;value;&#32;}
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;decimal&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ab35e4e2c1c2f4e7eb51d5f520b664034_1ab35e4e2c1c2f4e7eb51d5f520b664034">QTY</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ab35e4e2c1c2f4e7eb51d5f520b664034_1ab35e4e2c1c2f4e7eb51d5f520b664034">70 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a3217c99563cd25b45639f2dfad626137_1a3217c99563cd25b45639f2dfad626137">quantity</link>;&#32;}
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;quantity&#32;=&#32;value;&#32;}
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+74 &#32;&#32;&#32;&#32;}
+75 }
+    </computeroutput></literallayout>
+</section>

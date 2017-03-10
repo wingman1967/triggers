@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="namespace_configure_one_flag">
+<title>ConfigureOneFlag</title>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_c1_web_service">ConfigureOneFlag::C1WebService</link></para>
+<para><emphasis>&lt;summary&gt;
+Processing for call to ConfigureOne web service and return for further handling
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_database_factory">ConfigureOneFlag::DatabaseFactory</link></para>
+<para><emphasis>&lt;summary&gt;
+Repository for all database functions and calls on behalf of the assembly
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_staging_utilities">ConfigureOneFlag::StagingUtilities</link></para>
+<para><emphasis>&lt;summary&gt;
+Utilities used for staging of data from C1 to SQL databases
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_triggers">ConfigureOneFlag::Triggers</link></para>
+<para><emphasis>&lt;summary&gt;
+Primary processor called from C1ORDER trigger for accessing C1 web service and returning/mapping data to SQL where appropriate
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1z_cfg_b_o_m">ConfigureOneFlag::zCfgBOM</link></para>
+<para><emphasis>&lt;summary&gt;
+Accessor class for the BOM object
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1z_cfg_c_o">ConfigureOneFlag::zCfgCO</link></para>
+<para><emphasis>&lt;summary&gt;
+Accessor class for CO object
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1z_cfg_c_oitem">ConfigureOneFlag::zCfgCOitem</link></para>
+<para><emphasis>&lt;summary&gt;
+Accessor class for the CO Item
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1z_cfg_item">ConfigureOneFlag::zCfgItem</link></para>
+<para><emphasis>&lt;summary&gt;
+Accessor class for the item-master object
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1z_cfg_parm_val">ConfigureOneFlag::zCfgParmVal</link></para>
+<para><emphasis>&lt;summary&gt;
+Accessor class for the cfg parmValue object (C1 Inputs)
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+</section>

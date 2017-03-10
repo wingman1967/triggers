@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_configure_one_flag_1_1_database_factory">
+<title>ConfigureOneFlag::DatabaseFactory class Reference</title>
+<para>Inheritance diagram for ConfigureOneFlag::DatabaseFactory</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_configure_one_flag_1_1_database_factory__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ConfigureOneFlag::DatabaseFactory</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_configure_one_flag_1_1_database_factory__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string SQLCommand</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string connectionString</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_a7d20594ae96a13614accd3e7d8d8a04a_1a7d20594ae96a13614accd3e7d8d8a04a">WriteRecordBOM</link> (
+ref <link linkend="class_configure_one_flag_1_1z_cfg_b_o_m">zCfgBOM</link> bom)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_ae84fa2fa2699960542cadbe2053b947d_1ae84fa2fa2699960542cadbe2053b947d">WriteRecordCItem</link> (
+ref <link linkend="class_configure_one_flag_1_1z_cfg_item">zCfgItem</link> item)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_aeab9b81fff5fdf32493ce1f2c2c0082b_1aeab9b81fff5fdf32493ce1f2c2c0082b">WriteRecordCfg</link> (
+ref <link linkend="class_configure_one_flag_1_1z_cfg_parm_val">zCfgParmVal</link> cfg)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_a7e40f3f0a85ffe44b8c2a3197e6d8925_1a7e40f3f0a85ffe44b8c2a3197e6d8925">WriteRecordCOItem</link> (
+ref <link linkend="class_configure_one_flag_1_1z_cfg_c_oitem">zCfgCOitem</link> coitem)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_a628dded3ecd9efab9c21a01a864dc518_1a628dded3ecd9efab9c21a01a864dc518">WriteRecordCO</link> (
+ref <link linkend="class_configure_one_flag_1_1z_cfg_c_o">zCfgCO</link> co)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_acd9475f1b9763dfab5896656f96789a0_1acd9475f1b9763dfab5896656f96789a0">ResequenceBOM</link> (
+string orderNumber, int orderLine)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_a1cba3b4ca48fe4e537bdc28925a61719_1a1cba3b4ca48fe4e537bdc28925a61719">CleanupOrder</link> (
+string orderNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Repository for all database functions and calls on behalf of the assembly </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 15 of file DatabaseFactory.cs</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>DatabaseFactory.cs</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_a7d20594ae96a13614accd3e7d8d8a04a_1a7d20594ae96a13614accd3e7d8d8a04a">
+                <title>static void ConfigureOneFlag.DatabaseFactory.WriteRecordBOM (ref zCfgBOM bom)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_ae84fa2fa2699960542cadbe2053b947d_1ae84fa2fa2699960542cadbe2053b947d">
+                <title>static void ConfigureOneFlag.DatabaseFactory.WriteRecordCItem (ref zCfgItem item)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_aeab9b81fff5fdf32493ce1f2c2c0082b_1aeab9b81fff5fdf32493ce1f2c2c0082b">
+                <title>static void ConfigureOneFlag.DatabaseFactory.WriteRecordCfg (ref zCfgParmVal cfg)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_a7e40f3f0a85ffe44b8c2a3197e6d8925_1a7e40f3f0a85ffe44b8c2a3197e6d8925">
+                <title>static void ConfigureOneFlag.DatabaseFactory.WriteRecordCOItem (ref zCfgCOitem coitem)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_a628dded3ecd9efab9c21a01a864dc518_1a628dded3ecd9efab9c21a01a864dc518">
+                <title>static void ConfigureOneFlag.DatabaseFactory.WriteRecordCO (ref zCfgCO co)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_acd9475f1b9763dfab5896656f96789a0_1acd9475f1b9763dfab5896656f96789a0">
+                <title>static void ConfigureOneFlag.DatabaseFactory.ResequenceBOM (string orderNumber, int orderLine)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_a1cba3b4ca48fe4e537bdc28925a61719_1a1cba3b4ca48fe4e537bdc28925a61719">
+                <title>static void ConfigureOneFlag.DatabaseFactory.CleanupOrder (string orderNum)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

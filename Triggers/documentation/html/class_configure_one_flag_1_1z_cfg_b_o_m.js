@@ -1,0 +1,25 @@
+var class_configure_one_flag_1_1z_cfg_b_o_m =
+[
+    [ "discount_amt", "class_configure_one_flag_1_1z_cfg_b_o_m_a914d1f005cc50678801afa863e1bcfe5.html#a914d1f005cc50678801afa863e1bcfe5", null ],
+    [ "id", "class_configure_one_flag_1_1z_cfg_b_o_m_af76d5379906e7ae256808537a9df744f.html#af76d5379906e7ae256808537a9df744f", null ],
+    [ "item_num", "class_configure_one_flag_1_1z_cfg_b_o_m_a83a44505f18fa6624ff5667e1ce80f7c.html#a83a44505f18fa6624ff5667e1ce80f7c", null ],
+    [ "order_line_num", "class_configure_one_flag_1_1z_cfg_b_o_m_a0f291e9d7fb101e695d2a152d8156c1e.html#a0f291e9d7fb101e695d2a152d8156c1e", null ],
+    [ "order_num", "class_configure_one_flag_1_1z_cfg_b_o_m_a6e9bd1842aa4a359414c796417f0d485.html#a6e9bd1842aa4a359414c796417f0d485", null ],
+    [ "parent_id", "class_configure_one_flag_1_1z_cfg_b_o_m_ad63813940f7606789b195e5fc59d9708.html#ad63813940f7606789b195e5fc59d9708", null ],
+    [ "quantity", "class_configure_one_flag_1_1z_cfg_b_o_m_adc0d4f821ec9c31d0194a788bce97247.html#adc0d4f821ec9c31d0194a788bce97247", null ],
+    [ "seq", "class_configure_one_flag_1_1z_cfg_b_o_m_ad4e2f73f178da2bd802820edc51a0cc3.html#ad4e2f73f178da2bd802820edc51a0cc3", null ],
+    [ "smartpart_num", "class_configure_one_flag_1_1z_cfg_b_o_m_ac1e702144beec5f549d96c35d906e23b.html#ac1e702144beec5f549d96c35d906e23b", null ],
+    [ "unit_cost", "class_configure_one_flag_1_1z_cfg_b_o_m_a7349ee7672cd179aea2cf94af1a3262d.html#a7349ee7672cd179aea2cf94af1a3262d", null ],
+    [ "unit_price", "class_configure_one_flag_1_1z_cfg_b_o_m_a345c7f91f978f08f04020428912e86da.html#a345c7f91f978f08f04020428912e86da", null ],
+    [ "CO_Line", "class_configure_one_flag_1_1z_cfg_b_o_m_a080ba08560beec2be05fe618b6ba7e7f.html#a080ba08560beec2be05fe618b6ba7e7f", null ],
+    [ "CO_Num", "class_configure_one_flag_1_1z_cfg_b_o_m_aaa3725c333575ccc05b7c2afc4eee94d.html#aaa3725c333575ccc05b7c2afc4eee94d", null ],
+    [ "Discount", "class_configure_one_flag_1_1z_cfg_b_o_m_a60f74d9bfcb28d0919fd873ad0444e8c.html#a60f74d9bfcb28d0919fd873ad0444e8c", null ],
+    [ "Identifier", "class_configure_one_flag_1_1z_cfg_b_o_m_aac4f223016dc0162020a6b5065b4d406.html#aac4f223016dc0162020a6b5065b4d406", null ],
+    [ "Item", "class_configure_one_flag_1_1z_cfg_b_o_m_ae95d09e122559b4fdf7bfe0a3a7ab092.html#ae95d09e122559b4fdf7bfe0a3a7ab092", null ],
+    [ "Parent", "class_configure_one_flag_1_1z_cfg_b_o_m_adc1556d2d127da48b2b331a516b26026.html#adc1556d2d127da48b2b331a516b26026", null ],
+    [ "QTY", "class_configure_one_flag_1_1z_cfg_b_o_m_a3e3239c518b344da4709c0b5cce0fb85.html#a3e3239c518b344da4709c0b5cce0fb85", null ],
+    [ "Sequence", "class_configure_one_flag_1_1z_cfg_b_o_m_af33963f4578991470deceb8f6babe25f.html#af33963f4578991470deceb8f6babe25f", null ],
+    [ "Smartpart", "class_configure_one_flag_1_1z_cfg_b_o_m_a3c3f500dae8a667666ac3ab9e5152dd5.html#a3c3f500dae8a667666ac3ab9e5152dd5", null ],
+    [ "UnitCost", "class_configure_one_flag_1_1z_cfg_b_o_m_ab11758596a2f51da2a4c3de5ea0ed323.html#ab11758596a2f51da2a4c3de5ea0ed323", null ],
+    [ "UnitPrice", "class_configure_one_flag_1_1z_cfg_b_o_m_a4261a88c871589b98f6d684492fdaede.html#a4261a88c871589b98f6d684492fdaede", null ]
+];

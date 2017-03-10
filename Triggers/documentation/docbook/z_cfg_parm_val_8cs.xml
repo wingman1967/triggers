@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="z_cfg_parm_val_8cs">
+    <title>zCfgParmVal.cs File Reference</title>
+<para>Include dependency diagram for zCfgParmVal.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="z_cfg_parm_val_8cs__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for zCfgParmVal.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="z_cfg_parm_val_8cs__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1z_cfg_parm_val">ConfigureOneFlag::zCfgParmVal</link></para>
+<para><emphasis>&lt;summary&gt;
+Accessor class for the cfg parmValue object (C1 Inputs)
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_configure_one_flag">ConfigureOneFlag</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file C:/Users/hinesj/Documents/Visual Studio 2015/Projects/Triggers/Triggers/zCfgParmVal.cs</para>
+    </simplesect>
+    <literallayout><computeroutput>
+1 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>;
+2 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Collections.Generic;
+3 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Linq;
+4 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Text;
+5 <emphasis class="comment">//using&#32;System.Threading.Tasks;</emphasis>
+6 
+7 <emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>
+8 {
+<link linkend="class_configure_one_flag_1_1z_cfg_parm_val">12 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_configure_one_flag_1_1z_cfg_parm_val">zCfgParmVal</link>
+13 &#32;&#32;&#32;&#32;{
+<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a79a1585e249bcf4f5cb92871f3582f53_1a79a1585e249bcf4f5cb92871f3582f53">14 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a79a1585e249bcf4f5cb92871f3582f53_1a79a1585e249bcf4f5cb92871f3582f53">order_num</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_ad63f40544dcf310cdc6e87e913e6263b_1ad63f40544dcf310cdc6e87e913e6263b">15 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_ad63f40544dcf310cdc6e87e913e6263b_1ad63f40544dcf310cdc6e87e913e6263b">order_line_num</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a4ccbd3bfefc316e3b2cb3c549238068c_1a4ccbd3bfefc316e3b2cb3c549238068c">16 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a4ccbd3bfefc316e3b2cb3c549238068c_1a4ccbd3bfefc316e3b2cb3c549238068c">name</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a6dcf62c5bd965691cb24b47538e43b3c_1a6dcf62c5bd965691cb24b47538e43b3c">17 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a6dcf62c5bd965691cb24b47538e43b3c_1a6dcf62c5bd965691cb24b47538e43b3c">val</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a835051a7d7d30087e118ec96018ac892_1a835051a7d7d30087e118ec96018ac892">18 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a835051a7d7d30087e118ec96018ac892_1a835051a7d7d30087e118ec96018ac892">type</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a798c2c6f52358ce338d15f6656c61d11_1a798c2c6f52358ce338d15f6656c61d11">19 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a798c2c6f52358ce338d15f6656c61d11_1a798c2c6f52358ce338d15f6656c61d11">label</link>;
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a4175b89093cbc721ad8588e870fb13a5_1a4175b89093cbc721ad8588e870fb13a5">CO_Num</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a4175b89093cbc721ad8588e870fb13a5_1a4175b89093cbc721ad8588e870fb13a5">21 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a79a1585e249bcf4f5cb92871f3582f53_1a79a1585e249bcf4f5cb92871f3582f53">order_num</link>;&#32;}
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;order_num&#32;=&#32;value;&#32;}
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_aa78e6edeb3d16bcccc02e46c8f3384fa_1aa78e6edeb3d16bcccc02e46c8f3384fa">CO_Line</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_aa78e6edeb3d16bcccc02e46c8f3384fa_1aa78e6edeb3d16bcccc02e46c8f3384fa">26 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_ad63f40544dcf310cdc6e87e913e6263b_1ad63f40544dcf310cdc6e87e913e6263b">order_line_num</link>;&#32;}
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;order_line_num&#32;=&#32;value;&#32;}
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a206a1af227f2326ca5f9b68bd4739f4c_1a206a1af227f2326ca5f9b68bd4739f4c">CName</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a206a1af227f2326ca5f9b68bd4739f4c_1a206a1af227f2326ca5f9b68bd4739f4c">31 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a4ccbd3bfefc316e3b2cb3c549238068c_1a4ccbd3bfefc316e3b2cb3c549238068c">name</link>;&#32;}
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;name&#32;=&#32;value;&#32;}
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a1272f1c919f6eee980d522368cf76c45_1a1272f1c919f6eee980d522368cf76c45">CValue</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a1272f1c919f6eee980d522368cf76c45_1a1272f1c919f6eee980d522368cf76c45">36 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a6dcf62c5bd965691cb24b47538e43b3c_1a6dcf62c5bd965691cb24b47538e43b3c">val</link>;&#32;}
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;val&#32;=&#32;value;&#32;}
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_accb933a33d4eafd444aaa3cfc16b728e_1accb933a33d4eafd444aaa3cfc16b728e">CType</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_accb933a33d4eafd444aaa3cfc16b728e_1accb933a33d4eafd444aaa3cfc16b728e">41 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a835051a7d7d30087e118ec96018ac892_1a835051a7d7d30087e118ec96018ac892">type</link>;&#32;}
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;type&#32;=&#32;value;&#32;}
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_ab658827a39e70946646d436e098db378_1ab658827a39e70946646d436e098db378">CLabel</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_ab658827a39e70946646d436e098db378_1ab658827a39e70946646d436e098db378">46 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a798c2c6f52358ce338d15f6656c61d11_1a798c2c6f52358ce338d15f6656c61d11">label</link>;&#32;}
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;label&#32;=&#32;value;&#32;}
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+50 &#32;&#32;&#32;&#32;}
+51 }
+    </computeroutput></literallayout>
+</section>

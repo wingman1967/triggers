@@ -1,0 +1,522 @@
+.TH "ConfigureOneFlag.zCfgCO" 3 "Fri Mar 10 2017" "ConfigureOne Trigger" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ConfigureOneFlag.zCfgCO \- Accessor class for CO object  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Properties"
+
+.in +1c
+.ti -1c
+.RI "string \fBIdentifier\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBCO_Num\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBCORefNum\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBCustName\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBCustRefNum\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBAccountNum\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBErpReferenceNum\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBProject\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBPaymentTerms\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBShipVia\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBShippingTerms\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBBillToContactName\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBBillToAddressLine1\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBBillToAddressLine2\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBBillToAddressLine3\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBBillToCity\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBBillToState\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBBillToCountry\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBBillToPostalCode\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBBillToPhoneNumber\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBBillToFaxNumber\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBBillToEmailAddress\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBBillToRefNum\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBShipToContactName\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBShipToAddressLine1\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBShipToAddressLine2\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBShipToAddressLine3\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBShipToCity\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBShipToState\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBShipToCountry\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBShipToPostalCode\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBShipToPhoneNumber\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBShipToFaxNumber\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBShipToEmailAddress\fP\fC [get, set]\fP"
+.br
+.ti -1c
+.RI "string \fBShipToRefNum\fP\fC [get, set]\fP"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "string \fBid\fP"
+.br
+.ti -1c
+.RI "string \fBorder_num\fP"
+.br
+.ti -1c
+.RI "string \fBorder_ref_num\fP"
+.br
+.ti -1c
+.RI "string \fBcust_name\fP"
+.br
+.ti -1c
+.RI "string \fBcust_ref_num\fP"
+.br
+.ti -1c
+.RI "string \fBaccount_num\fP"
+.br
+.ti -1c
+.RI "string \fBerp_reference_num\fP"
+.br
+.ti -1c
+.RI "string \fBproject\fP"
+.br
+.ti -1c
+.RI "string \fBpayment_terms\fP"
+.br
+.ti -1c
+.RI "string \fBship_via\fP"
+.br
+.ti -1c
+.RI "string \fBshipping_terms\fP"
+.br
+.ti -1c
+.RI "string \fBbill_to_contact_name\fP"
+.br
+.ti -1c
+.RI "string \fBbill_address_line_1\fP"
+.br
+.ti -1c
+.RI "string \fBbill_address_line_2\fP"
+.br
+.ti -1c
+.RI "string \fBbill_address_line_3\fP"
+.br
+.ti -1c
+.RI "string \fBbill_to_city\fP"
+.br
+.ti -1c
+.RI "string \fBbill_to_state\fP"
+.br
+.ti -1c
+.RI "string \fBbill_to_country\fP"
+.br
+.ti -1c
+.RI "string \fBbill_to_postal_code\fP"
+.br
+.ti -1c
+.RI "string \fBbill_to_phone_number\fP"
+.br
+.ti -1c
+.RI "string \fBbill_to_fax_number\fP"
+.br
+.ti -1c
+.RI "string \fBbill_to_email_address\fP"
+.br
+.ti -1c
+.RI "string \fBbill_to_ref_num\fP"
+.br
+.ti -1c
+.RI "string \fBship_to_contact_name\fP"
+.br
+.ti -1c
+.RI "string \fBship_to_address_line_1\fP"
+.br
+.ti -1c
+.RI "string \fBship_to_address_line_2\fP"
+.br
+.ti -1c
+.RI "string \fBship_to_address_line_3\fP"
+.br
+.ti -1c
+.RI "string \fBship_to_city\fP"
+.br
+.ti -1c
+.RI "string \fBship_to_state\fP"
+.br
+.ti -1c
+.RI "string \fBship_to_country\fP"
+.br
+.ti -1c
+.RI "string \fBship_to_postal_code\fP"
+.br
+.ti -1c
+.RI "string \fBship_to_phone_number\fP"
+.br
+.ti -1c
+.RI "string \fBship_to_fax_number\fP"
+.br
+.ti -1c
+.RI "string \fBship_to_email_address\fP"
+.br
+.ti -1c
+.RI "string \fBship_to_ref_num\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Accessor class for CO object 
+
+
+.PP
+Definition at line 12 of file zCfgCO\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "string ConfigureOneFlag\&.zCfgCO\&.account_num\fC [private]\fP"
+
+.PP
+Definition at line 19 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.bill_address_line_1\fC [private]\fP"
+
+.PP
+Definition at line 26 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.bill_address_line_2\fC [private]\fP"
+
+.PP
+Definition at line 27 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.bill_address_line_3\fC [private]\fP"
+
+.PP
+Definition at line 28 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.bill_to_city\fC [private]\fP"
+
+.PP
+Definition at line 29 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.bill_to_contact_name\fC [private]\fP"
+
+.PP
+Definition at line 25 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.bill_to_country\fC [private]\fP"
+
+.PP
+Definition at line 31 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.bill_to_email_address\fC [private]\fP"
+
+.PP
+Definition at line 35 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.bill_to_fax_number\fC [private]\fP"
+
+.PP
+Definition at line 34 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.bill_to_phone_number\fC [private]\fP"
+
+.PP
+Definition at line 33 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.bill_to_postal_code\fC [private]\fP"
+
+.PP
+Definition at line 32 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.bill_to_ref_num\fC [private]\fP"
+
+.PP
+Definition at line 36 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.bill_to_state\fC [private]\fP"
+
+.PP
+Definition at line 30 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.cust_name\fC [private]\fP"
+
+.PP
+Definition at line 17 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.cust_ref_num\fC [private]\fP"
+
+.PP
+Definition at line 18 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.erp_reference_num\fC [private]\fP"
+
+.PP
+Definition at line 20 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.id\fC [private]\fP"
+
+.PP
+Definition at line 14 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.order_num\fC [private]\fP"
+
+.PP
+Definition at line 15 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.order_ref_num\fC [private]\fP"
+
+.PP
+Definition at line 16 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.payment_terms\fC [private]\fP"
+
+.PP
+Definition at line 22 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.project\fC [private]\fP"
+
+.PP
+Definition at line 21 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ship_to_address_line_1\fC [private]\fP"
+
+.PP
+Definition at line 38 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ship_to_address_line_2\fC [private]\fP"
+
+.PP
+Definition at line 39 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ship_to_address_line_3\fC [private]\fP"
+
+.PP
+Definition at line 40 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ship_to_city\fC [private]\fP"
+
+.PP
+Definition at line 41 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ship_to_contact_name\fC [private]\fP"
+
+.PP
+Definition at line 37 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ship_to_country\fC [private]\fP"
+
+.PP
+Definition at line 43 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ship_to_email_address\fC [private]\fP"
+
+.PP
+Definition at line 47 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ship_to_fax_number\fC [private]\fP"
+
+.PP
+Definition at line 46 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ship_to_phone_number\fC [private]\fP"
+
+.PP
+Definition at line 45 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ship_to_postal_code\fC [private]\fP"
+
+.PP
+Definition at line 44 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ship_to_ref_num\fC [private]\fP"
+
+.PP
+Definition at line 48 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ship_to_state\fC [private]\fP"
+
+.PP
+Definition at line 42 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ship_via\fC [private]\fP"
+
+.PP
+Definition at line 23 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.shipping_terms\fC [private]\fP"
+
+.PP
+Definition at line 24 of file zCfgCO\&.cs\&.
+.SH "Property Documentation"
+.PP 
+.SS "string ConfigureOneFlag\&.zCfgCO\&.AccountNum\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 75 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.BillToAddressLine1\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 110 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.BillToAddressLine2\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 115 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.BillToAddressLine3\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 120 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.BillToCity\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 125 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.BillToContactName\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 105 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.BillToCountry\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 135 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.BillToEmailAddress\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 155 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.BillToFaxNumber\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 150 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.BillToPhoneNumber\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 145 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.BillToPostalCode\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 140 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.BillToRefNum\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 160 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.BillToState\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 130 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.CO_Num\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 55 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.CORefNum\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 60 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.CustName\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 65 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.CustRefNum\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 70 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ErpReferenceNum\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 80 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.Identifier\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 50 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.PaymentTerms\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 90 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.Project\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 85 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ShippingTerms\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 100 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToAddressLine1\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 170 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToAddressLine2\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 175 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToAddressLine3\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 180 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToCity\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 185 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToContactName\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 165 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToCountry\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 195 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToEmailAddress\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 215 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToFaxNumber\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 210 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToPhoneNumber\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 205 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToPostalCode\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 200 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToRefNum\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 220 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToState\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 190 of file zCfgCO\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCO\&.ShipVia\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 95 of file zCfgCO\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ConfigureOne Trigger from the source code\&.

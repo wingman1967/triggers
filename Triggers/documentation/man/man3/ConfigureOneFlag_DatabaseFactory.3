@@ -1,0 +1,95 @@
+.TH "ConfigureOneFlag.DatabaseFactory" 3 "Fri Mar 10 2017" "ConfigureOne Trigger" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ConfigureOneFlag.DatabaseFactory \- Repository for all database functions and calls on behalf of the assembly  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBWriteRecordBOM\fP (ref \fBzCfgBOM\fP bom)"
+.br
+.ti -1c
+.RI "static void \fBWriteRecordCItem\fP (ref \fBzCfgItem\fP item)"
+.br
+.ti -1c
+.RI "static void \fBWriteRecordCfg\fP (ref \fBzCfgParmVal\fP cfg)"
+.br
+.ti -1c
+.RI "static void \fBWriteRecordCOItem\fP (ref \fBzCfgCOitem\fP coitem)"
+.br
+.ti -1c
+.RI "static void \fBWriteRecordCO\fP (ref \fBzCfgCO\fP co)"
+.br
+.ti -1c
+.RI "static void \fBResequenceBOM\fP (string orderNumber, int orderLine)"
+.br
+.ti -1c
+.RI "static void \fBCleanupOrder\fP (string orderNum)"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static string \fBSQLCommand\fP"
+.br
+.ti -1c
+.RI "static string \fBconnectionString\fP = 'server = grcdslsql0\&.dom\&.grc; database = SL_MAN_App; enlist=false; User ID = sa_config; Password = options23'"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Repository for all database functions and calls on behalf of the assembly 
+
+
+.PP
+Definition at line 14 of file DatabaseFactory\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.CleanupOrder (string orderNum)\fC [static]\fP"
+
+.PP
+Definition at line 125 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.ResequenceBOM (string orderNumber, int orderLine)\fC [static]\fP"
+
+.PP
+Definition at line 112 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordBOM (ref \fBzCfgBOM\fP bom)\fC [static]\fP"
+
+.PP
+Definition at line 18 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCfg (ref \fBzCfgParmVal\fP cfg)\fC [static]\fP"
+
+.PP
+Definition at line 44 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCItem (ref \fBzCfgItem\fP item)\fC [static]\fP"
+
+.PP
+Definition at line 28 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCO (ref \fBzCfgCO\fP co)\fC [static]\fP"
+
+.PP
+Definition at line 102 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCOItem (ref \fBzCfgCOitem\fP coitem)\fC [static]\fP"
+
+.PP
+Definition at line 86 of file DatabaseFactory\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.connectionString = 'server = grcdslsql0\&.dom\&.grc; database = SL_MAN_App; enlist=false; User ID = sa_config; Password = options23'\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 17 of file DatabaseFactory\&.cs\&.
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.SQLCommand\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 16 of file DatabaseFactory\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ConfigureOne Trigger from the source code\&.
