@@ -27,15 +27,21 @@ namespace ConfigureOneFlag
                 citem.CO_Num = node.InnerText;
                 bom.CO_Num = node.InnerText;
             }
+            string logEvent;
             switch (co.CO_Num == null || co.CO_Num == "")
             {
                 case true:
+                    logEvent = "TRIGGER FIRING ON INSERT";
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                     return;
                 default:
                     //Remove any pre-existing records in SQL for this order
                     DatabaseFactory.CleanupOrder(co.CO_Num);
                     break;
             }
+            logEvent = "MAPPING XML TO STAGING TABLES";
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
             //build CO header
             xnl = xmldoc.GetElementsByTagName("ID");
             foreach (XmlNode node in xnl)
@@ -286,6 +292,8 @@ namespace ConfigureOneFlag
                     //output BOM record
                     DatabaseFactory.WriteRecordBOM(ref bom);
                 }
+                logEvent = "RESEQUENCING BOM RECORDS FOR ORDER: " + bom.CO_Num + " LINE: " + bom.CO_Line;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                 DatabaseFactory.ResequenceBOM(bom.CO_Num, bom.CO_Line);
             }
         }

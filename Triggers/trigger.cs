@@ -1,0 +1,75 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using Microsoft.SqlServer.Server;
+using System.Data.SqlClient;
+
+namespace ConfigureOneFlag
+{
+    public class Triggers
+    {
+        static Dictionary<string, string> webmethods = new Dictionary<string, string>();
+        public static string wsReturn;
+        public static string caller = "";
+        public static string C1URL;
+        public static string logSource = "C1ORDER";
+        public static string logEvent;
+        public static string logName = "Application";
+        [SqlTrigger(Name = "C1Order", Target = "GR_Cfg_Queue", Event = "FOR INSERT")]
+        public static void C1Order()
+        {
+            if (!System.Diagnostics.EventLog.SourceExists("C1ORDER"))
+            {
+                System.Diagnostics.EventLog.CreateEventSource(
+                    "C1ORDER", "Application");
+            }
+                                    
+            logEvent = "TRIGGER FIRING ON INSERT";
+            System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+            webmethods.Add("getOrder", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getOrder");
+            string orderNum;
+            string orderValue = "";
+            SqlTriggerContext triggContext = SqlContext.TriggerContext;
+            SqlParameter orderNumber = new SqlParameter("@order_num", System.Data.SqlDbType.NVarChar);
+
+            if (triggContext.TriggerAction == TriggerAction.Insert)
+            {
+                using (SqlConnection conn = new SqlConnection("context connection=true"))
+                {
+                    conn.Open();
+                    SqlCommand sqlComm = new SqlCommand();
+                    SqlPipe sqlP = SqlContext.Pipe;
+                    sqlComm.Connection = conn;
+                    sqlComm.CommandText = "SELECT order_num from INSERTED";
+                    orderNumber.Value = sqlComm.ExecuteScalar().ToString();
+                    orderValue = orderNumber.Value.ToString();
+                    logEvent = "ORDER NUMBER: " + orderValue;
+                    System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                }
+            }
+            else
+            {
+                return;                     //abort on any other trigger action
+            }
+
+            string useMethod = "";
+            string key = "getOrder";
+
+            if (webmethods.ContainsKey(key))
+            {
+                useMethod = webmethods[key];
+                C1URL = useMethod;
+            }
+
+            caller = "ORDER";
+            orderNum = orderValue;
+            string xmlPayload = "<soap:Envelope xmlns:xsi=" + (char)34 + "http://www.w3.org/2001/XMLSchema-instance" + (char)34 + " xmlns:xsd=" + (char)34 + "http://www.w3.org/2001/XMLSchema" + (char)34 + " xmlns:soap=" + (char)34 + "http://schemas.xmlsoap.org/soap/envelope/" + (char)34 + ">" + "<soap:Body><" + key + " xmlns=" + (char)34 + "http://ws.configureone.com" + (char)34 + "><orderNum>" + orderNum + "</orderNum></" + key + "></soap:Body></soap:Envelope>";
+            C1WebService.CallConfigureOne(key, xmlPayload, C1URL);
+            webmethods.Clear();
+            logEvent = "PROCESSING COMPLETE FOR ORDER: " + orderValue;
+            System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+        }
+    }
+}

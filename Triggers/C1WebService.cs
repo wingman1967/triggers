@@ -6,6 +6,7 @@ using System.Text;
 using System.Net;
 using System.Xml;
 using System.IO;
+using ConfigureOneFlag;
 
 namespace ConfigureOneFlag
 {
@@ -13,6 +14,9 @@ namespace ConfigureOneFlag
     {
         public static void CallConfigureOne(string key, string payload, string url)
         {
+            string logEvent = "CALLING C1 WEBSERVICE";
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
             string sURL = url;
             HttpWebRequest objRequest = (HttpWebRequest)WebRequest.Create(sURL.ToString());
             objRequest.Method = "POST";
@@ -48,7 +52,8 @@ namespace ConfigureOneFlag
                 }
                 catch (Exception ex2)
                 {
-                    //log in event viewer
+                    logEvent = "ERROR RETURNED FROM C1 WEBSERVICE: " + ex2.Message;
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
                     return;
                 }
                 if (Triggers.caller == "ORDER")
@@ -57,8 +62,6 @@ namespace ConfigureOneFlag
                 }
 
                 Triggers.caller = "";
-
-                //display well-formed and formatted XML in textbox and output same as flat-file
                 using (var stringWriter = new StringWriter())
                 using (var xmlTextWriter = XmlWriter.Create(stringWriter))
                 {
@@ -67,13 +70,11 @@ namespace ConfigureOneFlag
                     string xmlOut = stringWriter.GetStringBuilder().ToString();
                     Triggers.wsReturn = System.Xml.Linq.XDocument.Parse(xmlOut).ToString();
                 }
-
-                
             }
             catch (WebException wex1)
             {
-                //Triggers.wsReturn = "ERROR RETURNED BY APACHE AXIS WEB SERVICE: " + wex1.Response.ToString();
-                //log in event viewer
+                logEvent = "ERROR RETURNED FROM C1 WEBSERVICE: " + wex1.Message + " : " + wex1.Response.ToString();
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
             }
         }
     }

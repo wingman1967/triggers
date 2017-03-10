@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="C1WebService.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="trigger.cs" />
     <Compile Include="DatabaseFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StagingUtilities.cs" />
