@@ -1,4 +1,4 @@
-.TH "ConfigureOneFlag.DatabaseFactory" 3 "Fri Mar 10 2017" "ConfigureOne Trigger" \" -*- nroff -*-
+.TH "ConfigureOneFlag.DatabaseFactory" 3 "Wed Mar 15 2017" "ConfigureOne Trigger" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -7,6 +7,13 @@ ConfigureOneFlag.DatabaseFactory \- Repository for all database functions and ca
 .SH SYNOPSIS
 .br
 .PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBSetConnectionString\fP ()"
+.br
+.in -1c
 .SS "Static Public Member Functions"
 
 .in +1c
@@ -32,14 +39,18 @@ ConfigureOneFlag.DatabaseFactory \- Repository for all database functions and ca
 .RI "static void \fBCleanupOrder\fP (string orderNum)"
 .br
 .in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static string \fBconnectionString\fP = ''"
+.br
+.in -1c
 .SS "Static Private Attributes"
 
 .in +1c
 .ti -1c
 .RI "static string \fBSQLCommand\fP"
-.br
-.ti -1c
-.RI "static string \fBconnectionString\fP = 'server = grcdslsql0\&.dom\&.grc; database = SL_MAN_App; enlist=false; User ID = sa_config; Password = options23'"
 .br
 .in -1c
 .SH "Detailed Description"
@@ -48,47 +59,51 @@ Repository for all database functions and calls on behalf of the assembly
 
 
 .PP
-Definition at line 14 of file DatabaseFactory\&.cs\&.
+Definition at line 24 of file DatabaseFactory\&.cs\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.CleanupOrder (string orderNum)\fC [static]\fP"
 
 .PP
-Definition at line 125 of file DatabaseFactory\&.cs\&.
+Definition at line 154 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.ResequenceBOM (string orderNumber, int orderLine)\fC [static]\fP"
 
 .PP
-Definition at line 112 of file DatabaseFactory\&.cs\&.
-.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordBOM (ref \fBzCfgBOM\fP bom)\fC [static]\fP"
-
-.PP
-Definition at line 18 of file DatabaseFactory\&.cs\&.
-.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCfg (ref \fBzCfgParmVal\fP cfg)\fC [static]\fP"
-
-.PP
-Definition at line 44 of file DatabaseFactory\&.cs\&.
-.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCItem (ref \fBzCfgItem\fP item)\fC [static]\fP"
+Definition at line 141 of file DatabaseFactory\&.cs\&.
+.SS "void ConfigureOneFlag\&.DatabaseFactory\&.SetConnectionString ()"
 
 .PP
 Definition at line 28 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordBOM (ref \fBzCfgBOM\fP bom)\fC [static]\fP"
+
+.PP
+Definition at line 47 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCfg (ref \fBzCfgParmVal\fP cfg)\fC [static]\fP"
+
+.PP
+Definition at line 73 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCItem (ref \fBzCfgItem\fP item)\fC [static]\fP"
+
+.PP
+Definition at line 57 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCO (ref \fBzCfgCO\fP co)\fC [static]\fP"
 
 .PP
-Definition at line 102 of file DatabaseFactory\&.cs\&.
+Definition at line 131 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCOItem (ref \fBzCfgCOitem\fP coitem)\fC [static]\fP"
 
 .PP
-Definition at line 86 of file DatabaseFactory\&.cs\&.
+Definition at line 115 of file DatabaseFactory\&.cs\&.
 .SH "Member Data Documentation"
 .PP 
-.SS "string ConfigureOneFlag\&.DatabaseFactory\&.connectionString = 'server = grcdslsql0\&.dom\&.grc; database = SL_MAN_App; enlist=false; User ID = sa_config; Password = options23'\fC [static]\fP, \fC [private]\fP"
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.connectionString = ''\fC [static]\fP"
 
 .PP
-Definition at line 17 of file DatabaseFactory\&.cs\&.
+Definition at line 27 of file DatabaseFactory\&.cs\&.
 .SS "string ConfigureOneFlag\&.DatabaseFactory\&.SQLCommand\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 16 of file DatabaseFactory\&.cs\&.
+Definition at line 26 of file DatabaseFactory\&.cs\&.
 
 .SH "Author"
 .PP 

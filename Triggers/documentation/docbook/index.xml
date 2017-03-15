@@ -7,22 +7,30 @@
         <title>Namespace Documentation</title>
         <xi:include href="namespace_configure_one_flag.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_microsoft_1_1_sql_server_1_1_server.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespace_microsoft_1_1_win32.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_collections_1_1_generic.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespace_system_1_1_collections_1_1_specialized.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespace_system_1_1_configuration.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_data.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_data_1_1_sql_client.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespace_system_1_1_data_1_1_sql_types.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_i_o.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_linq.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_net.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_reflection.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_runtime_1_1_compiler_services.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_runtime_1_1_interop_services.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespace_system_1_1_security.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespace_system_1_1_security_1_1_cryptography.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_text.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_xml.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespace_triggers.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     </chapter>
     <chapter>
         <title>Class Documentation</title>
         <xi:include href="class_configure_one_flag_1_1_c1_web_service.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1crypto.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1_database_factory.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1_staging_utilities.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1_triggers.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -35,6 +43,7 @@
     <chapter>
         <title>File Documentation</title>
         <xi:include href="_c1_web_service_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="crypto_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="_database_factory_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

@@ -1,0 +1,180 @@
+\hypertarget{class_triggers_1_1crypto}{}\section{Triggers.\+crypto Class Reference}
+\label{class_triggers_1_1crypto}\index{Triggers.\+crypto@{Triggers.\+crypto}}
+
+
+Cryptography class providing for the decryption of server connection string culled from server registry  
+
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_triggers_1_1crypto_ac8bfa90ed91c27ed4e74fd8f979e6ed6_ac8bfa90ed91c27ed4e74fd8f979e6ed6}{Decrypt\+CS} (string cipher\+Text, string s\+Key)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+byte \mbox{[}$\,$\mbox{]} \hyperlink{class_triggers_1_1crypto_aa55aefe9e277d745a4f33463d8c2d5ab_aa55aefe9e277d745a4f33463d8c2d5ab}{Encrypt} (byte\mbox{[}$\,$\mbox{]} buffer, byte\mbox{[}$\,$\mbox{]} vector)
+\item 
+byte \mbox{[}$\,$\mbox{]} \hyperlink{class_triggers_1_1crypto_afe2121a3af399065a11050f1ff3858b5_afe2121a3af399065a11050f1ff3858b5}{Decrypt} (byte\mbox{[}$\,$\mbox{]} buffer, byte\mbox{[}$\,$\mbox{]} vector)
+\item 
+byte \mbox{[}$\,$\mbox{]} \hyperlink{class_triggers_1_1crypto_afe0024500c9ac06d4f7447a8a87d56ea_afe0024500c9ac06d4f7447a8a87d56ea}{Transform} (byte\mbox{[}$\,$\mbox{]} buffer, I\+Crypto\+Transform transform)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Random \hyperlink{class_triggers_1_1crypto_a614fcb1dab25fd8dfee71130a3b51cc7_a614fcb1dab25fd8dfee71130a3b51cc7}{random}
+\item 
+byte \mbox{[}$\,$\mbox{]} \hyperlink{class_triggers_1_1crypto_a31486f0803133b0c2b45645e892516dc_a31486f0803133b0c2b45645e892516dc}{key}
+\item 
+Rijndael\+Managed \hyperlink{class_triggers_1_1crypto_af6a705cfd63eca7298c0d976c584e6c9_af6a705cfd63eca7298c0d976c584e6c9}{rm}
+\item 
+U\+T\+F8\+Encoding \hyperlink{class_triggers_1_1crypto_aaf97b88af559400a1cfd100e4df90199_aaf97b88af559400a1cfd100e4df90199}{encoder}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Cryptography class providing for the decryption of server connection string culled from server registry 
+
+
+
+Definition at line 16 of file crypto.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_triggers_1_1crypto_afe2121a3af399065a11050f1ff3858b5_afe2121a3af399065a11050f1ff3858b5}\label{class_triggers_1_1crypto_afe2121a3af399065a11050f1ff3858b5_afe2121a3af399065a11050f1ff3858b5}} 
+\index{Triggers\+::crypto@{Triggers\+::crypto}!Decrypt@{Decrypt}}
+\index{Decrypt@{Decrypt}!Triggers\+::crypto@{Triggers\+::crypto}}
+\subsubsection{\texorpdfstring{Decrypt()}{Decrypt()}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} Triggers.\+crypto.\+Decrypt (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 47 of file crypto.\+cs.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_triggers_1_1crypto_afe2121a3af399065a11050f1ff3858b5_afe2121a3af399065a11050f1ff3858b5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_triggers_1_1crypto_afe2121a3af399065a11050f1ff3858b5_afe2121a3af399065a11050f1ff3858b5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_triggers_1_1crypto_ac8bfa90ed91c27ed4e74fd8f979e6ed6_ac8bfa90ed91c27ed4e74fd8f979e6ed6}\label{class_triggers_1_1crypto_ac8bfa90ed91c27ed4e74fd8f979e6ed6_ac8bfa90ed91c27ed4e74fd8f979e6ed6}} 
+\index{Triggers\+::crypto@{Triggers\+::crypto}!Decrypt\+CS@{Decrypt\+CS}}
+\index{Decrypt\+CS@{Decrypt\+CS}!Triggers\+::crypto@{Triggers\+::crypto}}
+\subsubsection{\texorpdfstring{Decrypt\+C\+S()}{DecryptCS()}}
+{\footnotesize\ttfamily void Triggers.\+crypto.\+Decrypt\+CS (\begin{DoxyParamCaption}\item[{string}]{cipher\+Text,  }\item[{string}]{s\+Key }\end{DoxyParamCaption})}
+
+
+
+Definition at line 22 of file crypto.\+cs.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_triggers_1_1crypto_ac8bfa90ed91c27ed4e74fd8f979e6ed6_ac8bfa90ed91c27ed4e74fd8f979e6ed6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_triggers_1_1crypto_ac8bfa90ed91c27ed4e74fd8f979e6ed6_ac8bfa90ed91c27ed4e74fd8f979e6ed6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_triggers_1_1crypto_aa55aefe9e277d745a4f33463d8c2d5ab_aa55aefe9e277d745a4f33463d8c2d5ab}\label{class_triggers_1_1crypto_aa55aefe9e277d745a4f33463d8c2d5ab_aa55aefe9e277d745a4f33463d8c2d5ab}} 
+\index{Triggers\+::crypto@{Triggers\+::crypto}!Encrypt@{Encrypt}}
+\index{Encrypt@{Encrypt}!Triggers\+::crypto@{Triggers\+::crypto}}
+\subsubsection{\texorpdfstring{Encrypt()}{Encrypt()}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} Triggers.\+crypto.\+Encrypt (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 41 of file crypto.\+cs.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_triggers_1_1crypto_aa55aefe9e277d745a4f33463d8c2d5ab_aa55aefe9e277d745a4f33463d8c2d5ab_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_triggers_1_1crypto_afe0024500c9ac06d4f7447a8a87d56ea_afe0024500c9ac06d4f7447a8a87d56ea}\label{class_triggers_1_1crypto_afe0024500c9ac06d4f7447a8a87d56ea_afe0024500c9ac06d4f7447a8a87d56ea}} 
+\index{Triggers\+::crypto@{Triggers\+::crypto}!Transform@{Transform}}
+\index{Transform@{Transform}!Triggers\+::crypto@{Triggers\+::crypto}}
+\subsubsection{\texorpdfstring{Transform()}{Transform()}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} Triggers.\+crypto.\+Transform (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{I\+Crypto\+Transform}]{transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 53 of file crypto.\+cs.
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_triggers_1_1crypto_afe0024500c9ac06d4f7447a8a87d56ea_afe0024500c9ac06d4f7447a8a87d56ea_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_triggers_1_1crypto_aaf97b88af559400a1cfd100e4df90199_aaf97b88af559400a1cfd100e4df90199}\label{class_triggers_1_1crypto_aaf97b88af559400a1cfd100e4df90199_aaf97b88af559400a1cfd100e4df90199}} 
+\index{Triggers\+::crypto@{Triggers\+::crypto}!encoder@{encoder}}
+\index{encoder@{encoder}!Triggers\+::crypto@{Triggers\+::crypto}}
+\subsubsection{\texorpdfstring{encoder}{encoder}}
+{\footnotesize\ttfamily U\+T\+F8\+Encoding Triggers.\+crypto.\+encoder\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 21 of file crypto.\+cs.
+
+\mbox{\Hypertarget{class_triggers_1_1crypto_a31486f0803133b0c2b45645e892516dc_a31486f0803133b0c2b45645e892516dc}\label{class_triggers_1_1crypto_a31486f0803133b0c2b45645e892516dc_a31486f0803133b0c2b45645e892516dc}} 
+\index{Triggers\+::crypto@{Triggers\+::crypto}!key@{key}}
+\index{key@{key}!Triggers\+::crypto@{Triggers\+::crypto}}
+\subsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} Triggers.\+crypto.\+key\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 19 of file crypto.\+cs.
+
+\mbox{\Hypertarget{class_triggers_1_1crypto_a614fcb1dab25fd8dfee71130a3b51cc7_a614fcb1dab25fd8dfee71130a3b51cc7}\label{class_triggers_1_1crypto_a614fcb1dab25fd8dfee71130a3b51cc7_a614fcb1dab25fd8dfee71130a3b51cc7}} 
+\index{Triggers\+::crypto@{Triggers\+::crypto}!random@{random}}
+\index{random@{random}!Triggers\+::crypto@{Triggers\+::crypto}}
+\subsubsection{\texorpdfstring{random}{random}}
+{\footnotesize\ttfamily Random Triggers.\+crypto.\+random\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 18 of file crypto.\+cs.
+
+\mbox{\Hypertarget{class_triggers_1_1crypto_af6a705cfd63eca7298c0d976c584e6c9_af6a705cfd63eca7298c0d976c584e6c9}\label{class_triggers_1_1crypto_af6a705cfd63eca7298c0d976c584e6c9_af6a705cfd63eca7298c0d976c584e6c9}} 
+\index{Triggers\+::crypto@{Triggers\+::crypto}!rm@{rm}}
+\index{rm@{rm}!Triggers\+::crypto@{Triggers\+::crypto}}
+\subsubsection{\texorpdfstring{rm}{rm}}
+{\footnotesize\ttfamily Rijndael\+Managed Triggers.\+crypto.\+rm\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 20 of file crypto.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{crypto_8cs}{crypto.\+cs}\end{DoxyCompactItemize}

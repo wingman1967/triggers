@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="crypto_8cs">
+    <title>crypto.cs File Reference</title>
+<para>Include dependency diagram for crypto.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="crypto_8cs__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for crypto.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="crypto_8cs__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1crypto">Triggers::crypto</link></para>
+<para><emphasis>&lt;summary&gt;
+Cryptography class providing for the decryption of server connection string culled from server registry
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_triggers">Triggers</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system_1_1_security">System::Security</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system_1_1_security_1_1_cryptography">System::Security::Cryptography</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system_1_1_runtime_1_1_interop_services">System::Runtime::InteropServices</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file C:/Users/hinesj/Documents/Visual Studio 2015/Projects/Triggers/Triggers/crypto.cs</para>
+    </simplesect>
+    <literallayout><computeroutput>
+1 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>;
+2 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Collections.Generic;
+3 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Linq;
+4 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Text;
+5 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Security;
+6 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Security.Cryptography;
+7 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Runtime.InteropServices;
+8 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>;
+9 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.IO;
+10 
+<link linkend="namespace_triggers">11 </link><emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_triggers">Triggers</link>
+12 {
+<link linkend="class_triggers_1_1crypto">16 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_triggers_1_1crypto">crypto</link>
+17 &#32;&#32;&#32;&#32;{
+<link linkend="class_triggers_1_1crypto_a614fcb1dab25fd8dfee71130a3b51cc7_1a614fcb1dab25fd8dfee71130a3b51cc7">18 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;Random&#32;<link linkend="class_triggers_1_1crypto_a614fcb1dab25fd8dfee71130a3b51cc7_1a614fcb1dab25fd8dfee71130a3b51cc7">random</link>;
+<link linkend="class_triggers_1_1crypto_a31486f0803133b0c2b45645e892516dc_1a31486f0803133b0c2b45645e892516dc">19 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;byte[]&#32;<link linkend="class_triggers_1_1crypto_a31486f0803133b0c2b45645e892516dc_1a31486f0803133b0c2b45645e892516dc">key</link>;
+<link linkend="class_triggers_1_1crypto_af6a705cfd63eca7298c0d976c584e6c9_1af6a705cfd63eca7298c0d976c584e6c9">20 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;RijndaelManaged&#32;<link linkend="class_triggers_1_1crypto_af6a705cfd63eca7298c0d976c584e6c9_1af6a705cfd63eca7298c0d976c584e6c9">rm</link>;
+<link linkend="class_triggers_1_1crypto_aaf97b88af559400a1cfd100e4df90199_1aaf97b88af559400a1cfd100e4df90199">21 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;UTF8Encoding&#32;<link linkend="class_triggers_1_1crypto_aaf97b88af559400a1cfd100e4df90199_1aaf97b88af559400a1cfd100e4df90199">encoder</link>;
+<link linkend="class_triggers_1_1crypto_ac8bfa90ed91c27ed4e74fd8f979e6ed6_1ac8bfa90ed91c27ed4e74fd8f979e6ed6">22 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_triggers_1_1crypto_ac8bfa90ed91c27ed4e74fd8f979e6ed6_1ac8bfa90ed91c27ed4e74fd8f979e6ed6">DecryptCS</link>(<emphasis class="keywordtype">string</emphasis>&#32;cipherText,&#32;<emphasis class="keywordtype">string</emphasis>&#32;sKey)
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;random&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;Random();
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rm&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;RijndaelManaged();
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;encoder&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;UTF8Encoding();
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;key&#32;=&#32;Convert.FromBase64String(sKey);
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;cryptogram&#32;=&#32;Convert.FromBase64String(cipherText);
+29 
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(cryptogram.Length&#32;&lt;&#32;17)
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>.<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a3cd5e3e64a361f5e3a8d7fbd724a471f_1a3cd5e3e64a361f5e3a8d7fbd724a471f">logEvent</link>&#32;=&#32;<emphasis class="stringliteral">&quot;A&#32;cryptographic&#32;error&#32;occurred&#32;decrypting&#32;server&#32;connection&#32;string&quot;</emphasis>;
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>.<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;<link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>.<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a3cd5e3e64a361f5e3a8d7fbd724a471f_1a3cd5e3e64a361f5e3a8d7fbd724a471f">logEvent</link>,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Error,&#32;234);
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>;
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+36 
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;vector&#32;=&#32;cryptogram.Take(16).ToArray();
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;buffer&#32;=&#32;cryptogram.Skip(16).ToArray();
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a97a9d57d4ff36a700cc5233c5fdb9ac5_1a97a9d57d4ff36a700cc5233c5fdb9ac5">connectionString</link>&#32;=&#32;encoder.GetString(<link linkend="class_triggers_1_1crypto_afe2121a3af399065a11050f1ff3858b5_1afe2121a3af399065a11050f1ff3858b5">Decrypt</link>(buffer,&#32;vector));
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_triggers_1_1crypto_aa55aefe9e277d745a4f33463d8c2d5ab_1aa55aefe9e277d745a4f33463d8c2d5ab">41 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;byte[]&#32;<link linkend="class_triggers_1_1crypto_aa55aefe9e277d745a4f33463d8c2d5ab_1aa55aefe9e277d745a4f33463d8c2d5ab">Encrypt</link>(byte[]&#32;buffer,&#32;byte[]&#32;vector)
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;encryptor&#32;=&#32;rm.CreateEncryptor(key,&#32;vector);
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_triggers_1_1crypto_afe0024500c9ac06d4f7447a8a87d56ea_1afe0024500c9ac06d4f7447a8a87d56ea">Transform</link>(buffer,&#32;encryptor);
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+46 
+<link linkend="class_triggers_1_1crypto_afe2121a3af399065a11050f1ff3858b5_1afe2121a3af399065a11050f1ff3858b5">47 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;byte[]&#32;<link linkend="class_triggers_1_1crypto_afe2121a3af399065a11050f1ff3858b5_1afe2121a3af399065a11050f1ff3858b5">Decrypt</link>(byte[]&#32;buffer,&#32;byte[]&#32;vector)
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;decryptor&#32;=&#32;rm.CreateDecryptor(key,&#32;vector);
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;this.<link linkend="class_triggers_1_1crypto_afe0024500c9ac06d4f7447a8a87d56ea_1afe0024500c9ac06d4f7447a8a87d56ea">Transform</link>(buffer,&#32;decryptor);
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+52 
+<link linkend="class_triggers_1_1crypto_afe0024500c9ac06d4f7447a8a87d56ea_1afe0024500c9ac06d4f7447a8a87d56ea">53 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;byte[]&#32;<link linkend="class_triggers_1_1crypto_afe0024500c9ac06d4f7447a8a87d56ea_1afe0024500c9ac06d4f7447a8a87d56ea">Transform</link>(byte[]&#32;buffer,&#32;ICryptoTransform&#32;transform)
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;stream&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;MemoryStream();
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;cs&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;CryptoStream(stream,&#32;transform,&#32;CryptoStreamMode.Write))
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cs.Write(buffer,&#32;0,&#32;buffer.Length);
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+60 
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;stream.ToArray();
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+63 &#32;&#32;&#32;&#32;}
+64 }
+    </computeroutput></literallayout>
+</section>

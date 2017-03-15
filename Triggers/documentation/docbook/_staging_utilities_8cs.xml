@@ -85,7 +85,7 @@ Utilities used for staging of data from C1 to SQL databases
 35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:
 37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;ORDER&#32;NUMBER&#32;NOT&#32;FOUND:&#32;&quot;</emphasis>&#32;+&#32;co.CO_Num;
-38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="namespace_triggers">Triggers</link>.logSource,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
 39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>;
 40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">default</emphasis>:
 41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Remove&#32;any&#32;pre-existing&#32;records&#32;in&#32;SQL&#32;for&#32;this&#32;order</emphasis>
@@ -93,7 +93,7 @@ Utilities used for staging of data from C1 to SQL databases
 43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
 44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;MAPPING&#32;XML&#32;TO&#32;STAGING&#32;TABLES&quot;</emphasis>;
-46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="namespace_triggers">Triggers</link>.logSource,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
 47 
 48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//build&#32;CO&#32;header</emphasis>
 49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xnl&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;ID&quot;</emphasis>);
@@ -300,58 +300,57 @@ Utilities used for staging of data from C1 to SQL databases
 250 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;cfg&#32;(parmval)&#32;record</emphasis>
 251 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_aeab9b81fff5fdf32493ce1f2c2c0082b_1aeab9b81fff5fdf32493ce1f2c2c0082b">WriteRecordCfg</link>(ref&#32;cfg);
 252 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-253 
-254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//item-master&#32;for&#32;the&#32;line&#32;we&#32;are&#32;working&#32;with</emphasis>
-255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;recordSequence&#32;=&#32;1;
-256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlim&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;ItemMaster&quot;</emphasis>);
-257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.CO_Line&#32;=&#32;coitem.CO_Line;
-258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeim&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlim)
-259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Sequence&#32;=&#32;recordSequence;
-261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Smartpart&#32;=&#32;nodeim.ChildNodes[0].InnerText;
-262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Item&#32;=&#32;nodeim.ChildNodes[1].InnerText;
-263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Desc&#32;=&#32;nodeim.ChildNodes[3].InnerText;
-264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;cost&#32;=&#32;nodeim.ChildNodes[4].InnerText;
-265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;price&#32;=&#32;nodeim.ChildNodes[5].InnerText;
-266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;sell&#32;=&#32;nodeim.ChildNodes[6].InnerText;
-267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;weight&#32;=&#32;nodeim.ChildNodes[9].InnerText;
-268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemCost&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(cost)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;cost);
-269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemPrice&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(price)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;price);
-270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemSellPrice&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(sell)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;sell);
-271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemWeight&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(weight)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;weight);
-272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.UnitOfMeasure&#32;=&#32;nodeim.ChildNodes[26].InnerText;
-273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;recordSequence&#32;+=&#32;1;
-274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;item-master&#32;record</emphasis>
-275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_ae84fa2fa2699960542cadbe2053b947d_1ae84fa2fa2699960542cadbe2053b947d">WriteRecordCItem</link>(ref&#32;citem);
-276 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//BOM&#32;records</emphasis>
-278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;recordSequence&#32;=&#32;0;
-279 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlb&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Bom&quot;</emphasis>);
-280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.CO_Line&#32;=&#32;coitem.CO_Line;
-281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeib&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlb)
-282 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;recordSequence&#32;=&#32;1;
-284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Sequence&#32;=&#32;recordSequence;
-285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;parent&#32;=&#32;nodeib.SelectSingleNode(<emphasis class="stringliteral">&quot;..&quot;</emphasis>);
-286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;parentID&#32;=&#32;parent.ChildNodes[0].InnerText;
-287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Parent&#32;=&#32;parentID&#32;==&#32;<emphasis class="stringliteral">&quot;1&quot;</emphasis>&#32;?&#32;null&#32;:&#32;parentID;
-288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Identifier&#32;=&#32;nodeib.ChildNodes[0].InnerText;
-289 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Item&#32;=&#32;nodeib.ChildNodes[1].InnerText;
-290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Smartpart&#32;=&#32;nodeib.ChildNodes[2].InnerText;
-291 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.UnitPrice&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[3].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[3].InnerText);
-292 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.UnitCost&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[4].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[4].InnerText);
-293 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Discount&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[5].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[5].InnerText);
-294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.QTY&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[6].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[6].InnerText);
-295 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;BOM&#32;record</emphasis>
-296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a7d20594ae96a13614accd3e7d8d8a04a_1a7d20594ae96a13614accd3e7d8d8a04a">WriteRecordBOM</link>(ref&#32;bom);
-297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;RESEQUENCING&#32;BOM&#32;RECORDS&#32;FOR&#32;ORDER:&#32;&quot;</emphasis>&#32;+&#32;bom.CO_Num&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;LINE:&#32;&quot;</emphasis>&#32;+&#32;bom.CO_Line;
-299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_acd9475f1b9763dfab5896656f96789a0_1acd9475f1b9763dfab5896656f96789a0">ResequenceBOM</link>(bom.CO_Num,&#32;bom.CO_Line);
-301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-303 &#32;&#32;&#32;&#32;}
-304 }
-305 
+253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//item-master&#32;for&#32;the&#32;line&#32;we&#32;are&#32;working&#32;with</emphasis>
+254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;recordSequence&#32;=&#32;1;
+255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlim&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;ItemMaster&quot;</emphasis>);
+256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.CO_Line&#32;=&#32;coitem.CO_Line;
+257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeim&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlim)
+258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Sequence&#32;=&#32;recordSequence;
+260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Smartpart&#32;=&#32;nodeim.ChildNodes[0].InnerText;
+261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Item&#32;=&#32;nodeim.ChildNodes[1].InnerText;
+262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Desc&#32;=&#32;nodeim.ChildNodes[3].InnerText;
+263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;cost&#32;=&#32;nodeim.ChildNodes[4].InnerText;
+264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;price&#32;=&#32;nodeim.ChildNodes[5].InnerText;
+265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;sell&#32;=&#32;nodeim.ChildNodes[6].InnerText;
+266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;weight&#32;=&#32;nodeim.ChildNodes[9].InnerText;
+267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemCost&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(cost)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;cost);
+268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemPrice&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(price)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;price);
+269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemSellPrice&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(sell)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;sell);
+270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemWeight&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(weight)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;weight);
+271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.UnitOfMeasure&#32;=&#32;nodeim.ChildNodes[26].InnerText;
+272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;recordSequence&#32;+=&#32;1;
+273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;item-master&#32;record</emphasis>
+274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_ae84fa2fa2699960542cadbe2053b947d_1ae84fa2fa2699960542cadbe2053b947d">WriteRecordCItem</link>(ref&#32;citem);
+275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+276 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//BOM&#32;records</emphasis>
+277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;recordSequence&#32;=&#32;0;
+278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlb&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Bom&quot;</emphasis>);
+279 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.CO_Line&#32;=&#32;coitem.CO_Line;
+280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeib&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlb)
+281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+282 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;recordSequence&#32;=&#32;1;
+283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Sequence&#32;=&#32;recordSequence;
+284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;parent&#32;=&#32;nodeib.SelectSingleNode(<emphasis class="stringliteral">&quot;..&quot;</emphasis>);
+285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;parentID&#32;=&#32;parent.ChildNodes[0].InnerText;
+286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Parent&#32;=&#32;parentID&#32;==&#32;<emphasis class="stringliteral">&quot;1&quot;</emphasis>&#32;?&#32;null&#32;:&#32;parentID;
+287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Identifier&#32;=&#32;nodeib.ChildNodes[0].InnerText;
+288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Item&#32;=&#32;nodeib.ChildNodes[1].InnerText;
+289 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Smartpart&#32;=&#32;nodeib.ChildNodes[2].InnerText;
+290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.UnitPrice&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[3].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[3].InnerText);
+291 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.UnitCost&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[4].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[4].InnerText);
+292 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Discount&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[5].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[5].InnerText);
+293 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.QTY&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[6].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[6].InnerText);
+294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;BOM&#32;record</emphasis>
+295 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a7d20594ae96a13614accd3e7d8d8a04a_1a7d20594ae96a13614accd3e7d8d8a04a">WriteRecordBOM</link>(ref&#32;bom);
+296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;RESEQUENCING&#32;BOM&#32;RECORDS&#32;FOR&#32;ORDER:&#32;&quot;</emphasis>&#32;+&#32;bom.CO_Num&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;LINE:&#32;&quot;</emphasis>&#32;+&#32;bom.CO_Line;
+298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="namespace_triggers">Triggers</link>.logSource,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
+299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_acd9475f1b9763dfab5896656f96789a0_1acd9475f1b9763dfab5896656f96789a0">ResequenceBOM</link>(bom.CO_Num,&#32;bom.CO_Line);
+300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+302 &#32;&#32;&#32;&#32;}
+303 }
+304 
     </computeroutput></literallayout>
 </section>

@@ -32,10 +32,24 @@
                     </listitem>
                 </itemizedlist>
             </para>
+        </section>
+        <section>
+            <title></title>
             <para>
                 <itemizedlist>
                     <listitem>
                         <para>static string connectionString</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_configure_one_flag_1_1_database_factory_ae1ec057e7696e9c9439a12e6988970d7_1ae1ec057e7696e9c9439a12e6988970d7">SetConnectionString</link> (
+)</para>
                     </listitem>
                 </itemizedlist>
             </para>
@@ -105,10 +119,14 @@ string orderNum)</para>
     </simplesect>
         <simplesect>
             <title>Detailed Description</title>
-                <para>Definition at line 15 of file DatabaseFactory.cs</para>
+                <para>Definition at line 25 of file DatabaseFactory.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>DatabaseFactory.cs</para></listitem></itemizedlist></para>
         </simplesect>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_ae1ec057e7696e9c9439a12e6988970d7_1ae1ec057e7696e9c9439a12e6988970d7">
+                <title>void ConfigureOneFlag.DatabaseFactory.SetConnectionString ()</title> <emphasis></emphasis>
+                
+            </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_a7d20594ae96a13614accd3e7d8d8a04a_1a7d20594ae96a13614accd3e7d8d8a04a">
                 <title>static void ConfigureOneFlag.DatabaseFactory.WriteRecordBOM (ref zCfgBOM bom)</title> <emphasis></emphasis>
                 
