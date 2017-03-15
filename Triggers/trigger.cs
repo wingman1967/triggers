@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Microsoft.SqlServer.Server;
 using System.Data.SqlClient;
+using System.Data.SqlTypes;
 
 namespace ConfigureOneFlag
 {
@@ -31,29 +32,31 @@ namespace ConfigureOneFlag
             logEvent = "TRIGGER FIRING ON INSERT";
             System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             webmethods.Add("getOrder", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getOrder");
+            webmethods.Add("updateOrder", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=updateOrder");
+            webmethods.Add("getConfiguration", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getConfiguration");
             string orderNum;
             string orderValue = "";
             SqlTriggerContext triggContext = SqlContext.TriggerContext;
             SqlParameter orderNumber = new SqlParameter("@order_num", System.Data.SqlDbType.NVarChar);
 
-            if (triggContext.TriggerAction == TriggerAction.Insert)
+            switch (triggContext.TriggerAction == TriggerAction.Insert)
             {
-                using (SqlConnection conn = new SqlConnection("context connection=true"))
-                {
-                    conn.Open();
-                    SqlCommand sqlComm = new SqlCommand();
-                    SqlPipe sqlP = SqlContext.Pipe;
-                    sqlComm.Connection = conn;
-                    sqlComm.CommandText = "SELECT order_num from INSERTED";
-                    orderNumber.Value = sqlComm.ExecuteScalar().ToString();
-                    orderValue = orderNumber.Value.ToString();
-                    logEvent = "ORDER NUMBER: " + orderValue;
-                    System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-                }
-            }
-            else
-            {
-                return;                     //abort on any other trigger action
+                case true:
+                    using (SqlConnection conn = new SqlConnection("context connection=true"))
+                    {
+                        conn.Open();
+                        SqlCommand sqlComm = new SqlCommand();
+                        SqlPipe sqlP = SqlContext.Pipe;
+                        sqlComm.Connection = conn;
+                        sqlComm.CommandText = "SELECT order_num from INSERTED";
+                        orderNumber.Value = sqlComm.ExecuteScalar().ToString();
+                        orderValue = orderNumber.Value.ToString();
+                        logEvent = "ORDER NUMBER: " + orderValue;
+                        System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                    }
+                    break;
+                default:
+                    return;
             }
 
             string useMethod = "";
@@ -65,6 +68,8 @@ namespace ConfigureOneFlag
                 C1URL = useMethod;
             }
 
+            DatabaseFactory dbf = new DatabaseFactory();
+            dbf.SetConnectionString();
             caller = "ORDER";
             orderNum = orderValue;
             string xmlPayload = "<soap:Envelope xmlns:xsi=" + (char)34 + "http://www.w3.org/2001/XMLSchema-instance" + (char)34 + " xmlns:xsd=" + (char)34 + "http://www.w3.org/2001/XMLSchema" + (char)34 + " xmlns:soap=" + (char)34 + "http://schemas.xmlsoap.org/soap/envelope/" + (char)34 + ">" + "<soap:Body><" + key + " xmlns=" + (char)34 + "http://ws.configureone.com" + (char)34 + "><orderNum>" + orderNum + "</orderNum></" + key + "></soap:Body></soap:Envelope>";

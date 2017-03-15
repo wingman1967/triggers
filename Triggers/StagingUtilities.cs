@@ -250,7 +250,6 @@ namespace ConfigureOneFlag
                     //output cfg (parmval) record
                     DatabaseFactory.WriteRecordCfg(ref cfg);
                 }
-
                 //item-master for the line we are working with
                 int recordSequence = 1;
                 XmlNodeList xnlim = xmldoc.GetElementsByTagName("ItemMaster");

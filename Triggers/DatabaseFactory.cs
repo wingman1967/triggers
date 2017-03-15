@@ -5,6 +5,16 @@ using System.Text;
 //using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using System.Configuration;
+using Microsoft.SqlServer.Server;
+using System.Data.SqlTypes;
+using System.Collections.Specialized;
+using Microsoft.Win32;
+using System.IO;
+using System.Security;
+using System.Security.Cryptography;
+using System.Runtime.InteropServices;
+using Triggers;
 
 namespace ConfigureOneFlag
 {
@@ -14,7 +24,26 @@ namespace ConfigureOneFlag
     class DatabaseFactory
     {
         static string SQLCommand;
-        static string connectionString = "server = grcdslsql0.dom.grc; database = SL_MAN_App; enlist=false; User ID = sa_config; Password = options23";
+        public static string connectionString = "";
+        public void SetConnectionString()
+        {
+            RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\ConfigureOneAssembly\\1.0", true);
+            if (reg == null)
+            {
+                //create keys if they don't already exist and set values
+                reg = Registry.CurrentUser.CreateSubKey("SOFTWARE\\Microsoft\\ConfigureOneAssembly\\1.0");
+                string dbConnectionData = System.IO.File.ReadAllText(@"C:\C1\dbconnection.dat");
+                string dbkey = System.IO.File.ReadAllText(@"C:\C1\dbkey.dat");
+                reg.SetValue("DB", dbConnectionData);
+                reg.SetValue("ENCKEY", dbkey);
+            }
+
+            //decrypt cs
+            string sKey = reg.GetValue("ENCKEY").ToString();
+            connectionString = reg.GetValue("DB").ToString();
+            crypto csec = new crypto();
+            csec.DecryptCS(connectionString, sKey);
+        }        
         public static void WriteRecordBOM(ref zCfgBOM bom)
         {
             SQLCommand = "Insert Into GR_CfgBOM (order_num,order_line_num,seq,parent_id,id,item_num,smartpart_num,unit_price,unit_cost,discount_amt,quantity) values (" + (char)39 + bom.CO_Num + (char)39 + "," + (char)39 + bom.CO_Line + (char)39 + "," + (char)39 + bom.Sequence + (char)39 + "," + (char)39 + bom.Parent + (char)39 + "," + (char)39 + bom.Identifier + (char)39 + "," + (char)39 + bom.Item + (char)39 + "," + (char)39 + bom.Smartpart + (char)39 + "," + (char)39 + bom.UnitPrice + (char)39 + "," + (char)39 + bom.UnitCost + (char)39 + "," + (char)39 + bom.Discount + (char)39 + "," + (char)39 + bom.QTY + (char)39 + ")";
