@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_configure_one_flag_1_1crypto">
+<title>ConfigureOneFlag::crypto class Reference</title>
+<para>Inheritance diagram for ConfigureOneFlag::crypto</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_configure_one_flag_1_1crypto__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ConfigureOneFlag::crypto</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_configure_one_flag_1_1crypto__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Random random</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>byte [] key</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>RijndaelManaged rm</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>UTF8Encoding encoder</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_configure_one_flag_1_1crypto_aa1d3c3952a54e17e8440101e4690ced4_1aa1d3c3952a54e17e8440101e4690ced4">DecryptCS</link> (
+string cipherText, string sKey)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>byte [] <link linkend="class_configure_one_flag_1_1crypto_a93d9f2386bdaf886fa8b659b4b66471b_1a93d9f2386bdaf886fa8b659b4b66471b">Encrypt</link> (
+byte [] buffer, byte [] vector)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>byte [] <link linkend="class_configure_one_flag_1_1crypto_ab08eafa0fc82a93142425ce8b0edd609_1ab08eafa0fc82a93142425ce8b0edd609">Decrypt</link> (
+byte [] buffer, byte [] vector)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>byte [] <link linkend="class_configure_one_flag_1_1crypto_a30315100199127a961d4f0cc59621a04_1a30315100199127a961d4f0cc59621a04">Transform</link> (
+byte [] buffer, ICryptoTransform transform)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Cryptography class providing for the decryption of server connection string culled from server registry </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 17 of file crypto.cs</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>crypto.cs</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_configure_one_flag_1_1crypto_aa1d3c3952a54e17e8440101e4690ced4_1aa1d3c3952a54e17e8440101e4690ced4">
+                <title>void ConfigureOneFlag.crypto.DecryptCS (string cipherText, string sKey)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1crypto_a93d9f2386bdaf886fa8b659b4b66471b_1a93d9f2386bdaf886fa8b659b4b66471b">
+                <title>byte [] ConfigureOneFlag.crypto.Encrypt (byte[] buffer, byte[] vector)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1crypto_ab08eafa0fc82a93142425ce8b0edd609_1ab08eafa0fc82a93142425ce8b0edd609">
+                <title>byte [] ConfigureOneFlag.crypto.Decrypt (byte[] buffer, byte[] vector)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1crypto_a30315100199127a961d4f0cc59621a04_1a30315100199127a961d4f0cc59621a04">
+                <title>byte [] ConfigureOneFlag.crypto.Transform (byte[] buffer, ICryptoTransform transform)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

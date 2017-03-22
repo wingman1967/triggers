@@ -48,34 +48,6 @@ Processing for call to ConfigureOne web service and return for further handling
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>struct <link linkend="namespace_system">System</link></para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>struct <link linkend="namespace_system_1_1_collections_1_1_generic">System::Collections::Generic</link></para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>struct <link linkend="namespace_system_1_1_linq">System::Linq</link></para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>struct <link linkend="namespace_system_1_1_text">System::Text</link></para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
                         <para>struct <link linkend="namespace_system_1_1_net">System::Net</link></para>
                     </listitem>
                 </itemizedlist>
@@ -110,14 +82,14 @@ Processing for call to ConfigureOne web service and return for further handling
 8 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.IO;
 9 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>;
 10 
-<link linkend="namespace_configure_one_flag">11 </link><emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>
+11 <emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>
 12 {
 <link linkend="class_configure_one_flag_1_1_c1_web_service">16 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_configure_one_flag_1_1_c1_web_service">C1WebService</link>
 17 &#32;&#32;&#32;&#32;{
 <link linkend="class_configure_one_flag_1_1_c1_web_service_ae826903f85694f4cf481680e115076f3_1ae826903f85694f4cf481680e115076f3">18 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_ae826903f85694f4cf481680e115076f3_1ae826903f85694f4cf481680e115076f3">CallConfigureOne</link>(<emphasis class="keywordtype">string</emphasis>&#32;key,&#32;<emphasis class="keywordtype">string</emphasis>&#32;payload,&#32;<emphasis class="keywordtype">string</emphasis>&#32;url)
 19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;CALLING&#32;C1&#32;WEBSERVICE&quot;</emphasis>;
-21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="namespace_triggers">Triggers</link>.logSource,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
 22 
 23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;sURL&#32;=&#32;url;
 24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HttpWebRequest&#32;objRequest&#32;=&#32;(HttpWebRequest)WebRequest.Create(sURL.ToString());
@@ -153,28 +125,28 @@ Processing for call to ConfigureOne web service and return for further handling
 54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;ex2)
 55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;ERROR&#32;LOADING&#32;XML&#32;FROM&#32;WEB&#32;SERVICE:&#32;&quot;</emphasis>&#32;+&#32;ex2.Message;
-57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="namespace_triggers">Triggers</link>.logSource,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Error,&#32;234);
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Error,&#32;234);
 58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>;
 59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="namespace_triggers">Triggers</link>.caller&#32;==&#32;<emphasis class="stringliteral">&quot;ORDER&quot;</emphasis>)
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a5a6dd7de598157ff1b70088ad3852f6b_1a5a6dd7de598157ff1b70088ad3852f6b">caller</link>&#32;==&#32;<emphasis class="stringliteral">&quot;ORDER&quot;</emphasis>)
 61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_ad721c5a816e1d3b5a16fec23498ecdf3_1ad721c5a816e1d3b5a16fec23498ecdf3">MapXMLToSQL</link>(xmlResult);
 63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 64 
-65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_triggers">Triggers</link>.caller&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a5a6dd7de598157ff1b70088ad3852f6b_1a5a6dd7de598157ff1b70088ad3852f6b">caller</link>&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
 66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;stringWriter&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringWriter())
 67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;xmlTextWriter&#32;=&#32;XmlWriter.Create(stringWriter))
 68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlResult.WriteTo(xmlTextWriter);
 70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlTextWriter.Flush();
 71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;xmlOut&#32;=&#32;stringWriter.GetStringBuilder().ToString();
-72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_triggers">Triggers</link>.wsReturn&#32;=&#32;<link linkend="namespace_system">System</link>.Xml.Linq.XDocument.Parse(xmlOut).ToString();
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a932282a05546247b1e01d8a32719b6c4_1a932282a05546247b1e01d8a32719b6c4">wsReturn</link>&#32;=&#32;<link linkend="namespace_system">System</link>.Xml.Linq.XDocument.Parse(xmlOut).ToString();
 73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(WebException&#32;wex1)
 76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;ERROR&#32;RETURNED&#32;FROM&#32;C1&#32;WEBSERVICE:&#32;&quot;</emphasis>&#32;+&#32;wex1.Message&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;:&#32;&quot;</emphasis>&#32;+&#32;wex1.Response.ToString();
-78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="namespace_triggers">Triggers</link>.logSource,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Error,&#32;234);
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Error,&#32;234);
 79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 81 &#32;&#32;&#32;&#32;}

@@ -28,7 +28,7 @@
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>struct <link linkend="class_triggers_1_1crypto">Triggers::crypto</link></para>
+                        <para>struct <link linkend="class_configure_one_flag_1_1crypto">ConfigureOneFlag::crypto</link></para>
 <para><emphasis>&lt;summary&gt;
 Cryptography class providing for the decryption of server connection string culled from server registry
 &lt;/summary&gt;</emphasis></para>
@@ -41,7 +41,7 @@ Cryptography class providing for the decryption of server connection string cull
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>struct <link linkend="namespace_triggers">Triggers</link></para>
+                        <para>struct <link linkend="namespace_configure_one_flag">ConfigureOneFlag</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
@@ -82,15 +82,15 @@ Cryptography class providing for the decryption of server connection string cull
 8 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>;
 9 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.IO;
 10 
-<link linkend="namespace_triggers">11 </link><emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_triggers">Triggers</link>
+11 <emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>
 12 {
-<link linkend="class_triggers_1_1crypto">16 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_triggers_1_1crypto">crypto</link>
+<link linkend="class_configure_one_flag_1_1crypto">16 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_configure_one_flag_1_1crypto">crypto</link>
 17 &#32;&#32;&#32;&#32;{
-<link linkend="class_triggers_1_1crypto_a614fcb1dab25fd8dfee71130a3b51cc7_1a614fcb1dab25fd8dfee71130a3b51cc7">18 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;Random&#32;<link linkend="class_triggers_1_1crypto_a614fcb1dab25fd8dfee71130a3b51cc7_1a614fcb1dab25fd8dfee71130a3b51cc7">random</link>;
-<link linkend="class_triggers_1_1crypto_a31486f0803133b0c2b45645e892516dc_1a31486f0803133b0c2b45645e892516dc">19 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;byte[]&#32;<link linkend="class_triggers_1_1crypto_a31486f0803133b0c2b45645e892516dc_1a31486f0803133b0c2b45645e892516dc">key</link>;
-<link linkend="class_triggers_1_1crypto_af6a705cfd63eca7298c0d976c584e6c9_1af6a705cfd63eca7298c0d976c584e6c9">20 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;RijndaelManaged&#32;<link linkend="class_triggers_1_1crypto_af6a705cfd63eca7298c0d976c584e6c9_1af6a705cfd63eca7298c0d976c584e6c9">rm</link>;
-<link linkend="class_triggers_1_1crypto_aaf97b88af559400a1cfd100e4df90199_1aaf97b88af559400a1cfd100e4df90199">21 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;UTF8Encoding&#32;<link linkend="class_triggers_1_1crypto_aaf97b88af559400a1cfd100e4df90199_1aaf97b88af559400a1cfd100e4df90199">encoder</link>;
-<link linkend="class_triggers_1_1crypto_ac8bfa90ed91c27ed4e74fd8f979e6ed6_1ac8bfa90ed91c27ed4e74fd8f979e6ed6">22 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_triggers_1_1crypto_ac8bfa90ed91c27ed4e74fd8f979e6ed6_1ac8bfa90ed91c27ed4e74fd8f979e6ed6">DecryptCS</link>(<emphasis class="keywordtype">string</emphasis>&#32;cipherText,&#32;<emphasis class="keywordtype">string</emphasis>&#32;sKey)
+<link linkend="class_configure_one_flag_1_1crypto_aeeaa3a18595a6b90c92e3837728bd371_1aeeaa3a18595a6b90c92e3837728bd371">18 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;Random&#32;<link linkend="class_configure_one_flag_1_1crypto_aeeaa3a18595a6b90c92e3837728bd371_1aeeaa3a18595a6b90c92e3837728bd371">random</link>;
+<link linkend="class_configure_one_flag_1_1crypto_a4c56be6527cabbbd58ea3c4f1472964f_1a4c56be6527cabbbd58ea3c4f1472964f">19 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;byte[]&#32;<link linkend="class_configure_one_flag_1_1crypto_a4c56be6527cabbbd58ea3c4f1472964f_1a4c56be6527cabbbd58ea3c4f1472964f">key</link>;
+<link linkend="class_configure_one_flag_1_1crypto_a297bd06028260f8d47586961e7f386f8_1a297bd06028260f8d47586961e7f386f8">20 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;RijndaelManaged&#32;<link linkend="class_configure_one_flag_1_1crypto_a297bd06028260f8d47586961e7f386f8_1a297bd06028260f8d47586961e7f386f8">rm</link>;
+<link linkend="class_configure_one_flag_1_1crypto_a309c0d830cd438fab07086ab9c49c308_1a309c0d830cd438fab07086ab9c49c308">21 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;UTF8Encoding&#32;<link linkend="class_configure_one_flag_1_1crypto_a309c0d830cd438fab07086ab9c49c308_1a309c0d830cd438fab07086ab9c49c308">encoder</link>;
+<link linkend="class_configure_one_flag_1_1crypto_aa1d3c3952a54e17e8440101e4690ced4_1aa1d3c3952a54e17e8440101e4690ced4">22 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1crypto_aa1d3c3952a54e17e8440101e4690ced4_1aa1d3c3952a54e17e8440101e4690ced4">DecryptCS</link>(<emphasis class="keywordtype">string</emphasis>&#32;cipherText,&#32;<emphasis class="keywordtype">string</emphasis>&#32;sKey)
 23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;random&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;Random();
 25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;rm&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;RijndaelManaged();
@@ -107,21 +107,21 @@ Cryptography class providing for the decryption of server connection string cull
 36 
 37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;vector&#32;=&#32;cryptogram.Take(16).ToArray();
 38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;buffer&#32;=&#32;cryptogram.Skip(16).ToArray();
-39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a97a9d57d4ff36a700cc5233c5fdb9ac5_1a97a9d57d4ff36a700cc5233c5fdb9ac5">connectionString</link>&#32;=&#32;encoder.GetString(<link linkend="class_triggers_1_1crypto_afe2121a3af399065a11050f1ff3858b5_1afe2121a3af399065a11050f1ff3858b5">Decrypt</link>(buffer,&#32;vector));
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a97a9d57d4ff36a700cc5233c5fdb9ac5_1a97a9d57d4ff36a700cc5233c5fdb9ac5">connectionString</link>&#32;=&#32;encoder.GetString(<link linkend="class_configure_one_flag_1_1crypto_ab08eafa0fc82a93142425ce8b0edd609_1ab08eafa0fc82a93142425ce8b0edd609">Decrypt</link>(buffer,&#32;vector));
 40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<link linkend="class_triggers_1_1crypto_aa55aefe9e277d745a4f33463d8c2d5ab_1aa55aefe9e277d745a4f33463d8c2d5ab">41 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;byte[]&#32;<link linkend="class_triggers_1_1crypto_aa55aefe9e277d745a4f33463d8c2d5ab_1aa55aefe9e277d745a4f33463d8c2d5ab">Encrypt</link>(byte[]&#32;buffer,&#32;byte[]&#32;vector)
+<link linkend="class_configure_one_flag_1_1crypto_a93d9f2386bdaf886fa8b659b4b66471b_1a93d9f2386bdaf886fa8b659b4b66471b">41 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;byte[]&#32;<link linkend="class_configure_one_flag_1_1crypto_a93d9f2386bdaf886fa8b659b4b66471b_1a93d9f2386bdaf886fa8b659b4b66471b">Encrypt</link>(byte[]&#32;buffer,&#32;byte[]&#32;vector)
 42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;encryptor&#32;=&#32;rm.CreateEncryptor(key,&#32;vector);
-44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_triggers_1_1crypto_afe0024500c9ac06d4f7447a8a87d56ea_1afe0024500c9ac06d4f7447a8a87d56ea">Transform</link>(buffer,&#32;encryptor);
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1crypto_a30315100199127a961d4f0cc59621a04_1a30315100199127a961d4f0cc59621a04">Transform</link>(buffer,&#32;encryptor);
 45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 46 
-<link linkend="class_triggers_1_1crypto_afe2121a3af399065a11050f1ff3858b5_1afe2121a3af399065a11050f1ff3858b5">47 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;byte[]&#32;<link linkend="class_triggers_1_1crypto_afe2121a3af399065a11050f1ff3858b5_1afe2121a3af399065a11050f1ff3858b5">Decrypt</link>(byte[]&#32;buffer,&#32;byte[]&#32;vector)
+<link linkend="class_configure_one_flag_1_1crypto_ab08eafa0fc82a93142425ce8b0edd609_1ab08eafa0fc82a93142425ce8b0edd609">47 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;byte[]&#32;<link linkend="class_configure_one_flag_1_1crypto_ab08eafa0fc82a93142425ce8b0edd609_1ab08eafa0fc82a93142425ce8b0edd609">Decrypt</link>(byte[]&#32;buffer,&#32;byte[]&#32;vector)
 48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;decryptor&#32;=&#32;rm.CreateDecryptor(key,&#32;vector);
-50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;this.<link linkend="class_triggers_1_1crypto_afe0024500c9ac06d4f7447a8a87d56ea_1afe0024500c9ac06d4f7447a8a87d56ea">Transform</link>(buffer,&#32;decryptor);
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;this.<link linkend="class_configure_one_flag_1_1crypto_a30315100199127a961d4f0cc59621a04_1a30315100199127a961d4f0cc59621a04">Transform</link>(buffer,&#32;decryptor);
 51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 52 
-<link linkend="class_triggers_1_1crypto_afe0024500c9ac06d4f7447a8a87d56ea_1afe0024500c9ac06d4f7447a8a87d56ea">53 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;byte[]&#32;<link linkend="class_triggers_1_1crypto_afe0024500c9ac06d4f7447a8a87d56ea_1afe0024500c9ac06d4f7447a8a87d56ea">Transform</link>(byte[]&#32;buffer,&#32;ICryptoTransform&#32;transform)
+<link linkend="class_configure_one_flag_1_1crypto_a30315100199127a961d4f0cc59621a04_1a30315100199127a961d4f0cc59621a04">53 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;byte[]&#32;<link linkend="class_configure_one_flag_1_1crypto_a30315100199127a961d4f0cc59621a04_1a30315100199127a961d4f0cc59621a04">Transform</link>(byte[]&#32;buffer,&#32;ICryptoTransform&#32;transform)
 54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;stream&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;MemoryStream();
 56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;cs&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;CryptoStream(stream,&#32;transform,&#32;CryptoStreamMode.Write))

@@ -9,7 +9,7 @@ namespace ConfigureOneFlag
     /// <summary>
     /// Accessor class for the BOM object
     /// </summary>
-    class zCfgBOM
+    public class zCfgBOM
     {
         private string order_num;
         private int order_line_num;
@@ -22,6 +22,7 @@ namespace ConfigureOneFlag
         private decimal unit_cost;
         private decimal discount_amt;
         private decimal quantity;
+        private int priority_level;
         public string CO_Num
         {
             get { return order_num; }
@@ -76,6 +77,11 @@ namespace ConfigureOneFlag
         {
             get { return quantity; }
             set { quantity = value; }
+        }
+        public int PriorityLevel
+        {
+            get { return priority_level; }
+            set { priority_level = value; }
         }
     }
 }

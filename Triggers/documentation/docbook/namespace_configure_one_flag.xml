@@ -6,9 +6,26 @@
             <para>
                 <itemizedlist>
                     <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_c1_dictionaries">ConfigureOneFlag::C1Dictionaries</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
                         <para>struct <link linkend="class_configure_one_flag_1_1_c1_web_service">ConfigureOneFlag::C1WebService</link></para>
 <para><emphasis>&lt;summary&gt;
 Processing for call to ConfigureOne web service and return for further handling
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1crypto">ConfigureOneFlag::crypto</link></para>
+<para><emphasis>&lt;summary&gt;
+Cryptography class providing for the decryption of server connection string culled from server registry
 &lt;/summary&gt;</emphasis></para>
                     </listitem>
                 </itemizedlist>

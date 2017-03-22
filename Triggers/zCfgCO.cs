@@ -9,7 +9,7 @@ namespace ConfigureOneFlag
     /// <summary>
     /// Accessor class for CO object
     /// </summary>
-    class zCfgCO
+    public class zCfgCO
     {
         private string id;
         private string order_num;
@@ -46,6 +46,7 @@ namespace ConfigureOneFlag
         private string ship_to_fax_number;
         private string ship_to_email_address;
         private string ship_to_ref_num;
+        private int priority_level;
         public string Identifier
         {
             get { return id; }
@@ -220,6 +221,11 @@ namespace ConfigureOneFlag
         {
             get { return ship_to_ref_num; }
             set { ship_to_ref_num = value; }
+        }
+        public int PriorityLevel
+        {
+            get { return priority_level; }
+            set { priority_level = value; }
         }
     }
 }

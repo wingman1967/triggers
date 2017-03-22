@@ -2,11 +2,14 @@ var files =
 [
     [ "obj", "dir_43724e81dd40e09f32417973865cdd64.html", "dir_43724e81dd40e09f32417973865cdd64" ],
     [ "Properties", "dir_d051c76eebdc544d9c3d734575641c72.html", "dir_d051c76eebdc544d9c3d734575641c72" ],
+    [ "C1Dictionaries.cs", "_c1_dictionaries_8cs.html", [
+      [ "C1Dictionaries", "class_configure_one_flag_1_1_c1_dictionaries.html", "class_configure_one_flag_1_1_c1_dictionaries" ]
+    ] ],
     [ "C1WebService.cs", "_c1_web_service_8cs.html", [
       [ "C1WebService", "class_configure_one_flag_1_1_c1_web_service.html", "class_configure_one_flag_1_1_c1_web_service" ]
     ] ],
     [ "crypto.cs", "crypto_8cs.html", [
-      [ "crypto", "class_triggers_1_1crypto.html", "class_triggers_1_1crypto" ]
+      [ "crypto", "class_configure_one_flag_1_1crypto.html", "class_configure_one_flag_1_1crypto" ]
     ] ],
     [ "DatabaseFactory.cs", "_database_factory_8cs.html", [
       [ "DatabaseFactory", "class_configure_one_flag_1_1_database_factory.html", "class_configure_one_flag_1_1_database_factory" ]

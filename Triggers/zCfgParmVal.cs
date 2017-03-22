@@ -9,7 +9,7 @@ namespace ConfigureOneFlag
     /// <summary>
     /// Accessor class for the cfg parmValue object (C1 Inputs)
     /// </summary>
-    class zCfgParmVal
+    public class zCfgParmVal
     {
         private string order_num;
         private int order_line_num;
@@ -17,6 +17,7 @@ namespace ConfigureOneFlag
         private string val;
         private string type;
         private string label;
+        private int priority_level;
         public string CO_Num
         {
             get { return order_num; }
@@ -46,6 +47,11 @@ namespace ConfigureOneFlag
         {
             get { return label; }
             set { label = value; }
+        }
+        public int PriorityLevel
+        {
+            get { return priority_level; }
+            set { priority_level = value; }
         }
     }
 }

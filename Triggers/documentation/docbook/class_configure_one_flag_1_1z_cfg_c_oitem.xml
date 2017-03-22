@@ -95,9 +95,22 @@
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int priority_level</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
         <section>
             <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
             <para>
                 <itemizedlist>
                     <listitem>

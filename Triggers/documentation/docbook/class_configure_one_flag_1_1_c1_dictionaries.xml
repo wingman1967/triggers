@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_configure_one_flag_1_1_c1_dictionaries">
+<title>ConfigureOneFlag::C1Dictionaries class Reference</title>
+<para>Inheritance diagram for ConfigureOneFlag::C1Dictionaries</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_configure_one_flag_1_1_c1_dictionaries__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ConfigureOneFlag::C1Dictionaries</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_configure_one_flag_1_1_c1_dictionaries__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static Dictionary&lt; string, string &gt; webmethods</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static Dictionary&lt; string, int &gt; fieldLengths</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_c1_dictionaries_a5fbd06a46c2864f55b7b43946048c3b4_1a5fbd06a46c2864f55b7b43946048c3b4">LoadWMDictionary</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_c1_dictionaries_ac09be8def5557047288f25a46fd85ed9_1ac09be8def5557047288f25a46fd85ed9">LoadDBFLengthDictionary</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="class_configure_one_flag_1_1_c1_dictionaries_ae27861e2b313a9d5e2cf11f8e4c304f5_1ae27861e2b313a9d5e2cf11f8e4c304f5">DBFieldLenCO</link> (
+string field, ref <link linkend="class_configure_one_flag_1_1z_cfg_c_o">zCfgCO</link> co)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="class_configure_one_flag_1_1_c1_dictionaries_a62d37086ac3e73ea188a506c45d1b965_1a62d37086ac3e73ea188a506c45d1b965">DBFieldLenCOItem</link> (
+string field, ref <link linkend="class_configure_one_flag_1_1z_cfg_c_oitem">zCfgCOitem</link> coitem)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="class_configure_one_flag_1_1_c1_dictionaries_af0ae761a8dc88119f05de12eb725bbc1_1af0ae761a8dc88119f05de12eb725bbc1">DBFieldLenCfgItem</link> (
+string field, ref <link linkend="class_configure_one_flag_1_1z_cfg_item">zCfgItem</link> citem)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="class_configure_one_flag_1_1_c1_dictionaries_a2c81b7f3d9a6f3aa4663246c084536c6_1a2c81b7f3d9a6f3aa4663246c084536c6">DBFieldLenParmVal</link> (
+string field, ref <link linkend="class_configure_one_flag_1_1z_cfg_parm_val">zCfgParmVal</link> cfg)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="class_configure_one_flag_1_1_c1_dictionaries_aef02fef832352fba236b3be1375daa4c_1aef02fef832352fba236b3be1375daa4c">DBFieldLenBOM</link> (
+string field, ref <link linkend="class_configure_one_flag_1_1z_cfg_b_o_m">zCfgBOM</link> bom)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="class_configure_one_flag_1_1_c1_dictionaries_a5fbd06a46c2864f55b7b43946048c3b4_1a5fbd06a46c2864f55b7b43946048c3b4">
+                <title>static void ConfigureOneFlag.C1Dictionaries.LoadWMDictionary ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_c1_dictionaries_ac09be8def5557047288f25a46fd85ed9_1ac09be8def5557047288f25a46fd85ed9">
+                <title>static void ConfigureOneFlag.C1Dictionaries.LoadDBFLengthDictionary ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_c1_dictionaries_ae27861e2b313a9d5e2cf11f8e4c304f5_1ae27861e2b313a9d5e2cf11f8e4c304f5">
+                <title>static int ConfigureOneFlag.C1Dictionaries.DBFieldLenCO (string field, ref zCfgCO co)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_c1_dictionaries_a62d37086ac3e73ea188a506c45d1b965_1a62d37086ac3e73ea188a506c45d1b965">
+                <title>static int ConfigureOneFlag.C1Dictionaries.DBFieldLenCOItem (string field, ref zCfgCOitem coitem)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_c1_dictionaries_af0ae761a8dc88119f05de12eb725bbc1_1af0ae761a8dc88119f05de12eb725bbc1">
+                <title>static int ConfigureOneFlag.C1Dictionaries.DBFieldLenCfgItem (string field, ref zCfgItem citem)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_c1_dictionaries_a2c81b7f3d9a6f3aa4663246c084536c6_1a2c81b7f3d9a6f3aa4663246c084536c6">
+                <title>static int ConfigureOneFlag.C1Dictionaries.DBFieldLenParmVal (string field, ref zCfgParmVal cfg)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_c1_dictionaries_aef02fef832352fba236b3be1375daa4c_1aef02fef832352fba236b3be1375daa4c">
+                <title>static int ConfigureOneFlag.C1Dictionaries.DBFieldLenBOM (string field, ref zCfgBOM bom)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

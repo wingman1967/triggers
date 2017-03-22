@@ -1,0 +1,223 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_c1_dictionaries_8cs">
+    <title>C1Dictionaries.cs File Reference</title>
+<para>Include dependency diagram for C1Dictionaries.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_c1_dictionaries_8cs__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for C1Dictionaries.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_c1_dictionaries_8cs__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_c1_dictionaries">ConfigureOneFlag::C1Dictionaries</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_configure_one_flag">ConfigureOneFlag</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system">System</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system_1_1_collections_1_1_generic">System::Collections::Generic</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system_1_1_linq">System::Linq</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system_1_1_text">System::Text</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file C:/Users/hinesj/Documents/Visual Studio 2015/Projects/Triggers/Triggers/C1Dictionaries.cs</para>
+    </simplesect>
+    <literallayout><computeroutput>
+1 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>;
+2 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Collections.Generic;
+3 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Linq;
+4 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Text;
+5 
+<link linkend="namespace_configure_one_flag">6 </link><emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>
+7 {
+<link linkend="class_configure_one_flag_1_1_c1_dictionaries">8 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_configure_one_flag_1_1_c1_dictionaries">C1Dictionaries</link>
+9 &#32;&#32;&#32;&#32;{
+<link linkend="class_configure_one_flag_1_1_c1_dictionaries_a192b4ea45e2b5d46ed02929db9c9d320_1a192b4ea45e2b5d46ed02929db9c9d320">10 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;Dictionary&lt;string,&#32;string&gt;&#32;<link linkend="class_configure_one_flag_1_1_c1_dictionaries_a192b4ea45e2b5d46ed02929db9c9d320_1a192b4ea45e2b5d46ed02929db9c9d320">webmethods</link>&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;Dictionary&lt;string,&#32;string&gt;();
+<link linkend="class_configure_one_flag_1_1_c1_dictionaries_a1652a36e934b6107a2b2456c224d5655_1a1652a36e934b6107a2b2456c224d5655">11 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;Dictionary&lt;string,&#32;int&gt;&#32;<link linkend="class_configure_one_flag_1_1_c1_dictionaries_a1652a36e934b6107a2b2456c224d5655_1a1652a36e934b6107a2b2456c224d5655">fieldLengths</link>&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;Dictionary&lt;string,&#32;int&gt;();
+<link linkend="class_configure_one_flag_1_1_c1_dictionaries_a5fbd06a46c2864f55b7b43946048c3b4_1a5fbd06a46c2864f55b7b43946048c3b4">12 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_dictionaries_a5fbd06a46c2864f55b7b43946048c3b4_1a5fbd06a46c2864f55b7b43946048c3b4">LoadWMDictionary</link>()
+13 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+14 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;webmethods.Clear();
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;webmethods.Add(<emphasis class="stringliteral">&quot;getOrder&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getOrder&quot;</emphasis>);
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;webmethods.Add(<emphasis class="stringliteral">&quot;updateOrder&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=updateOrder&quot;</emphasis>);
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;webmethods.Add(<emphasis class="stringliteral">&quot;getConfiguration&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getConfiguration&quot;</emphasis>);
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_c1_dictionaries_ac09be8def5557047288f25a46fd85ed9_1ac09be8def5557047288f25a46fd85ed9">19 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_dictionaries_ac09be8def5557047288f25a46fd85ed9_1ac09be8def5557047288f25a46fd85ed9">LoadDBFLengthDictionary</link>()
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Clear();
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//BOM&#32;Fields</emphasis>
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;BOM:order_num&quot;</emphasis>,&#32;15);
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;BOM:parent_id&quot;</emphasis>,&#32;20);
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;BOM:id&quot;</emphasis>,&#32;20);
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;BOM:item_num&quot;</emphasis>,&#32;40);
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;BOM:smartpart_num&quot;</emphasis>,&#32;40);
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//CO&#32;Fields</emphasis>
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:id&quot;</emphasis>,&#32;15);
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:order_num&quot;</emphasis>,&#32;15);
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:order_ref_num&quot;</emphasis>,&#32;15);
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:cust_name&quot;</emphasis>,&#32;1024);
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:cust_ref_num&quot;</emphasis>,&#32;15);
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:account_num&quot;</emphasis>,&#32;15);
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:erp_reference_num&quot;</emphasis>,&#32;15);
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:project&quot;</emphasis>,&#32;1024);
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:payment_terms&quot;</emphasis>,&#32;15);
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:ship_via&quot;</emphasis>,&#32;15);
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:shipping_terms&quot;</emphasis>,&#32;40);
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:bill_to_contact_name&quot;</emphasis>,&#32;40);
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:bill_address_line_1&quot;</emphasis>,&#32;40);
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:bill_address_line_2&quot;</emphasis>,&#32;40);
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:bill_address_line_3&quot;</emphasis>,&#32;40);
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:bill_to_city&quot;</emphasis>,&#32;40);
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:bill_to_state&quot;</emphasis>,&#32;40);
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:bill_to_country&quot;</emphasis>,&#32;40);
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:bill_to_postal_code&quot;</emphasis>,&#32;15);
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:bill_to_phone_number&quot;</emphasis>,&#32;25);
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:bill_to_fax_number&quot;</emphasis>,&#32;25);
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:bill_to_email_address&quot;</emphasis>,&#32;60);
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:bill_to_ref_num&quot;</emphasis>,&#32;15);
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:ship_to_contact_name&quot;</emphasis>,&#32;40);
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:ship_address_line_1&quot;</emphasis>,&#32;40);
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:ship_address_line_2&quot;</emphasis>,&#32;40);
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:ship_address_line_3&quot;</emphasis>,&#32;40);
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:ship_to_city&quot;</emphasis>,&#32;40);
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:ship_to_state&quot;</emphasis>,&#32;40);
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:ship_to_country&quot;</emphasis>,&#32;40);
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:ship_to_postal_code&quot;</emphasis>,&#32;15);
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:ship_to_phone_number&quot;</emphasis>,&#32;25);
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:ship_to_fax_number&quot;</emphasis>,&#32;25);
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:ship_to_email_address&quot;</emphasis>,&#32;60);
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:ship_to_ref_num&quot;</emphasis>,&#32;15);
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//COITEM&#32;Fields</emphasis>
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;COItem:order_num&quot;</emphasis>,&#32;15);
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;COItem:ser_num&quot;</emphasis>,&#32;15);
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;COItem:item_num&quot;</emphasis>,&#32;30);
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;COItem:smartpart_num&quot;</emphasis>,&#32;30);
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;COItem:description&quot;</emphasis>,&#32;40);
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//CfgItem&#32;Fields</emphasis>
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CfgItem:order_num&quot;</emphasis>,&#32;15);
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CfgItem:smartpart_num&quot;</emphasis>,&#32;40);
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CfgItem:item_num&quot;</emphasis>,&#32;40);
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CfgItem:description&quot;</emphasis>,&#32;40);
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CfgItem:uom&quot;</emphasis>,&#32;10);
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//CfgParmVal&#32;Fields</emphasis>
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CfgParmVal:order_num&quot;</emphasis>,&#32;15);
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CfgParmVal:name&quot;</emphasis>,&#32;255);
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CfgParmVal:value&quot;</emphasis>,&#32;1024);
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CfgParmVal:type&quot;</emphasis>,&#32;15);
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CfgParmVal:label&quot;</emphasis>,&#32;255);
+82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_c1_dictionaries_ae27861e2b313a9d5e2cf11f8e4c304f5_1ae27861e2b313a9d5e2cf11f8e4c304f5">83 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_dictionaries_ae27861e2b313a9d5e2cf11f8e4c304f5_1ae27861e2b313a9d5e2cf11f8e4c304f5">DBFieldLenCO</link>(<emphasis class="keywordtype">string</emphasis>&#32;field,&#32;ref&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o">zCfgCO</link>&#32;co)
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;fieldlength&#32;=&#32;(!fieldLengths.ContainsKey(field))&#32;?&#32;15&#32;:&#32;fieldLengths[field];
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(field)
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;CO:bill_to_phone_number&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(co.BillToPhoneNumber.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;co.BillToPhoneNumber.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;CO:ship_via&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(co.ShipVia.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;co.ShipVia.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;CO:shipping_terms&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(co.ShippingTerms.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;co.ShippingTerms.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;CO:bill_to_fax_number&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(co.BillToFaxNumber.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;co.BillToFaxNumber.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;fieldlength;
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_c1_dictionaries_a62d37086ac3e73ea188a506c45d1b965_1a62d37086ac3e73ea188a506c45d1b965">95 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_dictionaries_a62d37086ac3e73ea188a506c45d1b965_1a62d37086ac3e73ea188a506c45d1b965">DBFieldLenCOItem</link>(<emphasis class="keywordtype">string</emphasis>&#32;field,&#32;ref&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem">zCfgCOitem</link>&#32;coitem)
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;fieldlength&#32;=&#32;(!fieldLengths.ContainsKey(field))&#32;?&#32;15&#32;:&#32;fieldLengths[field];
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(field)
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;COItem:ser_num&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(coitem.Serial.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;coitem.Serial.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;COItem:item_num&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(coitem.Item.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;coitem.Item.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;COItem:smartpart_num&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(coitem.Smartpart.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;coitem.Smartpart.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;COItem:description&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(coitem.Desc.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;coitem.Desc.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;fieldlength;
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_c1_dictionaries_af0ae761a8dc88119f05de12eb725bbc1_1af0ae761a8dc88119f05de12eb725bbc1">107 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_dictionaries_af0ae761a8dc88119f05de12eb725bbc1_1af0ae761a8dc88119f05de12eb725bbc1">DBFieldLenCfgItem</link>(<emphasis class="keywordtype">string</emphasis>&#32;field,&#32;ref&#32;<link linkend="class_configure_one_flag_1_1z_cfg_item">zCfgItem</link>&#32;citem)
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;fieldlength&#32;=&#32;(!fieldLengths.ContainsKey(field))&#32;?&#32;15&#32;:&#32;fieldLengths[field];
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(field)
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;CfgItem:smartpart_num&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(citem.Smartpart.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;citem.Smartpart.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;CfgItem:item_num&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(citem.Item.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;citem.Item.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;CfgItem:description&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(citem.Desc.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;citem.Desc.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;CfgItem:uom&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(citem.UnitOfMeasure.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;citem.UnitOfMeasure.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;fieldlength;
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_c1_dictionaries_a2c81b7f3d9a6f3aa4663246c084536c6_1a2c81b7f3d9a6f3aa4663246c084536c6">119 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_dictionaries_a2c81b7f3d9a6f3aa4663246c084536c6_1a2c81b7f3d9a6f3aa4663246c084536c6">DBFieldLenParmVal</link>(<emphasis class="keywordtype">string</emphasis>&#32;field,&#32;ref&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val">zCfgParmVal</link>&#32;cfg)
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;fieldlength&#32;=&#32;(!fieldLengths.ContainsKey(field))&#32;?&#32;15&#32;:&#32;fieldLengths[field];
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(field)
+123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;CfgParmVal:name&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(cfg.CName.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;cfg.CName.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
+125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;CfgParmVal:value&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(cfg.CValue.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;cfg.CValue.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
+126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;CfgParmVal:type&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(cfg.CType.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;cfg.CType.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
+127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;CfgParmVal:label&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(cfg.CLabel.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;cfg.CLabel.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;fieldlength;
+130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_c1_dictionaries_aef02fef832352fba236b3be1375daa4c_1aef02fef832352fba236b3be1375daa4c">131 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_dictionaries_aef02fef832352fba236b3be1375daa4c_1aef02fef832352fba236b3be1375daa4c">DBFieldLenBOM</link>(<emphasis class="keywordtype">string</emphasis>&#32;field,&#32;ref&#32;<link linkend="class_configure_one_flag_1_1z_cfg_b_o_m">zCfgBOM</link>&#32;bom)
+132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;fieldlength&#32;=&#32;(!fieldLengths.ContainsKey(field))&#32;?&#32;15&#32;:&#32;fieldLengths[field];
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(field)
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;BOM:id&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(bom.Identifier.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;bom.Identifier.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;BOM:item_num&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(bom.Item.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;bom.Item.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;BOM:smartpart_num&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(bom.Smartpart.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;bom.Smartpart.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;fieldlength;
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+142 &#32;&#32;&#32;&#32;}
+143 }
+    </computeroutput></literallayout>
+</section>

@@ -28,16 +28,6 @@
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>static Dictionary&lt; string, string &gt; webmethods</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-        </section>
-        <section>
-            <title></title>
-            <para>
-                <itemizedlist>
-                    <listitem>
                         <para>static string wsReturn</para>
                     </listitem>
                 </itemizedlist>

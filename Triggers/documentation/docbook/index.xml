@@ -25,12 +25,12 @@
         <xi:include href="namespace_system_1_1_security_1_1_cryptography.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_text.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_xml.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-        <xi:include href="namespace_triggers.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     </chapter>
     <chapter>
         <title>Class Documentation</title>
+        <xi:include href="class_configure_one_flag_1_1_c1_dictionaries.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1_c1_web_service.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-        <xi:include href="class_triggers_1_1crypto.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_configure_one_flag_1_1crypto.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1_database_factory.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1_staging_utilities.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1_triggers.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -42,6 +42,7 @@
     </chapter>
     <chapter>
         <title>File Documentation</title>
+        <xi:include href="_c1_dictionaries_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="_c1_web_service_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="crypto_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="_database_factory_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

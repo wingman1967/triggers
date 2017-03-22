@@ -13,7 +13,9 @@ namespace ConfigureOneFlag
     /// </summary>
     public class Triggers
     {
-        static Dictionary<string, string> webmethods = new Dictionary<string, string>();
+        //public static Dictionary<string, string> webmethods = new Dictionary<string, string>();
+        
+
         public static string wsReturn;
         public static string caller = "";
         public static string C1URL;
@@ -31,9 +33,18 @@ namespace ConfigureOneFlag
                                     
             logEvent = "TRIGGER FIRING ON INSERT";
             System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-            webmethods.Add("getOrder", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getOrder");
-            webmethods.Add("updateOrder", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=updateOrder");
-            webmethods.Add("getConfiguration", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getConfiguration");
+
+            switch (C1Dictionaries.webmethods.ContainsKey("getOrder"))
+            {
+                case false:
+                    C1Dictionaries.LoadWMDictionary();
+                    C1Dictionaries.LoadDBFLengthDictionary();
+                    break;
+                default:
+                    //dictionary already loaded
+                    break;
+            }
+           
             string orderNum;
             string orderValue = "";
             SqlTriggerContext triggContext = SqlContext.TriggerContext;
@@ -62,9 +73,9 @@ namespace ConfigureOneFlag
             string useMethod = "";
             string key = "getOrder";
 
-            if (webmethods.ContainsKey(key))
+            if (C1Dictionaries.webmethods.ContainsKey(key))
             {
-                useMethod = webmethods[key];
+                useMethod = C1Dictionaries.webmethods[key];
                 C1URL = useMethod;
             }
 
@@ -74,7 +85,7 @@ namespace ConfigureOneFlag
             orderNum = orderValue;
             string xmlPayload = "<soap:Envelope xmlns:xsi=" + (char)34 + "http://www.w3.org/2001/XMLSchema-instance" + (char)34 + " xmlns:xsd=" + (char)34 + "http://www.w3.org/2001/XMLSchema" + (char)34 + " xmlns:soap=" + (char)34 + "http://schemas.xmlsoap.org/soap/envelope/" + (char)34 + ">" + "<soap:Body><" + key + " xmlns=" + (char)34 + "http://ws.configureone.com" + (char)34 + "><orderNum>" + orderNum + "</orderNum></" + key + "></soap:Body></soap:Envelope>";
             C1WebService.CallConfigureOne(key, xmlPayload, C1URL);
-            webmethods.Clear();
+            //webmethods.Clear();
             logEvent = "PROCESSING COMPLETE FOR ORDER: " + orderValue;
             System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
         }

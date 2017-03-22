@@ -1,6 +1,8 @@
 var namespace_configure_one_flag =
 [
+    [ "C1Dictionaries", "class_configure_one_flag_1_1_c1_dictionaries.html", "class_configure_one_flag_1_1_c1_dictionaries" ],
     [ "C1WebService", "class_configure_one_flag_1_1_c1_web_service.html", "class_configure_one_flag_1_1_c1_web_service" ],
+    [ "crypto", "class_configure_one_flag_1_1crypto.html", "class_configure_one_flag_1_1crypto" ],
     [ "DatabaseFactory", "class_configure_one_flag_1_1_database_factory.html", "class_configure_one_flag_1_1_database_factory" ],
     [ "StagingUtilities", "class_configure_one_flag_1_1_staging_utilities.html", "class_configure_one_flag_1_1_staging_utilities" ],
     [ "Triggers", "class_configure_one_flag_1_1_triggers.html", "class_configure_one_flag_1_1_triggers" ],

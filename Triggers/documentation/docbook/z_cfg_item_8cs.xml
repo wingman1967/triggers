@@ -59,7 +59,7 @@ Accessor class for the item-master object
 6 
 7 <emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>
 8 {
-<link linkend="class_configure_one_flag_1_1z_cfg_item">12 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_configure_one_flag_1_1z_cfg_item">zCfgItem</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_item">12 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_configure_one_flag_1_1z_cfg_item">zCfgItem</link>
 13 &#32;&#32;&#32;&#32;{
 <link linkend="class_configure_one_flag_1_1z_cfg_item_a6ad601018abae85dda6f5f980c75fb94_1a6ad601018abae85dda6f5f980c75fb94">14 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_item_a6ad601018abae85dda6f5f980c75fb94_1a6ad601018abae85dda6f5f980c75fb94">order_num</link>;
 <link linkend="class_configure_one_flag_1_1z_cfg_item_a4f15c74dd5a7a73fd1e954cadc885f93_1a4f15c74dd5a7a73fd1e954cadc885f93">15 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_item_a4f15c74dd5a7a73fd1e954cadc885f93_1a4f15c74dd5a7a73fd1e954cadc885f93">order_line_num</link>;
@@ -72,7 +72,7 @@ Accessor class for the item-master object
 <link linkend="class_configure_one_flag_1_1z_cfg_item_af4df6262fcf395e8689c1b0bf78c0713_1af4df6262fcf395e8689c1b0bf78c0713">22 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;decimal&#32;<link linkend="class_configure_one_flag_1_1z_cfg_item_af4df6262fcf395e8689c1b0bf78c0713_1af4df6262fcf395e8689c1b0bf78c0713">sell_price</link>;
 <link linkend="class_configure_one_flag_1_1z_cfg_item_a2d4254e52ac673543f5cfc66a1eb8099_1a2d4254e52ac673543f5cfc66a1eb8099">23 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;decimal&#32;<link linkend="class_configure_one_flag_1_1z_cfg_item_a2d4254e52ac673543f5cfc66a1eb8099_1a2d4254e52ac673543f5cfc66a1eb8099">weight</link>;
 <link linkend="class_configure_one_flag_1_1z_cfg_item_abb24286c96deec6cb4ff62178612b57d_1abb24286c96deec6cb4ff62178612b57d">24 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_item_abb24286c96deec6cb4ff62178612b57d_1abb24286c96deec6cb4ff62178612b57d">uom</link>;
-25 
+<link linkend="class_configure_one_flag_1_1z_cfg_item_aaad69ec53b65adbf26e6f6ea5ad09e25_1aaad69ec53b65adbf26e6f6ea5ad09e25">25 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_item_aaad69ec53b65adbf26e6f6ea5ad09e25_1aaad69ec53b65adbf26e6f6ea5ad09e25">priority_level</link>;
 26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_item_a1b858658209c98300a20abe371773648_1a1b858658209c98300a20abe371773648">CO_Num</link>
 <link linkend="class_configure_one_flag_1_1z_cfg_item_a1b858658209c98300a20abe371773648_1a1b858658209c98300a20abe371773648">27 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_item_a6ad601018abae85dda6f5f980c75fb94_1a6ad601018abae85dda6f5f980c75fb94">order_num</link>;&#32;}
@@ -128,7 +128,12 @@ Accessor class for the item-master object
 78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_item_abb24286c96deec6cb4ff62178612b57d_1abb24286c96deec6cb4ff62178612b57d">uom</link>;&#32;}
 79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;uom&#32;=&#32;value;&#32;}
 80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-81 &#32;&#32;&#32;&#32;}
-82 }
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_item_a11a47b878087e8f624839defc1369567_1a11a47b878087e8f624839defc1369567">PriorityLevel</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_item_a11a47b878087e8f624839defc1369567_1a11a47b878087e8f624839defc1369567">82 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_item_aaad69ec53b65adbf26e6f6ea5ad09e25_1aaad69ec53b65adbf26e6f6ea5ad09e25">priority_level</link>;&#32;}
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;priority_level&#32;=&#32;value;&#32;}
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+86 &#32;&#32;&#32;&#32;}
+87 }
     </computeroutput></literallayout>
 </section>

@@ -1,0 +1,92 @@
+.TH "ConfigureOneFlag.crypto" 3 "Wed Mar 22 2017" "ConfigureOne Trigger" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ConfigureOneFlag.crypto \- Cryptography class providing for the decryption of server connection string culled from server registry  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBDecryptCS\fP (string cipherText, string sKey)"
+.br
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "byte [] \fBEncrypt\fP (byte[] buffer, byte[] vector)"
+.br
+.ti -1c
+.RI "byte [] \fBDecrypt\fP (byte[] buffer, byte[] vector)"
+.br
+.ti -1c
+.RI "byte [] \fBTransform\fP (byte[] buffer, ICryptoTransform transform)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "Random \fBrandom\fP"
+.br
+.ti -1c
+.RI "byte [] \fBkey\fP"
+.br
+.ti -1c
+.RI "RijndaelManaged \fBrm\fP"
+.br
+.ti -1c
+.RI "UTF8Encoding \fBencoder\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Cryptography class providing for the decryption of server connection string culled from server registry 
+
+
+.PP
+Definition at line 16 of file crypto\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "byte [] ConfigureOneFlag\&.crypto\&.Decrypt (byte [] buffer, byte [] vector)\fC [private]\fP"
+
+.PP
+Definition at line 47 of file crypto\&.cs\&.
+.SS "void ConfigureOneFlag\&.crypto\&.DecryptCS (string cipherText, string sKey)"
+
+.PP
+Definition at line 22 of file crypto\&.cs\&.
+.SS "byte [] ConfigureOneFlag\&.crypto\&.Encrypt (byte [] buffer, byte [] vector)\fC [private]\fP"
+
+.PP
+Definition at line 41 of file crypto\&.cs\&.
+.SS "byte [] ConfigureOneFlag\&.crypto\&.Transform (byte [] buffer, ICryptoTransform transform)\fC [private]\fP"
+
+.PP
+Definition at line 53 of file crypto\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "UTF8Encoding ConfigureOneFlag\&.crypto\&.encoder\fC [private]\fP"
+
+.PP
+Definition at line 21 of file crypto\&.cs\&.
+.SS "byte [] ConfigureOneFlag\&.crypto\&.key\fC [private]\fP"
+
+.PP
+Definition at line 19 of file crypto\&.cs\&.
+.SS "Random ConfigureOneFlag\&.crypto\&.random\fC [private]\fP"
+
+.PP
+Definition at line 18 of file crypto\&.cs\&.
+.SS "RijndaelManaged ConfigureOneFlag\&.crypto\&.rm\fC [private]\fP"
+
+.PP
+Definition at line 20 of file crypto\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ConfigureOne Trigger from the source code\&.

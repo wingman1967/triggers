@@ -6,6 +6,7 @@ var class_configure_one_flag_1_1z_cfg_item =
     [ "order_line_num", "class_configure_one_flag_1_1z_cfg_item_a4f15c74dd5a7a73fd1e954cadc885f93.html#a4f15c74dd5a7a73fd1e954cadc885f93", null ],
     [ "order_num", "class_configure_one_flag_1_1z_cfg_item_a6ad601018abae85dda6f5f980c75fb94.html#a6ad601018abae85dda6f5f980c75fb94", null ],
     [ "price", "class_configure_one_flag_1_1z_cfg_item_a25481e050b3296b5f968b506547699bd.html#a25481e050b3296b5f968b506547699bd", null ],
+    [ "priority_level", "class_configure_one_flag_1_1z_cfg_item_aaad69ec53b65adbf26e6f6ea5ad09e25.html#aaad69ec53b65adbf26e6f6ea5ad09e25", null ],
     [ "sell_price", "class_configure_one_flag_1_1z_cfg_item_af4df6262fcf395e8689c1b0bf78c0713.html#af4df6262fcf395e8689c1b0bf78c0713", null ],
     [ "seq", "class_configure_one_flag_1_1z_cfg_item_ad0ba2016bedf7d9f57391bf2275b9c04.html#ad0ba2016bedf7d9f57391bf2275b9c04", null ],
     [ "smartpart_num", "class_configure_one_flag_1_1z_cfg_item_af5e6b0bff7c2c0643de4e36429e1e19e.html#af5e6b0bff7c2c0643de4e36429e1e19e", null ],
@@ -19,6 +20,7 @@ var class_configure_one_flag_1_1z_cfg_item =
     [ "ItemPrice", "class_configure_one_flag_1_1z_cfg_item_a87ca4e88e98a33d8d38ec65931a81204.html#a87ca4e88e98a33d8d38ec65931a81204", null ],
     [ "ItemSellPrice", "class_configure_one_flag_1_1z_cfg_item_a86ec84c1ed65f8000ea68d7a80d13710.html#a86ec84c1ed65f8000ea68d7a80d13710", null ],
     [ "ItemWeight", "class_configure_one_flag_1_1z_cfg_item_ab90e9242ce379a47ecf335a64e541625.html#ab90e9242ce379a47ecf335a64e541625", null ],
+    [ "PriorityLevel", "class_configure_one_flag_1_1z_cfg_item_a11a47b878087e8f624839defc1369567.html#a11a47b878087e8f624839defc1369567", null ],
     [ "Sequence", "class_configure_one_flag_1_1z_cfg_item_a49c17dba662c33cd9d097c246665f6fa.html#a49c17dba662c33cd9d097c246665f6fa", null ],
     [ "Smartpart", "class_configure_one_flag_1_1z_cfg_item_a8a4daeea26ed0164b51680f9facfb316.html#a8a4daeea26ed0164b51680f9facfb316", null ],
     [ "UnitOfMeasure", "class_configure_one_flag_1_1z_cfg_item_a23697e9c7d051d3141bc4358b198060b.html#a23697e9c7d051d3141bc4358b198060b", null ]

@@ -1,4 +1,4 @@
-.TH "ConfigureOneFlag.zCfgCO" 3 "Fri Mar 17 2017" "ConfigureOne Trigger" \" -*- nroff -*-
+.TH "ConfigureOneFlag.zCfgCO" 3 "Wed Mar 22 2017" "ConfigureOne Trigger" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -115,6 +115,9 @@ ConfigureOneFlag.zCfgCO \- Accessor class for CO object
 .ti -1c
 .RI "string \fBShipToRefNum\fP\fC [get, set]\fP"
 .br
+.ti -1c
+.RI "int \fBPriorityLevel\fP\fC [get, set]\fP"
+.br
 .in -1c
 .SS "Private Attributes"
 
@@ -224,6 +227,9 @@ ConfigureOneFlag.zCfgCO \- Accessor class for CO object
 .ti -1c
 .RI "string \fBship_to_ref_num\fP"
 .br
+.ti -1c
+.RI "int \fBpriority_level\fP"
+.br
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -314,6 +320,10 @@ Definition at line 16 of file zCfgCO\&.cs\&.
 
 .PP
 Definition at line 22 of file zCfgCO\&.cs\&.
+.SS "int ConfigureOneFlag\&.zCfgCO\&.priority_level\fC [private]\fP"
+
+.PP
+Definition at line 49 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.project\fC [private]\fP"
 
 .PP
@@ -379,143 +389,147 @@ Definition at line 24 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.AccountNum\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 75 of file zCfgCO\&.cs\&.
+Definition at line 76 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.BillToAddressLine1\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 110 of file zCfgCO\&.cs\&.
+Definition at line 111 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.BillToAddressLine2\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 115 of file zCfgCO\&.cs\&.
+Definition at line 116 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.BillToAddressLine3\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 120 of file zCfgCO\&.cs\&.
+Definition at line 121 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.BillToCity\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 125 of file zCfgCO\&.cs\&.
+Definition at line 126 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.BillToContactName\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 105 of file zCfgCO\&.cs\&.
+Definition at line 106 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.BillToCountry\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 135 of file zCfgCO\&.cs\&.
+Definition at line 136 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.BillToEmailAddress\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 155 of file zCfgCO\&.cs\&.
+Definition at line 156 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.BillToFaxNumber\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 150 of file zCfgCO\&.cs\&.
+Definition at line 151 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.BillToPhoneNumber\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 145 of file zCfgCO\&.cs\&.
+Definition at line 146 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.BillToPostalCode\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 140 of file zCfgCO\&.cs\&.
+Definition at line 141 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.BillToRefNum\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 160 of file zCfgCO\&.cs\&.
+Definition at line 161 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.BillToState\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 130 of file zCfgCO\&.cs\&.
+Definition at line 131 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.CO_Num\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 55 of file zCfgCO\&.cs\&.
+Definition at line 56 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.CORefNum\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 60 of file zCfgCO\&.cs\&.
+Definition at line 61 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.CustName\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 65 of file zCfgCO\&.cs\&.
+Definition at line 66 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.CustRefNum\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 70 of file zCfgCO\&.cs\&.
+Definition at line 71 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.ErpReferenceNum\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 80 of file zCfgCO\&.cs\&.
+Definition at line 81 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.Identifier\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 50 of file zCfgCO\&.cs\&.
+Definition at line 51 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.PaymentTerms\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 90 of file zCfgCO\&.cs\&.
+Definition at line 91 of file zCfgCO\&.cs\&.
+.SS "int ConfigureOneFlag\&.zCfgCO\&.PriorityLevel\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 226 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.Project\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 85 of file zCfgCO\&.cs\&.
+Definition at line 86 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.ShippingTerms\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 100 of file zCfgCO\&.cs\&.
+Definition at line 101 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToAddressLine1\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 170 of file zCfgCO\&.cs\&.
+Definition at line 171 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToAddressLine2\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 175 of file zCfgCO\&.cs\&.
+Definition at line 176 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToAddressLine3\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 180 of file zCfgCO\&.cs\&.
+Definition at line 181 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToCity\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 185 of file zCfgCO\&.cs\&.
+Definition at line 186 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToContactName\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 165 of file zCfgCO\&.cs\&.
+Definition at line 166 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToCountry\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 195 of file zCfgCO\&.cs\&.
+Definition at line 196 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToEmailAddress\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 215 of file zCfgCO\&.cs\&.
+Definition at line 216 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToFaxNumber\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 210 of file zCfgCO\&.cs\&.
+Definition at line 211 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToPhoneNumber\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 205 of file zCfgCO\&.cs\&.
+Definition at line 206 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToPostalCode\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 200 of file zCfgCO\&.cs\&.
+Definition at line 201 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToRefNum\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 220 of file zCfgCO\&.cs\&.
+Definition at line 221 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.ShipToState\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 190 of file zCfgCO\&.cs\&.
+Definition at line 191 of file zCfgCO\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCO\&.ShipVia\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 95 of file zCfgCO\&.cs\&.
+Definition at line 96 of file zCfgCO\&.cs\&.
 
 .SH "Author"
 .PP 

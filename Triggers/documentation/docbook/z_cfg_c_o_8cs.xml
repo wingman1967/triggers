@@ -59,7 +59,7 @@ Accessor class for CO object
 6 
 7 <emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>
 8 {
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o">12 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_configure_one_flag_1_1z_cfg_c_o">zCfgCO</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o">12 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_configure_one_flag_1_1z_cfg_c_o">zCfgCO</link>
 13 &#32;&#32;&#32;&#32;{
 <link linkend="class_configure_one_flag_1_1z_cfg_c_o_aa5d7380d7c1927c01fdd5d0ee84bbf56_1aa5d7380d7c1927c01fdd5d0ee84bbf56">14 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aa5d7380d7c1927c01fdd5d0ee84bbf56_1aa5d7380d7c1927c01fdd5d0ee84bbf56">id</link>;
 <link linkend="class_configure_one_flag_1_1z_cfg_c_o_a69d09502706566eb1c28a6cbea193a37_1a69d09502706566eb1c28a6cbea193a37">15 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a69d09502706566eb1c28a6cbea193a37_1a69d09502706566eb1c28a6cbea193a37">order_num</link>;
@@ -96,182 +96,188 @@ Accessor class for CO object
 <link linkend="class_configure_one_flag_1_1z_cfg_c_o_a9b62dcca3e1bae00f8b68a44c01a45c2_1a9b62dcca3e1bae00f8b68a44c01a45c2">46 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a9b62dcca3e1bae00f8b68a44c01a45c2_1a9b62dcca3e1bae00f8b68a44c01a45c2">ship_to_fax_number</link>;
 <link linkend="class_configure_one_flag_1_1z_cfg_c_o_a405754cf04096a8412abc9215aaf4ed2_1a405754cf04096a8412abc9215aaf4ed2">47 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a405754cf04096a8412abc9215aaf4ed2_1a405754cf04096a8412abc9215aaf4ed2">ship_to_email_address</link>;
 <link linkend="class_configure_one_flag_1_1z_cfg_c_o_ac7f9fb24708c8d8812f001c783cd351e_1ac7f9fb24708c8d8812f001c783cd351e">48 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ac7f9fb24708c8d8812f001c783cd351e_1ac7f9fb24708c8d8812f001c783cd351e">ship_to_ref_num</link>;
-49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a89800eb611a25390f869303195558b7e_1a89800eb611a25390f869303195558b7e">Identifier</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a89800eb611a25390f869303195558b7e_1a89800eb611a25390f869303195558b7e">50 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aa5d7380d7c1927c01fdd5d0ee84bbf56_1aa5d7380d7c1927c01fdd5d0ee84bbf56">id</link>;&#32;}
-52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<emphasis class="keywordtype">id</emphasis>&#32;=&#32;value;&#32;}
-53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a2b92c69b60edbdb13fb03c8c52ab0a87_1a2b92c69b60edbdb13fb03c8c52ab0a87">CO_Num</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a2b92c69b60edbdb13fb03c8c52ab0a87_1a2b92c69b60edbdb13fb03c8c52ab0a87">55 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a69d09502706566eb1c28a6cbea193a37_1a69d09502706566eb1c28a6cbea193a37">order_num</link>;&#32;}
-57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;order_num&#32;=&#32;value;&#32;}
-58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ab8ec1eafe29fea515f3f217c65610005_1ab8ec1eafe29fea515f3f217c65610005">CORefNum</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ab8ec1eafe29fea515f3f217c65610005_1ab8ec1eafe29fea515f3f217c65610005">60 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a3123fbb1c8faee40acb1c61b42a736a6_1a3123fbb1c8faee40acb1c61b42a736a6">order_ref_num</link>;&#32;}
-62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;order_ref_num&#32;=&#32;value;&#32;}
-63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aec46342f1eee1b25eae3dbaebcc9b4b5_1aec46342f1eee1b25eae3dbaebcc9b4b5">CustName</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aec46342f1eee1b25eae3dbaebcc9b4b5_1aec46342f1eee1b25eae3dbaebcc9b4b5">65 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aa1c806cf2c8c3be79ca542b068a081c2_1aa1c806cf2c8c3be79ca542b068a081c2">cust_name</link>;&#32;}
-67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;cust_name&#32;=&#32;value;&#32;}
-68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a9bbe34e4fc0dfd9a806169592d3a5340_1a9bbe34e4fc0dfd9a806169592d3a5340">CustRefNum</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a9bbe34e4fc0dfd9a806169592d3a5340_1a9bbe34e4fc0dfd9a806169592d3a5340">70 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a735f1bfa24400689f3b53fcc94265ea1_1a735f1bfa24400689f3b53fcc94265ea1">cust_ref_num</link>;&#32;}
-72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;cust_ref_num&#32;=&#32;value;&#32;}
-73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a9da40b96702c70de289734bfe9cef1b7_1a9da40b96702c70de289734bfe9cef1b7">AccountNum</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a9da40b96702c70de289734bfe9cef1b7_1a9da40b96702c70de289734bfe9cef1b7">75 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a949cef1a81eab5b64212cc7c5410485a_1a949cef1a81eab5b64212cc7c5410485a">account_num</link>;&#32;}
-77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;account_num&#32;=&#32;value;&#32;}
-78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_abdec79d861233c03935f5b80c87c6267_1abdec79d861233c03935f5b80c87c6267">ErpReferenceNum</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_abdec79d861233c03935f5b80c87c6267_1abdec79d861233c03935f5b80c87c6267">80 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a639c2289a831881f84b2b45f017d1d0a_1a639c2289a831881f84b2b45f017d1d0a">erp_reference_num</link>;&#32;}
-82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;erp_reference_num&#32;=&#32;value;&#32;}
-83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a2f63b9d5f9f991f816495c181441c451_1a2f63b9d5f9f991f816495c181441c451">Project</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a2f63b9d5f9f991f816495c181441c451_1a2f63b9d5f9f991f816495c181441c451">85 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a29094a943602bc64b01a493d548d7656_1a29094a943602bc64b01a493d548d7656">project</link>;&#32;}
-87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;project&#32;=&#32;value;&#32;}
-88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_af79f9ce276f082c310ad03a9548dce58_1af79f9ce276f082c310ad03a9548dce58">PaymentTerms</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_af79f9ce276f082c310ad03a9548dce58_1af79f9ce276f082c310ad03a9548dce58">90 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a11ef3827936d9311349ee90197e75f65_1a11ef3827936d9311349ee90197e75f65">payment_terms</link>;&#32;}
-92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;payment_terms&#32;=&#32;value;&#32;}
-93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ab5e19277a029c5d78a557e686d0735d6_1ab5e19277a029c5d78a557e686d0735d6">ShipVia</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ab5e19277a029c5d78a557e686d0735d6_1ab5e19277a029c5d78a557e686d0735d6">95 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a75c56336ba6d840630e84da4695a3c9f_1a75c56336ba6d840630e84da4695a3c9f">ship_via</link>;&#32;}
-97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_via&#32;=&#32;value;&#32;}
-98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ac7b76b814b2dc3ebeb8b04c720cf5cc4_1ac7b76b814b2dc3ebeb8b04c720cf5cc4">ShippingTerms</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ac7b76b814b2dc3ebeb8b04c720cf5cc4_1ac7b76b814b2dc3ebeb8b04c720cf5cc4">100 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a6830b786d7d5b810e50d9a2505093bc4_1a6830b786d7d5b810e50d9a2505093bc4">shipping_terms</link>;&#32;}
-102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;shipping_terms&#32;=&#32;value;&#32;}
-103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aa16735b3d457e59eb315e230ee720ba4_1aa16735b3d457e59eb315e230ee720ba4">BillToContactName</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aa16735b3d457e59eb315e230ee720ba4_1aa16735b3d457e59eb315e230ee720ba4">105 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_afb08a69c63a1d0a944cba8c9c1e4a98a_1afb08a69c63a1d0a944cba8c9c1e4a98a">bill_to_contact_name</link>;&#32;}
-107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_to_contact_name&#32;=&#32;value;&#32;}
-108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a2f4e8c9fabc1b8be5f6eda51b67e4a81_1a2f4e8c9fabc1b8be5f6eda51b67e4a81">BillToAddressLine1</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a2f4e8c9fabc1b8be5f6eda51b67e4a81_1a2f4e8c9fabc1b8be5f6eda51b67e4a81">110 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_abf7947208c7fd8976999eac922c0c434_1abf7947208c7fd8976999eac922c0c434">bill_address_line_1</link>;&#32;}
-112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_address_line_1&#32;=&#32;value;&#32;}
-113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a6d0e675cfb7f3597dc2b615af4262a41_1a6d0e675cfb7f3597dc2b615af4262a41">BillToAddressLine2</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a6d0e675cfb7f3597dc2b615af4262a41_1a6d0e675cfb7f3597dc2b615af4262a41">115 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aca36a71956ece29fdaffe255a993fdc0_1aca36a71956ece29fdaffe255a993fdc0">bill_address_line_2</link>;&#32;}
-117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_address_line_2&#32;=&#32;value;&#32;}
-118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a55f0d5f5cd0295ea4f9064346e18e7fd_1a55f0d5f5cd0295ea4f9064346e18e7fd">BillToAddressLine3</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a55f0d5f5cd0295ea4f9064346e18e7fd_1a55f0d5f5cd0295ea4f9064346e18e7fd">120 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a7582c0cc6e300b63eb9debdf1b3f154a_1a7582c0cc6e300b63eb9debdf1b3f154a">bill_address_line_3</link>;&#32;}
-122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_address_line_3&#32;=&#32;value;&#32;}
-123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a6d8c516b4785e259a187a5ac786b1daf_1a6d8c516b4785e259a187a5ac786b1daf">BillToCity</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a6d8c516b4785e259a187a5ac786b1daf_1a6d8c516b4785e259a187a5ac786b1daf">125 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a4b2591e49574f5f8f18739e888cb8898_1a4b2591e49574f5f8f18739e888cb8898">bill_to_city</link>;&#32;}
-127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_to_city&#32;=&#32;value;&#32;}
-128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ab5c627cc496ec620231b03a9a37e2972_1ab5c627cc496ec620231b03a9a37e2972">BillToState</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ab5c627cc496ec620231b03a9a37e2972_1ab5c627cc496ec620231b03a9a37e2972">130 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a833a1cb191a4254d0cf35ae78fae6cf4_1a833a1cb191a4254d0cf35ae78fae6cf4">bill_to_state</link>;&#32;}
-132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_to_state&#32;=&#32;value;&#32;}
-133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a74d767beb307397f996c548ad357fa2c_1a74d767beb307397f996c548ad357fa2c">BillToCountry</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a74d767beb307397f996c548ad357fa2c_1a74d767beb307397f996c548ad357fa2c">135 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a0c1f2324309a6825138dd7f7c7c2a9b0_1a0c1f2324309a6825138dd7f7c7c2a9b0">bill_to_country</link>;&#32;}
-137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_to_country&#32;=&#32;value;&#32;}
-138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aae1f1b1765bde335290c2cf82f1bc4a9_1aae1f1b1765bde335290c2cf82f1bc4a9">BillToPostalCode</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aae1f1b1765bde335290c2cf82f1bc4a9_1aae1f1b1765bde335290c2cf82f1bc4a9">140 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ad0c39eac5f478335299d60750631acd9_1ad0c39eac5f478335299d60750631acd9">bill_to_postal_code</link>;&#32;}
-142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_to_postal_code&#32;=&#32;value;&#32;}
-143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ae35e5361c7685c0f651c7e365a11452c_1ae35e5361c7685c0f651c7e365a11452c">BillToPhoneNumber</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ae35e5361c7685c0f651c7e365a11452c_1ae35e5361c7685c0f651c7e365a11452c">145 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_afc46c6b585ea774f23d9392d7b2f9dae_1afc46c6b585ea774f23d9392d7b2f9dae">bill_to_phone_number</link>;&#32;}
-147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_to_phone_number&#32;=&#32;value;&#32;}
-148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a8725b79fc91f3d1104f15341980a400e_1a8725b79fc91f3d1104f15341980a400e">BillToFaxNumber</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a8725b79fc91f3d1104f15341980a400e_1a8725b79fc91f3d1104f15341980a400e">150 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a3bcc5f7980d980d2e7514f2eaa80f5fe_1a3bcc5f7980d980d2e7514f2eaa80f5fe">bill_to_fax_number</link>;&#32;}
-152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_to_fax_number&#32;=&#32;value;&#32;}
-153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ab9b1ef79886cf2583061c19df7d70dc5_1ab9b1ef79886cf2583061c19df7d70dc5">BillToEmailAddress</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ab9b1ef79886cf2583061c19df7d70dc5_1ab9b1ef79886cf2583061c19df7d70dc5">155 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ace3d9d0528134d7d959de4598858583c_1ace3d9d0528134d7d959de4598858583c">bill_to_email_address</link>;&#32;}
-157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_to_email_address&#32;=&#32;value;&#32;}
-158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aabf549f5ddbf96bb4e4636bd66a375c9_1aabf549f5ddbf96bb4e4636bd66a375c9">BillToRefNum</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aabf549f5ddbf96bb4e4636bd66a375c9_1aabf549f5ddbf96bb4e4636bd66a375c9">160 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aa73d70854f1cfd3c7750e73df19324ac_1aa73d70854f1cfd3c7750e73df19324ac">bill_to_ref_num</link>;&#32;}
-162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_to_ref_num&#32;=&#32;value;&#32;}
-163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ad30a5145b5a89615f2d0472911b67dba_1ad30a5145b5a89615f2d0472911b67dba">ShipToContactName</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ad30a5145b5a89615f2d0472911b67dba_1ad30a5145b5a89615f2d0472911b67dba">165 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a7f225db4659ac3d6b42ced6384439c78_1a7f225db4659ac3d6b42ced6384439c78">ship_to_contact_name</link>;&#32;}
-167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_contact_name&#32;=&#32;value;&#32;}
-168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a65552357c7a95a656818c3997b1e608a_1a65552357c7a95a656818c3997b1e608a">ShipToAddressLine1</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a65552357c7a95a656818c3997b1e608a_1a65552357c7a95a656818c3997b1e608a">170 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a4c78b1abad5c632f5f3cafe13c28f637_1a4c78b1abad5c632f5f3cafe13c28f637">ship_to_address_line_1</link>;&#32;}
-172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_address_line_1&#32;=&#32;value;&#32;}
-173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a7aca6104159d603d48424e4bf5dbca76_1a7aca6104159d603d48424e4bf5dbca76">ShipToAddressLine2</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a7aca6104159d603d48424e4bf5dbca76_1a7aca6104159d603d48424e4bf5dbca76">175 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a0501538340a56aba91a43d07d9437d63_1a0501538340a56aba91a43d07d9437d63">ship_to_address_line_2</link>;&#32;}
-177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_address_line_2&#32;=&#32;value;&#32;}
-178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a7bf00172952ac0211251e4a4b00eed13_1a7bf00172952ac0211251e4a4b00eed13">ShipToAddressLine3</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a7bf00172952ac0211251e4a4b00eed13_1a7bf00172952ac0211251e4a4b00eed13">180 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ac499fa2f577749e4e0a0eabdc0d7bb23_1ac499fa2f577749e4e0a0eabdc0d7bb23">ship_to_address_line_3</link>;&#32;}
-182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_address_line_3&#32;=&#32;value;&#32;}
-183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a7bc7d42b04a05cf93a9acdb32f835bba_1a7bc7d42b04a05cf93a9acdb32f835bba">ShipToCity</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a7bc7d42b04a05cf93a9acdb32f835bba_1a7bc7d42b04a05cf93a9acdb32f835bba">185 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a20ed388c30a25f056a985add0a3802fc_1a20ed388c30a25f056a985add0a3802fc">ship_to_city</link>;&#32;}
-187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_city&#32;=&#32;value;&#32;}
-188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a16006ef7e72ac3a18c96c2360986fec3_1a16006ef7e72ac3a18c96c2360986fec3">ShipToState</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a16006ef7e72ac3a18c96c2360986fec3_1a16006ef7e72ac3a18c96c2360986fec3">190 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a90fdcf716218efa407e1ee80dc677106_1a90fdcf716218efa407e1ee80dc677106">ship_to_state</link>;&#32;}
-192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_state&#32;=&#32;value;&#32;}
-193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a4527fb1e7ed6eb7059e82c84e7162644_1a4527fb1e7ed6eb7059e82c84e7162644">ShipToCountry</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a4527fb1e7ed6eb7059e82c84e7162644_1a4527fb1e7ed6eb7059e82c84e7162644">195 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a14c16bdc2fb99553721283658c96760d_1a14c16bdc2fb99553721283658c96760d">ship_to_country</link>;&#32;}
-197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_country&#32;=&#32;value;&#32;}
-198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_abf3ef870c859b68cf68adb817ffc35a7_1abf3ef870c859b68cf68adb817ffc35a7">ShipToPostalCode</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_abf3ef870c859b68cf68adb817ffc35a7_1abf3ef870c859b68cf68adb817ffc35a7">200 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a80fd6935379b00c524c33d5941c5c47f_1a80fd6935379b00c524c33d5941c5c47f">ship_to_postal_code</link>;&#32;}
-202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_postal_code&#32;=&#32;value;&#32;}
-203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a9219d46d1ba1ab3f67991b5472117faa_1a9219d46d1ba1ab3f67991b5472117faa">ShipToPhoneNumber</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a9219d46d1ba1ab3f67991b5472117faa_1a9219d46d1ba1ab3f67991b5472117faa">205 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-206 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a254034faa78f77b57614ac3f939349ad_1a254034faa78f77b57614ac3f939349ad">ship_to_phone_number</link>;&#32;}
-207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_phone_number&#32;=&#32;value;&#32;}
-208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_afd45b2c454beaabfaadc6575c29f1ab7_1afd45b2c454beaabfaadc6575c29f1ab7">ShipToFaxNumber</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_afd45b2c454beaabfaadc6575c29f1ab7_1afd45b2c454beaabfaadc6575c29f1ab7">210 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a9b62dcca3e1bae00f8b68a44c01a45c2_1a9b62dcca3e1bae00f8b68a44c01a45c2">ship_to_fax_number</link>;&#32;}
-212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_fax_number&#32;=&#32;value;&#32;}
-213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a5368d7ef72bd3afad15fb053bfa2a02a_1a5368d7ef72bd3afad15fb053bfa2a02a">ShipToEmailAddress</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a5368d7ef72bd3afad15fb053bfa2a02a_1a5368d7ef72bd3afad15fb053bfa2a02a">215 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a405754cf04096a8412abc9215aaf4ed2_1a405754cf04096a8412abc9215aaf4ed2">ship_to_email_address</link>;&#32;}
-217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_email_address&#32;=&#32;value;&#32;}
-218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_abf6e11c6ab3c3b2ef40b0ca2b4ff13ab_1abf6e11c6ab3c3b2ef40b0ca2b4ff13ab">ShipToRefNum</link>
-<link linkend="class_configure_one_flag_1_1z_cfg_c_o_abf6e11c6ab3c3b2ef40b0ca2b4ff13ab_1abf6e11c6ab3c3b2ef40b0ca2b4ff13ab">220 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ac7f9fb24708c8d8812f001c783cd351e_1ac7f9fb24708c8d8812f001c783cd351e">ship_to_ref_num</link>;&#32;}
-222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_ref_num&#32;=&#32;value;&#32;}
-223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-224 &#32;&#32;&#32;&#32;}
-225 }
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a2c1324d5f11b52fb02a74ccefab58623_1a2c1324d5f11b52fb02a74ccefab58623">49 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a2c1324d5f11b52fb02a74ccefab58623_1a2c1324d5f11b52fb02a74ccefab58623">priority_level</link>;
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a89800eb611a25390f869303195558b7e_1a89800eb611a25390f869303195558b7e">Identifier</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a89800eb611a25390f869303195558b7e_1a89800eb611a25390f869303195558b7e">51 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aa5d7380d7c1927c01fdd5d0ee84bbf56_1aa5d7380d7c1927c01fdd5d0ee84bbf56">id</link>;&#32;}
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<emphasis class="keywordtype">id</emphasis>&#32;=&#32;value;&#32;}
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a2b92c69b60edbdb13fb03c8c52ab0a87_1a2b92c69b60edbdb13fb03c8c52ab0a87">CO_Num</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a2b92c69b60edbdb13fb03c8c52ab0a87_1a2b92c69b60edbdb13fb03c8c52ab0a87">56 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a69d09502706566eb1c28a6cbea193a37_1a69d09502706566eb1c28a6cbea193a37">order_num</link>;&#32;}
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;order_num&#32;=&#32;value;&#32;}
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ab8ec1eafe29fea515f3f217c65610005_1ab8ec1eafe29fea515f3f217c65610005">CORefNum</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ab8ec1eafe29fea515f3f217c65610005_1ab8ec1eafe29fea515f3f217c65610005">61 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a3123fbb1c8faee40acb1c61b42a736a6_1a3123fbb1c8faee40acb1c61b42a736a6">order_ref_num</link>;&#32;}
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;order_ref_num&#32;=&#32;value;&#32;}
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aec46342f1eee1b25eae3dbaebcc9b4b5_1aec46342f1eee1b25eae3dbaebcc9b4b5">CustName</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aec46342f1eee1b25eae3dbaebcc9b4b5_1aec46342f1eee1b25eae3dbaebcc9b4b5">66 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aa1c806cf2c8c3be79ca542b068a081c2_1aa1c806cf2c8c3be79ca542b068a081c2">cust_name</link>;&#32;}
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;cust_name&#32;=&#32;value;&#32;}
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a9bbe34e4fc0dfd9a806169592d3a5340_1a9bbe34e4fc0dfd9a806169592d3a5340">CustRefNum</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a9bbe34e4fc0dfd9a806169592d3a5340_1a9bbe34e4fc0dfd9a806169592d3a5340">71 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a735f1bfa24400689f3b53fcc94265ea1_1a735f1bfa24400689f3b53fcc94265ea1">cust_ref_num</link>;&#32;}
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;cust_ref_num&#32;=&#32;value;&#32;}
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a9da40b96702c70de289734bfe9cef1b7_1a9da40b96702c70de289734bfe9cef1b7">AccountNum</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a9da40b96702c70de289734bfe9cef1b7_1a9da40b96702c70de289734bfe9cef1b7">76 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a949cef1a81eab5b64212cc7c5410485a_1a949cef1a81eab5b64212cc7c5410485a">account_num</link>;&#32;}
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;account_num&#32;=&#32;value;&#32;}
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_abdec79d861233c03935f5b80c87c6267_1abdec79d861233c03935f5b80c87c6267">ErpReferenceNum</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_abdec79d861233c03935f5b80c87c6267_1abdec79d861233c03935f5b80c87c6267">81 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a639c2289a831881f84b2b45f017d1d0a_1a639c2289a831881f84b2b45f017d1d0a">erp_reference_num</link>;&#32;}
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;erp_reference_num&#32;=&#32;value;&#32;}
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a2f63b9d5f9f991f816495c181441c451_1a2f63b9d5f9f991f816495c181441c451">Project</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a2f63b9d5f9f991f816495c181441c451_1a2f63b9d5f9f991f816495c181441c451">86 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a29094a943602bc64b01a493d548d7656_1a29094a943602bc64b01a493d548d7656">project</link>;&#32;}
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;project&#32;=&#32;value;&#32;}
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_af79f9ce276f082c310ad03a9548dce58_1af79f9ce276f082c310ad03a9548dce58">PaymentTerms</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_af79f9ce276f082c310ad03a9548dce58_1af79f9ce276f082c310ad03a9548dce58">91 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a11ef3827936d9311349ee90197e75f65_1a11ef3827936d9311349ee90197e75f65">payment_terms</link>;&#32;}
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;payment_terms&#32;=&#32;value;&#32;}
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ab5e19277a029c5d78a557e686d0735d6_1ab5e19277a029c5d78a557e686d0735d6">ShipVia</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ab5e19277a029c5d78a557e686d0735d6_1ab5e19277a029c5d78a557e686d0735d6">96 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a75c56336ba6d840630e84da4695a3c9f_1a75c56336ba6d840630e84da4695a3c9f">ship_via</link>;&#32;}
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_via&#32;=&#32;value;&#32;}
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ac7b76b814b2dc3ebeb8b04c720cf5cc4_1ac7b76b814b2dc3ebeb8b04c720cf5cc4">ShippingTerms</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ac7b76b814b2dc3ebeb8b04c720cf5cc4_1ac7b76b814b2dc3ebeb8b04c720cf5cc4">101 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a6830b786d7d5b810e50d9a2505093bc4_1a6830b786d7d5b810e50d9a2505093bc4">shipping_terms</link>;&#32;}
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;shipping_terms&#32;=&#32;value;&#32;}
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aa16735b3d457e59eb315e230ee720ba4_1aa16735b3d457e59eb315e230ee720ba4">BillToContactName</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aa16735b3d457e59eb315e230ee720ba4_1aa16735b3d457e59eb315e230ee720ba4">106 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_afb08a69c63a1d0a944cba8c9c1e4a98a_1afb08a69c63a1d0a944cba8c9c1e4a98a">bill_to_contact_name</link>;&#32;}
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_to_contact_name&#32;=&#32;value;&#32;}
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a2f4e8c9fabc1b8be5f6eda51b67e4a81_1a2f4e8c9fabc1b8be5f6eda51b67e4a81">BillToAddressLine1</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a2f4e8c9fabc1b8be5f6eda51b67e4a81_1a2f4e8c9fabc1b8be5f6eda51b67e4a81">111 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_abf7947208c7fd8976999eac922c0c434_1abf7947208c7fd8976999eac922c0c434">bill_address_line_1</link>;&#32;}
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_address_line_1&#32;=&#32;value;&#32;}
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a6d0e675cfb7f3597dc2b615af4262a41_1a6d0e675cfb7f3597dc2b615af4262a41">BillToAddressLine2</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a6d0e675cfb7f3597dc2b615af4262a41_1a6d0e675cfb7f3597dc2b615af4262a41">116 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aca36a71956ece29fdaffe255a993fdc0_1aca36a71956ece29fdaffe255a993fdc0">bill_address_line_2</link>;&#32;}
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_address_line_2&#32;=&#32;value;&#32;}
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a55f0d5f5cd0295ea4f9064346e18e7fd_1a55f0d5f5cd0295ea4f9064346e18e7fd">BillToAddressLine3</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a55f0d5f5cd0295ea4f9064346e18e7fd_1a55f0d5f5cd0295ea4f9064346e18e7fd">121 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a7582c0cc6e300b63eb9debdf1b3f154a_1a7582c0cc6e300b63eb9debdf1b3f154a">bill_address_line_3</link>;&#32;}
+123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_address_line_3&#32;=&#32;value;&#32;}
+124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a6d8c516b4785e259a187a5ac786b1daf_1a6d8c516b4785e259a187a5ac786b1daf">BillToCity</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a6d8c516b4785e259a187a5ac786b1daf_1a6d8c516b4785e259a187a5ac786b1daf">126 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a4b2591e49574f5f8f18739e888cb8898_1a4b2591e49574f5f8f18739e888cb8898">bill_to_city</link>;&#32;}
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_to_city&#32;=&#32;value;&#32;}
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ab5c627cc496ec620231b03a9a37e2972_1ab5c627cc496ec620231b03a9a37e2972">BillToState</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ab5c627cc496ec620231b03a9a37e2972_1ab5c627cc496ec620231b03a9a37e2972">131 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a833a1cb191a4254d0cf35ae78fae6cf4_1a833a1cb191a4254d0cf35ae78fae6cf4">bill_to_state</link>;&#32;}
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_to_state&#32;=&#32;value;&#32;}
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a74d767beb307397f996c548ad357fa2c_1a74d767beb307397f996c548ad357fa2c">BillToCountry</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a74d767beb307397f996c548ad357fa2c_1a74d767beb307397f996c548ad357fa2c">136 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a0c1f2324309a6825138dd7f7c7c2a9b0_1a0c1f2324309a6825138dd7f7c7c2a9b0">bill_to_country</link>;&#32;}
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_to_country&#32;=&#32;value;&#32;}
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aae1f1b1765bde335290c2cf82f1bc4a9_1aae1f1b1765bde335290c2cf82f1bc4a9">BillToPostalCode</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aae1f1b1765bde335290c2cf82f1bc4a9_1aae1f1b1765bde335290c2cf82f1bc4a9">141 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ad0c39eac5f478335299d60750631acd9_1ad0c39eac5f478335299d60750631acd9">bill_to_postal_code</link>;&#32;}
+143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_to_postal_code&#32;=&#32;value;&#32;}
+144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ae35e5361c7685c0f651c7e365a11452c_1ae35e5361c7685c0f651c7e365a11452c">BillToPhoneNumber</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ae35e5361c7685c0f651c7e365a11452c_1ae35e5361c7685c0f651c7e365a11452c">146 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_afc46c6b585ea774f23d9392d7b2f9dae_1afc46c6b585ea774f23d9392d7b2f9dae">bill_to_phone_number</link>;&#32;}
+148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_to_phone_number&#32;=&#32;value;&#32;}
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a8725b79fc91f3d1104f15341980a400e_1a8725b79fc91f3d1104f15341980a400e">BillToFaxNumber</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a8725b79fc91f3d1104f15341980a400e_1a8725b79fc91f3d1104f15341980a400e">151 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a3bcc5f7980d980d2e7514f2eaa80f5fe_1a3bcc5f7980d980d2e7514f2eaa80f5fe">bill_to_fax_number</link>;&#32;}
+153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_to_fax_number&#32;=&#32;value;&#32;}
+154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ab9b1ef79886cf2583061c19df7d70dc5_1ab9b1ef79886cf2583061c19df7d70dc5">BillToEmailAddress</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ab9b1ef79886cf2583061c19df7d70dc5_1ab9b1ef79886cf2583061c19df7d70dc5">156 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ace3d9d0528134d7d959de4598858583c_1ace3d9d0528134d7d959de4598858583c">bill_to_email_address</link>;&#32;}
+158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_to_email_address&#32;=&#32;value;&#32;}
+159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aabf549f5ddbf96bb4e4636bd66a375c9_1aabf549f5ddbf96bb4e4636bd66a375c9">BillToRefNum</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aabf549f5ddbf96bb4e4636bd66a375c9_1aabf549f5ddbf96bb4e4636bd66a375c9">161 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_aa73d70854f1cfd3c7750e73df19324ac_1aa73d70854f1cfd3c7750e73df19324ac">bill_to_ref_num</link>;&#32;}
+163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;bill_to_ref_num&#32;=&#32;value;&#32;}
+164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ad30a5145b5a89615f2d0472911b67dba_1ad30a5145b5a89615f2d0472911b67dba">ShipToContactName</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ad30a5145b5a89615f2d0472911b67dba_1ad30a5145b5a89615f2d0472911b67dba">166 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a7f225db4659ac3d6b42ced6384439c78_1a7f225db4659ac3d6b42ced6384439c78">ship_to_contact_name</link>;&#32;}
+168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_contact_name&#32;=&#32;value;&#32;}
+169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a65552357c7a95a656818c3997b1e608a_1a65552357c7a95a656818c3997b1e608a">ShipToAddressLine1</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a65552357c7a95a656818c3997b1e608a_1a65552357c7a95a656818c3997b1e608a">171 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a4c78b1abad5c632f5f3cafe13c28f637_1a4c78b1abad5c632f5f3cafe13c28f637">ship_to_address_line_1</link>;&#32;}
+173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_address_line_1&#32;=&#32;value;&#32;}
+174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a7aca6104159d603d48424e4bf5dbca76_1a7aca6104159d603d48424e4bf5dbca76">ShipToAddressLine2</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a7aca6104159d603d48424e4bf5dbca76_1a7aca6104159d603d48424e4bf5dbca76">176 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a0501538340a56aba91a43d07d9437d63_1a0501538340a56aba91a43d07d9437d63">ship_to_address_line_2</link>;&#32;}
+178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_address_line_2&#32;=&#32;value;&#32;}
+179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a7bf00172952ac0211251e4a4b00eed13_1a7bf00172952ac0211251e4a4b00eed13">ShipToAddressLine3</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a7bf00172952ac0211251e4a4b00eed13_1a7bf00172952ac0211251e4a4b00eed13">181 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ac499fa2f577749e4e0a0eabdc0d7bb23_1ac499fa2f577749e4e0a0eabdc0d7bb23">ship_to_address_line_3</link>;&#32;}
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_address_line_3&#32;=&#32;value;&#32;}
+184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a7bc7d42b04a05cf93a9acdb32f835bba_1a7bc7d42b04a05cf93a9acdb32f835bba">ShipToCity</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a7bc7d42b04a05cf93a9acdb32f835bba_1a7bc7d42b04a05cf93a9acdb32f835bba">186 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a20ed388c30a25f056a985add0a3802fc_1a20ed388c30a25f056a985add0a3802fc">ship_to_city</link>;&#32;}
+188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_city&#32;=&#32;value;&#32;}
+189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+190 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a16006ef7e72ac3a18c96c2360986fec3_1a16006ef7e72ac3a18c96c2360986fec3">ShipToState</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a16006ef7e72ac3a18c96c2360986fec3_1a16006ef7e72ac3a18c96c2360986fec3">191 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a90fdcf716218efa407e1ee80dc677106_1a90fdcf716218efa407e1ee80dc677106">ship_to_state</link>;&#32;}
+193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_state&#32;=&#32;value;&#32;}
+194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a4527fb1e7ed6eb7059e82c84e7162644_1a4527fb1e7ed6eb7059e82c84e7162644">ShipToCountry</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a4527fb1e7ed6eb7059e82c84e7162644_1a4527fb1e7ed6eb7059e82c84e7162644">196 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a14c16bdc2fb99553721283658c96760d_1a14c16bdc2fb99553721283658c96760d">ship_to_country</link>;&#32;}
+198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_country&#32;=&#32;value;&#32;}
+199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+200 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_abf3ef870c859b68cf68adb817ffc35a7_1abf3ef870c859b68cf68adb817ffc35a7">ShipToPostalCode</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_abf3ef870c859b68cf68adb817ffc35a7_1abf3ef870c859b68cf68adb817ffc35a7">201 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a80fd6935379b00c524c33d5941c5c47f_1a80fd6935379b00c524c33d5941c5c47f">ship_to_postal_code</link>;&#32;}
+203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_postal_code&#32;=&#32;value;&#32;}
+204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a9219d46d1ba1ab3f67991b5472117faa_1a9219d46d1ba1ab3f67991b5472117faa">ShipToPhoneNumber</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a9219d46d1ba1ab3f67991b5472117faa_1a9219d46d1ba1ab3f67991b5472117faa">206 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a254034faa78f77b57614ac3f939349ad_1a254034faa78f77b57614ac3f939349ad">ship_to_phone_number</link>;&#32;}
+208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_phone_number&#32;=&#32;value;&#32;}
+209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_afd45b2c454beaabfaadc6575c29f1ab7_1afd45b2c454beaabfaadc6575c29f1ab7">ShipToFaxNumber</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_afd45b2c454beaabfaadc6575c29f1ab7_1afd45b2c454beaabfaadc6575c29f1ab7">211 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a9b62dcca3e1bae00f8b68a44c01a45c2_1a9b62dcca3e1bae00f8b68a44c01a45c2">ship_to_fax_number</link>;&#32;}
+213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_fax_number&#32;=&#32;value;&#32;}
+214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a5368d7ef72bd3afad15fb053bfa2a02a_1a5368d7ef72bd3afad15fb053bfa2a02a">ShipToEmailAddress</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a5368d7ef72bd3afad15fb053bfa2a02a_1a5368d7ef72bd3afad15fb053bfa2a02a">216 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a405754cf04096a8412abc9215aaf4ed2_1a405754cf04096a8412abc9215aaf4ed2">ship_to_email_address</link>;&#32;}
+218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_email_address&#32;=&#32;value;&#32;}
+219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_abf6e11c6ab3c3b2ef40b0ca2b4ff13ab_1abf6e11c6ab3c3b2ef40b0ca2b4ff13ab">ShipToRefNum</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_abf6e11c6ab3c3b2ef40b0ca2b4ff13ab_1abf6e11c6ab3c3b2ef40b0ca2b4ff13ab">221 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_ac7f9fb24708c8d8812f001c783cd351e_1ac7f9fb24708c8d8812f001c783cd351e">ship_to_ref_num</link>;&#32;}
+223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;ship_to_ref_num&#32;=&#32;value;&#32;}
+224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_af75fdd2ba8182a9026ef449f2753ef36_1af75fdd2ba8182a9026ef449f2753ef36">PriorityLevel</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_af75fdd2ba8182a9026ef449f2753ef36_1af75fdd2ba8182a9026ef449f2753ef36">226 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a2c1324d5f11b52fb02a74ccefab58623_1a2c1324d5f11b52fb02a74ccefab58623">priority_level</link>;&#32;}
+228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;priority_level&#32;=&#32;value;&#32;}
+229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+230 &#32;&#32;&#32;&#32;}
+231 }
     </computeroutput></literallayout>
 </section>

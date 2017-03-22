@@ -9,7 +9,7 @@ namespace ConfigureOneFlag
     /// <summary>
     /// Accessor class for the item-master object
     /// </summary>
-    class zCfgItem
+    public class zCfgItem
     {
         private string order_num;
         private int order_line_num;
@@ -22,7 +22,7 @@ namespace ConfigureOneFlag
         private decimal sell_price;
         private decimal weight;
         private string uom;
-
+        private int priority_level;
         public string CO_Num
         {
             get { return order_num; }
@@ -77,6 +77,11 @@ namespace ConfigureOneFlag
         {
             get { return uom; }
             set { uom = value; }
+        }
+        public int PriorityLevel
+        {
+            get { return priority_level; }
+            set { priority_level = value; }
         }
     }
 }

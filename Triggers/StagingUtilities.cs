@@ -141,6 +141,7 @@ namespace ConfigureOneFlag
             foreach (XmlNode node in xnl)
             {
                 co.BillToPhoneNumber = node.InnerText;
+                if (co.BillToPhoneNumber.Length == 0) { co.BillToPhoneNumber = "NA"; };
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_FAX_NUMBER");
             foreach (XmlNode node in xnl)
@@ -217,6 +218,11 @@ namespace ConfigureOneFlag
             {
                 co.ShipToRefNum = node.InnerText;
             }
+            xnl = xmldoc.GetElementsByTagName("PRIORITY_LEVEL");
+            foreach (XmlNode node in xnl)
+            {
+                co.PriorityLevel = Convert.ToInt16(node.InnerText);
+            }
             //output CO header to SQL before proceeding to the coitem
             DatabaseFactory.WriteRecordCO(ref co);
 
@@ -233,6 +239,8 @@ namespace ConfigureOneFlag
                 coitem.UnitCost = Convert.ToDecimal(node.ChildNodes[8].InnerText);
                 coitem.Discount = Convert.ToDecimal(node.ChildNodes[9].InnerText);
                 coitem.QTY = Convert.ToDecimal(node.ChildNodes[10].InnerText);
+                coitem.PriorityLevel = co.PriorityLevel;
+
                 //output coitem record
                 DatabaseFactory.WriteRecordCOItem(ref coitem);
 
@@ -247,6 +255,7 @@ namespace ConfigureOneFlag
                     cfg.CValue = nodei.ChildNodes[0].InnerText;
                     cfg.CType = nodei.ChildNodes[1].InnerText;
                     cfg.CLabel = nodei.ChildNodes[2].InnerText;
+                    cfg.PriorityLevel = co.PriorityLevel;
                     //output cfg (parmval) record
                     DatabaseFactory.WriteRecordCfg(ref cfg);
                 }
@@ -269,6 +278,7 @@ namespace ConfigureOneFlag
                     citem.ItemSellPrice = Convert.ToDecimal(string.IsNullOrEmpty(sell) ? "0" : sell);
                     citem.ItemWeight = Convert.ToDecimal(string.IsNullOrEmpty(weight) ? "0" : weight);
                     citem.UnitOfMeasure = nodeim.ChildNodes[26].InnerText;
+                    citem.PriorityLevel = Convert.ToInt16(nodeim.ChildNodes[38].InnerText);
                     recordSequence += 1;
                     //output item-master record
                     DatabaseFactory.WriteRecordCItem(ref citem);
@@ -291,6 +301,7 @@ namespace ConfigureOneFlag
                     bom.UnitCost = Convert.ToDecimal(string.IsNullOrEmpty(nodeib.ChildNodes[4].InnerText) ? "0" : nodeib.ChildNodes[4].InnerText);
                     bom.Discount = Convert.ToDecimal(string.IsNullOrEmpty(nodeib.ChildNodes[5].InnerText) ? "0" : nodeib.ChildNodes[5].InnerText);
                     bom.QTY = Convert.ToDecimal(string.IsNullOrEmpty(nodeib.ChildNodes[6].InnerText) ? "0" : nodeib.ChildNodes[6].InnerText);
+                    bom.PriorityLevel = co.PriorityLevel;
                     //output BOM record
                     DatabaseFactory.WriteRecordBOM(ref bom);
                 }

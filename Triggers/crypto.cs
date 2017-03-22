@@ -8,7 +8,7 @@ using System.Runtime.InteropServices;
 using ConfigureOneFlag;
 using System.IO;
 
-namespace Triggers
+namespace ConfigureOneFlag
 {
     /// <summary>
     /// Cryptography class providing for the decryption of server connection string culled from server registry
