@@ -13,9 +13,6 @@ namespace ConfigureOneFlag
     /// </summary>
     public class Triggers
     {
-        //public static Dictionary<string, string> webmethods = new Dictionary<string, string>();
-        
-
         public static string wsReturn;
         public static string caller = "";
         public static string C1URL;

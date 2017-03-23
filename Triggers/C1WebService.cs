@@ -19,13 +19,11 @@ namespace ConfigureOneFlag
         {
             string logEvent = "CALLING C1 WEBSERVICE";
             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-
             string sURL = url;
             HttpWebRequest objRequest = (HttpWebRequest)WebRequest.Create(sURL.ToString());
             objRequest.Method = "POST";
             objRequest.ContentType = "text/xml";
             objRequest.Headers.Add("SOAPAction", key);
-
             string xmlPayload = payload;
             StringBuilder data = new StringBuilder();
             data.Append(xmlPayload);
@@ -39,7 +37,7 @@ namespace ConfigureOneFlag
             XmlDocument xmlResult = new XmlDocument();
             try
             {
-                //return response from web service (if any)
+                //return response from AXIS (if any)
                 string result = "";
                 using (HttpWebResponse response = objRequest.GetResponse() as HttpWebResponse)
                 {
