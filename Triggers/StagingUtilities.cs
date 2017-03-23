@@ -12,6 +12,9 @@ namespace ConfigureOneFlag
     /// </summary>
     class StagingUtilities
     {
+        public static string globalOrderNum;
+        public static int globalOrderLineNum;
+                
         public static void MapXMLToSQL(XmlDocument xmldoc)
         {
             zCfgCO co = new zCfgCO();
@@ -19,6 +22,8 @@ namespace ConfigureOneFlag
             zCfgItem citem = new zCfgItem();
             zCfgParmVal cfg = new zCfgParmVal();
             zCfgBOM bom = new zCfgBOM();
+
+            Audit.resetmE = true;       //reset the mE array in case we have any mapping errors to report for this cycle
 
             //Load staging-table objects from XML
             XmlNodeList xnl = xmldoc.GetElementsByTagName("ORDER_NUM");
@@ -29,21 +34,23 @@ namespace ConfigureOneFlag
                 cfg.CO_Num = node.InnerText;
                 citem.CO_Num = node.InnerText;
                 bom.CO_Num = node.InnerText;
+                globalOrderNum = co.CO_Num;
+                globalOrderLineNum = 0;
             }
-            string logEvent;
+            
             switch (co.CO_Num == null || co.CO_Num == "")
             {
                 case true:
-                    logEvent = "ORDER NUMBER NOT FOUND: " + co.CO_Num;
-                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                    Triggers.logEvent = "ORDER NUMBER NOT FOUND: " + co.CO_Num;
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                     return;
                 default:
                     //Remove any pre-existing records in SQL for this order
                     DatabaseFactory.CleanupOrder(co.CO_Num);
                     break;
             }
-            logEvent = "MAPPING XML TO STAGING TABLES";
-            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+            Triggers.logEvent = "MAPPING XML TO STAGING TABLES";
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
             //build CO header
             xnl = xmldoc.GetElementsByTagName("ID");
@@ -240,7 +247,7 @@ namespace ConfigureOneFlag
                 coitem.Discount = Convert.ToDecimal(node.ChildNodes[9].InnerText);
                 coitem.QTY = Convert.ToDecimal(node.ChildNodes[10].InnerText);
                 coitem.PriorityLevel = co.PriorityLevel;
-
+                globalOrderLineNum = coitem.CO_Line;
                 //output coitem record
                 DatabaseFactory.WriteRecordCOItem(ref coitem);
 
@@ -305,8 +312,8 @@ namespace ConfigureOneFlag
                     //output BOM record
                     DatabaseFactory.WriteRecordBOM(ref bom);
                 }
-                logEvent = "RESEQUENCING BOM RECORDS FOR ORDER: " + bom.CO_Num + " LINE: " + bom.CO_Line;
-                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                Triggers.logEvent = "RESEQUENCING BOM RECORDS FOR ORDER: " + bom.CO_Num + " LINE: " + bom.CO_Line;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                 DatabaseFactory.ResequenceBOM(bom.CO_Num, bom.CO_Line);
             }
         }

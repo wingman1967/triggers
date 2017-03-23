@@ -39,6 +39,13 @@
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int objectLength</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
         <section>
             <title></title>
@@ -99,6 +106,16 @@ string field, ref <link linkend="class_configure_one_flag_1_1z_cfg_b_o_m">zCfgBO
                 </itemizedlist>
             </para>
         </section>
+    <simplesect>
+
+<para>Management of dictionaries used for C1 data mapping/processing </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 12 of file C1Dictionaries.cs</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>C1Dictionaries.cs</para></listitem></itemizedlist></para>
+        </simplesect>
             <section xml:id="class_configure_one_flag_1_1_c1_dictionaries_a5fbd06a46c2864f55b7b43946048c3b4_1a5fbd06a46c2864f55b7b43946048c3b4">
                 <title>static void ConfigureOneFlag.C1Dictionaries.LoadWMDictionary ()</title> <emphasis></emphasis>
                 

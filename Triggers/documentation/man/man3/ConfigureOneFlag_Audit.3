@@ -1,0 +1,78 @@
+.TH "ConfigureOneFlag.Audit" 3 "Thu Mar 23 2017" "ConfigureOne Trigger" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ConfigureOneFlag.Audit \- Write auditing information regarding mapping and assembly behavior to event log, GR_Cfg_Audit, and send email for error notifications\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBSetTruncate\fP (string field, int fieldLen, int maxLen, string order_num, int order_line_num, string fieldContent)"
+.br
+.ti -1c
+.RI "static void \fBProcessingCompleted\fP (string auditMessage)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static string [] \fBmE\fP"
+.br
+.ti -1c
+.RI "static int \fBmEIndex\fP"
+.br
+.ti -1c
+.RI "static bool \fBresetmE\fP"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static string \fBauditMessageL\fP = ''"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Write auditing information regarding mapping and assembly behavior to event log, GR_Cfg_Audit, and send email for error notifications\&. 
+
+
+.PP
+Definition at line 11 of file Audit\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static void ConfigureOneFlag\&.Audit\&.ProcessingCompleted (string auditMessage)\fC [static]\fP"
+
+.PP
+Definition at line 41 of file Audit\&.cs\&.
+.SS "static void ConfigureOneFlag\&.Audit\&.SetTruncate (string field, int fieldLen, int maxLen, string order_num, int order_line_num, string fieldContent)\fC [static]\fP"
+
+.PP
+Definition at line 18 of file Audit\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "string ConfigureOneFlag\&.Audit\&.auditMessageL = ''\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 13 of file Audit\&.cs\&.
+.SS "string [] ConfigureOneFlag\&.Audit\&.mE\fC [static]\fP"
+
+.PP
+Definition at line 14 of file Audit\&.cs\&.
+.SS "int ConfigureOneFlag\&.Audit\&.mEIndex\fC [static]\fP"
+
+.PP
+Definition at line 15 of file Audit\&.cs\&.
+.SS "bool ConfigureOneFlag\&.Audit\&.resetmE\fC [static]\fP"
+
+.PP
+Definition at line 16 of file Audit\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ConfigureOne Trigger from the source code\&.

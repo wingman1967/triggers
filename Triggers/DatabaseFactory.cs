@@ -25,6 +25,9 @@ namespace ConfigureOneFlag
     {
         static string SQLCommand;
         public static string connectionString = "";
+        public static string emailaddr = "";
+        public static string emailServer = "";
+        public static string emailFrom = "";
         public void SetConnectionString()
         {
             RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\ConfigureOneAssembly\\1.0", true);
@@ -32,15 +35,24 @@ namespace ConfigureOneFlag
             {
                 //create keys if they don't already exist and set values
                 reg = Registry.CurrentUser.CreateSubKey("SOFTWARE\\Microsoft\\ConfigureOneAssembly\\1.0");
-                string dbConnectionData = System.IO.File.ReadAllText(@"C:\C1\dbconnection.dat");
-                string dbkey = System.IO.File.ReadAllText(@"C:\C1\dbkey.dat");
+                string dbConnectionData = File.ReadAllText(@"C:\C1\dbconnection.dat");
+                string dbkey = File.ReadAllText(@"C:\C1\dbkey.dat");
+                emailaddr = File.ReadAllText(@"C:\C1\emailaddr.dat");
+                emailServer = File.ReadAllText(@"C:\C1\emailserver.dat");
+                emailFrom = File.ReadAllText(@"C:\C1\emailFromAddress.dat");
                 reg.SetValue("DB", dbConnectionData);
                 reg.SetValue("ENCKEY", dbkey);
+                reg.SetValue("EMAILADDR", emailaddr);
+                reg.SetValue("EMAILSERVER", emailServer);
+                reg.SetValue("EMAILFROM", emailFrom);
             }
             
             //decrypt cs
             string sKey = reg.GetValue("ENCKEY").ToString();
             connectionString = reg.GetValue("DB").ToString();
+            emailaddr = reg.GetValue("EMAILADDR").ToString();
+            emailServer = reg.GetValue("EMAILSERVER").ToString();
+            emailFrom = reg.GetValue("EMAILFROM").ToString();
             crypto csec = new crypto();
             csec.DecryptCS(connectionString, sKey);
             
@@ -145,6 +157,16 @@ namespace ConfigureOneFlag
                 myCommand.ExecuteNonQuery();
             }
             SQLCommand = "DELETE From GR_CfgParmVal where order_num = " + (char)39 + orderNum + (char)39;
+            using (SqlConnection myConnection = new SqlConnection(connectionString))
+            {
+                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
+                myConnection.Open();
+                myCommand.ExecuteNonQuery();
+            }
+        }
+        public static void WriteAuditRecord(string auditMessageL, string orderNum, int orderLine, string auditEvent)
+        {
+            SQLCommand = "Insert Into GR_Cfg_Audit (order_num,order_line_num,auditEvent,auditMessageL) values (" + (char)39 + orderNum + (char)39 + "," + (char)39 + orderLine + (char)39 + "," + (char)39 + auditEvent + (char)39 + "," + (char)39 + auditMessageL + (char)39 + ")";
             using (SqlConnection myConnection = new SqlConnection(connectionString))
             {
                 SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);

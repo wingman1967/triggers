@@ -8,5 +8,6 @@ var class_configure_one_flag_1_1_c1_dictionaries =
     [ "LoadDBFLengthDictionary", "class_configure_one_flag_1_1_c1_dictionaries_ac09be8def5557047288f25a46fd85ed9.html#ac09be8def5557047288f25a46fd85ed9", null ],
     [ "LoadWMDictionary", "class_configure_one_flag_1_1_c1_dictionaries_a5fbd06a46c2864f55b7b43946048c3b4.html#a5fbd06a46c2864f55b7b43946048c3b4", null ],
     [ "fieldLengths", "class_configure_one_flag_1_1_c1_dictionaries_a1652a36e934b6107a2b2456c224d5655.html#a1652a36e934b6107a2b2456c224d5655", null ],
+    [ "objectLength", "class_configure_one_flag_1_1_c1_dictionaries_a6fe68f2e6c0b848c34730d84a0894a98.html#a6fe68f2e6c0b848c34730d84a0894a98", null ],
     [ "webmethods", "class_configure_one_flag_1_1_c1_dictionaries_a192b4ea45e2b5d46ed02929db9c9d320.html#a192b4ea45e2b5d46ed02929db9c9d320", null ]
 ];

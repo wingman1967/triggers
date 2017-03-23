@@ -6,7 +6,20 @@
             <para>
                 <itemizedlist>
                     <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_audit">ConfigureOneFlag::Audit</link></para>
+<para><emphasis>&lt;summary&gt;
+Write auditing information regarding mapping and assembly behavior to event log, GR_Cfg_Audit, and send email for error notifications.
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
                         <para>struct <link linkend="class_configure_one_flag_1_1_c1_dictionaries">ConfigureOneFlag::C1Dictionaries</link></para>
+<para><emphasis>&lt;summary&gt;
+Management of dictionaries used for C1 data mapping/processing
+&lt;/summary&gt;</emphasis></para>
                     </listitem>
                 </itemizedlist>
             </para>
@@ -43,6 +56,16 @@ Repository for all database functions and calls on behalf of the assembly
             <para>
                 <itemizedlist>
                     <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_send_mail">ConfigureOneFlag::SendMail</link></para>
+<para><emphasis>&lt;summary&gt;
+Send email to specified users for errors encountered during XML mapping
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
                         <para>struct <link linkend="class_configure_one_flag_1_1_staging_utilities">ConfigureOneFlag::StagingUtilities</link></para>
 <para><emphasis>&lt;summary&gt;
 Utilities used for staging of data from C1 to SQL databases
@@ -55,7 +78,7 @@ Utilities used for staging of data from C1 to SQL databases
                     <listitem>
                         <para>struct <link linkend="class_configure_one_flag_1_1_triggers">ConfigureOneFlag::Triggers</link></para>
 <para><emphasis>&lt;summary&gt;
-Primary processor called from C1ORDER trigger for accessing C1 web service and returning/mapping data to SQL where appropriate
+Primary entrypoint called from C1ORDER trigger for accessing C1 web service and returning/mapping data to SQL where appropriate
 &lt;/summary&gt;</emphasis></para>
                     </listitem>
                 </itemizedlist>

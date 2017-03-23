@@ -48,9 +48,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Audit.cs" />
     <Compile Include="C1WebService.cs" />
     <Compile Include="crypto.cs" />
     <Compile Include="C1Dictionaries.cs" />
+    <Compile Include="SendMail.cs" />
     <Compile Include="trigger.cs" />
     <Compile Include="DatabaseFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

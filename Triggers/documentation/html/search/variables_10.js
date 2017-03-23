@@ -1,6 +1,22 @@
 var searchData=
 [
-  ['unit_5fcost',['unit_cost',['../class_configure_one_flag_1_1z_cfg_b_o_m_a7349ee7672cd179aea2cf94af1a3262d.html#a7349ee7672cd179aea2cf94af1a3262d',1,'ConfigureOneFlag.zCfgBOM.unit_cost()'],['../class_configure_one_flag_1_1z_cfg_c_oitem_ad89962e2bb7c5c9ddcf551a9fe6eb583.html#ad89962e2bb7c5c9ddcf551a9fe6eb583',1,'ConfigureOneFlag.zCfgCOitem.unit_cost()']]],
-  ['unit_5fprice',['unit_price',['../class_configure_one_flag_1_1z_cfg_b_o_m_a345c7f91f978f08f04020428912e86da.html#a345c7f91f978f08f04020428912e86da',1,'ConfigureOneFlag.zCfgBOM.unit_price()'],['../class_configure_one_flag_1_1z_cfg_c_oitem_adce8defe8fcce99abd6e430540b2da03.html#adce8defe8fcce99abd6e430540b2da03',1,'ConfigureOneFlag.zCfgCOitem.unit_price()']]],
-  ['uom',['uom',['../class_configure_one_flag_1_1z_cfg_item_abb24286c96deec6cb4ff62178612b57d.html#abb24286c96deec6cb4ff62178612b57d',1,'ConfigureOneFlag::zCfgItem']]]
+  ['sell_5fprice',['sell_price',['../class_configure_one_flag_1_1z_cfg_item_af4df6262fcf395e8689c1b0bf78c0713.html#af4df6262fcf395e8689c1b0bf78c0713',1,'ConfigureOneFlag::zCfgItem']]],
+  ['seq',['seq',['../class_configure_one_flag_1_1z_cfg_b_o_m_ad4e2f73f178da2bd802820edc51a0cc3.html#ad4e2f73f178da2bd802820edc51a0cc3',1,'ConfigureOneFlag.zCfgBOM.seq()'],['../class_configure_one_flag_1_1z_cfg_item_ad0ba2016bedf7d9f57391bf2275b9c04.html#ad0ba2016bedf7d9f57391bf2275b9c04',1,'ConfigureOneFlag.zCfgItem.seq()']]],
+  ['ser_5fnum',['ser_num',['../class_configure_one_flag_1_1z_cfg_c_oitem_a9fb2461dcebf8ea596a01e318cb21c00.html#a9fb2461dcebf8ea596a01e318cb21c00',1,'ConfigureOneFlag::zCfgCOitem']]],
+  ['ship_5fto_5faddress_5fline_5f1',['ship_to_address_line_1',['../class_configure_one_flag_1_1z_cfg_c_o_a4c78b1abad5c632f5f3cafe13c28f637.html#a4c78b1abad5c632f5f3cafe13c28f637',1,'ConfigureOneFlag::zCfgCO']]],
+  ['ship_5fto_5faddress_5fline_5f2',['ship_to_address_line_2',['../class_configure_one_flag_1_1z_cfg_c_o_a0501538340a56aba91a43d07d9437d63.html#a0501538340a56aba91a43d07d9437d63',1,'ConfigureOneFlag::zCfgCO']]],
+  ['ship_5fto_5faddress_5fline_5f3',['ship_to_address_line_3',['../class_configure_one_flag_1_1z_cfg_c_o_ac499fa2f577749e4e0a0eabdc0d7bb23.html#ac499fa2f577749e4e0a0eabdc0d7bb23',1,'ConfigureOneFlag::zCfgCO']]],
+  ['ship_5fto_5fcity',['ship_to_city',['../class_configure_one_flag_1_1z_cfg_c_o_a20ed388c30a25f056a985add0a3802fc.html#a20ed388c30a25f056a985add0a3802fc',1,'ConfigureOneFlag::zCfgCO']]],
+  ['ship_5fto_5fcontact_5fname',['ship_to_contact_name',['../class_configure_one_flag_1_1z_cfg_c_o_a7f225db4659ac3d6b42ced6384439c78.html#a7f225db4659ac3d6b42ced6384439c78',1,'ConfigureOneFlag::zCfgCO']]],
+  ['ship_5fto_5fcountry',['ship_to_country',['../class_configure_one_flag_1_1z_cfg_c_o_a14c16bdc2fb99553721283658c96760d.html#a14c16bdc2fb99553721283658c96760d',1,'ConfigureOneFlag::zCfgCO']]],
+  ['ship_5fto_5femail_5faddress',['ship_to_email_address',['../class_configure_one_flag_1_1z_cfg_c_o_a405754cf04096a8412abc9215aaf4ed2.html#a405754cf04096a8412abc9215aaf4ed2',1,'ConfigureOneFlag::zCfgCO']]],
+  ['ship_5fto_5ffax_5fnumber',['ship_to_fax_number',['../class_configure_one_flag_1_1z_cfg_c_o_a9b62dcca3e1bae00f8b68a44c01a45c2.html#a9b62dcca3e1bae00f8b68a44c01a45c2',1,'ConfigureOneFlag::zCfgCO']]],
+  ['ship_5fto_5fphone_5fnumber',['ship_to_phone_number',['../class_configure_one_flag_1_1z_cfg_c_o_a254034faa78f77b57614ac3f939349ad.html#a254034faa78f77b57614ac3f939349ad',1,'ConfigureOneFlag::zCfgCO']]],
+  ['ship_5fto_5fpostal_5fcode',['ship_to_postal_code',['../class_configure_one_flag_1_1z_cfg_c_o_a80fd6935379b00c524c33d5941c5c47f.html#a80fd6935379b00c524c33d5941c5c47f',1,'ConfigureOneFlag::zCfgCO']]],
+  ['ship_5fto_5fref_5fnum',['ship_to_ref_num',['../class_configure_one_flag_1_1z_cfg_c_o_ac7f9fb24708c8d8812f001c783cd351e.html#ac7f9fb24708c8d8812f001c783cd351e',1,'ConfigureOneFlag::zCfgCO']]],
+  ['ship_5fto_5fstate',['ship_to_state',['../class_configure_one_flag_1_1z_cfg_c_o_a90fdcf716218efa407e1ee80dc677106.html#a90fdcf716218efa407e1ee80dc677106',1,'ConfigureOneFlag::zCfgCO']]],
+  ['ship_5fvia',['ship_via',['../class_configure_one_flag_1_1z_cfg_c_o_a75c56336ba6d840630e84da4695a3c9f.html#a75c56336ba6d840630e84da4695a3c9f',1,'ConfigureOneFlag::zCfgCO']]],
+  ['shipping_5fterms',['shipping_terms',['../class_configure_one_flag_1_1z_cfg_c_o_a6830b786d7d5b810e50d9a2505093bc4.html#a6830b786d7d5b810e50d9a2505093bc4',1,'ConfigureOneFlag::zCfgCO']]],
+  ['smartpart_5fnum',['smartpart_num',['../class_configure_one_flag_1_1z_cfg_b_o_m_ac1e702144beec5f549d96c35d906e23b.html#ac1e702144beec5f549d96c35d906e23b',1,'ConfigureOneFlag.zCfgBOM.smartpart_num()'],['../class_configure_one_flag_1_1z_cfg_c_oitem_a36d1f5862850fceafecfdbe6ab5b2d69.html#a36d1f5862850fceafecfdbe6ab5b2d69',1,'ConfigureOneFlag.zCfgCOitem.smartpart_num()'],['../class_configure_one_flag_1_1z_cfg_item_af5e6b0bff7c2c0643de4e36429e1e19e.html#af5e6b0bff7c2c0643de4e36429e1e19e',1,'ConfigureOneFlag.zCfgItem.smartpart_num()']]],
+  ['sqlcommand',['SQLCommand',['../class_configure_one_flag_1_1_database_factory_aa5aa82b5ed9dd8d3610b92ed61a9f2d4.html#aa5aa82b5ed9dd8d3610b92ed61a9f2d4',1,'ConfigureOneFlag::DatabaseFactory']]]
 ];

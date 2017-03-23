@@ -9,7 +9,7 @@ using System.Data.SqlTypes;
 namespace ConfigureOneFlag
 {
     /// <summary>
-    /// Primary processor called from C1ORDER trigger for accessing C1 web service and returning/mapping data to SQL where appropriate
+    /// Primary entrypoint called from C1ORDER trigger for accessing C1 web service and returning/mapping data to SQL where appropriate
     /// </summary>
     public class Triggers
     {
@@ -85,9 +85,9 @@ namespace ConfigureOneFlag
             orderNum = orderValue;
             string xmlPayload = "<soap:Envelope xmlns:xsi=" + (char)34 + "http://www.w3.org/2001/XMLSchema-instance" + (char)34 + " xmlns:xsd=" + (char)34 + "http://www.w3.org/2001/XMLSchema" + (char)34 + " xmlns:soap=" + (char)34 + "http://schemas.xmlsoap.org/soap/envelope/" + (char)34 + ">" + "<soap:Body><" + key + " xmlns=" + (char)34 + "http://ws.configureone.com" + (char)34 + "><orderNum>" + orderNum + "</orderNum></" + key + "></soap:Body></soap:Envelope>";
             C1WebService.CallConfigureOne(key, xmlPayload, C1URL);
-            //webmethods.Clear();
             logEvent = "PROCESSING COMPLETE FOR ORDER: " + orderValue;
             System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+            Audit.ProcessingCompleted(logEvent);
         }
     }
 }

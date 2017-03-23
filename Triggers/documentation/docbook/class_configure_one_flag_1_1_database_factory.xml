@@ -42,6 +42,27 @@
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string emailaddr</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string emailServer</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string emailFrom</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
         <section>
             <title></title>
@@ -112,6 +133,14 @@ string orderNum)</para>
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_a59987be56acf3f8cbf7681d6b4866e81_1a59987be56acf3f8cbf7681d6b4866e81">WriteAuditRecord</link> (
+string auditMessageL, string orderNum, int orderLine, string auditEvent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
     <simplesect>
 
@@ -153,6 +182,10 @@ string orderNum)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_a1cba3b4ca48fe4e537bdc28925a61719_1a1cba3b4ca48fe4e537bdc28925a61719">
                 <title>static void ConfigureOneFlag.DatabaseFactory.CleanupOrder (string orderNum)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_a59987be56acf3f8cbf7681d6b4866e81_1a59987be56acf3f8cbf7681d6b4866e81">
+                <title>static void ConfigureOneFlag.DatabaseFactory.WriteAuditRecord (string auditMessageL, string orderNum, int orderLine, string auditEvent)</title> <emphasis></emphasis>
                 
             </section>
 </section>

@@ -18,6 +18,7 @@
         <xi:include href="namespace_system_1_1_i_o.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_linq.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_net.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespace_system_1_1_net_1_1_mail.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_reflection.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_runtime_1_1_compiler_services.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_system_1_1_runtime_1_1_interop_services.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -28,10 +29,12 @@
     </chapter>
     <chapter>
         <title>Class Documentation</title>
+        <xi:include href="class_configure_one_flag_1_1_audit.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1_c1_dictionaries.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1_c1_web_service.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1crypto.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1_database_factory.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_configure_one_flag_1_1_send_mail.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1_staging_utilities.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1_triggers.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1z_cfg_b_o_m.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -42,6 +45,7 @@
     </chapter>
     <chapter>
         <title>File Documentation</title>
+        <xi:include href="_audit_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="_c1_dictionaries_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="_c1_web_service_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="crypto_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -50,6 +54,7 @@
         <xi:include href="_temporary_generated_file__5937a670-0e60-4077-877b-f7221da3dda1_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="_temporary_generated_file___e7_a71_f73-0_f8_d-4_b9_b-_b56_e-8_e70_b10_b_c5_d3_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="_assembly_info_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_send_mail_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="_staging_utilities_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="trigger_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="z_cfg_b_o_m_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

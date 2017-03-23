@@ -28,6 +28,23 @@
             <para>
                 <itemizedlist>
                     <listitem>
+                        <para>static string globalOrderNum</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int globalOrderLineNum</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
                         <para>static void <link linkend="class_configure_one_flag_1_1_staging_utilities_ad721c5a816e1d3b5a16fec23498ecdf3_1ad721c5a816e1d3b5a16fec23498ecdf3">MapXMLToSQL</link> (
 XmlDocument xmldoc)</para>
                     </listitem>

@@ -5,10 +5,14 @@ using System.Text;
 
 namespace ConfigureOneFlag
 {
+    /// <summary>
+    /// Management of dictionaries used for C1 data mapping/processing
+    /// </summary>
     public static class C1Dictionaries
     {
         public static Dictionary<string, string> webmethods = new Dictionary<string, string>();
         public static Dictionary<string, int> fieldLengths = new Dictionary<string, int>();
+        public static int objectLength;
         public static void LoadWMDictionary()
         {
             webmethods.Clear();
@@ -85,10 +89,10 @@ namespace ConfigureOneFlag
             int fieldlength = (!fieldLengths.ContainsKey(field)) ? 15 : fieldLengths[field];
             switch (field)
             {
-                case "CO:bill_to_phone_number": switch (co.BillToPhoneNumber.Length >= fieldlength) { case true: break; default: fieldlength = co.BillToPhoneNumber.Length; break; } break;
-                case "CO:ship_via": switch (co.ShipVia.Length >= fieldlength) { case true: break; default: fieldlength = co.ShipVia.Length; break; } break;
-                case "CO:shipping_terms": switch (co.ShippingTerms.Length >= fieldlength) { case true: break; default: fieldlength = co.ShippingTerms.Length; break; } break;
-                case "CO:bill_to_fax_number": switch (co.BillToFaxNumber.Length >= fieldlength) { case true: break; default: fieldlength = co.BillToFaxNumber.Length; break; } break;
+                case "CO:bill_to_phone_number": switch (co.BillToPhoneNumber.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.BillToPhoneNumber.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.BillToPhoneNumber); break; default: fieldlength = co.BillToPhoneNumber.Length; break; } break;
+                case "CO:ship_via": switch (co.ShipVia.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.ShipVia.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.ShipVia); break; default: fieldlength = co.ShipVia.Length; break; } break;
+                case "CO:shipping_terms": switch (co.ShippingTerms.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.ShippingTerms.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.ShippingTerms); break; default: fieldlength = co.ShippingTerms.Length; break; } break;
+                case "CO:bill_to_fax_number": switch (co.BillToFaxNumber.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.BillToFaxNumber.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.BillToFaxNumber); break; default: fieldlength = co.BillToFaxNumber.Length; break; } break;
             }
             return fieldlength;
         }
@@ -97,10 +101,10 @@ namespace ConfigureOneFlag
             int fieldlength = (!fieldLengths.ContainsKey(field)) ? 15 : fieldLengths[field];
             switch (field)
             {
-                case "COItem:ser_num": switch (coitem.Serial.Length >= fieldlength) { case true: break; default: fieldlength = coitem.Serial.Length; break; } break;
-                case "COItem:item_num": switch (coitem.Item.Length >= fieldlength) { case true: break; default: fieldlength = coitem.Item.Length; break; } break;
-                case "COItem:smartpart_num": switch (coitem.Smartpart.Length >= fieldlength) { case true: break; default: fieldlength = coitem.Smartpart.Length; break; } break;
-                case "COItem:description": switch (coitem.Desc.Length >= fieldlength) { case true: break; default: fieldlength = coitem.Desc.Length; break; } break;
+                case "COItem:ser_num": switch (coitem.Serial.Length >= fieldlength) { case true: Audit.SetTruncate(field, coitem.Serial.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, coitem.Serial); break; default: fieldlength = coitem.Serial.Length; break; } break;
+                case "COItem:item_num": switch (coitem.Item.Length >= fieldlength) { case true: Audit.SetTruncate(field, coitem.Item.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, coitem.Item); break; default: fieldlength = coitem.Item.Length; break; } break;
+                case "COItem:smartpart_num": switch (coitem.Smartpart.Length >= fieldlength) { case true: Audit.SetTruncate(field, coitem.Smartpart.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, coitem.Smartpart); break; default: fieldlength = coitem.Smartpart.Length; break; } break;
+                case "COItem:description": switch (coitem.Desc.Length >= fieldlength) { case true: Audit.SetTruncate(field, coitem.Desc.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, coitem.Desc); break; default: fieldlength = coitem.Desc.Length; break; } break;
             }
             return fieldlength;
         }
@@ -109,10 +113,10 @@ namespace ConfigureOneFlag
             int fieldlength = (!fieldLengths.ContainsKey(field)) ? 15 : fieldLengths[field];
             switch (field)
             {
-                case "CfgItem:smartpart_num": switch (citem.Smartpart.Length >= fieldlength) { case true: break; default: fieldlength = citem.Smartpart.Length; break; } break;
-                case "CfgItem:item_num": switch (citem.Item.Length >= fieldlength) { case true: break; default: fieldlength = citem.Item.Length; break; } break;
-                case "CfgItem:description": switch (citem.Desc.Length >= fieldlength) { case true: break; default: fieldlength = citem.Desc.Length; break; } break;
-                case "CfgItem:uom": switch (citem.UnitOfMeasure.Length >= fieldlength) { case true: break; default: fieldlength = citem.UnitOfMeasure.Length; break; } break;
+                case "CfgItem:smartpart_num": switch (citem.Smartpart.Length >= fieldlength) { case true: Audit.SetTruncate(field, citem.Smartpart.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, citem.Smartpart); break; default: fieldlength = citem.Smartpart.Length; break; } break;
+                case "CfgItem:item_num": switch (citem.Item.Length >= fieldlength) { case true: Audit.SetTruncate(field, citem.Item.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, citem.Item); break; default: fieldlength = citem.Item.Length; break; } break;
+                case "CfgItem:description": switch (citem.Desc.Length >= fieldlength) { case true: Audit.SetTruncate(field, citem.Desc.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, citem.Desc); break; default: fieldlength = citem.Desc.Length; break; } break;
+                case "CfgItem:uom": switch (citem.UnitOfMeasure.Length >= fieldlength) { case true: Audit.SetTruncate(field, citem.UnitOfMeasure.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, citem.UnitOfMeasure); break; default: fieldlength = citem.UnitOfMeasure.Length; break; } break;
             }
             return fieldlength;
         }
@@ -121,10 +125,10 @@ namespace ConfigureOneFlag
             int fieldlength = (!fieldLengths.ContainsKey(field)) ? 15 : fieldLengths[field];
             switch (field)
             {
-                case "CfgParmVal:name": switch (cfg.CName.Length >= fieldlength) { case true: break; default: fieldlength = cfg.CName.Length; break; } break;
-                case "CfgParmVal:value": switch (cfg.CValue.Length >= fieldlength) { case true: break; default: fieldlength = cfg.CValue.Length; break; } break;
-                case "CfgParmVal:type": switch (cfg.CType.Length >= fieldlength) { case true: break; default: fieldlength = cfg.CType.Length; break; } break;
-                case "CfgParmVal:label": switch (cfg.CLabel.Length >= fieldlength) { case true: break; default: fieldlength = cfg.CLabel.Length; break; } break;
+                case "CfgParmVal:name": switch (cfg.CName.Length >= fieldlength) { case true: Audit.SetTruncate(field, cfg.CName.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, cfg.CName); break; default: fieldlength = cfg.CName.Length; break; } break;
+                case "CfgParmVal:value": switch (cfg.CValue.Length >= fieldlength) { case true: Audit.SetTruncate(field, cfg.CValue.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, cfg.CValue); break; default: fieldlength = cfg.CValue.Length; break; } break;
+                case "CfgParmVal:type": switch (cfg.CType.Length >= fieldlength) { case true: Audit.SetTruncate(field, cfg.CType.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, cfg.CType); break; default: fieldlength = cfg.CType.Length; break; } break;
+                case "CfgParmVal:label": switch (cfg.CLabel.Length >= fieldlength) { case true: Audit.SetTruncate(field, cfg.CLabel.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, cfg.CLabel); break; default: fieldlength = cfg.CLabel.Length; break; } break;
             }
             return fieldlength;
         }
@@ -133,9 +137,9 @@ namespace ConfigureOneFlag
             int fieldlength = (!fieldLengths.ContainsKey(field)) ? 15 : fieldLengths[field];
             switch (field)
             {
-                case "BOM:id": switch (bom.Identifier.Length >= fieldlength) { case true: break; default: fieldlength = bom.Identifier.Length; break; } break;
-                case "BOM:item_num": switch (bom.Item.Length >= fieldlength) { case true: break; default: fieldlength = bom.Item.Length; break; } break;
-                case "BOM:smartpart_num": switch (bom.Smartpart.Length >= fieldlength) { case true: break; default: fieldlength = bom.Smartpart.Length; break; } break;
+                case "BOM:id": switch (bom.Identifier.Length >= fieldlength) { case true: Audit.SetTruncate(field, bom.Identifier.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, bom.Identifier); break; default: fieldlength = bom.Identifier.Length; break; } break;
+                case "BOM:item_num": switch (bom.Item.Length >= fieldlength) { case true: Audit.SetTruncate(field, bom.Item.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, bom.Item); break; default: fieldlength = bom.Item.Length; break; } break;
+                case "BOM:smartpart_num": switch (bom.Smartpart.Length >= fieldlength) { case true: Audit.SetTruncate(field, bom.Smartpart.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, bom.Smartpart); break; default: fieldlength = bom.Smartpart.Length; break; } break;
             }
             return fieldlength;
         }

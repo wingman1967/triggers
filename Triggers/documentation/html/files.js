@@ -2,6 +2,9 @@ var files =
 [
     [ "obj", "dir_43724e81dd40e09f32417973865cdd64.html", "dir_43724e81dd40e09f32417973865cdd64" ],
     [ "Properties", "dir_d051c76eebdc544d9c3d734575641c72.html", "dir_d051c76eebdc544d9c3d734575641c72" ],
+    [ "Audit.cs", "_audit_8cs.html", [
+      [ "Audit", "class_configure_one_flag_1_1_audit.html", "class_configure_one_flag_1_1_audit" ]
+    ] ],
     [ "C1Dictionaries.cs", "_c1_dictionaries_8cs.html", [
       [ "C1Dictionaries", "class_configure_one_flag_1_1_c1_dictionaries.html", "class_configure_one_flag_1_1_c1_dictionaries" ]
     ] ],
@@ -13,6 +16,9 @@ var files =
     ] ],
     [ "DatabaseFactory.cs", "_database_factory_8cs.html", [
       [ "DatabaseFactory", "class_configure_one_flag_1_1_database_factory.html", "class_configure_one_flag_1_1_database_factory" ]
+    ] ],
+    [ "SendMail.cs", "_send_mail_8cs.html", [
+      [ "SendMail", "class_configure_one_flag_1_1_send_mail.html", "class_configure_one_flag_1_1_send_mail" ]
     ] ],
     [ "StagingUtilities.cs", "_staging_utilities_8cs.html", [
       [ "StagingUtilities", "class_configure_one_flag_1_1_staging_utilities.html", "class_configure_one_flag_1_1_staging_utilities" ]

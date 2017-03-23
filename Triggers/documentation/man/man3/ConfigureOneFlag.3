@@ -1,4 +1,4 @@
-.TH "ConfigureOneFlag" 3 "Wed Mar 22 2017" "ConfigureOne Trigger" \" -*- nroff -*-
+.TH "ConfigureOneFlag" 3 "Thu Mar 23 2017" "ConfigureOne Trigger" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -10,8 +10,13 @@ ConfigureOneFlag
 
 .in +1c
 .ti -1c
+.RI "class \fBAudit\fP"
+.br
+.RI "Write auditing information regarding mapping and assembly behavior to event log, GR_Cfg_Audit, and send email for error notifications\&. "
+.ti -1c
 .RI "class \fBC1Dictionaries\fP"
 .br
+.RI "Management of dictionaries used for C1 data mapping/processing "
 .ti -1c
 .RI "class \fBC1WebService\fP"
 .br
@@ -25,13 +30,17 @@ ConfigureOneFlag
 .br
 .RI "Repository for all database functions and calls on behalf of the assembly "
 .ti -1c
+.RI "class \fBSendMail\fP"
+.br
+.RI "Send email to specified users for errors encountered during XML mapping "
+.ti -1c
 .RI "class \fBStagingUtilities\fP"
 .br
 .RI "Utilities used for staging of data from C1 to SQL databases "
 .ti -1c
 .RI "class \fBTriggers\fP"
 .br
-.RI "Primary processor called from C1ORDER trigger for accessing C1 web service and returning/mapping data to SQL where appropriate "
+.RI "Primary entrypoint called from C1ORDER trigger for accessing C1 web service and returning/mapping data to SQL where appropriate "
 .ti -1c
 .RI "class \fBzCfgBOM\fP"
 .br

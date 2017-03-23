@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_audit_8cs">
+    <title>Audit.cs File Reference</title>
+<para>Include dependency diagram for Audit.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_audit_8cs__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for Audit.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_audit_8cs__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_audit">ConfigureOneFlag::Audit</link></para>
+<para><emphasis>&lt;summary&gt;
+Write auditing information regarding mapping and assembly behavior to event log, GR_Cfg_Audit, and send email for error notifications.
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_configure_one_flag">ConfigureOneFlag</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system">System</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system_1_1_collections_1_1_generic">System::Collections::Generic</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system_1_1_linq">System::Linq</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system_1_1_text">System::Text</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file C:/Users/hinesj/Documents/Visual Studio 2015/Projects/Triggers/Triggers/Audit.cs</para>
+    </simplesect>
+    <literallayout><computeroutput>
+1 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>;
+2 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Collections.Generic;
+3 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Linq;
+4 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Text;
+5 
+<link linkend="namespace_configure_one_flag">6 </link><emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>
+7 {
+<link linkend="class_configure_one_flag_1_1_audit">11 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_configure_one_flag_1_1_audit">Audit</link>
+12 &#32;&#32;&#32;&#32;{
+<link linkend="class_configure_one_flag_1_1_audit_a2797d3b31d8f20749195d3c64d99e6f3_1a2797d3b31d8f20749195d3c64d99e6f3">13 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_audit_a2797d3b31d8f20749195d3c64d99e6f3_1a2797d3b31d8f20749195d3c64d99e6f3">auditMessageL</link>&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+<link linkend="class_configure_one_flag_1_1_audit_a96123e9c36299a75a5b8fc39ed35e8a9_1a96123e9c36299a75a5b8fc39ed35e8a9">14 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>[]&#32;<link linkend="class_configure_one_flag_1_1_audit_a96123e9c36299a75a5b8fc39ed35e8a9_1a96123e9c36299a75a5b8fc39ed35e8a9">mE</link>;
+<link linkend="class_configure_one_flag_1_1_audit_a7daa677b70eb67ec0dd852af3bec3ed8_1a7daa677b70eb67ec0dd852af3bec3ed8">15 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_audit_a7daa677b70eb67ec0dd852af3bec3ed8_1a7daa677b70eb67ec0dd852af3bec3ed8">mEIndex</link>;
+<link linkend="class_configure_one_flag_1_1_audit_a4c25eeff57eee610931b819b177df49b_1a4c25eeff57eee610931b819b177df49b">16 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_audit_a4c25eeff57eee610931b819b177df49b_1a4c25eeff57eee610931b819b177df49b">resetmE</link>;
+17 
+<link linkend="class_configure_one_flag_1_1_audit_ab7a15d124f661d9f251f17cf042f00ac_1ab7a15d124f661d9f251f17cf042f00ac">18 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_audit_ab7a15d124f661d9f251f17cf042f00ac_1ab7a15d124f661d9f251f17cf042f00ac">SetTruncate</link>(<emphasis class="keywordtype">string</emphasis>&#32;field,&#32;<emphasis class="keywordtype">int</emphasis>&#32;fieldLen,&#32;<emphasis class="keywordtype">int</emphasis>&#32;maxLen,&#32;<emphasis class="keywordtype">string</emphasis>&#32;order_num,&#32;<emphasis class="keywordtype">int</emphasis>&#32;order_line_num,&#32;<emphasis class="keywordtype">string</emphasis>&#32;fieldContent)
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(resetmE&#32;==&#32;<emphasis class="keyword">true</emphasis>)
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mE&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>[50];
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mEIndex&#32;=&#32;0;
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;resetmE&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(fieldLen&#32;&gt;&#32;maxLen)
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">false</emphasis>:
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>;
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">default</emphasis>:
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;auditMessageL&#32;=&#32;<emphasis class="stringliteral">&quot;Truncated&#32;Data&#32;-&#32;Order:&#32;&quot;</emphasis>&#32;+&#32;order_num&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;&#32;Line:&#32;&quot;</emphasis>&#32;+&#32;order_line_num&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;&#32;Field:&#32;&quot;</emphasis>&#32;+&#32;field&#32;&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;&#32;Field&#32;Length:&#32;&quot;</emphasis>&#32;+&#32;fieldLen&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;&#32;Max&#32;Length:&#32;&quot;</emphasis>&#32;+&#32;maxLen&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;&#32;Field&#32;Content:&#32;&quot;</emphasis>&#32;+&#32;fieldContent;
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a59987be56acf3f8cbf7681d6b4866e81_1a59987be56acf3f8cbf7681d6b4866e81">WriteAuditRecord</link>(auditMessageL,&#32;order_num,&#32;order_line_num,&#32;<emphasis class="stringliteral">&quot;TRUNCATION&quot;</emphasis>);
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a3cd5e3e64a361f5e3a8d7fbd724a471f_1a3cd5e3e64a361f5e3a8d7fbd724a471f">logEvent</link>&#32;=&#32;<link linkend="class_configure_one_flag_1_1_audit_a2797d3b31d8f20749195d3c64d99e6f3_1a2797d3b31d8f20749195d3c64d99e6f3">auditMessageL</link>;
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a3cd5e3e64a361f5e3a8d7fbd724a471f_1a3cd5e3e64a361f5e3a8d7fbd724a471f">logEvent</link>,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Warning,&#32;234);
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;auditMessageL&#32;=&#32;<emphasis class="stringliteral">&quot;Truncated&#32;Data&#32;-&#32;Order:&#32;&quot;</emphasis>&#32;+&#32;order_num&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;&#32;Line:&#32;&quot;</emphasis>&#32;+&#32;order_line_num&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;&#32;Field:&#32;&quot;</emphasis>&#32;+&#32;field&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;&#32;Field&#32;Length:&#32;&quot;</emphasis>&#32;+&#32;fieldLen&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;&#32;Max&#32;Length:&#32;&quot;</emphasis>&#32;+&#32;maxLen&#32;+&#32;Environment.NewLine&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;&#32;Field&#32;Content:&#32;&quot;</emphasis>&#32;+&#32;fieldContent;
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mE[<link linkend="class_configure_one_flag_1_1_audit_a7daa677b70eb67ec0dd852af3bec3ed8_1a7daa677b70eb67ec0dd852af3bec3ed8">mEIndex</link>]&#32;=&#32;auditMessageL.ToString();
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mEIndex&#32;+=&#32;1;
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_audit_ac9f5188a69320d3d419afed3499e2a26_1ac9f5188a69320d3d419afed3499e2a26">41 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_audit_ac9f5188a69320d3d419afed3499e2a26_1ac9f5188a69320d3d419afed3499e2a26">ProcessingCompleted</link>(<emphasis class="keywordtype">string</emphasis>&#32;auditMessage)
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//check&#32;to&#32;see&#32;if&#32;there&#32;are&#32;any&#32;elements&#32;in&#32;the&#32;mE&#32;array&#32;and&#32;if&#32;so,&#32;send&#32;via&#32;email</emphasis>
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;ub&#32;=&#32;<link linkend="class_configure_one_flag_1_1_audit_a7daa677b70eb67ec0dd852af3bec3ed8_1a7daa677b70eb67ec0dd852af3bec3ed8">mEIndex</link>;
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;outMessage&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(ub&#32;&gt;&#32;0)
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(<emphasis class="keywordtype">int</emphasis>&#32;i&#32;=&#32;1;&#32;i&#32;&lt;&#32;ub;&#32;i&#32;+=&#32;1)
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;outMessage&#32;=&#32;outMessage&#32;+&#32;<emphasis class="stringliteral">&quot;ERROR&#32;#&quot;</emphasis>&#32;+&#32;(i)&#32;+&#32;Environment.NewLine&#32;+&#32;mE[i];
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;outMessage&#32;=&#32;outMessage&#32;+&#32;Environment.NewLine&#32;+&#32;Environment.NewLine;
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_send_mail">SendMail</link>.<link linkend="class_configure_one_flag_1_1_send_mail_a2e1c2d0826f023cb2684a2b9bbd74ad9_1a2e1c2d0826f023cb2684a2b9bbd74ad9">MailMessage</link>(outMessage,&#32;<emphasis class="stringliteral">&quot;Configure&#32;One&#32;XML&#32;Mapping&#32;Errors&quot;</emphasis>);
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Array.Clear(mE,&#32;0,&#32;mE.Length);
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a59987be56acf3f8cbf7681d6b4866e81_1a59987be56acf3f8cbf7681d6b4866e81">WriteAuditRecord</link>(auditMessage,&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a7c8cb30970114fab7e2cb28fc8275b76_1a7c8cb30970114fab7e2cb28fc8275b76">globalOrderNum</link>,&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a62810055c0e03f0cc3568275245a1c07_1a62810055c0e03f0cc3568275245a1c07">globalOrderLineNum</link>,&#32;<emphasis class="stringliteral">&quot;PROCESSING&#32;COMPLETED&quot;</emphasis>);
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+59 &#32;&#32;&#32;&#32;}
+60 }
+    </computeroutput></literallayout>
+</section>

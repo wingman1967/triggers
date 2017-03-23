@@ -81,7 +81,7 @@
         </section>
     <simplesect>
 
-<para>Primary processor called from C1ORDER trigger for accessing C1 web service and returning/mapping data to SQL where appropriate </para>
+<para>Primary entrypoint called from C1ORDER trigger for accessing C1 web service and returning/mapping data to SQL where appropriate </para>
     </simplesect>
         <simplesect>
             <title>Detailed Description</title>
