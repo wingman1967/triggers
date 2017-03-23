@@ -45,9 +45,9 @@ namespace ConfigureOneFlag
             string outMessage = "";
             if (ub > 0)
             {
-                for (int i = 1; i < ub; i += 1)
+                for (int i = 0; i < ub; i += 1)
                 {
-                    outMessage = outMessage + "ERROR #" + (i) + Environment.NewLine + mE[i];
+                    outMessage = outMessage + "ERROR #" + (i + 1) + Environment.NewLine + mE[i];
                     outMessage = outMessage + Environment.NewLine + Environment.NewLine;
                 }
                 SendMail.MailMessage(outMessage, "Configure One XML Mapping Errors");
