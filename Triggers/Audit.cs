@@ -40,16 +40,12 @@ namespace ConfigureOneFlag
         }
         public static void ProcessingCompleted(string auditMessage)
         {
-            //check to see if there are any elements in the mE array and if so, send via email
+            //check to see if there are any elements in the mE array and if so, send via email in digest format
             int ub = mEIndex;
             string outMessage = "";
             if (ub > 0)
             {
-                for (int i = 0; i < ub; i += 1)
-                {
-                    outMessage = outMessage + "ERROR #" + (i + 1) + Environment.NewLine + mE[i];
-                    outMessage = outMessage + Environment.NewLine + Environment.NewLine;
-                }
+                for (int i = 0; i < ub; i += 1) {outMessage = outMessage + "ERROR #" + (i + 1) + Environment.NewLine + mE[i] + Environment.NewLine + Environment.NewLine;}
                 SendMail.MailMessage(outMessage, "Configure One XML Mapping Errors");
             }
             

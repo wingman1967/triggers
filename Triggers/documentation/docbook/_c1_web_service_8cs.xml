@@ -90,67 +90,65 @@ Processing for call to ConfigureOne web service and return for further handling
 19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;CALLING&#32;C1&#32;WEBSERVICE&quot;</emphasis>;
 21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-22 
-23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;sURL&#32;=&#32;url;
-24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HttpWebRequest&#32;objRequest&#32;=&#32;(HttpWebRequest)WebRequest.Create(sURL.ToString());
-25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Method&#32;=&#32;<emphasis class="stringliteral">&quot;POST&quot;</emphasis>;
-26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ContentType&#32;=&#32;<emphasis class="stringliteral">&quot;text/xml&quot;</emphasis>;
-27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Headers.Add(<emphasis class="stringliteral">&quot;SOAPAction&quot;</emphasis>,&#32;key);
-28 
-29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;xmlPayload&#32;=&#32;payload;
-30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;StringBuilder&#32;data&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringBuilder();
-31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.Append(xmlPayload);
-32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte[]&#32;byteData&#32;=&#32;Encoding.UTF8.GetBytes(data.ToString());&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;Sending&#32;our&#32;request&#32;to&#32;Apache&#32;AXIS&#32;in&#32;a&#32;byte&#32;array</emphasis>
-33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ContentLength&#32;=&#32;byteData.Length;
-34 
-35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(Stream&#32;postStream&#32;=&#32;objRequest.GetRequestStream())
-36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;postStream.Write(byteData,&#32;0,&#32;byteData.Length);
-38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlDocument&#32;xmlResult&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;XmlDocument();
-40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>
-41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//return&#32;response&#32;from&#32;web&#32;service&#32;(if&#32;any)</emphasis>
-43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;result&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(HttpWebResponse&#32;response&#32;=&#32;objRequest.GetResponse()&#32;as&#32;HttpWebResponse)
-45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;StreamReader&#32;reader&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StreamReader(response.GetResponseStream());
-47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result&#32;=&#32;reader.ReadToEnd();
-48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;reader.Close();
-49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>
-51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlResult.LoadXml(result);
-53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;ex2)
-55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;ERROR&#32;LOADING&#32;XML&#32;FROM&#32;WEB&#32;SERVICE:&#32;&quot;</emphasis>&#32;+&#32;ex2.Message;
-57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Error,&#32;234);
-58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>;
-59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a5a6dd7de598157ff1b70088ad3852f6b_1a5a6dd7de598157ff1b70088ad3852f6b">caller</link>&#32;==&#32;<emphasis class="stringliteral">&quot;ORDER&quot;</emphasis>)
-61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_ad721c5a816e1d3b5a16fec23498ecdf3_1ad721c5a816e1d3b5a16fec23498ecdf3">MapXMLToSQL</link>(xmlResult);
-63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-64 
-65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a5a6dd7de598157ff1b70088ad3852f6b_1a5a6dd7de598157ff1b70088ad3852f6b">caller</link>&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;stringWriter&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringWriter())
-67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;xmlTextWriter&#32;=&#32;XmlWriter.Create(stringWriter))
-68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlResult.WriteTo(xmlTextWriter);
-70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlTextWriter.Flush();
-71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;xmlOut&#32;=&#32;stringWriter.GetStringBuilder().ToString();
-72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a932282a05546247b1e01d8a32719b6c4_1a932282a05546247b1e01d8a32719b6c4">wsReturn</link>&#32;=&#32;<link linkend="namespace_system">System</link>.Xml.Linq.XDocument.Parse(xmlOut).ToString();
-73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(WebException&#32;wex1)
-76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;ERROR&#32;RETURNED&#32;FROM&#32;C1&#32;WEBSERVICE:&#32;&quot;</emphasis>&#32;+&#32;wex1.Message&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;:&#32;&quot;</emphasis>&#32;+&#32;wex1.Response.ToString();
-78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Error,&#32;234);
-79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-81 &#32;&#32;&#32;&#32;}
-82 }
-83 
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;sURL&#32;=&#32;url;
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HttpWebRequest&#32;objRequest&#32;=&#32;(HttpWebRequest)WebRequest.Create(sURL.ToString());
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Method&#32;=&#32;<emphasis class="stringliteral">&quot;POST&quot;</emphasis>;
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ContentType&#32;=&#32;<emphasis class="stringliteral">&quot;text/xml&quot;</emphasis>;
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Headers.Add(<emphasis class="stringliteral">&quot;SOAPAction&quot;</emphasis>,&#32;key);
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;xmlPayload&#32;=&#32;payload;
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;StringBuilder&#32;data&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringBuilder();
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.Append(xmlPayload);
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte[]&#32;byteData&#32;=&#32;Encoding.UTF8.GetBytes(data.ToString());&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;Sending&#32;our&#32;request&#32;to&#32;Apache&#32;AXIS&#32;in&#32;a&#32;byte&#32;array</emphasis>
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ContentLength&#32;=&#32;byteData.Length;
+32 
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(Stream&#32;postStream&#32;=&#32;objRequest.GetRequestStream())
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;postStream.Write(byteData,&#32;0,&#32;byteData.Length);
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlDocument&#32;xmlResult&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;XmlDocument();
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//return&#32;response&#32;from&#32;AXIS&#32;(if&#32;any)</emphasis>
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;result&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(HttpWebResponse&#32;response&#32;=&#32;objRequest.GetResponse()&#32;as&#32;HttpWebResponse)
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;StreamReader&#32;reader&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StreamReader(response.GetResponseStream());
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result&#32;=&#32;reader.ReadToEnd();
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;reader.Close();
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlResult.LoadXml(result);
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;ex2)
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;ERROR&#32;LOADING&#32;XML&#32;FROM&#32;WEB&#32;SERVICE:&#32;&quot;</emphasis>&#32;+&#32;ex2.Message;
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Error,&#32;234);
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>;
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a5a6dd7de598157ff1b70088ad3852f6b_1a5a6dd7de598157ff1b70088ad3852f6b">caller</link>&#32;==&#32;<emphasis class="stringliteral">&quot;ORDER&quot;</emphasis>)
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_ad721c5a816e1d3b5a16fec23498ecdf3_1ad721c5a816e1d3b5a16fec23498ecdf3">MapXMLToSQL</link>(xmlResult);
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+62 
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a5a6dd7de598157ff1b70088ad3852f6b_1a5a6dd7de598157ff1b70088ad3852f6b">caller</link>&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;stringWriter&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringWriter())
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;xmlTextWriter&#32;=&#32;XmlWriter.Create(stringWriter))
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlResult.WriteTo(xmlTextWriter);
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlTextWriter.Flush();
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;xmlOut&#32;=&#32;stringWriter.GetStringBuilder().ToString();
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a932282a05546247b1e01d8a32719b6c4_1a932282a05546247b1e01d8a32719b6c4">wsReturn</link>&#32;=&#32;<link linkend="namespace_system">System</link>.Xml.Linq.XDocument.Parse(xmlOut).ToString();
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(WebException&#32;wex1)
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;ERROR&#32;RETURNED&#32;FROM&#32;C1&#32;WEBSERVICE:&#32;&quot;</emphasis>&#32;+&#32;wex1.Message&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;:&#32;&quot;</emphasis>&#32;+&#32;wex1.Response.ToString();
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Error,&#32;234);
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+79 &#32;&#32;&#32;&#32;}
+80 }
+81 
     </computeroutput></literallayout>
 </section>
