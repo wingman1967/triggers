@@ -55,10 +55,7 @@ namespace ConfigureOneFlag
                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
                     return;
                 }
-                if (Triggers.caller == "ORDER")
-                {
-                    StagingUtilities.MapXMLToSQL(xmlResult);
-                }
+                if (Triggers.caller == "ORDER") {StagingUtilities.MapXMLToSQL(xmlResult);}
 
                 Triggers.caller = "";
                 using (var stringWriter = new StringWriter())

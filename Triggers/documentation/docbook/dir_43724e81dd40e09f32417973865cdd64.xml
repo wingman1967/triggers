@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dir_43724e81dd40e09f32417973865cdd64">
-    <title>obj Directory Reference</title>
-<para>Directory dependency diagram for obj</para>
+    <title>C:/Users/hinesj/Documents/Visual Studio 2015/Projects/Triggers/Triggers/obj Directory Reference</title>
+<para>Directory dependency diagram for C:/Users/hinesj/Documents/Visual Studio 2015/Projects/Triggers/Triggers/obj</para>
 <para>
     <figure>
         <title>Directory Dependency diagram</title>
@@ -17,7 +17,7 @@
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>dir <link linkend="dir_a71c3b2ad23b9ff58220dd012d201987">obj/Debug</link></para>
+                        <para>dir <link linkend="dir_a71c3b2ad23b9ff58220dd012d201987">C:/Users/hinesj/Documents/Visual Studio 2015/Projects/Triggers/Triggers/obj/Debug</link></para>
                     </listitem>
                 </itemizedlist>
             </para>

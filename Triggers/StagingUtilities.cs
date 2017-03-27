@@ -252,7 +252,7 @@ namespace ConfigureOneFlag
                 DatabaseFactory.WriteRecordCOItem(ref coitem);
 
                 //*** Everything else here builds on the COITEM ***
-
+                
                 //iterate through Inputs for the line
                 XmlNodeList xnli = xmldoc.GetElementsByTagName("Input");
                 foreach (XmlNode nodei in xnli)
