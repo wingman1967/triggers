@@ -14,7 +14,6 @@ namespace ConfigureOneFlag
         public static string[] mE;
         public static int mEIndex;
         public static bool resetmE;
-
         public static void SetTruncate(string field, int fieldLen, int maxLen, string order_num, int order_line_num, string fieldContent)
         {
             if (resetmE == true)
