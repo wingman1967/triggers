@@ -23,7 +23,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_assembly_info_8cs.html",
-"functions_c.html"
+"files.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

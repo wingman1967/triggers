@@ -48,13 +48,6 @@ Repository for all database functions and calls on behalf of the assembly
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>struct <link linkend="namespace_system_1_1_data_1_1_sql_client">System::Data::SqlClient</link></para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
                         <para>struct <link linkend="namespace_system_1_1_data">System::Data</link></para>
                     </listitem>
                 </itemizedlist>
@@ -63,13 +56,6 @@ Repository for all database functions and calls on behalf of the assembly
                 <itemizedlist>
                     <listitem>
                         <para>struct <link linkend="namespace_system_1_1_configuration">System::Configuration</link></para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>struct <link linkend="namespace_microsoft_1_1_sql_server_1_1_server">Microsoft::SqlServer::Server</link></para>
                     </listitem>
                 </itemizedlist>
             </para>

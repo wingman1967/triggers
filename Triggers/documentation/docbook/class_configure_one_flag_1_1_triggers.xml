@@ -28,6 +28,16 @@
             <para>
                 <itemizedlist>
                     <listitem>
+                        <para>static Dictionary&lt; string, string &gt; webmethods</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
                         <para>static string wsReturn</para>
                     </listitem>
                 </itemizedlist>
@@ -78,6 +88,14 @@
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f_1a7446070eb1c5dd9f63f7043525014c9f">C1Order</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
     <simplesect>
 
@@ -85,10 +103,14 @@
     </simplesect>
         <simplesect>
             <title>Detailed Description</title>
-                <para>Definition at line 15 of file trigger.cs</para>
+                <para>Definition at line 12 of file Class1.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>
-                <para><itemizedlist><listitem><para>trigger.cs</para></listitem></itemizedlist></para>
+                <para><itemizedlist><listitem><para>Class1.cs</para></listitem></itemizedlist></para>
         </simplesect>
+            <section xml:id="class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f_1a7446070eb1c5dd9f63f7043525014c9f">
+                <title>static void ConfigureOneFlag.Triggers.C1Order ()</title> <emphasis></emphasis>
+                
+            </section>
             <section xml:id="class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f_1a7446070eb1c5dd9f63f7043525014c9f">
                 <title>static void ConfigureOneFlag.Triggers.C1Order ()</title> <emphasis></emphasis>
                 

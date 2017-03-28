@@ -1,4 +1,4 @@
-.TH "ConfigureOneFlag.Triggers" 3 "Mon Mar 27 2017" "ConfigureOne Trigger" \" -*- nroff -*-
+.TH "ConfigureOneFlag.Triggers" 3 "Tue Mar 28 2017" "ConfigureOne Trigger" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -10,6 +10,9 @@ ConfigureOneFlag.Triggers \- Primary entrypoint called from C1ORDER trigger for 
 .SS "Static Public Member Functions"
 
 .in +1c
+.ti -1c
+.RI "static void \fBC1Order\fP ()"
+.br
 .ti -1c
 .RI "static void \fBC1Order\fP ()"
 .br
@@ -36,29 +39,40 @@ ConfigureOneFlag.Triggers \- Primary entrypoint called from C1ORDER trigger for 
 .RI "static string \fBlogName\fP = 'Application'"
 .br
 .in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static Dictionary< string, string > \fBwebmethods\fP = new Dictionary<string, string>()"
+.br
+.in -1c
 .SH "Detailed Description"
 .PP 
 Primary entrypoint called from C1ORDER trigger for accessing C1 web service and returning/mapping data to SQL where appropriate 
 
 
 .PP
-Definition at line 14 of file trigger\&.cs\&.
+Definition at line 11 of file Class1\&.cs\&.
 .SH "Member Function Documentation"
 .PP 
+.SS "static void ConfigureOneFlag\&.Triggers\&.C1Order ()\fC [static]\fP"
+
+.PP
+Definition at line 18 of file Class1\&.cs\&.
 .SS "static void ConfigureOneFlag\&.Triggers\&.C1Order ()\fC [static]\fP"
 
 .PP
 Definition at line 23 of file trigger\&.cs\&.
 .SH "Member Data Documentation"
 .PP 
-.SS "string ConfigureOneFlag\&.Triggers\&.C1URL\fC [static]\fP"
+.SS "static string ConfigureOneFlag\&.Triggers\&.C1URL\fC [static]\fP"
 
 .PP
-Definition at line 18 of file trigger\&.cs\&.
-.SS "string ConfigureOneFlag\&.Triggers\&.caller = ''\fC [static]\fP"
+Definition at line 16 of file Class1\&.cs\&.
+.SS "static string ConfigureOneFlag\&.Triggers\&.caller = ''\fC [static]\fP"
 
 .PP
-Definition at line 17 of file trigger\&.cs\&.
+Definition at line 15 of file Class1\&.cs\&.
 .SS "string ConfigureOneFlag\&.Triggers\&.logEvent\fC [static]\fP"
 
 .PP
@@ -71,10 +85,14 @@ Definition at line 21 of file trigger\&.cs\&.
 
 .PP
 Definition at line 19 of file trigger\&.cs\&.
-.SS "string ConfigureOneFlag\&.Triggers\&.wsReturn\fC [static]\fP"
+.SS "Dictionary<string, string> ConfigureOneFlag\&.Triggers\&.webmethods = new Dictionary<string, string>()\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 16 of file trigger\&.cs\&.
+Definition at line 13 of file Class1\&.cs\&.
+.SS "static string ConfigureOneFlag\&.Triggers\&.wsReturn\fC [static]\fP"
+
+.PP
+Definition at line 14 of file Class1\&.cs\&.
 
 .SH "Author"
 .PP 

@@ -11,6 +11,9 @@ var files =
     [ "C1WebService.cs", "_c1_web_service_8cs.html", [
       [ "C1WebService", "class_configure_one_flag_1_1_c1_web_service.html", "class_configure_one_flag_1_1_c1_web_service" ]
     ] ],
+    [ "Class1.cs", "_class1_8cs.html", [
+      [ "Triggers", "class_configure_one_flag_1_1_triggers.html", "class_configure_one_flag_1_1_triggers" ]
+    ] ],
     [ "crypto.cs", "crypto_8cs.html", [
       [ "crypto", "class_configure_one_flag_1_1crypto.html", "class_configure_one_flag_1_1crypto" ]
     ] ],
