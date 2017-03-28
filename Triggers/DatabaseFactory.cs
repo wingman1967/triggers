@@ -1,20 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-//using System.Threading.Tasks;
-using System.Data.SqlClient;
+﻿using System.Data.SqlClient;
 using System.Data;
-using System.Configuration;
-using Microsoft.SqlServer.Server;
-using System.Data.SqlTypes;
-using System.Collections.Specialized;
 using Microsoft.Win32;
 using System.IO;
-using System.Security;
-using System.Security.Cryptography;
-using System.Runtime.InteropServices;
-using ConfigureOneFlag;
 
 namespace ConfigureOneFlag
 {

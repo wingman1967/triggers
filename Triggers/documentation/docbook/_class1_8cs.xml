@@ -48,6 +48,13 @@ Primary entrypoint called from C1ORDER trigger for accessing C1 web service and 
             <para>
                 <itemizedlist>
                     <listitem>
+                        <para>struct <link linkend="namespace_system_1_1_linq">System::Linq</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
                         <para>struct <link linkend="namespace_microsoft_1_1_sql_server_1_1_server">Microsoft::SqlServer::Server</link></para>
                     </listitem>
                 </itemizedlist>

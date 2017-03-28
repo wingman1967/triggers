@@ -40,7 +40,7 @@ string messageBody, string messageSubject)</para>
     </simplesect>
         <simplesect>
             <title>Detailed Description</title>
-                <para>Definition at line 13 of file SendMail.cs</para>
+                <para>Definition at line 9 of file SendMail.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>SendMail.cs</para></listitem></itemizedlist></para>
         </simplesect>

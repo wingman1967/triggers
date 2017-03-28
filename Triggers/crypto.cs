@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Security;
 using System.Security.Cryptography;
-using System.Runtime.InteropServices;
-using ConfigureOneFlag;
 using System.IO;
 
 namespace ConfigureOneFlag
@@ -29,8 +25,8 @@ namespace ConfigureOneFlag
 
             if (cryptogram.Length < 17)
             {
-                ConfigureOneFlag.Triggers.logEvent = "A cryptographic error occurred decrypting server connection string";
-                System.Diagnostics.EventLog.WriteEntry(ConfigureOneFlag.Triggers.logSource, ConfigureOneFlag.Triggers.logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
+                Triggers.logEvent = "A cryptographic error occurred decrypting server connection string";
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
                 return;
             }
 
@@ -47,7 +43,7 @@ namespace ConfigureOneFlag
         private byte[] Decrypt(byte[] buffer, byte[] vector)
         {
             var decryptor = rm.CreateDecryptor(key, vector);
-            return this.Transform(buffer, decryptor);
+            return Transform(buffer, decryptor);
         }
 
         private byte[] Transform(byte[] buffer, ICryptoTransform transform)

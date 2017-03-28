@@ -148,7 +148,7 @@ string auditMessageL, string orderNum, int orderLine, string auditEvent)</para>
     </simplesect>
         <simplesect>
             <title>Detailed Description</title>
-                <para>Definition at line 25 of file DatabaseFactory.cs</para>
+                <para>Definition at line 12 of file DatabaseFactory.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>DatabaseFactory.cs</para></listitem></itemizedlist></para>
         </simplesect>
