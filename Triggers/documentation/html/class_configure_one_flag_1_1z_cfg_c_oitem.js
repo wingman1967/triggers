@@ -1,5 +1,6 @@
 var class_configure_one_flag_1_1z_cfg_c_oitem =
 [
+    [ "config_type", "class_configure_one_flag_1_1z_cfg_c_oitem_a03abb064616f2d89e3f4ed6afcdef5f9.html#a03abb064616f2d89e3f4ed6afcdef5f9", null ],
     [ "description", "class_configure_one_flag_1_1z_cfg_c_oitem_ae654033e98a250bc562635e7a0864068.html#ae654033e98a250bc562635e7a0864068", null ],
     [ "discount_amt", "class_configure_one_flag_1_1z_cfg_c_oitem_a4ae230a86055ce005c05f3a47db8e35f.html#a4ae230a86055ce005c05f3a47db8e35f", null ],
     [ "due_date", "class_configure_one_flag_1_1z_cfg_c_oitem_a2b921a05a9281e6463ecd6658749ce27.html#a2b921a05a9281e6463ecd6658749ce27", null ],
@@ -14,6 +15,7 @@ var class_configure_one_flag_1_1z_cfg_c_oitem =
     [ "unit_price", "class_configure_one_flag_1_1z_cfg_c_oitem_adce8defe8fcce99abd6e430540b2da03.html#adce8defe8fcce99abd6e430540b2da03", null ],
     [ "CO_Line", "class_configure_one_flag_1_1z_cfg_c_oitem_ad404cc47ce25be8df01618c2f1827200.html#ad404cc47ce25be8df01618c2f1827200", null ],
     [ "CO_Num", "class_configure_one_flag_1_1z_cfg_c_oitem_a81b1d61f51869b4d7681186d0269e4b4.html#a81b1d61f51869b4d7681186d0269e4b4", null ],
+    [ "ConfigType", "class_configure_one_flag_1_1z_cfg_c_oitem_a82d4481426f3189d8d324fb7ca9d85cb.html#a82d4481426f3189d8d324fb7ca9d85cb", null ],
     [ "Desc", "class_configure_one_flag_1_1z_cfg_c_oitem_a9dd76b402819ba05697e297121c18be5.html#a9dd76b402819ba05697e297121c18be5", null ],
     [ "Discount", "class_configure_one_flag_1_1z_cfg_c_oitem_adf8e35ad1abe7410175f91aa79c6555f.html#adf8e35ad1abe7410175f91aa79c6555f", null ],
     [ "DueDate", "class_configure_one_flag_1_1z_cfg_c_oitem_a5914c877ed16ad4c3b66772a7e05528a.html#a5914c877ed16ad4c3b66772a7e05528a", null ],

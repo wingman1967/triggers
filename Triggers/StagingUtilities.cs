@@ -274,6 +274,7 @@ namespace ConfigureOneFlag
                 coitem.Item = node.ChildNodes[3].InnerText;
                 coitem.Smartpart = node.ChildNodes[4].InnerText;
                 coitem.Desc = node.ChildNodes[5].InnerText;
+                coitem.ConfigType = node.ChildNodes[6].InnerText;
                 coitem.UnitPrice = Convert.ToDecimal(node.ChildNodes[7].InnerText);
                 coitem.UnitCost = Convert.ToDecimal(node.ChildNodes[8].InnerText);
                 coitem.Discount = Convert.ToDecimal(node.ChildNodes[9].InnerText);
