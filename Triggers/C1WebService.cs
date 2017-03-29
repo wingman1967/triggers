@@ -52,7 +52,7 @@ namespace ConfigureOneFlag
                     return;
                 }
                 if (Triggers.caller == "ORDER") {StagingUtilities.MapXMLToSQL(xmlResult);}
-
+                                
                 Triggers.caller = "";
                 using (var stringWriter = new StringWriter())
                 using (var xmlTextWriter = XmlWriter.Create(stringWriter))

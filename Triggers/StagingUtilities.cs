@@ -21,6 +21,25 @@ namespace ConfigureOneFlag
 
             Audit.resetmE = true;       //reset the mE array in case we have any mapping errors to report for this cycle
 
+            //*** Determine what site we are working with and re-set the connection string accordingly, else default to NOVB
+            XmlNodeList xnlsite = xmldoc.GetElementsByTagName("Input");
+            foreach (XmlNode node in xnlsite)
+            {
+                switch (node.ChildNodes[2].InnerText == "ORDER SITE")
+                {
+                    case true:
+                        string rplConnectionString = DatabaseFactory.connectionString;
+                        int csPos = rplConnectionString.IndexOf("NOVB");
+                        DatabaseFactory.connectionString = rplConnectionString.Substring(0, csPos) + node.ChildNodes[0].Attributes["name"].Value + rplConnectionString.Substring(csPos + 4, rplConnectionString.Length - (csPos + 4));
+                        Triggers.logEvent = "Connection String: " + DatabaseFactory.connectionString;
+                        System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                        break;
+                    default:
+                        //continue with our NOVB default
+                        break;
+                }
+            }
+            
             //Load staging-table objects from XML
             XmlNodeList xnl = xmldoc.GetElementsByTagName("ORDER_NUM");
             foreach (XmlNode node in xnl)
