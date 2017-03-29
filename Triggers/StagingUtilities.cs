@@ -39,8 +39,25 @@ namespace ConfigureOneFlag
                         break;
                 }
             }
+
+            //Retrieve due date
+            XmlNodeList xnlduedate = xmldoc.GetElementsByTagName("Input");
+            foreach (XmlNode node in xnlduedate)
+            {
+                switch (node.ChildNodes[2].InnerText == "DUE DATE")
+                {
+                    case true:
+                        co.DueDate = Convert.ToDateTime(node.ChildNodes[0].Attributes["name"].Value);
+                        coitem.DueDate = Convert.ToDateTime(node.ChildNodes[0].Attributes["name"].Value);
+                        break;
+                    default:
+                        co.DueDate = DateTime.Now;
+                        coitem.DueDate = DateTime.Now;
+                        break;
+                }
+            }
             
-            //Load staging-table objects from XML
+            //Pre-staging activities
             XmlNodeList xnl = xmldoc.GetElementsByTagName("ORDER_NUM");
             foreach (XmlNode node in xnl)
             {

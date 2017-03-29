@@ -22,6 +22,7 @@ namespace ConfigureOneFlag
         private decimal discount_amt;
         private decimal quantity;
         private int priority_level;
+        private DateTime due_date;
         public string CO_Num
         {
             get { return order_num; }
@@ -76,6 +77,11 @@ namespace ConfigureOneFlag
         {
             get { return priority_level; }
             set { priority_level = value; }
+        }
+        public DateTime DueDate
+        {
+            get { return due_date; }
+            set { due_date = value; }
         }
     }
 }

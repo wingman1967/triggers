@@ -47,6 +47,7 @@ namespace ConfigureOneFlag
         private string ship_to_email_address;
         private string ship_to_ref_num;
         private int priority_level;
+        private DateTime due_date;
         public string Identifier
         {
             get { return id; }
@@ -226,6 +227,11 @@ namespace ConfigureOneFlag
         {
             get { return priority_level; }
             set { priority_level = value; }
+        }
+        public DateTime DueDate
+        {
+            get { return due_date; }
+            set { due_date = value; }
         }
     }
 }
