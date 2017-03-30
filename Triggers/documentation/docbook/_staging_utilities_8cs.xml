@@ -314,7 +314,7 @@ Utilities used for staging of data from C1 to SQL databases
 264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;CO&#32;header&#32;to&#32;SQL&#32;before&#32;proceeding&#32;to&#32;the&#32;coitem</emphasis>
 266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a628dded3ecd9efab9c21a01a864dc518_1a628dded3ecd9efab9c21a01a864dc518">WriteRecordCO</link>(ref&#32;co);
-267 
+267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
 268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//build&#32;COITEM&#32;records,&#32;per&#32;line</emphasis>
 269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xnl&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Detail&quot;</emphasis>);
 270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;node&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnl)
@@ -335,73 +335,76 @@ Utilities used for staging of data from C1 to SQL databases
 285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a7e40f3f0a85ffe44b8c2a3197e6d8925_1a7e40f3f0a85ffe44b8c2a3197e6d8925">WriteRecordCOItem</link>(ref&#32;coitem);
 286 
 287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//***&#32;Everything&#32;else&#32;here&#32;builds&#32;on&#32;the&#32;COITEM&#32;***</emphasis>
-288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-289 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//iterate&#32;through&#32;Inputs&#32;for&#32;the&#32;line</emphasis>
-290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnli&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Input&quot;</emphasis>);
-291 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodei&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnli)
-292 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-293 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CO_Line&#32;=&#32;coitem.CO_Line;
-294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CName&#32;=&#32;nodei.ChildNodes[2].InnerText.Replace(<emphasis class="stringliteral">&quot;&#32;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;_&quot;</emphasis>);
-295 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CValue&#32;=&#32;nodei.ChildNodes[0].InnerText;
-296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CType&#32;=&#32;nodei.ChildNodes[1].InnerText;
-297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CLabel&#32;=&#32;nodei.ChildNodes[2].InnerText;
-298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.PriorityLevel&#32;=&#32;co.PriorityLevel;
-299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;cfg&#32;(parmval)&#32;record</emphasis>
-300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_aeab9b81fff5fdf32493ce1f2c2c0082b_1aeab9b81fff5fdf32493ce1f2c2c0082b">WriteRecordCfg</link>(ref&#32;cfg);
-301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//item-master&#32;for&#32;the&#32;line&#32;we&#32;are&#32;working&#32;with</emphasis>
-303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;recordSequence&#32;=&#32;1;
-304 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlim&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;ItemMaster&quot;</emphasis>);
-305 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.CO_Line&#32;=&#32;coitem.CO_Line;
-306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeim&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlim)
-307 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-308 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Sequence&#32;=&#32;recordSequence;
-309 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Smartpart&#32;=&#32;nodeim.ChildNodes[0].InnerText;
-310 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Item&#32;=&#32;nodeim.ChildNodes[1].InnerText;
-311 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Desc&#32;=&#32;nodeim.ChildNodes[3].InnerText;
-312 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;cost&#32;=&#32;nodeim.ChildNodes[4].InnerText;
-313 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;price&#32;=&#32;nodeim.ChildNodes[5].InnerText;
-314 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;sell&#32;=&#32;nodeim.ChildNodes[6].InnerText;
-315 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;weight&#32;=&#32;nodeim.ChildNodes[9].InnerText;
-316 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemCost&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(cost)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;cost);
-317 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemPrice&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(price)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;price);
-318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemSellPrice&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(sell)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;sell);
-319 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemWeight&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(weight)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;weight);
-320 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.UnitOfMeasure&#32;=&#32;nodeim.ChildNodes[26].InnerText;
-321 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.PriorityLevel&#32;=&#32;Convert.ToInt16(nodeim.ChildNodes[38].InnerText);
-322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;recordSequence&#32;+=&#32;1;
-323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;item-master&#32;record</emphasis>
-324 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_ae84fa2fa2699960542cadbe2053b947d_1ae84fa2fa2699960542cadbe2053b947d">WriteRecordCItem</link>(ref&#32;citem);
-325 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-326 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//BOM&#32;records</emphasis>
-327 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;recordSequence&#32;=&#32;0;
-328 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlb&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Bom&quot;</emphasis>);
-329 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.CO_Line&#32;=&#32;coitem.CO_Line;
-330 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeib&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlb)
-331 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-332 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;recordSequence&#32;=&#32;1;
-333 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Sequence&#32;=&#32;recordSequence;
-334 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;parent&#32;=&#32;nodeib.SelectSingleNode(<emphasis class="stringliteral">&quot;..&quot;</emphasis>);
-335 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;parentID&#32;=&#32;parent.ChildNodes[0].InnerText;
-336 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Parent&#32;=&#32;parentID&#32;==&#32;<emphasis class="stringliteral">&quot;1&quot;</emphasis>&#32;?&#32;null&#32;:&#32;parentID;
-337 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Identifier&#32;=&#32;nodeib.ChildNodes[0].InnerText;
-338 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Item&#32;=&#32;nodeib.ChildNodes[1].InnerText;
-339 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Smartpart&#32;=&#32;nodeib.ChildNodes[2].InnerText;
-340 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.UnitPrice&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[3].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[3].InnerText);
-341 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.UnitCost&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[4].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[4].InnerText);
-342 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Discount&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[5].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[5].InnerText);
-343 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.QTY&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[6].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[6].InnerText);
-344 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.PriorityLevel&#32;=&#32;co.PriorityLevel;
-345 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;BOM&#32;record</emphasis>
-346 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a7d20594ae96a13614accd3e7d8d8a04a_1a7d20594ae96a13614accd3e7d8d8a04a">WriteRecordBOM</link>(ref&#32;bom);
-347 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-348 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a3cd5e3e64a361f5e3a8d7fbd724a471f_1a3cd5e3e64a361f5e3a8d7fbd724a471f">logEvent</link>&#32;=&#32;<emphasis class="stringliteral">&quot;RESEQUENCING&#32;BOM&#32;RECORDS&#32;FOR&#32;ORDER:&#32;&quot;</emphasis>&#32;+&#32;bom.CO_Num&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;LINE:&#32;&quot;</emphasis>&#32;+&#32;bom.CO_Line;
-349 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a3cd5e3e64a361f5e3a8d7fbd724a471f_1a3cd5e3e64a361f5e3a8d7fbd724a471f">logEvent</link>,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_acd9475f1b9763dfab5896656f96789a0_1acd9475f1b9763dfab5896656f96789a0">ResequenceBOM</link>(bom.CO_Num,&#32;bom.CO_Line);
-351 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-352 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-353 &#32;&#32;&#32;&#32;}
-354 }
-355 
+288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;detailParent&#32;=&#32;node.SelectSingleNode(<emphasis class="stringliteral">&quot;.&quot;</emphasis>);&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//needed&#32;to&#32;ensure&#32;we&#32;traverse&#32;ONLY&#32;the&#32;children&#32;of&#32;this&#32;(Detail)&#32;as&#32;the&#32;new&#32;parent</emphasis>
+289 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlDocument&#32;detailDoc&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;XmlDocument();
+290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;detailDoc.LoadXml(detailParent.OuterXml);
+291 
+292 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//iterate&#32;through&#32;Inputs&#32;for&#32;the&#32;line</emphasis>
+293 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnli&#32;=&#32;detailDoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Input&quot;</emphasis>);
+294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodei&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnli)
+295 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CO_Line&#32;=&#32;coitem.CO_Line;
+297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CName&#32;=&#32;nodei.ChildNodes[2].InnerText.Replace(<emphasis class="stringliteral">&quot;&#32;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;_&quot;</emphasis>);
+298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CValue&#32;=&#32;nodei.ChildNodes[0].InnerText;
+299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CType&#32;=&#32;nodei.ChildNodes[1].InnerText;
+300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CLabel&#32;=&#32;nodei.ChildNodes[2].InnerText;
+301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.PriorityLevel&#32;=&#32;co.PriorityLevel;
+302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;cfg&#32;(parmval)&#32;record</emphasis>
+303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_aeab9b81fff5fdf32493ce1f2c2c0082b_1aeab9b81fff5fdf32493ce1f2c2c0082b">WriteRecordCfg</link>(ref&#32;cfg);
+304 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+305 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//item-master&#32;for&#32;the&#32;line&#32;we&#32;are&#32;working&#32;with</emphasis>
+306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;recordSequence&#32;=&#32;1;
+307 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlim&#32;=&#32;detailDoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;ItemMaster&quot;</emphasis>);
+308 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.CO_Line&#32;=&#32;coitem.CO_Line;
+309 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeim&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlim)
+310 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+311 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Sequence&#32;=&#32;recordSequence;
+312 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Smartpart&#32;=&#32;nodeim.ChildNodes[0].InnerText;
+313 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Item&#32;=&#32;nodeim.ChildNodes[1].InnerText;
+314 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Desc&#32;=&#32;nodeim.ChildNodes[3].InnerText;
+315 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;cost&#32;=&#32;nodeim.ChildNodes[4].InnerText;
+316 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;price&#32;=&#32;nodeim.ChildNodes[5].InnerText;
+317 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;sell&#32;=&#32;nodeim.ChildNodes[6].InnerText;
+318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;weight&#32;=&#32;nodeim.ChildNodes[9].InnerText;
+319 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemCost&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(cost)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;cost);
+320 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemPrice&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(price)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;price);
+321 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemSellPrice&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(sell)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;sell);
+322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemWeight&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(weight)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;weight);
+323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.UnitOfMeasure&#32;=&#32;nodeim.ChildNodes[26].InnerText;
+324 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.PriorityLevel&#32;=&#32;Convert.ToInt16(nodeim.ChildNodes[38].InnerText);
+325 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;recordSequence&#32;+=&#32;1;
+326 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;item-master&#32;record</emphasis>
+327 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_ae84fa2fa2699960542cadbe2053b947d_1ae84fa2fa2699960542cadbe2053b947d">WriteRecordCItem</link>(ref&#32;citem);
+328 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+329 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//BOM&#32;records</emphasis>
+330 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;recordSequence&#32;=&#32;0;
+331 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlb&#32;=&#32;detailDoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Bom&quot;</emphasis>);
+332 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.CO_Line&#32;=&#32;coitem.CO_Line;
+333 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeib&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlb)
+334 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+335 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;recordSequence&#32;=&#32;1;
+336 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Sequence&#32;=&#32;recordSequence;
+337 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;parent&#32;=&#32;nodeib.SelectSingleNode(<emphasis class="stringliteral">&quot;..&quot;</emphasis>);
+338 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;parentID&#32;=&#32;parent.ChildNodes[0].InnerText;
+339 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Parent&#32;=&#32;parentID&#32;==&#32;<emphasis class="stringliteral">&quot;1&quot;</emphasis>&#32;?&#32;null&#32;:&#32;parentID;
+340 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Identifier&#32;=&#32;nodeib.ChildNodes[0].InnerText;
+341 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Item&#32;=&#32;nodeib.ChildNodes[1].InnerText;
+342 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Smartpart&#32;=&#32;nodeib.ChildNodes[2].InnerText;
+343 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.UnitPrice&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[3].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[3].InnerText);
+344 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.UnitCost&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[4].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[4].InnerText);
+345 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Discount&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[5].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[5].InnerText);
+346 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.QTY&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[6].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[6].InnerText);
+347 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.PriorityLevel&#32;=&#32;co.PriorityLevel;
+348 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;BOM&#32;record</emphasis>
+349 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a7d20594ae96a13614accd3e7d8d8a04a_1a7d20594ae96a13614accd3e7d8d8a04a">WriteRecordBOM</link>(ref&#32;bom);
+350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+351 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a3cd5e3e64a361f5e3a8d7fbd724a471f_1a3cd5e3e64a361f5e3a8d7fbd724a471f">logEvent</link>&#32;=&#32;<emphasis class="stringliteral">&quot;RESEQUENCING&#32;BOM&#32;RECORDS&#32;FOR&#32;ORDER:&#32;&quot;</emphasis>&#32;+&#32;bom.CO_Num&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;LINE:&#32;&quot;</emphasis>&#32;+&#32;bom.CO_Line;
+352 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a3cd5e3e64a361f5e3a8d7fbd724a471f_1a3cd5e3e64a361f5e3a8d7fbd724a471f">logEvent</link>,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
+353 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_acd9475f1b9763dfab5896656f96789a0_1acd9475f1b9763dfab5896656f96789a0">ResequenceBOM</link>(bom.CO_Num,&#32;bom.CO_Line);
+354 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+355 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+356 &#32;&#32;&#32;&#32;}
+357 }
+358 
     </computeroutput></literallayout>
 </section>

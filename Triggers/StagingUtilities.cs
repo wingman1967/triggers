@@ -264,7 +264,7 @@ namespace ConfigureOneFlag
             }
             //output CO header to SQL before proceeding to the coitem
             DatabaseFactory.WriteRecordCO(ref co);
-
+            
             //build COITEM records, per line
             xnl = xmldoc.GetElementsByTagName("Detail");
             foreach (XmlNode node in xnl)
@@ -285,9 +285,12 @@ namespace ConfigureOneFlag
                 DatabaseFactory.WriteRecordCOItem(ref coitem);
 
                 //*** Everything else here builds on the COITEM ***
-                
+                var detailParent = node.SelectSingleNode(".");     //needed to ensure we traverse ONLY the children of this (Detail) as the new parent
+                XmlDocument detailDoc = new XmlDocument();
+                detailDoc.LoadXml(detailParent.OuterXml);
+
                 //iterate through Inputs for the line
-                XmlNodeList xnli = xmldoc.GetElementsByTagName("Input");
+                XmlNodeList xnli = detailDoc.GetElementsByTagName("Input");
                 foreach (XmlNode nodei in xnli)
                 {
                     cfg.CO_Line = coitem.CO_Line;
@@ -301,7 +304,7 @@ namespace ConfigureOneFlag
                 }
                 //item-master for the line we are working with
                 int recordSequence = 1;
-                XmlNodeList xnlim = xmldoc.GetElementsByTagName("ItemMaster");
+                XmlNodeList xnlim = detailDoc.GetElementsByTagName("ItemMaster");
                 citem.CO_Line = coitem.CO_Line;
                 foreach (XmlNode nodeim in xnlim)
                 {
@@ -325,7 +328,7 @@ namespace ConfigureOneFlag
                 }
                 //BOM records
                 recordSequence = 0;
-                XmlNodeList xnlb = xmldoc.GetElementsByTagName("Bom");
+                XmlNodeList xnlb = detailDoc.GetElementsByTagName("Bom");
                 bom.CO_Line = coitem.CO_Line;
                 foreach (XmlNode nodeib in xnlb)
                 {
