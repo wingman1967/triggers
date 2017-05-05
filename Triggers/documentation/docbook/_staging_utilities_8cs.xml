@@ -333,9 +333,9 @@ Utilities used for staging of data from C1 to SQL databases
 283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;globalOrderLineNum&#32;=&#32;coitem.CO_Line;
 284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;coitem&#32;record</emphasis>
 285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a7e40f3f0a85ffe44b8c2a3197e6d8925_1a7e40f3f0a85ffe44b8c2a3197e6d8925">WriteRecordCOItem</link>(ref&#32;coitem);
-286 
+286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
 287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//***&#32;Everything&#32;else&#32;here&#32;builds&#32;on&#32;the&#32;COITEM&#32;***</emphasis>
-288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;detailParent&#32;=&#32;node.SelectSingleNode(<emphasis class="stringliteral">&quot;.&quot;</emphasis>);&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//needed&#32;to&#32;ensure&#32;we&#32;traverse&#32;ONLY&#32;the&#32;children&#32;of&#32;this&#32;(Detail)&#32;as&#32;the&#32;new&#32;parent</emphasis>
+288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;detailParent&#32;=&#32;node.SelectSingleNode(<emphasis class="stringliteral">&quot;.&quot;</emphasis>);&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//ensure&#32;we&#32;traverse&#32;ONLY&#32;children&#32;of&#32;this&#32;node&#32;(Detail)&#32;as&#32;the&#32;new&#32;parent&#32;(root)&#32;element</emphasis>
 289 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlDocument&#32;detailDoc&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;XmlDocument();
 290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;detailDoc.LoadXml(detailParent.OuterXml);
 291 

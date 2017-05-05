@@ -113,6 +113,21 @@ namespace ConfigureOneFlag
             command.ExecuteNonQuery();
             connection.Close();
         }
+        public static void CfgImport(string orderNumber)
+        {
+            int CreateOrder = 1;
+            //call SP to import data into Syteline
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand("GR_CfgImportSp", connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@pStartingOrderNum", orderNumber);
+            command.Parameters.AddWithValue("@pEndingOrderNum", orderNumber);
+            command.Parameters.AddWithValue("@pCreateOrder", CreateOrder);
+            connection.Open();
+            command.CommandTimeout = 600;
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
         public static void CleanupOrder(string orderNum)
         {
             SQLCommand = "DELETE From GR_CfgCO where order_num = " + (char)39 + orderNum + (char)39;

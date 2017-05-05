@@ -128,6 +128,14 @@ string orderNumber, int orderLine)</para>
             <para>
                 <itemizedlist>
                     <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_ae4aeef8c1f02cf82b17a4e1c2ca0ffed_1ae4aeef8c1f02cf82b17a4e1c2ca0ffed">CfgImport</link> (
+string orderNumber)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
                         <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_a1cba3b4ca48fe4e537bdc28925a61719_1a1cba3b4ca48fe4e537bdc28925a61719">CleanupOrder</link> (
 string orderNum)</para>
                     </listitem>
@@ -178,6 +186,10 @@ string auditMessageL, string orderNum, int orderLine, string auditEvent)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_acd9475f1b9763dfab5896656f96789a0_1acd9475f1b9763dfab5896656f96789a0">
                 <title>static void ConfigureOneFlag.DatabaseFactory.ResequenceBOM (string orderNumber, int orderLine)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_ae4aeef8c1f02cf82b17a4e1c2ca0ffed_1ae4aeef8c1f02cf82b17a4e1c2ca0ffed">
+                <title>static void ConfigureOneFlag.DatabaseFactory.CfgImport (string orderNumber)</title> <emphasis></emphasis>
                 
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_a1cba3b4ca48fe4e537bdc28925a61719_1a1cba3b4ca48fe4e537bdc28925a61719">

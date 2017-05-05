@@ -177,56 +177,71 @@ Repository for all database functions and calls on behalf of the assembly
 113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.ExecuteNonQuery();
 114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;connection.Close();
 115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<link linkend="class_configure_one_flag_1_1_database_factory_a1cba3b4ca48fe4e537bdc28925a61719_1a1cba3b4ca48fe4e537bdc28925a61719">116 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_a1cba3b4ca48fe4e537bdc28925a61719_1a1cba3b4ca48fe4e537bdc28925a61719">CleanupOrder</link>(<emphasis class="keywordtype">string</emphasis>&#32;orderNum)
+<link linkend="class_configure_one_flag_1_1_database_factory_ae4aeef8c1f02cf82b17a4e1c2ca0ffed_1ae4aeef8c1f02cf82b17a4e1c2ca0ffed">116 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_ae4aeef8c1f02cf82b17a4e1c2ca0ffed_1ae4aeef8c1f02cf82b17a4e1c2ca0ffed">CfgImport</link>(<emphasis class="keywordtype">string</emphasis>&#32;orderNumber)
 117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgCO&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
-119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
-120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
-122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
-123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
-124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgCOItem&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
-126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
-127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
-129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
-130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
-131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgBOM&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
-133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
-134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
-136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
-137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
-138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgItem&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
-140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
-141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
-143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
-144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
-145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgParmVal&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
-147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
-148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
-150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
-151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
-152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<link linkend="class_configure_one_flag_1_1_database_factory_a59987be56acf3f8cbf7681d6b4866e81_1a59987be56acf3f8cbf7681d6b4866e81">154 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_a59987be56acf3f8cbf7681d6b4866e81_1a59987be56acf3f8cbf7681d6b4866e81">WriteAuditRecord</link>(<emphasis class="keywordtype">string</emphasis>&#32;auditMessageL,&#32;<emphasis class="keywordtype">string</emphasis>&#32;orderNum,&#32;<emphasis class="keywordtype">int</emphasis>&#32;orderLine,&#32;<emphasis class="keywordtype">string</emphasis>&#32;auditEvent)
-155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;Insert&#32;Into&#32;GR_Cfg_Audit&#32;(order_num,order_line_num,auditEvent,auditMessageL)&#32;values&#32;(&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;,&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderLine&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;,&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;auditEvent&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;,&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;auditMessageL&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;)&quot;</emphasis>;
-157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
-158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
-160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
-161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
-162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-164 &#32;&#32;&#32;&#32;}
-165 }
-166 
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;CreateOrder&#32;=&#32;1;
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//call&#32;SP&#32;to&#32;import&#32;data&#32;into&#32;Syteline</emphasis>
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlConnection&#32;connection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString);
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;command&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(<emphasis class="stringliteral">&quot;GR_CfgImportSp&quot;</emphasis>,&#32;connection);
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.CommandType&#32;=&#32;CommandType.StoredProcedure;
+123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.Parameters.AddWithValue(<emphasis class="stringliteral">&quot;@pStartingOrderNum&quot;</emphasis>,&#32;orderNumber);
+124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.Parameters.AddWithValue(<emphasis class="stringliteral">&quot;@pEndingOrderNum&quot;</emphasis>,&#32;orderNumber);
+125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.Parameters.AddWithValue(<emphasis class="stringliteral">&quot;@pCreateOrder&quot;</emphasis>,&#32;CreateOrder);
+126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;connection.Open();
+127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.CommandTimeout&#32;=&#32;600;
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.ExecuteNonQuery();
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;connection.Close();
+130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_database_factory_a1cba3b4ca48fe4e537bdc28925a61719_1a1cba3b4ca48fe4e537bdc28925a61719">131 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_a1cba3b4ca48fe4e537bdc28925a61719_1a1cba3b4ca48fe4e537bdc28925a61719">CleanupOrder</link>(<emphasis class="keywordtype">string</emphasis>&#32;orderNum)
+132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgCO&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgCOItem&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
+142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
+144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
+145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
+146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgBOM&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
+148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
+151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
+152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
+153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgItem&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
+155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
+156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
+158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
+159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
+160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgParmVal&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
+162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
+163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
+165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
+167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_database_factory_a59987be56acf3f8cbf7681d6b4866e81_1a59987be56acf3f8cbf7681d6b4866e81">169 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_a59987be56acf3f8cbf7681d6b4866e81_1a59987be56acf3f8cbf7681d6b4866e81">WriteAuditRecord</link>(<emphasis class="keywordtype">string</emphasis>&#32;auditMessageL,&#32;<emphasis class="keywordtype">string</emphasis>&#32;orderNum,&#32;<emphasis class="keywordtype">int</emphasis>&#32;orderLine,&#32;<emphasis class="keywordtype">string</emphasis>&#32;auditEvent)
+170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;Insert&#32;Into&#32;GR_Cfg_Audit&#32;(order_num,order_line_num,auditEvent,auditMessageL)&#32;values&#32;(&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;,&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderLine&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;,&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;auditEvent&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;,&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;auditMessageL&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;)&quot;</emphasis>;
+172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
+173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
+175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
+176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
+177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+179 &#32;&#32;&#32;&#32;}
+180 }
+181 
     </computeroutput></literallayout>
 </section>

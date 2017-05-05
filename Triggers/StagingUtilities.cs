@@ -283,9 +283,9 @@ namespace ConfigureOneFlag
                 globalOrderLineNum = coitem.CO_Line;
                 //output coitem record
                 DatabaseFactory.WriteRecordCOItem(ref coitem);
-
+                
                 //*** Everything else here builds on the COITEM ***
-                var detailParent = node.SelectSingleNode(".");     //needed to ensure we traverse ONLY the children of this (Detail) as the new parent
+                var detailParent = node.SelectSingleNode(".");     //ensure we traverse ONLY children of this node (Detail) as the new parent (root) element
                 XmlDocument detailDoc = new XmlDocument();
                 detailDoc.LoadXml(detailParent.OuterXml);
 

@@ -1,4 +1,4 @@
-.TH "ConfigureOneFlag.DatabaseFactory" 3 "Thu Mar 30 2017" "ConfigureOne Trigger" \" -*- nroff -*-
+.TH "ConfigureOneFlag.DatabaseFactory" 3 "Fri May 5 2017" "ConfigureOne Trigger" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -34,6 +34,9 @@ ConfigureOneFlag.DatabaseFactory \- Repository for all database functions and ca
 .br
 .ti -1c
 .RI "static void \fBResequenceBOM\fP (string orderNumber, int orderLine)"
+.br
+.ti -1c
+.RI "static void \fBCfgImport\fP (string orderNumber)"
 .br
 .ti -1c
 .RI "static void \fBCleanupOrder\fP (string orderNum)"
@@ -74,10 +77,14 @@ Repository for all database functions and calls on behalf of the assembly
 Definition at line 11 of file DatabaseFactory\&.cs\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.CleanupOrder (string orderNum)\fC [static]\fP"
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.CfgImport (string orderNumber)\fC [static]\fP"
 
 .PP
 Definition at line 116 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.CleanupOrder (string orderNum)\fC [static]\fP"
+
+.PP
+Definition at line 131 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.ResequenceBOM (string orderNumber, int orderLine)\fC [static]\fP"
 
 .PP
@@ -89,7 +96,7 @@ Definition at line 18 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteAuditRecord (string auditMessageL, string orderNum, int orderLine, string auditEvent)\fC [static]\fP"
 
 .PP
-Definition at line 154 of file DatabaseFactory\&.cs\&.
+Definition at line 169 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordBOM (ref \fBzCfgBOM\fP bom)\fC [static]\fP"
 
 .PP
