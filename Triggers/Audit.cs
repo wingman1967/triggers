@@ -36,17 +36,25 @@ namespace ConfigureOneFlag
         }
         public static void ProcessingCompleted(string auditMessage)
         {
-            //check to see if there are any elements in the mE array and if so, send via email in digest format
-            int ub = mEIndex;
-            string outMessage = "";
-            if (ub > 0)
+            try
             {
-                for (int i = 0; i < ub; i += 1) {outMessage = outMessage + "ERROR #" + (i + 1) + Environment.NewLine + mE[i] + Environment.NewLine + Environment.NewLine;}
-                SendMail.MailMessage(outMessage, "Configure One XML Mapping Errors");
+                //check to see if there are any elements in the mE array and if so, send via email in digest format
+                int ub = mEIndex;
+                string outMessage = "";
+                if (ub > 0)
+                {
+                    for (int i = 0; i < ub; i += 1) { outMessage = outMessage + "ERROR #" + (i + 1) + Environment.NewLine + mE[i] + Environment.NewLine + Environment.NewLine; }
+                    SendMail.MailMessage(outMessage, "Configure One XML Mapping Errors");
+                }
+
+                Array.Clear(mE, 0, mE.Length);
+                DatabaseFactory.WriteAuditRecord(auditMessage, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, "PROCESSING COMPLETED");
+            }
+            catch (Exception ex5)
+            {
+                //a failure of some kind has occurred; do nothing
             }
             
-            Array.Clear(mE, 0, mE.Length);
-            DatabaseFactory.WriteAuditRecord(auditMessage, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, "PROCESSING COMPLETED");
         }
     }
 }

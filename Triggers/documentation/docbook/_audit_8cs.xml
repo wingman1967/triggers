@@ -93,19 +93,27 @@ Write auditing information regarding mapping and assembly behavior to event log,
 36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 <link linkend="class_configure_one_flag_1_1_audit_ac9f5188a69320d3d419afed3499e2a26_1ac9f5188a69320d3d419afed3499e2a26">37 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_audit_ac9f5188a69320d3d419afed3499e2a26_1ac9f5188a69320d3d419afed3499e2a26">ProcessingCompleted</link>(<emphasis class="keywordtype">string</emphasis>&#32;auditMessage)
 38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//check&#32;to&#32;see&#32;if&#32;there&#32;are&#32;any&#32;elements&#32;in&#32;the&#32;mE&#32;array&#32;and&#32;if&#32;so,&#32;send&#32;via&#32;email&#32;in&#32;digest&#32;format</emphasis>
-40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;ub&#32;=&#32;<link linkend="class_configure_one_flag_1_1_audit_a7daa677b70eb67ec0dd852af3bec3ed8_1a7daa677b70eb67ec0dd852af3bec3ed8">mEIndex</link>;
-41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;outMessage&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(ub&#32;&gt;&#32;0)
-43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(<emphasis class="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;ub;&#32;i&#32;+=&#32;1)&#32;{outMessage&#32;=&#32;outMessage&#32;+&#32;<emphasis class="stringliteral">&quot;ERROR&#32;#&quot;</emphasis>&#32;+&#32;(i&#32;+&#32;1)&#32;+&#32;Environment.NewLine&#32;+&#32;mE[i]&#32;+&#32;Environment.NewLine&#32;+&#32;Environment.NewLine;}
-45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_send_mail">SendMail</link>.<link linkend="class_configure_one_flag_1_1_send_mail_a2e1c2d0826f023cb2684a2b9bbd74ad9_1a2e1c2d0826f023cb2684a2b9bbd74ad9">MailMessage</link>(outMessage,&#32;<emphasis class="stringliteral">&quot;Configure&#32;One&#32;XML&#32;Mapping&#32;Errors&quot;</emphasis>);
-46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Array.Clear(mE,&#32;0,&#32;mE.Length);
-49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a59987be56acf3f8cbf7681d6b4866e81_1a59987be56acf3f8cbf7681d6b4866e81">WriteAuditRecord</link>(auditMessage,&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a7c8cb30970114fab7e2cb28fc8275b76_1a7c8cb30970114fab7e2cb28fc8275b76">globalOrderNum</link>,&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a62810055c0e03f0cc3568275245a1c07_1a62810055c0e03f0cc3568275245a1c07">globalOrderLineNum</link>,&#32;<emphasis class="stringliteral">&quot;PROCESSING&#32;COMPLETED&quot;</emphasis>);
-50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-51 &#32;&#32;&#32;&#32;}
-52 }
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//check&#32;to&#32;see&#32;if&#32;there&#32;are&#32;any&#32;elements&#32;in&#32;the&#32;mE&#32;array&#32;and&#32;if&#32;so,&#32;send&#32;via&#32;email&#32;in&#32;digest&#32;format</emphasis>
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;ub&#32;=&#32;<link linkend="class_configure_one_flag_1_1_audit_a7daa677b70eb67ec0dd852af3bec3ed8_1a7daa677b70eb67ec0dd852af3bec3ed8">mEIndex</link>;
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;outMessage&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(ub&#32;&gt;&#32;0)
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">for</emphasis>&#32;(<emphasis class="keywordtype">int</emphasis>&#32;i&#32;=&#32;0;&#32;i&#32;&lt;&#32;ub;&#32;i&#32;+=&#32;1)&#32;{&#32;outMessage&#32;=&#32;outMessage&#32;+&#32;<emphasis class="stringliteral">&quot;ERROR&#32;#&quot;</emphasis>&#32;+&#32;(i&#32;+&#32;1)&#32;+&#32;Environment.NewLine&#32;+&#32;mE[i]&#32;+&#32;Environment.NewLine&#32;+&#32;Environment.NewLine;&#32;}
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_send_mail">SendMail</link>.<link linkend="class_configure_one_flag_1_1_send_mail_a2e1c2d0826f023cb2684a2b9bbd74ad9_1a2e1c2d0826f023cb2684a2b9bbd74ad9">MailMessage</link>(outMessage,&#32;<emphasis class="stringliteral">&quot;Configure&#32;One&#32;XML&#32;Mapping&#32;Errors&quot;</emphasis>);
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+49 
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Array.Clear(mE,&#32;0,&#32;mE.Length);
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a59987be56acf3f8cbf7681d6b4866e81_1a59987be56acf3f8cbf7681d6b4866e81">WriteAuditRecord</link>(auditMessage,&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a7c8cb30970114fab7e2cb28fc8275b76_1a7c8cb30970114fab7e2cb28fc8275b76">globalOrderNum</link>,&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a62810055c0e03f0cc3568275245a1c07_1a62810055c0e03f0cc3568275245a1c07">globalOrderLineNum</link>,&#32;<emphasis class="stringliteral">&quot;PROCESSING&#32;COMPLETED&quot;</emphasis>);
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;ex5)
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//a&#32;failure&#32;of&#32;some&#32;kind&#32;has&#32;occurred;&#32;do&#32;nothing</emphasis>
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+59 &#32;&#32;&#32;&#32;}
+60 }
     </computeroutput></literallayout>
 </section>
