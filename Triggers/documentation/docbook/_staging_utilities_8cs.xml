@@ -70,7 +70,7 @@ Utilities used for staging of data from C1 to SQL databases
 20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1z_cfg_b_o_m">zCfgBOM</link>&#32;bom&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_b_o_m">zCfgBOM</link>();
 21 
 22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_audit">Audit</link>.<link linkend="class_configure_one_flag_1_1_audit_a4c25eeff57eee610931b819b177df49b_1a4c25eeff57eee610931b819b177df49b">resetmE</link>&#32;=&#32;<emphasis class="keyword">true</emphasis>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//reset&#32;the&#32;mE&#32;array&#32;in&#32;case&#32;we&#32;have&#32;any&#32;mapping&#32;errors&#32;to&#32;report&#32;for&#32;this&#32;cycle</emphasis>
-23 
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
 24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//***&#32;Determine&#32;what&#32;site&#32;we&#32;are&#32;working&#32;with&#32;and&#32;re-set&#32;the&#32;connection&#32;string&#32;accordingly,&#32;else&#32;default&#32;to&#32;NOVB</emphasis>
 25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlsite&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Input&quot;</emphasis>);
 26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;node&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlsite)

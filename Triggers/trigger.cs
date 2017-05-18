@@ -14,6 +14,7 @@ namespace ConfigureOneFlag
         public static string logSource = "C1ORDER";
         public static string logEvent;
         public static string logName = "Application";
+        public static string pubOrderNumber = "";
         [SqlTrigger(Name = "C1Order", Target = "GR_Cfg_Queue", Event = "FOR INSERT")]
         public static void C1Order()
         {
@@ -70,11 +71,12 @@ namespace ConfigureOneFlag
                 useMethod = C1Dictionaries.webmethods[key];
                 C1URL = useMethod;
             }
-
+            
             DatabaseFactory dbf = new DatabaseFactory();
             dbf.SetConnectionString();
             caller = "ORDER";
             orderNum = orderValue;
+            pubOrderNumber = orderNum;
             string xmlPayload = "<soap:Envelope xmlns:xsi=" + (char)34 + "http://www.w3.org/2001/XMLSchema-instance" + (char)34 + " xmlns:xsd=" + (char)34 + "http://www.w3.org/2001/XMLSchema" + (char)34 + " xmlns:soap=" + (char)34 + "http://schemas.xmlsoap.org/soap/envelope/" + (char)34 + ">" + "<soap:Body><" + key + " xmlns=" + (char)34 + "http://ws.configureone.com" + (char)34 + "><orderNum>" + orderNum + "</orderNum></" + key + "></soap:Body></soap:Envelope>";
             C1WebService.CallConfigureOne(key, xmlPayload, C1URL);
             DatabaseFactory.CfgImport(orderNum);

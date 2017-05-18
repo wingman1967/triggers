@@ -31,10 +31,11 @@ namespace ConfigureOneFlag
                 postStream.Write(byteData, 0, byteData.Length);
             }
             XmlDocument xmlResult = new XmlDocument();
+            string result = "";
             try
             {
                 //return response from AXIS (if any)
-                string result = "";
+                
                 using (HttpWebResponse response = objRequest.GetResponse() as HttpWebResponse)
                 {
                     StreamReader reader = new StreamReader(response.GetResponseStream());
@@ -67,7 +68,87 @@ namespace ConfigureOneFlag
             {
                 logEvent = "ERROR RETURNED FROM C1 WEBSERVICE: " + wex1.Message + " : " + wex1.Response.ToString();
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
+                return;
             }
+
+            //Retrieve documents for order, reusing xmlResult above
+            string documentType = "Design";
+            string documentName = "";
+            string orderNumber = Triggers.pubOrderNumber;
+            string[] docs;
+            docs = new string[50];
+            int arrayindex = 0;
+
+            //Retrieve the serialNumber from the XML 
+            string configSerial = "";
+            XmlNodeList xnlSN = xmlResult.GetElementsByTagName("serialNumber");
+            foreach (XmlNode node in xnlSN)
+            {
+                configSerial = node.InnerText;
+            }
+
+            string useMethod = "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getDocument";
+            key = "getDocument";
+            string documentSerialNumber = configSerial;
+            arrayindex = 0;
+
+            XmlNodeList xnl = xmlResult.GetElementsByTagName("fileName");
+            foreach (XmlNode node in xnl)
+            {
+                docs[arrayindex] = node.InnerText;
+                arrayindex += 1;
+            }
+
+            //We now have an array of document filenames; process by retrieving and saving each file
+            int upperBound = arrayindex;
+            arrayindex = 0;
+            documentSerialNumber = configSerial;
+            while (arrayindex < upperBound)
+            {
+                documentName = docs[arrayindex];
+                xmlPayload = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soapenv:Envelope xmlns:xsi=" + (char)34 + "http://www.w3.org/2001/XMLSchema-instance" + (char)34 + " xmlns:xsd=" + (char)34 + "http://www.w3.org/2001/XMLSchema" + (char)34 + " xmlns:ws=" + (char)34 + "http://ws.configureone.com" + (char)34 + " xmlns:mod=" + (char)34 + "http://model.ws.configureone.com" + (char)34 + " xmlns:soapenv=" + (char)34 + "http://schemas.xmlsoap.org/soap/envelope/" + (char)34 + ">" + "<soapenv:Body><ws:" + key + " xmlns=" + (char)34 + "http://ws.configureone.com" + (char)34 + "><ws:document><mod:type>" + documentType + "</mod:type><mod:serialNumber>" + documentSerialNumber + "</mod:serialNumber><mod:files><mod:fileName>" + documentName + "</mod:fileName><mod:content>" + documentName + "</mod:content></mod:files></ws:document></ws:" + key + "></soapenv:Body></soapenv:Envelope>";
+                sURL = useMethod;
+                objRequest = (HttpWebRequest)WebRequest.Create(sURL.ToString());
+                objRequest.Method = "POST";
+                objRequest.ContentType = "text/xml";
+                objRequest.Headers.Add("SOAPAction", key);
+
+                data = new StringBuilder();
+                data.Append(xmlPayload);
+                byte[] byteDataDoc = Encoding.UTF8.GetBytes(data.ToString());          // Sending our request to Apache AXIS in a byte array
+                objRequest.ContentLength = byteDataDoc.Length;
+
+                using (Stream postStream = objRequest.GetRequestStream())
+                {
+                    postStream.Write(byteDataDoc, 0, byteDataDoc.Length);
+                }
+                xmlResult = new XmlDocument();
+                result = "";
+                using (HttpWebResponse response = objRequest.GetResponse() as HttpWebResponse)
+                {
+                    StreamReader reader = new StreamReader(response.GetResponseStream());
+                    result = reader.ReadToEnd();
+                    reader.Close();
+
+                    try
+                    {
+                        xmlResult.LoadXml(result);
+                    }
+                    catch (Exception ex1)
+                    {
+                        return;
+                    }
+
+                    XmlNodeList xnldoc = xmlResult.GetElementsByTagName("content");
+                    foreach (XmlNode node in xnldoc)
+                    {
+                        byte[] pdfByteArray = Convert.FromBase64String(node.InnerText);
+                        File.WriteAllBytes(@"C:\JH\" + orderNumber + "_" + docs[arrayindex], pdfByteArray);
+                    }
+                }
+                arrayindex += 1;
+            }
+            return;
         }
     }
 }

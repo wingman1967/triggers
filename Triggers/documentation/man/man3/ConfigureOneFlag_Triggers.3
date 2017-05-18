@@ -1,4 +1,4 @@
-.TH "ConfigureOneFlag.Triggers" 3 "Tue May 16 2017" "ConfigureOne Trigger" \" -*- nroff -*-
+.TH "ConfigureOneFlag.Triggers" 3 "Thu May 18 2017" "ConfigureOne Trigger" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -38,6 +38,9 @@ ConfigureOneFlag.Triggers \- Primary entrypoint called from C1ORDER trigger for 
 .ti -1c
 .RI "static string \fBlogName\fP = 'Application'"
 .br
+.ti -1c
+.RI "static string \fBpubOrderNumber\fP = ''"
+.br
 .in -1c
 .SS "Static Private Attributes"
 
@@ -62,7 +65,7 @@ Definition at line 18 of file Class1\&.cs\&.
 .SS "static void ConfigureOneFlag\&.Triggers\&.C1Order ()\fC [static]\fP"
 
 .PP
-Definition at line 18 of file trigger\&.cs\&.
+Definition at line 19 of file trigger\&.cs\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "static string ConfigureOneFlag\&.Triggers\&.C1URL\fC [static]\fP"
@@ -85,6 +88,10 @@ Definition at line 16 of file trigger\&.cs\&.
 
 .PP
 Definition at line 14 of file trigger\&.cs\&.
+.SS "string ConfigureOneFlag\&.Triggers\&.pubOrderNumber = ''\fC [static]\fP"
+
+.PP
+Definition at line 17 of file trigger\&.cs\&.
 .SS "Dictionary<string, string> ConfigureOneFlag\&.Triggers\&.webmethods = new Dictionary<string, string>()\fC [static]\fP, \fC [private]\fP"
 
 .PP

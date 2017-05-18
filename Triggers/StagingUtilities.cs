@@ -20,7 +20,7 @@ namespace ConfigureOneFlag
             zCfgBOM bom = new zCfgBOM();
 
             Audit.resetmE = true;       //reset the mE array in case we have any mapping errors to report for this cycle
-
+            
             //*** Determine what site we are working with and re-set the connection string accordingly, else default to NOVB
             XmlNodeList xnlsite = xmldoc.GetElementsByTagName("Input");
             foreach (XmlNode node in xnlsite)

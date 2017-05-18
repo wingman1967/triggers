@@ -7,6 +7,7 @@ var class_configure_one_flag_1_1_triggers =
     [ "logEvent", "class_configure_one_flag_1_1_triggers_a3cd5e3e64a361f5e3a8d7fbd724a471f.html#a3cd5e3e64a361f5e3a8d7fbd724a471f", null ],
     [ "logName", "class_configure_one_flag_1_1_triggers_a1f5e29464bbb7305488f6fac0b1835ad.html#a1f5e29464bbb7305488f6fac0b1835ad", null ],
     [ "logSource", "class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11.html#aeb15437df6eb15652ae79ee607ccdc11", null ],
+    [ "pubOrderNumber", "class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1.html#afd0957296af9cc27c0a677ba2c027bf1", null ],
     [ "webmethods", "class_configure_one_flag_1_1_triggers_a38d825801f6fbe1c3c2df19538892c57.html#a38d825801f6fbe1c3c2df19538892c57", null ],
     [ "wsReturn", "class_configure_one_flag_1_1_triggers_adb47d391c1eb7baeb5780f3dd9322a6d.html#adb47d391c1eb7baeb5780f3dd9322a6d", null ]
 ];
