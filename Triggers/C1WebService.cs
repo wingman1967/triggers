@@ -107,6 +107,10 @@ namespace ConfigureOneFlag
                 int upperBound = arrayindex;
                 arrayindex = 0;
                 documentSerialNumber = configSerial;
+                string SharepointLocation = DatabaseFactory.splocation;
+                NetworkShare.DisconnectFromShare(SharepointLocation, true);
+                NetworkShare.ConnectToShare(SharepointLocation, DatabaseFactory.spuname, DatabaseFactory.sppassword);
+
                 while (arrayindex < upperBound)
                 {
                     documentName = docs[arrayindex];
@@ -142,10 +146,6 @@ namespace ConfigureOneFlag
                         {
                             return;
                         }
-
-                        string SharepointLocation = DatabaseFactory.splocation;
-                        NetworkShare.DisconnectFromShare(SharepointLocation, true);
-                        NetworkShare.ConnectToShare(SharepointLocation, DatabaseFactory.spuname, DatabaseFactory.sppassword);
 
                         XmlNodeList xnldoc = xmlResult.GetElementsByTagName("content");
                         foreach (XmlNode node in xnldoc)
