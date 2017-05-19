@@ -127,8 +127,8 @@ namespace ConfigureOneFlag
         }
         public static void CfgImport(string orderNumber)
         {
-            int CreateOrder = 1;
             //call SP to import data into Syteline
+            int CreateOrder = 1;
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand("GR_CfgImportSp", connection);
             command.CommandType = CommandType.StoredProcedure;

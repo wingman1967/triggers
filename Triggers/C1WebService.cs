@@ -32,6 +32,7 @@ namespace ConfigureOneFlag
             }
             XmlDocument xmlResult = new XmlDocument();
             string result = "";
+
             try
             {
                 //return response from AXIS (if any)
@@ -152,8 +153,8 @@ namespace ConfigureOneFlag
                         foreach (XmlNode node in xnldoc)
                         {
                             byte[] pdfByteArray = Convert.FromBase64String(node.InnerText);
-                            File.WriteAllBytes(@"C:\C1TEMP\" + orderNumber + "_" + docs[arrayindex], pdfByteArray);
                             string fileToCopy = @"C:\C1TEMP\" + orderNumber + "_" + docs[arrayindex];
+                            File.WriteAllBytes(fileToCopy, pdfByteArray);
                             File.Copy(fileToCopy, SharepointLocation + orderNumber + "_" + docs[arrayindex], true);
                             documentFilesSaved = documentFilesSaved + docs[arrayindex] + Environment.NewLine;
                         }
