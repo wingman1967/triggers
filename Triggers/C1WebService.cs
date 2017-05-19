@@ -106,6 +106,7 @@ namespace ConfigureOneFlag
                 //We now have an array of document filenames; process by retrieving and saving each file
                 int upperBound = arrayindex;
                 arrayindex = 0;
+                string documentFilesSaved = "";
                 documentSerialNumber = configSerial;
                 string SharepointLocation = DatabaseFactory.splocation;
                 NetworkShare.DisconnectFromShare(SharepointLocation, true);
@@ -154,15 +155,9 @@ namespace ConfigureOneFlag
                             File.WriteAllBytes(@"C:\C1TEMP\" + orderNumber + "_" + docs[arrayindex], pdfByteArray);
                             string fileToCopy = @"C:\C1TEMP\" + orderNumber + "_" + docs[arrayindex];
                             File.Copy(fileToCopy, SharepointLocation + orderNumber + "_" + docs[arrayindex], true);
+                            documentFilesSaved = documentFilesSaved + docs[arrayindex] + Environment.NewLine;
                         }
                     }
-                    arrayindex += 1;
-                }
-                string documentFilesSaved = "";
-                arrayindex = 0;
-                while (arrayindex < upperBound)
-                {
-                    documentFilesSaved = documentFilesSaved + docs[arrayindex] + Environment.NewLine;
                     arrayindex += 1;
                 }
 
