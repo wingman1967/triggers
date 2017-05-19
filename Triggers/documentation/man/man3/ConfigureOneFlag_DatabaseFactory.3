@@ -63,6 +63,12 @@ ConfigureOneFlag.DatabaseFactory \- Repository for all database functions and ca
 .ti -1c
 .RI "static string \fBsplocation\fP = ''"
 .br
+.ti -1c
+.RI "static string \fBspuname\fP = ''"
+.br
+.ti -1c
+.RI "static string \fBsppassword\fP = ''"
+.br
 .in -1c
 .SS "Static Private Attributes"
 
@@ -83,43 +89,43 @@ Definition at line 11 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.CfgImport (string orderNumber)\fC [static]\fP"
 
 .PP
-Definition at line 120 of file DatabaseFactory\&.cs\&.
+Definition at line 128 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.CleanupOrder (string orderNum)\fC [static]\fP"
 
 .PP
-Definition at line 135 of file DatabaseFactory\&.cs\&.
+Definition at line 143 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.ResequenceBOM (string orderNumber, int orderLine)\fC [static]\fP"
 
 .PP
-Definition at line 107 of file DatabaseFactory\&.cs\&.
+Definition at line 115 of file DatabaseFactory\&.cs\&.
 .SS "void ConfigureOneFlag\&.DatabaseFactory\&.SetConnectionString ()"
 
 .PP
-Definition at line 19 of file DatabaseFactory\&.cs\&.
+Definition at line 21 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteAuditRecord (string auditMessageL, string orderNum, int orderLine, string auditEvent)\fC [static]\fP"
 
 .PP
-Definition at line 173 of file DatabaseFactory\&.cs\&.
+Definition at line 181 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordBOM (ref \fBzCfgBOM\fP bom)\fC [static]\fP"
 
 .PP
-Definition at line 54 of file DatabaseFactory\&.cs\&.
+Definition at line 62 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCfg (ref \fBzCfgParmVal\fP cfg)\fC [static]\fP"
 
 .PP
-Definition at line 74 of file DatabaseFactory\&.cs\&.
+Definition at line 82 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCItem (ref \fBzCfgItem\fP item)\fC [static]\fP"
 
 .PP
-Definition at line 64 of file DatabaseFactory\&.cs\&.
+Definition at line 72 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCO (ref \fBzCfgCO\fP co)\fC [static]\fP"
 
 .PP
-Definition at line 97 of file DatabaseFactory\&.cs\&.
+Definition at line 105 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCOItem (ref \fBzCfgCOitem\fP coitem)\fC [static]\fP"
 
 .PP
-Definition at line 87 of file DatabaseFactory\&.cs\&.
+Definition at line 95 of file DatabaseFactory\&.cs\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "string ConfigureOneFlag\&.DatabaseFactory\&.connectionString = ''\fC [static]\fP"
@@ -142,6 +148,14 @@ Definition at line 16 of file DatabaseFactory\&.cs\&.
 
 .PP
 Definition at line 18 of file DatabaseFactory\&.cs\&.
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.sppassword = ''\fC [static]\fP"
+
+.PP
+Definition at line 20 of file DatabaseFactory\&.cs\&.
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.spuname = ''\fC [static]\fP"
+
+.PP
+Definition at line 19 of file DatabaseFactory\&.cs\&.
 .SS "string ConfigureOneFlag\&.DatabaseFactory\&.SQLCommand\fC [static]\fP, \fC [private]\fP"
 
 .PP

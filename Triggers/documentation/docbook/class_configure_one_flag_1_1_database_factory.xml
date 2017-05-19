@@ -70,6 +70,20 @@
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string spuname</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string sppassword</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
         <section>
             <title></title>

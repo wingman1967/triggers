@@ -143,15 +143,16 @@ namespace ConfigureOneFlag
                             return;
                         }
 
+                        string SharepointLocation = DatabaseFactory.splocation;
+                        NetworkShare.DisconnectFromShare(SharepointLocation, true);
+                        NetworkShare.ConnectToShare(SharepointLocation, DatabaseFactory.spuname, DatabaseFactory.sppassword);
+
                         XmlNodeList xnldoc = xmlResult.GetElementsByTagName("content");
                         foreach (XmlNode node in xnldoc)
                         {
                             byte[] pdfByteArray = Convert.FromBase64String(node.InnerText);
-                            File.WriteAllBytes(@"C:\JH\" + orderNumber + "_" + docs[arrayindex], pdfByteArray);
-                            string SharepointLocation = DatabaseFactory.splocation;
-                            string fileToCopy = @"C:\JH\" + orderNumber + "_" + docs[arrayindex];
-                            NetworkShare.DisconnectFromShare(SharepointLocation, true);
-                            NetworkShare.ConnectToShare(SharepointLocation, "hinesj", "$1Spring2017$");
+                            File.WriteAllBytes(@"C:\C1TEMP\" + orderNumber + "_" + docs[arrayindex], pdfByteArray);
+                            string fileToCopy = @"C:\C1TEMP\" + orderNumber + "_" + docs[arrayindex];
                             File.Copy(fileToCopy, SharepointLocation + orderNumber + "_" + docs[arrayindex], true);
                         }
                     }

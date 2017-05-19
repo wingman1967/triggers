@@ -16,6 +16,8 @@ namespace ConfigureOneFlag
         public static string emailServer = "";
         public static string emailFrom = "";
         public static string splocation = "";
+        public static string spuname = "";
+        public static string sppassword = "";
         public void SetConnectionString()
         {
             RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\ConfigureOneAssembly\\1.0", true);
@@ -29,12 +31,16 @@ namespace ConfigureOneFlag
                 emailServer = File.ReadAllText(@"C:\C1\emailserver.dat");
                 emailFrom = File.ReadAllText(@"C:\C1\emailFromAddress.dat");
                 splocation = File.ReadAllText(@"C:\C1\splocation.dat");
+                spuname = File.ReadAllText(@"C:\C1\spuname.dat");
+                sppassword = File.ReadAllText(@"C:\C1\sppassword.dat");
                 reg.SetValue("DB", dbConnectionData);
                 reg.SetValue("ENCKEY", dbkey);
                 reg.SetValue("EMAILADDR", emailaddr);
                 reg.SetValue("EMAILSERVER", emailServer);
                 reg.SetValue("EMAILFROM", emailFrom);
                 reg.SetValue("SPLOCATION", splocation);
+                reg.SetValue("SPUNAME", spuname);
+                reg.SetValue("SPPASSWORD", sppassword);
             }
             
             //decrypt cs
@@ -44,6 +50,8 @@ namespace ConfigureOneFlag
             emailServer = reg.GetValue("EMAILSERVER").ToString();
             emailFrom = reg.GetValue("EMAILFROM").ToString();
             splocation = reg.GetValue("SPLOCATION").ToString();
+            spuname = reg.GetValue("SPUNAME").ToString();
+            sppassword = reg.GetValue("SPPASSWORD").ToString();
             crypto csec = new crypto();
             csec.DecryptCS(connectionString, sKey);
             
