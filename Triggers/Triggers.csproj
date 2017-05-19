@@ -40,6 +40,8 @@
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +54,7 @@
     <Compile Include="C1WebService.cs" />
     <Compile Include="crypto.cs" />
     <Compile Include="C1Dictionaries.cs" />
+    <Compile Include="NetworkShare.cs" />
     <Compile Include="SendMail.cs" />
     <Compile Include="trigger.cs" />
     <Compile Include="DatabaseFactory.cs" />

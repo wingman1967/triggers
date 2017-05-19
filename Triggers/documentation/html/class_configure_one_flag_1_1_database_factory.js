@@ -14,5 +14,6 @@ var class_configure_one_flag_1_1_database_factory =
     [ "emailaddr", "class_configure_one_flag_1_1_database_factory_a18b6157c87df47c35c9b7d4b9bcfa30e.html#a18b6157c87df47c35c9b7d4b9bcfa30e", null ],
     [ "emailFrom", "class_configure_one_flag_1_1_database_factory_a54d4a975b77e239367db262060b40eed.html#a54d4a975b77e239367db262060b40eed", null ],
     [ "emailServer", "class_configure_one_flag_1_1_database_factory_a1410899026bc5e03fb6d023a4d5d9618.html#a1410899026bc5e03fb6d023a4d5d9618", null ],
+    [ "splocation", "class_configure_one_flag_1_1_database_factory_a055478d8b87ec2968a6319dcd78273f6.html#a055478d8b87ec2968a6319dcd78273f6", null ],
     [ "SQLCommand", "class_configure_one_flag_1_1_database_factory_aa5aa82b5ed9dd8d3610b92ed61a9f2d4.html#aa5aa82b5ed9dd8d3610b92ed61a9f2d4", null ]
 ];

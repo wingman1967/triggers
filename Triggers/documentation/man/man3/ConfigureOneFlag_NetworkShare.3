@@ -1,0 +1,294 @@
+.TH "ConfigureOneFlag.NetworkShare" 3 "Fri May 19 2017" "ConfigureOne Trigger" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ConfigureOneFlag.NetworkShare
+.SH SYNOPSIS
+.br
+.PP
+.SS "Classes"
+
+.in +1c
+.ti -1c
+.RI "struct \fBErrorClass\fP"
+.br
+.ti -1c
+.RI "class \fBNETRESOURCE\fP"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static string \fBConnectToShare\fP (string uri, string username, string password)"
+.br
+.RI "Connects to the remote share "
+.ti -1c
+.RI "static string \fBDisconnectFromShare\fP (string uri, bool force)"
+.br
+.RI "Remove the share from cache\&. "
+.in -1c
+.SS "Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static int \fBWNetUseConnection\fP (IntPtr hwndOwner, \fBNETRESOURCE\fP lpNetResource, string lpPassword, string lpUserID, int dwFlags, string lpAccessName, string lpBufferSize, string lpResult)"
+.br
+.ti -1c
+.RI "static int \fBWNetCancelConnection\fP (string lpName, bool fForce)"
+.br
+.in -1c
+.SS "Static Private Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static string \fBGetError\fP (int errNum)"
+.br
+.in -1c
+.SS "Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "const int \fBRESOURCETYPE_DISK\fP = 0x00000001"
+.br
+.ti -1c
+.RI "const int \fBCONNECT_UPDATE_PROFILE\fP = 0x00000001"
+.br
+.ti -1c
+.RI "const int \fBNO_ERROR\fP = 0"
+.br
+.ti -1c
+.RI "const int \fBERROR_ACCESS_DENIED\fP = 5"
+.br
+.ti -1c
+.RI "const int \fBERROR_ALREADY_ASSIGNED\fP = 85"
+.br
+.ti -1c
+.RI "const int \fBERROR_BAD_DEVICE\fP = 1200"
+.br
+.ti -1c
+.RI "const int \fBERROR_BAD_NET_NAME\fP = 67"
+.br
+.ti -1c
+.RI "const int \fBERROR_BAD_PROVIDER\fP = 1204"
+.br
+.ti -1c
+.RI "const int \fBERROR_CANCELLED\fP = 1223"
+.br
+.ti -1c
+.RI "const int \fBERROR_EXTENDED_ERROR\fP = 1208"
+.br
+.ti -1c
+.RI "const int \fBERROR_INVALID_ADDRESS\fP = 487"
+.br
+.ti -1c
+.RI "const int \fBERROR_INVALID_PARAMETER\fP = 87"
+.br
+.ti -1c
+.RI "const int \fBERROR_INVALID_PASSWORD\fP = 1216"
+.br
+.ti -1c
+.RI "const int \fBERROR_MORE_DATA\fP = 234"
+.br
+.ti -1c
+.RI "const int \fBERROR_NO_MORE_ITEMS\fP = 259"
+.br
+.ti -1c
+.RI "const int \fBERROR_NO_NET_OR_BAD_PATH\fP = 1203"
+.br
+.ti -1c
+.RI "const int \fBERROR_NO_NETWORK\fP = 1222"
+.br
+.ti -1c
+.RI "const int \fBERROR_SESSION_CREDENTIAL_CONFLICT\fP = 1219"
+.br
+.ti -1c
+.RI "const int \fBERROR_BAD_PROFILE\fP = 1206"
+.br
+.ti -1c
+.RI "const int \fBERROR_CANNOT_OPEN_PROFILE\fP = 1205"
+.br
+.ti -1c
+.RI "const int \fBERROR_DEVICE_IN_USE\fP = 2404"
+.br
+.ti -1c
+.RI "const int \fBERROR_NOT_CONNECTED\fP = 2250"
+.br
+.ti -1c
+.RI "const int \fBERROR_OPEN_FILES\fP = 2401"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static \fBErrorClass\fP [] \fBERROR_LIST\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Definition at line 6 of file NetworkShare\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static string ConfigureOneFlag\&.NetworkShare\&.ConnectToShare (string uri, string username, string password)\fC [static]\fP"
+
+.PP
+Connects to the remote share 
+.PP
+\fBReturns:\fP
+.RS 4
+Null if successful, otherwise error message\&.
+.RE
+.PP
+
+.PP
+Definition at line 12 of file NetworkShare\&.cs\&.
+.SS "static string ConfigureOneFlag\&.NetworkShare\&.DisconnectFromShare (string uri, bool force)\fC [static]\fP"
+
+.PP
+Remove the share from cache\&. 
+.PP
+\fBReturns:\fP
+.RS 4
+Null if successful, otherwise error message\&.
+.RE
+.PP
+
+.PP
+Definition at line 33 of file NetworkShare\&.cs\&.
+.SS "static string ConfigureOneFlag\&.NetworkShare\&.GetError (int errNum)\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 142 of file NetworkShare\&.cs\&.
+.SS "static int ConfigureOneFlag\&.NetworkShare\&.WNetCancelConnection (string lpName, bool fForce)\fC [private]\fP"
+
+.SS "static int ConfigureOneFlag\&.NetworkShare\&.WNetUseConnection (IntPtr hwndOwner, \fBNETRESOURCE\fP lpNetResource, string lpPassword, string lpUserID, int dwFlags, string lpAccessName, string lpBufferSize, string lpResult)\fC [private]\fP"
+
+.SH "Member Data Documentation"
+.PP 
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.CONNECT_UPDATE_PROFILE = 0x00000001\fC [private]\fP"
+
+.PP
+Definition at line 79 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_ACCESS_DENIED = 5\fC [private]\fP"
+
+.PP
+Definition at line 85 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_ALREADY_ASSIGNED = 85\fC [private]\fP"
+
+.PP
+Definition at line 86 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_BAD_DEVICE = 1200\fC [private]\fP"
+
+.PP
+Definition at line 87 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_BAD_NET_NAME = 67\fC [private]\fP"
+
+.PP
+Definition at line 88 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_BAD_PROFILE = 1206\fC [private]\fP"
+
+.PP
+Definition at line 101 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_BAD_PROVIDER = 1204\fC [private]\fP"
+
+.PP
+Definition at line 89 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_CANCELLED = 1223\fC [private]\fP"
+
+.PP
+Definition at line 90 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_CANNOT_OPEN_PROFILE = 1205\fC [private]\fP"
+
+.PP
+Definition at line 102 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_DEVICE_IN_USE = 2404\fC [private]\fP"
+
+.PP
+Definition at line 103 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_EXTENDED_ERROR = 1208\fC [private]\fP"
+
+.PP
+Definition at line 91 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_INVALID_ADDRESS = 487\fC [private]\fP"
+
+.PP
+Definition at line 92 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_INVALID_PARAMETER = 87\fC [private]\fP"
+
+.PP
+Definition at line 93 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_INVALID_PASSWORD = 1216\fC [private]\fP"
+
+.PP
+Definition at line 94 of file NetworkShare\&.cs\&.
+.SS "\fBErrorClass\fP [] ConfigureOneFlag\&.NetworkShare\&.ERROR_LIST\fC [static]\fP, \fC [private]\fP"
+\fBInitial value:\fP
+.PP
+.nf
+= new ErrorClass[] {
+        new ErrorClass(ERROR_ACCESS_DENIED, "Error: Access Denied"),
+        new ErrorClass(ERROR_ALREADY_ASSIGNED, "Error: Already Assigned"),
+        new ErrorClass(ERROR_BAD_DEVICE, "Error: Bad Device"),
+        new ErrorClass(ERROR_BAD_NET_NAME, "Error: Bad Net Name"),
+        new ErrorClass(ERROR_BAD_PROVIDER, "Error: Bad Provider"),
+        new ErrorClass(ERROR_CANCELLED, "Error: Cancelled"),
+        new ErrorClass(ERROR_EXTENDED_ERROR, "Error: Extended Error"),
+        new ErrorClass(ERROR_INVALID_ADDRESS, "Error: Invalid Address"),
+        new ErrorClass(ERROR_INVALID_PARAMETER, "Error: Invalid Parameter"),
+        new ErrorClass(ERROR_INVALID_PASSWORD, "Error: Invalid Password"),
+        new ErrorClass(ERROR_MORE_DATA, "Error: More Data"),
+        new ErrorClass(ERROR_NO_MORE_ITEMS, "Error: No More Items"),
+        new ErrorClass(ERROR_NO_NET_OR_BAD_PATH, "Error: No Net Or Bad Path"),
+        new ErrorClass(ERROR_NO_NETWORK, "Error: No Network"),
+        new ErrorClass(ERROR_BAD_PROFILE, "Error: Bad Profile"),
+        new ErrorClass(ERROR_CANNOT_OPEN_PROFILE, "Error: Cannot Open Profile"),
+        new ErrorClass(ERROR_DEVICE_IN_USE, "Error: Device In Use"),
+        new ErrorClass(ERROR_EXTENDED_ERROR, "Error: Extended Error"),
+        new ErrorClass(ERROR_NOT_CONNECTED, "Error: Not Connected"),
+        new ErrorClass(ERROR_OPEN_FILES, "Error: Open Files"),
+        new ErrorClass(ERROR_SESSION_CREDENTIAL_CONFLICT, "Error: Credential Conflict"),
+    }
+.fi
+.PP
+Definition at line 118 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_MORE_DATA = 234\fC [private]\fP"
+
+.PP
+Definition at line 95 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_NO_MORE_ITEMS = 259\fC [private]\fP"
+
+.PP
+Definition at line 96 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_NO_NET_OR_BAD_PATH = 1203\fC [private]\fP"
+
+.PP
+Definition at line 97 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_NO_NETWORK = 1222\fC [private]\fP"
+
+.PP
+Definition at line 98 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_NOT_CONNECTED = 2250\fC [private]\fP"
+
+.PP
+Definition at line 104 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_OPEN_FILES = 2401\fC [private]\fP"
+
+.PP
+Definition at line 105 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.ERROR_SESSION_CREDENTIAL_CONFLICT = 1219\fC [private]\fP"
+
+.PP
+Definition at line 99 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.NO_ERROR = 0\fC [private]\fP"
+
+.PP
+Definition at line 83 of file NetworkShare\&.cs\&.
+.SS "const int ConfigureOneFlag\&.NetworkShare\&.RESOURCETYPE_DISK = 0x00000001\fC [private]\fP"
+
+.PP
+Definition at line 78 of file NetworkShare\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ConfigureOne Trigger from the source code\&.

@@ -35,7 +35,6 @@ namespace ConfigureOneFlag
             try
             {
                 //return response from AXIS (if any)
-                
                 using (HttpWebResponse response = objRequest.GetResponse() as HttpWebResponse)
                 {
                     StreamReader reader = new StreamReader(response.GetResponseStream());
@@ -149,6 +148,11 @@ namespace ConfigureOneFlag
                         {
                             byte[] pdfByteArray = Convert.FromBase64String(node.InnerText);
                             File.WriteAllBytes(@"C:\JH\" + orderNumber + "_" + docs[arrayindex], pdfByteArray);
+                            string SharepointLocation = DatabaseFactory.splocation;
+                            string fileToCopy = @"C:\JH\" + orderNumber + "_" + docs[arrayindex];
+                            NetworkShare.DisconnectFromShare(SharepointLocation, true);
+                            NetworkShare.ConnectToShare(SharepointLocation, "hinesj", "$1Spring2017$");
+                            File.Copy(fileToCopy, SharepointLocation + orderNumber + "_" + docs[arrayindex], true);
                         }
                     }
                     arrayindex += 1;
@@ -163,12 +167,13 @@ namespace ConfigureOneFlag
 
                 logEvent = "Retrieved/Saved Following Document Files: " + Environment.NewLine + Environment.NewLine + documentFilesSaved;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-
+                
                 return;
             }
             catch (Exception exd)
             {
-                //an error occurred; move on rather than holding up the rest of processing
+                logEvent = "ERROR: " + exd.Message + " -> " + exd.Source;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
             }
         }
     }

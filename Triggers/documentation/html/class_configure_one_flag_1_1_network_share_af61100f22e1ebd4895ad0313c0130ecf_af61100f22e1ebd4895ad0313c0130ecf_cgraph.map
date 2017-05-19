@@ -1,0 +1,5 @@
+<map id="ConfigureOneFlag.NetworkShare.DisconnectFromShare" name="ConfigureOneFlag.NetworkShare.DisconnectFromShare">
+<area shape="rect" id="node2" href="$class_configure_one_flag_1_1_network_share_ae3468e9742af300b56a0382bb5cbb969.html#ae3468e9742af300b56a0382bb5cbb969" title="ConfigureOneFlag.Network\lShare.WNetCancelConnection" alt="" coords="243,5,441,47"/>
+<area shape="rect" id="node3" href="$class_configure_one_flag_1_1_network_share_aec1ed4b4d1202d34aed21172bce91b4d.html#aec1ed4b4d1202d34aed21172bce91b4d" title="ConfigureOneFlag.Network\lShare.GetError" alt="" coords="254,71,430,112"/>
+<area shape="rect" id="node4" href="$class_configure_one_flag_1_1_network_share_a4a620f7ea4a4608089bd0012c096429c.html#a4a620f7ea4a4608089bd0012c096429c" title="ConfigureOneFlag.Network\lShare.WNetUseConnection" alt="" coords="251,136,433,177"/>
+</map>

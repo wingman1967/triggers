@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_configure_one_flag_1_1_network_share">
+<title>ConfigureOneFlag::NetworkShare class Reference</title>
+<para>Inheritance diagram for ConfigureOneFlag::NetworkShare</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_configure_one_flag_1_1_network_share__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ConfigureOneFlag::NetworkShare</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_configure_one_flag_1_1_network_share__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ConfigureOneFlag::NetworkShare::ErrorClass</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e">ConfigureOneFlag::NetworkShare::NETRESOURCE</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int RESOURCETYPE_DISK</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int CONNECT_UPDATE_PROFILE</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int NO_ERROR</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_ACCESS_DENIED</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_ALREADY_ASSIGNED</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_BAD_DEVICE</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_BAD_NET_NAME</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_BAD_PROVIDER</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_CANCELLED</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_EXTENDED_ERROR</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_INVALID_ADDRESS</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_INVALID_PARAMETER</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_INVALID_PASSWORD</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_MORE_DATA</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_NO_MORE_ITEMS</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_NO_NET_OR_BAD_PATH</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_NO_NETWORK</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_SESSION_CREDENTIAL_CONFLICT</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_BAD_PROFILE</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_CANNOT_OPEN_PROFILE</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_DEVICE_IN_USE</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_NOT_CONNECTED</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>const int ERROR_OPEN_FILES</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static ErrorClass [] ERROR_LIST</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string <link linkend="class_configure_one_flag_1_1_network_share_ab976148d295a3aad7cdf5c850cc3fed9_1ab976148d295a3aad7cdf5c850cc3fed9">ConnectToShare</link> (
+string uri, string username, string password)<para><emphasis>&lt;summary&gt;
+Connects to the remote share
+&lt;/summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string <link linkend="class_configure_one_flag_1_1_network_share_af61100f22e1ebd4895ad0313c0130ecf_1af61100f22e1ebd4895ad0313c0130ecf">DisconnectFromShare</link> (
+string uri, bool force)<para><emphasis>&lt;summary&gt;
+Remove the share from cache.
+&lt;/summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="class_configure_one_flag_1_1_network_share_a4a620f7ea4a4608089bd0012c096429c_1a4a620f7ea4a4608089bd0012c096429c">WNetUseConnection</link> (
+IntPtr hwndOwner, <link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e">NETRESOURCE</link> lpNetResource, string lpPassword, string lpUserID, int dwFlags, string lpAccessName, string lpBufferSize, string lpResult)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="class_configure_one_flag_1_1_network_share_ae3468e9742af300b56a0382bb5cbb969_1ae3468e9742af300b56a0382bb5cbb969">WNetCancelConnection</link> (
+string lpName, bool fForce)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string <link linkend="class_configure_one_flag_1_1_network_share_aec1ed4b4d1202d34aed21172bce91b4d_1aec1ed4b4d1202d34aed21172bce91b4d">GetError</link> (
+int errNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_configure_one_flag_1_1_network_share_ab976148d295a3aad7cdf5c850cc3fed9_1ab976148d295a3aad7cdf5c850cc3fed9">
+                <title>static string ConfigureOneFlag.NetworkShare.ConnectToShare (string uri, string username, string password)</title> <emphasis>&lt;summary&gt;
+Connects to the remote share
+&lt;/summary&gt;</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>Null if successful, otherwise error message.</para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_network_share_af61100f22e1ebd4895ad0313c0130ecf_1af61100f22e1ebd4895ad0313c0130ecf">
+                <title>static string ConfigureOneFlag.NetworkShare.DisconnectFromShare (string uri, bool force)</title> <emphasis>&lt;summary&gt;
+Remove the share from cache.
+&lt;/summary&gt;</emphasis>
+                
+<para><formalpara><title>Returns: </title>
+
+<para>Null if successful, otherwise error message.</para>
+</formalpara>
+</para>
+
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_network_share_a4a620f7ea4a4608089bd0012c096429c_1a4a620f7ea4a4608089bd0012c096429c">
+                <title>static int ConfigureOneFlag.NetworkShare.WNetUseConnection (IntPtr hwndOwner, NETRESOURCE lpNetResource, string lpPassword, string lpUserID, int dwFlags, string lpAccessName, string lpBufferSize, string lpResult)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_network_share_ae3468e9742af300b56a0382bb5cbb969_1ae3468e9742af300b56a0382bb5cbb969">
+                <title>static int ConfigureOneFlag.NetworkShare.WNetCancelConnection (string lpName, bool fForce)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_network_share_aec1ed4b4d1202d34aed21172bce91b4d_1aec1ed4b4d1202d34aed21172bce91b4d">
+                <title>static string ConfigureOneFlag.NetworkShare.GetError (int errNum)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

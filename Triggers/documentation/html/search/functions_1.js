@@ -6,5 +6,6 @@ var searchData=
   ['dbfieldlencoitem',['DBFieldLenCOItem',['../class_configure_one_flag_1_1_c1_dictionaries_a62d37086ac3e73ea188a506c45d1b965.html#a62d37086ac3e73ea188a506c45d1b965',1,'ConfigureOneFlag::C1Dictionaries']]],
   ['dbfieldlenparmval',['DBFieldLenParmVal',['../class_configure_one_flag_1_1_c1_dictionaries_a2c81b7f3d9a6f3aa4663246c084536c6.html#a2c81b7f3d9a6f3aa4663246c084536c6',1,'ConfigureOneFlag::C1Dictionaries']]],
   ['decrypt',['Decrypt',['../class_configure_one_flag_1_1crypto_ab08eafa0fc82a93142425ce8b0edd609.html#ab08eafa0fc82a93142425ce8b0edd609',1,'ConfigureOneFlag::crypto']]],
-  ['decryptcs',['DecryptCS',['../class_configure_one_flag_1_1crypto_aa1d3c3952a54e17e8440101e4690ced4.html#aa1d3c3952a54e17e8440101e4690ced4',1,'ConfigureOneFlag::crypto']]]
+  ['decryptcs',['DecryptCS',['../class_configure_one_flag_1_1crypto_aa1d3c3952a54e17e8440101e4690ced4.html#aa1d3c3952a54e17e8440101e4690ced4',1,'ConfigureOneFlag::crypto']]],
+  ['disconnectfromshare',['DisconnectFromShare',['../class_configure_one_flag_1_1_network_share_af61100f22e1ebd4895ad0313c0130ecf.html#af61100f22e1ebd4895ad0313c0130ecf',1,'ConfigureOneFlag::NetworkShare']]]
 ];

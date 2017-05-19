@@ -1,0 +1,5 @@
+<map id="ConfigureOneFlag.NetworkShare.WNetCancelConnection" name="ConfigureOneFlag.NetworkShare.WNetCancelConnection">
+<area shape="rect" id="node2" href="$class_configure_one_flag_1_1_network_share_af61100f22e1ebd4895ad0313c0130ecf.html#af61100f22e1ebd4895ad0313c0130ecf" title="Remove the share from cache. " alt="" coords="252,5,441,47"/>
+<area shape="rect" id="node3" href="$class_configure_one_flag_1_1_c1_web_service_ae826903f85694f4cf481680e115076f3.html#ae826903f85694f4cf481680e115076f3" title="ConfigureOneFlag.C1WebService.\lCallConfigureOne" alt="" coords="489,5,708,47"/>
+<area shape="rect" id="node4" href="$class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f.html#a7446070eb1c5dd9f63f7043525014c9f" title="ConfigureOneFlag.Triggers.\lC1Order" alt="" coords="756,5,935,47"/>
+</map>
