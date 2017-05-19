@@ -221,7 +221,7 @@
                     <listitem>
                         <para>static string <link linkend="class_configure_one_flag_1_1_network_share_ab976148d295a3aad7cdf5c850cc3fed9_1ab976148d295a3aad7cdf5c850cc3fed9">ConnectToShare</link> (
 string uri, string username, string password)<para><emphasis>&lt;summary&gt;
-Connects to the remote share
+Network authentication HELPER class.  Connects to and disconnects from an endpoint using explicit credentials.
 &lt;/summary&gt;</emphasis></para>
 </para>
                     </listitem>
@@ -274,7 +274,7 @@ int errNum)</para>
         </section>
             <section xml:id="class_configure_one_flag_1_1_network_share_ab976148d295a3aad7cdf5c850cc3fed9_1ab976148d295a3aad7cdf5c850cc3fed9">
                 <title>static string ConfigureOneFlag.NetworkShare.ConnectToShare (string uri, string username, string password)</title> <emphasis>&lt;summary&gt;
-Connects to the remote share
+Network authentication HELPER class.  Connects to and disconnects from an endpoint using explicit credentials.
 &lt;/summary&gt;</emphasis>
                 
 <para><formalpara><title>Returns: </title>

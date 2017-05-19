@@ -168,7 +168,6 @@ namespace ConfigureOneFlag
 
                 logEvent = "Retrieved/Saved Following Document Files: " + Environment.NewLine + Environment.NewLine + documentFilesSaved;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-                
                 return;
             }
             catch (Exception exd)

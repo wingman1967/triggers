@@ -6,7 +6,7 @@ namespace ConfigureOneFlag
     public static class NetworkShare
     {
         /// <summary>
-        /// Connects to the remote share
+        /// Network authentication HELPER class.  Connects to and disconnects from an endpoint using explicit credentials.
         /// </summary>
         /// <returns>Null if successful, otherwise error message.</returns>
         public static string ConnectToShare(string uri, string username, string password)
