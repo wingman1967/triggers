@@ -263,7 +263,7 @@ namespace ConfigureOneFlag
                 co.PriorityLevel = Convert.ToInt16(node.InnerText);
             }
             //output CO header to SQL before proceeding to the coitem
-            DatabaseFactory.WriteRecordCO(ref co);
+            //DatabaseFactory.WriteRecordCO(ref co);                                //defer
             
             //build COITEM records, per line
             xnl = xmldoc.GetElementsByTagName("Detail");
@@ -302,6 +302,65 @@ namespace ConfigureOneFlag
                     //output cfg (parmval) record
                     DatabaseFactory.WriteRecordCfg(ref cfg);
                 }
+
+                //Look for SHIP_VIA in INPUTS
+                XmlNodeList xnlisv = xmldoc.GetElementsByTagName("Input");
+                foreach (XmlNode nodeisv in xnlisv)
+                {
+                    if (nodeisv.ChildNodes[2].InnerText == "SHIP_VIA")
+                    {
+                        co.ShipVia = nodeisv.ChildNodes[0].Attributes["name"].Value;
+                    }
+                }
+
+                //If dropship has value, override the order-header shipping with this information instead
+                XmlNodeList xnlds = xmldoc.GetElementsByTagName("Input");
+                foreach (XmlNode nodeds in xnlds)
+                {
+                    if (nodeds.ChildNodes[2].InnerText.Length >= 9 && nodeds.ChildNodes[2].InnerText.Substring(0, 9) == "DROP SHIP" && nodeds.ChildNodes[0].Attributes["name"].Value != "")
+                    {
+                        switch (nodeds.ChildNodes[2].InnerText)
+                        {
+                            case "DROP SHIP NAME":
+                                co.ShipToContactName = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                break;
+                            case "DROP SHIP ADDRESS 1":
+                                co.ShipToAddressLine1 = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                break;
+                            case "DROP SHIP ADDRESS 2":
+                                co.ShipToAddressLine2 = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                break;
+                            case "DROP SHIP ADDRESS 3":
+                                co.ShipToAddressLine3 = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                break;
+                            case "DROP SHIP CITY":
+                                co.ShipToCity = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                break;
+                            case "DROP SHIP STATE":
+                                co.ShipToState = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                break;
+                            case "DROP SHIP ZIP CODE":
+                                co.ShipToPostalCode = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                break;
+                            case "DROP SHIP CONTACT":
+                                co.ShipToContactName = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                break;
+                            case "DROP SHIP PHONE":
+                                co.ShipToPhoneNumber = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                break;
+                            case "DROP SHIP COUNTRY":
+                                co.ShipToCountry = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                break;
+                            case "DROP SHIP EMAIL":
+                                co.ShipToEmailAddress = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                break;
+                            default:
+                                //do nothing
+                                break;
+                        }
+                    }
+                }
+
                 //item-master for the line we are working with
                 int recordSequence = 1;
                 XmlNodeList xnlim = detailDoc.GetElementsByTagName("ItemMaster");
@@ -323,8 +382,11 @@ namespace ConfigureOneFlag
                     citem.UnitOfMeasure = nodeim.ChildNodes[26].InnerText;
                     citem.PriorityLevel = Convert.ToInt16(nodeim.ChildNodes[38].InnerText);
                     recordSequence += 1;
-                    //output item-master record
-                    DatabaseFactory.WriteRecordCItem(ref citem);
+                    //output item-master record if priority is <= 2
+                    if (citem.PriorityLevel <= 2)
+                    {
+                        DatabaseFactory.WriteRecordCItem(ref citem);
+                    }
                 }
                 //BOM records
                 recordSequence = 0;
@@ -352,6 +414,7 @@ namespace ConfigureOneFlag
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                 DatabaseFactory.ResequenceBOM(bom.CO_Num, bom.CO_Line);
             }
+            DatabaseFactory.WriteRecordCO(ref co);              //deferred write
         }
     }
 }

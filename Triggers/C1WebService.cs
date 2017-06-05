@@ -70,7 +70,7 @@ namespace ConfigureOneFlag
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
                 return;
             }
-
+            
             try
             {
                 logEvent = "Retrieving/Saving Document Files For Order: " + Triggers.pubOrderNumber;
@@ -103,7 +103,7 @@ namespace ConfigureOneFlag
                     docs[arrayindex] = node.InnerText;
                     arrayindex += 1;
                 }
-
+                
                 //We now have an array of document filenames; process by retrieving and saving each file
                 int upperBound = arrayindex;
                 arrayindex = 0;
@@ -112,7 +112,7 @@ namespace ConfigureOneFlag
                 string SharepointLocation = DatabaseFactory.splocation;
                 NetworkShare.DisconnectFromShare(SharepointLocation, true);
                 NetworkShare.ConnectToShare(SharepointLocation, DatabaseFactory.spuname, DatabaseFactory.sppassword);
-
+                
                 while (arrayindex < upperBound)
                 {
                     documentName = docs[arrayindex];
@@ -148,7 +148,7 @@ namespace ConfigureOneFlag
                         {
                             return;
                         }
-
+                        
                         XmlNodeList xnldoc = xmlResult.GetElementsByTagName("content");
                         foreach (XmlNode node in xnldoc)
                         {
