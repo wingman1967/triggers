@@ -38,6 +38,7 @@ namespace ConfigureOneFlag
         private string ship_to_address_line_1;
         private string ship_to_address_line_2;
         private string ship_to_address_line_3;
+        private string ship_to_address_line_4;
         private string ship_to_city;
         private string ship_to_state;
         private string ship_to_country;
@@ -48,6 +49,7 @@ namespace ConfigureOneFlag
         private string ship_to_ref_num;
         private int priority_level;
         private DateTime due_date;
+        private string cust_po;
         public string Identifier
         {
             get { return id; }
@@ -183,6 +185,11 @@ namespace ConfigureOneFlag
             get { return ship_to_address_line_3; }
             set { ship_to_address_line_3 = value; }
         }
+        public string ShipToAddressLine4
+        {
+            get { return ship_to_address_line_4; }
+            set { ship_to_address_line_4 = value; }
+        }
         public string ShipToCity
         {
             get { return ship_to_city; }
@@ -232,6 +239,11 @@ namespace ConfigureOneFlag
         {
             get { return due_date; }
             set { due_date = value; }
+        }
+        public string CustPO
+        {
+            get { return cust_po; }
+            set { cust_po = value; }
         }
     }
 }

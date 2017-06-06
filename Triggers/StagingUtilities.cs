@@ -262,9 +262,18 @@ namespace ConfigureOneFlag
             {
                 co.PriorityLevel = Convert.ToInt16(node.InnerText);
             }
-            //output CO header to SQL before proceeding to the coitem
-            //DatabaseFactory.WriteRecordCO(ref co);                                //defer
-            
+
+            //Look for PURCHASE ORDER in INPUTS, load into CO and COITEM
+            XmlNodeList xnlPO = xmldoc.GetElementsByTagName("Input");
+            foreach (XmlNode nodePO in xnlPO)
+            {
+                if (nodePO.ChildNodes[2].InnerText == "PURCHASE ORDER")
+                {
+                    co.CustPO = nodePO.ChildNodes[0].Attributes["name"].Value;
+                    coitem.CustPO = nodePO.ChildNodes[0].Attributes["name"].Value;
+                }
+            }
+
             //build COITEM records, per line
             xnl = xmldoc.GetElementsByTagName("Detail");
             foreach (XmlNode node in xnl)
@@ -307,10 +316,7 @@ namespace ConfigureOneFlag
                 XmlNodeList xnlisv = xmldoc.GetElementsByTagName("Input");
                 foreach (XmlNode nodeisv in xnlisv)
                 {
-                    if (nodeisv.ChildNodes[2].InnerText == "SHIP_VIA")
-                    {
-                        co.ShipVia = nodeisv.ChildNodes[0].Attributes["name"].Value;
-                    }
+                    if (nodeisv.ChildNodes[2].InnerText == "SHIP_VIA") { co.ShipVia = nodeisv.ChildNodes[0].Attributes["name"].Value; }
                 }
 
                 //If dropship has value, override the order-header shipping with this information instead
@@ -332,6 +338,9 @@ namespace ConfigureOneFlag
                                 break;
                             case "DROP SHIP ADDRESS 3":
                                 co.ShipToAddressLine3 = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                break;
+                            case "DROP SHIP ADDRESS 4":
+                                co.ShipToAddressLine4 = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP CITY":
                                 co.ShipToCity = nodeds.ChildNodes[0].Attributes["name"].Value;

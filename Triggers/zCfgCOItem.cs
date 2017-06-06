@@ -24,6 +24,7 @@ namespace ConfigureOneFlag
         private int priority_level;
         private DateTime due_date;
         private string config_type;
+        private string cust_po;
         public string CO_Num
         {
             get { return order_num; }
@@ -88,6 +89,11 @@ namespace ConfigureOneFlag
         {
             get { return config_type; }
             set { config_type = value; }
+        }
+        public string CustPO
+        {
+            get { return cust_po; }
+            set { cust_po = value; }
         }
     }
 }
