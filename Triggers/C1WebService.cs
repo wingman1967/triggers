@@ -112,6 +112,17 @@ namespace ConfigureOneFlag
                 string SharepointLocation = DatabaseFactory.splocation;
                 NetworkShare.DisconnectFromShare(SharepointLocation, true);
                 NetworkShare.ConnectToShare(SharepointLocation, DatabaseFactory.spuname, DatabaseFactory.sppassword);
+
+                //Create Sharepoint folder for order#
+                string SharepointCopyLocation = SharepointLocation + orderNumber + "\\";
+                try
+                {
+                    DirectoryInfo di = Directory.CreateDirectory(SharepointCopyLocation);
+                }
+                catch (Exception edi)
+                {
+                    //directory already exists, nothing further needs done
+                }
                 
                 while (arrayindex < upperBound)
                 {
@@ -155,7 +166,7 @@ namespace ConfigureOneFlag
                             byte[] pdfByteArray = Convert.FromBase64String(node.InnerText);
                             string fileToCopy = @"C:\C1TEMP\" + orderNumber + "_" + docs[arrayindex];
                             File.WriteAllBytes(fileToCopy, pdfByteArray);
-                            File.Copy(fileToCopy, SharepointLocation + orderNumber + "_" + docs[arrayindex], true);
+                            File.Copy(fileToCopy, SharepointCopyLocation + orderNumber + "_" + docs[arrayindex], true);
                             documentFilesSaved = documentFilesSaved + docs[arrayindex] + Environment.NewLine;
                         }
                     }

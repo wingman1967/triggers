@@ -369,7 +369,7 @@ namespace ConfigureOneFlag
                         }
                     }
                 }
-
+                
                 //item-master for the line we are working with
                 int recordSequence = 1;
                 XmlNodeList xnlim = detailDoc.GetElementsByTagName("ItemMaster");
