@@ -170,6 +170,14 @@ string auditMessageL, string orderNum, int orderLine, string auditEvent)</para>
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string <link linkend="class_configure_one_flag_1_1_database_factory_a64f0488a247638877def2f773331d184_1a64f0488a247638877def2f773331d184">RetrieveSLCO</link> (
+string orderNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
     <simplesect>
 
@@ -219,6 +227,10 @@ string auditMessageL, string orderNum, int orderLine, string auditEvent)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_a59987be56acf3f8cbf7681d6b4866e81_1a59987be56acf3f8cbf7681d6b4866e81">
                 <title>static void ConfigureOneFlag.DatabaseFactory.WriteAuditRecord (string auditMessageL, string orderNum, int orderLine, string auditEvent)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_a64f0488a247638877def2f773331d184_1a64f0488a247638877def2f773331d184">
+                <title>static string ConfigureOneFlag.DatabaseFactory.RetrieveSLCO (string orderNum)</title> <emphasis></emphasis>
                 
             </section>
 </section>

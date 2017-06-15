@@ -70,7 +70,11 @@ namespace ConfigureOneFlag
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
                 return;
             }
-            
+
+            DatabaseFactory.CfgImport(Triggers.pubOrderNumber);
+            //Now retrieve the SL order# (if not found, default to using the C1 order#):
+            string SPOrderNumber = string.IsNullOrEmpty(DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber)) ? Triggers.pubOrderNumber : DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
+
             try
             {
                 logEvent = "Retrieving/Saving Document Files For Order: " + Triggers.pubOrderNumber;
@@ -114,11 +118,8 @@ namespace ConfigureOneFlag
                 NetworkShare.ConnectToShare(SharepointLocation, DatabaseFactory.spuname, DatabaseFactory.sppassword);
 
                 //Create Sharepoint folder for order#
-                string SharepointCopyLocation = SharepointLocation + orderNumber + "\\";
-                try
-                {
-                    DirectoryInfo di = Directory.CreateDirectory(SharepointCopyLocation);
-                }
+                string SharepointCopyLocation = SharepointLocation + SPOrderNumber + "\\";
+                try { DirectoryInfo di = Directory.CreateDirectory(SharepointCopyLocation); }
                 catch (Exception edi)
                 {
                     //directory already exists, nothing further needs done
@@ -164,9 +165,9 @@ namespace ConfigureOneFlag
                         foreach (XmlNode node in xnldoc)
                         {
                             byte[] pdfByteArray = Convert.FromBase64String(node.InnerText);
-                            string fileToCopy = @"C:\C1TEMP\" + orderNumber + "_" + docs[arrayindex];
+                            string fileToCopy = @"C:\C1TEMP\" + SPOrderNumber + "_" + docs[arrayindex];
                             File.WriteAllBytes(fileToCopy, pdfByteArray);
-                            File.Copy(fileToCopy, SharepointCopyLocation + orderNumber + "_" + docs[arrayindex], true);
+                            File.Copy(fileToCopy, SharepointCopyLocation + SPOrderNumber + "_" + docs[arrayindex], true);
                             documentFilesSaved = documentFilesSaved + docs[arrayindex] + Environment.NewLine;
                         }
                     }

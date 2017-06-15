@@ -50,6 +50,23 @@ namespace ConfigureOneFlag
         private int priority_level;
         private DateTime due_date;
         private string cust_po;
+        private string freight_terms;
+        private string freight_acct;
+        private string quote_nbr;
+        private string web_user_name;
+        private DateTime web_order_date;
+        private string dropship_address1;
+        private string dropship_address2;
+        private string dropship_address3;
+        private string dropship_address4;
+        private string dropship_city;
+        private string dropship_state;
+        private string dropship_zip;
+        private string dropship_name;
+        private string dropship_contact;
+        private string dropship_country;
+        private string dropship_phone;
+        private string dropship_email;
         public string Identifier
         {
             get { return id; }
@@ -244,6 +261,91 @@ namespace ConfigureOneFlag
         {
             get { return cust_po; }
             set { cust_po = value; }
+        }
+        public string FreightTerms
+        {
+            get { return freight_terms; }
+            set { freight_terms = value; }
+        }
+        public string FreightAcct
+        {
+            get { return freight_acct; }
+            set { freight_acct = value; }
+        }
+        public string QuoteNbr
+        {
+            get { return quote_nbr; }
+            set { quote_nbr = value; }
+        }
+        public string WebUserName
+        {
+            get { return web_user_name; }
+            set { web_user_name = value; }
+        }
+        public DateTime WebOrderDate
+        {
+            get { return web_order_date; }
+            set { web_order_date = value; }
+        }
+        public string DropShipAddress1
+        {
+            get { return dropship_address1; }
+            set { dropship_address1 = value; }
+        }
+        public string DropShipAddress2
+        {
+            get { return dropship_address2; }
+            set { dropship_address2 = value; }
+        }
+        public string DropShipAddress3
+        {
+            get { return dropship_address3; }
+            set { dropship_address3 = value; }
+        }
+        public string DropShipAddress4
+        {
+            get { return dropship_address4; }
+            set { dropship_address4 = value; }
+        }
+        public string DropShipCity
+        {
+            get { return dropship_city; }
+            set { dropship_city = value; }
+        }
+        public string DropShipState
+        {
+            get { return dropship_state; }
+            set { dropship_state = value; }
+        }
+        public string DropShipZip
+        {
+            get { return dropship_zip; }
+            set { dropship_zip = value; }
+        }
+        public string DropShipName
+        {
+            get { return dropship_name; }
+            set { dropship_name = value; }
+        }
+        public string DropShipContact
+        {
+            get { return dropship_contact; }
+            set { dropship_contact = value; }
+        }
+        public string DropShipCountry
+        {
+            get { return dropship_country; }
+            set { dropship_country = value; }
+        }
+        public string DropShipPhone
+        {
+            get { return dropship_phone; }
+            set { dropship_phone = value; }
+        }
+        public string DropShipEmail
+        {
+            get { return dropship_email; }
+            set { dropship_email = value; }
         }
     }
 }

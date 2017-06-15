@@ -1,4 +1,4 @@
-.TH "ConfigureOneFlag.DatabaseFactory" 3 "Wed Jun 7 2017" "ConfigureOne Trigger" \" -*- nroff -*-
+.TH "ConfigureOneFlag.DatabaseFactory" 3 "Thu Jun 15 2017" "ConfigureOne Trigger" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -43,6 +43,9 @@ ConfigureOneFlag.DatabaseFactory \- Repository for all database functions and ca
 .br
 .ti -1c
 .RI "static void \fBWriteAuditRecord\fP (string auditMessageL, string orderNum, int orderLine, string auditEvent)"
+.br
+.ti -1c
+.RI "static string \fBRetrieveSLCO\fP (string orderNum)"
 .br
 .in -1c
 .SS "Static Public Attributes"
@@ -98,6 +101,10 @@ Definition at line 143 of file DatabaseFactory\&.cs\&.
 
 .PP
 Definition at line 115 of file DatabaseFactory\&.cs\&.
+.SS "static string ConfigureOneFlag\&.DatabaseFactory\&.RetrieveSLCO (string orderNum)\fC [static]\fP"
+
+.PP
+Definition at line 191 of file DatabaseFactory\&.cs\&.
 .SS "void ConfigureOneFlag\&.DatabaseFactory\&.SetConnectionString ()"
 
 .PP

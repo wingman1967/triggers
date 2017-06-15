@@ -263,6 +263,10 @@ namespace ConfigureOneFlag
                 co.PriorityLevel = Convert.ToInt16(node.InnerText);
             }
 
+            co.WebOrderDate = System.DateTime.Now;
+            co.WebUserName = "WEBUSER";
+            co.QuoteNbr = "QUOTENBR";
+
             //Look for PURCHASE ORDER in INPUTS, load into CO and COITEM
             XmlNodeList xnlPO = xmldoc.GetElementsByTagName("Input");
             foreach (XmlNode nodePO in xnlPO)
@@ -274,6 +278,42 @@ namespace ConfigureOneFlag
                 }
             }
 
+            //Look for FREIGHT ACCOUNT# (IF COLLECT) in INPUTS, load into CO
+            XmlNodeList xnlCO = xmldoc.GetElementsByTagName("Input");
+            foreach (XmlNode nodeCO in xnlCO)
+            {
+                if (nodeCO.ChildNodes[2].InnerText == "FREIGHT ACCOUNT# (IF COLLECT)")
+                {
+                    switch(nodeCO.ChildNodes[0].Attributes["name"].Value.Length > 0)
+                    {
+                        case true:
+                            co.FreightAcct = nodeCO.ChildNodes[0].Attributes["name"].Value;
+                            break;
+                        default:
+                            co.FreightAcct = "N/A";
+                            break;
+                    }
+                }
+            }
+
+            //Look for FREIGHT TERMS in INPUTS, load into CO
+            XmlNodeList xnlCOFT = xmldoc.GetElementsByTagName("Input");
+            foreach (XmlNode nodeCOFT in xnlCOFT)
+            {
+                if (nodeCOFT.ChildNodes[2].InnerText == "FREIGHT TERMS")
+                {
+                    switch (nodeCOFT.ChildNodes[0].Attributes["name"].Value.Length > 0)
+                    {
+                        case true:
+                            co.FreightTerms = nodeCOFT.ChildNodes[0].Attributes["name"].Value;
+                            break;
+                        default:
+                            co.FreightTerms = "N/A";
+                            break;
+                    }
+                }
+            }
+            
             //build COITEM records, per line
             xnl = xmldoc.GetElementsByTagName("Detail");
             foreach (XmlNode node in xnl)
@@ -329,39 +369,51 @@ namespace ConfigureOneFlag
                         {
                             case "DROP SHIP NAME":
                                 co.ShipToContactName = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                co.DropShipContact = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP ADDRESS 1":
                                 co.ShipToAddressLine1 = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                co.DropShipAddress1 = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP ADDRESS 2":
                                 co.ShipToAddressLine2 = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                co.DropShipAddress2 = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP ADDRESS 3":
                                 co.ShipToAddressLine3 = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                co.DropShipAddress3 = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP ADDRESS 4":
                                 co.ShipToAddressLine4 = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                co.DropShipAddress4 = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP CITY":
                                 co.ShipToCity = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                co.DropShipCity = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP STATE":
                                 co.ShipToState = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                co.DropShipState = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP ZIP CODE":
                                 co.ShipToPostalCode = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                co.DropShipZip = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP CONTACT":
                                 co.ShipToContactName = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                co.DropShipContact = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP PHONE":
                                 co.ShipToPhoneNumber = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                co.DropShipPhone = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP COUNTRY":
                                 co.ShipToCountry = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                co.DropShipCountry = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP EMAIL":
                                 co.ShipToEmailAddress = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                co.DropShipEmail = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             default:
                                 //do nothing
