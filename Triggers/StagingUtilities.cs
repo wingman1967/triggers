@@ -358,8 +358,9 @@ namespace ConfigureOneFlag
                 {
                     if (nodeisv.ChildNodes[2].InnerText == "SHIP_VIA") { co.ShipVia = nodeisv.ChildNodes[0].Attributes["name"].Value; }
                 }
-
+                
                 //If dropship has value, override the order-header shipping with this information instead
+                //UPDATE 6/16/2017:  Preserve the selected ship-to from C1 and if dropship has value, load up the dropship fields
                 XmlNodeList xnlds = xmldoc.GetElementsByTagName("Input");
                 foreach (XmlNode nodeds in xnlds)
                 {
@@ -368,51 +369,51 @@ namespace ConfigureOneFlag
                         switch (nodeds.ChildNodes[2].InnerText)
                         {
                             case "DROP SHIP NAME":
-                                co.ShipToContactName = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                //co.ShipToContactName = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipContact = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP ADDRESS 1":
-                                co.ShipToAddressLine1 = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                //co.ShipToAddressLine1 = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipAddress1 = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP ADDRESS 2":
-                                co.ShipToAddressLine2 = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                //co.ShipToAddressLine2 = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipAddress2 = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP ADDRESS 3":
-                                co.ShipToAddressLine3 = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                //co.ShipToAddressLine3 = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipAddress3 = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP ADDRESS 4":
-                                co.ShipToAddressLine4 = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                //co.ShipToAddressLine4 = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipAddress4 = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP CITY":
-                                co.ShipToCity = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                //co.ShipToCity = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipCity = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP STATE":
-                                co.ShipToState = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                //co.ShipToState = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipState = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP ZIP CODE":
-                                co.ShipToPostalCode = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                //co.ShipToPostalCode = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipZip = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP CONTACT":
-                                co.ShipToContactName = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                //co.ShipToContactName = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipContact = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP PHONE":
-                                co.ShipToPhoneNumber = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                //co.ShipToPhoneNumber = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipPhone = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP COUNTRY":
-                                co.ShipToCountry = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                //co.ShipToCountry = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipCountry = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP EMAIL":
-                                co.ShipToEmailAddress = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                //co.ShipToEmailAddress = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipEmail = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             default:
