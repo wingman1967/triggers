@@ -112,6 +112,30 @@ namespace ConfigureOneFlag
                 myCommand.ExecuteNonQuery();
             }
         }
+        public static string UserName(string id)
+        {
+            string name = "N/A";
+            SQLCommand = "Select cfg_user_name as UNAME From GR_CfgUserID where cfg_user_id like " + (char)39 + "%" + id + "%" + (char)39;
+            using (SqlConnection myConnection = new SqlConnection(connectionString))
+            {
+                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
+                myConnection.Open();
+                myCommand.CommandTimeout = 600;
+                using (SqlDataReader reader = myCommand.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        if (reader.Read())
+                        {
+                            name = reader["UNAME"].ToString();
+                        }
+                    }
+                    reader.Close();
+                }
+                myConnection.Close();
+            }
+            return name;
+        }
         public static void ResequenceBOM(string orderNumber, int orderLine)
         {
             //call SP to resequence BOM records based on parentIDs

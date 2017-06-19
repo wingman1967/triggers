@@ -5,6 +5,7 @@ var class_configure_one_flag_1_1_database_factory =
     [ "ResequenceBOM", "class_configure_one_flag_1_1_database_factory_acd9475f1b9763dfab5896656f96789a0.html#acd9475f1b9763dfab5896656f96789a0", null ],
     [ "RetrieveSLCO", "class_configure_one_flag_1_1_database_factory_a64f0488a247638877def2f773331d184.html#a64f0488a247638877def2f773331d184", null ],
     [ "SetConnectionString", "class_configure_one_flag_1_1_database_factory_ae1ec057e7696e9c9439a12e6988970d7.html#ae1ec057e7696e9c9439a12e6988970d7", null ],
+    [ "UserName", "class_configure_one_flag_1_1_database_factory_acd76eb3da8e1214f25d11c0460997f43.html#acd76eb3da8e1214f25d11c0460997f43", null ],
     [ "WriteAuditRecord", "class_configure_one_flag_1_1_database_factory_a59987be56acf3f8cbf7681d6b4866e81.html#a59987be56acf3f8cbf7681d6b4866e81", null ],
     [ "WriteRecordBOM", "class_configure_one_flag_1_1_database_factory_a7d20594ae96a13614accd3e7d8d8a04a.html#a7d20594ae96a13614accd3e7d8d8a04a", null ],
     [ "WriteRecordCfg", "class_configure_one_flag_1_1_database_factory_aeab9b81fff5fdf32493ce1f2c2c0082b.html#aeab9b81fff5fdf32493ce1f2c2c0082b", null ],

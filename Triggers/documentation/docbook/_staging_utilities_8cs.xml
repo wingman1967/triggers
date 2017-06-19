@@ -312,224 +312,233 @@ Utilities used for staging of data from C1 to SQL databases
 262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.PriorityLevel&#32;=&#32;Convert.ToInt16(node.InnerText);
 264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-265 
-266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.WebOrderDate&#32;=&#32;<link linkend="namespace_system">System</link>.DateTime.Now;
-267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.WebUserName&#32;=&#32;<emphasis class="stringliteral">&quot;WEBUSER&quot;</emphasis>;
-268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.QuoteNbr&#32;=&#32;<emphasis class="stringliteral">&quot;QUOTENBR&quot;</emphasis>;
-269 
-270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Look&#32;for&#32;PURCHASE&#32;ORDER&#32;in&#32;INPUTS,&#32;load&#32;into&#32;CO&#32;and&#32;COITEM</emphasis>
-271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlPO&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Input&quot;</emphasis>);
-272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodePO&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlPO)
+265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xnl&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;SERIAL_NUMBER&quot;</emphasis>);
+266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;node&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnl)
+267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.QuoteNbr&#32;=&#32;node.InnerText;
+269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(co.QuoteNbr.Length&#32;==&#32;0)&#32;{&#32;co.QuoteNbr&#32;=&#32;<emphasis class="stringliteral">&quot;N/A&quot;</emphasis>;&#32;};
+270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xnl&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;CREATED_BY_USER_ID&quot;</emphasis>);
+272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;node&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnl)
 273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(nodePO.ChildNodes[2].InnerText&#32;==&#32;<emphasis class="stringliteral">&quot;PURCHASE&#32;ORDER&quot;</emphasis>)
-275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-276 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.CustPO&#32;=&#32;nodePO.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
-277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.CustPO&#32;=&#32;nodePO.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
-278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-279 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-280 
-281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Look&#32;for&#32;FREIGHT&#32;ACCOUNT#&#32;(IF&#32;COLLECT)&#32;in&#32;INPUTS,&#32;load&#32;into&#32;CO</emphasis>
-282 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlCO&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Input&quot;</emphasis>);
-283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeCO&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlCO)
-284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(nodeCO.ChildNodes[2].InnerText&#32;==&#32;<emphasis class="stringliteral">&quot;FREIGHT&#32;ACCOUNT#&#32;(IF&#32;COLLECT)&quot;</emphasis>)
-286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">switch</emphasis>(nodeCO.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value.Length&#32;&gt;&#32;0)
-288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-289 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:
-290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.FreightAcct&#32;=&#32;nodeCO.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
-291 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
-292 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">default</emphasis>:
-293 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.FreightAcct&#32;=&#32;<emphasis class="stringliteral">&quot;N/A&quot;</emphasis>;
-294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
-295 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-298 
-299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Look&#32;for&#32;FREIGHT&#32;TERMS&#32;in&#32;INPUTS,&#32;load&#32;into&#32;CO</emphasis>
-300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlCOFT&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Input&quot;</emphasis>);
-301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeCOFT&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlCOFT)
-302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(nodeCOFT.ChildNodes[2].InnerText&#32;==&#32;<emphasis class="stringliteral">&quot;FREIGHT&#32;TERMS&quot;</emphasis>)
-304 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-305 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(nodeCOFT.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value.Length&#32;&gt;&#32;0)
-306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-307 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:
-308 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.FreightTerms&#32;=&#32;nodeCOFT.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
-309 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
-310 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">default</emphasis>:
-311 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.FreightTerms&#32;=&#32;<emphasis class="stringliteral">&quot;N/A&quot;</emphasis>;
-312 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
-313 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-314 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-315 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-316 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-317 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//build&#32;COITEM&#32;records,&#32;per&#32;line</emphasis>
-318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xnl&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Detail&quot;</emphasis>);
-319 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;node&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnl)
-320 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-321 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.CO_Line&#32;=&#32;Convert.ToInt16(node.ChildNodes[0].InnerText);
-322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.Serial&#32;=&#32;node.ChildNodes[2].InnerText;
-323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.Item&#32;=&#32;node.ChildNodes[3].InnerText;
-324 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.Smartpart&#32;=&#32;node.ChildNodes[4].InnerText;
-325 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.Desc&#32;=&#32;node.ChildNodes[5].InnerText;
-326 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.ConfigType&#32;=&#32;node.ChildNodes[6].InnerText;
-327 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.UnitPrice&#32;=&#32;Convert.ToDecimal(node.ChildNodes[7].InnerText);
-328 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.UnitCost&#32;=&#32;Convert.ToDecimal(node.ChildNodes[8].InnerText);
-329 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.Discount&#32;=&#32;Convert.ToDecimal(node.ChildNodes[9].InnerText);
-330 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.QTY&#32;=&#32;Convert.ToDecimal(node.ChildNodes[10].InnerText);
-331 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.PriorityLevel&#32;=&#32;co.PriorityLevel;
-332 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;globalOrderLineNum&#32;=&#32;coitem.CO_Line;
-333 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;coitem&#32;record</emphasis>
-334 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a7e40f3f0a85ffe44b8c2a3197e6d8925_1a7e40f3f0a85ffe44b8c2a3197e6d8925">WriteRecordCOItem</link>(ref&#32;coitem);
-335 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-336 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//***&#32;Everything&#32;else&#32;here&#32;builds&#32;on&#32;the&#32;COITEM&#32;***</emphasis>
-337 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;detailParent&#32;=&#32;node.SelectSingleNode(<emphasis class="stringliteral">&quot;.&quot;</emphasis>);&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//ensure&#32;we&#32;traverse&#32;ONLY&#32;children&#32;of&#32;this&#32;node&#32;(Detail)&#32;as&#32;the&#32;new&#32;parent&#32;(root)&#32;element</emphasis>
-338 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlDocument&#32;detailDoc&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;XmlDocument();
-339 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;detailDoc.LoadXml(detailParent.OuterXml);
-340 
-341 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//iterate&#32;through&#32;Inputs&#32;for&#32;the&#32;line</emphasis>
-342 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnli&#32;=&#32;detailDoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Input&quot;</emphasis>);
-343 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodei&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnli)
-344 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-345 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CO_Line&#32;=&#32;coitem.CO_Line;
-346 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CName&#32;=&#32;nodei.ChildNodes[2].InnerText.Replace(<emphasis class="stringliteral">&quot;&#32;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;_&quot;</emphasis>);
-347 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CValue&#32;=&#32;nodei.ChildNodes[0].InnerText;
-348 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CType&#32;=&#32;nodei.ChildNodes[1].InnerText;
-349 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CLabel&#32;=&#32;nodei.ChildNodes[2].InnerText;
-350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.PriorityLevel&#32;=&#32;co.PriorityLevel;
-351 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;cfg&#32;(parmval)&#32;record</emphasis>
-352 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_aeab9b81fff5fdf32493ce1f2c2c0082b_1aeab9b81fff5fdf32493ce1f2c2c0082b">WriteRecordCfg</link>(ref&#32;cfg);
-353 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-354 
-355 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Look&#32;for&#32;SHIP_VIA&#32;in&#32;INPUTS</emphasis>
-356 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlisv&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Input&quot;</emphasis>);
-357 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeisv&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlisv)
-358 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-359 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(nodeisv.ChildNodes[2].InnerText&#32;==&#32;<emphasis class="stringliteral">&quot;SHIP_VIA&quot;</emphasis>)&#32;{&#32;co.ShipVia&#32;=&#32;nodeisv.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;&#32;}
-360 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-361 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-362 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//If&#32;dropship&#32;has&#32;value,&#32;override&#32;the&#32;order-header&#32;shipping&#32;with&#32;this&#32;information&#32;instead</emphasis>
-363 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//UPDATE&#32;6/16/2017:&#32;&#32;Preserve&#32;the&#32;selected&#32;ship-to&#32;from&#32;C1&#32;and&#32;if&#32;dropship&#32;has&#32;value,&#32;load&#32;up&#32;the&#32;dropship&#32;fields</emphasis>
-364 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlds&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Input&quot;</emphasis>);
-365 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeds&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlds)
-366 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-367 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(nodeds.ChildNodes[2].InnerText.Length&#32;&gt;=&#32;9&#32;&amp;&amp;&#32;nodeds.ChildNodes[2].InnerText.Substring(0,&#32;9)&#32;==&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&quot;</emphasis>&#32;&amp;&amp;&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value&#32;!=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>)
-368 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-369 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(nodeds.ChildNodes[2].InnerText)
-370 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-371 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;NAME&quot;</emphasis>:
-372 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToContactName&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
-373 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipContact&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
-374 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
-375 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;ADDRESS&#32;1&quot;</emphasis>:
-376 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToAddressLine1&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
-377 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress1&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
-378 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
-379 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;ADDRESS&#32;2&quot;</emphasis>:
-380 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToAddressLine2&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
-381 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress2&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
-382 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
-383 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;ADDRESS&#32;3&quot;</emphasis>:
-384 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToAddressLine3&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
-385 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress3&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
-386 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
-387 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;ADDRESS&#32;4&quot;</emphasis>:
-388 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToAddressLine4&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
-389 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress4&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
-390 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
-391 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;CITY&quot;</emphasis>:
-392 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToCity&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
-393 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipCity&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
-394 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
-395 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;STATE&quot;</emphasis>:
-396 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToState&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
-397 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipState&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
-398 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
-399 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;ZIP&#32;CODE&quot;</emphasis>:
-400 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToPostalCode&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
-401 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipZip&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
-402 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
-403 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;CONTACT&quot;</emphasis>:
-404 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToContactName&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
-405 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipContact&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
-406 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
-407 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;PHONE&quot;</emphasis>:
-408 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToPhoneNumber&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
-409 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipPhone&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
-410 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
-411 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;COUNTRY&quot;</emphasis>:
-412 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToCountry&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
-413 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipCountry&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
-414 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
-415 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;EMAIL&quot;</emphasis>:
-416 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToEmailAddress&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
-417 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipEmail&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
-418 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
-419 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">default</emphasis>:
-420 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//do&#32;nothing</emphasis>
-421 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
-422 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-423 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-424 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-425 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-426 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//item-master&#32;for&#32;the&#32;line&#32;we&#32;are&#32;working&#32;with</emphasis>
-427 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;recordSequence&#32;=&#32;1;
-428 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlim&#32;=&#32;detailDoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;ItemMaster&quot;</emphasis>);
-429 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.CO_Line&#32;=&#32;coitem.CO_Line;
-430 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeim&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlim)
-431 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-432 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Sequence&#32;=&#32;recordSequence;
-433 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Smartpart&#32;=&#32;nodeim.ChildNodes[0].InnerText;
-434 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Item&#32;=&#32;nodeim.ChildNodes[1].InnerText;
-435 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Desc&#32;=&#32;nodeim.ChildNodes[3].InnerText;
-436 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;cost&#32;=&#32;nodeim.ChildNodes[4].InnerText;
-437 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;price&#32;=&#32;nodeim.ChildNodes[5].InnerText;
-438 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;sell&#32;=&#32;nodeim.ChildNodes[6].InnerText;
-439 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;weight&#32;=&#32;nodeim.ChildNodes[9].InnerText;
-440 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemCost&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(cost)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;cost);
-441 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemPrice&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(price)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;price);
-442 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemSellPrice&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(sell)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;sell);
-443 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemWeight&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(weight)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;weight);
-444 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.UnitOfMeasure&#32;=&#32;nodeim.ChildNodes[26].InnerText;
-445 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.PriorityLevel&#32;=&#32;Convert.ToInt16(nodeim.ChildNodes[38].InnerText);
-446 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;recordSequence&#32;+=&#32;1;
-447 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;item-master&#32;record&#32;if&#32;priority&#32;is&#32;&lt;=&#32;2</emphasis>
-448 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(citem.PriorityLevel&#32;&lt;=&#32;2)
-449 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-450 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_ae84fa2fa2699960542cadbe2053b947d_1ae84fa2fa2699960542cadbe2053b947d">WriteRecordCItem</link>(ref&#32;citem);
-451 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-452 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-453 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//BOM&#32;records</emphasis>
-454 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;recordSequence&#32;=&#32;0;
-455 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlb&#32;=&#32;detailDoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Bom&quot;</emphasis>);
-456 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.CO_Line&#32;=&#32;coitem.CO_Line;
-457 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeib&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlb)
-458 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-459 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;recordSequence&#32;=&#32;1;
-460 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Sequence&#32;=&#32;recordSequence;
-461 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;parent&#32;=&#32;nodeib.SelectSingleNode(<emphasis class="stringliteral">&quot;..&quot;</emphasis>);
-462 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;parentID&#32;=&#32;parent.ChildNodes[0].InnerText;
-463 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Parent&#32;=&#32;parentID&#32;==&#32;<emphasis class="stringliteral">&quot;1&quot;</emphasis>&#32;?&#32;null&#32;:&#32;parentID;
-464 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Identifier&#32;=&#32;nodeib.ChildNodes[0].InnerText;
-465 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Item&#32;=&#32;nodeib.ChildNodes[1].InnerText;
-466 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Smartpart&#32;=&#32;nodeib.ChildNodes[2].InnerText;
-467 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.UnitPrice&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[3].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[3].InnerText);
-468 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.UnitCost&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[4].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[4].InnerText);
-469 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Discount&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[5].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[5].InnerText);
-470 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.QTY&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[6].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[6].InnerText);
-471 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.PriorityLevel&#32;=&#32;co.PriorityLevel;
-472 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;BOM&#32;record</emphasis>
-473 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a7d20594ae96a13614accd3e7d8d8a04a_1a7d20594ae96a13614accd3e7d8d8a04a">WriteRecordBOM</link>(ref&#32;bom);
-474 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-475 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a3cd5e3e64a361f5e3a8d7fbd724a471f_1a3cd5e3e64a361f5e3a8d7fbd724a471f">logEvent</link>&#32;=&#32;<emphasis class="stringliteral">&quot;RESEQUENCING&#32;BOM&#32;RECORDS&#32;FOR&#32;ORDER:&#32;&quot;</emphasis>&#32;+&#32;bom.CO_Num&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;LINE:&#32;&quot;</emphasis>&#32;+&#32;bom.CO_Line;
-476 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a3cd5e3e64a361f5e3a8d7fbd724a471f_1a3cd5e3e64a361f5e3a8d7fbd724a471f">logEvent</link>,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-477 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_acd9475f1b9763dfab5896656f96789a0_1acd9475f1b9763dfab5896656f96789a0">ResequenceBOM</link>(bom.CO_Num,&#32;bom.CO_Line);
-478 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-479 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a628dded3ecd9efab9c21a01a864dc518_1a628dded3ecd9efab9c21a01a864dc518">WriteRecordCO</link>(ref&#32;co);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//deferred&#32;write</emphasis>
-480 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-481 &#32;&#32;&#32;&#32;}
-482 }
-483 
+274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.WebUserName&#32;=&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_acd76eb3da8e1214f25d11c0460997f43_1acd76eb3da8e1214f25d11c0460997f43">UserName</link>(node.InnerText);
+275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+276 
+277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.WebOrderDate&#32;=&#32;<link linkend="namespace_system">System</link>.DateTime.Now;
+278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+279 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Look&#32;for&#32;PURCHASE&#32;ORDER&#32;in&#32;INPUTS,&#32;load&#32;into&#32;CO&#32;and&#32;COITEM</emphasis>
+280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlPO&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Input&quot;</emphasis>);
+281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodePO&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlPO)
+282 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(nodePO.ChildNodes[2].InnerText&#32;==&#32;<emphasis class="stringliteral">&quot;PURCHASE&#32;ORDER&quot;</emphasis>)
+284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.CustPO&#32;=&#32;nodePO.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
+286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.CustPO&#32;=&#32;nodePO.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
+287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+289 
+290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Look&#32;for&#32;FREIGHT&#32;ACCOUNT#&#32;(IF&#32;COLLECT)&#32;in&#32;INPUTS,&#32;load&#32;into&#32;CO</emphasis>
+291 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlCO&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Input&quot;</emphasis>);
+292 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeCO&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlCO)
+293 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(nodeCO.ChildNodes[2].InnerText&#32;==&#32;<emphasis class="stringliteral">&quot;FREIGHT&#32;ACCOUNT#&#32;(IF&#32;COLLECT)&quot;</emphasis>)
+295 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">switch</emphasis>(nodeCO.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value.Length&#32;&gt;&#32;0)
+297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:
+299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.FreightAcct&#32;=&#32;nodeCO.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
+300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">default</emphasis>:
+302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.FreightAcct&#32;=&#32;<emphasis class="stringliteral">&quot;N/A&quot;</emphasis>;
+303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+304 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+305 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+307 
+308 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Look&#32;for&#32;FREIGHT&#32;TERMS&#32;in&#32;INPUTS,&#32;load&#32;into&#32;CO</emphasis>
+309 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlCOFT&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Input&quot;</emphasis>);
+310 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeCOFT&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlCOFT)
+311 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+312 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(nodeCOFT.ChildNodes[2].InnerText&#32;==&#32;<emphasis class="stringliteral">&quot;FREIGHT&#32;TERMS&quot;</emphasis>)
+313 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+314 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(nodeCOFT.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value.Length&#32;&gt;&#32;0)
+315 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+316 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:
+317 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.FreightTerms&#32;=&#32;nodeCOFT.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
+318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+319 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">default</emphasis>:
+320 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.FreightTerms&#32;=&#32;<emphasis class="stringliteral">&quot;N/A&quot;</emphasis>;
+321 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+324 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+325 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+326 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//build&#32;COITEM&#32;records,&#32;per&#32;line</emphasis>
+327 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xnl&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Detail&quot;</emphasis>);
+328 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;node&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnl)
+329 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+330 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.CO_Line&#32;=&#32;Convert.ToInt16(node.ChildNodes[0].InnerText);
+331 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.Serial&#32;=&#32;node.ChildNodes[2].InnerText;
+332 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.Item&#32;=&#32;node.ChildNodes[3].InnerText;
+333 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.Smartpart&#32;=&#32;node.ChildNodes[4].InnerText;
+334 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.Desc&#32;=&#32;node.ChildNodes[5].InnerText;
+335 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.ConfigType&#32;=&#32;node.ChildNodes[6].InnerText;
+336 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.UnitPrice&#32;=&#32;Convert.ToDecimal(node.ChildNodes[7].InnerText);
+337 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.UnitCost&#32;=&#32;Convert.ToDecimal(node.ChildNodes[8].InnerText);
+338 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.Discount&#32;=&#32;Convert.ToDecimal(node.ChildNodes[9].InnerText);
+339 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.QTY&#32;=&#32;Convert.ToDecimal(node.ChildNodes[10].InnerText);
+340 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.PriorityLevel&#32;=&#32;co.PriorityLevel;
+341 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;globalOrderLineNum&#32;=&#32;coitem.CO_Line;
+342 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;coitem&#32;record</emphasis>
+343 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a7e40f3f0a85ffe44b8c2a3197e6d8925_1a7e40f3f0a85ffe44b8c2a3197e6d8925">WriteRecordCOItem</link>(ref&#32;coitem);
+344 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+345 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//***&#32;Everything&#32;else&#32;here&#32;builds&#32;on&#32;the&#32;COITEM&#32;***</emphasis>
+346 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;detailParent&#32;=&#32;node.SelectSingleNode(<emphasis class="stringliteral">&quot;.&quot;</emphasis>);&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//ensure&#32;we&#32;traverse&#32;ONLY&#32;children&#32;of&#32;this&#32;node&#32;(Detail)&#32;as&#32;the&#32;new&#32;parent&#32;(root)&#32;element</emphasis>
+347 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlDocument&#32;detailDoc&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;XmlDocument();
+348 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;detailDoc.LoadXml(detailParent.OuterXml);
+349 
+350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//iterate&#32;through&#32;Inputs&#32;for&#32;the&#32;line</emphasis>
+351 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnli&#32;=&#32;detailDoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Input&quot;</emphasis>);
+352 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodei&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnli)
+353 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+354 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CO_Line&#32;=&#32;coitem.CO_Line;
+355 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CName&#32;=&#32;nodei.ChildNodes[2].InnerText.Replace(<emphasis class="stringliteral">&quot;&#32;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;_&quot;</emphasis>);
+356 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CValue&#32;=&#32;nodei.ChildNodes[0].InnerText;
+357 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CType&#32;=&#32;nodei.ChildNodes[1].InnerText;
+358 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CLabel&#32;=&#32;nodei.ChildNodes[2].InnerText;
+359 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.PriorityLevel&#32;=&#32;co.PriorityLevel;
+360 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;cfg&#32;(parmval)&#32;record</emphasis>
+361 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_aeab9b81fff5fdf32493ce1f2c2c0082b_1aeab9b81fff5fdf32493ce1f2c2c0082b">WriteRecordCfg</link>(ref&#32;cfg);
+362 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+363 
+364 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Look&#32;for&#32;SHIP_VIA&#32;in&#32;INPUTS</emphasis>
+365 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlisv&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Input&quot;</emphasis>);
+366 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeisv&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlisv)
+367 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+368 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(nodeisv.ChildNodes[2].InnerText&#32;==&#32;<emphasis class="stringliteral">&quot;SHIP_VIA&quot;</emphasis>)&#32;{&#32;co.ShipVia&#32;=&#32;nodeisv.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;&#32;}
+369 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+370 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+371 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//If&#32;dropship&#32;has&#32;value,&#32;override&#32;the&#32;order-header&#32;shipping&#32;with&#32;this&#32;information&#32;instead</emphasis>
+372 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//UPDATE&#32;6/16/2017:&#32;&#32;Preserve&#32;the&#32;selected&#32;ship-to&#32;from&#32;C1&#32;and&#32;if&#32;dropship&#32;has&#32;value,&#32;load&#32;up&#32;the&#32;dropship&#32;fields</emphasis>
+373 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlds&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Input&quot;</emphasis>);
+374 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeds&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlds)
+375 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+376 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(nodeds.ChildNodes[2].InnerText.Length&#32;&gt;=&#32;9&#32;&amp;&amp;&#32;nodeds.ChildNodes[2].InnerText.Substring(0,&#32;9)&#32;==&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&quot;</emphasis>&#32;&amp;&amp;&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value&#32;!=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>)
+377 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+378 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(nodeds.ChildNodes[2].InnerText)
+379 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+380 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;NAME&quot;</emphasis>:
+381 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToContactName&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
+382 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipContact&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
+383 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+384 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;ADDRESS&#32;1&quot;</emphasis>:
+385 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToAddressLine1&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
+386 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress1&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
+387 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+388 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;ADDRESS&#32;2&quot;</emphasis>:
+389 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToAddressLine2&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
+390 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress2&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
+391 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+392 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;ADDRESS&#32;3&quot;</emphasis>:
+393 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToAddressLine3&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
+394 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress3&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
+395 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+396 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;ADDRESS&#32;4&quot;</emphasis>:
+397 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToAddressLine4&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
+398 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress4&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
+399 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+400 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;CITY&quot;</emphasis>:
+401 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToCity&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
+402 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipCity&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
+403 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+404 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;STATE&quot;</emphasis>:
+405 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToState&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
+406 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipState&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
+407 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+408 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;ZIP&#32;CODE&quot;</emphasis>:
+409 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToPostalCode&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
+410 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipZip&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
+411 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+412 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;CONTACT&quot;</emphasis>:
+413 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToContactName&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
+414 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipContact&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
+415 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+416 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;PHONE&quot;</emphasis>:
+417 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToPhoneNumber&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
+418 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipPhone&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
+419 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+420 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;COUNTRY&quot;</emphasis>:
+421 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToCountry&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
+422 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipCountry&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
+423 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+424 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;DROP&#32;SHIP&#32;EMAIL&quot;</emphasis>:
+425 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//co.ShipToEmailAddress&#32;=&#32;nodeds.ChildNodes[0].Attributes[&quot;name&quot;].Value;</emphasis>
+426 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipEmail&#32;=&#32;nodeds.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].Value;
+427 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+428 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">default</emphasis>:
+429 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//do&#32;nothing</emphasis>
+430 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+431 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+432 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+433 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+434 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+435 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//item-master&#32;for&#32;the&#32;line&#32;we&#32;are&#32;working&#32;with</emphasis>
+436 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;recordSequence&#32;=&#32;1;
+437 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlim&#32;=&#32;detailDoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;ItemMaster&quot;</emphasis>);
+438 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.CO_Line&#32;=&#32;coitem.CO_Line;
+439 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeim&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlim)
+440 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+441 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Sequence&#32;=&#32;recordSequence;
+442 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Smartpart&#32;=&#32;nodeim.ChildNodes[0].InnerText;
+443 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Item&#32;=&#32;nodeim.ChildNodes[1].InnerText;
+444 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Desc&#32;=&#32;nodeim.ChildNodes[3].InnerText;
+445 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;cost&#32;=&#32;nodeim.ChildNodes[4].InnerText;
+446 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;price&#32;=&#32;nodeim.ChildNodes[5].InnerText;
+447 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;sell&#32;=&#32;nodeim.ChildNodes[6].InnerText;
+448 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;weight&#32;=&#32;nodeim.ChildNodes[9].InnerText;
+449 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemCost&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(cost)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;cost);
+450 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemPrice&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(price)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;price);
+451 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemSellPrice&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(sell)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;sell);
+452 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.ItemWeight&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(weight)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;weight);
+453 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.UnitOfMeasure&#32;=&#32;nodeim.ChildNodes[26].InnerText;
+454 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.PriorityLevel&#32;=&#32;Convert.ToInt16(nodeim.ChildNodes[38].InnerText);
+455 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;recordSequence&#32;+=&#32;1;
+456 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;item-master&#32;record&#32;if&#32;priority&#32;is&#32;&lt;=&#32;2</emphasis>
+457 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(citem.PriorityLevel&#32;&lt;=&#32;2)
+458 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+459 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_ae84fa2fa2699960542cadbe2053b947d_1ae84fa2fa2699960542cadbe2053b947d">WriteRecordCItem</link>(ref&#32;citem);
+460 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+461 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+462 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//BOM&#32;records</emphasis>
+463 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;recordSequence&#32;=&#32;0;
+464 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlb&#32;=&#32;detailDoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Bom&quot;</emphasis>);
+465 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.CO_Line&#32;=&#32;coitem.CO_Line;
+466 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;nodeib&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlb)
+467 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+468 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;recordSequence&#32;=&#32;1;
+469 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Sequence&#32;=&#32;recordSequence;
+470 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;var&#32;parent&#32;=&#32;nodeib.SelectSingleNode(<emphasis class="stringliteral">&quot;..&quot;</emphasis>);
+471 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;parentID&#32;=&#32;parent.ChildNodes[0].InnerText;
+472 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Parent&#32;=&#32;parentID&#32;==&#32;<emphasis class="stringliteral">&quot;1&quot;</emphasis>&#32;?&#32;null&#32;:&#32;parentID;
+473 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Identifier&#32;=&#32;nodeib.ChildNodes[0].InnerText;
+474 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Item&#32;=&#32;nodeib.ChildNodes[1].InnerText;
+475 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Smartpart&#32;=&#32;nodeib.ChildNodes[2].InnerText;
+476 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.UnitPrice&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[3].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[3].InnerText);
+477 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.UnitCost&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[4].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[4].InnerText);
+478 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Discount&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[5].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[5].InnerText);
+479 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.QTY&#32;=&#32;Convert.ToDecimal(<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeib.ChildNodes[6].InnerText)&#32;?&#32;<emphasis class="stringliteral">&quot;0&quot;</emphasis>&#32;:&#32;nodeib.ChildNodes[6].InnerText);
+480 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.PriorityLevel&#32;=&#32;co.PriorityLevel;
+481 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//output&#32;BOM&#32;record</emphasis>
+482 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a7d20594ae96a13614accd3e7d8d8a04a_1a7d20594ae96a13614accd3e7d8d8a04a">WriteRecordBOM</link>(ref&#32;bom);
+483 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+484 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a3cd5e3e64a361f5e3a8d7fbd724a471f_1a3cd5e3e64a361f5e3a8d7fbd724a471f">logEvent</link>&#32;=&#32;<emphasis class="stringliteral">&quot;RESEQUENCING&#32;BOM&#32;RECORDS&#32;FOR&#32;ORDER:&#32;&quot;</emphasis>&#32;+&#32;bom.CO_Num&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;LINE:&#32;&quot;</emphasis>&#32;+&#32;bom.CO_Line;
+485 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a3cd5e3e64a361f5e3a8d7fbd724a471f_1a3cd5e3e64a361f5e3a8d7fbd724a471f">logEvent</link>,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
+486 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_acd9475f1b9763dfab5896656f96789a0_1acd9475f1b9763dfab5896656f96789a0">ResequenceBOM</link>(bom.CO_Num,&#32;bom.CO_Line);
+487 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+488 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a628dded3ecd9efab9c21a01a864dc518_1a628dded3ecd9efab9c21a01a864dc518">WriteRecordCO</link>(ref&#32;co);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//deferred&#32;write</emphasis>
+489 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+490 &#32;&#32;&#32;&#32;}
+491 }
+492 
     </computeroutput></literallayout>
 </section>

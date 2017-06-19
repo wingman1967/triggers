@@ -72,6 +72,7 @@ namespace ConfigureOneFlag
             }
 
             DatabaseFactory.CfgImport(Triggers.pubOrderNumber);
+
             //Now retrieve the SL order# (if not found, default to using the C1 order#):
             string SPOrderNumber = string.IsNullOrEmpty(DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber)) ? Triggers.pubOrderNumber : DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
 

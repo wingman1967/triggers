@@ -141,6 +141,14 @@ ref <link linkend="class_configure_one_flag_1_1z_cfg_c_o">zCfgCO</link> co)</par
             <para>
                 <itemizedlist>
                     <listitem>
+                        <para>static string <link linkend="class_configure_one_flag_1_1_database_factory_acd76eb3da8e1214f25d11c0460997f43_1acd76eb3da8e1214f25d11c0460997f43">UserName</link> (
+string id)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
                         <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_acd9475f1b9763dfab5896656f96789a0_1acd9475f1b9763dfab5896656f96789a0">ResequenceBOM</link> (
 string orderNumber, int orderLine)</para>
                     </listitem>
@@ -211,6 +219,10 @@ string orderNum)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_a628dded3ecd9efab9c21a01a864dc518_1a628dded3ecd9efab9c21a01a864dc518">
                 <title>static void ConfigureOneFlag.DatabaseFactory.WriteRecordCO (ref zCfgCO co)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_acd76eb3da8e1214f25d11c0460997f43_1acd76eb3da8e1214f25d11c0460997f43">
+                <title>static string ConfigureOneFlag.DatabaseFactory.UserName (string id)</title> <emphasis></emphasis>
                 
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_acd9475f1b9763dfab5896656f96789a0_1acd9475f1b9763dfab5896656f96789a0">

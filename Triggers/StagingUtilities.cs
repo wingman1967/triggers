@@ -262,11 +262,20 @@ namespace ConfigureOneFlag
             {
                 co.PriorityLevel = Convert.ToInt16(node.InnerText);
             }
+            xnl = xmldoc.GetElementsByTagName("SERIAL_NUMBER");
+            foreach (XmlNode node in xnl)
+            {
+                co.QuoteNbr = node.InnerText;
+                if (co.QuoteNbr.Length == 0) { co.QuoteNbr = "N/A"; };
+            }
+            xnl = xmldoc.GetElementsByTagName("CREATED_BY_USER_ID");
+            foreach (XmlNode node in xnl)
+            {
+                co.WebUserName = DatabaseFactory.UserName(node.InnerText);
+            }
 
             co.WebOrderDate = System.DateTime.Now;
-            co.WebUserName = "WEBUSER";
-            co.QuoteNbr = "QUOTENBR";
-
+            
             //Look for PURCHASE ORDER in INPUTS, load into CO and COITEM
             XmlNodeList xnlPO = xmldoc.GetElementsByTagName("Input");
             foreach (XmlNode nodePO in xnlPO)
