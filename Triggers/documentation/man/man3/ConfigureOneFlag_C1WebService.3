@@ -1,4 +1,4 @@
-.TH "ConfigureOneFlag.C1WebService" 3 "Mon Jun 19 2017" "ConfigureOne Trigger" \" -*- nroff -*-
+.TH "ConfigureOneFlag.C1WebService" 3 "Tue Jun 20 2017" "ConfigureOne Trigger" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -13,6 +13,25 @@ ConfigureOneFlag.C1WebService \- Processing for call to ConfigureOne web service
 .ti -1c
 .RI "static void \fBCallConfigureOne\fP (string key, string payload, string url)"
 .br
+.ti -1c
+.RI "static void \fBReUpdate\fP (string orderNumber)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static string \fBSPPUBOrderNumber\fP"
+.br
+.ti -1c
+.RI "static string \fBpubKey\fP"
+.br
+.ti -1c
+.RI "static string \fBpubPayload\fP"
+.br
+.ti -1c
+.RI "static string \fBpubURL\fP"
+.br
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -24,6 +43,28 @@ Definition at line 12 of file C1WebService\&.cs\&.
 .SH "Member Function Documentation"
 .PP 
 .SS "static void ConfigureOneFlag\&.C1WebService\&.CallConfigureOne (string key, string payload, string url)\fC [static]\fP"
+
+.PP
+Definition at line 18 of file C1WebService\&.cs\&.
+.SS "static void ConfigureOneFlag\&.C1WebService\&.ReUpdate (string orderNumber)\fC [static]\fP"
+
+.PP
+Definition at line 257 of file C1WebService\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "string ConfigureOneFlag\&.C1WebService\&.pubKey\fC [static]\fP"
+
+.PP
+Definition at line 15 of file C1WebService\&.cs\&.
+.SS "string ConfigureOneFlag\&.C1WebService\&.pubPayload\fC [static]\fP"
+
+.PP
+Definition at line 16 of file C1WebService\&.cs\&.
+.SS "string ConfigureOneFlag\&.C1WebService\&.pubURL\fC [static]\fP"
+
+.PP
+Definition at line 17 of file C1WebService\&.cs\&.
+.SS "string ConfigureOneFlag\&.C1WebService\&.SPPUBOrderNumber\fC [static]\fP"
 
 .PP
 Definition at line 14 of file C1WebService\&.cs\&.

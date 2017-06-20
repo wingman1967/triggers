@@ -11,6 +11,10 @@ namespace ConfigureOneFlag
     /// </summary>
     class C1WebService
     {
+        public static string SPPUBOrderNumber;
+        public static string pubKey;
+        public static string pubPayload;
+        public static string pubURL;
         public static void CallConfigureOne(string key, string payload, string url)
         {
             string logEvent = "CALLING C1 WEBSERVICE";
@@ -70,15 +74,16 @@ namespace ConfigureOneFlag
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
                 return;
             }
-
+                        
             DatabaseFactory.CfgImport(Triggers.pubOrderNumber);
-
+            
             //Now retrieve the SL order# (if not found, default to using the C1 order#):
             string SPOrderNumber = string.IsNullOrEmpty(DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber)) ? Triggers.pubOrderNumber : DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
+            SPPUBOrderNumber = SPOrderNumber;
 
             try
             {
-                logEvent = "Retrieving/Saving Document Files For Order: " + Triggers.pubOrderNumber;
+                logEvent = "Retrieving/Saving Document Files For Order: " + Triggers.pubOrderNumber + " -> " + SPOrderNumber;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
                 //Retrieve documents for order, reusing xmlResult above
@@ -88,7 +93,7 @@ namespace ConfigureOneFlag
                 string[] docs;
                 docs = new string[50];
                 int arrayindex = 0;
-
+                
                 //Retrieve the serialNumber from the XML 
                 string configSerial = "";
                 XmlNodeList xnlSN = xmlResult.GetElementsByTagName("serialNumber");
@@ -177,12 +182,126 @@ namespace ConfigureOneFlag
 
                 logEvent = "Retrieved/Saved Following Document Files: " + Environment.NewLine + Environment.NewLine + documentFilesSaved;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-                return;
+                                
+                //Update order-status and ref number in C1 to Ordered and SL order#, respectively
+                key = "updateOrder";
+                useMethod = C1Dictionaries.webmethods[key];
+                string C1orderNumber = orderNumber;
+                string C1orderReference = SPOrderNumber;
+                string C1orderStatus = "OR";              //Ordered
+                xmlPayload = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soap:Envelope xmlns:xsi=" + (char)34 + "http://www.w3.org/2001/XMLSchema-instance" + (char)34 + " xmlns:xsd=" + (char)34 + "http://www.w3.org/2001/XMLSchema" + (char)34 + " xmlns:soap=" + (char)34 + "http://schemas.xmlsoap.org/soap/envelope/" + (char)34 + ">" + "<soap:Body><" + key + " xmlns=" + (char)34 + "http://ws.configureone.com" + (char)34 + "><param1>" + orderNumber + "</param1><param2>" + C1orderReference + "</param2><param3>" + C1orderStatus + "</param3></" + key + "></soap:Body></soap:Envelope>";
+                sURL = useMethod;
+                pubURL = sURL;
+                pubPayload = xmlPayload;
+                logEvent = "XML Payload To AXIS: " + xmlPayload;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                objRequest = (HttpWebRequest)WebRequest.Create(sURL.ToString());
+                objRequest.Method = "POST";
+                objRequest.ContentType = "text/xml";
+                objRequest.Headers.Add("SOAPAction", key);
+
+                data = new StringBuilder();
+                data.Append(xmlPayload);
+                byte[] byteDataStatus = Encoding.UTF8.GetBytes(data.ToString());          // Sending our request to Apache AXIS in a byte array
+                objRequest.ContentLength = byteDataStatus.Length;
+                using (Stream postStream = objRequest.GetRequestStream())
+                {
+                    postStream.Write(byteDataStatus, 0, byteDataStatus.Length);
+                }
+
+                //return response from AXIS (if any)
+                using (HttpWebResponse response = objRequest.GetResponse() as HttpWebResponse)
+                {
+                    StreamReader reader = new StreamReader(response.GetResponseStream());
+                    result = reader.ReadToEnd();
+                    reader.Close();
+                }
+
+                try
+                {
+                    xmlResult.LoadXml(result);
+                    xnl = xmlResult.GetElementsByTagName("success");
+                    foreach (XmlNode node in xnl)
+                    {
+                        switch (node.InnerText)
+                        {
+                            case "true":
+                                logEvent = "Status-Set Result: Success";
+                                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                                break;
+                            default:
+                                logEvent = "Status-Set Result: Failure";
+                                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
+                                break;
+                        }
+                    }
+                }
+                catch (Exception ex2)
+                {
+                    logEvent = "ERROR LOADING XML FROM WEB SERVICE ON C1 ORDER STATUS SET: " + ex2.Message;
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
+                    return;
+                }
+
+                logEvent = "C1 Order Status And Reference Completed For C1 Order: " + orderNumber + " - Syteline Order: " + SPOrderNumber;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+                //return;
             }
             catch (Exception exd)
             {
                 logEvent = "ERROR: " + exd.Message + " -> " + exd.Source;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
+            }
+        }
+        public static void ReUpdate(string orderNumber)
+        {
+            //loop to give C1 a chance to finish updating its portal (30 seconds of doing absolutely nothing)
+            string logEvent2 = "Starting loop";
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent2, System.Diagnostics.EventLogEntryType.Information, 234);
+            double WasteTime = 0;
+            while (WasteTime < 999999)
+            {
+                WasteTime += 1;
+            }
+
+            logEvent2 = "Loop done";
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent2, System.Diagnostics.EventLogEntryType.Information, 234);
+
+            //Update order-status and ref number in C1 to Ordered and SL order#, respectively
+            string sURL = pubURL;
+            HttpWebRequest objRequest = (HttpWebRequest)WebRequest.Create(sURL.ToString());
+            objRequest.Method = "POST";
+            objRequest.ContentType = "text/xml";
+            objRequest.Headers.Add("SOAPAction", pubKey);
+            string xmlPayload = pubPayload;
+            StringBuilder data = new StringBuilder();
+
+            string key = "updateOrder";
+            string useMethod = C1Dictionaries.webmethods[key];
+            sURL = useMethod;
+            string logEvent = "SECOND-CALL XML Payload To AXIS: " + xmlPayload;
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+            objRequest = (HttpWebRequest)WebRequest.Create(sURL.ToString());
+            objRequest.Method = "POST";
+            objRequest.ContentType = "text/xml";
+            objRequest.Headers.Add("SOAPAction", key);
+
+            data = new StringBuilder();
+            data.Append(xmlPayload);
+            byte[] byteDataStatus = Encoding.UTF8.GetBytes(data.ToString());          // Sending our request to Apache AXIS in a byte array
+            objRequest.ContentLength = byteDataStatus.Length;
+            using (Stream postStream = objRequest.GetRequestStream())
+            {
+                postStream.Write(byteDataStatus, 0, byteDataStatus.Length);
+            }
+
+            //return response from AXIS (if any)
+            using (HttpWebResponse response = objRequest.GetResponse() as HttpWebResponse)
+            {
+                StreamReader reader = new StreamReader(response.GetResponseStream());
+                string result = reader.ReadToEnd();
+                reader.Close();
             }
         }
     }

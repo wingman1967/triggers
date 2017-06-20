@@ -44,6 +44,11 @@ var NAVTREEINDEX0 =
 "class_configure_one_flag_1_1_c1_dictionaries_aef02fef832352fba236b3be1375daa4c.html#aef02fef832352fba236b3be1375daa4c":[1,0,0,1,0],
 "class_configure_one_flag_1_1_c1_dictionaries_af0ae761a8dc88119f05de12eb725bbc1.html#af0ae761a8dc88119f05de12eb725bbc1":[1,0,0,1,1],
 "class_configure_one_flag_1_1_c1_web_service.html":[1,0,0,2],
+"class_configure_one_flag_1_1_c1_web_service_a00fe713b3bf1500f412d72a2219cf6fb.html#a00fe713b3bf1500f412d72a2219cf6fb":[1,0,0,2,2],
+"class_configure_one_flag_1_1_c1_web_service_a3b62f1740b69427db998d338c386e3fd.html#a3b62f1740b69427db998d338c386e3fd":[1,0,0,2,5],
+"class_configure_one_flag_1_1_c1_web_service_a41c39779cc120b26b4661bca0cefdd44.html#a41c39779cc120b26b4661bca0cefdd44":[1,0,0,2,3],
+"class_configure_one_flag_1_1_c1_web_service_a70290029c9b136fb166c3eaa2b059e16.html#a70290029c9b136fb166c3eaa2b059e16":[1,0,0,2,1],
+"class_configure_one_flag_1_1_c1_web_service_ab5cc6e3274e1b19a6b2be743932ce7f3.html#ab5cc6e3274e1b19a6b2be743932ce7f3":[1,0,0,2,4],
 "class_configure_one_flag_1_1_c1_web_service_ae826903f85694f4cf481680e115076f3.html#ae826903f85694f4cf481680e115076f3":[1,0,0,2,0],
 "class_configure_one_flag_1_1_database_factory.html":[1,0,0,4],
 "class_configure_one_flag_1_1_database_factory_a055478d8b87ec2968a6319dcd78273f6.html#a055478d8b87ec2968a6319dcd78273f6":[1,0,0,4,16],
@@ -244,10 +249,5 @@ var NAVTREEINDEX0 =
 "class_configure_one_flag_1_1z_cfg_c_o_ab9b1ef79886cf2583061c19df7d70dc5.html#ab9b1ef79886cf2583061c19df7d70dc5":[1,0,0,10,63],
 "class_configure_one_flag_1_1z_cfg_c_o_abc9b0ccb0a82b42997f5cea95bb5336e.html#abc9b0ccb0a82b42997f5cea95bb5336e":[1,0,0,10,17],
 "class_configure_one_flag_1_1z_cfg_c_o_abdec79d861233c03935f5b80c87c6267.html#abdec79d861233c03935f5b80c87c6267":[1,0,0,10,87],
-"class_configure_one_flag_1_1z_cfg_c_o_abf3ef870c859b68cf68adb817ffc35a7.html#abf3ef870c859b68cf68adb817ffc35a7":[1,0,0,10,106],
-"class_configure_one_flag_1_1z_cfg_c_o_abf6e11c6ab3c3b2ef40b0ca2b4ff13ab.html#abf6e11c6ab3c3b2ef40b0ca2b4ff13ab":[1,0,0,10,107],
-"class_configure_one_flag_1_1z_cfg_c_o_abf7947208c7fd8976999eac922c0c434.html#abf7947208c7fd8976999eac922c0c434":[1,0,0,10,1],
-"class_configure_one_flag_1_1z_cfg_c_o_ac18026d7e26f2a55ead9ab67a81e2a4b.html#ac18026d7e26f2a55ead9ab67a81e2a4b":[1,0,0,10,20],
-"class_configure_one_flag_1_1z_cfg_c_o_ac499fa2f577749e4e0a0eabdc0d7bb23.html#ac499fa2f577749e4e0a0eabdc0d7bb23":[1,0,0,10,41],
-"class_configure_one_flag_1_1z_cfg_c_o_ac743569e519c8584a1d390492dab3202.html#ac743569e519c8584a1d390492dab3202":[1,0,0,10,18]
+"class_configure_one_flag_1_1z_cfg_c_o_abf3ef870c859b68cf68adb817ffc35a7.html#abf3ef870c859b68cf68adb817ffc35a7":[1,0,0,10,106]
 };
