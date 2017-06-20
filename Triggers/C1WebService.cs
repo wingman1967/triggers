@@ -254,56 +254,6 @@ namespace ConfigureOneFlag
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
             }
         }
-        public static void ReUpdate(string orderNumber)
-        {
-            //loop to give C1 a chance to finish updating its portal (30 seconds of doing absolutely nothing)
-            string logEvent2 = "Starting loop";
-            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent2, System.Diagnostics.EventLogEntryType.Information, 234);
-            double WasteTime = 0;
-            while (WasteTime < 999999)
-            {
-                WasteTime += 1;
-            }
-
-            logEvent2 = "Loop done";
-            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent2, System.Diagnostics.EventLogEntryType.Information, 234);
-
-            //Update order-status and ref number in C1 to Ordered and SL order#, respectively
-            string sURL = pubURL;
-            HttpWebRequest objRequest = (HttpWebRequest)WebRequest.Create(sURL.ToString());
-            objRequest.Method = "POST";
-            objRequest.ContentType = "text/xml";
-            objRequest.Headers.Add("SOAPAction", pubKey);
-            string xmlPayload = pubPayload;
-            StringBuilder data = new StringBuilder();
-
-            string key = "updateOrder";
-            string useMethod = C1Dictionaries.webmethods[key];
-            sURL = useMethod;
-            string logEvent = "SECOND-CALL XML Payload To AXIS: " + xmlPayload;
-            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-            objRequest = (HttpWebRequest)WebRequest.Create(sURL.ToString());
-            objRequest.Method = "POST";
-            objRequest.ContentType = "text/xml";
-            objRequest.Headers.Add("SOAPAction", key);
-
-            data = new StringBuilder();
-            data.Append(xmlPayload);
-            byte[] byteDataStatus = Encoding.UTF8.GetBytes(data.ToString());          // Sending our request to Apache AXIS in a byte array
-            objRequest.ContentLength = byteDataStatus.Length;
-            using (Stream postStream = objRequest.GetRequestStream())
-            {
-                postStream.Write(byteDataStatus, 0, byteDataStatus.Length);
-            }
-
-            //return response from AXIS (if any)
-            using (HttpWebResponse response = objRequest.GetResponse() as HttpWebResponse)
-            {
-                StreamReader reader = new StreamReader(response.GetResponseStream());
-                string result = reader.ReadToEnd();
-                reader.Close();
-            }
-        }
     }
 }
 

@@ -332,58 +332,8 @@ Processing for call to ConfigureOne web service and return for further handling
 254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Error,&#32;234);
 255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<link linkend="class_configure_one_flag_1_1_c1_web_service_a70290029c9b136fb166c3eaa2b059e16_1a70290029c9b136fb166c3eaa2b059e16">257 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_a70290029c9b136fb166c3eaa2b059e16_1a70290029c9b136fb166c3eaa2b059e16">ReUpdate</link>(<emphasis class="keywordtype">string</emphasis>&#32;orderNumber)
-258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//loop&#32;to&#32;give&#32;C1&#32;a&#32;chance&#32;to&#32;finish&#32;updating&#32;its&#32;portal&#32;(30&#32;seconds&#32;of&#32;doing&#32;absolutely&#32;nothing)</emphasis>
-260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;logEvent2&#32;=&#32;<emphasis class="stringliteral">&quot;Starting&#32;loop&quot;</emphasis>;
-261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent2,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">double</emphasis>&#32;WasteTime&#32;=&#32;0;
-263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">while</emphasis>&#32;(WasteTime&#32;&lt;&#32;999999)
-264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;WasteTime&#32;+=&#32;1;
-266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-267 
-268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent2&#32;=&#32;<emphasis class="stringliteral">&quot;Loop&#32;done&quot;</emphasis>;
-269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent2,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-270 
-271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Update&#32;order-status&#32;and&#32;ref&#32;number&#32;in&#32;C1&#32;to&#32;Ordered&#32;and&#32;SL&#32;order#,&#32;respectively</emphasis>
-272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;sURL&#32;=&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_ab5cc6e3274e1b19a6b2be743932ce7f3_1ab5cc6e3274e1b19a6b2be743932ce7f3">pubURL</link>;
-273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HttpWebRequest&#32;objRequest&#32;=&#32;(HttpWebRequest)WebRequest.Create(sURL.ToString());
-274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Method&#32;=&#32;<emphasis class="stringliteral">&quot;POST&quot;</emphasis>;
-275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ContentType&#32;=&#32;<emphasis class="stringliteral">&quot;text/xml&quot;</emphasis>;
-276 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Headers.Add(<emphasis class="stringliteral">&quot;SOAPAction&quot;</emphasis>,&#32;pubKey);
-277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;xmlPayload&#32;=&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_a41c39779cc120b26b4661bca0cefdd44_1a41c39779cc120b26b4661bca0cefdd44">pubPayload</link>;
-278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;StringBuilder&#32;data&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringBuilder();
-279 
-280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;key&#32;=&#32;<emphasis class="stringliteral">&quot;updateOrder&quot;</emphasis>;
-281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;useMethod&#32;=&#32;<link linkend="class_configure_one_flag_1_1_c1_dictionaries">C1Dictionaries</link>.<link linkend="class_configure_one_flag_1_1_c1_dictionaries_a192b4ea45e2b5d46ed02929db9c9d320_1a192b4ea45e2b5d46ed02929db9c9d320">webmethods</link>[key];
-282 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sURL&#32;=&#32;useMethod;
-283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;SECOND-CALL&#32;XML&#32;Payload&#32;To&#32;AXIS:&#32;&quot;</emphasis>&#32;+&#32;xmlPayload;
-284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest&#32;=&#32;(HttpWebRequest)WebRequest.Create(sURL.ToString());
-286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Method&#32;=&#32;<emphasis class="stringliteral">&quot;POST&quot;</emphasis>;
-287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ContentType&#32;=&#32;<emphasis class="stringliteral">&quot;text/xml&quot;</emphasis>;
-288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Headers.Add(<emphasis class="stringliteral">&quot;SOAPAction&quot;</emphasis>,&#32;key);
-289 
-290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringBuilder();
-291 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.Append(xmlPayload);
-292 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte[]&#32;byteDataStatus&#32;=&#32;Encoding.UTF8.GetBytes(data.ToString());&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;Sending&#32;our&#32;request&#32;to&#32;Apache&#32;AXIS&#32;in&#32;a&#32;byte&#32;array</emphasis>
-293 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ContentLength&#32;=&#32;byteDataStatus.Length;
-294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(Stream&#32;postStream&#32;=&#32;objRequest.GetRequestStream())
-295 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;postStream.Write(byteDataStatus,&#32;0,&#32;byteDataStatus.Length);
-297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-298 
-299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//return&#32;response&#32;from&#32;AXIS&#32;(if&#32;any)</emphasis>
-300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(HttpWebResponse&#32;response&#32;=&#32;objRequest.GetResponse()&#32;as&#32;HttpWebResponse)
-301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;StreamReader&#32;reader&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StreamReader(response.GetResponseStream());
-303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;result&#32;=&#32;reader.ReadToEnd();
-304 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;reader.Close();
-305 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-307 &#32;&#32;&#32;&#32;}
-308 }
-309 
+257 &#32;&#32;&#32;&#32;}
+258 }
+259 
     </computeroutput></literallayout>
 </section>

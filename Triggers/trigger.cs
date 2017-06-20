@@ -79,7 +79,6 @@ namespace ConfigureOneFlag
             pubOrderNumber = orderNum;
             string xmlPayload = "<soap:Envelope xmlns:xsi=" + (char)34 + "http://www.w3.org/2001/XMLSchema-instance" + (char)34 + " xmlns:xsd=" + (char)34 + "http://www.w3.org/2001/XMLSchema" + (char)34 + " xmlns:soap=" + (char)34 + "http://schemas.xmlsoap.org/soap/envelope/" + (char)34 + ">" + "<soap:Body><" + key + " xmlns=" + (char)34 + "http://ws.configureone.com" + (char)34 + "><orderNum>" + orderNum + "</orderNum></" + key + "></soap:Body></soap:Envelope>";
             C1WebService.CallConfigureOne(key, xmlPayload, C1URL);
-            //C1WebService.ReUpdate(orderNum);
             logEvent = "PROCESSING COMPLETE FOR ORDER: " + orderValue;
             System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             Audit.ProcessingCompleted(logEvent);

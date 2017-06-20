@@ -64,14 +64,6 @@ string key, string payload, string url)</para>
                     </listitem>
                 </itemizedlist>
             </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>static void <link linkend="class_configure_one_flag_1_1_c1_web_service_a70290029c9b136fb166c3eaa2b059e16_1a70290029c9b136fb166c3eaa2b059e16">ReUpdate</link> (
-string orderNumber)</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
         </section>
     <simplesect>
 
@@ -85,10 +77,6 @@ string orderNumber)</para>
         </simplesect>
             <section xml:id="class_configure_one_flag_1_1_c1_web_service_ae826903f85694f4cf481680e115076f3_1ae826903f85694f4cf481680e115076f3">
                 <title>static void ConfigureOneFlag.C1WebService.CallConfigureOne (string key, string payload, string url)</title> <emphasis></emphasis>
-                
-            </section>
-            <section xml:id="class_configure_one_flag_1_1_c1_web_service_a70290029c9b136fb166c3eaa2b059e16_1a70290029c9b136fb166c3eaa2b059e16">
-                <title>static void ConfigureOneFlag.C1WebService.ReUpdate (string orderNumber)</title> <emphasis></emphasis>
                 
             </section>
 </section>
