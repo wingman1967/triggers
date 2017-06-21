@@ -79,6 +79,7 @@ namespace ConfigureOneFlag
             fieldLengths.Add("CO:dropship_contact", 30);
             fieldLengths.Add("CO:dropship_country", 30);
             fieldLengths.Add("CO:dropship_phone", 25);
+            fieldLengths.Add("CO:dropship_email", 60);
             //COITEM Fields
             fieldLengths.Add("COItem:order_num", 15);
             fieldLengths.Add("COItem:ser_num", 15);
@@ -120,6 +121,9 @@ namespace ConfigureOneFlag
                 case "CO:dropship_phone": switch (co.DropShipPhone.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.DropShipPhone.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.DropShipPhone); break; default: fieldlength = co.DropShipPhone.Length; break; } break;
                 case "CO:CustPO": switch (co.CustPO.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.CustPO.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.CustPO); break; default: fieldlength = co.CustPO.Length; break; } break;
                 case "CO:ship_address_line_4": switch (co.ShipToAddressLine4.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.ShipToAddressLine4.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.ShipToAddressLine4); break; default: fieldlength = co.ShipToAddressLine4.Length; break; } break;
+                case "CO:freight_terms": switch (co.FreightTerms.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.FreightTerms.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.FreightTerms); break; default: fieldlength = co.FreightTerms.Length; break; } break;
+                case "CO:freight_acct": switch (co.FreightAcct.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.FreightAcct.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.FreightAcct); break; default: fieldlength = co.FreightAcct.Length; break; } break;
+                case "CO:dropship_email": switch (co.DropShipEmail.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.DropShipEmail.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.DropShipEmail); break; default: fieldlength = co.DropShipEmail.Length; break; } break;
             }
             
             return fieldlength;

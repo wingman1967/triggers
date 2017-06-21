@@ -242,7 +242,7 @@ namespace ConfigureOneFlag
                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
                     return;
                 }
-
+                
                 logEvent = "C1 Order Status And Reference Completed For C1 Order: " + orderNumber + " - Syteline Order: " + SPOrderNumber;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 

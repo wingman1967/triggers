@@ -373,57 +373,69 @@ namespace ConfigureOneFlag
                 XmlNodeList xnlds = xmldoc.GetElementsByTagName("Input");
                 foreach (XmlNode nodeds in xnlds)
                 {
-                    if (nodeds.ChildNodes[2].InnerText.Length >= 9 && nodeds.ChildNodes[2].InnerText.Substring(0, 9) == "DROP SHIP" && nodeds.ChildNodes[0].Attributes["name"].Value != "")
+                    if (nodeds.ChildNodes[2].InnerText.Length >= 9 && nodeds.ChildNodes[2].InnerText.Substring(0, 9) == "DROP SHIP")
                     {
                         switch (nodeds.ChildNodes[2].InnerText)
                         {
                             case "DROP SHIP NAME":
                                 //co.ShipToContactName = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                co.DropShipContact = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                co.DropShipName = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                if (co.DropShipName.Length == 0) { co.DropShipName = "N/A"; }
                                 break;
                             case "DROP SHIP ADDRESS 1":
                                 //co.ShipToAddressLine1 = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipAddress1 = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                if (co.DropShipAddress1.Length == 0) { co.DropShipAddress1 = "N/A"; }
                                 break;
                             case "DROP SHIP ADDRESS 2":
                                 //co.ShipToAddressLine2 = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipAddress2 = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                if (co.DropShipAddress2.Length == 0) { co.DropShipAddress2 = "N/A"; }
                                 break;
                             case "DROP SHIP ADDRESS 3":
                                 //co.ShipToAddressLine3 = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipAddress3 = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                if (co.DropShipAddress3.Length == 0) { co.DropShipAddress3 = "N/A"; }
                                 break;
                             case "DROP SHIP ADDRESS 4":
                                 //co.ShipToAddressLine4 = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipAddress4 = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                if (co.DropShipAddress4.Length == 0) { co.DropShipAddress4 = "N/A"; }
                                 break;
                             case "DROP SHIP CITY":
                                 //co.ShipToCity = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipCity = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                if (co.DropShipCity.Length == 0) { co.DropShipCity = "N/A"; }
                                 break;
                             case "DROP SHIP STATE":
                                 //co.ShipToState = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipState = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                if (co.DropShipState.Length == 0) { co.DropShipState = "N/A"; }
                                 break;
                             case "DROP SHIP ZIP CODE":
                                 //co.ShipToPostalCode = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipZip = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                if (co.DropShipZip.Length == 0) { co.DropShipZip = "N/A"; }
                                 break;
                             case "DROP SHIP CONTACT":
                                 //co.ShipToContactName = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipContact = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                if (co.DropShipContact.Length == 0) { co.DropShipContact = "N/A"; }
                                 break;
                             case "DROP SHIP PHONE":
                                 //co.ShipToPhoneNumber = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipPhone = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                if (co.DropShipPhone.Length == 0) { co.DropShipPhone = "N/A"; }
                                 break;
                             case "DROP SHIP COUNTRY":
                                 //co.ShipToCountry = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipCountry = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                if (co.DropShipCountry.Length == 0) { co.DropShipCountry = "N/A"; }
                                 break;
                             case "DROP SHIP EMAIL":
                                 //co.ShipToEmailAddress = nodeds.ChildNodes[0].Attributes["name"].Value;
                                 co.DropShipEmail = nodeds.ChildNodes[0].Attributes["name"].Value;
+                                if (co.DropShipEmail.Length == 0) { co.DropShipEmail = "N/A"; }
                                 break;
                             default:
                                 //do nothing
