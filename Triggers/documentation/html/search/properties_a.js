@@ -1,6 +1,21 @@
 var searchData=
 [
-  ['unitcost',['UnitCost',['../class_configure_one_flag_1_1z_cfg_b_o_m_ab11758596a2f51da2a4c3de5ea0ed323.html#ab11758596a2f51da2a4c3de5ea0ed323',1,'ConfigureOneFlag.zCfgBOM.UnitCost()'],['../class_configure_one_flag_1_1z_cfg_c_oitem_a696aeb0722def400ba87c8590b9dffb4.html#a696aeb0722def400ba87c8590b9dffb4',1,'ConfigureOneFlag.zCfgCOitem.UnitCost()']]],
-  ['unitofmeasure',['UnitOfMeasure',['../class_configure_one_flag_1_1z_cfg_item_a23697e9c7d051d3141bc4358b198060b.html#a23697e9c7d051d3141bc4358b198060b',1,'ConfigureOneFlag::zCfgItem']]],
-  ['unitprice',['UnitPrice',['../class_configure_one_flag_1_1z_cfg_b_o_m_a4261a88c871589b98f6d684492fdaede.html#a4261a88c871589b98f6d684492fdaede',1,'ConfigureOneFlag.zCfgBOM.UnitPrice()'],['../class_configure_one_flag_1_1z_cfg_c_oitem_a3644a18b466314c7c47d5009848be997.html#a3644a18b466314c7c47d5009848be997',1,'ConfigureOneFlag.zCfgCOitem.UnitPrice()']]]
+  ['sequence',['Sequence',['../class_configure_one_flag_1_1z_cfg_b_o_m_af33963f4578991470deceb8f6babe25f.html#af33963f4578991470deceb8f6babe25f',1,'ConfigureOneFlag.zCfgBOM.Sequence()'],['../class_configure_one_flag_1_1z_cfg_item_a49c17dba662c33cd9d097c246665f6fa.html#a49c17dba662c33cd9d097c246665f6fa',1,'ConfigureOneFlag.zCfgItem.Sequence()']]],
+  ['serial',['Serial',['../class_configure_one_flag_1_1z_cfg_c_oitem_ab32f3dab6b3e8d51c58debe13b9761b0.html#ab32f3dab6b3e8d51c58debe13b9761b0',1,'ConfigureOneFlag::zCfgCOitem']]],
+  ['shippingterms',['ShippingTerms',['../class_configure_one_flag_1_1z_cfg_c_o_ac7b76b814b2dc3ebeb8b04c720cf5cc4.html#ac7b76b814b2dc3ebeb8b04c720cf5cc4',1,'ConfigureOneFlag::zCfgCO']]],
+  ['shiptoaddressline1',['ShipToAddressLine1',['../class_configure_one_flag_1_1z_cfg_c_o_a65552357c7a95a656818c3997b1e608a.html#a65552357c7a95a656818c3997b1e608a',1,'ConfigureOneFlag::zCfgCO']]],
+  ['shiptoaddressline2',['ShipToAddressLine2',['../class_configure_one_flag_1_1z_cfg_c_o_a7aca6104159d603d48424e4bf5dbca76.html#a7aca6104159d603d48424e4bf5dbca76',1,'ConfigureOneFlag::zCfgCO']]],
+  ['shiptoaddressline3',['ShipToAddressLine3',['../class_configure_one_flag_1_1z_cfg_c_o_a7bf00172952ac0211251e4a4b00eed13.html#a7bf00172952ac0211251e4a4b00eed13',1,'ConfigureOneFlag::zCfgCO']]],
+  ['shiptoaddressline4',['ShipToAddressLine4',['../class_configure_one_flag_1_1z_cfg_c_o_a78dfed8098d476a85ceb2860d35c5cc6.html#a78dfed8098d476a85ceb2860d35c5cc6',1,'ConfigureOneFlag::zCfgCO']]],
+  ['shiptocity',['ShipToCity',['../class_configure_one_flag_1_1z_cfg_c_o_a7bc7d42b04a05cf93a9acdb32f835bba.html#a7bc7d42b04a05cf93a9acdb32f835bba',1,'ConfigureOneFlag::zCfgCO']]],
+  ['shiptocontactname',['ShipToContactName',['../class_configure_one_flag_1_1z_cfg_c_o_ad30a5145b5a89615f2d0472911b67dba.html#ad30a5145b5a89615f2d0472911b67dba',1,'ConfigureOneFlag::zCfgCO']]],
+  ['shiptocountry',['ShipToCountry',['../class_configure_one_flag_1_1z_cfg_c_o_a4527fb1e7ed6eb7059e82c84e7162644.html#a4527fb1e7ed6eb7059e82c84e7162644',1,'ConfigureOneFlag::zCfgCO']]],
+  ['shiptoemailaddress',['ShipToEmailAddress',['../class_configure_one_flag_1_1z_cfg_c_o_a5368d7ef72bd3afad15fb053bfa2a02a.html#a5368d7ef72bd3afad15fb053bfa2a02a',1,'ConfigureOneFlag::zCfgCO']]],
+  ['shiptofaxnumber',['ShipToFaxNumber',['../class_configure_one_flag_1_1z_cfg_c_o_afd45b2c454beaabfaadc6575c29f1ab7.html#afd45b2c454beaabfaadc6575c29f1ab7',1,'ConfigureOneFlag::zCfgCO']]],
+  ['shiptophonenumber',['ShipToPhoneNumber',['../class_configure_one_flag_1_1z_cfg_c_o_a9219d46d1ba1ab3f67991b5472117faa.html#a9219d46d1ba1ab3f67991b5472117faa',1,'ConfigureOneFlag::zCfgCO']]],
+  ['shiptopostalcode',['ShipToPostalCode',['../class_configure_one_flag_1_1z_cfg_c_o_abf3ef870c859b68cf68adb817ffc35a7.html#abf3ef870c859b68cf68adb817ffc35a7',1,'ConfigureOneFlag::zCfgCO']]],
+  ['shiptorefnum',['ShipToRefNum',['../class_configure_one_flag_1_1z_cfg_c_o_abf6e11c6ab3c3b2ef40b0ca2b4ff13ab.html#abf6e11c6ab3c3b2ef40b0ca2b4ff13ab',1,'ConfigureOneFlag::zCfgCO']]],
+  ['shiptostate',['ShipToState',['../class_configure_one_flag_1_1z_cfg_c_o_a16006ef7e72ac3a18c96c2360986fec3.html#a16006ef7e72ac3a18c96c2360986fec3',1,'ConfigureOneFlag::zCfgCO']]],
+  ['shipvia',['ShipVia',['../class_configure_one_flag_1_1z_cfg_c_o_ab5e19277a029c5d78a557e686d0735d6.html#ab5e19277a029c5d78a557e686d0735d6',1,'ConfigureOneFlag::zCfgCO']]],
+  ['smartpart',['Smartpart',['../class_configure_one_flag_1_1z_cfg_b_o_m_a3c3f500dae8a667666ac3ab9e5152dd5.html#a3c3f500dae8a667666ac3ab9e5152dd5',1,'ConfigureOneFlag.zCfgBOM.Smartpart()'],['../class_configure_one_flag_1_1z_cfg_c_oitem_a483e5f3a7d282bbb3ebde0af3287a810.html#a483e5f3a7d282bbb3ebde0af3287a810',1,'ConfigureOneFlag.zCfgCOitem.Smartpart()'],['../class_configure_one_flag_1_1z_cfg_item_a8a4daeea26ed0164b51680f9facfb316.html#a8a4daeea26ed0164b51680f9facfb316',1,'ConfigureOneFlag.zCfgItem.Smartpart()']]]
 ];

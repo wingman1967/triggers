@@ -120,77 +120,91 @@ namespace ConfigureOneFlag
             foreach (XmlNode node in xnl)
             {
                 co.Project = node.InnerText;
+                if (co.Project.Length == 0) { co.Project = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("PAYMENT_TERMS");
             foreach (XmlNode node in xnl)
             {
                 co.PaymentTerms = node.InnerText;
+                if (co.PaymentTerms.Length == 0) { co.PaymentTerms = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_VIA");
             foreach (XmlNode node in xnl)
             {
                 co.ShipVia = node.InnerText;
+                if (co.ShipVia.Length == 0) { co.ShipVia = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("SHIPPING_TERMS");
             foreach (XmlNode node in xnl)
             {
                 co.ShippingTerms = node.InnerText;
+                if (co.ShippingTerms.Length == 0) { co.ShippingTerms = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_CONTACT_NAME");
             foreach (XmlNode node in xnl)
             {
                 co.BillToContactName = node.InnerText;
+                if (co.BillToContactName.Length == 0) { co.BillToContactName = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_ADDRESS_LINE_1");
             foreach (XmlNode node in xnl)
             {
                 co.BillToAddressLine1 = node.InnerText;
+                if (co.BillToAddressLine1.Length == 0) { co.BillToAddressLine1 = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_ADDRESS_LINE_2");
             foreach (XmlNode node in xnl)
             {
                 co.BillToAddressLine2 = node.InnerText;
+                if (co.BillToAddressLine2.Length == 0) { co.BillToAddressLine2 = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_ADDRESS_LINE_3");
             foreach (XmlNode node in xnl)
             {
                 co.BillToAddressLine3 = node.InnerText;
+                if (co.BillToAddressLine3.Length == 0) { co.BillToAddressLine3 = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_CITY");
             foreach (XmlNode node in xnl)
             {
                 co.BillToCity = node.InnerText;
+                if (co.BillToCity.Length == 0) { co.BillToCity = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_STATE");
             foreach (XmlNode node in xnl)
             {
                 co.BillToState = node.InnerText;
+                if (co.BillToState.Length == 0) { co.BillToState = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_COUNTRY");
             foreach (XmlNode node in xnl)
             {
                 co.BillToCountry = node.InnerText;
+                if (co.BillToCountry.Length == 0) { co.BillToCountry = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_POSTAL_CODE");
             foreach (XmlNode node in xnl)
             {
                 co.BillToPostalCode = node.InnerText;
+                if (co.BillToPostalCode.Length == 0) { co.BillToPostalCode = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_PHONE_NUMBER");
             foreach (XmlNode node in xnl)
             {
                 co.BillToPhoneNumber = node.InnerText;
-                if (co.BillToPhoneNumber.Length == 0) { co.BillToPhoneNumber = "NA"; };
+                if (co.BillToPhoneNumber.Length == 0) { co.BillToPhoneNumber = "N/A"; };
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_FAX_NUMBER");
             foreach (XmlNode node in xnl)
             {
                 co.BillToFaxNumber = node.InnerText;
+                if (co.BillToFaxNumber.Length == 0) { co.BillToFaxNumber = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_EMAIL_ADDRESS");
             foreach (XmlNode node in xnl)
             {
                 co.BillToEmailAddress = node.InnerText;
+                if (co.BillToEmailAddress.Length == 0) { co.BillToEmailAddress = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_REF_NUM");
             foreach (XmlNode node in xnl)
@@ -201,56 +215,67 @@ namespace ConfigureOneFlag
             foreach (XmlNode node in xnl)
             {
                 co.ShipToContactName = node.InnerText;
+                if (co.ShipToContactName.Length == 0) { co.ShipToContactName = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_ADDRESS_LINE_1");
             foreach (XmlNode node in xnl)
             {
                 co.ShipToAddressLine1 = node.InnerText;
+                if (co.ShipToAddressLine1.Length == 0) { co.ShipToAddressLine1 = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_ADDRESS_LINE_2");
             foreach (XmlNode node in xnl)
             {
                 co.ShipToAddressLine2 = node.InnerText;
+                if (co.ShipToAddressLine2.Length == 0) { co.ShipToAddressLine2 = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_ADDRESS_LINE_3");
             foreach (XmlNode node in xnl)
             {
                 co.ShipToAddressLine3 = node.InnerText;
+                if (co.ShipToAddressLine3.Length == 0) { co.ShipToAddressLine3 = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_CITY");
             foreach (XmlNode node in xnl)
             {
                 co.ShipToCity = node.InnerText;
+                if (co.ShipToCity.Length == 0) { co.ShipToCity = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_STATE");
             foreach (XmlNode node in xnl)
             {
                 co.ShipToState = node.InnerText;
+                if (co.ShipToState.Length == 0) { co.ShipToState = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_COUNTRY");
             foreach (XmlNode node in xnl)
             {
                 co.ShipToCountry = node.InnerText;
+                if (co.ShipToCountry.Length == 0) { co.ShipToCountry = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_POSTAL_CODE");
             foreach (XmlNode node in xnl)
             {
                 co.ShipToPostalCode = node.InnerText;
+                if (co.ShipToPostalCode.Length == 0) { co.ShipToPostalCode = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_PHONE_NUMBER");
             foreach (XmlNode node in xnl)
             {
                 co.ShipToPhoneNumber = node.InnerText;
+                if (co.ShipToPhoneNumber.Length == 0) { co.ShipToPhoneNumber = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_FAX_NUMBER");
             foreach (XmlNode node in xnl)
             {
                 co.ShipToFaxNumber = node.InnerText;
+                if (co.ShipToFaxNumber.Length == 0) { co.ShipToFaxNumber = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_EMAIL_ADDRESS");
             foreach (XmlNode node in xnl)
             {
                 co.ShipToEmailAddress = node.InnerText;
+                if (co.ShipToEmailAddress.Length == 0) { co.ShipToEmailAddress = "N/A"; }
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_REF_NUM");
             foreach (XmlNode node in xnl)
@@ -322,7 +347,25 @@ namespace ConfigureOneFlag
                     }
                 }
             }
-            
+
+            //Look for REQUEST DATE in INPUTS, load into CO
+            XmlNodeList xnlCORD = xmldoc.GetElementsByTagName("Input");
+            foreach (XmlNode nodeCORD in xnlCORD)
+            {
+                if (nodeCORD.ChildNodes[2].InnerText == "REQUEST DATE")
+                {
+                    switch (nodeCORD.ChildNodes[0].Attributes["name"].Value.Length > 0)
+                    {
+                        case true:
+                            co.RequestDate = Convert.ToDateTime(nodeCORD.ChildNodes[0].Attributes["name"].Value);
+                            break;
+                        default:
+                            co.RequestDate = System.DateTime.Now;       //default to today's date if no request date exists in the XML document
+                            break;
+                    }
+                }
+            }
+
             //build COITEM records, per line
             xnl = xmldoc.GetElementsByTagName("Detail");
             foreach (XmlNode node in xnl)
