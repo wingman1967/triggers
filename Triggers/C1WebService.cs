@@ -7,7 +7,7 @@ using System.IO;
 namespace ConfigureOneFlag
 {
     /// <summary>
-    /// Processing for call to ConfigureOne web service and return for further handling
+    /// Processing for calls to ConfigureOne web service and return for further handling
     /// </summary>
     class C1WebService
     {
@@ -74,10 +74,10 @@ namespace ConfigureOneFlag
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
                 return;
             }
-                        
-            DatabaseFactory.CfgImport(Triggers.pubOrderNumber);
+
+            DatabaseFactory.CfgImport(Triggers.pubOrderNumber);                 //map staging-table data into Syteline
             
-            //Now retrieve the SL order# (if not found, default to using the C1 order#):
+            //Retrieve the SL order# (if not found, default to using the C1 order#):
             string SPOrderNumber = string.IsNullOrEmpty(DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber)) ? Triggers.pubOrderNumber : DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
             SPPUBOrderNumber = SPOrderNumber;
 
@@ -102,8 +102,9 @@ namespace ConfigureOneFlag
                     configSerial = node.InnerText;
                 }
 
-                string useMethod = "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getDocument";
+                string useMethod = "";
                 key = "getDocument";
+                useMethod = C1Dictionaries.webmethods[key];
                 string documentSerialNumber = configSerial;
                 arrayindex = 0;
 
@@ -208,7 +209,7 @@ namespace ConfigureOneFlag
                 {
                     postStream.Write(byteDataStatus, 0, byteDataStatus.Length);
                 }
-
+                
                 //return response from AXIS (if any)
                 using (HttpWebResponse response = objRequest.GetResponse() as HttpWebResponse)
                 {
@@ -216,7 +217,7 @@ namespace ConfigureOneFlag
                     result = reader.ReadToEnd();
                     reader.Close();
                 }
-
+                
                 try
                 {
                     xmlResult.LoadXml(result);

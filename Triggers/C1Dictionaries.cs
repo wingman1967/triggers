@@ -16,6 +16,7 @@ namespace ConfigureOneFlag
             webmethods.Add("getOrder", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getOrder");
             webmethods.Add("updateOrder", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=updateOrder");
             webmethods.Add("getConfiguration", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getConfiguration");
+            webmethods.Add("getDocument", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getDocument");
         }
         public static void LoadDBFLengthDictionary()
         {

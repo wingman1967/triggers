@@ -1,4 +1,4 @@
-.TH "ConfigureOneFlag.crypto" 3 "Wed Jun 21 2017" "ConfigureOne Trigger" \" -*- nroff -*-
+.TH "ConfigureOneFlag.crypto" 3 "Thu Jun 22 2017" "ConfigureOne Trigger" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -7,11 +7,11 @@ ConfigureOneFlag.crypto \- Cryptography class providing for the decryption of se
 .SH SYNOPSIS
 .br
 .PP
-.SS "Public Member Functions"
+.SS "Static Public Member Functions"
 
 .in +1c
 .ti -1c
-.RI "void \fBDecryptCS\fP (string cipherText, string sKey)"
+.RI "static string \fBDecryptCS\fP (string cipherText, string sKey)"
 .br
 .in -1c
 .SS "Private Member Functions"
@@ -20,27 +20,31 @@ ConfigureOneFlag.crypto \- Cryptography class providing for the decryption of se
 .ti -1c
 .RI "byte [] \fBEncrypt\fP (byte[] buffer, byte[] vector)"
 .br
-.ti -1c
-.RI "byte [] \fBDecrypt\fP (byte[] buffer, byte[] vector)"
-.br
-.ti -1c
-.RI "byte [] \fBTransform\fP (byte[] buffer, ICryptoTransform transform)"
-.br
 .in -1c
-.SS "Private Attributes"
+.SS "Static Private Member Functions"
 
 .in +1c
 .ti -1c
-.RI "Random \fBrandom\fP"
+.RI "static byte [] \fBDecrypt\fP (byte[] buffer, byte[] vector)"
 .br
 .ti -1c
-.RI "byte [] \fBkey\fP"
+.RI "static byte [] \fBTransform\fP (byte[] buffer, ICryptoTransform transform)"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static Random \fBrandom\fP"
 .br
 .ti -1c
-.RI "RijndaelManaged \fBrm\fP"
+.RI "static byte [] \fBkey\fP"
 .br
 .ti -1c
-.RI "UTF8Encoding \fBencoder\fP"
+.RI "static RijndaelManaged \fBrm\fP"
+.br
+.ti -1c
+.RI "static UTF8Encoding \fBencoder\fP"
 .br
 .in -1c
 .SH "Detailed Description"
@@ -52,37 +56,37 @@ Cryptography class providing for the decryption of server connection string cull
 Definition at line 12 of file crypto\&.cs\&.
 .SH "Member Function Documentation"
 .PP 
-.SS "byte [] ConfigureOneFlag\&.crypto\&.Decrypt (byte [] buffer, byte [] vector)\fC [private]\fP"
+.SS "static byte [] ConfigureOneFlag\&.crypto\&.Decrypt (byte [] buffer, byte [] vector)\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 43 of file crypto\&.cs\&.
-.SS "void ConfigureOneFlag\&.crypto\&.DecryptCS (string cipherText, string sKey)"
+Definition at line 44 of file crypto\&.cs\&.
+.SS "static string ConfigureOneFlag\&.crypto\&.DecryptCS (string cipherText, string sKey)\fC [static]\fP"
 
 .PP
 Definition at line 18 of file crypto\&.cs\&.
 .SS "byte [] ConfigureOneFlag\&.crypto\&.Encrypt (byte [] buffer, byte [] vector)\fC [private]\fP"
 
 .PP
-Definition at line 37 of file crypto\&.cs\&.
-.SS "byte [] ConfigureOneFlag\&.crypto\&.Transform (byte [] buffer, ICryptoTransform transform)\fC [private]\fP"
+Definition at line 38 of file crypto\&.cs\&.
+.SS "static byte [] ConfigureOneFlag\&.crypto\&.Transform (byte [] buffer, ICryptoTransform transform)\fC [static]\fP, \fC [private]\fP"
 
 .PP
-Definition at line 49 of file crypto\&.cs\&.
+Definition at line 50 of file crypto\&.cs\&.
 .SH "Member Data Documentation"
 .PP 
-.SS "UTF8Encoding ConfigureOneFlag\&.crypto\&.encoder\fC [private]\fP"
+.SS "UTF8Encoding ConfigureOneFlag\&.crypto\&.encoder\fC [static]\fP, \fC [private]\fP"
 
 .PP
 Definition at line 17 of file crypto\&.cs\&.
-.SS "byte [] ConfigureOneFlag\&.crypto\&.key\fC [private]\fP"
+.SS "byte [] ConfigureOneFlag\&.crypto\&.key\fC [static]\fP, \fC [private]\fP"
 
 .PP
 Definition at line 15 of file crypto\&.cs\&.
-.SS "Random ConfigureOneFlag\&.crypto\&.random\fC [private]\fP"
+.SS "Random ConfigureOneFlag\&.crypto\&.random\fC [static]\fP, \fC [private]\fP"
 
 .PP
 Definition at line 14 of file crypto\&.cs\&.
-.SS "RijndaelManaged ConfigureOneFlag\&.crypto\&.rm\fC [private]\fP"
+.SS "RijndaelManaged ConfigureOneFlag\&.crypto\&.rm\fC [static]\fP, \fC [private]\fP"
 
 .PP
 Definition at line 16 of file crypto\&.cs\&.

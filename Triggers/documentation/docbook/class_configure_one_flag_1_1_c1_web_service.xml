@@ -67,7 +67,7 @@ string key, string payload, string url)</para>
         </section>
     <simplesect>
 
-<para>Processing for call to ConfigureOne web service and return for further handling </para>
+<para>Processing for calls to ConfigureOne web service and return for further handling </para>
     </simplesect>
         <simplesect>
             <title>Detailed Description</title>

@@ -11,28 +11,29 @@ namespace ConfigureOneFlag
     /// </summary>
     class crypto
     {
-        private Random random;
-        private byte[] key;
-        private RijndaelManaged rm;
-        private UTF8Encoding encoder;
-        public void DecryptCS(string cipherText, string sKey)
+        private static Random random;
+        private static byte[] key;
+        private static RijndaelManaged rm;
+        private static UTF8Encoding encoder;
+        public static string DecryptCS(string cipherText, string sKey)
         {
             random = new Random();
             rm = new RijndaelManaged();
             encoder = new UTF8Encoding();
             key = Convert.FromBase64String(sKey);
+            
             var cryptogram = Convert.FromBase64String(cipherText);
 
             if (cryptogram.Length < 17)
             {
                 Triggers.logEvent = "A cryptographic error occurred decrypting server connection string";
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
-                return;
+                return "ERR";
             }
 
             var vector = cryptogram.Take(16).ToArray();
             var buffer = cryptogram.Skip(16).ToArray();
-            DatabaseFactory.connectionString = encoder.GetString(Decrypt(buffer, vector));
+            return encoder.GetString(Decrypt(buffer, vector));
         }
         private byte[] Encrypt(byte[] buffer, byte[] vector)
         {
@@ -40,13 +41,13 @@ namespace ConfigureOneFlag
             return Transform(buffer, encryptor);
         }
 
-        private byte[] Decrypt(byte[] buffer, byte[] vector)
+        private static byte[] Decrypt(byte[] buffer, byte[] vector)
         {
             var decryptor = rm.CreateDecryptor(key, vector);
             return Transform(buffer, decryptor);
         }
 
-        private byte[] Transform(byte[] buffer, ICryptoTransform transform)
+        private static byte[] Transform(byte[] buffer, ICryptoTransform transform)
         {
             var stream = new MemoryStream();
             using (var cs = new CryptoStream(stream, transform, CryptoStreamMode.Write))
