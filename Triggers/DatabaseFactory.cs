@@ -57,9 +57,6 @@ namespace ConfigureOneFlag
             spuname = crypto.DecryptCS(spuname, sKey);
             sppassword = crypto.DecryptCS(sppassword, sKey);
 
-            string logEvent = "UNAME: " + spuname + "  -  PWD: " + sppassword;
-            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-
             //deboog
             //connectionString = "server = grcdslsql0.dom.grc; database = SL_man_App; enlist=false; User ID = sa_config; Password = options23";
             //end deboog

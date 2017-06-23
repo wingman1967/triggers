@@ -12,7 +12,6 @@ namespace ConfigureOneFlag
     class C1WebService
     {
         public static string SPPUBOrderNumber;
-        public static string pubKey;
         public static string pubPayload;
         public static string pubURL;
         public static void CallConfigureOne(string key, string payload, string url)

@@ -38,7 +38,8 @@ Processing for calls to ConfigureOne web service and return for further handling
                     <listitem>
                         <para>struct <link linkend="class_configure_one_flag_1_1crypto">ConfigureOneFlag::crypto</link></para>
 <para><emphasis>&lt;summary&gt;
-Cryptography class providing for the decryption of server connection string culled from server registry
+Cryptography class providing for the decryption of encrypted strings.  Key passed in is the base64 ENCODED version for extra obfuscation.
+Using defaults to maintain FIPS-197 AES compliance/interoperability:  Key size - 256 bits, Block size - 128 bits
 &lt;/summary&gt;</emphasis></para>
                     </listitem>
                 </itemizedlist>

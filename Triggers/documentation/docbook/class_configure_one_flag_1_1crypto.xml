@@ -97,11 +97,11 @@ byte [] buffer, ICryptoTransform transform)</para>
         </section>
     <simplesect>
 
-<para>Cryptography class providing for the decryption of server connection string culled from server registry </para>
+<para>Cryptography class providing for the decryption of encrypted strings. Key passed in is the base64 ENCODED version for extra obfuscation. Using defaults to maintain FIPS-197 AES compliance/interoperability: Key size - 256 bits, Block size - 128 bits </para>
     </simplesect>
         <simplesect>
             <title>Detailed Description</title>
-                <para>Definition at line 13 of file crypto.cs</para>
+                <para>Definition at line 14 of file crypto.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>crypto.cs</para></listitem></itemizedlist></para>
         </simplesect>

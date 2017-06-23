@@ -35,13 +35,6 @@
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>static string pubKey</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
                         <para>static string pubPayload</para>
                     </listitem>
                 </itemizedlist>

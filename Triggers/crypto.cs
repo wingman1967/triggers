@@ -7,7 +7,8 @@ using System.IO;
 namespace ConfigureOneFlag
 {
     /// <summary>
-    /// Cryptography class providing for the decryption of server connection string culled from server registry
+    /// Cryptography class providing for the decryption of encrypted strings.  Key passed in is the base64 ENCODED version for extra obfuscation.
+    /// Using defaults to maintain FIPS-197 AES compliance/interoperability:  Key size - 256 bits, Block size - 128 bits
     /// </summary>
     class crypto
     {
@@ -20,17 +21,16 @@ namespace ConfigureOneFlag
             random = new Random();
             rm = new RijndaelManaged();
             encoder = new UTF8Encoding();
-            key = Convert.FromBase64String(sKey);
-            
+            key = Convert.FromBase64String(sKey);       //cipher encrypted with non-base64 version of key; convert from base64 for decryption
             var cryptogram = Convert.FromBase64String(cipherText);
 
             if (cryptogram.Length < 17)
             {
-                Triggers.logEvent = "A cryptographic error occurred decrypting server connection string";
+                Triggers.logEvent = "A cryptographic error occurred decrypting cipher";
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
                 return "ERR";
             }
-
+            
             var vector = cryptogram.Take(16).ToArray();
             var buffer = cryptogram.Skip(16).ToArray();
             return encoder.GetString(Decrypt(buffer, vector));

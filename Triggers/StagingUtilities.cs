@@ -35,12 +35,14 @@ namespace ConfigureOneFlag
                         System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                         break;
                     default:
-                        //continue with our NOVB default
+                        //continue with NOVB default
                         break;
                 }
             }
 
             //Retrieve due date
+            co.DueDate = DateTime.Now;
+            coitem.DueDate = DateTime.Now;
             XmlNodeList xnlduedate = xmldoc.GetElementsByTagName("Input");
             foreach (XmlNode node in xnlduedate)
             {
@@ -51,8 +53,7 @@ namespace ConfigureOneFlag
                         coitem.DueDate = Convert.ToDateTime(node.ChildNodes[0].Attributes["name"].Value);
                         break;
                     default:
-                        co.DueDate = DateTime.Now;
-                        coitem.DueDate = DateTime.Now;
+                        //do nothing
                         break;
                 }
             }
@@ -119,92 +120,77 @@ namespace ConfigureOneFlag
             xnl = xmldoc.GetElementsByTagName("PROJECT");
             foreach (XmlNode node in xnl)
             {
-                co.Project = node.InnerText;
-                if (co.Project.Length == 0) { co.Project = "N/A"; }
+                co.Project = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("PAYMENT_TERMS");
             foreach (XmlNode node in xnl)
             {
-                co.PaymentTerms = node.InnerText;
-                if (co.PaymentTerms.Length == 0) { co.PaymentTerms = "N/A"; }
+                co.PaymentTerms = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_VIA");
             foreach (XmlNode node in xnl)
             {
-                co.ShipVia = node.InnerText;
-                if (co.ShipVia.Length == 0) { co.ShipVia = "N/A"; }
+                co.ShipVia = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("SHIPPING_TERMS");
             foreach (XmlNode node in xnl)
             {
-                co.ShippingTerms = node.InnerText;
-                if (co.ShippingTerms.Length == 0) { co.ShippingTerms = "N/A"; }
+                co.ShippingTerms = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_CONTACT_NAME");
             foreach (XmlNode node in xnl)
             {
-                co.BillToContactName = node.InnerText;
-                if (co.BillToContactName.Length == 0) { co.BillToContactName = "N/A"; }
+                co.BillToContactName = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_ADDRESS_LINE_1");
             foreach (XmlNode node in xnl)
             {
-                co.BillToAddressLine1 = node.InnerText;
-                if (co.BillToAddressLine1.Length == 0) { co.BillToAddressLine1 = "N/A"; }
+                co.BillToAddressLine1 = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_ADDRESS_LINE_2");
             foreach (XmlNode node in xnl)
             {
-                co.BillToAddressLine2 = node.InnerText;
-                if (co.BillToAddressLine2.Length == 0) { co.BillToAddressLine2 = "N/A"; }
+                co.BillToAddressLine2 = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_ADDRESS_LINE_3");
             foreach (XmlNode node in xnl)
             {
-                co.BillToAddressLine3 = node.InnerText;
-                if (co.BillToAddressLine3.Length == 0) { co.BillToAddressLine3 = "N/A"; }
+                co.BillToAddressLine3 = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_CITY");
             foreach (XmlNode node in xnl)
             {
-                co.BillToCity = node.InnerText;
-                if (co.BillToCity.Length == 0) { co.BillToCity = "N/A"; }
+                co.BillToCity = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_STATE");
             foreach (XmlNode node in xnl)
             {
-                co.BillToState = node.InnerText;
-                if (co.BillToState.Length == 0) { co.BillToState = "N/A"; }
+                co.BillToState = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_COUNTRY");
             foreach (XmlNode node in xnl)
             {
-                co.BillToCountry = node.InnerText;
-                if (co.BillToCountry.Length == 0) { co.BillToCountry = "N/A"; }
+                co.BillToCountry = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_POSTAL_CODE");
             foreach (XmlNode node in xnl)
             {
-                co.BillToPostalCode = node.InnerText;
-                if (co.BillToPostalCode.Length == 0) { co.BillToPostalCode = "N/A"; }
+                co.BillToPostalCode = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_PHONE_NUMBER");
             foreach (XmlNode node in xnl)
             {
-                co.BillToPhoneNumber = node.InnerText;
-                if (co.BillToPhoneNumber.Length == 0) { co.BillToPhoneNumber = "N/A"; };
+                co.BillToPhoneNumber = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_FAX_NUMBER");
             foreach (XmlNode node in xnl)
             {
-                co.BillToFaxNumber = node.InnerText;
-                if (co.BillToFaxNumber.Length == 0) { co.BillToFaxNumber = "N/A"; }
+                co.BillToFaxNumber = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_EMAIL_ADDRESS");
             foreach (XmlNode node in xnl)
             {
-                co.BillToEmailAddress = node.InnerText;
-                if (co.BillToEmailAddress.Length == 0) { co.BillToEmailAddress = "N/A"; }
+                co.BillToEmailAddress = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("BILL_TO_REF_NUM");
             foreach (XmlNode node in xnl)
@@ -214,68 +200,57 @@ namespace ConfigureOneFlag
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_CONTACT_NAME");
             foreach (XmlNode node in xnl)
             {
-                co.ShipToContactName = node.InnerText;
-                if (co.ShipToContactName.Length == 0) { co.ShipToContactName = "N/A"; }
+                co.ShipToContactName = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_ADDRESS_LINE_1");
             foreach (XmlNode node in xnl)
             {
-                co.ShipToAddressLine1 = node.InnerText;
-                if (co.ShipToAddressLine1.Length == 0) { co.ShipToAddressLine1 = "N/A"; }
+                co.ShipToAddressLine1 = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_ADDRESS_LINE_2");
             foreach (XmlNode node in xnl)
             {
-                co.ShipToAddressLine2 = node.InnerText;
-                if (co.ShipToAddressLine2.Length == 0) { co.ShipToAddressLine2 = "N/A"; }
+                co.ShipToAddressLine2 = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_ADDRESS_LINE_3");
             foreach (XmlNode node in xnl)
             {
-                co.ShipToAddressLine3 = node.InnerText;
-                if (co.ShipToAddressLine3.Length == 0) { co.ShipToAddressLine3 = "N/A"; }
+                co.ShipToAddressLine3 = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_CITY");
             foreach (XmlNode node in xnl)
             {
-                co.ShipToCity = node.InnerText;
-                if (co.ShipToCity.Length == 0) { co.ShipToCity = "N/A"; }
+                co.ShipToCity = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_STATE");
             foreach (XmlNode node in xnl)
             {
-                co.ShipToState = node.InnerText;
-                if (co.ShipToState.Length == 0) { co.ShipToState = "N/A"; }
+                co.ShipToState = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_COUNTRY");
             foreach (XmlNode node in xnl)
             {
-                co.ShipToCountry = node.InnerText;
-                if (co.ShipToCountry.Length == 0) { co.ShipToCountry = "N/A"; }
+                co.ShipToCountry = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_POSTAL_CODE");
             foreach (XmlNode node in xnl)
             {
-                co.ShipToPostalCode = node.InnerText;
-                if (co.ShipToPostalCode.Length == 0) { co.ShipToPostalCode = "N/A"; }
+                co.ShipToPostalCode = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_PHONE_NUMBER");
             foreach (XmlNode node in xnl)
             {
-                co.ShipToPhoneNumber = node.InnerText;
-                if (co.ShipToPhoneNumber.Length == 0) { co.ShipToPhoneNumber = "N/A"; }
+                co.ShipToPhoneNumber = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_FAX_NUMBER");
             foreach (XmlNode node in xnl)
             {
-                co.ShipToFaxNumber = node.InnerText;
-                if (co.ShipToFaxNumber.Length == 0) { co.ShipToFaxNumber = "N/A"; }
+                co.ShipToFaxNumber = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_EMAIL_ADDRESS");
             foreach (XmlNode node in xnl)
             {
-                co.ShipToEmailAddress = node.InnerText;
-                if (co.ShipToEmailAddress.Length == 0) { co.ShipToEmailAddress = "N/A"; }
+                co.ShipToEmailAddress = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_REF_NUM");
             foreach (XmlNode node in xnl)
@@ -290,8 +265,7 @@ namespace ConfigureOneFlag
             xnl = xmldoc.GetElementsByTagName("SERIAL_NUMBER");
             foreach (XmlNode node in xnl)
             {
-                co.QuoteNbr = node.InnerText;
-                if (co.QuoteNbr.Length == 0) { co.QuoteNbr = "N/A"; };
+                co.QuoteNbr = node.InnerText.Length == 0 ? "N/A" : node.InnerText;
             }
             xnl = xmldoc.GetElementsByTagName("CREATED_BY_USER_ID");
             foreach (XmlNode node in xnl)
@@ -404,7 +378,7 @@ namespace ConfigureOneFlag
                     DatabaseFactory.WriteRecordCfg(ref cfg);
                 }
 
-                //Look for SHIP_VIA in INPUTS
+                //Look for SHIP_VIA in INPUTS (cannot use IIF because there are ship_via tags after this one and value will be lost)
                 XmlNodeList xnlisv = xmldoc.GetElementsByTagName("Input");
                 foreach (XmlNode nodeisv in xnlisv)
                 {
@@ -421,64 +395,40 @@ namespace ConfigureOneFlag
                         switch (nodeds.ChildNodes[2].InnerText)
                         {
                             case "DROP SHIP NAME":
-                                //co.ShipToContactName = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                co.DropShipName = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                if (co.DropShipName.Length == 0) { co.DropShipName = "N/A"; }
+                                co.DropShipName = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? "N/A" : nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP ADDRESS 1":
-                                //co.ShipToAddressLine1 = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                co.DropShipAddress1 = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                if (co.DropShipAddress1.Length == 0) { co.DropShipAddress1 = "N/A"; }
+                                co.DropShipAddress1 = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? "N/A" : nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP ADDRESS 2":
-                                //co.ShipToAddressLine2 = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                co.DropShipAddress2 = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                if (co.DropShipAddress2.Length == 0) { co.DropShipAddress2 = "N/A"; }
+                                co.DropShipAddress2 = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? "N/A" : nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP ADDRESS 3":
-                                //co.ShipToAddressLine3 = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                co.DropShipAddress3 = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                if (co.DropShipAddress3.Length == 0) { co.DropShipAddress3 = "N/A"; }
+                                co.DropShipAddress3 = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? "N/A" : nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP ADDRESS 4":
-                                //co.ShipToAddressLine4 = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                co.DropShipAddress4 = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                if (co.DropShipAddress4.Length == 0) { co.DropShipAddress4 = "N/A"; }
+                                co.DropShipAddress4 = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? "N/A" : nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP CITY":
-                                //co.ShipToCity = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                co.DropShipCity = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                if (co.DropShipCity.Length == 0) { co.DropShipCity = "N/A"; }
+                                co.DropShipCity = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? "N/A" : nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP STATE":
-                                //co.ShipToState = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                co.DropShipState = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                if (co.DropShipState.Length == 0) { co.DropShipState = "N/A"; }
+                                co.DropShipState = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? "N/A" : nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP ZIP CODE":
-                                //co.ShipToPostalCode = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                co.DropShipZip = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                if (co.DropShipZip.Length == 0) { co.DropShipZip = "N/A"; }
+                                co.DropShipZip = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? "N/A" : nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP CONTACT":
-                                //co.ShipToContactName = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                co.DropShipContact = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                if (co.DropShipContact.Length == 0) { co.DropShipContact = "N/A"; }
+                                co.DropShipContact = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? "N/A" : nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP PHONE":
-                                //co.ShipToPhoneNumber = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                co.DropShipPhone = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                if (co.DropShipPhone.Length == 0) { co.DropShipPhone = "N/A"; }
+                                co.DropShipPhone = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? "N/A" : nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP COUNTRY":
-                                //co.ShipToCountry = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                co.DropShipCountry = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                if (co.DropShipCountry.Length == 0) { co.DropShipCountry = "N/A"; }
+                                co.DropShipCountry = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? "N/A" : nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP EMAIL":
-                                //co.ShipToEmailAddress = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                co.DropShipEmail = nodeds.ChildNodes[0].Attributes["name"].Value;
-                                if (co.DropShipEmail.Length == 0) { co.DropShipEmail = "N/A"; }
+                                co.DropShipEmail = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? "N/A" : nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             default:
                                 //do nothing
