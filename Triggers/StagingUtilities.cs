@@ -458,8 +458,8 @@ namespace ConfigureOneFlag
                     citem.UnitOfMeasure = nodeim.ChildNodes[26].InnerText;
                     citem.PriorityLevel = Convert.ToInt16(nodeim.ChildNodes[38].InnerText);
                     recordSequence += 1;
-                    //output item-master record if priority is <= 2
-                    if (citem.PriorityLevel <= 2)
+                    //output item-master record if priority is <= 2    (added 1 == 1 to force record to write regardless of PL, per Grant)
+                    if (citem.PriorityLevel <= 2 || 1 == 1)
                     {
                         DatabaseFactory.WriteRecordCItem(ref citem);
                     }
