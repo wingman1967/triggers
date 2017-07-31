@@ -93,6 +93,11 @@ namespace ConfigureOneFlag
             fieldLengths.Add("CfgItem:item_num", 40);
             fieldLengths.Add("CfgItem:description", 40);
             fieldLengths.Add("CfgItem:uom", 10);
+            fieldLengths.Add("CfgItem:im_VAR1", 200);
+            fieldLengths.Add("CfgItem:im_VAR2", 200);
+            fieldLengths.Add("CfgItem:im_VAR3", 200);
+            fieldLengths.Add("CfgItem:im_VAR4", 200);
+            fieldLengths.Add("CfgItem:im_VAR5", 200);
             //CfgParmVal Fields
             fieldLengths.Add("CfgParmVal:order_num", 15);
             fieldLengths.Add("CfgParmVal:name", 255);
