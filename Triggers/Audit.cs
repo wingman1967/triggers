@@ -45,7 +45,7 @@ namespace ConfigureOneFlag
                 {
                     for (int i = 0; i < ub; i += 1)
                     {
-                        if (mE[i].Length != 0 || mE[i] != null)
+                        if (mE[i].Length != 0 && mE[i] != null)
                         {
                             outMessage = outMessage + "ERROR #" + (i + 1) + Environment.NewLine + mE[i] + Environment.NewLine + Environment.NewLine;
                         }
@@ -53,12 +53,15 @@ namespace ConfigureOneFlag
 
                     SendMail.MailMessage(outMessage, "Configure One XML Mapping Errors");
                 }
-
+                
                 Array.Clear(mE, 0, mE.Length);
                 DatabaseFactory.WriteAuditRecord(auditMessage, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, "PROCESSING COMPLETED");
             }
             catch (Exception ex5)
             {
+                Triggers.logEvent = ex5.Message + " -> " + ex5.Source + " -> " + ex5.InnerException;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
+
                 //a failure of some kind has occurred; do nothing
             }
         }
