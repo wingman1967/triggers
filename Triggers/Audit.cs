@@ -43,7 +43,14 @@ namespace ConfigureOneFlag
                 string outMessage = "";
                 if (ub > 0)
                 {
-                    for (int i = 0; i < ub; i += 1) { outMessage = outMessage + "ERROR #" + (i + 1) + Environment.NewLine + mE[i] + Environment.NewLine + Environment.NewLine; }
+                    for (int i = 0; i < ub; i += 1)
+                    {
+                        if (mE[i].Length != 0 || mE[i] != null)
+                        {
+                            outMessage = outMessage + "ERROR #" + (i + 1) + Environment.NewLine + mE[i] + Environment.NewLine + Environment.NewLine;
+                        }
+                    }
+
                     SendMail.MailMessage(outMessage, "Configure One XML Mapping Errors");
                 }
 
@@ -54,7 +61,6 @@ namespace ConfigureOneFlag
             {
                 //a failure of some kind has occurred; do nothing
             }
-            
         }
     }
 }

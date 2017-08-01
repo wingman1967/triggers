@@ -458,11 +458,17 @@ namespace ConfigureOneFlag
                     citem.UnitOfMeasure = nodeim.ChildNodes[26].InnerText;
                     citem.PriorityLevel = Convert.ToInt16(nodeim.ChildNodes[38].InnerText);
                     //UDF fields
-                    citem.IM_VAR1 = nodeim.ChildNodes[56].InnerText;
-                    citem.IM_VAR2 = nodeim.ChildNodes[57].InnerText;
-                    citem.IM_VAR3 = nodeim.ChildNodes[58].InnerText;
-                    citem.IM_VAR4 = nodeim.ChildNodes[59].InnerText;
-                    citem.IM_VAR5 = nodeim.ChildNodes[60].InnerText;
+                    citem.IM_VAR1 = nodeim.ChildNodes[56].InnerText.Length == 0 ? " " : nodeim.ChildNodes[56].InnerText;
+                    citem.IM_VAR2 = nodeim.ChildNodes[57].InnerText.Length == 0 ? " " : nodeim.ChildNodes[57].InnerText;
+                    citem.IM_VAR3 = nodeim.ChildNodes[58].InnerText.Length == 0 ? " " : nodeim.ChildNodes[58].InnerText;
+                    citem.IM_VAR4 = nodeim.ChildNodes[59].InnerText.Length == 0 ? " " : nodeim.ChildNodes[59].InnerText;
+                    citem.IM_VAR5 = nodeim.ChildNodes[60].InnerText.Length == 0 ? " " : nodeim.ChildNodes[60].InnerText;
+
+                    //citem.IM_VAR1 = nodeim.ChildNodes[56].InnerText;
+                    //citem.IM_VAR2 = nodeim.ChildNodes[57].InnerText;
+                    //citem.IM_VAR3 = nodeim.ChildNodes[58].InnerText;
+                    //citem.IM_VAR4 = nodeim.ChildNodes[59].InnerText;
+                    //citem.IM_VAR5 = nodeim.ChildNodes[60].InnerText;
                     recordSequence += 1;
                     //output item-master record if priority is <= 2    (added 1 == 1 to force record to write regardless of PL, per Grant)
                     if (citem.PriorityLevel <= 2 || 1 == 1)
