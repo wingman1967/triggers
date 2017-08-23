@@ -542,7 +542,37 @@ namespace ConfigureOneFlag
                     bom.UnitCost = Convert.ToDecimal(string.IsNullOrEmpty(nodeib.ChildNodes[4].InnerText) ? "0" : nodeib.ChildNodes[4].InnerText);
                     bom.Discount = Convert.ToDecimal(string.IsNullOrEmpty(nodeib.ChildNodes[5].InnerText) ? "0" : nodeib.ChildNodes[5].InnerText);
                     bom.QTY = Convert.ToDecimal(string.IsNullOrEmpty(nodeib.ChildNodes[6].InnerText) ? "0" : nodeib.ChildNodes[6].InnerText);
-                    bom.PriorityLevel = co.PriorityLevel;
+
+                    //Search the ItemMaster XML records for a matching smartpart_num and retrieve its priority level for this BOM record
+                    bool foundchild = false;
+                    bool imdone = false;
+                    foreach (XmlNode nodeIMPL in xnlim)
+                    {
+                        if (imdone == true)
+                        {
+                            break;
+                        }
+                        foreach (XmlNode childIMPL in nodeIMPL.ChildNodes)
+                        {
+                            if (imdone == true)
+                            {
+                                break;
+                            }
+                            if (childIMPL.InnerText == bom.Smartpart)
+                            {
+                                foundchild = true;
+                            }
+                            if (foundchild == true)
+                            {
+                                if (childIMPL.Name == "PRIORITY_LEVEL")
+                                {
+                                    bom.PriorityLevel = Convert.ToInt16(childIMPL.InnerText);
+                                    imdone = true;
+                                }
+                            }
+                        }
+                    }
+
                     //output BOM record
                     DatabaseFactory.WriteRecordBOM(ref bom);
                 }

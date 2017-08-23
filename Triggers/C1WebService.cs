@@ -141,6 +141,8 @@ namespace ConfigureOneFlag
                     objRequest.Method = "POST";
                     objRequest.ContentType = "text/xml";
                     objRequest.Headers.Add("SOAPAction", key);
+                    objRequest.Timeout = 120000;
+                    objRequest.ReadWriteTimeout = 120000;
 
                     data = new StringBuilder();
                     data.Append(xmlPayload);
@@ -149,12 +151,15 @@ namespace ConfigureOneFlag
 
                     using (Stream postStream = objRequest.GetRequestStream())
                     {
+                        postStream.ReadTimeout = 120000;
+                        postStream.WriteTimeout = 120000;
                         postStream.Write(byteDataDoc, 0, byteDataDoc.Length);
                     }
                     xmlResult = new XmlDocument();
                     result = "";
                     using (HttpWebResponse response = objRequest.GetResponse() as HttpWebResponse)
                     {
+                        
                         StreamReader reader = new StreamReader(response.GetResponseStream());
                         result = reader.ReadToEnd();
                         reader.Close();
@@ -167,7 +172,10 @@ namespace ConfigureOneFlag
                         {
                             return;
                         }
-                        
+
+                        logEvent = "DEBUG:  COPYING DRAWINGS TO SHAREPOINT";
+                        System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
                         XmlNodeList xnldoc = xmlResult.GetElementsByTagName("content");
                         foreach (XmlNode node in xnldoc)
                         {
@@ -203,6 +211,8 @@ namespace ConfigureOneFlag
                 objRequest.Method = "POST";
                 objRequest.ContentType = "text/xml";
                 objRequest.Headers.Add("SOAPAction", key);
+                objRequest.Timeout = 120000;
+                objRequest.ReadWriteTimeout = 120000;
 
                 data = new StringBuilder();
                 data.Append(xmlPayload);
@@ -210,6 +220,8 @@ namespace ConfigureOneFlag
                 objRequest.ContentLength = byteDataStatus.Length;
                 using (Stream postStream = objRequest.GetRequestStream())
                 {
+                    postStream.ReadTimeout = 120000;
+                    postStream.WriteTimeout = 120000;
                     postStream.Write(byteDataStatus, 0, byteDataStatus.Length);
                 }
                 
