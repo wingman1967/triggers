@@ -23,6 +23,7 @@ namespace ConfigureOneFlag
         private decimal discount_amt;
         private decimal quantity;
         private int priority_level;
+        private int recsequence;
         public string CO_Num
         {
             get { return order_num; }
@@ -82,6 +83,11 @@ namespace ConfigureOneFlag
         {
             get { return priority_level; }
             set { priority_level = value; }
+        }
+        public int RecordSequence
+        {
+            get { return recsequence; }
+            set { recsequence = value; }
         }
     }
 }

@@ -79,6 +79,7 @@ namespace ConfigureOneFlag
             //Retrieve the SL order# (if not found, default to using the C1 order#):
             string SPOrderNumber = string.IsNullOrEmpty(DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber)) ? Triggers.pubOrderNumber : DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
             SPPUBOrderNumber = SPOrderNumber;
+            OutputXMLToFile(Triggers.wsReturn);
 
             try
             {
@@ -160,7 +161,7 @@ namespace ConfigureOneFlag
 
                         try
                         {
-                            xmlResult.LoadXml(result);
+                            xmlResult.LoadXml(result);          
                         }
                         catch (Exception ex1)
                         {
@@ -179,6 +180,9 @@ namespace ConfigureOneFlag
                     }
                     arrayindex += 1;
                 }
+
+                //Save XML output to SharePoint as well
+                File.Copy("XMLOutput_" + SPPUBOrderNumber + ".txt", SharepointCopyLocation + "XMLOutput_" + SPPUBOrderNumber + ".txt");
 
                 logEvent = "Retrieved/Saved Following Document Files: " + Environment.NewLine + Environment.NewLine + documentFilesSaved;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
@@ -252,6 +256,25 @@ namespace ConfigureOneFlag
             {
                 logEvent = "ERROR: " + exd.Message + " -> " + exd.Source;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
+            }
+        }
+        private static void OutputXMLToFile(string XML)
+        {
+            string formattedXML = "";
+            using (var stringWriter = new StringWriter())
+            using (var xmlTextWriter = XmlWriter.Create(stringWriter))
+            {
+                string xmlOut = XML;
+                formattedXML = System.Xml.Linq.XDocument.Parse(xmlOut).ToString();
+            }
+
+            if (File.Exists("XMLOutput_" + SPPUBOrderNumber + ".txt"))
+            {
+                File.Delete("XMLOutput_" + SPPUBOrderNumber + ".txt");
+            }
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"XMLOutput_" + SPPUBOrderNumber + ".txt", true))
+            {
+                file.WriteLine(formattedXML);
             }
         }
     }

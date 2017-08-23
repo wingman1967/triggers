@@ -528,8 +528,10 @@ namespace ConfigureOneFlag
                 bom.CO_Line = coitem.CO_Line;
                 foreach (XmlNode nodeib in xnlb)
                 {
-                    recordSequence = 1;
+                    //recordSequence = 1;
+                    recordSequence += 1;
                     bom.Sequence = recordSequence;
+                    bom.RecordSequence = recordSequence;
                     var parent = nodeib.SelectSingleNode("..");
                     string parentID = parent.ChildNodes[0].InnerText;
                     bom.Parent = parentID == "1" ? null : parentID;
