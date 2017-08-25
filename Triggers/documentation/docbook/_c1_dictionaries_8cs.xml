@@ -122,7 +122,7 @@ Management of dictionaries used for C1 data mapping/processing
 65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:ship_to_ref_num&quot;</emphasis>,&#32;15);
 66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:CustPO&quot;</emphasis>,&#32;22);
 67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:ship_address_line_4&quot;</emphasis>,&#32;40);
-68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:freight_terms&quot;</emphasis>,&#32;25);
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:freight_terms&quot;</emphasis>,&#32;30);
 69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:freight_acct&quot;</emphasis>,&#32;10);
 70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:quote_nbr&quot;</emphasis>,&#32;10);
 71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CO:web_user_name&quot;</emphasis>,&#32;30);
