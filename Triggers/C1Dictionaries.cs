@@ -81,6 +81,7 @@ namespace ConfigureOneFlag
             fieldLengths.Add("CO:dropship_country", 30);
             fieldLengths.Add("CO:dropship_phone", 25);
             fieldLengths.Add("CO:dropship_email", 60);
+            fieldLengths.Add("CO:destination_country", 40);
             //COITEM Fields
             fieldLengths.Add("COItem:order_num", 15);
             fieldLengths.Add("COItem:ser_num", 15);
@@ -150,6 +151,7 @@ namespace ConfigureOneFlag
                 case "CO:ship_to_email_address": switch (co.ShipToEmailAddress.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.ShipToEmailAddress.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.ShipToEmailAddress); break; default: fieldlength = co.ShipToEmailAddress.Length; break; } break;
                 case "CO:ship_to_fax_number": switch (co.ShipToFaxNumber.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.ShipToFaxNumber.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.ShipToFaxNumber); break; default: fieldlength = co.ShipToFaxNumber.Length; break; } break;
                 case "CO:ship_to_phone_number": switch (co.ShipToPhoneNumber.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.ShipToPhoneNumber.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.ShipToPhoneNumber); break; default: fieldlength = co.ShipToPhoneNumber.Length; break; } break;
+                case "CO:destination_country": switch (co.DestinationCountry.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.DestinationCountry.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.DestinationCountry); break; default: fieldlength = co.DestinationCountry.Length; break; } break;
             }
 
             return fieldlength;

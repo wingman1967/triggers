@@ -193,6 +193,14 @@ string orderNum)</para>
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string <link linkend="class_configure_one_flag_1_1_database_factory_a0b3faff4145a97817540e0ab92ae9101_1a0b3faff4145a97817540e0ab92ae9101">RetrieveISOCountry</link> (
+string ISOCode)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
     <simplesect>
 
@@ -250,6 +258,10 @@ string orderNum)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_a64f0488a247638877def2f773331d184_1a64f0488a247638877def2f773331d184">
                 <title>static string ConfigureOneFlag.DatabaseFactory.RetrieveSLCO (string orderNum)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_a0b3faff4145a97817540e0ab92ae9101_1a0b3faff4145a97817540e0ab92ae9101">
+                <title>static string ConfigureOneFlag.DatabaseFactory.RetrieveISOCountry (string ISOCode)</title> <emphasis></emphasis>
                 
             </section>
 </section>

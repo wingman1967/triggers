@@ -143,7 +143,7 @@ namespace ConfigureOneFlag
                     objRequest.Headers.Add("SOAPAction", key);
                     objRequest.Timeout = 120000;
                     objRequest.ReadWriteTimeout = 120000;
-
+                    
                     data = new StringBuilder();
                     data.Append(xmlPayload);
                     byte[] byteDataDoc = Encoding.UTF8.GetBytes(data.ToString());          // Sending our request to Apache AXIS in a byte array
@@ -172,9 +172,6 @@ namespace ConfigureOneFlag
                         {
                             return;
                         }
-
-                        logEvent = "DEBUG:  COPYING DRAWINGS TO SHAREPOINT";
-                        System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
                         XmlNodeList xnldoc = xmlResult.GetElementsByTagName("content");
                         foreach (XmlNode node in xnldoc)
@@ -261,8 +258,6 @@ namespace ConfigureOneFlag
                 
                 logEvent = "C1 Order Status And Reference Completed For C1 Order: " + orderNumber + " - Syteline Order: " + SPOrderNumber;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-
-                //return;
             }
             catch (Exception exd)
             {

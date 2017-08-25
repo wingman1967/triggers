@@ -272,7 +272,7 @@ namespace ConfigureOneFlag
             {
                 co.WebUserName = DatabaseFactory.UserName(node.InnerText);
             }
-
+            
             co.WebOrderDate = System.DateTime.Now;
             
             //Look for PURCHASE ORDER in INPUTS, load into CO and COITEM
@@ -335,6 +335,26 @@ namespace ConfigureOneFlag
                             break;
                         default:
                             co.RequestDate = System.DateTime.Now;       //default to today's date if no request date exists in the XML document
+                            break;
+                    }
+                }
+            }
+
+            //Look for Destination_country in INPUTS, load into CO
+            co.DestinationCountry = " ";
+            XmlNodeList xnlDC = xmldoc.GetElementsByTagName("Input");
+            foreach (XmlNode nodeDC in xnlDC)
+            {
+                if (nodeDC.ChildNodes[2].InnerText == "DESTINATION COUNTRY")
+                {
+                    switch (nodeDC.ChildNodes[0].Attributes["name"].Value.Length > 0)
+                    {
+                        case true:
+                            co.DestinationCountry = DatabaseFactory.RetrieveISOCountry(nodeDC.ChildNodes[0].Attributes["name"].Value.Substring(0, 2));
+                            //co.DestinationCountry = nodeDC.ChildNodes[0].Attributes["name"].Value;
+                            break;
+                        default:
+                            co.DestinationCountry = " ";       //default 
                             break;
                     }
                 }
@@ -425,7 +445,7 @@ namespace ConfigureOneFlag
                                 co.DropShipPhone = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? " " : nodeds.ChildNodes[0].Attributes["name"].Value;
                                 break;
                             case "DROP SHIP COUNTRY":
-                                co.DropShipCountry = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? " " : nodeds.ChildNodes[0].Attributes["name"].Value;
+                                co.DropShipCountry = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? " " : DatabaseFactory.RetrieveISOCountry(nodeds.ChildNodes[0].Attributes["name"].Value.Substring(0, 2));
                                 break;
                             case "DROP SHIP EMAIL":
                                 co.DropShipEmail = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? " " : nodeds.ChildNodes[0].Attributes["name"].Value;
@@ -572,7 +592,6 @@ namespace ConfigureOneFlag
                             }
                         }
                     }
-
                     //output BOM record
                     DatabaseFactory.WriteRecordBOM(ref bom);
                 }
