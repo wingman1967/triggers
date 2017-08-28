@@ -50,6 +50,7 @@ namespace ConfigureOneFlag
                     {
                         conn.Open();
                         SqlCommand sqlComm = new SqlCommand();
+                        sqlComm.CommandTimeout = 120000;
                         SqlPipe sqlP = SqlContext.Pipe;
                         sqlComm.Connection = conn;
                         sqlComm.CommandText = "SELECT order_num from INSERTED";

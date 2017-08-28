@@ -114,7 +114,10 @@ namespace ConfigureOneFlag
                     docs[arrayindex] = node.InnerText;
                     arrayindex += 1;
                 }
-                
+
+                logEvent = "DEBUG: Finished building document filename array";
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
                 //We now have an array of document filenames; process by retrieving and saving each file
                 int upperBound = arrayindex;
                 arrayindex = 0;
@@ -123,6 +126,9 @@ namespace ConfigureOneFlag
                 string SharepointLocation = DatabaseFactory.splocation;
                 NetworkShare.DisconnectFromShare(SharepointLocation, true);
                 NetworkShare.ConnectToShare(SharepointLocation, DatabaseFactory.spuname, DatabaseFactory.sppassword);
+
+                logEvent = "DEBUG: SP Share credential fixed";
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
                 //Create Sharepoint folder for order#
                 string SharepointCopyLocation = SharepointLocation + SPOrderNumber + "\\";
@@ -143,7 +149,11 @@ namespace ConfigureOneFlag
                     objRequest.Headers.Add("SOAPAction", key);
                     objRequest.Timeout = 120000;
                     objRequest.ReadWriteTimeout = 120000;
-                    
+                    objRequest.KeepAlive = true;
+
+                    logEvent = "DEBUG: Requested document from C1";
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
                     data = new StringBuilder();
                     data.Append(xmlPayload);
                     byte[] byteDataDoc = Encoding.UTF8.GetBytes(data.ToString());          // Sending our request to Apache AXIS in a byte array
@@ -157,31 +167,57 @@ namespace ConfigureOneFlag
                     }
                     xmlResult = new XmlDocument();
                     result = "";
-                    using (HttpWebResponse response = objRequest.GetResponse() as HttpWebResponse)
+
+                    logEvent = "DEBUG: Waiting for response from C1";
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+                    // using (HttpWebResponse response = objRequest.GetResponse() as HttpWebResponse)
+                    try
                     {
-                        
-                        StreamReader reader = new StreamReader(response.GetResponseStream());
-                        result = reader.ReadToEnd();
-                        reader.Close();
+                        using (HttpWebResponse response = (HttpWebResponse)objRequest.GetResponse())
+                        {
+                            StreamReader reader = new StreamReader(response.GetResponseStream());
+                            result = reader.ReadToEnd();
+                            reader.Close();
 
-                        try
-                        {
-                            xmlResult.LoadXml(result);          
-                        }
-                        catch (Exception ex1)
-                        {
-                            return;
-                        }
+                            try
+                            {
+                                xmlResult.LoadXml(result);
+                            }
+                            catch (Exception ex1)
+                            {
+                                return;
+                            }
 
-                        XmlNodeList xnldoc = xmlResult.GetElementsByTagName("content");
-                        foreach (XmlNode node in xnldoc)
-                        {
-                            byte[] pdfByteArray = Convert.FromBase64String(node.InnerText);
-                            string fileToCopy = @"C:\C1TEMP\" + SPOrderNumber + "_" + docs[arrayindex];
-                            File.WriteAllBytes(fileToCopy, pdfByteArray);
-                            File.Copy(fileToCopy, SharepointCopyLocation + SPOrderNumber + "_" + docs[arrayindex], true);
-                            documentFilesSaved = documentFilesSaved + docs[arrayindex] + Environment.NewLine;
+                            logEvent = "DEBUG: Response received from C1";
+                            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+                            XmlNodeList xnldoc = xmlResult.GetElementsByTagName("content");
+                            foreach (XmlNode node in xnldoc)
+                            {
+                                logEvent = "DEBUG: Copying file to Sharepoint: " + SPOrderNumber + "_" + docs[arrayindex];
+                                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+                                try
+                                {
+                                    byte[] pdfByteArray = Convert.FromBase64String(node.InnerText);
+                                    string fileToCopy = @"C:\C1TEMP\" + SPOrderNumber + "_" + docs[arrayindex];
+                                    File.WriteAllBytes(fileToCopy, pdfByteArray);
+                                    File.Copy(fileToCopy, SharepointCopyLocation + SPOrderNumber + "_" + docs[arrayindex], true);
+                                    documentFilesSaved = documentFilesSaved + docs[arrayindex] + Environment.NewLine;
+                                }
+                                catch (Exception ts1)
+                                {
+                                    logEvent = "An error occurred copying file to Sharepoint: " + SPOrderNumber + "_" + docs[arrayindex] + "  >  " + ts1.InnerException + " - " + ts1.Message;
+                                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                                }
+                            }
                         }
+                    }
+                    catch (Exception ts2)
+                    {
+                        logEvent = "An error occurred copying file to Sharepoint: " + SPOrderNumber + "_" + docs[arrayindex] + "  >  " + ts2.InnerException + " - " + ts2.Message;
+                        System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                     }
                     arrayindex += 1;
                 }

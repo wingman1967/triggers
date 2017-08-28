@@ -351,7 +351,6 @@ namespace ConfigureOneFlag
                     {
                         case true:
                             co.DestinationCountry = DatabaseFactory.RetrieveISOCountry(nodeDC.ChildNodes[0].Attributes["name"].Value.Substring(0, 2));
-                            //co.DestinationCountry = nodeDC.ChildNodes[0].Attributes["name"].Value;
                             break;
                         default:
                             co.DestinationCountry = " ";       //default 
