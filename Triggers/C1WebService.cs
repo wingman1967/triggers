@@ -23,6 +23,8 @@ namespace ConfigureOneFlag
             objRequest.Method = "POST";
             objRequest.ContentType = "text/xml";
             objRequest.Headers.Add("SOAPAction", key);
+            objRequest.Timeout = 120000;        //increased
+            objRequest.ReadWriteTimeout = 120000;   //increased
             string xmlPayload = payload;
             StringBuilder data = new StringBuilder();
             data.Append(xmlPayload);
@@ -202,22 +204,30 @@ namespace ConfigureOneFlag
                                 {
                                     byte[] pdfByteArray = Convert.FromBase64String(node.InnerText);
                                     string fileToCopy = @"C:\C1TEMP\" + SPOrderNumber + "_" + docs[arrayindex];
-                                    File.WriteAllBytes(fileToCopy, pdfByteArray);
-                                    File.Copy(fileToCopy, SharepointCopyLocation + SPOrderNumber + "_" + docs[arrayindex], true);
+
+                                    //deboog
+                                    File.WriteAllBytes(SharepointCopyLocation + SPOrderNumber + "_" + docs[arrayindex], pdfByteArray);
+                                    //end deboog
+
+                                    //File.WriteAllBytes(fileToCopy, pdfByteArray);
+                                    //File.Copy(fileToCopy, SharepointCopyLocation + SPOrderNumber + "_" + docs[arrayindex], true);
                                     documentFilesSaved = documentFilesSaved + docs[arrayindex] + Environment.NewLine;
+                                    break;      //deboog
                                 }
                                 catch (Exception ts1)
                                 {
-                                    logEvent = "An error occurred copying file to Sharepoint: " + SPOrderNumber + "_" + docs[arrayindex] + "  >  " + ts1.InnerException + " - " + ts1.Message;
+                                    logEvent = "An error occurred copying file to Sharepoint: " + SPOrderNumber + "_" + docs[arrayindex] + "  >  " + "TS1 Exception";
                                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                                    SendMail.MailMessage(logEvent, "TIMEOUT");
                                 }
                             }
                         }
                     }
                     catch (Exception ts2)
                     {
-                        logEvent = "An error occurred copying file to Sharepoint: " + SPOrderNumber + "_" + docs[arrayindex] + "  >  " + ts2.InnerException + " - " + ts2.Message;
+                        logEvent = "An error occurred copying file to Sharepoint: " + SPOrderNumber + "_" + docs[arrayindex] + "  >  " + "TS2 Exception";
                         System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                        SendMail.MailMessage(logEvent, "TIMEOUT");
                     }
                     arrayindex += 1;
                 }
