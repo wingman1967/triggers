@@ -16,6 +16,15 @@ namespace ConfigureOneFlag
         public static string pubURL;
         public static void CallConfigureOne(string key, string payload, string url)
         {
+            //Timing vars
+            DateTime startTime = DateTime.Now;
+            DateTime endTime = DateTime.Now;
+            TimeSpan ts = endTime.Subtract(startTime);
+            decimal elapsedTimeMS = ts.Milliseconds;
+            decimal elapsedTimeSeconds = ts.Seconds;
+            DateTime totalTimeStart = DateTime.Now;
+            DateTime totalTimeStop = DateTime.Now;
+
             string logEvent = "CALLING C1 WEBSERVICE";
             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             string sURL = url;
@@ -25,6 +34,7 @@ namespace ConfigureOneFlag
             objRequest.Headers.Add("SOAPAction", key);
             objRequest.Timeout = 120000;        //increased
             objRequest.ReadWriteTimeout = 120000;   //increased
+            //objRequest.KeepAlive = true;
             string xmlPayload = payload;
             StringBuilder data = new StringBuilder();
             data.Append(xmlPayload);
@@ -40,12 +50,15 @@ namespace ConfigureOneFlag
 
             try
             {
+                startTime = DateTime.Now;
+
                 //return response from AXIS (if any)
                 using (HttpWebResponse response = objRequest.GetResponse() as HttpWebResponse)
                 {
                     StreamReader reader = new StreamReader(response.GetResponseStream());
                     result = reader.ReadToEnd();
                     reader.Close();
+                    response.Close();
                 }
                 try
                 {
@@ -57,8 +70,27 @@ namespace ConfigureOneFlag
                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
                     return;
                 }
+
+                // *** LOG TIME
+                endTime = DateTime.Now;
+                ts = endTime.Subtract(startTime);
+                elapsedTimeMS = ts.Milliseconds;
+                elapsedTimeSeconds = ts.Seconds;
+                logEvent = "DEBUG: XML Order data returned from ConfigureOne in: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+                startTime = DateTime.Now;
+
                 if (Triggers.caller == "ORDER") {StagingUtilities.MapXMLToSQL(xmlResult);}
-                                
+
+                // *** LOG TIME
+                endTime = DateTime.Now;
+                ts = endTime.Subtract(startTime);
+                elapsedTimeMS = ts.Milliseconds;
+                elapsedTimeSeconds = ts.Seconds;
+                logEvent = "DEBUG: XML data mapped to staging tables in: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
                 Triggers.caller = "";
                 using (var stringWriter = new StringWriter())
                 using (var xmlTextWriter = XmlWriter.Create(stringWriter))
@@ -76,8 +108,18 @@ namespace ConfigureOneFlag
                 return;
             }
 
+            startTime = DateTime.Now;
+                        
             DatabaseFactory.CfgImport(Triggers.pubOrderNumber);                 //map staging-table data into Syteline
-            
+
+            // *** LOG TIME
+            endTime = DateTime.Now;
+            ts = endTime.Subtract(startTime);
+            elapsedTimeMS = ts.Milliseconds;
+            elapsedTimeSeconds = ts.Seconds;
+            logEvent = "DEBUG: Staging tables mapped to Syteline in: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
             //Retrieve the SL order# (if not found, default to using the C1 order#):
             string SPOrderNumber = string.IsNullOrEmpty(DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber)) ? Triggers.pubOrderNumber : DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
             SPPUBOrderNumber = SPOrderNumber;
@@ -151,10 +193,12 @@ namespace ConfigureOneFlag
                     objRequest.Headers.Add("SOAPAction", key);
                     objRequest.Timeout = 120000;
                     objRequest.ReadWriteTimeout = 120000;
-                    objRequest.KeepAlive = true;
+                    //objRequest.KeepAlive = true;
 
                     logEvent = "DEBUG: Requested document from C1";
                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+                    startTime = DateTime.Now;
 
                     data = new StringBuilder();
                     data.Append(xmlPayload);
@@ -181,6 +225,7 @@ namespace ConfigureOneFlag
                             StreamReader reader = new StreamReader(response.GetResponseStream());
                             result = reader.ReadToEnd();
                             reader.Close();
+                            response.Close();
 
                             try
                             {
@@ -194,30 +239,56 @@ namespace ConfigureOneFlag
                             logEvent = "DEBUG: Response received from C1";
                             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
+                            // *** LOG TIME
+                            endTime = DateTime.Now;
+                            ts = endTime.Subtract(startTime);
+                            elapsedTimeMS = ts.Milliseconds;
+                            elapsedTimeSeconds = ts.Seconds;
+                            logEvent = "DEBUG: Document response was received from ConfigureOne in: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
+                            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
                             XmlNodeList xnldoc = xmlResult.GetElementsByTagName("content");
                             foreach (XmlNode node in xnldoc)
                             {
                                 logEvent = "DEBUG: Copying file to Sharepoint: " + SPOrderNumber + "_" + docs[arrayindex];
                                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
+                                startTime = DateTime.Now;
+                                
                                 try
                                 {
                                     byte[] pdfByteArray = Convert.FromBase64String(node.InnerText);
                                     string fileToCopy = @"C:\C1TEMP\" + SPOrderNumber + "_" + docs[arrayindex];
 
-                                    //deboog
+                                    //deboog (comment out following line to NOT copy files to Sharepoint)
                                     File.WriteAllBytes(SharepointCopyLocation + SPOrderNumber + "_" + docs[arrayindex], pdfByteArray);
                                     //end deboog
 
                                     //File.WriteAllBytes(fileToCopy, pdfByteArray);
                                     //File.Copy(fileToCopy, SharepointCopyLocation + SPOrderNumber + "_" + docs[arrayindex], true);
                                     documentFilesSaved = documentFilesSaved + docs[arrayindex] + Environment.NewLine;
-                                    break;      //deboog
+
+                                    // *** LOG TIME
+                                    endTime = DateTime.Now;
+                                    ts = endTime.Subtract(startTime);
+                                    elapsedTimeMS = ts.Milliseconds;
+                                    elapsedTimeSeconds = ts.Seconds;
+                                    logEvent = "DEBUG: Document copied to Sharepoint in: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
+                                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                                 }
                                 catch (Exception ts1)
                                 {
                                     logEvent = "An error occurred copying file to Sharepoint: " + SPOrderNumber + "_" + docs[arrayindex] + "  >  " + "TS1 Exception";
                                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+                                    // *** LOG TIME
+                                    endTime = DateTime.Now;
+                                    ts = endTime.Subtract(startTime);
+                                    elapsedTimeMS = ts.Milliseconds;
+                                    elapsedTimeSeconds = ts.Seconds;
+                                    logEvent = "DEBUG: Time that elapsed before timeout occurred for current document: " + Convert.ToString(elapsedTimeMS) + "ms, " + Convert.ToString(elapsedTimeSeconds) + " s";
+                                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
                                     SendMail.MailMessage(logEvent, "TIMEOUT");
                                 }
                             }
@@ -267,6 +338,8 @@ namespace ConfigureOneFlag
                     postStream.WriteTimeout = 120000;
                     postStream.Write(byteDataStatus, 0, byteDataStatus.Length);
                 }
+
+                startTime = DateTime.Now;
                 
                 //return response from AXIS (if any)
                 using (HttpWebResponse response = objRequest.GetResponse() as HttpWebResponse)
@@ -274,6 +347,7 @@ namespace ConfigureOneFlag
                     StreamReader reader = new StreamReader(response.GetResponseStream());
                     result = reader.ReadToEnd();
                     reader.Close();
+                    response.Close();
                 }
                 
                 try
@@ -310,6 +384,23 @@ namespace ConfigureOneFlag
                 logEvent = "ERROR: " + exd.Message + " -> " + exd.Source;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
             }
+
+            // *** LOG TIME
+            endTime = DateTime.Now;
+            ts = endTime.Subtract(startTime);
+            elapsedTimeMS = ts.Milliseconds;
+            elapsedTimeSeconds = ts.Seconds;
+            logEvent = "DEBUG: Order-status and final wrapup to ConfigureOne in: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+            // *** LOG TOTAL TIME
+            totalTimeStop = DateTime.Now;
+            ts = totalTimeStop.Subtract(totalTimeStart);
+            elapsedTimeMS = ts.Milliseconds;
+            elapsedTimeSeconds = ts.Seconds;
+            logEvent = "DEBUG: Total execution: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
         }
         private static void OutputXMLToFile(string XML)
         {

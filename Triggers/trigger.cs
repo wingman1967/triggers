@@ -50,12 +50,13 @@ namespace ConfigureOneFlag
                     {
                         conn.Open();
                         SqlCommand sqlComm = new SqlCommand();
-                        sqlComm.CommandTimeout = 120000;
+                        sqlComm.CommandTimeout = 1800;
                         SqlPipe sqlP = SqlContext.Pipe;
                         sqlComm.Connection = conn;
                         sqlComm.CommandText = "SELECT order_num from INSERTED";
                         orderNumber.Value = sqlComm.ExecuteScalar().ToString();
                         orderValue = orderNumber.Value.ToString();
+                        conn.Close();
                         logEvent = "ORDER NUMBER: " + orderValue;
                         System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                     }
