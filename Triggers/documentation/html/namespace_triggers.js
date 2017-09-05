@@ -1,4 +1,4 @@
 var namespace_triggers =
 [
-    [ "crypto", "class_triggers_1_1crypto.html", "class_triggers_1_1crypto" ]
+    [ "RetrieveDrawings", "class_triggers_1_1_retrieve_drawings.html", null ]
 ];

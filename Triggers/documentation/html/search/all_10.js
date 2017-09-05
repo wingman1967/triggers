@@ -42,10 +42,12 @@ var searchData=
   ['smartpart',['Smartpart',['../class_configure_one_flag_1_1z_cfg_b_o_m_a3c3f500dae8a667666ac3ab9e5152dd5.html#a3c3f500dae8a667666ac3ab9e5152dd5',1,'ConfigureOneFlag.zCfgBOM.Smartpart()'],['../class_configure_one_flag_1_1z_cfg_c_oitem_a483e5f3a7d282bbb3ebde0af3287a810.html#a483e5f3a7d282bbb3ebde0af3287a810',1,'ConfigureOneFlag.zCfgCOitem.Smartpart()'],['../class_configure_one_flag_1_1z_cfg_item_a8a4daeea26ed0164b51680f9facfb316.html#a8a4daeea26ed0164b51680f9facfb316',1,'ConfigureOneFlag.zCfgItem.Smartpart()']]],
   ['smartpart_5fnum',['smartpart_num',['../class_configure_one_flag_1_1z_cfg_b_o_m_ac1e702144beec5f549d96c35d906e23b.html#ac1e702144beec5f549d96c35d906e23b',1,'ConfigureOneFlag.zCfgBOM.smartpart_num()'],['../class_configure_one_flag_1_1z_cfg_c_oitem_a36d1f5862850fceafecfdbe6ab5b2d69.html#a36d1f5862850fceafecfdbe6ab5b2d69',1,'ConfigureOneFlag.zCfgCOitem.smartpart_num()'],['../class_configure_one_flag_1_1z_cfg_item_af5e6b0bff7c2c0643de4e36429e1e19e.html#af5e6b0bff7c2c0643de4e36429e1e19e',1,'ConfigureOneFlag.zCfgItem.smartpart_num()']]],
   ['splocation',['splocation',['../class_configure_one_flag_1_1_database_factory_a055478d8b87ec2968a6319dcd78273f6.html#a055478d8b87ec2968a6319dcd78273f6',1,'ConfigureOneFlag::DatabaseFactory']]],
+  ['spordernumber',['SPOrderNumber',['../class_configure_one_flag_1_1_c1_web_service_ae10595c3cbff0ef87cb607d9c6f2b250.html#ae10595c3cbff0ef87cb607d9c6f2b250',1,'ConfigureOneFlag::C1WebService']]],
   ['sppassword',['sppassword',['../class_configure_one_flag_1_1_database_factory_a10149307929348e6d16785e15fc7fbdc.html#a10149307929348e6d16785e15fc7fbdc',1,'ConfigureOneFlag::DatabaseFactory']]],
   ['sppubordernumber',['SPPUBOrderNumber',['../class_configure_one_flag_1_1_c1_web_service_a3b62f1740b69427db998d338c386e3fd.html#a3b62f1740b69427db998d338c386e3fd',1,'ConfigureOneFlag::C1WebService']]],
   ['spuname',['spuname',['../class_configure_one_flag_1_1_database_factory_a11d432b379e9e80f1b11ac4884a25ead.html#a11d432b379e9e80f1b11ac4884a25ead',1,'ConfigureOneFlag::DatabaseFactory']]],
   ['sqlcommand',['SQLCommand',['../class_configure_one_flag_1_1_database_factory_aa5aa82b5ed9dd8d3610b92ed61a9f2d4.html#aa5aa82b5ed9dd8d3610b92ed61a9f2d4',1,'ConfigureOneFlag::DatabaseFactory']]],
   ['stagingutilities',['StagingUtilities',['../class_configure_one_flag_1_1_staging_utilities.html',1,'ConfigureOneFlag']]],
-  ['stagingutilities_2ecs',['StagingUtilities.cs',['../_staging_utilities_8cs.html',1,'']]]
+  ['stagingutilities_2ecs',['StagingUtilities.cs',['../_staging_utilities_8cs.html',1,'']]],
+  ['startcopy',['StartCopy',['../class_configure_one_flag_1_1_c1_web_service_a5c55f707a8abfce00f492231cb598c25.html#a5c55f707a8abfce00f492231cb598c25',1,'ConfigureOneFlag::C1WebService']]]
 ];

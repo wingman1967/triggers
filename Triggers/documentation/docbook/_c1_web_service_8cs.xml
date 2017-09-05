@@ -73,6 +73,13 @@ Processing for calls to ConfigureOne web service and return for further handling
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system_1_1_threading">System::Threading</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </simplesect>
     <simplesect>
         <title>Detailed Description</title>
@@ -84,423 +91,442 @@ Processing for calls to ConfigureOne web service and return for further handling
 3 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Net;
 4 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Xml;
 5 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.IO;
-6 
-7 <emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>
-8 {
-<link linkend="class_configure_one_flag_1_1_c1_web_service">12 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_configure_one_flag_1_1_c1_web_service">C1WebService</link>
-13 &#32;&#32;&#32;&#32;{
-<link linkend="class_configure_one_flag_1_1_c1_web_service_a3b62f1740b69427db998d338c386e3fd_1a3b62f1740b69427db998d338c386e3fd">14 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_a3b62f1740b69427db998d338c386e3fd_1a3b62f1740b69427db998d338c386e3fd">SPPUBOrderNumber</link>;
-<link linkend="class_configure_one_flag_1_1_c1_web_service_a41c39779cc120b26b4661bca0cefdd44_1a41c39779cc120b26b4661bca0cefdd44">15 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_a41c39779cc120b26b4661bca0cefdd44_1a41c39779cc120b26b4661bca0cefdd44">pubPayload</link>;
-<link linkend="class_configure_one_flag_1_1_c1_web_service_ab5cc6e3274e1b19a6b2be743932ce7f3_1ab5cc6e3274e1b19a6b2be743932ce7f3">16 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_ab5cc6e3274e1b19a6b2be743932ce7f3_1ab5cc6e3274e1b19a6b2be743932ce7f3">pubURL</link>;
-<link linkend="class_configure_one_flag_1_1_c1_web_service_ae826903f85694f4cf481680e115076f3_1ae826903f85694f4cf481680e115076f3">17 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_ae826903f85694f4cf481680e115076f3_1ae826903f85694f4cf481680e115076f3">CallConfigureOne</link>(<emphasis class="keywordtype">string</emphasis>&#32;key,&#32;<emphasis class="keywordtype">string</emphasis>&#32;payload,&#32;<emphasis class="keywordtype">string</emphasis>&#32;url)
-18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Timing&#32;vars</emphasis>
-20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DateTime&#32;startTime&#32;=&#32;DateTime.Now;
-21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DateTime&#32;endTime&#32;=&#32;DateTime.Now;
-22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;TimeSpan&#32;ts&#32;=&#32;endTime.Subtract(startTime);
-23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;decimal&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;
-24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;decimal&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;
-25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DateTime&#32;totalTimeStart&#32;=&#32;DateTime.Now;
-26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DateTime&#32;totalTimeStop&#32;=&#32;DateTime.Now;
-27 
-28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;CALLING&#32;C1&#32;WEBSERVICE&quot;</emphasis>;
-29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;sURL&#32;=&#32;url;
-31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HttpWebRequest&#32;objRequest&#32;=&#32;(HttpWebRequest)WebRequest.Create(sURL.ToString());
-32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Method&#32;=&#32;<emphasis class="stringliteral">&quot;POST&quot;</emphasis>;
-33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ContentType&#32;=&#32;<emphasis class="stringliteral">&quot;text/xml&quot;</emphasis>;
-34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Headers.Add(<emphasis class="stringliteral">&quot;SOAPAction&quot;</emphasis>,&#32;key);
-35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Timeout&#32;=&#32;120000;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//increased</emphasis>
-36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ReadWriteTimeout&#32;=&#32;120000;&#32;&#32;&#32;<emphasis class="comment">//increased</emphasis>
-37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//objRequest.KeepAlive&#32;=&#32;true;</emphasis>
-38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;xmlPayload&#32;=&#32;payload;
-39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;StringBuilder&#32;data&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringBuilder();
-40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.Append(xmlPayload);
-41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte[]&#32;byteData&#32;=&#32;Encoding.UTF8.GetBytes(data.ToString());&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;Sending&#32;our&#32;request&#32;to&#32;Apache&#32;AXIS&#32;in&#32;a&#32;byte&#32;array</emphasis>
-42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ContentLength&#32;=&#32;byteData.Length;
-43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(Stream&#32;postStream&#32;=&#32;objRequest.GetRequestStream())
-45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;postStream.Write(byteData,&#32;0,&#32;byteData.Length);
-47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlDocument&#32;xmlResult&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;XmlDocument();
-49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;result&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-50 
-51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>
-52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;startTime&#32;=&#32;DateTime.Now;
+6 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Threading;
+7 
+8 <emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>
+9 {
+<link linkend="class_configure_one_flag_1_1_c1_web_service">13 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_configure_one_flag_1_1_c1_web_service">C1WebService</link>
+14 &#32;&#32;&#32;&#32;{
+<link linkend="class_configure_one_flag_1_1_c1_web_service_a3b62f1740b69427db998d338c386e3fd_1a3b62f1740b69427db998d338c386e3fd">15 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_a3b62f1740b69427db998d338c386e3fd_1a3b62f1740b69427db998d338c386e3fd">SPPUBOrderNumber</link>;
+<link linkend="class_configure_one_flag_1_1_c1_web_service_a41c39779cc120b26b4661bca0cefdd44_1a41c39779cc120b26b4661bca0cefdd44">16 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_a41c39779cc120b26b4661bca0cefdd44_1a41c39779cc120b26b4661bca0cefdd44">pubPayload</link>;
+<link linkend="class_configure_one_flag_1_1_c1_web_service_ab5cc6e3274e1b19a6b2be743932ce7f3_1ab5cc6e3274e1b19a6b2be743932ce7f3">17 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_ab5cc6e3274e1b19a6b2be743932ce7f3_1ab5cc6e3274e1b19a6b2be743932ce7f3">pubURL</link>;
+<link linkend="class_configure_one_flag_1_1_c1_web_service_ae10595c3cbff0ef87cb607d9c6f2b250_1ae10595c3cbff0ef87cb607d9c6f2b250">18 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_ae10595c3cbff0ef87cb607d9c6f2b250_1ae10595c3cbff0ef87cb607d9c6f2b250">SPOrderNumber</link>;
+<link linkend="class_configure_one_flag_1_1_c1_web_service_acfdf569ae88d80b34dbc883f6b9ba368_1acfdf569ae88d80b34dbc883f6b9ba368">19 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;XmlDocument&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_acfdf569ae88d80b34dbc883f6b9ba368_1acfdf569ae88d80b34dbc883f6b9ba368">xmlResultParm</link>;
+<link linkend="class_configure_one_flag_1_1_c1_web_service_a2746633f1b66bed9318a597ed06404fc_1a2746633f1b66bed9318a597ed06404fc">20 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_a2746633f1b66bed9318a597ed06404fc_1a2746633f1b66bed9318a597ed06404fc">urlParm</link>;
+<link linkend="class_configure_one_flag_1_1_c1_web_service_ae826903f85694f4cf481680e115076f3_1ae826903f85694f4cf481680e115076f3">21 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_ae826903f85694f4cf481680e115076f3_1ae826903f85694f4cf481680e115076f3">CallConfigureOne</link>(<emphasis class="keywordtype">string</emphasis>&#32;key,&#32;<emphasis class="keywordtype">string</emphasis>&#32;payload,&#32;<emphasis class="keywordtype">string</emphasis>&#32;url)
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Timing&#32;vars</emphasis>
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DateTime&#32;startTime&#32;=&#32;DateTime.Now;
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DateTime&#32;endTime&#32;=&#32;DateTime.Now;
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;TimeSpan&#32;ts&#32;=&#32;endTime.Subtract(startTime);
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;decimal&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;decimal&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DateTime&#32;totalTimeStart&#32;=&#32;DateTime.Now;
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DateTime&#32;totalTimeStop&#32;=&#32;DateTime.Now;
+31 
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;CALLING&#32;C1&#32;WEBSERVICE&quot;</emphasis>;
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;sURL&#32;=&#32;url;
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;HttpWebRequest&#32;objRequest&#32;=&#32;(HttpWebRequest)WebRequest.Create(sURL.ToString());
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Method&#32;=&#32;<emphasis class="stringliteral">&quot;POST&quot;</emphasis>;
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ContentType&#32;=&#32;<emphasis class="stringliteral">&quot;text/xml&quot;</emphasis>;
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Headers.Add(<emphasis class="stringliteral">&quot;SOAPAction&quot;</emphasis>,&#32;key);
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Timeout&#32;=&#32;120000;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//increased</emphasis>
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ReadWriteTimeout&#32;=&#32;120000;&#32;&#32;&#32;<emphasis class="comment">//increased</emphasis>
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//objRequest.KeepAlive&#32;=&#32;true;</emphasis>
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;xmlPayload&#32;=&#32;payload;
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;StringBuilder&#32;data&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringBuilder();
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.Append(xmlPayload);
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte[]&#32;byteData&#32;=&#32;Encoding.UTF8.GetBytes(data.ToString());&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;Sending&#32;our&#32;request&#32;to&#32;Apache&#32;AXIS&#32;in&#32;a&#32;byte&#32;array</emphasis>
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ContentLength&#32;=&#32;byteData.Length;
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(Stream&#32;postStream&#32;=&#32;objRequest.GetRequestStream())
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;postStream.Write(byteData,&#32;0,&#32;byteData.Length);
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlDocument&#32;xmlResult&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;XmlDocument();
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;result&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
 54 
-55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//return&#32;response&#32;from&#32;AXIS&#32;(if&#32;any)</emphasis>
-56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(HttpWebResponse&#32;response&#32;=&#32;objRequest.GetResponse()&#32;as&#32;HttpWebResponse)
-57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;StreamReader&#32;reader&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StreamReader(response.GetResponseStream());
-59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result&#32;=&#32;reader.ReadToEnd();
-60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;reader.Close();
-61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;response.Close();
-62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>
-64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlResult.LoadXml(result);
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;startTime&#32;=&#32;DateTime.Now;
+58 
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//return&#32;response&#32;from&#32;AXIS&#32;(if&#32;any)</emphasis>
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(HttpWebResponse&#32;response&#32;=&#32;objRequest.GetResponse()&#32;as&#32;HttpWebResponse)
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;StreamReader&#32;reader&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StreamReader(response.GetResponseStream());
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result&#32;=&#32;reader.ReadToEnd();
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;reader.Close();
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;response.Close();
 66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;ex2)
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>
 68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;ERROR&#32;LOADING&#32;XML&#32;FROM&#32;WEB&#32;SERVICE:&#32;&quot;</emphasis>&#32;+&#32;ex2.Message;
-70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Error,&#32;234);
-71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>;
-72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-73 
-74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;***&#32;LOG&#32;TIME</emphasis>
-75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;endTime&#32;=&#32;DateTime.Now;
-76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;endTime.Subtract(startTime);
-77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;
-78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;
-79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;XML&#32;Order&#32;data&#32;returned&#32;from&#32;ConfigureOne&#32;in:&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;<emphasis class="stringliteral">&quot;ms&#32;/&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;s&quot;</emphasis>;
-80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-81 
-82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;startTime&#32;=&#32;DateTime.Now;
-83 
-84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_ad424a8622609cf34218e92efc07b6870_1ad424a8622609cf34218e92efc07b6870">caller</link>&#32;==&#32;<emphasis class="stringliteral">&quot;ORDER&quot;</emphasis>)&#32;{<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_ad721c5a816e1d3b5a16fec23498ecdf3_1ad721c5a816e1d3b5a16fec23498ecdf3">MapXMLToSQL</link>(xmlResult);}
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlResult.LoadXml(result);
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;ex2)
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+73 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;ERROR&#32;LOADING&#32;XML&#32;FROM&#32;WEB&#32;SERVICE:&#32;&quot;</emphasis>&#32;+&#32;ex2.Message;
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Error,&#32;234);
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>;
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+78 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;***&#32;LOG&#32;TIME</emphasis>
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;endTime&#32;=&#32;DateTime.Now;
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;endTime.Subtract(startTime);
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;
+82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;
+83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;XML&#32;Order&#32;data&#32;returned&#32;from&#32;ConfigureOne&#32;in:&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;<emphasis class="stringliteral">&quot;ms&#32;/&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;s&quot;</emphasis>;
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
 85 
-86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;***&#32;LOG&#32;TIME</emphasis>
-87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;endTime&#32;=&#32;DateTime.Now;
-88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;endTime.Subtract(startTime);
-89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;
-90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;
-91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;XML&#32;data&#32;mapped&#32;to&#32;staging&#32;tables&#32;in:&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;<emphasis class="stringliteral">&quot;ms&#32;/&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;s&quot;</emphasis>;
-92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-93 
-94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_ad424a8622609cf34218e92efc07b6870_1ad424a8622609cf34218e92efc07b6870">caller</link>&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;stringWriter&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringWriter())
-96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;xmlTextWriter&#32;=&#32;XmlWriter.Create(stringWriter))
-97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlResult.WriteTo(xmlTextWriter);
-99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlTextWriter.Flush();
-100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;xmlOut&#32;=&#32;stringWriter.GetStringBuilder().ToString();
-101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_adb47d391c1eb7baeb5780f3dd9322a6d_1adb47d391c1eb7baeb5780f3dd9322a6d">wsReturn</link>&#32;=&#32;<link linkend="namespace_system">System</link>.Xml.Linq.XDocument.Parse(xmlOut).ToString();
-102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(WebException&#32;wex1)
-105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;ERROR&#32;RETURNED&#32;FROM&#32;C1&#32;WEBSERVICE:&#32;&quot;</emphasis>&#32;+&#32;wex1.Message&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;:&#32;&quot;</emphasis>&#32;+&#32;wex1.Response.ToString();
-107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Error,&#32;234);
-108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>;
-109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-110 
-111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;startTime&#32;=&#32;DateTime.Now;
-112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_ae4aeef8c1f02cf82b17a4e1c2ca0ffed_1ae4aeef8c1f02cf82b17a4e1c2ca0ffed">CfgImport</link>(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_1afd0957296af9cc27c0a677ba2c027bf1">pubOrderNumber</link>);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//map&#32;staging-table&#32;data&#32;into&#32;Syteline</emphasis>
-114 
-115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;***&#32;LOG&#32;TIME</emphasis>
-116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;endTime&#32;=&#32;DateTime.Now;
-117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;endTime.Subtract(startTime);
-118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;
-119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;
-120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;Staging&#32;tables&#32;mapped&#32;to&#32;Syteline&#32;in:&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;<emphasis class="stringliteral">&quot;ms&#32;/&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;s&quot;</emphasis>;
-121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-122 
-123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Retrieve&#32;the&#32;SL&#32;order#&#32;(if&#32;not&#32;found,&#32;default&#32;to&#32;using&#32;the&#32;C1&#32;order#):</emphasis>
-124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;SPOrderNumber&#32;=&#32;<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a64f0488a247638877def2f773331d184_1a64f0488a247638877def2f773331d184">RetrieveSLCO</link>(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_1afd0957296af9cc27c0a677ba2c027bf1">pubOrderNumber</link>))&#32;?&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_1afd0957296af9cc27c0a677ba2c027bf1">pubOrderNumber</link>&#32;:&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a64f0488a247638877def2f773331d184_1a64f0488a247638877def2f773331d184">RetrieveSLCO</link>(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_1afd0957296af9cc27c0a677ba2c027bf1">pubOrderNumber</link>);
-125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SPPUBOrderNumber&#32;=&#32;SPOrderNumber;
-126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_ab9783633849f1f5971196e6419c9343d_1ab9783633849f1f5971196e6419c9343d">OutputXMLToFile</link>(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_adb47d391c1eb7baeb5780f3dd9322a6d_1adb47d391c1eb7baeb5780f3dd9322a6d">wsReturn</link>);
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;startTime&#32;=&#32;DateTime.Now;
+87 
+88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//start&#32;downloading&#32;and&#32;copying&#32;drawing&#32;files</emphasis>
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlResultParm&#32;=&#32;xmlResult;
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlParm&#32;=&#32;url;
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Action&#32;DrawingsAsync&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;Action(<link linkend="class_configure_one_flag_1_1_c1_web_service_a5c55f707a8abfce00f492231cb598c25_1a5c55f707a8abfce00f492231cb598c25">StartCopy</link>);
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DrawingsAsync.BeginInvoke(<emphasis class="keyword">new</emphasis>&#32;AsyncCallback(MTresult&#32;=&gt;
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(MTresult.AsyncState&#32;as&#32;Action).EndInvoke(MTresult);
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}),&#32;DrawingsAsync);
+96 
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_ad424a8622609cf34218e92efc07b6870_1ad424a8622609cf34218e92efc07b6870">caller</link>&#32;==&#32;<emphasis class="stringliteral">&quot;ORDER&quot;</emphasis>)&#32;{<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_ad721c5a816e1d3b5a16fec23498ecdf3_1ad721c5a816e1d3b5a16fec23498ecdf3">MapXMLToSQL</link>(xmlResult);}
+98 
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;***&#32;LOG&#32;TIME</emphasis>
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;endTime&#32;=&#32;DateTime.Now;
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;endTime.Subtract(startTime);
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;XML&#32;data&#32;mapped&#32;to&#32;staging&#32;tables&#32;in:&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;<emphasis class="stringliteral">&quot;ms&#32;/&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;s&quot;</emphasis>;
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
+106 
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_ad424a8622609cf34218e92efc07b6870_1ad424a8622609cf34218e92efc07b6870">caller</link>&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;stringWriter&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringWriter())
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;xmlTextWriter&#32;=&#32;XmlWriter.Create(stringWriter))
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlResult.WriteTo(xmlTextWriter);
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlTextWriter.Flush();
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;xmlOut&#32;=&#32;stringWriter.GetStringBuilder().ToString();
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_adb47d391c1eb7baeb5780f3dd9322a6d_1adb47d391c1eb7baeb5780f3dd9322a6d">wsReturn</link>&#32;=&#32;<link linkend="namespace_system">System</link>.Xml.Linq.XDocument.Parse(xmlOut).ToString();
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(WebException&#32;wex1)
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;ERROR&#32;RETURNED&#32;FROM&#32;C1&#32;WEBSERVICE:&#32;&quot;</emphasis>&#32;+&#32;wex1.Message&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;:&#32;&quot;</emphasis>&#32;+&#32;wex1.Response.ToString();
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Error,&#32;234);
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>;
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+123 
+124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;startTime&#32;=&#32;DateTime.Now;
+125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_ae4aeef8c1f02cf82b17a4e1c2ca0ffed_1ae4aeef8c1f02cf82b17a4e1c2ca0ffed">CfgImport</link>(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_1afd0957296af9cc27c0a677ba2c027bf1">pubOrderNumber</link>);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//map&#32;staging-table&#32;data&#32;into&#32;Syteline</emphasis>
 127 
-128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>
-129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;Retrieving/Saving&#32;Document&#32;Files&#32;For&#32;Order:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_1afd0957296af9cc27c0a677ba2c027bf1">pubOrderNumber</link>&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;-&gt;&#32;&quot;</emphasis>&#32;+&#32;SPOrderNumber;
-131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-132 
-133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Retrieve&#32;documents&#32;for&#32;order,&#32;reusing&#32;xmlResult&#32;above</emphasis>
-134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;documentType&#32;=&#32;<emphasis class="stringliteral">&quot;Design&quot;</emphasis>;
-135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;documentName&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;orderNumber&#32;=&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_1afd0957296af9cc27c0a677ba2c027bf1">pubOrderNumber</link>;
-137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>[]&#32;docs;
-138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;docs&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>[50];
-139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;arrayindex&#32;=&#32;0;
-140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Retrieve&#32;the&#32;serialNumber&#32;from&#32;the&#32;XML&#32;</emphasis>
-142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;configSerial&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlSN&#32;=&#32;xmlResult.GetElementsByTagName(<emphasis class="stringliteral">&quot;serialNumber&quot;</emphasis>);
-144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;node&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnlSN)
-145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;configSerial&#32;=&#32;node.InnerText;
-147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-148 
-149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;useMethod&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;key&#32;=&#32;<emphasis class="stringliteral">&quot;getDocument&quot;</emphasis>;
-151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;useMethod&#32;=&#32;<link linkend="class_configure_one_flag_1_1_c1_dictionaries">C1Dictionaries</link>.<link linkend="class_configure_one_flag_1_1_c1_dictionaries_a192b4ea45e2b5d46ed02929db9c9d320_1a192b4ea45e2b5d46ed02929db9c9d320">webmethods</link>[key];
-152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;documentSerialNumber&#32;=&#32;configSerial;
-153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;arrayindex&#32;=&#32;0;
-154 
-155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnl&#32;=&#32;xmlResult.GetElementsByTagName(<emphasis class="stringliteral">&quot;fileName&quot;</emphasis>);
-156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;node&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnl)
-157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;docs[arrayindex]&#32;=&#32;node.InnerText;
-159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;arrayindex&#32;+=&#32;1;
-160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-161 
-162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;Finished&#32;building&#32;document&#32;filename&#32;array&quot;</emphasis>;
-163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-164 
-165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//We&#32;now&#32;have&#32;an&#32;array&#32;of&#32;document&#32;filenames;&#32;process&#32;by&#32;retrieving&#32;and&#32;saving&#32;each&#32;file</emphasis>
-166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;upperBound&#32;=&#32;arrayindex;
-167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;arrayindex&#32;=&#32;0;
-168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;documentFilesSaved&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;documentSerialNumber&#32;=&#32;configSerial;
-170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;SharepointLocation&#32;=&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a055478d8b87ec2968a6319dcd78273f6_1a055478d8b87ec2968a6319dcd78273f6">splocation</link>;
-171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_network_share">NetworkShare</link>.<link linkend="class_configure_one_flag_1_1_network_share_af61100f22e1ebd4895ad0313c0130ecf_1af61100f22e1ebd4895ad0313c0130ecf">DisconnectFromShare</link>(SharepointLocation,&#32;<emphasis class="keyword">true</emphasis>);
-172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_network_share">NetworkShare</link>.<link linkend="class_configure_one_flag_1_1_network_share_ab976148d295a3aad7cdf5c850cc3fed9_1ab976148d295a3aad7cdf5c850cc3fed9">ConnectToShare</link>(SharepointLocation,&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a11d432b379e9e80f1b11ac4884a25ead_1a11d432b379e9e80f1b11ac4884a25ead">spuname</link>,&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a10149307929348e6d16785e15fc7fbdc_1a10149307929348e6d16785e15fc7fbdc">sppassword</link>);
-173 
-174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;SP&#32;Share&#32;credential&#32;fixed&quot;</emphasis>;
-175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-176 
-177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Create&#32;Sharepoint&#32;folder&#32;for&#32;order#</emphasis>
-178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;SharepointCopyLocation&#32;=&#32;SharepointLocation&#32;+&#32;SPOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;\\&quot;</emphasis>;
-179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>&#32;{&#32;DirectoryInfo&#32;di&#32;=&#32;Directory.CreateDirectory(SharepointCopyLocation);&#32;}
-180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;edi)
-181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//directory&#32;already&#32;exists,&#32;nothing&#32;further&#32;needs&#32;done</emphasis>
-183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">while</emphasis>&#32;(arrayindex&#32;&lt;&#32;upperBound)
-186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;documentName&#32;=&#32;docs[arrayindex];
-188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlPayload&#32;=&#32;<emphasis class="stringliteral">&quot;&lt;?xml&#32;version=\&quot;1.0\&quot;&#32;encoding=\&quot;utf-8\&quot;?&gt;&lt;soapenv:Envelope&#32;xmlns:xsi=&quot;</emphasis>&#32;+&#32;(char)34&#32;+&#32;<emphasis class="stringliteral">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</emphasis>&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)34&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;xmlns:xsd=&quot;</emphasis>&#32;+&#32;(char)34&#32;+&#32;<emphasis class="stringliteral">&quot;http://www.w3.org/2001/XMLSchema&quot;</emphasis>&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)34&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;xmlns:ws=&quot;</emphasis>&#32;+&#32;(char)34&#32;+&#32;<emphasis class="stringliteral">&quot;http://ws.configureone.com&quot;</emphasis>&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)34&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;xmlns:mod=&quot;</emphasis>&#32;+&#32;(char)34&#32;+&#32;<emphasis class="stringliteral">&quot;http://model.ws.configureone.com&quot;</emphasis>&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)34&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;xmlns:soapenv=&quot;</emphasis>&#32;+&#32;(char)34&#32;+&#32;<emphasis class="stringliteral">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</emphasis>&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)34&#32;+&#32;<emphasis class="stringliteral">&quot;&gt;&quot;</emphasis>&#32;+&#32;<emphasis class="stringliteral">&quot;&lt;soapenv:Body&gt;&lt;ws:&quot;</emphasis>&#32;+&#32;key&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;xmlns=&quot;</emphasis>&#32;+&#32;(char)34&#32;+&#32;<emphasis class="stringliteral">&quot;http://ws.configureone.com&quot;</emphasis>&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)34&#32;+&#32;<emphasis class="stringliteral">&quot;&gt;&lt;ws:document&gt;&lt;mod:type&gt;&quot;</emphasis>&#32;+&#32;documentType&#32;+&#32;<emphasis class="stringliteral">&quot;&lt;/mod:type&gt;&lt;mod:serialNumber&gt;&quot;</emphasis>&#32;+&#32;documentSerialNumber&#32;+&#32;<emphasis class="stringliteral">&quot;&lt;/mod:serialNumber&gt;&lt;mod:files&gt;&lt;mod:fileName&gt;&quot;</emphasis>&#32;+&#32;documentName&#32;+&#32;<emphasis class="stringliteral">&quot;&lt;/mod:fileName&gt;&lt;mod:content&gt;&quot;</emphasis>&#32;+&#32;documentName&#32;+&#32;<emphasis class="stringliteral">&quot;&lt;/mod:content&gt;&lt;/mod:files&gt;&lt;/ws:document&gt;&lt;/ws:&quot;</emphasis>&#32;+&#32;key&#32;+&#32;<emphasis class="stringliteral">&quot;&gt;&lt;/soapenv:Body&gt;&lt;/soapenv:Envelope&gt;&quot;</emphasis>;
-189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sURL&#32;=&#32;useMethod;
-190 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest&#32;=&#32;(HttpWebRequest)WebRequest.Create(sURL.ToString());
-191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Method&#32;=&#32;<emphasis class="stringliteral">&quot;POST&quot;</emphasis>;
-192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ContentType&#32;=&#32;<emphasis class="stringliteral">&quot;text/xml&quot;</emphasis>;
-193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Headers.Add(<emphasis class="stringliteral">&quot;SOAPAction&quot;</emphasis>,&#32;key);
-194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Timeout&#32;=&#32;120000;
-195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ReadWriteTimeout&#32;=&#32;120000;
-196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//objRequest.KeepAlive&#32;=&#32;true;</emphasis>
-197 
-198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;Requested&#32;document&#32;from&#32;C1&quot;</emphasis>;
-199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-200 
-201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;startTime&#32;=&#32;DateTime.Now;
-202 
-203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringBuilder();
-204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.Append(xmlPayload);
-205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte[]&#32;byteDataDoc&#32;=&#32;Encoding.UTF8.GetBytes(data.ToString());&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;Sending&#32;our&#32;request&#32;to&#32;Apache&#32;AXIS&#32;in&#32;a&#32;byte&#32;array</emphasis>
-206 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ContentLength&#32;=&#32;byteDataDoc.Length;
-207 
-208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(Stream&#32;postStream&#32;=&#32;objRequest.GetRequestStream())
-209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;postStream.ReadTimeout&#32;=&#32;120000;
-211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;postStream.WriteTimeout&#32;=&#32;120000;
-212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;postStream.Write(byteDataDoc,&#32;0,&#32;byteDataDoc.Length);
-213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlResult&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;XmlDocument();
-215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;***&#32;LOG&#32;TIME</emphasis>
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;endTime&#32;=&#32;DateTime.Now;
+130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;endTime.Subtract(startTime);
+131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;
+132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;Staging&#32;tables&#32;mapped&#32;to&#32;Syteline&#32;in:&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;<emphasis class="stringliteral">&quot;ms&#32;/&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;s&quot;</emphasis>;
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
+135 
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Retrieve&#32;the&#32;SL&#32;order#&#32;(if&#32;not&#32;found,&#32;default&#32;to&#32;using&#32;the&#32;C1&#32;order#):</emphasis>
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SPOrderNumber&#32;=&#32;<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a64f0488a247638877def2f773331d184_1a64f0488a247638877def2f773331d184">RetrieveSLCO</link>(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_1afd0957296af9cc27c0a677ba2c027bf1">pubOrderNumber</link>))&#32;?&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_1afd0957296af9cc27c0a677ba2c027bf1">pubOrderNumber</link>&#32;:&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a64f0488a247638877def2f773331d184_1a64f0488a247638877def2f773331d184">RetrieveSLCO</link>(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_1afd0957296af9cc27c0a677ba2c027bf1">pubOrderNumber</link>);
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SPPUBOrderNumber&#32;=&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_ae10595c3cbff0ef87cb607d9c6f2b250_1ae10595c3cbff0ef87cb607d9c6f2b250">SPOrderNumber</link>;
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_ab9783633849f1f5971196e6419c9343d_1ab9783633849f1f5971196e6419c9343d">OutputXMLToFile</link>(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_adb47d391c1eb7baeb5780f3dd9322a6d_1adb47d391c1eb7baeb5780f3dd9322a6d">wsReturn</link>);
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//****************************************************************************</emphasis>
+142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//try</emphasis>
+143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//{</emphasis>
+144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;logEvent&#32;=&#32;&quot;Retrieving/Saving&#32;Document&#32;Files&#32;For&#32;Order:&#32;&quot;&#32;+&#32;Triggers.pubOrderNumber&#32;+&#32;&quot;&#32;-&gt;&#32;&quot;&#32;+&#32;SPOrderNumber;</emphasis>
+145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;System.Diagnostics.EventLog.WriteEntry(Triggers.logSource,&#32;logEvent,&#32;System.Diagnostics.EventLogEntryType.Information,&#32;234);</emphasis>
+146 
+147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;//Retrieve&#32;documents&#32;for&#32;order,&#32;reusing&#32;xmlResult&#32;above</emphasis>
+148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;string&#32;documentType&#32;=&#32;&quot;Design&quot;;</emphasis>
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;string&#32;documentName&#32;=&#32;&quot;&quot;;</emphasis>
+150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;string&#32;orderNumber&#32;=&#32;Triggers.pubOrderNumber;</emphasis>
+151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;string[]&#32;docs;</emphasis>
+152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;docs&#32;=&#32;new&#32;string[50];</emphasis>
+153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;int&#32;arrayindex&#32;=&#32;0;</emphasis>
+154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;//Retrieve&#32;the&#32;serialNumber&#32;from&#32;the&#32;XML&#32;</emphasis>
+156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;string&#32;configSerial&#32;=&#32;&quot;&quot;;</emphasis>
+157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;XmlNodeList&#32;xnlSN&#32;=&#32;xmlResult.GetElementsByTagName(&quot;serialNumber&quot;);</emphasis>
+158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;foreach&#32;(XmlNode&#32;node&#32;in&#32;xnlSN)</emphasis>
+159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;{</emphasis>
+160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;configSerial&#32;=&#32;node.InnerText;</emphasis>
+161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;}</emphasis>
+162 
+163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;string&#32;useMethod&#32;=&#32;&quot;&quot;;</emphasis>
+164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;key&#32;=&#32;&quot;getDocument&quot;;</emphasis>
+165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;useMethod&#32;=&#32;C1Dictionaries.webmethods[key];</emphasis>
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;string&#32;documentSerialNumber&#32;=&#32;configSerial;</emphasis>
+167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;arrayindex&#32;=&#32;0;</emphasis>
+168 
+169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;XmlNodeList&#32;xnl&#32;=&#32;xmlResult.GetElementsByTagName(&quot;fileName&quot;);</emphasis>
+170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;foreach&#32;(XmlNode&#32;node&#32;in&#32;xnl)</emphasis>
+171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;{</emphasis>
+172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;docs[arrayindex]&#32;=&#32;node.InnerText;</emphasis>
+173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;arrayindex&#32;+=&#32;1;</emphasis>
+174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;}</emphasis>
+175 
+176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;logEvent&#32;=&#32;&quot;DEBUG:&#32;Finished&#32;building&#32;document&#32;filename&#32;array&quot;;</emphasis>
+177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;System.Diagnostics.EventLog.WriteEntry(Triggers.logSource,&#32;logEvent,&#32;System.Diagnostics.EventLogEntryType.Information,&#32;234);</emphasis>
+178 
+179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;//We&#32;now&#32;have&#32;an&#32;array&#32;of&#32;document&#32;filenames;&#32;process&#32;by&#32;retrieving&#32;and&#32;saving&#32;each&#32;file</emphasis>
+180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;int&#32;upperBound&#32;=&#32;arrayindex;</emphasis>
+181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;arrayindex&#32;=&#32;0;</emphasis>
+182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;string&#32;documentFilesSaved&#32;=&#32;&quot;&quot;;</emphasis>
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;documentSerialNumber&#32;=&#32;configSerial;</emphasis>
+184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;string&#32;SharepointLocation&#32;=&#32;DatabaseFactory.splocation;</emphasis>
+185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;NetworkShare.DisconnectFromShare(SharepointLocation,&#32;true);</emphasis>
+186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;NetworkShare.ConnectToShare(SharepointLocation,&#32;DatabaseFactory.spuname,&#32;DatabaseFactory.sppassword);</emphasis>
+187 
+188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;logEvent&#32;=&#32;&quot;DEBUG:&#32;SP&#32;Share&#32;credential&#32;fixed&quot;;</emphasis>
+189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;System.Diagnostics.EventLog.WriteEntry(Triggers.logSource,&#32;logEvent,&#32;System.Diagnostics.EventLogEntryType.Information,&#32;234);</emphasis>
+190 
+191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;//Create&#32;Sharepoint&#32;folder&#32;for&#32;order#</emphasis>
+192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;string&#32;SharepointCopyLocation&#32;=&#32;SharepointLocation&#32;+&#32;SPOrderNumber&#32;+&#32;&quot;\\&quot;;</emphasis>
+193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;try&#32;{&#32;DirectoryInfo&#32;di&#32;=&#32;Directory.CreateDirectory(SharepointCopyLocation);&#32;}</emphasis>
+194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;catch&#32;(Exception&#32;edi)</emphasis>
+195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;{</emphasis>
+196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//directory&#32;already&#32;exists,&#32;nothing&#32;further&#32;needs&#32;done</emphasis>
+197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;}</emphasis>
+198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;while&#32;(arrayindex&#32;&lt;&#32;upperBound)</emphasis>
+200 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;{</emphasis>
+201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;documentName&#32;=&#32;docs[arrayindex];</emphasis>
+202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlPayload&#32;=&#32;&quot;&lt;?xml&#32;version=\&quot;1.0\&quot;&#32;encoding=\&quot;utf-8\&quot;?&gt;&lt;soapenv:Envelope&#32;xmlns:xsi=&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;&#32;xmlns:xsd=&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;http://www.w3.org/2001/XMLSchema&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;&#32;xmlns:ws=&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;http://ws.configureone.com&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;&#32;xmlns:mod=&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;http://model.ws.configureone.com&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;&#32;xmlns:soapenv=&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;&gt;&quot;&#32;+&#32;&quot;&lt;soapenv:Body&gt;&lt;ws:&quot;&#32;+&#32;key&#32;+&#32;&quot;&#32;xmlns=&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;http://ws.configureone.com&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;&gt;&lt;ws:document&gt;&lt;mod:type&gt;&quot;&#32;+&#32;documentType&#32;+&#32;&quot;&lt;/mod:type&gt;&lt;mod:serialNumber&gt;&quot;&#32;+&#32;documentSerialNumber&#32;+&#32;&quot;&lt;/mod:serialNumber&gt;&lt;mod:files&gt;&lt;mod:fileName&gt;&quot;&#32;+&#32;documentName&#32;+&#32;&quot;&lt;/mod:fileName&gt;&lt;mod:content&gt;&quot;&#32;+&#32;documentName&#32;+&#32;&quot;&lt;/mod:content&gt;&lt;/mod:files&gt;&lt;/ws:document&gt;&lt;/ws:&quot;&#32;+&#32;key&#32;+&#32;&quot;&gt;&lt;/soapenv:Body&gt;&lt;/soapenv:Envelope&gt;&quot;;</emphasis>
+203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sURL&#32;=&#32;useMethod;</emphasis>
+204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest&#32;=&#32;(HttpWebRequest)WebRequest.Create(sURL.ToString());</emphasis>
+205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Method&#32;=&#32;&quot;POST&quot;;</emphasis>
+206 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ContentType&#32;=&#32;&quot;text/xml&quot;;</emphasis>
+207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Headers.Add(&quot;SOAPAction&quot;,&#32;key);</emphasis>
+208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Timeout&#32;=&#32;120000;</emphasis>
+209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ReadWriteTimeout&#32;=&#32;120000;</emphasis>
+210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//objRequest.KeepAlive&#32;=&#32;true;</emphasis>
+211 
+212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;&quot;DEBUG:&#32;Requested&#32;document&#32;from&#32;C1&quot;;</emphasis>
+213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;System.Diagnostics.EventLog.WriteEntry(Triggers.logSource,&#32;logEvent,&#32;System.Diagnostics.EventLogEntryType.Information,&#32;234);</emphasis>
+214 
+215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;startTime&#32;=&#32;DateTime.Now;</emphasis>
 216 
-217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;Waiting&#32;for&#32;response&#32;from&#32;C1&quot;</emphasis>;
-218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-219 
-220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;using&#32;(HttpWebResponse&#32;response&#32;=&#32;objRequest.GetResponse()&#32;as&#32;HttpWebResponse)</emphasis>
-221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>
-222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(HttpWebResponse&#32;response&#32;=&#32;(HttpWebResponse)objRequest.GetResponse())
-224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;StreamReader&#32;reader&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StreamReader(response.GetResponseStream());
-226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result&#32;=&#32;reader.ReadToEnd();
-227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;reader.Close();
-228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;response.Close();
-229 
-230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>
-231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-232 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlResult.LoadXml(result);
-233 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;ex1)
-235 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-236 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>;
-237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-238 
-239 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;Response&#32;received&#32;from&#32;C1&quot;</emphasis>;
-240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-241 
-242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;***&#32;LOG&#32;TIME</emphasis>
-243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;endTime&#32;=&#32;DateTime.Now;
-244 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;endTime.Subtract(startTime);
-245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;
-246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;
-247 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;Document&#32;response&#32;was&#32;received&#32;from&#32;ConfigureOne&#32;in:&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;<emphasis class="stringliteral">&quot;ms&#32;/&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;s&quot;</emphasis>;
-248 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-249 
-250 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnldoc&#32;=&#32;xmlResult.GetElementsByTagName(<emphasis class="stringliteral">&quot;content&quot;</emphasis>);
-251 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;node&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnldoc)
-252 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;Copying&#32;file&#32;to&#32;Sharepoint:&#32;&quot;</emphasis>&#32;+&#32;SPOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;_&quot;</emphasis>&#32;+&#32;docs[arrayindex];
-254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
+217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#32;=&#32;new&#32;StringBuilder();</emphasis>
+218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.Append(xmlPayload);</emphasis>
+219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte[]&#32;byteDataDoc&#32;=&#32;Encoding.UTF8.GetBytes(data.ToString());&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//&#32;Sending&#32;our&#32;request&#32;to&#32;Apache&#32;AXIS&#32;in&#32;a&#32;byte&#32;array</emphasis>
+220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ContentLength&#32;=&#32;byteDataDoc.Length;</emphasis>
+221 
+222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;using&#32;(Stream&#32;postStream&#32;=&#32;objRequest.GetRequestStream())</emphasis>
+223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{</emphasis>
+224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;postStream.ReadTimeout&#32;=&#32;120000;</emphasis>
+225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;postStream.WriteTimeout&#32;=&#32;120000;</emphasis>
+226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;postStream.Write(byteDataDoc,&#32;0,&#32;byteDataDoc.Length);</emphasis>
+227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}</emphasis>
+228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlResult&#32;=&#32;new&#32;XmlDocument();</emphasis>
+229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result&#32;=&#32;&quot;&quot;;</emphasis>
+230 
+231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;&quot;DEBUG:&#32;Waiting&#32;for&#32;response&#32;from&#32;C1&quot;;</emphasis>
+232 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;System.Diagnostics.EventLog.WriteEntry(Triggers.logSource,&#32;logEvent,&#32;System.Diagnostics.EventLogEntryType.Information,&#32;234);</emphasis>
+233 
+234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//&#32;using&#32;(HttpWebResponse&#32;response&#32;=&#32;objRequest.GetResponse()&#32;as&#32;HttpWebResponse)</emphasis>
+235 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;try</emphasis>
+236 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{</emphasis>
+237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;using&#32;(HttpWebResponse&#32;response&#32;=&#32;(HttpWebResponse)objRequest.GetResponse())</emphasis>
+238 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{</emphasis>
+239 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;StreamReader&#32;reader&#32;=&#32;new&#32;StreamReader(response.GetResponseStream());</emphasis>
+240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result&#32;=&#32;reader.ReadToEnd();</emphasis>
+241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;reader.Close();</emphasis>
+242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;response.Close();</emphasis>
+243 
+244 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;try</emphasis>
+245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{</emphasis>
+246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlResult.LoadXml(result);</emphasis>
+247 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}</emphasis>
+248 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;catch&#32;(Exception&#32;ex1)</emphasis>
+249 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{</emphasis>
+250 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return;</emphasis>
+251 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}</emphasis>
+252 
+253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;&quot;DEBUG:&#32;Response&#32;received&#32;from&#32;C1&quot;;</emphasis>
+254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;System.Diagnostics.EventLog.WriteEntry(Triggers.logSource,&#32;logEvent,&#32;System.Diagnostics.EventLogEntryType.Information,&#32;234);</emphasis>
 255 
-256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;startTime&#32;=&#32;DateTime.Now;
-257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>
-259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte[]&#32;pdfByteArray&#32;=&#32;Convert.FromBase64String(node.InnerText);
-261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;fileToCopy&#32;=&#32;<emphasis class="stringliteral">@&quot;C:\C1TEMP\&quot;</emphasis>&#32;+&#32;SPOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;_&quot;</emphasis>&#32;+&#32;docs[arrayindex];
-262 
-263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//deboog&#32;(comment&#32;out&#32;following&#32;line&#32;to&#32;NOT&#32;copy&#32;files&#32;to&#32;Sharepoint)</emphasis>
-264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.WriteAllBytes(SharepointCopyLocation&#32;+&#32;SPOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;_&quot;</emphasis>&#32;+&#32;docs[arrayindex],&#32;pdfByteArray);
-265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//end&#32;deboog</emphasis>
-266 
-267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//File.WriteAllBytes(fileToCopy,&#32;pdfByteArray);</emphasis>
-268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//File.Copy(fileToCopy,&#32;SharepointCopyLocation&#32;+&#32;SPOrderNumber&#32;+&#32;&quot;_&quot;&#32;+&#32;docs[arrayindex],&#32;true);</emphasis>
-269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;documentFilesSaved&#32;=&#32;documentFilesSaved&#32;+&#32;docs[arrayindex]&#32;+&#32;Environment.NewLine;
-270 
-271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;***&#32;LOG&#32;TIME</emphasis>
-272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;endTime&#32;=&#32;DateTime.Now;
-273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;endTime.Subtract(startTime);
-274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;
-275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;
-276 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;Document&#32;copied&#32;to&#32;Sharepoint&#32;in:&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;<emphasis class="stringliteral">&quot;ms&#32;/&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;s&quot;</emphasis>;
-277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-279 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;ts1)
-280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;An&#32;error&#32;occurred&#32;copying&#32;file&#32;to&#32;Sharepoint:&#32;&quot;</emphasis>&#32;+&#32;SPOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;_&quot;</emphasis>&#32;+&#32;docs[arrayindex]&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;&#32;&gt;&#32;&#32;&quot;</emphasis>&#32;+&#32;<emphasis class="stringliteral">&quot;TS1&#32;Exception&quot;</emphasis>;
-282 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-283 
-284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;***&#32;LOG&#32;TIME</emphasis>
-285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;endTime&#32;=&#32;DateTime.Now;
-286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;endTime.Subtract(startTime);
-287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;
-288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;
-289 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;Time&#32;that&#32;elapsed&#32;before&#32;timeout&#32;occurred&#32;for&#32;current&#32;document:&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;<emphasis class="stringliteral">&quot;ms,&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;s&quot;</emphasis>;
-290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-291 
-292 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_send_mail">SendMail</link>.<link linkend="class_configure_one_flag_1_1_send_mail_a2e1c2d0826f023cb2684a2b9bbd74ad9_1a2e1c2d0826f023cb2684a2b9bbd74ad9">MailMessage</link>(logEvent,&#32;<emphasis class="stringliteral">&quot;TIMEOUT&quot;</emphasis>);
-293 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-295 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;ts2)
-298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;An&#32;error&#32;occurred&#32;copying&#32;file&#32;to&#32;Sharepoint:&#32;&quot;</emphasis>&#32;+&#32;SPOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;_&quot;</emphasis>&#32;+&#32;docs[arrayindex]&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;&#32;&gt;&#32;&#32;&quot;</emphasis>&#32;+&#32;<emphasis class="stringliteral">&quot;TS2&#32;Exception&quot;</emphasis>;
-300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_send_mail">SendMail</link>.<link linkend="class_configure_one_flag_1_1_send_mail_a2e1c2d0826f023cb2684a2b9bbd74ad9_1a2e1c2d0826f023cb2684a2b9bbd74ad9">MailMessage</link>(logEvent,&#32;<emphasis class="stringliteral">&quot;TIMEOUT&quot;</emphasis>);
-302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;arrayindex&#32;+=&#32;1;
-304 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//&#32;***&#32;LOG&#32;TIME</emphasis>
+257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;endTime&#32;=&#32;DateTime.Now;</emphasis>
+258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;endTime.Subtract(startTime);</emphasis>
+259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;</emphasis>
+260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;</emphasis>
+261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;&quot;DEBUG:&#32;Document&#32;response&#32;was&#32;received&#32;from&#32;ConfigureOne&#32;in:&#32;&quot;&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;&quot;ms&#32;/&#32;&quot;&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;&quot;&#32;s&quot;;</emphasis>
+262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;System.Diagnostics.EventLog.WriteEntry(Triggers.logSource,&#32;logEvent,&#32;System.Diagnostics.EventLogEntryType.Information,&#32;234);</emphasis>
+263 
+264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnldoc&#32;=&#32;xmlResult.GetElementsByTagName(&quot;content&quot;);</emphasis>
+265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;foreach&#32;(XmlNode&#32;node&#32;in&#32;xnldoc)</emphasis>
+266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{</emphasis>
+267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;&quot;DEBUG:&#32;Copying&#32;file&#32;to&#32;Sharepoint:&#32;&quot;&#32;+&#32;SPOrderNumber&#32;+&#32;&quot;_&quot;&#32;+&#32;docs[arrayindex];</emphasis>
+268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;System.Diagnostics.EventLog.WriteEntry(Triggers.logSource,&#32;logEvent,&#32;System.Diagnostics.EventLogEntryType.Information,&#32;234);</emphasis>
+269 
+270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;startTime&#32;=&#32;DateTime.Now;</emphasis>
+271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;try</emphasis>
+273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{</emphasis>
+274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte[]&#32;pdfByteArray&#32;=&#32;Convert.FromBase64String(node.InnerText);</emphasis>
+275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;string&#32;fileToCopy&#32;=&#32;@&quot;C:\C1TEMP\&quot;&#32;+&#32;SPOrderNumber&#32;+&#32;&quot;_&quot;&#32;+&#32;docs[arrayindex];</emphasis>
+276 
+277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//deboog&#32;(comment&#32;out&#32;following&#32;line&#32;to&#32;NOT&#32;copy&#32;files&#32;to&#32;Sharepoint)</emphasis>
+278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.WriteAllBytes(SharepointCopyLocation&#32;+&#32;SPOrderNumber&#32;+&#32;&quot;_&quot;&#32;+&#32;docs[arrayindex],&#32;pdfByteArray);</emphasis>
+279 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//end&#32;deboog</emphasis>
+280 
+281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//File.WriteAllBytes(fileToCopy,&#32;pdfByteArray);</emphasis>
+282 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//File.Copy(fileToCopy,&#32;SharepointCopyLocation&#32;+&#32;SPOrderNumber&#32;+&#32;&quot;_&quot;&#32;+&#32;docs[arrayindex],&#32;true);</emphasis>
+283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;documentFilesSaved&#32;=&#32;documentFilesSaved&#32;+&#32;docs[arrayindex]&#32;+&#32;Environment.NewLine;</emphasis>
+284 
+285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//&#32;***&#32;LOG&#32;TIME</emphasis>
+286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;endTime&#32;=&#32;DateTime.Now;</emphasis>
+287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;endTime.Subtract(startTime);</emphasis>
+288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;</emphasis>
+289 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;</emphasis>
+290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;&quot;DEBUG:&#32;Document&#32;copied&#32;to&#32;Sharepoint&#32;in:&#32;&quot;&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;&quot;ms&#32;/&#32;&quot;&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;&quot;&#32;s&quot;;</emphasis>
+291 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;System.Diagnostics.EventLog.WriteEntry(Triggers.logSource,&#32;logEvent,&#32;System.Diagnostics.EventLogEntryType.Information,&#32;234);</emphasis>
+292 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}</emphasis>
+293 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;catch&#32;(Exception&#32;ts1)</emphasis>
+294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{</emphasis>
+295 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;&quot;An&#32;error&#32;occurred&#32;copying&#32;file&#32;to&#32;Sharepoint:&#32;&quot;&#32;+&#32;SPOrderNumber&#32;+&#32;&quot;_&quot;&#32;+&#32;docs[arrayindex]&#32;+&#32;&quot;&#32;&#32;&gt;&#32;&#32;&quot;&#32;+&#32;&quot;TS1&#32;Exception&quot;;</emphasis>
+296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;System.Diagnostics.EventLog.WriteEntry(Triggers.logSource,&#32;logEvent,&#32;System.Diagnostics.EventLogEntryType.Information,&#32;234);</emphasis>
+297 
+298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//&#32;***&#32;LOG&#32;TIME</emphasis>
+299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;endTime&#32;=&#32;DateTime.Now;</emphasis>
+300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;endTime.Subtract(startTime);</emphasis>
+301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;</emphasis>
+302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;</emphasis>
+303 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;&quot;DEBUG:&#32;Time&#32;that&#32;elapsed&#32;before&#32;timeout&#32;occurred&#32;for&#32;current&#32;document:&#32;&quot;&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;&quot;ms,&#32;&quot;&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;&quot;&#32;s&quot;;</emphasis>
+304 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;System.Diagnostics.EventLog.WriteEntry(Triggers.logSource,&#32;logEvent,&#32;System.Diagnostics.EventLogEntryType.Information,&#32;234);</emphasis>
 305 
-306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Save&#32;XML&#32;output&#32;to&#32;SharePoint&#32;as&#32;well</emphasis>
-307 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.Copy(<emphasis class="stringliteral">&quot;XMLOutput_&quot;</emphasis>&#32;+&#32;SPPUBOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;.txt&quot;</emphasis>,&#32;SharepointCopyLocation&#32;+&#32;<emphasis class="stringliteral">&quot;XMLOutput_&quot;</emphasis>&#32;+&#32;SPPUBOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;.txt&quot;</emphasis>);
-308 
-309 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;Retrieved/Saved&#32;Following&#32;Document&#32;Files:&#32;&quot;</emphasis>&#32;+&#32;Environment.NewLine&#32;+&#32;Environment.NewLine&#32;+&#32;documentFilesSaved;
-310 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-311 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-312 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Update&#32;order-status&#32;and&#32;ref&#32;number&#32;in&#32;C1&#32;to&#32;Ordered&#32;and&#32;SL&#32;order#,&#32;respectively</emphasis>
-313 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;key&#32;=&#32;<emphasis class="stringliteral">&quot;updateOrder&quot;</emphasis>;
-314 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;useMethod&#32;=&#32;<link linkend="class_configure_one_flag_1_1_c1_dictionaries">C1Dictionaries</link>.<link linkend="class_configure_one_flag_1_1_c1_dictionaries_a192b4ea45e2b5d46ed02929db9c9d320_1a192b4ea45e2b5d46ed02929db9c9d320">webmethods</link>[key];
-315 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;C1orderNumber&#32;=&#32;orderNumber;
-316 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;C1orderReference&#32;=&#32;SPOrderNumber;
-317 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;C1orderStatus&#32;=&#32;<emphasis class="stringliteral">&quot;OR&quot;</emphasis>;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Ordered</emphasis>
-318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlPayload&#32;=&#32;<emphasis class="stringliteral">&quot;&lt;?xml&#32;version=\&quot;1.0\&quot;&#32;encoding=\&quot;utf-8\&quot;?&gt;&lt;soap:Envelope&#32;xmlns:xsi=&quot;</emphasis>&#32;+&#32;(char)34&#32;+&#32;<emphasis class="stringliteral">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</emphasis>&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)34&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;xmlns:xsd=&quot;</emphasis>&#32;+&#32;(char)34&#32;+&#32;<emphasis class="stringliteral">&quot;http://www.w3.org/2001/XMLSchema&quot;</emphasis>&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)34&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;xmlns:soap=&quot;</emphasis>&#32;+&#32;(char)34&#32;+&#32;<emphasis class="stringliteral">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</emphasis>&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)34&#32;+&#32;<emphasis class="stringliteral">&quot;&gt;&quot;</emphasis>&#32;+&#32;<emphasis class="stringliteral">&quot;&lt;soap:Body&gt;&lt;&quot;</emphasis>&#32;+&#32;key&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;xmlns=&quot;</emphasis>&#32;+&#32;(char)34&#32;+&#32;<emphasis class="stringliteral">&quot;http://ws.configureone.com&quot;</emphasis>&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)34&#32;+&#32;<emphasis class="stringliteral">&quot;&gt;&lt;param1&gt;&quot;</emphasis>&#32;+&#32;orderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;&lt;/param1&gt;&lt;param2&gt;&quot;</emphasis>&#32;+&#32;C1orderReference&#32;+&#32;<emphasis class="stringliteral">&quot;&lt;/param2&gt;&lt;param3&gt;&quot;</emphasis>&#32;+&#32;C1orderStatus&#32;+&#32;<emphasis class="stringliteral">&quot;&lt;/param3&gt;&lt;/&quot;</emphasis>&#32;+&#32;key&#32;+&#32;<emphasis class="stringliteral">&quot;&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;&quot;</emphasis>;
-319 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sURL&#32;=&#32;useMethod;
-320 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pubURL&#32;=&#32;sURL;
-321 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;pubPayload&#32;=&#32;xmlPayload;
-322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;XML&#32;Payload&#32;To&#32;AXIS:&#32;&quot;</emphasis>&#32;+&#32;xmlPayload;
-323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-324 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest&#32;=&#32;(HttpWebRequest)WebRequest.Create(sURL.ToString());
-325 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Method&#32;=&#32;<emphasis class="stringliteral">&quot;POST&quot;</emphasis>;
-326 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ContentType&#32;=&#32;<emphasis class="stringliteral">&quot;text/xml&quot;</emphasis>;
-327 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Headers.Add(<emphasis class="stringliteral">&quot;SOAPAction&quot;</emphasis>,&#32;key);
-328 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Timeout&#32;=&#32;120000;
-329 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ReadWriteTimeout&#32;=&#32;120000;
-330 
-331 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringBuilder();
-332 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;data.Append(xmlPayload);
-333 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;byte[]&#32;byteDataStatus&#32;=&#32;Encoding.UTF8.GetBytes(data.ToString());&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;Sending&#32;our&#32;request&#32;to&#32;Apache&#32;AXIS&#32;in&#32;a&#32;byte&#32;array</emphasis>
-334 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ContentLength&#32;=&#32;byteDataStatus.Length;
-335 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(Stream&#32;postStream&#32;=&#32;objRequest.GetRequestStream())
-336 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-337 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;postStream.ReadTimeout&#32;=&#32;120000;
-338 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;postStream.WriteTimeout&#32;=&#32;120000;
-339 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;postStream.Write(byteDataStatus,&#32;0,&#32;byteDataStatus.Length);
-340 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-341 
-342 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;startTime&#32;=&#32;DateTime.Now;
-343 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-344 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//return&#32;response&#32;from&#32;AXIS&#32;(if&#32;any)</emphasis>
-345 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(HttpWebResponse&#32;response&#32;=&#32;objRequest.GetResponse()&#32;as&#32;HttpWebResponse)
-346 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-347 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;StreamReader&#32;reader&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StreamReader(response.GetResponseStream());
-348 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result&#32;=&#32;reader.ReadToEnd();
-349 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;reader.Close();
-350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;response.Close();
-351 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-352 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-353 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>
-354 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-355 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlResult.LoadXml(result);
-356 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xnl&#32;=&#32;xmlResult.GetElementsByTagName(<emphasis class="stringliteral">&quot;success&quot;</emphasis>);
-357 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;node&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnl)
-358 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-359 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(node.InnerText)
-360 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-361 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;true&quot;</emphasis>:
-362 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;Status-Set&#32;Result:&#32;Success&quot;</emphasis>;
-363 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-364 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
-365 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">default</emphasis>:
-366 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;Status-Set&#32;Result:&#32;Failure&quot;</emphasis>;
-367 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Error,&#32;234);
-368 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
-369 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-370 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-371 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-372 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;ex2)
-373 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-374 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;ERROR&#32;LOADING&#32;XML&#32;FROM&#32;WEB&#32;SERVICE&#32;ON&#32;C1&#32;ORDER&#32;STATUS&#32;SET:&#32;&quot;</emphasis>&#32;+&#32;ex2.Message;
-375 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Error,&#32;234);
-376 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>;
-377 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-378 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-379 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;C1&#32;Order&#32;Status&#32;And&#32;Reference&#32;Completed&#32;For&#32;C1&#32;Order:&#32;&quot;</emphasis>&#32;+&#32;orderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;-&#32;Syteline&#32;Order:&#32;&quot;</emphasis>&#32;+&#32;SPOrderNumber;
-380 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-381 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-382 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;exd)
-383 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-384 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;ERROR:&#32;&quot;</emphasis>&#32;+&#32;exd.Message&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;-&gt;&#32;&quot;</emphasis>&#32;+&#32;exd.Source;
-385 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Error,&#32;234);
-386 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-387 
-388 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;***&#32;LOG&#32;TIME</emphasis>
-389 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;endTime&#32;=&#32;DateTime.Now;
-390 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;endTime.Subtract(startTime);
-391 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;
-392 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;
-393 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;Order-status&#32;and&#32;final&#32;wrapup&#32;to&#32;ConfigureOne&#32;in:&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;<emphasis class="stringliteral">&quot;ms&#32;/&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;s&quot;</emphasis>;
-394 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-395 
-396 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;***&#32;LOG&#32;TOTAL&#32;TIME</emphasis>
-397 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;totalTimeStop&#32;=&#32;DateTime.Now;
-398 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;totalTimeStop.Subtract(totalTimeStart);
-399 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;
-400 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;
-401 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;Total&#32;execution:&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;<emphasis class="stringliteral">&quot;ms&#32;/&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;s&quot;</emphasis>;
-402 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-403 
-404 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<link linkend="class_configure_one_flag_1_1_c1_web_service_ab9783633849f1f5971196e6419c9343d_1ab9783633849f1f5971196e6419c9343d">405 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_ab9783633849f1f5971196e6419c9343d_1ab9783633849f1f5971196e6419c9343d">OutputXMLToFile</link>(<emphasis class="keywordtype">string</emphasis>&#32;XML)
-406 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-407 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;formattedXML&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-408 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;stringWriter&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringWriter())
-409 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;xmlTextWriter&#32;=&#32;XmlWriter.Create(stringWriter))
-410 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-411 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;xmlOut&#32;=&#32;XML;
-412 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;formattedXML&#32;=&#32;<link linkend="namespace_system">System</link>.Xml.Linq.XDocument.Parse(xmlOut).ToString();
-413 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-414 
-415 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(File.Exists(<emphasis class="stringliteral">&quot;XMLOutput_&quot;</emphasis>&#32;+&#32;SPPUBOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;.txt&quot;</emphasis>))
-416 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-417 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.Delete(<emphasis class="stringliteral">&quot;XMLOutput_&quot;</emphasis>&#32;+&#32;SPPUBOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;.txt&quot;</emphasis>);
-418 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-419 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(<link linkend="namespace_system">System</link>.IO.StreamWriter&#32;file&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="namespace_system">System</link>.IO.StreamWriter(<emphasis class="stringliteral">@&quot;XMLOutput_&quot;</emphasis>&#32;+&#32;SPPUBOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;.txt&quot;</emphasis>,&#32;<emphasis class="keyword">true</emphasis>))
-420 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-421 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;file.WriteLine(formattedXML);
-422 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-423 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-424 &#32;&#32;&#32;&#32;}
-425 }
-426 
+306 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SendMail.MailMessage(logEvent,&#32;&quot;TIMEOUT&quot;);</emphasis>
+307 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}</emphasis>
+308 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}</emphasis>
+309 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}</emphasis>
+310 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}</emphasis>
+311 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;catch&#32;(Exception&#32;ts2)</emphasis>
+312 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{</emphasis>
+313 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;&quot;An&#32;error&#32;occurred&#32;copying&#32;file&#32;to&#32;Sharepoint:&#32;&quot;&#32;+&#32;SPOrderNumber&#32;+&#32;&quot;_&quot;&#32;+&#32;docs[arrayindex]&#32;+&#32;&quot;&#32;&#32;&gt;&#32;&#32;&quot;&#32;+&#32;&quot;TS2&#32;Exception&quot;;</emphasis>
+314 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;System.Diagnostics.EventLog.WriteEntry(Triggers.logSource,&#32;logEvent,&#32;System.Diagnostics.EventLogEntryType.Information,&#32;234);</emphasis>
+315 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SendMail.MailMessage(logEvent,&#32;&quot;TIMEOUT&quot;);</emphasis>
+316 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}</emphasis>
+317 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;arrayindex&#32;+=&#32;1;</emphasis>
+318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;}</emphasis>
+319 
+320 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;//Save&#32;XML&#32;output&#32;to&#32;SharePoint&#32;as&#32;well</emphasis>
+321 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;File.Copy(&quot;XMLOutput_&quot;&#32;+&#32;SPPUBOrderNumber&#32;+&#32;&quot;.txt&quot;,&#32;SharepointCopyLocation&#32;+&#32;&quot;XMLOutput_&quot;&#32;+&#32;SPPUBOrderNumber&#32;+&#32;&quot;.txt&quot;);</emphasis>
+322 
+323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;logEvent&#32;=&#32;&quot;Retrieved/Saved&#32;Following&#32;Document&#32;Files:&#32;&quot;&#32;+&#32;Environment.NewLine&#32;+&#32;Environment.NewLine&#32;+&#32;documentFilesSaved;</emphasis>
+324 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;System.Diagnostics.EventLog.WriteEntry(Triggers.logSource,&#32;logEvent,&#32;System.Diagnostics.EventLogEntryType.Information,&#32;234);</emphasis>
+325 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+326 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;//Update&#32;order-status&#32;and&#32;ref&#32;number&#32;in&#32;C1&#32;to&#32;Ordered&#32;and&#32;SL&#32;order#,&#32;respectively</emphasis>
+327 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;key&#32;=&#32;&quot;updateOrder&quot;;</emphasis>
+328 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;useMethod&#32;=&#32;C1Dictionaries.webmethods[key];</emphasis>
+329 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;string&#32;C1orderNumber&#32;=&#32;orderNumber;</emphasis>
+330 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;string&#32;C1orderReference&#32;=&#32;SPOrderNumber;</emphasis>
+331 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;string&#32;C1orderStatus&#32;=&#32;&quot;OR&quot;;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//Ordered</emphasis>
+332 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;xmlPayload&#32;=&#32;&quot;&lt;?xml&#32;version=\&quot;1.0\&quot;&#32;encoding=\&quot;utf-8\&quot;?&gt;&lt;soap:Envelope&#32;xmlns:xsi=&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;http://www.w3.org/2001/XMLSchema-instance&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;&#32;xmlns:xsd=&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;http://www.w3.org/2001/XMLSchema&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;&#32;xmlns:soap=&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;&gt;&quot;&#32;+&#32;&quot;&lt;soap:Body&gt;&lt;&quot;&#32;+&#32;key&#32;+&#32;&quot;&#32;xmlns=&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;http://ws.configureone.com&quot;&#32;+&#32;(char)34&#32;+&#32;&quot;&gt;&lt;param1&gt;&quot;&#32;+&#32;orderNumber&#32;+&#32;&quot;&lt;/param1&gt;&lt;param2&gt;&quot;&#32;+&#32;C1orderReference&#32;+&#32;&quot;&lt;/param2&gt;&lt;param3&gt;&quot;&#32;+&#32;C1orderStatus&#32;+&#32;&quot;&lt;/param3&gt;&lt;/&quot;&#32;+&#32;key&#32;+&#32;&quot;&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;&quot;;</emphasis>
+333 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;sURL&#32;=&#32;useMethod;</emphasis>
+334 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;pubURL&#32;=&#32;sURL;</emphasis>
+335 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;pubPayload&#32;=&#32;xmlPayload;</emphasis>
+336 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;logEvent&#32;=&#32;&quot;XML&#32;Payload&#32;To&#32;AXIS:&#32;&quot;&#32;+&#32;xmlPayload;</emphasis>
+337 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;System.Diagnostics.EventLog.WriteEntry(Triggers.logSource,&#32;logEvent,&#32;System.Diagnostics.EventLogEntryType.Information,&#32;234);</emphasis>
+338 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;objRequest&#32;=&#32;(HttpWebRequest)WebRequest.Create(sURL.ToString());</emphasis>
+339 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;objRequest.Method&#32;=&#32;&quot;POST&quot;;</emphasis>
+340 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;objRequest.ContentType&#32;=&#32;&quot;text/xml&quot;;</emphasis>
+341 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;objRequest.Headers.Add(&quot;SOAPAction&quot;,&#32;key);</emphasis>
+342 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;objRequest.Timeout&#32;=&#32;120000;</emphasis>
+343 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;objRequest.ReadWriteTimeout&#32;=&#32;120000;</emphasis>
+344 
+345 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;data&#32;=&#32;new&#32;StringBuilder();</emphasis>
+346 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;data.Append(xmlPayload);</emphasis>
+347 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;byte[]&#32;byteDataStatus&#32;=&#32;Encoding.UTF8.GetBytes(data.ToString());&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//&#32;Sending&#32;our&#32;request&#32;to&#32;Apache&#32;AXIS&#32;in&#32;a&#32;byte&#32;array</emphasis>
+348 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;objRequest.ContentLength&#32;=&#32;byteDataStatus.Length;</emphasis>
+349 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;using&#32;(Stream&#32;postStream&#32;=&#32;objRequest.GetRequestStream())</emphasis>
+350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;{</emphasis>
+351 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;postStream.ReadTimeout&#32;=&#32;120000;</emphasis>
+352 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;postStream.WriteTimeout&#32;=&#32;120000;</emphasis>
+353 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;postStream.Write(byteDataStatus,&#32;0,&#32;byteDataStatus.Length);</emphasis>
+354 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;}</emphasis>
+355 
+356 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;startTime&#32;=&#32;DateTime.Now;</emphasis>
+357 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+358 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;//return&#32;response&#32;from&#32;AXIS&#32;(if&#32;any)</emphasis>
+359 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;using&#32;(HttpWebResponse&#32;response&#32;=&#32;objRequest.GetResponse()&#32;as&#32;HttpWebResponse)</emphasis>
+360 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;{</emphasis>
+361 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;StreamReader&#32;reader&#32;=&#32;new&#32;StreamReader(response.GetResponseStream());</emphasis>
+362 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;result&#32;=&#32;reader.ReadToEnd();</emphasis>
+363 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;reader.Close();</emphasis>
+364 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;response.Close();</emphasis>
+365 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;}</emphasis>
+366 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+367 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;try</emphasis>
+368 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;{</emphasis>
+369 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlResult.LoadXml(result);</emphasis>
+370 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xnl&#32;=&#32;xmlResult.GetElementsByTagName(&quot;success&quot;);</emphasis>
+371 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;foreach&#32;(XmlNode&#32;node&#32;in&#32;xnl)</emphasis>
+372 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{</emphasis>
+373 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;switch&#32;(node.InnerText)</emphasis>
+374 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{</emphasis>
+375 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;case&#32;&quot;true&quot;:</emphasis>
+376 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;&quot;Status-Set&#32;Result:&#32;Success&quot;;</emphasis>
+377 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;System.Diagnostics.EventLog.WriteEntry(Triggers.logSource,&#32;logEvent,&#32;System.Diagnostics.EventLogEntryType.Information,&#32;234);</emphasis>
+378 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;break;</emphasis>
+379 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;default:</emphasis>
+380 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;&quot;Status-Set&#32;Result:&#32;Failure&quot;;</emphasis>
+381 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;System.Diagnostics.EventLog.WriteEntry(Triggers.logSource,&#32;logEvent,&#32;System.Diagnostics.EventLogEntryType.Error,&#32;234);</emphasis>
+382 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;break;</emphasis>
+383 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}</emphasis>
+384 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}</emphasis>
+385 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;}</emphasis>
+386 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;catch&#32;(Exception&#32;ex2)</emphasis>
+387 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;{</emphasis>
+388 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;&quot;ERROR&#32;LOADING&#32;XML&#32;FROM&#32;WEB&#32;SERVICE&#32;ON&#32;C1&#32;ORDER&#32;STATUS&#32;SET:&#32;&quot;&#32;+&#32;ex2.Message;</emphasis>
+389 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;System.Diagnostics.EventLog.WriteEntry(Triggers.logSource,&#32;logEvent,&#32;System.Diagnostics.EventLogEntryType.Error,&#32;234);</emphasis>
+390 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;return;</emphasis>
+391 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;}</emphasis>
+392 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+393 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;logEvent&#32;=&#32;&quot;C1&#32;Order&#32;Status&#32;And&#32;Reference&#32;Completed&#32;For&#32;C1&#32;Order:&#32;&quot;&#32;+&#32;orderNumber&#32;+&#32;&quot;&#32;-&#32;Syteline&#32;Order:&#32;&quot;&#32;+&#32;SPOrderNumber;</emphasis>
+394 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;System.Diagnostics.EventLog.WriteEntry(Triggers.logSource,&#32;logEvent,&#32;System.Diagnostics.EventLogEntryType.Information,&#32;234);</emphasis>
+395 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//}</emphasis>
+396 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//catch&#32;(Exception&#32;exd)</emphasis>
+397 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//{</emphasis>
+398 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;logEvent&#32;=&#32;&quot;ERROR:&#32;&quot;&#32;+&#32;exd.Message&#32;+&#32;&quot;&#32;-&gt;&#32;&quot;&#32;+&#32;exd.Source;</emphasis>
+399 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;&#32;&#32;&#32;System.Diagnostics.EventLog.WriteEntry(Triggers.logSource,&#32;logEvent,&#32;System.Diagnostics.EventLogEntryType.Error,&#32;234);</emphasis>
+400 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//}</emphasis>
+401 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//****************************************************************</emphasis>
+402 
+403 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;***&#32;LOG&#32;TIME</emphasis>
+404 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;endTime&#32;=&#32;DateTime.Now;
+405 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;endTime.Subtract(startTime);
+406 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;
+407 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;
+408 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;Order-status&#32;and&#32;final&#32;wrapup&#32;to&#32;ConfigureOne&#32;in:&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;<emphasis class="stringliteral">&quot;ms&#32;/&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;s&quot;</emphasis>;
+409 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
+410 
+411 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;***&#32;LOG&#32;TOTAL&#32;TIME</emphasis>
+412 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;totalTimeStop&#32;=&#32;DateTime.Now;
+413 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;totalTimeStop.Subtract(totalTimeStart);
+414 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;
+415 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;
+416 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;Total&#32;execution:&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;<emphasis class="stringliteral">&quot;ms&#32;/&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;s&quot;</emphasis>;
+417 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
+418 
+419 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_c1_web_service_ab9783633849f1f5971196e6419c9343d_1ab9783633849f1f5971196e6419c9343d">420 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_ab9783633849f1f5971196e6419c9343d_1ab9783633849f1f5971196e6419c9343d">OutputXMLToFile</link>(<emphasis class="keywordtype">string</emphasis>&#32;XML)
+421 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+422 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;formattedXML&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+423 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;stringWriter&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringWriter())
+424 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;xmlTextWriter&#32;=&#32;XmlWriter.Create(stringWriter))
+425 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+426 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;xmlOut&#32;=&#32;XML;
+427 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;formattedXML&#32;=&#32;<link linkend="namespace_system">System</link>.Xml.Linq.XDocument.Parse(xmlOut).ToString();
+428 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+429 
+430 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(File.Exists(<emphasis class="stringliteral">&quot;XMLOutput_&quot;</emphasis>&#32;+&#32;SPPUBOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;.txt&quot;</emphasis>))
+431 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+432 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.Delete(<emphasis class="stringliteral">&quot;XMLOutput_&quot;</emphasis>&#32;+&#32;SPPUBOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;.txt&quot;</emphasis>);
+433 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+434 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(<link linkend="namespace_system">System</link>.IO.StreamWriter&#32;file&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="namespace_system">System</link>.IO.StreamWriter(<emphasis class="stringliteral">@&quot;XMLOutput_&quot;</emphasis>&#32;+&#32;SPPUBOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;.txt&quot;</emphasis>,&#32;<emphasis class="keyword">true</emphasis>))
+435 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+436 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;file.WriteLine(formattedXML);
+437 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+438 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_c1_web_service_a5c55f707a8abfce00f492231cb598c25_1a5c55f707a8abfce00f492231cb598c25">439 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_a5c55f707a8abfce00f492231cb598c25_1a5c55f707a8abfce00f492231cb598c25">StartCopy</link>()
+440 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+441 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_retrieve_drawings">RetrieveDrawings</link>.<link linkend="class_configure_one_flag_1_1_retrieve_drawings_a9eb1774070853cdd5601e1d8a6270757_1a9eb1774070853cdd5601e1d8a6270757">CopyDrawings</link>(xmlResultParm,&#32;urlParm);
+442 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+443 &#32;&#32;&#32;&#32;}
+444 }
+445 
     </computeroutput></literallayout>
 </section>

@@ -25,6 +25,9 @@ var files =
       [ "NETRESOURCE", "class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e.html", "class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e" ],
       [ "ErrorClass", "struct_configure_one_flag_1_1_network_share_1_1_error_class.html", "struct_configure_one_flag_1_1_network_share_1_1_error_class" ]
     ] ],
+    [ "RetrieveDrawings.cs", "_retrieve_drawings_8cs.html", [
+      [ "RetrieveDrawings", "class_configure_one_flag_1_1_retrieve_drawings.html", "class_configure_one_flag_1_1_retrieve_drawings" ]
+    ] ],
     [ "SendMail.cs", "_send_mail_8cs.html", [
       [ "SendMail", "class_configure_one_flag_1_1_send_mail.html", "class_configure_one_flag_1_1_send_mail" ]
     ] ],

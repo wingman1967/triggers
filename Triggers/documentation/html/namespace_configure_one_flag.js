@@ -6,6 +6,7 @@ var namespace_configure_one_flag =
     [ "crypto", "class_configure_one_flag_1_1crypto.html", "class_configure_one_flag_1_1crypto" ],
     [ "DatabaseFactory", "class_configure_one_flag_1_1_database_factory.html", "class_configure_one_flag_1_1_database_factory" ],
     [ "NetworkShare", "class_configure_one_flag_1_1_network_share.html", "class_configure_one_flag_1_1_network_share" ],
+    [ "RetrieveDrawings", "class_configure_one_flag_1_1_retrieve_drawings.html", "class_configure_one_flag_1_1_retrieve_drawings" ],
     [ "SendMail", "class_configure_one_flag_1_1_send_mail.html", "class_configure_one_flag_1_1_send_mail" ],
     [ "StagingUtilities", "class_configure_one_flag_1_1_staging_utilities.html", "class_configure_one_flag_1_1_staging_utilities" ],
     [ "Triggers", "class_configure_one_flag_1_1_triggers.html", "class_configure_one_flag_1_1_triggers" ],

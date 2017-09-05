@@ -79,6 +79,7 @@ namespace ConfigureOneFlag
             caller = "ORDER";
             orderNum = orderValue;
             pubOrderNumber = orderNum;
+                        
             //Ensure the mE array is initialized, in case it is never addressed again before an array.clear is attempted
             Audit.mE = new string[50];
             Audit.mEIndex = 0;

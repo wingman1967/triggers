@@ -46,6 +46,27 @@
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string SPOrderNumber</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static XmlDocument xmlResultParm</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string urlParm</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
         <section>
             <title></title>
@@ -68,6 +89,14 @@ string XML)</para>
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_c1_web_service_a5c55f707a8abfce00f492231cb598c25_1a5c55f707a8abfce00f492231cb598c25">StartCopy</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
     <simplesect>
 
@@ -75,7 +104,7 @@ string XML)</para>
     </simplesect>
         <simplesect>
             <title>Detailed Description</title>
-                <para>Definition at line 13 of file C1WebService.cs</para>
+                <para>Definition at line 14 of file C1WebService.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>C1WebService.cs</para></listitem></itemizedlist></para>
         </simplesect>
@@ -85,6 +114,10 @@ string XML)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_c1_web_service_ab9783633849f1f5971196e6419c9343d_1ab9783633849f1f5971196e6419c9343d">
                 <title>static void ConfigureOneFlag.C1WebService.OutputXMLToFile (string XML)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_c1_web_service_a5c55f707a8abfce00f492231cb598c25_1a5c55f707a8abfce00f492231cb598c25">
+                <title>static void ConfigureOneFlag.C1WebService.StartCopy ()</title> <emphasis></emphasis>
                 
             </section>
 </section>
