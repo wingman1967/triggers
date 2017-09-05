@@ -107,7 +107,6 @@ namespace ConfigureOneFlag
                     objRequest.Headers.Add("SOAPAction", key);
                     objRequest.Timeout = 120000;
                     objRequest.ReadWriteTimeout = 120000;
-                    //objRequest.KeepAlive = true;
 
                     logEvent = "DEBUG: Requested document from C1";
                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
@@ -132,7 +131,6 @@ namespace ConfigureOneFlag
                     logEvent = "DEBUG: Waiting for response from C1";
                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
-                    // using (HttpWebResponse response = objRequest.GetResponse() as HttpWebResponse)
                     try
                     {
                         using (HttpWebResponse response = (HttpWebResponse)objRequest.GetResponse())
@@ -174,13 +172,7 @@ namespace ConfigureOneFlag
                                 {
                                     byte[] pdfByteArray = Convert.FromBase64String(node.InnerText);
                                     string fileToCopy = @"C:\C1TEMP\" + C1WebService.SPOrderNumber + "_" + docs[arrayindex];
-
-                                    //deboog (comment out following line to NOT copy files to Sharepoint)
                                     File.WriteAllBytes(SharepointCopyLocation + C1WebService.SPOrderNumber + "_" + docs[arrayindex], pdfByteArray);
-                                    //end deboog
-
-                                    //File.WriteAllBytes(fileToCopy, pdfByteArray);
-                                    //File.Copy(fileToCopy, SharepointCopyLocation + SPOrderNumber + "_" + docs[arrayindex], true);
                                     documentFilesSaved = documentFilesSaved + docs[arrayindex] + Environment.NewLine;
 
                                     // *** LOG TIME
