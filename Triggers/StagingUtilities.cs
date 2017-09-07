@@ -358,7 +358,7 @@ namespace ConfigureOneFlag
                     }
                 }
             }
-
+            
             //build COITEM records, per line
             xnl = xmldoc.GetElementsByTagName("Detail");
             foreach (XmlNode node in xnl)
@@ -547,7 +547,6 @@ namespace ConfigureOneFlag
                 bom.CO_Line = coitem.CO_Line;
                 foreach (XmlNode nodeib in xnlb)
                 {
-                    //recordSequence = 1;
                     recordSequence += 1;
                     bom.Sequence = recordSequence;
                     bom.RecordSequence = recordSequence;

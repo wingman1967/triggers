@@ -211,7 +211,7 @@ namespace ConfigureOneFlag
                 }
 
                 //Save XML output to SharePoint as well
-                File.Copy("XMLOutput_" + C1WebService.SPPUBOrderNumber + ".txt", SharepointCopyLocation + "XMLOutput_" + C1WebService.SPPUBOrderNumber + ".txt");
+                File.Copy("XMLOutput_" + C1WebService.SPPUBOrderNumber + ".txt", SharepointCopyLocation + "XMLOutput_" + C1WebService.SPPUBOrderNumber + ".txt", true);
 
                 logEvent = "Retrieved/Saved Following Document Files: " + Environment.NewLine + Environment.NewLine + documentFilesSaved;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
