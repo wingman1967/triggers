@@ -84,10 +84,6 @@ namespace ConfigureOneFlag
 
                 startTime = DateTime.Now;
 
-                //Retrieve the SL order# (if not found, default to using the C1 order#):
-                SPOrderNumber = string.IsNullOrEmpty(DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber)) ? Triggers.pubOrderNumber : DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
-                SPPUBOrderNumber = SPOrderNumber;
-
                 //Save XML output to object for further handling
                 using (var stringWriter = new StringWriter())
                 using (var xmlTextWriter = XmlWriter.Create(stringWriter))
@@ -97,8 +93,6 @@ namespace ConfigureOneFlag
                     string xmlOut = stringWriter.GetStringBuilder().ToString();
                     Triggers.wsReturn = System.Xml.Linq.XDocument.Parse(xmlOut).ToString();
                 }
-
-                OutputXMLToFile(Triggers.wsReturn);             //so file will be there for the worker-thread
 
                 if (Triggers.caller == "ORDER") {StagingUtilities.MapXMLToSQL(xmlResult);}
 
@@ -120,6 +114,12 @@ namespace ConfigureOneFlag
 
             startTime = DateTime.Now;
             DatabaseFactory.CfgImport(Triggers.pubOrderNumber);                 //map staging-table data into Syteline
+
+            //Retrieve the SL order# (if not found, default to using the C1 order#):
+            SPOrderNumber = string.IsNullOrEmpty(DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber)) ? Triggers.pubOrderNumber : DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
+            SPPUBOrderNumber = SPOrderNumber;
+
+            OutputXMLToFile(Triggers.wsReturn);             //so file will be there for the worker-thread
 
             //start downloading and copying drawing files on separate thread while mapping, import, and job-creation take place
             xmlResultParm = xmlResult;
