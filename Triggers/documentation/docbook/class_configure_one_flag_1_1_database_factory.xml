@@ -201,6 +201,14 @@ string ISOCode)</para>
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_a74068a0088a2ac8a40607cf6c83cfdd4_1a74068a0088a2ac8a40607cf6c83cfdd4">UpdateCO</link> (
+string conum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
     <simplesect>
 
@@ -262,6 +270,10 @@ string ISOCode)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_a0b3faff4145a97817540e0ab92ae9101_1a0b3faff4145a97817540e0ab92ae9101">
                 <title>static string ConfigureOneFlag.DatabaseFactory.RetrieveISOCountry (string ISOCode)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_a74068a0088a2ac8a40607cf6c83cfdd4_1a74068a0088a2ac8a40607cf6c83cfdd4">
+                <title>static void ConfigureOneFlag.DatabaseFactory.UpdateCO (string conum)</title> <emphasis></emphasis>
                 
             </section>
 </section>

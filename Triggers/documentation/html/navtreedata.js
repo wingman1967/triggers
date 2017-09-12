@@ -23,8 +23,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_assembly_info_8cs.html",
-"class_configure_one_flag_1_1z_cfg_c_o_aa73d70854f1cfd3c7750e73df19324ac.html#aa73d70854f1cfd3c7750e73df19324ac",
-"struct_configure_one_flag_1_1_network_share_1_1_error_class_a2a8ea05147699f598106c5ea4e0379d7.html#a2a8ea05147699f598106c5ea4e0379d7"
+"class_configure_one_flag_1_1z_cfg_c_o_aa712416c0d8f24298c9dcb0c06023fa9.html#aa712416c0d8f24298c9dcb0c06023fa9",
+"struct_configure_one_flag_1_1_network_share_1_1_error_class.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
