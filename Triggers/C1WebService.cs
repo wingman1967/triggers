@@ -100,7 +100,7 @@ namespace ConfigureOneFlag
 
                 OutputXMLToFile(Triggers.wsReturn);             //so file will be there for the worker-thread
 
-                //start downloading and copying drawing files on separate thread so work can continue asynchronously
+                //start downloading and copying drawing files on separate thread while mapping, import, and job-creation take place
                 xmlResultParm = xmlResult;
                 urlParm = url;
                 Action DrawingsAsync = new Action(StartCopy);
@@ -145,7 +145,6 @@ namespace ConfigureOneFlag
             elapsedTimeSeconds = ts.Seconds;
             logEvent = "DEBUG: Total execution: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-
         }
         private static void OutputXMLToFile(string XML)
         {

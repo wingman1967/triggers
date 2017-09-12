@@ -209,7 +209,7 @@ namespace ConfigureOneFlag
                     }
                     arrayindex += 1;
                 }
-
+                
                 //Save XML output to SharePoint as well
                 File.Copy("XMLOutput_" + C1WebService.SPPUBOrderNumber + ".txt", SharepointCopyLocation + "XMLOutput_" + C1WebService.SPPUBOrderNumber + ".txt", true);
 
