@@ -100,15 +100,6 @@ namespace ConfigureOneFlag
 
                 OutputXMLToFile(Triggers.wsReturn);             //so file will be there for the worker-thread
 
-                //start downloading and copying drawing files on separate thread while mapping, import, and job-creation take place
-                xmlResultParm = xmlResult;
-                urlParm = url;
-                Action DrawingsAsync = new Action(StartCopy);
-                DrawingsAsync.BeginInvoke(new AsyncCallback(MTresult =>
-                {
-                    (MTresult.AsyncState as Action).EndInvoke(MTresult);
-                }), DrawingsAsync);
-
                 if (Triggers.caller == "ORDER") {StagingUtilities.MapXMLToSQL(xmlResult);}
 
                 // *** LOG TIME
@@ -129,6 +120,15 @@ namespace ConfigureOneFlag
 
             startTime = DateTime.Now;
             DatabaseFactory.CfgImport(Triggers.pubOrderNumber);                 //map staging-table data into Syteline
+
+            //start downloading and copying drawing files on separate thread while mapping, import, and job-creation take place
+            xmlResultParm = xmlResult;
+            urlParm = url;
+            Action DrawingsAsync = new Action(StartCopy);
+            DrawingsAsync.BeginInvoke(new AsyncCallback(MTresult =>
+            {
+                (MTresult.AsyncState as Action).EndInvoke(MTresult);
+            }), DrawingsAsync);
 
             // *** LOG TIME
             endTime = DateTime.Now;
