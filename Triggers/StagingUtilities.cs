@@ -397,7 +397,7 @@ namespace ConfigureOneFlag
                     DatabaseFactory.WriteRecordCfg(ref cfg);
                 }
 
-                //Look for SHIP_VIA in INPUTS (cannot use IIF because there are ship_via tags after this one and value will be lost)
+                //Look for SHIP_VIA in INPUTS 
                 XmlNodeList xnlisv = xmldoc.GetElementsByTagName("Input");
                 foreach (XmlNode nodeisv in xnlisv)
                 {
@@ -561,7 +561,7 @@ namespace ConfigureOneFlag
                     bom.Discount = Convert.ToDecimal(string.IsNullOrEmpty(nodeib.ChildNodes[5].InnerText) ? "0" : nodeib.ChildNodes[5].InnerText);
                     bom.QTY = Convert.ToDecimal(string.IsNullOrEmpty(nodeib.ChildNodes[6].InnerText) ? "0" : nodeib.ChildNodes[6].InnerText);
 
-                    //Search the ItemMaster XML records for a matching smartpart_num and retrieve its priority level for this BOM record
+                    //Search the ItemMaster XML records for the matching smartpart_num and retrieve its priority level for this BOM record
                     bool foundchild = false;
                     bool imdone = false;
                     foreach (XmlNode nodeIMPL in xnlim)

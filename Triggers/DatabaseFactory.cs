@@ -19,6 +19,7 @@ namespace ConfigureOneFlag
         public static string spuname = "";
         public static string sppassword = "";
         public static string decryptedValue = "";
+        public static bool debugLogging = false;
         public void SetConnectionString()
         {
             RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\ConfigureOneAssembly\\1.0", true);
@@ -42,6 +43,7 @@ namespace ConfigureOneFlag
                 reg.SetValue("SPLOCATION", splocation);
                 reg.SetValue("SPUNAME", spuname);
                 reg.SetValue("SPPASSWORD", sppassword);
+                reg.SetValue("DEBUGLOGGING", "NO");
             }
             
             //decrypt cs
@@ -56,6 +58,11 @@ namespace ConfigureOneFlag
             connectionString = crypto.DecryptCS(connectionString, sKey);
             spuname = crypto.DecryptCS(spuname, sKey);
             sppassword = crypto.DecryptCS(sppassword, sKey);
+            debugLogging = false;
+            if (reg.GetValue("DEBUGLOGGING").ToString() == "YES")
+            {
+                debugLogging = true;
+            }
 
             //deboog
             //connectionString = "server = grcdslsql0.dom.grc; database = SL_man_App; enlist=false; User ID = sa_config; Password = options23";

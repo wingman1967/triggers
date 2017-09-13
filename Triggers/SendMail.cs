@@ -12,7 +12,6 @@ namespace ConfigureOneFlag
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress(DatabaseFactory.emailFrom);
             mail.To.Add(new MailAddress(DatabaseFactory.emailaddr));
-            //if (messageSubject == "TIMEOUT") { mail.To.Add(new MailAddress("GrantH@NatlPump.com")); };
             mail.To.Add(new MailAddress("GrantH@NatlPump.com"));
             mail.Subject = messageSubject;
             mail.Body = messageBody;

@@ -55,7 +55,7 @@ namespace ConfigureOneFlag
                 Triggers.logEvent = ex5.Message + " -> " + ex5.Source + " -> " + ex5.InnerException;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
 
-                //a failure of some kind has occurred; do nothing
+                //a failure of some kind has occurred; do nothing other than log it since all processing has been completed
             }
         }
     }

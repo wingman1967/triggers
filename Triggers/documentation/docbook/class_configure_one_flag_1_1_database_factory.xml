@@ -91,6 +91,13 @@
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static bool debugLogging</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
         <section>
             <title></title>

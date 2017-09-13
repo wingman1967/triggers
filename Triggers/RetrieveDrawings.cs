@@ -109,7 +109,7 @@ namespace ConfigureOneFlag
                     objRequest.ReadWriteTimeout = 120000;
 
                     logEvent = "DEBUG: Requested document from C1";
-                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                    if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
                     startTime = DateTime.Now;
                     data = new StringBuilder();
@@ -129,7 +129,7 @@ namespace ConfigureOneFlag
                     result = "";
 
                     logEvent = "DEBUG: Waiting for response from C1";
-                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                    if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
                     try
                     {
@@ -150,7 +150,7 @@ namespace ConfigureOneFlag
                             }
 
                             logEvent = "DEBUG: Response received from C1";
-                            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                            if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
                             // *** LOG TIME
                             endTime = DateTime.Now;
@@ -158,20 +158,19 @@ namespace ConfigureOneFlag
                             elapsedTimeMS = ts.Milliseconds;
                             elapsedTimeSeconds = ts.Seconds;
                             logEvent = "DEBUG: Document response was received from ConfigureOne in: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
-                            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                            if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
                             XmlNodeList xnldoc = xmlResult.GetElementsByTagName("content");
                             foreach (XmlNode node in xnldoc)
                             {
                                 logEvent = "DEBUG: Copying file to Sharepoint: " + C1WebService.SPOrderNumber + "_" + docs[arrayindex];
-                                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                                if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
                                 startTime = DateTime.Now;
 
                                 try
                                 {
                                     byte[] pdfByteArray = Convert.FromBase64String(node.InnerText);
-                                    string fileToCopy = @"C:\C1TEMP\" + C1WebService.SPOrderNumber + "_" + docs[arrayindex];
                                     File.WriteAllBytes(SharepointCopyLocation + C1WebService.SPOrderNumber + "_" + docs[arrayindex], pdfByteArray);
                                     documentFilesSaved = documentFilesSaved + docs[arrayindex] + Environment.NewLine;
 
@@ -181,7 +180,7 @@ namespace ConfigureOneFlag
                                     elapsedTimeMS = ts.Milliseconds;
                                     elapsedTimeSeconds = ts.Seconds;
                                     logEvent = "DEBUG: Document copied to Sharepoint in: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
-                                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                                    if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
                                 }
                                 catch (Exception ts1)
                                 {
@@ -194,7 +193,6 @@ namespace ConfigureOneFlag
                                         try
                                         {
                                             byte[] pdfByteArray = Convert.FromBase64String(node.InnerText);
-                                            string fileToCopy = @"C:\C1TEMP\" + C1WebService.SPOrderNumber + "_" + docs[arrayindex];
                                             File.WriteAllBytes(SharepointCopyLocation + C1WebService.SPOrderNumber + "_" + docs[arrayindex], pdfByteArray);
                                             documentFilesSaved = documentFilesSaved + docs[arrayindex] + Environment.NewLine;
 
@@ -204,7 +202,7 @@ namespace ConfigureOneFlag
                                             elapsedTimeMS = ts.Milliseconds;
                                             elapsedTimeSeconds = ts.Seconds;
                                             logEvent = "DEBUG: Document copied to Sharepoint in: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
-                                            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                                            if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
                                             successfulDocument = true;
                                         }
                                         catch (Exception rt1)

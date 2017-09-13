@@ -80,7 +80,7 @@ namespace ConfigureOneFlag
                 elapsedTimeMS = ts.Milliseconds;
                 elapsedTimeSeconds = ts.Seconds;
                 logEvent = "DEBUG: XML Order data returned from ConfigureOne in: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
-                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
                 startTime = DateTime.Now;
 
@@ -102,7 +102,7 @@ namespace ConfigureOneFlag
                 elapsedTimeMS = ts.Milliseconds;
                 elapsedTimeSeconds = ts.Seconds;
                 logEvent = "DEBUG: XML data mapped to staging tables in: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
-                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
                 Triggers.caller = "";
             }
             catch (WebException wex1)
@@ -136,7 +136,7 @@ namespace ConfigureOneFlag
             elapsedTimeMS = ts.Milliseconds;
             elapsedTimeSeconds = ts.Seconds;
             logEvent = "DEBUG: Staging tables mapped to Syteline in: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
-            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+            if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
             // *** LOG TOTAL TIME
             totalTimeStop = DateTime.Now;
@@ -144,7 +144,7 @@ namespace ConfigureOneFlag
             elapsedTimeMS = ts.Milliseconds;
             elapsedTimeSeconds = ts.Seconds;
             logEvent = "DEBUG: Total execution: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
-            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+            if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
         }
         private static void OutputXMLToFile(string XML)
         {
