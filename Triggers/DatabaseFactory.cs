@@ -162,16 +162,24 @@ namespace ConfigureOneFlag
         {
             //call SP to import data into Syteline
             int CreateOrder = 1;
+            string commandtext = "EXEC GR_CfgImportSp '" + orderNumber + "', '" + orderNumber + "', '" + CreateOrder + "' WITH RECOMPILE";
             SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand("GR_CfgImportSp", connection);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@pStartingOrderNum", orderNumber);
-            command.Parameters.AddWithValue("@pEndingOrderNum", orderNumber);
-            command.Parameters.AddWithValue("@pCreateOrder", CreateOrder);
+            SqlCommand command = new SqlCommand(commandtext, connection);
             connection.Open();
             command.CommandTimeout = 120000;
             command.ExecuteNonQuery();
             connection.Close();
+
+            //SqlConnection connection = new SqlConnection(connectionString);
+            //SqlCommand command = new SqlCommand("GR_CfgImportSp", connection);
+            //command.CommandType = CommandType.StoredProcedure;
+            //command.Parameters.AddWithValue("@pStartingOrderNum", orderNumber);
+            //command.Parameters.AddWithValue("@pEndingOrderNum", orderNumber);
+            //command.Parameters.AddWithValue("@pCreateOrder", CreateOrder);
+            //connection.Open();
+            //command.CommandTimeout = 120000;
+            //command.ExecuteNonQuery();
+            //connection.Close();
         }
         public static void CleanupOrder(string orderNum)
         {

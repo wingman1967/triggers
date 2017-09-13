@@ -204,60 +204,58 @@ Processing for calls to ConfigureOne web service and return for further handling
 119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SPOrderNumber&#32;=&#32;<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a64f0488a247638877def2f773331d184_1a64f0488a247638877def2f773331d184">RetrieveSLCO</link>(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_1afd0957296af9cc27c0a677ba2c027bf1">pubOrderNumber</link>))&#32;?&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_1afd0957296af9cc27c0a677ba2c027bf1">pubOrderNumber</link>&#32;:&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a64f0488a247638877def2f773331d184_1a64f0488a247638877def2f773331d184">RetrieveSLCO</link>(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_1afd0957296af9cc27c0a677ba2c027bf1">pubOrderNumber</link>);
 120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SPPUBOrderNumber&#32;=&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_ae10595c3cbff0ef87cb607d9c6f2b250_1ae10595c3cbff0ef87cb607d9c6f2b250">SPOrderNumber</link>;
 121 
-122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//DatabaseFactory.UpdateCO(SPOrderNumber);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;//sync&#32;order_ref_num&#32;with&#32;co_num&#32;from&#32;SL</emphasis>
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_ab9783633849f1f5971196e6419c9343d_1ab9783633849f1f5971196e6419c9343d">OutputXMLToFile</link>(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_adb47d391c1eb7baeb5780f3dd9322a6d_1adb47d391c1eb7baeb5780f3dd9322a6d">wsReturn</link>);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//so&#32;file&#32;will&#32;be&#32;there&#32;for&#32;the&#32;worker-thread</emphasis>
 123 
-124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_ab9783633849f1f5971196e6419c9343d_1ab9783633849f1f5971196e6419c9343d">OutputXMLToFile</link>(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_adb47d391c1eb7baeb5780f3dd9322a6d_1adb47d391c1eb7baeb5780f3dd9322a6d">wsReturn</link>);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//so&#32;file&#32;will&#32;be&#32;there&#32;for&#32;the&#32;worker-thread</emphasis>
-125 
-126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//start&#32;downloading&#32;and&#32;copying&#32;drawing&#32;files&#32;on&#32;separate&#32;thread&#32;so&#32;main&#32;thread&#32;can&#32;return&#32;control&#32;to&#32;CLR</emphasis>
-127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlResultParm&#32;=&#32;xmlResult;
-128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlParm&#32;=&#32;url;
-129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Action&#32;DrawingsAsync&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;Action(<link linkend="class_configure_one_flag_1_1_c1_web_service_a5c55f707a8abfce00f492231cb598c25_1a5c55f707a8abfce00f492231cb598c25">StartCopy</link>);
-130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DrawingsAsync.BeginInvoke(<emphasis class="keyword">new</emphasis>&#32;AsyncCallback(MTresult&#32;=&gt;
-131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(MTresult.AsyncState&#32;as&#32;Action).EndInvoke(MTresult);
-133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}),&#32;DrawingsAsync);
-134 
-135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;***&#32;LOG&#32;TIME</emphasis>
-136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;endTime&#32;=&#32;DateTime.Now;
-137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;endTime.Subtract(startTime);
-138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;
-139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;
-140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;Staging&#32;tables&#32;mapped&#32;to&#32;Syteline&#32;in:&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;<emphasis class="stringliteral">&quot;ms&#32;/&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;s&quot;</emphasis>;
-141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-142 
-143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;***&#32;LOG&#32;TOTAL&#32;TIME</emphasis>
-144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;totalTimeStop&#32;=&#32;DateTime.Now;
-145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;totalTimeStop.Subtract(totalTimeStart);
-146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;
-147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;
-148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;Total&#32;execution:&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;<emphasis class="stringliteral">&quot;ms&#32;/&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;s&quot;</emphasis>;
-149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
-150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<link linkend="class_configure_one_flag_1_1_c1_web_service_ab9783633849f1f5971196e6419c9343d_1ab9783633849f1f5971196e6419c9343d">151 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_ab9783633849f1f5971196e6419c9343d_1ab9783633849f1f5971196e6419c9343d">OutputXMLToFile</link>(<emphasis class="keywordtype">string</emphasis>&#32;XML)
-152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;formattedXML&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;stringWriter&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringWriter())
-155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;xmlTextWriter&#32;=&#32;XmlWriter.Create(stringWriter))
-156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;xmlOut&#32;=&#32;XML;
-158 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;formattedXML&#32;=&#32;<link linkend="namespace_system">System</link>.Xml.Linq.XDocument.Parse(xmlOut).ToString();
-159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-160 
-161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(File.Exists(<emphasis class="stringliteral">&quot;XMLOutput_&quot;</emphasis>&#32;+&#32;SPPUBOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;.txt&quot;</emphasis>))
-162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.Delete(<emphasis class="stringliteral">&quot;XMLOutput_&quot;</emphasis>&#32;+&#32;SPPUBOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;.txt&quot;</emphasis>);
-164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(<link linkend="namespace_system">System</link>.IO.StreamWriter&#32;file&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="namespace_system">System</link>.IO.StreamWriter(<emphasis class="stringliteral">@&quot;XMLOutput_&quot;</emphasis>&#32;+&#32;SPPUBOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;.txt&quot;</emphasis>,&#32;<emphasis class="keyword">true</emphasis>))
-166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;file.WriteLine(formattedXML);
-168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<link linkend="class_configure_one_flag_1_1_c1_web_service_a5c55f707a8abfce00f492231cb598c25_1a5c55f707a8abfce00f492231cb598c25">170 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_a5c55f707a8abfce00f492231cb598c25_1a5c55f707a8abfce00f492231cb598c25">StartCopy</link>()
-171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_retrieve_drawings">RetrieveDrawings</link>.<link linkend="class_configure_one_flag_1_1_retrieve_drawings_a9eb1774070853cdd5601e1d8a6270757_1a9eb1774070853cdd5601e1d8a6270757">CopyDrawings</link>(xmlResultParm,&#32;urlParm);
-173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-174 &#32;&#32;&#32;&#32;}
-175 }
-176 
+124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//start&#32;downloading&#32;and&#32;copying&#32;drawing&#32;files&#32;on&#32;separate&#32;thread&#32;so&#32;main&#32;thread&#32;can&#32;return&#32;control&#32;to&#32;CLR</emphasis>
+125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xmlResultParm&#32;=&#32;xmlResult;
+126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;urlParm&#32;=&#32;url;
+127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;Action&#32;DrawingsAsync&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;Action(<link linkend="class_configure_one_flag_1_1_c1_web_service_a5c55f707a8abfce00f492231cb598c25_1a5c55f707a8abfce00f492231cb598c25">StartCopy</link>);
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;DrawingsAsync.BeginInvoke(<emphasis class="keyword">new</emphasis>&#32;AsyncCallback(MTresult&#32;=&gt;
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;(MTresult.AsyncState&#32;as&#32;Action).EndInvoke(MTresult);
+131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}),&#32;DrawingsAsync);
+132 
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;***&#32;LOG&#32;TIME</emphasis>
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;endTime&#32;=&#32;DateTime.Now;
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;endTime.Subtract(startTime);
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;Staging&#32;tables&#32;mapped&#32;to&#32;Syteline&#32;in:&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;<emphasis class="stringliteral">&quot;ms&#32;/&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;s&quot;</emphasis>;
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
+140 
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//&#32;***&#32;LOG&#32;TOTAL&#32;TIME</emphasis>
+142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;totalTimeStop&#32;=&#32;DateTime.Now;
+143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ts&#32;=&#32;totalTimeStop.Subtract(totalTimeStart);
+144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeMS&#32;=&#32;ts.Milliseconds;
+145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;elapsedTimeSeconds&#32;=&#32;ts.Seconds;
+146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;DEBUG:&#32;Total&#32;execution:&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeMS)&#32;+&#32;<emphasis class="stringliteral">&quot;ms&#32;/&#32;&quot;</emphasis>&#32;+&#32;Convert.ToString(elapsedTimeSeconds)&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;s&quot;</emphasis>;
+147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
+148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_c1_web_service_ab9783633849f1f5971196e6419c9343d_1ab9783633849f1f5971196e6419c9343d">149 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_ab9783633849f1f5971196e6419c9343d_1ab9783633849f1f5971196e6419c9343d">OutputXMLToFile</link>(<emphasis class="keywordtype">string</emphasis>&#32;XML)
+150 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+151 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;formattedXML&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+152 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;stringWriter&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringWriter())
+153 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;xmlTextWriter&#32;=&#32;XmlWriter.Create(stringWriter))
+154 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+155 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;xmlOut&#32;=&#32;XML;
+156 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;formattedXML&#32;=&#32;<link linkend="namespace_system">System</link>.Xml.Linq.XDocument.Parse(xmlOut).ToString();
+157 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+158 
+159 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(File.Exists(<emphasis class="stringliteral">&quot;XMLOutput_&quot;</emphasis>&#32;+&#32;SPPUBOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;.txt&quot;</emphasis>))
+160 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+161 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.Delete(<emphasis class="stringliteral">&quot;XMLOutput_&quot;</emphasis>&#32;+&#32;SPPUBOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;.txt&quot;</emphasis>);
+162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(<link linkend="namespace_system">System</link>.IO.StreamWriter&#32;file&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="namespace_system">System</link>.IO.StreamWriter(<emphasis class="stringliteral">@&quot;XMLOutput_&quot;</emphasis>&#32;+&#32;SPPUBOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;.txt&quot;</emphasis>,&#32;<emphasis class="keyword">true</emphasis>))
+164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;file.WriteLine(formattedXML);
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_c1_web_service_a5c55f707a8abfce00f492231cb598c25_1a5c55f707a8abfce00f492231cb598c25">168 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_a5c55f707a8abfce00f492231cb598c25_1a5c55f707a8abfce00f492231cb598c25">StartCopy</link>()
+169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_retrieve_drawings">RetrieveDrawings</link>.<link linkend="class_configure_one_flag_1_1_retrieve_drawings_a9eb1774070853cdd5601e1d8a6270757_1a9eb1774070853cdd5601e1d8a6270757">CopyDrawings</link>(xmlResultParm,&#32;urlParm);
+171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+172 &#32;&#32;&#32;&#32;}
+173 }
+174 
     </computeroutput></literallayout>
 </section>

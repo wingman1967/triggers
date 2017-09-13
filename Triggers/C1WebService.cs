@@ -119,8 +119,6 @@ namespace ConfigureOneFlag
             SPOrderNumber = string.IsNullOrEmpty(DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber)) ? Triggers.pubOrderNumber : DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
             SPPUBOrderNumber = SPOrderNumber;
 
-            //DatabaseFactory.UpdateCO(SPOrderNumber);        //sync order_ref_num with co_num from SL
-
             OutputXMLToFile(Triggers.wsReturn);             //so file will be there for the worker-thread
 
             //start downloading and copying drawing files on separate thread so main thread can return control to CLR

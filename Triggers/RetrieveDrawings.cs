@@ -185,18 +185,47 @@ namespace ConfigureOneFlag
                                 }
                                 catch (Exception ts1)
                                 {
-                                    logEvent = "An error occurred copying file to Sharepoint: " + C1WebService.SPOrderNumber + "_" + docs[arrayindex] + "  >  " + "TS1 Exception";
+                                    logEvent = "An error occurred copying file to Sharepoint: " + C1WebService.SPOrderNumber + "_" + docs[arrayindex] + "  >  " + "TS1 Exception.  A maximum of 5 retries will be attempted.";
                                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                                    bool successfulDocument = false;
+                                    for (int i = 0; i < 5; i += 1)
+                                    {
+                                        if (successfulDocument) { break; }
+                                        try
+                                        {
+                                            byte[] pdfByteArray = Convert.FromBase64String(node.InnerText);
+                                            string fileToCopy = @"C:\C1TEMP\" + C1WebService.SPOrderNumber + "_" + docs[arrayindex];
+                                            File.WriteAllBytes(SharepointCopyLocation + C1WebService.SPOrderNumber + "_" + docs[arrayindex], pdfByteArray);
+                                            documentFilesSaved = documentFilesSaved + docs[arrayindex] + Environment.NewLine;
 
-                                    // *** LOG TIME
-                                    endTime = DateTime.Now;
-                                    ts = endTime.Subtract(startTime);
-                                    elapsedTimeMS = ts.Milliseconds;
-                                    elapsedTimeSeconds = ts.Seconds;
-                                    logEvent = "DEBUG: Time that elapsed before timeout occurred for current document: " + Convert.ToString(elapsedTimeMS) + "ms, " + Convert.ToString(elapsedTimeSeconds) + " s";
-                                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                                            // *** LOG TIME
+                                            endTime = DateTime.Now;
+                                            ts = endTime.Subtract(startTime);
+                                            elapsedTimeMS = ts.Milliseconds;
+                                            elapsedTimeSeconds = ts.Seconds;
+                                            logEvent = "DEBUG: Document copied to Sharepoint in: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
+                                            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                                            successfulDocument = true;
+                                        }
+                                        catch (Exception rt1)
+                                        {
+                                            logEvent = "An error occurred copying file to Sharepoint: " + C1WebService.SPOrderNumber + "_" + docs[arrayindex] + "  >  " + "rt1 Exception on Retry#: " + (i + 1).ToString();
+                                            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                                        }
+                                    }
 
-                                    SendMail.MailMessage(logEvent, "TIMEOUT");
+                                    if (!successfulDocument)
+                                    {
+                                        // *** LOG TIME
+                                        endTime = DateTime.Now;
+                                        ts = endTime.Subtract(startTime);
+                                        elapsedTimeMS = ts.Milliseconds;
+                                        elapsedTimeSeconds = ts.Seconds;
+                                        logEvent = "DEBUG: Time that elapsed before timeout occurred for current document: " + Convert.ToString(elapsedTimeMS) + "ms, " + Convert.ToString(elapsedTimeSeconds) + " s";
+                                        System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                                        SendMail.MailMessage(logEvent, "TIMEOUT");
+                                    }
+
                                 }
                             }
                         }

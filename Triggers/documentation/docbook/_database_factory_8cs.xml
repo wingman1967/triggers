@@ -226,28 +226,28 @@ Repository for all database functions and calls on behalf of the assembly
 162 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 163 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//call&#32;SP&#32;to&#32;import&#32;data&#32;into&#32;Syteline</emphasis>
 164 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;CreateOrder&#32;=&#32;1;
-165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlConnection&#32;connection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString);
-166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;command&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(<emphasis class="stringliteral">&quot;GR_CfgImportSp&quot;</emphasis>,&#32;connection);
-167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.CommandType&#32;=&#32;CommandType.StoredProcedure;
-168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.Parameters.AddWithValue(<emphasis class="stringliteral">&quot;@pStartingOrderNum&quot;</emphasis>,&#32;orderNumber);
-169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.Parameters.AddWithValue(<emphasis class="stringliteral">&quot;@pEndingOrderNum&quot;</emphasis>,&#32;orderNumber);
-170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.Parameters.AddWithValue(<emphasis class="stringliteral">&quot;@pCreateOrder&quot;</emphasis>,&#32;CreateOrder);
-171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;connection.Open();
-172 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.CommandTimeout&#32;=&#32;120000;
-173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.ExecuteNonQuery();
-174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;connection.Close();
-175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<link linkend="class_configure_one_flag_1_1_database_factory_a1cba3b4ca48fe4e537bdc28925a61719_1a1cba3b4ca48fe4e537bdc28925a61719">176 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_a1cba3b4ca48fe4e537bdc28925a61719_1a1cba3b4ca48fe4e537bdc28925a61719">CleanupOrder</link>(<emphasis class="keywordtype">string</emphasis>&#32;orderNum)
-177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgCO&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
-179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
-180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
-182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.CommandTimeout&#32;=&#32;120000;
-183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
-184 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
-185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgCOItem&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
+165 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;commandtext&#32;=&#32;<emphasis class="stringliteral">&quot;EXEC&#32;GR_CfgImportSp&#32;&apos;&quot;</emphasis>&#32;+&#32;orderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;&apos;,&#32;&apos;&quot;</emphasis>&#32;+&#32;orderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;&apos;,&#32;&apos;&quot;</emphasis>&#32;+&#32;CreateOrder&#32;+&#32;<emphasis class="stringliteral">&quot;&apos;&#32;WITH&#32;RECOMPILE&quot;</emphasis>;
+166 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlConnection&#32;connection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString);
+167 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;command&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(commandtext,&#32;connection);
+168 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;connection.Open();
+169 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.CommandTimeout&#32;=&#32;120000;
+170 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.ExecuteNonQuery();
+171 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;connection.Close();
+172 
+173 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//SqlConnection&#32;connection&#32;=&#32;new&#32;SqlConnection(connectionString);</emphasis>
+174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//SqlCommand&#32;command&#32;=&#32;new&#32;SqlCommand(&quot;GR_CfgImportSp&quot;,&#32;connection);</emphasis>
+175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//command.CommandType&#32;=&#32;CommandType.StoredProcedure;</emphasis>
+176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//command.Parameters.AddWithValue(&quot;@pStartingOrderNum&quot;,&#32;orderNumber);</emphasis>
+177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//command.Parameters.AddWithValue(&quot;@pEndingOrderNum&quot;,&#32;orderNumber);</emphasis>
+178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//command.Parameters.AddWithValue(&quot;@pCreateOrder&quot;,&#32;CreateOrder);</emphasis>
+179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//connection.Open();</emphasis>
+180 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//command.CommandTimeout&#32;=&#32;120000;</emphasis>
+181 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//command.ExecuteNonQuery();</emphasis>
+182 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//connection.Close();</emphasis>
+183 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_database_factory_a1cba3b4ca48fe4e537bdc28925a61719_1a1cba3b4ca48fe4e537bdc28925a61719">184 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_a1cba3b4ca48fe4e537bdc28925a61719_1a1cba3b4ca48fe4e537bdc28925a61719">CleanupOrder</link>(<emphasis class="keywordtype">string</emphasis>&#32;orderNum)
+185 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+186 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgCO&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
 187 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
 188 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 189 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
@@ -255,7 +255,7 @@ Repository for all database functions and calls on behalf of the assembly
 191 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
 192 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
 193 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgBOM&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
+194 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgCOItem&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
 195 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
 196 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 197 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
@@ -263,7 +263,7 @@ Repository for all database functions and calls on behalf of the assembly
 199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
 200 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
 201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgItem&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
+202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgBOM&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
 203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
 204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
@@ -271,7 +271,7 @@ Repository for all database functions and calls on behalf of the assembly
 207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
 208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
 209 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgParmVal&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
+210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgItem&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
 211 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
 212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
@@ -279,79 +279,87 @@ Repository for all database functions and calls on behalf of the assembly
 215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
 216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
 217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<link linkend="class_configure_one_flag_1_1_database_factory_a59987be56acf3f8cbf7681d6b4866e81_1a59987be56acf3f8cbf7681d6b4866e81">219 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_a59987be56acf3f8cbf7681d6b4866e81_1a59987be56acf3f8cbf7681d6b4866e81">WriteAuditRecord</link>(<emphasis class="keywordtype">string</emphasis>&#32;auditMessageL,&#32;<emphasis class="keywordtype">string</emphasis>&#32;orderNum,&#32;<emphasis class="keywordtype">int</emphasis>&#32;orderLine,&#32;<emphasis class="keywordtype">string</emphasis>&#32;auditEvent)
-220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;Insert&#32;Into&#32;GR_Cfg_Audit&#32;(order_num,order_line_num,auditEvent,auditMessageL)&#32;values&#32;(&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;,&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderLine&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;,&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;auditEvent&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;,&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;auditMessageL&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;)&quot;</emphasis>;
-222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
-223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
-225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.CommandTimeout&#32;=&#32;120000;
-226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
-227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
-228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<link linkend="class_configure_one_flag_1_1_database_factory_a64f0488a247638877def2f773331d184_1a64f0488a247638877def2f773331d184">230 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_a64f0488a247638877def2f773331d184_1a64f0488a247638877def2f773331d184">RetrieveSLCO</link>&#32;(<emphasis class="keywordtype">string</emphasis>&#32;orderNum)
-231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-232 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;SLOrderNumber&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-233 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;Select&#32;TOP&#32;1&#32;co_num&#32;as&#32;SLCO&#32;From&#32;CO&#32;c&#32;with&#32;(nolock)&#32;Where&#32;c.uf_weborder&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;Order&#32;By&#32;c.order_date&#32;desc,&#32;c.co_num&#32;desc&quot;</emphasis>;
-234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
-235 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-236 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
-237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.CommandTimeout&#32;=&#32;120000;
-238 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
-239 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlDataReader&#32;reader&#32;=&#32;myCommand.ExecuteReader())
-240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(reader.HasRows)
-242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(reader.Read())
-244 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SLOrderNumber&#32;=&#32;reader[<emphasis class="stringliteral">&quot;SLCO&quot;</emphasis>].ToString();
-246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-247 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-248 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;reader.Close();
-249 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-250 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Close();
-251 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-252 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;SLOrderNumber;
-253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<link linkend="class_configure_one_flag_1_1_database_factory_a0b3faff4145a97817540e0ab92ae9101_1a0b3faff4145a97817540e0ab92ae9101">254 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_a0b3faff4145a97817540e0ab92ae9101_1a0b3faff4145a97817540e0ab92ae9101">RetrieveISOCountry</link>(<emphasis class="keywordtype">string</emphasis>&#32;ISOCode)
-255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;ISOCountry&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;Select&#32;IsNULL(country,&#32;&apos;&#32;&apos;)&#32;as&#32;country&#32;from&#32;country&#32;with&#32;(nolock)&#32;Where&#32;iso_country_code&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;ISOCode&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
-258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
-259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
-261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.CommandTimeout&#32;=&#32;120000;
-262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
-263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlDataReader&#32;reader&#32;=&#32;myCommand.ExecuteReader())
-264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(reader.HasRows)
-266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(reader.Read())
-268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ISOCountry&#32;=&#32;reader[<emphasis class="stringliteral">&quot;country&quot;</emphasis>].ToString();
-270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;reader.Close();
-273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Close();
-275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-276 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;ISOCountry;
-277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<link linkend="class_configure_one_flag_1_1_database_factory_a74068a0088a2ac8a40607cf6c83cfdd4_1a74068a0088a2ac8a40607cf6c83cfdd4">278 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_a74068a0088a2ac8a40607cf6c83cfdd4_1a74068a0088a2ac8a40607cf6c83cfdd4">UpdateCO</link>(<emphasis class="keywordtype">string</emphasis>&#32;conum)
-279 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;Update&#32;GR_CfgCO&#32;set&#32;order_ref_num&#32;=&#32;co_num&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_1afd0957296af9cc27c0a677ba2c027bf1">pubOrderNumber</link>&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
-281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
-282 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
-284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.CommandTimeout&#32;=&#32;120000;
-285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
-286 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
-287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-289 &#32;&#32;&#32;&#32;}
-290 }
-291 
+218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgParmVal&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
+219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
+220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
+222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.CommandTimeout&#32;=&#32;120000;
+223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
+224 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
+225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_database_factory_a59987be56acf3f8cbf7681d6b4866e81_1a59987be56acf3f8cbf7681d6b4866e81">227 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_a59987be56acf3f8cbf7681d6b4866e81_1a59987be56acf3f8cbf7681d6b4866e81">WriteAuditRecord</link>(<emphasis class="keywordtype">string</emphasis>&#32;auditMessageL,&#32;<emphasis class="keywordtype">string</emphasis>&#32;orderNum,&#32;<emphasis class="keywordtype">int</emphasis>&#32;orderLine,&#32;<emphasis class="keywordtype">string</emphasis>&#32;auditEvent)
+228 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+229 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;Insert&#32;Into&#32;GR_Cfg_Audit&#32;(order_num,order_line_num,auditEvent,auditMessageL)&#32;values&#32;(&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;,&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderLine&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;,&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;auditEvent&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;,&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;auditMessageL&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;)&quot;</emphasis>;
+230 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
+231 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+232 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
+233 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.CommandTimeout&#32;=&#32;120000;
+234 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
+235 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
+236 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+237 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_database_factory_a64f0488a247638877def2f773331d184_1a64f0488a247638877def2f773331d184">238 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_a64f0488a247638877def2f773331d184_1a64f0488a247638877def2f773331d184">RetrieveSLCO</link>&#32;(<emphasis class="keywordtype">string</emphasis>&#32;orderNum)
+239 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+240 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;SLOrderNumber&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+241 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;Select&#32;TOP&#32;1&#32;co_num&#32;as&#32;SLCO&#32;From&#32;CO&#32;c&#32;with&#32;(nolock)&#32;Where&#32;c.uf_weborder&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;Order&#32;By&#32;c.order_date&#32;desc,&#32;c.co_num&#32;desc&quot;</emphasis>;
+242 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
+243 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+244 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
+245 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.CommandTimeout&#32;=&#32;120000;
+246 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
+247 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlDataReader&#32;reader&#32;=&#32;myCommand.ExecuteReader())
+248 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+249 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(reader.HasRows)
+250 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+251 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(reader.Read())
+252 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+253 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SLOrderNumber&#32;=&#32;reader[<emphasis class="stringliteral">&quot;SLCO&quot;</emphasis>].ToString();
+254 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+255 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+256 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;reader.Close();
+257 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+258 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Close();
+259 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+260 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;SLOrderNumber;
+261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_database_factory_a0b3faff4145a97817540e0ab92ae9101_1a0b3faff4145a97817540e0ab92ae9101">262 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_a0b3faff4145a97817540e0ab92ae9101_1a0b3faff4145a97817540e0ab92ae9101">RetrieveISOCountry</link>(<emphasis class="keywordtype">string</emphasis>&#32;ISOCode)
+263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;ISOCountry&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;Select&#32;IsNULL(country,&#32;&apos;&#32;&apos;)&#32;as&#32;country&#32;from&#32;country&#32;with&#32;(nolock)&#32;Where&#32;iso_country_code&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;ISOCode&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
+266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
+267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
+269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.CommandTimeout&#32;=&#32;120000;
+270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
+271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlDataReader&#32;reader&#32;=&#32;myCommand.ExecuteReader())
+272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(reader.HasRows)
+274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(reader.Read())
+276 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ISOCountry&#32;=&#32;reader[<emphasis class="stringliteral">&quot;country&quot;</emphasis>].ToString();
+278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+279 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+280 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;reader.Close();
+281 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+282 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Close();
+283 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+284 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;ISOCountry;
+285 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_database_factory_a74068a0088a2ac8a40607cf6c83cfdd4_1a74068a0088a2ac8a40607cf6c83cfdd4">286 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_a74068a0088a2ac8a40607cf6c83cfdd4_1a74068a0088a2ac8a40607cf6c83cfdd4">UpdateCO</link>(<emphasis class="keywordtype">string</emphasis>&#32;conum)
+287 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+288 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;Update&#32;GR_CfgCO&#32;set&#32;order_ref_num&#32;=&#32;co_num&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_1afd0957296af9cc27c0a677ba2c027bf1">pubOrderNumber</link>&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
+289 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
+290 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+291 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
+292 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.CommandTimeout&#32;=&#32;120000;
+293 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
+294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
+295 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+297 &#32;&#32;&#32;&#32;}
+298 }
+299 
     </computeroutput></literallayout>
 </section>
