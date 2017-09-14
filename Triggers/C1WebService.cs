@@ -137,7 +137,7 @@ namespace ConfigureOneFlag
             elapsedTimeSeconds = ts.Seconds;
             logEvent = "DEBUG: Staging tables mapped to Syteline in: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
             if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
-
+            
             // *** LOG TOTAL TIME
             totalTimeStop = DateTime.Now;
             ts = totalTimeStop.Subtract(totalTimeStart);
