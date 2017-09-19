@@ -223,7 +223,6 @@ namespace ConfigureOneFlag
                                         System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                                         SendMail.MailMessage(logEvent, "TIMEOUT");
                                     }
-
                                 }
                             }
                         }

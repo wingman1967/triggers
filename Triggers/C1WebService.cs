@@ -50,7 +50,7 @@ namespace ConfigureOneFlag
             }
             XmlDocument xmlResult = new XmlDocument();
             string result = "";
-
+            
             try
             {
                 startTime = DateTime.Now;
@@ -83,7 +83,7 @@ namespace ConfigureOneFlag
                 if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
                 startTime = DateTime.Now;
-
+                
                 //Save XML output to object for further handling
                 using (var stringWriter = new StringWriter())
                 using (var xmlTextWriter = XmlWriter.Create(stringWriter))

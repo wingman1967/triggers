@@ -135,7 +135,7 @@ Processing for calls to ConfigureOne web service and return for further handling
 50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlDocument&#32;xmlResult&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;XmlDocument();
 52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;result&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
-53 
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
 54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>
 55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;startTime&#32;=&#32;DateTime.Now;
@@ -168,7 +168,7 @@ Processing for calls to ConfigureOne web service and return for further handling
 83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a6a42b60bab872801db70540311c4e2bc_1a6a42b60bab872801db70540311c4e2bc">debugLogging</link>)&#32;{&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);&#32;}
 84 
 85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;startTime&#32;=&#32;DateTime.Now;
-86 
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
 87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Save&#32;XML&#32;output&#32;to&#32;object&#32;for&#32;further&#32;handling</emphasis>
 88 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;stringWriter&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringWriter())
 89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(var&#32;xmlTextWriter&#32;=&#32;XmlWriter.Create(stringWriter))
