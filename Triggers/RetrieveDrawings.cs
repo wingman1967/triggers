@@ -151,7 +151,7 @@ namespace ConfigureOneFlag
 
                             logEvent = "DEBUG: Response received from C1";
                             if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
-
+                            
                             // *** LOG TIME
                             endTime = DateTime.Now;
                             ts = endTime.Subtract(startTime);

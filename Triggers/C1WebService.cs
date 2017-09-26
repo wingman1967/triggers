@@ -111,7 +111,9 @@ namespace ConfigureOneFlag
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
                 return;
             }
-
+            
+            logEvent = "Calling IMPORT of staging data to Syteline";
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             startTime = DateTime.Now;
             DatabaseFactory.CfgImport(Triggers.pubOrderNumber);                 //map staging-table data into Syteline
 
@@ -119,6 +121,11 @@ namespace ConfigureOneFlag
             SPOrderNumber = string.IsNullOrEmpty(DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber)) ? Triggers.pubOrderNumber : DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
             SPPUBOrderNumber = SPOrderNumber;
 
+            logEvent = "Order created in Syteline is: " + SPOrderNumber;
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+            logEvent = "Writing XML output file...";
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             OutputXMLToFile(Triggers.wsReturn);             //so file will be there for the worker-thread
 
             //start downloading and copying drawing files on separate thread so main thread can return control to CLR
