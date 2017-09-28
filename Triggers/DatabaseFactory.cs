@@ -318,18 +318,6 @@ namespace ConfigureOneFlag
                 myCommand.ExecuteNonQuery();
             }
         }
-        public static void UpdateQ(string RowPointer, string order_num)
-        {
-            string procStatement = "PROCESSING COMPLETED FOR: " + order_num;
-            SQLCommand = "Update GR_Cfg_Queue set processed = " + (char)39 + procStatement + (char)39 + " from GR_Cfg_Queue Where RowPointer = " + (char)39 + RowPointer + (char)39;
-            using (SqlConnection myConnection = new SqlConnection(connectionString))
-            {
-                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
-                myCommand.CommandTimeout = 120000;
-                myConnection.Open();
-                myCommand.ExecuteNonQuery();
-            }
-        }
     }
 }
 

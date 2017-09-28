@@ -154,9 +154,8 @@ Primary entrypoint called from C1ORDER trigger for accessing C1 web service and 
 104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;PROCESSING&#32;COMPLETE&#32;FOR&#32;ORDER:&#32;&quot;</emphasis>&#32;+&#32;orderValue;
 105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(logSource,&#32;logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
 106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_audit">Audit</link>.<link linkend="class_configure_one_flag_1_1_audit_ac9f5188a69320d3d419afed3499e2a26_1ac9f5188a69320d3d419afed3499e2a26">ProcessingCompleted</link>(logEvent);
-107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//DatabaseFactory.UpdateQ(qRowPointerValue,&#32;pubOrderNumber);</emphasis>
-108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-109 &#32;&#32;&#32;&#32;}
-110 }
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+108 &#32;&#32;&#32;&#32;}
+109 }
     </computeroutput></literallayout>
 </section>

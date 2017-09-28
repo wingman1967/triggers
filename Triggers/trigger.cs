@@ -104,7 +104,6 @@ namespace ConfigureOneFlag
             logEvent = "PROCESSING COMPLETE FOR ORDER: " + orderValue;
             System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             Audit.ProcessingCompleted(logEvent);
-            //DatabaseFactory.UpdateQ(qRowPointerValue, pubOrderNumber);
         }
     }
 }

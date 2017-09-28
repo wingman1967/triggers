@@ -223,14 +223,6 @@ string conum)</para>
                     </listitem>
                 </itemizedlist>
             </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_a666085ca354b7a968ab9a16885b6c44f_1a666085ca354b7a968ab9a16885b6c44f">UpdateQ</link> (
-string RowPointer, string order_num)</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
         </section>
     <simplesect>
 
@@ -296,10 +288,6 @@ string RowPointer, string order_num)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_a74068a0088a2ac8a40607cf6c83cfdd4_1a74068a0088a2ac8a40607cf6c83cfdd4">
                 <title>static void ConfigureOneFlag.DatabaseFactory.UpdateCO (string conum)</title> <emphasis></emphasis>
-                
-            </section>
-            <section xml:id="class_configure_one_flag_1_1_database_factory_a666085ca354b7a968ab9a16885b6c44f_1a666085ca354b7a968ab9a16885b6c44f">
-                <title>static void ConfigureOneFlag.DatabaseFactory.UpdateQ (string RowPointer, string order_num)</title> <emphasis></emphasis>
                 
             </section>
 </section>

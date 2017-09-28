@@ -382,20 +382,8 @@ Repository for all database functions and calls on behalf of the assembly
 318 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
 319 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 320 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<link linkend="class_configure_one_flag_1_1_database_factory_a666085ca354b7a968ab9a16885b6c44f_1a666085ca354b7a968ab9a16885b6c44f">321 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_a666085ca354b7a968ab9a16885b6c44f_1a666085ca354b7a968ab9a16885b6c44f">UpdateQ</link>(<emphasis class="keywordtype">string</emphasis>&#32;RowPointer,&#32;<emphasis class="keywordtype">string</emphasis>&#32;order_num)
-322 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;procStatement&#32;=&#32;<emphasis class="stringliteral">&quot;PROCESSING&#32;COMPLETED&#32;FOR:&#32;&quot;</emphasis>&#32;+&#32;order_num;
-324 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;Update&#32;GR_Cfg_Queue&#32;set&#32;processed&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;procStatement&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;from&#32;GR_Cfg_Queue&#32;Where&#32;RowPointer&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;RowPointer&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
-325 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
-326 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-327 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
-328 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.CommandTimeout&#32;=&#32;120000;
-329 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
-330 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
-331 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-332 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-333 &#32;&#32;&#32;&#32;}
-334 }
-335 
+321 &#32;&#32;&#32;&#32;}
+322 }
+323 
     </computeroutput></literallayout>
 </section>
