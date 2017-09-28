@@ -15,7 +15,8 @@ namespace ConfigureOneFlag
         public static string logEvent;
         public static string logName = "Application";
         public static string pubOrderNumber = "";
-        [SqlTrigger(Name = "C1Order", Target = "GR_Cfg_Queue", Event = "FOR INSERT")]
+        public static string dbEnvironment = "";
+        [SqlTrigger(Name = "C1Order", Target = "GR_Cfg_Queue", Event = "AFTER INSERT")]
         public static void C1Order()
         {
             if (!System.Diagnostics.EventLog.SourceExists("C1ORDER"))
@@ -40,9 +41,11 @@ namespace ConfigureOneFlag
            
             string orderNum;
             string orderValue = "";
+            string qRowPointerValue = "";
             SqlTriggerContext triggContext = SqlContext.TriggerContext;
             SqlParameter orderNumber = new SqlParameter("@order_num", System.Data.SqlDbType.NVarChar);
-            
+            SqlParameter qRowPointer = new SqlParameter("@RowPointer", System.Data.SqlDbType.NVarChar);
+
             switch (triggContext.TriggerAction == TriggerAction.Insert)
             {
                 case true:
@@ -53,9 +56,14 @@ namespace ConfigureOneFlag
                         sqlComm.CommandTimeout = 1800;
                         SqlPipe sqlP = SqlContext.Pipe;
                         sqlComm.Connection = conn;
-                        sqlComm.CommandText = "SELECT order_num from INSERTED";
+                        sqlComm.CommandText = "SELECT order_num, RowPointer from INSERTED";
                         orderNumber.Value = sqlComm.ExecuteScalar().ToString();
                         orderValue = orderNumber.Value.ToString();
+
+                        sqlComm.CommandText = "SELECT RowPointer from INSERTED";
+                        qRowPointer.Value = sqlComm.ExecuteScalar().ToString();
+                        qRowPointerValue = qRowPointer.Value.ToString();
+                         
                         conn.Close();
                         logEvent = "ORDER NUMBER: " + orderValue;
                         System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
@@ -63,6 +71,14 @@ namespace ConfigureOneFlag
                     break;
                 default:
                     return;
+            }
+
+            //Determine whether incoming order is production or dev/test
+            string incomingOrder = orderValue.Substring(0, 1);
+            dbEnvironment = "DEV";
+            if (incomingOrder != "D")
+            {
+                dbEnvironment = "PROD";
             }
 
             string useMethod = "";
@@ -88,6 +104,7 @@ namespace ConfigureOneFlag
             logEvent = "PROCESSING COMPLETE FOR ORDER: " + orderValue;
             System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             Audit.ProcessingCompleted(logEvent);
+            //DatabaseFactory.UpdateQ(qRowPointerValue, pubOrderNumber);
         }
     }
 }

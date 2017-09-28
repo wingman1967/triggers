@@ -221,7 +221,7 @@ namespace ConfigureOneFlag
                                         elapsedTimeSeconds = ts.Seconds;
                                         logEvent = "DEBUG: Time that elapsed before timeout occurred for current document: " + Convert.ToString(elapsedTimeMS) + "ms, " + Convert.ToString(elapsedTimeSeconds) + " s";
                                         System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-                                        SendMail.MailMessage(logEvent, "TIMEOUT");
+                                        //SendMail.MailMessage(logEvent, "TIMEOUT");
                                     }
                                 }
                             }

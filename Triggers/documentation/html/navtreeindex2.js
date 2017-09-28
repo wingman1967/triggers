@@ -1,5 +1,8 @@
 var NAVTREEINDEX2 =
 {
+"namespace_configure_one_flag.html":[1,0,0],
+"namespace_configure_one_flag.html":[0,0,0],
+"namespaces.html":[0,0],
 "pages.html":[],
 "struct_configure_one_flag_1_1_network_share_1_1_error_class.html":[1,0,0,5,0],
 "struct_configure_one_flag_1_1_network_share_1_1_error_class_a2a8ea05147699f598106c5ea4e0379d7.html#a2a8ea05147699f598106c5ea4e0379d7":[1,0,0,5,0,2],

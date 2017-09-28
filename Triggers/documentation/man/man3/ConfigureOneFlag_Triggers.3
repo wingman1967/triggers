@@ -1,4 +1,4 @@
-.TH "ConfigureOneFlag.Triggers" 3 "Mon Sep 25 2017" "ConfigureOne Trigger" \" -*- nroff -*-
+.TH "ConfigureOneFlag.Triggers" 3 "Thu Sep 28 2017" "ConfigureOne Trigger" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -41,6 +41,9 @@ ConfigureOneFlag.Triggers \- Primary entrypoint called from C1ORDER trigger for 
 .ti -1c
 .RI "static string \fBpubOrderNumber\fP = ''"
 .br
+.ti -1c
+.RI "static string \fBdbEnvironment\fP = ''"
+.br
 .in -1c
 .SS "Static Private Attributes"
 
@@ -65,7 +68,7 @@ Definition at line 18 of file Class1\&.cs\&.
 .SS "static void ConfigureOneFlag\&.Triggers\&.C1Order ()\fC [static]\fP"
 
 .PP
-Definition at line 19 of file trigger\&.cs\&.
+Definition at line 20 of file trigger\&.cs\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "static string ConfigureOneFlag\&.Triggers\&.C1URL\fC [static]\fP"
@@ -76,6 +79,10 @@ Definition at line 16 of file Class1\&.cs\&.
 
 .PP
 Definition at line 15 of file Class1\&.cs\&.
+.SS "string ConfigureOneFlag\&.Triggers\&.dbEnvironment = ''\fC [static]\fP"
+
+.PP
+Definition at line 18 of file trigger\&.cs\&.
 .SS "string ConfigureOneFlag\&.Triggers\&.logEvent\fC [static]\fP"
 
 .PP

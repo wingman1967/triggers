@@ -20,6 +20,7 @@ namespace ConfigureOneFlag
         public static string sppassword = "";
         public static string decryptedValue = "";
         public static bool debugLogging = false;
+        public static string dbprotect = "";
         public void SetConnectionString()
         {
             RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\ConfigureOneAssembly\\1.0", true);
@@ -35,6 +36,8 @@ namespace ConfigureOneFlag
                 splocation = File.ReadAllText(@"C:\C1\splocation.dat");
                 spuname = File.ReadAllText(@"C:\C1\spuname.dat");
                 sppassword = File.ReadAllText(@"C:\C1\sppassword.dat");
+                dbprotect = File.ReadAllText(@"C:\C1\protect.dat");
+                reg.SetValue("PROD_DB", @"C:\C1\proddbconnection.dat");
                 reg.SetValue("DB", dbConnectionData);
                 reg.SetValue("ENCKEY", dbkey);
                 reg.SetValue("EMAILADDR", emailaddr);
@@ -44,6 +47,7 @@ namespace ConfigureOneFlag
                 reg.SetValue("SPUNAME", spuname);
                 reg.SetValue("SPPASSWORD", sppassword);
                 reg.SetValue("DEBUGLOGGING", "NO");
+                reg.SetValue("PROTECT", dbprotect);
             }
             
             //decrypt cs
@@ -62,6 +66,12 @@ namespace ConfigureOneFlag
             if (reg.GetValue("DEBUGLOGGING").ToString() == "YES")
             {
                 debugLogging = true;
+            }
+
+            //if requested environment is not dev/test, change connectionString to prod; override to DEV if we sensed PROD but PROTECT in registry is YES
+            if (Triggers.dbEnvironment == "PROD" && reg.GetValue("PROTECT").ToString() != "YES")
+            {
+                connectionString = reg.GetValue("PROD_DB").ToString();
             }
 
             //deboog
@@ -300,6 +310,18 @@ namespace ConfigureOneFlag
         public static void UpdateCO(string conum)
         {
             SQLCommand = "Update GR_CfgCO set order_ref_num = co_num where order_num = " + (char)39 + Triggers.pubOrderNumber + (char)39;
+            using (SqlConnection myConnection = new SqlConnection(connectionString))
+            {
+                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
+                myCommand.CommandTimeout = 120000;
+                myConnection.Open();
+                myCommand.ExecuteNonQuery();
+            }
+        }
+        public static void UpdateQ(string RowPointer, string order_num)
+        {
+            string procStatement = "PROCESSING COMPLETED FOR: " + order_num;
+            SQLCommand = "Update GR_Cfg_Queue set processed = " + (char)39 + procStatement + (char)39 + " from GR_Cfg_Queue Where RowPointer = " + (char)39 + RowPointer + (char)39;
             using (SqlConnection myConnection = new SqlConnection(connectionString))
             {
                 SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);

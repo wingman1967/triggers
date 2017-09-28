@@ -1,4 +1,4 @@
-.TH "ConfigureOneFlag.DatabaseFactory" 3 "Mon Sep 25 2017" "ConfigureOne Trigger" \" -*- nroff -*-
+.TH "ConfigureOneFlag.DatabaseFactory" 3 "Thu Sep 28 2017" "ConfigureOne Trigger" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -56,6 +56,9 @@ ConfigureOneFlag.DatabaseFactory \- Repository for all database functions and ca
 .ti -1c
 .RI "static void \fBUpdateCO\fP (string conum)"
 .br
+.ti -1c
+.RI "static void \fBUpdateQ\fP (string RowPointer, string order_num)"
+.br
 .in -1c
 .SS "Static Public Attributes"
 
@@ -87,6 +90,9 @@ ConfigureOneFlag.DatabaseFactory \- Repository for all database functions and ca
 .ti -1c
 .RI "static bool \fBdebugLogging\fP = false"
 .br
+.ti -1c
+.RI "static string \fBdbprotect\fP = ''"
+.br
 .in -1c
 .SS "Static Private Attributes"
 
@@ -107,65 +113,73 @@ Definition at line 11 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.CfgImport (string orderNumber)\fC [static]\fP"
 
 .PP
-Definition at line 175 of file DatabaseFactory\&.cs\&.
+Definition at line 185 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.CleanupOrder (string orderNum)\fC [static]\fP"
 
 .PP
-Definition at line 198 of file DatabaseFactory\&.cs\&.
+Definition at line 208 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.ResequenceBOM (string orderNumber, int orderLine)\fC [static]\fP"
 
 .PP
-Definition at line 154 of file DatabaseFactory\&.cs\&.
+Definition at line 164 of file DatabaseFactory\&.cs\&.
 .SS "static string ConfigureOneFlag\&.DatabaseFactory\&.RetrieveISOCountry (string ISOCode)\fC [static]\fP"
 
 .PP
-Definition at line 276 of file DatabaseFactory\&.cs\&.
+Definition at line 286 of file DatabaseFactory\&.cs\&.
 .SS "static string ConfigureOneFlag\&.DatabaseFactory\&.RetrieveSLCO (string orderNum)\fC [static]\fP"
 
 .PP
-Definition at line 252 of file DatabaseFactory\&.cs\&.
+Definition at line 262 of file DatabaseFactory\&.cs\&.
 .SS "void ConfigureOneFlag\&.DatabaseFactory\&.SetConnectionString ()"
 
 .PP
-Definition at line 23 of file DatabaseFactory\&.cs\&.
+Definition at line 24 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.UpdateCO (string conum)\fC [static]\fP"
 
 .PP
-Definition at line 300 of file DatabaseFactory\&.cs\&.
+Definition at line 310 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.UpdateQ (string RowPointer, string order_num)\fC [static]\fP"
+
+.PP
+Definition at line 321 of file DatabaseFactory\&.cs\&.
 .SS "static string ConfigureOneFlag\&.DatabaseFactory\&.UserName (string id)\fC [static]\fP"
 
 .PP
-Definition at line 129 of file DatabaseFactory\&.cs\&.
+Definition at line 139 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteAuditRecord (string auditMessageL, string orderNum, int orderLine, string auditEvent)\fC [static]\fP"
 
 .PP
-Definition at line 241 of file DatabaseFactory\&.cs\&.
+Definition at line 251 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordBOM (ref \fBzCfgBOM\fP bom)\fC [static]\fP"
 
 .PP
-Definition at line 71 of file DatabaseFactory\&.cs\&.
+Definition at line 81 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCfg (ref \fBzCfgParmVal\fP cfg)\fC [static]\fP"
 
 .PP
-Definition at line 93 of file DatabaseFactory\&.cs\&.
+Definition at line 103 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCItem (ref \fBzCfgItem\fP item)\fC [static]\fP"
 
 .PP
-Definition at line 82 of file DatabaseFactory\&.cs\&.
+Definition at line 92 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCO (ref \fBzCfgCO\fP co)\fC [static]\fP"
 
 .PP
-Definition at line 118 of file DatabaseFactory\&.cs\&.
+Definition at line 128 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCOItem (ref \fBzCfgCOitem\fP coitem)\fC [static]\fP"
 
 .PP
-Definition at line 107 of file DatabaseFactory\&.cs\&.
+Definition at line 117 of file DatabaseFactory\&.cs\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "string ConfigureOneFlag\&.DatabaseFactory\&.connectionString = ''\fC [static]\fP"
 
 .PP
 Definition at line 14 of file DatabaseFactory\&.cs\&.
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.dbprotect = ''\fC [static]\fP"
+
+.PP
+Definition at line 23 of file DatabaseFactory\&.cs\&.
 .SS "bool ConfigureOneFlag\&.DatabaseFactory\&.debugLogging = false\fC [static]\fP"
 
 .PP
