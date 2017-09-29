@@ -62,6 +62,7 @@ namespace ConfigureOneFlag
             connectionString = crypto.DecryptCS(connectionString, sKey);
             spuname = crypto.DecryptCS(spuname, sKey);
             sppassword = crypto.DecryptCS(sppassword, sKey);
+            dbprotect = reg.GetValue("PROTECT").ToString();
             debugLogging = false;
             if (reg.GetValue("DEBUGLOGGING").ToString() == "YES")
             {

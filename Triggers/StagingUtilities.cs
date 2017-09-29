@@ -10,6 +10,7 @@ namespace ConfigureOneFlag
     {
         public static string globalOrderNum;
         public static int globalOrderLineNum;
+        public static string dbSite = "";
                 
         public static void MapXMLToSQL(XmlDocument xmldoc)
         {
@@ -30,6 +31,7 @@ namespace ConfigureOneFlag
                     case true:
                         string rplConnectionString = DatabaseFactory.connectionString;
                         int csPos = rplConnectionString.IndexOf("NOVB");
+                        dbSite = node.ChildNodes[0].Attributes["name"].Value;
                         DatabaseFactory.connectionString = rplConnectionString.Substring(0, csPos) + node.ChildNodes[0].Attributes["name"].Value + rplConnectionString.Substring(csPos + 4, rplConnectionString.Length - (csPos + 4));
                         Triggers.logEvent = "Connection String: " + DatabaseFactory.connectionString;
                         System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);

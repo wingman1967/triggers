@@ -74,7 +74,18 @@ namespace ConfigureOneFlag
                 arrayindex = 0;
                 string documentFilesSaved = "";
                 documentSerialNumber = configSerial;
+
                 string SharepointLocation = DatabaseFactory.splocation;
+
+                if (Triggers.dbEnvironment == "PROD" && DatabaseFactory.dbprotect != "YES")
+                {
+                    SharepointLocation = @"\\ecm.gormanrupp.com\ecm\NPC\Oper\ConfOrd\" + StagingUtilities.dbSite + "\\";
+                }
+
+                //*** deboog TEST PRODUCTION LOCATIONS IN SHAREPOINT
+                SharepointLocation = @"\\ecm.gormanrupp.com\ecm\NPC\Oper\ConfOrd\" + StagingUtilities.dbSite + "\\";
+                //*** end deboog
+
                 NetworkShare.DisconnectFromShare(SharepointLocation, true);
                 NetworkShare.ConnectToShare(SharepointLocation, DatabaseFactory.spuname, DatabaseFactory.sppassword);
 
