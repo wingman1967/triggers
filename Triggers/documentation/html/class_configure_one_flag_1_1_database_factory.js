@@ -2,6 +2,7 @@ var class_configure_one_flag_1_1_database_factory =
 [
     [ "CfgImport", "class_configure_one_flag_1_1_database_factory_ae4aeef8c1f02cf82b17a4e1c2ca0ffed.html#ae4aeef8c1f02cf82b17a4e1c2ca0ffed", null ],
     [ "CleanupOrder", "class_configure_one_flag_1_1_database_factory_a1cba3b4ca48fe4e537bdc28925a61719.html#a1cba3b4ca48fe4e537bdc28925a61719", null ],
+    [ "COItemitem", "class_configure_one_flag_1_1_database_factory_a85857ab755db44ae9b4e7efcec96748b.html#a85857ab755db44ae9b4e7efcec96748b", null ],
     [ "ResequenceBOM", "class_configure_one_flag_1_1_database_factory_acd9475f1b9763dfab5896656f96789a0.html#acd9475f1b9763dfab5896656f96789a0", null ],
     [ "RetrieveISOCountry", "class_configure_one_flag_1_1_database_factory_a0b3faff4145a97817540e0ab92ae9101.html#a0b3faff4145a97817540e0ab92ae9101", null ],
     [ "RetrieveSLCO", "class_configure_one_flag_1_1_database_factory_a64f0488a247638877def2f773331d184.html#a64f0488a247638877def2f773331d184", null ],
@@ -14,6 +15,7 @@ var class_configure_one_flag_1_1_database_factory =
     [ "WriteRecordCItem", "class_configure_one_flag_1_1_database_factory_ae84fa2fa2699960542cadbe2053b947d.html#ae84fa2fa2699960542cadbe2053b947d", null ],
     [ "WriteRecordCO", "class_configure_one_flag_1_1_database_factory_a628dded3ecd9efab9c21a01a864dc518.html#a628dded3ecd9efab9c21a01a864dc518", null ],
     [ "WriteRecordCOItem", "class_configure_one_flag_1_1_database_factory_a7e40f3f0a85ffe44b8c2a3197e6d8925.html#a7e40f3f0a85ffe44b8c2a3197e6d8925", null ],
+    [ "WriteTestRecord", "class_configure_one_flag_1_1_database_factory_a9052ce3076b797e9c021864291dc2489.html#a9052ce3076b797e9c021864291dc2489", null ],
     [ "connectionString", "class_configure_one_flag_1_1_database_factory_a97a9d57d4ff36a700cc5233c5fdb9ac5.html#a97a9d57d4ff36a700cc5233c5fdb9ac5", null ],
     [ "dbprotect", "class_configure_one_flag_1_1_database_factory_a7ea71eed70f97c7b89407ce8d2c84a27.html#a7ea71eed70f97c7b89407ce8d2c84a27", null ],
     [ "debugLogging", "class_configure_one_flag_1_1_database_factory_a6a42b60bab872801db70540311c4e2bc.html#a6a42b60bab872801db70540311c4e2bc", null ],

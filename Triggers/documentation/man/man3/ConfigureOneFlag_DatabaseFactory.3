@@ -1,4 +1,4 @@
-.TH "ConfigureOneFlag.DatabaseFactory" 3 "Thu Sep 28 2017" "ConfigureOne Trigger" \" -*- nroff -*-
+.TH "ConfigureOneFlag.DatabaseFactory" 3 "Fri Sep 29 2017" "ConfigureOne Trigger" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -55,6 +55,12 @@ ConfigureOneFlag.DatabaseFactory \- Repository for all database functions and ca
 .br
 .ti -1c
 .RI "static void \fBUpdateCO\fP (string conum)"
+.br
+.ti -1c
+.RI "static void \fBWriteTestRecord\fP (string eventText)"
+.br
+.ti -1c
+.RI "static string \fBCOItemitem\fP (string order_num, string ser_num)"
 .br
 .in -1c
 .SS "Static Public Attributes"
@@ -115,6 +121,10 @@ Definition at line 185 of file DatabaseFactory\&.cs\&.
 
 .PP
 Definition at line 208 of file DatabaseFactory\&.cs\&.
+.SS "static string ConfigureOneFlag\&.DatabaseFactory\&.COItemitem (string order_num, string ser_num)\fC [static]\fP"
+
+.PP
+Definition at line 332 of file DatabaseFactory\&.cs\&.
 .SS "static void ConfigureOneFlag\&.DatabaseFactory\&.ResequenceBOM (string orderNumber, int orderLine)\fC [static]\fP"
 
 .PP
@@ -163,6 +173,10 @@ Definition at line 128 of file DatabaseFactory\&.cs\&.
 
 .PP
 Definition at line 117 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteTestRecord (string eventText)\fC [static]\fP"
+
+.PP
+Definition at line 321 of file DatabaseFactory\&.cs\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "string ConfigureOneFlag\&.DatabaseFactory\&.connectionString = ''\fC [static]\fP"

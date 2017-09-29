@@ -65,7 +65,7 @@ namespace ConfigureOneFlag
                     docs[arrayindex] = node.InnerText;
                     arrayindex += 1;
                 }
-
+                
                 logEvent = "DEBUG: Finished building document filename array";
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
@@ -78,10 +78,10 @@ namespace ConfigureOneFlag
                 NetworkShare.DisconnectFromShare(SharepointLocation, true);
                 NetworkShare.ConnectToShare(SharepointLocation, DatabaseFactory.spuname, DatabaseFactory.sppassword);
 
-                logEvent = "DEBUG: SP Share credential fixed";
+                logEvent = "DEBUG: SP Share credential fixed.  UNAME: " + DatabaseFactory.spuname + " -> PWD: " + DatabaseFactory.sppassword;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
-                //Create Sharepoint folder for order#
+                //Create Sharepoint BASE folder for order# (each line will have its own folder by item#)
                 string SharepointCopyLocation = SharepointLocation + C1WebService.SPOrderNumber + "\\";
                 try { DirectoryInfo di = Directory.CreateDirectory(SharepointCopyLocation); }
                 catch (Exception edi)
@@ -93,12 +93,14 @@ namespace ConfigureOneFlag
                 objRequest.Method = "POST";
                 objRequest.ContentType = "text/xml";
                 objRequest.Headers.Add("SOAPAction", key);
-                objRequest.Timeout = 120000;        //increased
-                objRequest.ReadWriteTimeout = 120000;   //increased
+                objRequest.Timeout = 120000;        
+                objRequest.ReadWriteTimeout = 120000;   
 
                 while (arrayindex < upperBound)
                 {
                     documentName = docs[arrayindex];
+                    int strPos = documentName.IndexOf("_");
+                    documentSerialNumber = documentName.Substring(0, strPos);
                     xmlPayload = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soapenv:Envelope xmlns:xsi=" + (char)34 + "http://www.w3.org/2001/XMLSchema-instance" + (char)34 + " xmlns:xsd=" + (char)34 + "http://www.w3.org/2001/XMLSchema" + (char)34 + " xmlns:ws=" + (char)34 + "http://ws.configureone.com" + (char)34 + " xmlns:mod=" + (char)34 + "http://model.ws.configureone.com" + (char)34 + " xmlns:soapenv=" + (char)34 + "http://schemas.xmlsoap.org/soap/envelope/" + (char)34 + ">" + "<soapenv:Body><ws:" + key + " xmlns=" + (char)34 + "http://ws.configureone.com" + (char)34 + "><ws:document><mod:type>" + documentType + "</mod:type><mod:serialNumber>" + documentSerialNumber + "</mod:serialNumber><mod:files><mod:fileName>" + documentName + "</mod:fileName><mod:content>" + documentName + "</mod:content></mod:files></ws:document></ws:" + key + "></soapenv:Body></soapenv:Envelope>";
                     sURL = useMethod;
                     objRequest = (HttpWebRequest)WebRequest.Create(sURL.ToString());
@@ -108,7 +110,7 @@ namespace ConfigureOneFlag
                     objRequest.Timeout = 120000;
                     objRequest.ReadWriteTimeout = 120000;
 
-                    logEvent = "DEBUG: Requested document from C1";
+                    logEvent = "DEBUG: Requested document from C1: " + documentName + " Serial#: " + documentSerialNumber;
                     if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
                     startTime = DateTime.Now;
@@ -166,12 +168,35 @@ namespace ConfigureOneFlag
                                 logEvent = "DEBUG: Copying file to Sharepoint: " + C1WebService.SPOrderNumber + "_" + docs[arrayindex];
                                 if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
+                                //Format Sharepoint directory, create if not exist, and copy document to that location
+                                string copyToLocation = DatabaseFactory.COItemitem(C1WebService.SPOrderNumber, documentSerialNumber);
+
+                                //Create directory if not exists
+                                try { DirectoryInfo di = Directory.CreateDirectory(SharepointCopyLocation + copyToLocation); }
+                                catch (Exception edi)
+                                {
+                                    //directory already exists, nothing further needs done
+                                }
+
+                                logEvent = "SharepointCopyLocation Value: " + SharepointCopyLocation;
+                                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+                                logEvent = "CopyToLocation Value: " + copyToLocation;
+                                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+                                logEvent = "Full-Path Value: " + SharepointCopyLocation + copyToLocation;
+                                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+                                logEvent = "Full-Path with file Value: " + SharepointCopyLocation + copyToLocation + "\\" + docs[arrayindex];
+                                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
                                 startTime = DateTime.Now;
 
                                 try
                                 {
                                     byte[] pdfByteArray = Convert.FromBase64String(node.InnerText);
-                                    File.WriteAllBytes(SharepointCopyLocation + C1WebService.SPOrderNumber + "_" + docs[arrayindex], pdfByteArray);
+                                    //File.WriteAllBytes(SharepointCopyLocation + C1WebService.SPOrderNumber + "_" + docs[arrayindex], pdfByteArray);
+                                    File.WriteAllBytes(SharepointCopyLocation + copyToLocation + "\\" + docs[arrayindex], pdfByteArray);
                                     documentFilesSaved = documentFilesSaved + docs[arrayindex] + Environment.NewLine;
 
                                     // *** LOG TIME
@@ -237,7 +262,7 @@ namespace ConfigureOneFlag
                 }
                 
                 //Save XML output to SharePoint as well
-                File.Copy("XMLOutput_" + C1WebService.SPPUBOrderNumber + ".txt", SharepointCopyLocation + "XMLOutput_" + C1WebService.SPPUBOrderNumber + ".txt", true);
+                File.Copy(C1WebService.SPPUBOrderNumber + "_XMLOutput.txt", SharepointCopyLocation + C1WebService.SPPUBOrderNumber + "_XMLOutput.txt", true);
 
                 logEvent = "Retrieved/Saved Following Document Files: " + Environment.NewLine + Environment.NewLine + documentFilesSaved;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);

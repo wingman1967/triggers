@@ -318,6 +318,41 @@ namespace ConfigureOneFlag
                 myCommand.ExecuteNonQuery();
             }
         }
+        public static void WriteTestRecord(string eventText)
+        {
+            SQLCommand = "Insert Into GR_JHTESTING (eventText) values (" + (char)39 + eventText + (char)39 + ")";
+            using (SqlConnection myConnection = new SqlConnection(connectionString))
+            {
+                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
+                myCommand.CommandTimeout = 120000;
+                myConnection.Open();
+                myCommand.ExecuteNonQuery();
+            }
+        }
+        public static string COItemitem(string order_num, string ser_num)
+        {
+            string itemNumber = "";
+            SQLCommand = "Select item from coitem with (nolock) Where co_num = " + (char)39 + order_num + (char)39 + " and Uf_ConfigCode = " + (char)39 + ser_num + (char)39;
+            using (SqlConnection myConnection = new SqlConnection(connectionString))
+            {
+                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
+                myCommand.CommandTimeout = 120000;
+                myConnection.Open();
+                using (SqlDataReader reader = myCommand.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        if (reader.Read())
+                        {
+                            itemNumber = reader["item"].ToString();
+                        }
+                    }
+                    reader.Close();
+                }
+                myConnection.Close();
+            }
+            return itemNumber;
+        }
     }
 }
 

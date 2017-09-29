@@ -223,6 +223,22 @@ string conum)</para>
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_a9052ce3076b797e9c021864291dc2489_1a9052ce3076b797e9c021864291dc2489">WriteTestRecord</link> (
+string eventText)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string <link linkend="class_configure_one_flag_1_1_database_factory_a85857ab755db44ae9b4e7efcec96748b_1a85857ab755db44ae9b4e7efcec96748b">COItemitem</link> (
+string order_num, string ser_num)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
     <simplesect>
 
@@ -288,6 +304,14 @@ string conum)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_a74068a0088a2ac8a40607cf6c83cfdd4_1a74068a0088a2ac8a40607cf6c83cfdd4">
                 <title>static void ConfigureOneFlag.DatabaseFactory.UpdateCO (string conum)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_a9052ce3076b797e9c021864291dc2489_1a9052ce3076b797e9c021864291dc2489">
+                <title>static void ConfigureOneFlag.DatabaseFactory.WriteTestRecord (string eventText)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_a85857ab755db44ae9b4e7efcec96748b_1a85857ab755db44ae9b4e7efcec96748b">
+                <title>static string ConfigureOneFlag.DatabaseFactory.COItemitem (string order_num, string ser_num)</title> <emphasis></emphasis>
                 
             </section>
 </section>

@@ -93,7 +93,7 @@ namespace ConfigureOneFlag
                     string xmlOut = stringWriter.GetStringBuilder().ToString();
                     Triggers.wsReturn = System.Xml.Linq.XDocument.Parse(xmlOut).ToString();
                 }
-
+                
                 if (Triggers.caller == "ORDER") {StagingUtilities.MapXMLToSQL(xmlResult);}
 
                 // *** LOG TIME
@@ -163,11 +163,11 @@ namespace ConfigureOneFlag
                 formattedXML = System.Xml.Linq.XDocument.Parse(xmlOut).ToString();
             }
 
-            if (File.Exists("XMLOutput_" + SPPUBOrderNumber + ".txt"))
+            if (File.Exists(SPPUBOrderNumber + "_XMLOutput.txt"))
             {
-                File.Delete("XMLOutput_" + SPPUBOrderNumber + ".txt");
+                File.Delete(SPPUBOrderNumber + "_XMLOutput.txt");
             }
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"XMLOutput_" + SPPUBOrderNumber + ".txt", true))
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@SPPUBOrderNumber + "_XMLOutput.txt", true))
             {
                 file.WriteLine(formattedXML);
             }

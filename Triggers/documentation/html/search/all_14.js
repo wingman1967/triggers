@@ -14,5 +14,6 @@ var searchData=
   ['writerecordcitem',['WriteRecordCItem',['../class_configure_one_flag_1_1_database_factory_ae84fa2fa2699960542cadbe2053b947d.html#ae84fa2fa2699960542cadbe2053b947d',1,'ConfigureOneFlag::DatabaseFactory']]],
   ['writerecordco',['WriteRecordCO',['../class_configure_one_flag_1_1_database_factory_a628dded3ecd9efab9c21a01a864dc518.html#a628dded3ecd9efab9c21a01a864dc518',1,'ConfigureOneFlag::DatabaseFactory']]],
   ['writerecordcoitem',['WriteRecordCOItem',['../class_configure_one_flag_1_1_database_factory_a7e40f3f0a85ffe44b8c2a3197e6d8925.html#a7e40f3f0a85ffe44b8c2a3197e6d8925',1,'ConfigureOneFlag::DatabaseFactory']]],
+  ['writetestrecord',['WriteTestRecord',['../class_configure_one_flag_1_1_database_factory_a9052ce3076b797e9c021864291dc2489.html#a9052ce3076b797e9c021864291dc2489',1,'ConfigureOneFlag::DatabaseFactory']]],
   ['wsreturn',['wsReturn',['../class_configure_one_flag_1_1_triggers_adb47d391c1eb7baeb5780f3dd9322a6d.html#adb47d391c1eb7baeb5780f3dd9322a6d',1,'ConfigureOneFlag::Triggers']]]
 ];

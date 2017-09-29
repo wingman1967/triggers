@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"index.html":[],
+"namespace_configure_one_flag.html":[0,0,0],
 "namespace_configure_one_flag.html":[1,0,0],
 "namespaces.html":[0,0],
 "pages.html":[],
