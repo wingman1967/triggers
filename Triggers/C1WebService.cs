@@ -95,6 +95,7 @@ namespace ConfigureOneFlag
                 }
                 
                 if (Triggers.caller == "ORDER") {StagingUtilities.MapXMLToSQL(xmlResult);}
+                if (!StagingUtilities.foundSite) { return; }            //order_site not in the XML, processing must be aborted
 
                 // *** LOG TIME
                 endTime = DateTime.Now;
@@ -124,7 +125,7 @@ namespace ConfigureOneFlag
                 (MapResult.AsyncState as Action).EndInvoke(MapResult);
             }), MapToSytelineAsync);
 
-            System.Threading.Thread.Sleep(8000);    //give the import SP a chance to get the order created in SL
+            System.Threading.Thread.Sleep(3000);    //give the import SP a chance to get the order created in SL
 
             //Retrieve the SL order# (if not found, default to using the C1 order#):
             SPOrderNumber = string.IsNullOrEmpty(DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber)) ? Triggers.pubOrderNumber : DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);

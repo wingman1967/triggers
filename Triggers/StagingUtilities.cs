@@ -11,6 +11,7 @@ namespace ConfigureOneFlag
         public static string globalOrderNum;
         public static int globalOrderLineNum;
         public static string dbSite = "";
+        public static bool foundSite = false;
                 
         public static void MapXMLToSQL(XmlDocument xmldoc)
         {
@@ -21,8 +22,9 @@ namespace ConfigureOneFlag
             zCfgBOM bom = new zCfgBOM();
 
             Audit.resetmE = true;       //reset the mE array in case we have any mapping errors to report for this cycle
-            
+
             //*** Determine what site we are working with and re-set the connection string accordingly, else default to NOVB
+            foundSite = false;
             XmlNodeList xnlsite = xmldoc.GetElementsByTagName("Input");
             foreach (XmlNode node in xnlsite)
             {
@@ -30,6 +32,7 @@ namespace ConfigureOneFlag
                 //switch (node.ChildNodes[0].Attributes["name"].Value == "ORDER_SITE")
                 {
                     case true:
+                        foundSite = true;
                         string rplConnectionString = DatabaseFactory.connectionString;
                         int csPos = rplConnectionString.IndexOf("NOVB");
                         dbSite = node.ChildNodes[0].Attributes["name"].Value;
@@ -43,6 +46,14 @@ namespace ConfigureOneFlag
                 }
             }
 
+            if (!foundSite)
+            {
+                Triggers.logEvent = "ORDER_SITE was not found in XML for order# " + Triggers.pubOrderNumber + ".  Processing aborted.";
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
+                SendMail.MailMessage(Triggers.logEvent, "MISSING ORDER_SITE For Order: " + Triggers.pubOrderNumber);
+                return;
+            }
+            
             ////Retrieve due date
             //co.DueDate = DateTime.Now;
             //coitem.DueDate = DateTime.Now;
@@ -87,7 +98,7 @@ namespace ConfigureOneFlag
             }
             Triggers.logEvent = "MAPPING XML TO STAGING TABLES";
             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-
+            
             //build CO header
             xnl = xmldoc.GetElementsByTagName("ID");
             foreach (XmlNode node in xnl)
@@ -273,7 +284,8 @@ namespace ConfigureOneFlag
             xnl = xmldoc.GetElementsByTagName("CREATED_BY_USER_ID");
             foreach (XmlNode node in xnl)
             {
-                co.WebUserName = DatabaseFactory.UserName(node.InnerText);
+                //co.WebUserName = DatabaseFactory.UserName(node.InnerText);    //per Grant, 10/2017 pass-through the ID as-is
+                co.WebUserName = node.InnerText;
             }
             
             co.WebOrderDate = System.DateTime.Now;
