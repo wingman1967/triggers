@@ -99,7 +99,7 @@ namespace ConfigureOneFlag
             //*** DEBOOG
             logEvent = "Connection String For Session: " + DatabaseFactory.connectionString;
             System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-            DatabaseFactory.WriteTestRecord(logEvent);
+            //DatabaseFactory.WriteTestRecord(logEvent);
             //return;                     //stop processing of trigger at this point
             //*** END DEBOOG
 

@@ -97,6 +97,14 @@ string XML)</para>
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_c1_web_service_acb3007f1151100e69c7fdbc3f6d35812_1acb3007f1151100e69c7fdbc3f6d35812">MapToSyteline</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
     <simplesect>
 
@@ -118,6 +126,10 @@ string XML)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_c1_web_service_a5c55f707a8abfce00f492231cb598c25_1a5c55f707a8abfce00f492231cb598c25">
                 <title>static void ConfigureOneFlag.C1WebService.StartCopy ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_c1_web_service_acb3007f1151100e69c7fdbc3f6d35812_1acb3007f1151100e69c7fdbc3f6d35812">
+                <title>static void ConfigureOneFlag.C1WebService.MapToSyteline ()</title> <emphasis></emphasis>
                 
             </section>
 </section>

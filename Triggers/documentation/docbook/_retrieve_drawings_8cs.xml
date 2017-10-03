@@ -131,9 +131,9 @@
 81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SharepointLocation&#32;=&#32;<emphasis class="stringliteral">@&quot;\\ecm.gormanrupp.com\ecm\NPC\Oper\ConfOrd\&quot;</emphasis>&#32;+&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a4bbfcbf56b350859fc9a8ca73f3c3c4c_1a4bbfcbf56b350859fc9a8ca73f3c3c4c">dbSite</link>&#32;+&#32;<emphasis class="stringliteral">&quot;\\&quot;</emphasis>;
 83 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-84 
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
 85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//***&#32;deboog&#32;TEST&#32;PRODUCTION&#32;LOCATIONS&#32;IN&#32;SHAREPOINT</emphasis>
-86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SharepointLocation&#32;=&#32;<emphasis class="stringliteral">@&quot;\\ecm.gormanrupp.com\ecm\NPC\Oper\ConfOrd\&quot;</emphasis>&#32;+&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a4bbfcbf56b350859fc9a8ca73f3c3c4c_1a4bbfcbf56b350859fc9a8ca73f3c3c4c">dbSite</link>&#32;+&#32;<emphasis class="stringliteral">&quot;\\&quot;</emphasis>;
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//SharepointLocation&#32;=&#32;@&quot;\\ecm.gormanrupp.com\ecm\NPC\Oper\ConfOrd\&quot;&#32;+&#32;StagingUtilities.dbSite&#32;+&#32;&quot;\\&quot;;</emphasis>
 87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//***&#32;end&#32;deboog</emphasis>
 88 
 89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_network_share">NetworkShare</link>.<link linkend="class_configure_one_flag_1_1_network_share_af61100f22e1ebd4895ad0313c0130ecf_1af61100f22e1ebd4895ad0313c0130ecf">DisconnectFromShare</link>(SharepointLocation,&#32;<emphasis class="keyword">true</emphasis>);

@@ -27,6 +27,7 @@ namespace ConfigureOneFlag
             foreach (XmlNode node in xnlsite)
             {
                 switch (node.ChildNodes[2].InnerText == "ORDER SITE")
+                //switch (node.ChildNodes[0].Attributes["name"].Value == "ORDER_SITE")
                 {
                     case true:
                         string rplConnectionString = DatabaseFactory.connectionString;
@@ -42,23 +43,23 @@ namespace ConfigureOneFlag
                 }
             }
 
-            //Retrieve due date
-            co.DueDate = DateTime.Now;
-            coitem.DueDate = DateTime.Now;
-            XmlNodeList xnlduedate = xmldoc.GetElementsByTagName("Input");
-            foreach (XmlNode node in xnlduedate)
-            {
-                switch (node.ChildNodes[2].InnerText == "DUE DATE")
-                {
-                    case true:
-                        co.DueDate = Convert.ToDateTime(node.ChildNodes[0].Attributes["name"].Value);
-                        coitem.DueDate = Convert.ToDateTime(node.ChildNodes[0].Attributes["name"].Value);
-                        break;
-                    default:
-                        //do nothing
-                        break;
-                }
-            }
+            ////Retrieve due date
+            //co.DueDate = DateTime.Now;
+            //coitem.DueDate = DateTime.Now;
+            //XmlNodeList xnlduedate = xmldoc.GetElementsByTagName("Input");
+            //foreach (XmlNode node in xnlduedate)
+            //{
+            //    switch (node.ChildNodes[2].InnerText == "DUE DATE")
+            //    {
+            //        case true:
+            //            co.DueDate = Convert.ToDateTime(node.ChildNodes[0].Attributes["name"].Value);
+            //            coitem.DueDate = Convert.ToDateTime(node.ChildNodes[0].Attributes["name"].Value);
+            //            break;
+            //        default:
+            //            //do nothing
+            //            break;
+            //    }
+            //}
             
             //Pre-staging activities
             XmlNodeList xnl = xmldoc.GetElementsByTagName("ORDER_NUM");
@@ -321,6 +322,24 @@ namespace ConfigureOneFlag
                             co.FreightTerms = " ";
                             break;
                     }
+                }
+            }
+
+            //Retrieve due date
+            co.DueDate = DateTime.Now;
+            coitem.DueDate = DateTime.Now;
+            XmlNodeList xnlduedate = xmldoc.GetElementsByTagName("Input");
+            foreach (XmlNode node in xnlduedate)
+            {
+                switch (node.ChildNodes[2].InnerText == "DUE DATE")
+                {
+                    case true:
+                        co.DueDate = Convert.ToDateTime(node.ChildNodes[0].Attributes["name"].Value);
+                        coitem.DueDate = Convert.ToDateTime(node.ChildNodes[0].Attributes["name"].Value);
+                        break;
+                    default:
+                        //do nothing
+                        break;
                 }
             }
 

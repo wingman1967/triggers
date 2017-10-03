@@ -68,7 +68,7 @@ namespace ConfigureOneFlag
             {
                 debugLogging = true;
             }
-
+            
             //if requested environment is not dev/test, change connectionString to prod; override to DEV if we sensed PROD but PROTECT in registry is YES
             if (Triggers.dbEnvironment == "PROD" && reg.GetValue("PROTECT").ToString() != "YES")
             {
@@ -146,7 +146,6 @@ namespace ConfigureOneFlag
                 SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
                 myCommand.CommandTimeout = 120000;
                 myConnection.Open();
-                myCommand.CommandTimeout = 600;
                 using (SqlDataReader reader = myCommand.ExecuteReader())
                 {
                     if (reader.HasRows)
@@ -165,46 +164,46 @@ namespace ConfigureOneFlag
         public static void ResequenceBOM(string orderNumber, int orderLine)
         {
             //call SP to resequence BOM records based on parentIDs
-            string commandtext = "EXEC GR_Cfg_ResequenceBOMSp '" + orderNumber + "', '" + orderLine + "' WITH RECOMPILE";
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand(commandtext, connection);
-            connection.Open();
-            command.CommandTimeout = 120000;
-            command.ExecuteNonQuery();
-            connection.Close();
-            
+            //string commandtext = "EXEC GR_Cfg_ResequenceBOMSp '" + orderNumber + "', '" + orderLine + "' WITH RECOMPILE";
             //SqlConnection connection = new SqlConnection(connectionString);
-            //SqlCommand command = new SqlCommand("GR_Cfg_ResequenceBOMSp", connection);
-            //command.CommandType = CommandType.StoredProcedure;
-            //command.Parameters.AddWithValue("@OrderNumber", orderNumber);
-            //command.Parameters.AddWithValue("@OrderLine", orderLine);
-            //connection.Open();
+            //SqlCommand command = new SqlCommand(commandtext, connection);
             //command.CommandTimeout = 120000;
+            //connection.Open();
             //command.ExecuteNonQuery();
             //connection.Close();
+
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand("GR_Cfg_ResequenceBOMSp", connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@OrderNumber", orderNumber);
+            command.Parameters.AddWithValue("@OrderLine", orderLine);
+            command.CommandTimeout = 120000;
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
         }
         public static void CfgImport(string orderNumber)
         {
             //call SP to import data into Syteline
             int CreateOrder = 1;
-            string commandtext = "EXEC GR_CfgImportSp '" + orderNumber + "', '" + orderNumber + "', '" + CreateOrder + "' WITH RECOMPILE";
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand(commandtext, connection);
-            connection.Open();
-            command.CommandTimeout = 120000;
-            command.ExecuteNonQuery();
-            connection.Close();
-
+            //string commandtext = "EXEC GR_CfgImportSp '" + orderNumber + "', '" + orderNumber + "', '" + CreateOrder + "' WITH RECOMPILE";
             //SqlConnection connection = new SqlConnection(connectionString);
-            //SqlCommand command = new SqlCommand("GR_CfgImportSp", connection);
-            //command.CommandType = CommandType.StoredProcedure;
-            //command.Parameters.AddWithValue("@pStartingOrderNum", orderNumber);
-            //command.Parameters.AddWithValue("@pEndingOrderNum", orderNumber);
-            //command.Parameters.AddWithValue("@pCreateOrder", CreateOrder);
-            //connection.Open();
+            //SqlCommand command = new SqlCommand(commandtext, connection);
             //command.CommandTimeout = 120000;
+            //connection.Open();
             //command.ExecuteNonQuery();
             //connection.Close();
+
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand("GR_CfgImportSp", connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@pStartingOrderNum", orderNumber);
+            command.Parameters.AddWithValue("@pEndingOrderNum", orderNumber);
+            command.Parameters.AddWithValue("@pCreateOrder", CreateOrder);
+            command.CommandTimeout = 120000;
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
         }
         public static void CleanupOrder(string orderNum)
         {

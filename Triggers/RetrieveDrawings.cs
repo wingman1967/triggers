@@ -81,9 +81,9 @@ namespace ConfigureOneFlag
                 {
                     SharepointLocation = @"\\ecm.gormanrupp.com\ecm\NPC\Oper\ConfOrd\" + StagingUtilities.dbSite + "\\";
                 }
-
+                
                 //*** deboog TEST PRODUCTION LOCATIONS IN SHAREPOINT
-                SharepointLocation = @"\\ecm.gormanrupp.com\ecm\NPC\Oper\ConfOrd\" + StagingUtilities.dbSite + "\\";
+                //SharepointLocation = @"\\ecm.gormanrupp.com\ecm\NPC\Oper\ConfOrd\" + StagingUtilities.dbSite + "\\";
                 //*** end deboog
 
                 NetworkShare.DisconnectFromShare(SharepointLocation, true);

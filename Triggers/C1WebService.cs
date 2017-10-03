@@ -115,7 +115,16 @@ namespace ConfigureOneFlag
             logEvent = "Calling IMPORT of staging data to Syteline";
             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             startTime = DateTime.Now;
-            DatabaseFactory.CfgImport(Triggers.pubOrderNumber);                 //map staging-table data into Syteline
+            
+            //DatabaseFactory.CfgImport(Triggers.pubOrderNumber);                 //map staging-table data into Syteline
+            //run the C1-to-SL map as an async task
+            Action MapToSytelineAsync = new Action(MapToSyteline);
+            MapToSytelineAsync.BeginInvoke(new AsyncCallback(MapResult =>
+            {
+                (MapResult.AsyncState as Action).EndInvoke(MapResult);
+            }), MapToSytelineAsync);
+
+            System.Threading.Thread.Sleep(8000);    //give the import SP a chance to get the order created in SL
 
             //Retrieve the SL order# (if not found, default to using the C1 order#):
             SPOrderNumber = string.IsNullOrEmpty(DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber)) ? Triggers.pubOrderNumber : DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
@@ -175,6 +184,10 @@ namespace ConfigureOneFlag
         private static void StartCopy()
         {
             RetrieveDrawings.CopyDrawings(xmlResultParm, urlParm);
+        }
+        private static void MapToSyteline()
+        {
+            DatabaseFactory.CfgImport(Triggers.pubOrderNumber);                 //map staging-table data into Syteline
         }
     }
 }
