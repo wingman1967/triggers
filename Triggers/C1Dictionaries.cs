@@ -12,11 +12,17 @@ namespace ConfigureOneFlag
         public static int objectLength;
         public static void LoadWMDictionary()
         {
+            //DEV and TEST objects
             webmethods.Clear();
             webmethods.Add("getOrder", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getOrder");
             webmethods.Add("updateOrder", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=updateOrder");
             webmethods.Add("getConfiguration", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getConfiguration");
             webmethods.Add("getDocument", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getDocument");
+            //Production objects
+            webmethods.Add("getOrderPROD", "http://national.conceptconfigurator.com/webservices/services/ConceptAccess?method=getOrder");
+            webmethods.Add("updateOrderPROD", "http://national.conceptconfigurator.com/webservices/services/ConceptAccess?method=updateOrder");
+            webmethods.Add("getConfigurationPROD", "http://national.conceptconfigurator.com/webservices/services/ConceptAccess?method=getConfiguration");
+            webmethods.Add("getDocumentPROD", "http://national.conceptconfigurator.com/webservices/services/ConceptAccess?method=getDocument");
         }
         public static void LoadDBFLengthDictionary()
         {

@@ -55,6 +55,8 @@ namespace ConfigureOneFlag
 
                 string useMethod = "";
                 key = "getDocument";
+                if (Triggers.dbEnvironment == "PROD" && DatabaseFactory.dbprotect != "YES") { key = "getDocumentPROD"; }
+
                 useMethod = C1Dictionaries.webmethods[key];
                 string documentSerialNumber = configSerial;
                 arrayindex = 0;
@@ -172,15 +174,32 @@ namespace ConfigureOneFlag
                             elapsedTimeSeconds = ts.Seconds;
                             logEvent = "DEBUG: Document response was received from ConfigureOne in: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
                             if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
-
+                            string copyToLocation = "";
                             XmlNodeList xnldoc = xmlResult.GetElementsByTagName("content");
                             foreach (XmlNode node in xnldoc)
                             {
                                 logEvent = "DEBUG: Copying file to Sharepoint: " + C1WebService.SPOrderNumber + "_" + docs[arrayindex];
                                 if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
-                                //Format Sharepoint directory, create if not exist, and copy document to that location
-                                string copyToLocation = DatabaseFactory.COItemitem(C1WebService.SPOrderNumber, documentSerialNumber);
+                                //Format Sharepoint directory, create if not exist, and copy document to that location (5 retries)
+                                for (int r = 0; r < 5; r += 1)
+                                {
+                                    copyToLocation = DatabaseFactory.COItemitem(C1WebService.SPOrderNumber, documentSerialNumber);
+                                    if (copyToLocation != "") { break; }
+                                    System.Threading.Thread.Sleep(500);
+                                }
+
+                                //One last retry if we still did not retrieve the coitem item:
+                                if (copyToLocation == "")
+                                {
+                                    copyToLocation = DatabaseFactory.COItemitem(C1WebService.SPOrderNumber, documentSerialNumber);
+                                    if (copyToLocation == "")
+                                    {
+                                        logEvent = "Syteline Coitem Item Could Not Be Retrieved After 6 Retries.  Documents For This Line Will Be Copied To The Root Of Order Folder For Order: " + C1WebService.SPOrderNumber;
+                                        System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
+                                        SendMail.MailMessage(logEvent, "No Syteline Coitem Item For Order: " + C1WebService.SPOrderNumber);
+                                    }
+                                }
 
                                 //Create directory if not exists
                                 try { DirectoryInfo di = Directory.CreateDirectory(SharepointCopyLocation + copyToLocation); }
@@ -280,6 +299,8 @@ namespace ConfigureOneFlag
 
                 //Update order-status and ref number in C1 to Ordered and SL order#, respectively
                 key = "updateOrder";
+                if (Triggers.dbEnvironment == "PROD" && DatabaseFactory.dbprotect != "YES") { key = "updateOrderPROD"; }
+
                 useMethod = C1Dictionaries.webmethods[key];
                 string C1orderNumber = orderNumber;
                 string C1orderReference = C1WebService.SPOrderNumber;

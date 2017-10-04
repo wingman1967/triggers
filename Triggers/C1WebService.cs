@@ -117,7 +117,6 @@ namespace ConfigureOneFlag
             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             startTime = DateTime.Now;
             
-            //DatabaseFactory.CfgImport(Triggers.pubOrderNumber);                 //map staging-table data into Syteline
             //run the C1-to-SL map as an async task
             Action MapToSytelineAsync = new Action(MapToSyteline);
             MapToSytelineAsync.BeginInvoke(new AsyncCallback(MapResult =>
@@ -125,11 +124,23 @@ namespace ConfigureOneFlag
                 (MapResult.AsyncState as Action).EndInvoke(MapResult);
             }), MapToSytelineAsync);
 
-            System.Threading.Thread.Sleep(3000);    //give the import SP a chance to get the order created in SL
+            //Iteratively check for SL order#
+            for (int r = 0; r < 5; r += 1)
+            {
+                SPOrderNumber = DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
+                SPPUBOrderNumber = SPOrderNumber;
+                if (SPOrderNumber != "") { break; }
+                Thread.Sleep(1000);
+            }
 
-            //Retrieve the SL order# (if not found, default to using the C1 order#):
-            SPOrderNumber = string.IsNullOrEmpty(DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber)) ? Triggers.pubOrderNumber : DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
-            SPPUBOrderNumber = SPOrderNumber;
+            //Final attempt to retrieve the SL order# (if not found, default to using the C1 order# and notify user):
+            if (SPOrderNumber == "")
+            {
+                SPOrderNumber = string.IsNullOrEmpty(DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber)) ? Triggers.pubOrderNumber : DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
+                SPPUBOrderNumber = SPOrderNumber;
+            }
+
+            if (SPOrderNumber == Triggers.pubOrderNumber) { SendMail.MailMessage("Syteline Order# Could Not Be Retrieved After 6 Retries.  Documents Will Be Copied Using ConfigureOne Order#.", "No Syteline Order# For Order: " + Triggers.pubOrderNumber); }
 
             logEvent = "Order created in Syteline is: " + SPOrderNumber;
             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
@@ -177,7 +188,7 @@ namespace ConfigureOneFlag
             {
                 File.Delete(SPPUBOrderNumber + "_XMLOutput.txt");
             }
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@SPPUBOrderNumber + "_XMLOutput.txt", true))
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(SPPUBOrderNumber + "_XMLOutput.txt", true))
             {
                 file.WriteLine(formattedXML);
             }

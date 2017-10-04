@@ -262,7 +262,8 @@ namespace ConfigureOneFlag
         public static string RetrieveSLCO (string orderNum)
         {
             string SLOrderNumber = "";
-            SQLCommand = "Select TOP 1 co_num as SLCO From CO c with (nolock) Where c.uf_weborder = " + (char)39 + orderNum + (char)39 + " Order By c.order_date desc, c.co_num desc";
+            //SQLCommand = "Select TOP 1 co_num as SLCO From CO c with (nolock) Where c.uf_weborder = " + (char)39 + orderNum + (char)39 + " Order By c.order_date desc, c.co_num desc";
+            SQLCommand = "Select TOP 1 co_num as SLCO From GR_CfgCO c with (nolock) Where c.order_num = " + (char)39 + orderNum + (char)39;
             using (SqlConnection myConnection = new SqlConnection(connectionString))
             {
                 SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);

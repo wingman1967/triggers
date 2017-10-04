@@ -22,7 +22,7 @@ namespace ConfigureOneFlag
             zCfgBOM bom = new zCfgBOM();
 
             Audit.resetmE = true;       //reset the mE array in case we have any mapping errors to report for this cycle
-
+            
             //*** Determine what site we are working with and re-set the connection string accordingly, else default to NOVB
             foundSite = false;
             XmlNodeList xnlsite = xmldoc.GetElementsByTagName("Input");
@@ -53,24 +53,6 @@ namespace ConfigureOneFlag
                 SendMail.MailMessage(Triggers.logEvent, "MISSING ORDER_SITE For Order: " + Triggers.pubOrderNumber);
                 return;
             }
-            
-            ////Retrieve due date
-            //co.DueDate = DateTime.Now;
-            //coitem.DueDate = DateTime.Now;
-            //XmlNodeList xnlduedate = xmldoc.GetElementsByTagName("Input");
-            //foreach (XmlNode node in xnlduedate)
-            //{
-            //    switch (node.ChildNodes[2].InnerText == "DUE DATE")
-            //    {
-            //        case true:
-            //            co.DueDate = Convert.ToDateTime(node.ChildNodes[0].Attributes["name"].Value);
-            //            coitem.DueDate = Convert.ToDateTime(node.ChildNodes[0].Attributes["name"].Value);
-            //            break;
-            //        default:
-            //            //do nothing
-            //            break;
-            //    }
-            //}
             
             //Pre-staging activities
             XmlNodeList xnl = xmldoc.GetElementsByTagName("ORDER_NUM");
@@ -410,6 +392,13 @@ namespace ConfigureOneFlag
                 globalOrderLineNum = coitem.CO_Line;
                 //output coitem record
                 DatabaseFactory.WriteRecordCOItem(ref coitem);
+
+                if (coitem.ConfigType == "A" || coitem.ConfigType == "K")
+                {
+                    Triggers.logEvent = "WARNING: Config Type Is: " + coitem.ConfigType + " On C1 Order#: " + co.CO_Num;
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
+                    SendMail.MailMessage(Triggers.logEvent, "Config-Type Warning");
+                }
                 
                 //*** Everything else here builds on the COITEM ***
                 var detailParent = node.SelectSingleNode(".");     //ensure we traverse ONLY children of this node (Detail) as the new parent (root) element
