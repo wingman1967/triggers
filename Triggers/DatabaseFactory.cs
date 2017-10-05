@@ -21,6 +21,8 @@ namespace ConfigureOneFlag
         public static string decryptedValue = "";
         public static bool debugLogging = false;
         public static string dbprotect = "";
+        public static string ws_uname = "";
+        public static string ws_password = "";
         public void SetConnectionString()
         {
             RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\ConfigureOneAssembly\\1.0", true);
@@ -37,6 +39,9 @@ namespace ConfigureOneFlag
                 spuname = File.ReadAllText(@"C:\C1\spuname.dat");
                 sppassword = File.ReadAllText(@"C:\C1\sppassword.dat");
                 dbprotect = File.ReadAllText(@"C:\C1\protect.dat");
+                ws_uname = File.ReadAllText(@"C:\C1\ws_uname.dat");
+                ws_password = File.ReadAllText(@"C:\C1\ws_password.dat");
+                //set registry values with defaults
                 reg.SetValue("PROD_DB", @"C:\C1\proddbconnection.dat");
                 reg.SetValue("DB", dbConnectionData);
                 reg.SetValue("ENCKEY", dbkey);
@@ -48,6 +53,8 @@ namespace ConfigureOneFlag
                 reg.SetValue("SPPASSWORD", sppassword);
                 reg.SetValue("DEBUGLOGGING", "NO");
                 reg.SetValue("PROTECT", dbprotect);
+                reg.SetValue("WS_UNAME", ws_uname);
+                reg.SetValue("WS_PASSWORD", ws_password);
             }
             
             //decrypt cs
@@ -63,6 +70,9 @@ namespace ConfigureOneFlag
             spuname = crypto.DecryptCS(spuname, sKey);
             sppassword = crypto.DecryptCS(sppassword, sKey);
             dbprotect = reg.GetValue("PROTECT").ToString();
+            ws_uname = reg.GetValue("WS_UNAME").ToString();
+            ws_password = reg.GetValue("WS_PASSWORD").ToString();
+
             debugLogging = false;
             if (reg.GetValue("DEBUGLOGGING").ToString() == "YES")
             {

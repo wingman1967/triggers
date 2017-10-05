@@ -26,5 +26,7 @@ var class_configure_one_flag_1_1_database_factory =
     [ "splocation", "class_configure_one_flag_1_1_database_factory_a055478d8b87ec2968a6319dcd78273f6.html#a055478d8b87ec2968a6319dcd78273f6", null ],
     [ "sppassword", "class_configure_one_flag_1_1_database_factory_a10149307929348e6d16785e15fc7fbdc.html#a10149307929348e6d16785e15fc7fbdc", null ],
     [ "spuname", "class_configure_one_flag_1_1_database_factory_a11d432b379e9e80f1b11ac4884a25ead.html#a11d432b379e9e80f1b11ac4884a25ead", null ],
-    [ "SQLCommand", "class_configure_one_flag_1_1_database_factory_aa5aa82b5ed9dd8d3610b92ed61a9f2d4.html#aa5aa82b5ed9dd8d3610b92ed61a9f2d4", null ]
+    [ "SQLCommand", "class_configure_one_flag_1_1_database_factory_aa5aa82b5ed9dd8d3610b92ed61a9f2d4.html#aa5aa82b5ed9dd8d3610b92ed61a9f2d4", null ],
+    [ "ws_password", "class_configure_one_flag_1_1_database_factory_aa53cf825cde12636ecebfcde3330e911.html#aa53cf825cde12636ecebfcde3330e911", null ],
+    [ "ws_uname", "class_configure_one_flag_1_1_database_factory_aafd935142831b5cb6f0e09079aafc8c6.html#aafd935142831b5cb6f0e09079aafc8c6", null ]
 ];

@@ -107,7 +107,8 @@ namespace ConfigureOneFlag
                 objRequest.ContentType = "text/xml";
                 objRequest.Headers.Add("SOAPAction", key);
                 objRequest.Timeout = 120000;        
-                objRequest.ReadWriteTimeout = 120000;   
+                objRequest.ReadWriteTimeout = 120000;
+                objRequest.Credentials = new NetworkCredential(DatabaseFactory.ws_uname, DatabaseFactory.ws_password);
 
                 while (arrayindex < upperBound)
                 {
@@ -122,6 +123,7 @@ namespace ConfigureOneFlag
                     objRequest.Headers.Add("SOAPAction", key);
                     objRequest.Timeout = 120000;
                     objRequest.ReadWriteTimeout = 120000;
+                    objRequest.Credentials = new NetworkCredential(DatabaseFactory.ws_uname, DatabaseFactory.ws_password);
 
                     logEvent = "DEBUG: Requested document from C1: " + documentName + " Serial#: " + documentSerialNumber;
                     if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
@@ -317,7 +319,8 @@ namespace ConfigureOneFlag
                 objRequest.Headers.Add("SOAPAction", key);
                 objRequest.Timeout = 120000;
                 objRequest.ReadWriteTimeout = 120000;
-
+                objRequest.Credentials = new NetworkCredential(DatabaseFactory.ws_uname, DatabaseFactory.ws_password);
+                
                 data = new StringBuilder();
                 data.Append(xmlPayload);
                 byte[] byteDataStatus = Encoding.UTF8.GetBytes(data.ToString());          // Sending our request to Apache AXIS in a byte array

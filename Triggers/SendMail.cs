@@ -12,7 +12,7 @@ namespace ConfigureOneFlag
             MailMessage mail = new MailMessage();
             mail.From = new MailAddress(DatabaseFactory.emailFrom);
             mail.To.Add(new MailAddress(DatabaseFactory.emailaddr));
-            //mail.To.Add(new MailAddress("GrantH@NatlPump.com"));
+            mail.To.Add(new MailAddress("GrantH@NatlPump.com"));
             mail.Subject = messageSubject;
             mail.Body = messageBody;
             SmtpClient smtp = new SmtpClient(DatabaseFactory.emailServer);

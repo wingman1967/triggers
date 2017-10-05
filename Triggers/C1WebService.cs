@@ -38,6 +38,7 @@ namespace ConfigureOneFlag
             objRequest.Headers.Add("SOAPAction", key);
             objRequest.Timeout = 120000;        //increased
             objRequest.ReadWriteTimeout = 120000;   //increased
+            objRequest.Credentials = new NetworkCredential(DatabaseFactory.ws_uname, DatabaseFactory.ws_password);
             string xmlPayload = payload;
             StringBuilder data = new StringBuilder();
             data.Append(xmlPayload);
@@ -132,7 +133,7 @@ namespace ConfigureOneFlag
                 if (SPOrderNumber != "") { break; }
                 Thread.Sleep(1000);
             }
-
+            
             //Final attempt to retrieve the SL order# (if not found, default to using the C1 order# and notify user):
             if (SPOrderNumber == "")
             {
