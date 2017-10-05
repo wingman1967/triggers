@@ -177,6 +177,7 @@ namespace ConfigureOneFlag
                             logEvent = "DEBUG: Document response was received from ConfigureOne in: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
                             if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
                             string copyToLocation = "";
+                            bool alreadySent = false;
                             XmlNodeList xnldoc = xmlResult.GetElementsByTagName("content");
                             foreach (XmlNode node in xnldoc)
                             {
@@ -190,16 +191,20 @@ namespace ConfigureOneFlag
                                     if (copyToLocation != "") { break; }
                                     System.Threading.Thread.Sleep(500);
                                 }
-
+                                
                                 //One last retry if we still did not retrieve the coitem item:
                                 if (copyToLocation == "")
                                 {
                                     copyToLocation = DatabaseFactory.COItemitem(C1WebService.SPOrderNumber, documentSerialNumber);
                                     if (copyToLocation == "")
                                     {
-                                        logEvent = "Syteline Coitem Item Could Not Be Retrieved After 6 Retries.  Documents For This Line Will Be Copied To The Root Of Order Folder For Order: " + C1WebService.SPOrderNumber;
+                                        logEvent = "Syteline Coitem Item Could Not Be Retrieved After 6 Retries.  Documents Will Be Copied To The Root Of Order Folder For Order: " + C1WebService.SPOrderNumber;
                                         System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
-                                        SendMail.MailMessage(logEvent, "No Syteline Coitem Item For Order: " + C1WebService.SPOrderNumber);
+                                        if (!alreadySent)
+                                        {
+                                            alreadySent = true;
+                                            SendMail.MailMessage(logEvent, "No Syteline Coitem Item For Order: " + C1WebService.SPOrderNumber);
+                                        }
                                     }
                                 }
 
