@@ -22,7 +22,12 @@ namespace ConfigureOneFlag
             zCfgBOM bom = new zCfgBOM();
 
             Audit.resetmE = true;       //reset the mE array in case we have any mapping errors to report for this cycle
-            
+
+            var nsmgr = new XmlNamespaceManager(xmldoc.NameTable);
+            nsmgr.AddNamespace("xsl", "http://www.w3.org/1999/XSL/Transform");
+            nsmgr.AddNamespace("soapenv", "http://schemas.xmlsoap.org/soap/envelope/");
+            nsmgr.AddNamespace("c1", "http://ws.configureone.com");
+
             //*** Determine what site we are working with and re-set the connection string accordingly, else default to NOVB
             foundSite = false;
             XmlNodeList xnlsite = xmldoc.GetElementsByTagName("Input");
@@ -271,123 +276,60 @@ namespace ConfigureOneFlag
             }
             
             co.WebOrderDate = System.DateTime.Now;
-            
+
             //Look for PURCHASE ORDER in INPUTS, load into CO and COITEM
-            XmlNodeList xnlPO = xmldoc.GetElementsByTagName("Input");
-            foreach (XmlNode nodePO in xnlPO)
-            {
-                if (nodePO.ChildNodes[2].InnerText == "PURCHASE ORDER")
-                {
-                    co.CustPO = nodePO.ChildNodes[0].Attributes["name"].Value;
-                    coitem.CustPO = nodePO.ChildNodes[0].Attributes["name"].Value;
-                }
-            }
+            XmlNode nodePO = xmldoc.SelectSingleNode("//c1:Input[@name='PURCHASE_ORDER']", nsmgr);
+            co.CustPO = string.IsNullOrEmpty(nodePO.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodePO.ChildNodes[0].Attributes["name"].InnerXml;
+            coitem.CustPO = nodePO.ChildNodes[0].Attributes["name"].InnerXml;
 
-            //Look for FREIGHT ACCOUNT# (IF COLLECT) in INPUTS, load into CO
-            XmlNodeList xnlCO = xmldoc.GetElementsByTagName("Input");
-            foreach (XmlNode nodeCO in xnlCO)
-            {
-                if (nodeCO.ChildNodes[2].InnerText == "FREIGHT ACCOUNT# (IF COLLECT)")
-                {
-                    switch(nodeCO.ChildNodes[0].Attributes["name"].Value.Length > 0)
-                    {
-                        case true:
-                            co.FreightAcct = nodeCO.ChildNodes[0].Attributes["name"].Value;
-                            break;
-                        default:
-                            co.FreightAcct = " ";
-                            break;
-                    }
-                }
-            }
-
+            //Look for FREIGHT ACCOUNT#, load into CO
+            XmlNode nodeFA = xmldoc.SelectSingleNode("//c1:Input[@name='FREIGHT_ACCT']", nsmgr);
+            co.FreightAcct = nodeFA.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeFA.ChildNodes[0].Attributes["name"].InnerXml;
+                        
             //Look for FREIGHT TERMS in INPUTS, load into CO
-            XmlNodeList xnlCOFT = xmldoc.GetElementsByTagName("Input");
-            foreach (XmlNode nodeCOFT in xnlCOFT)
-            {
-                if (nodeCOFT.ChildNodes[2].InnerText == "FREIGHT TERMS")
-                {
-                    switch (nodeCOFT.ChildNodes[0].Attributes["name"].Value.Length > 0)
-                    {
-                        case true:
-                            co.FreightTerms = nodeCOFT.ChildNodes[0].Attributes["name"].Value;
-                            break;
-                        default:
-                            co.FreightTerms = " ";
-                            break;
-                    }
-                }
-            }
+            XmlNode nodeFT = xmldoc.SelectSingleNode("//c1:Input[@name='FREIGHT_TERMS']", nsmgr);
+            co.FreightTerms = nodeFT.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeFT.ChildNodes[0].Attributes["name"].InnerXml;
 
             //Retrieve due date
             co.DueDate = DateTime.Now;
-            coitem.DueDate = DateTime.Now;
-            XmlNodeList xnlduedate = xmldoc.GetElementsByTagName("Input");
-            foreach (XmlNode node in xnlduedate)
-            {
-                switch (node.ChildNodes[2].InnerText == "DUE DATE")
-                {
-                    case true:
-                        co.DueDate = Convert.ToDateTime(node.ChildNodes[0].Attributes["name"].Value);
-                        coitem.DueDate = Convert.ToDateTime(node.ChildNodes[0].Attributes["name"].Value);
-                        break;
-                    default:
-                        //do nothing
-                        break;
-                }
-            }
-
+            XmlNode nodedd = xmldoc.SelectSingleNode("//c1:Input[@name='DUE_DATE']", nsmgr);
+            co.DueDate = nodedd.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? DateTime.Now : Convert.ToDateTime(nodedd.ChildNodes[0].Attributes["name"].InnerXml);
+            coitem.DueDate = co.DueDate;
+                        
             //Look for REQUEST DATE in INPUTS, load into CO
-            XmlNodeList xnlCORD = xmldoc.GetElementsByTagName("Input");
-            foreach (XmlNode nodeCORD in xnlCORD)
-            {
-                if (nodeCORD.ChildNodes[2].InnerText == "REQUEST DATE")
-                {
-                    switch (nodeCORD.ChildNodes[0].Attributes["name"].Value.Length > 0)
-                    {
-                        case true:
-                            co.RequestDate = Convert.ToDateTime(nodeCORD.ChildNodes[0].Attributes["name"].Value);
-                            break;
-                        default:
-                            co.RequestDate = System.DateTime.Now;       //default to today's date if no request date exists in the XML document
-                            break;
-                    }
-                }
-            }
+            co.RequestDate = DateTime.Now;
+            XmlNode noderd = xmldoc.SelectSingleNode("//c1:Input[@name='REQUEST_DATE']", nsmgr);
+            co.RequestDate = noderd.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? DateTime.Now : Convert.ToDateTime(noderd.ChildNodes[0].Attributes["name"].InnerXml);
 
             //Look for Destination_country in INPUTS, load into CO
             co.DestinationCountry = " ";
-            XmlNodeList xnlDC = xmldoc.GetElementsByTagName("Input");
-            foreach (XmlNode nodeDC in xnlDC)
-            {
-                if (nodeDC.ChildNodes[2].InnerText == "DESTINATION COUNTRY")
-                {
-                    switch (nodeDC.ChildNodes[0].Attributes["name"].Value.Length > 0)
-                    {
-                        case true:
-                            co.DestinationCountry = DatabaseFactory.RetrieveISOCountry(nodeDC.ChildNodes[0].Attributes["name"].Value.Substring(0, 2));
-                            break;
-                        default:
-                            co.DestinationCountry = " ";       //default 
-                            break;
-                    }
-                }
-            }
+            XmlNode nodeDC = xmldoc.SelectSingleNode("//c1:Input[@name='DESTINATION_COUNTRY']", nsmgr);
+            co.DestinationCountry = nodeDC.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : DatabaseFactory.RetrieveISOCountry(nodeDC.ChildNodes[0].Attributes["name"].InnerXml.Substring(0, 2));
             
             //build COITEM records, per line
             xnl = xmldoc.GetElementsByTagName("Detail");
             foreach (XmlNode node in xnl)
             {
-                coitem.CO_Line = Convert.ToInt16(node.ChildNodes[0].InnerText);
-                coitem.Serial = node.ChildNodes[2].InnerText;
-                coitem.Item = node.ChildNodes[3].InnerText;
-                coitem.Smartpart = node.ChildNodes[4].InnerText;
-                coitem.Desc = node.ChildNodes[5].InnerText;
-                coitem.ConfigType = node.ChildNodes[6].InnerText;
-                coitem.UnitPrice = Convert.ToDecimal(node.ChildNodes[7].InnerText);
-                coitem.UnitCost = Convert.ToDecimal(node.ChildNodes[8].InnerText);
-                coitem.Discount = Convert.ToDecimal(node.ChildNodes[9].InnerText);
-                coitem.QTY = Convert.ToDecimal(node.ChildNodes[10].InnerText);
+                XmlNode nodertv = node.SelectSingleNode("//c1:ORDER_LINE_NUM", nsmgr);
+                coitem.CO_Line = Convert.ToInt16(nodertv.ChildNodes[0].InnerText);
+                nodertv = node.SelectSingleNode("c1:SERIAL_NUM", nsmgr); 
+                coitem.Serial = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].InnerText;
+                nodertv = node.SelectSingleNode("c1:ITEM_NUM", nsmgr);
+                coitem.Item = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].InnerText;
+                nodertv = node.SelectSingleNode("c1:SMARTPART_NUM", nsmgr);
+                coitem.Smartpart = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].InnerText;
+                nodertv = node.SelectSingleNode("c1:DESCRIPTION", nsmgr);
+                coitem.Desc = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].InnerText;
+                nodertv = node.SelectSingleNode("c1:TYPE", nsmgr);
+                coitem.ConfigType = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].Value;
+                nodertv = node.SelectSingleNode("c1:UNIT_PRICE", nsmgr);
+                coitem.UnitPrice = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
+                nodertv = node.SelectSingleNode("c1:UNIT_COST", nsmgr);
+                coitem.UnitCost = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
+                nodertv = node.SelectSingleNode("c1:DISCOUNT_AMT", nsmgr);
+                coitem.Discount = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
+                nodertv = node.SelectSingleNode("c1:QUANTITY", nsmgr);
+                coitem.QTY = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
                 coitem.PriorityLevel = co.PriorityLevel;
                 globalOrderLineNum = coitem.CO_Line;
                 //output coitem record
@@ -405,7 +347,7 @@ namespace ConfigureOneFlag
                 XmlDocument detailDoc = new XmlDocument();
                 detailDoc.LoadXml(detailParent.OuterXml);
 
-                //iterate through Inputs for the line
+                //iterate through Inputs for the line (none of these have static variable names)
                 XmlNodeList xnli = detailDoc.GetElementsByTagName("Input");
                 foreach (XmlNode nodei in xnli)
                 {
@@ -425,57 +367,36 @@ namespace ConfigureOneFlag
                 {
                     if (nodeisv.ChildNodes[2].InnerText == "SHIP_VIA") { co.ShipVia = nodeisv.ChildNodes[0].Attributes["name"].Value; }
                 }
-                
-                //If dropship has value, override the order-header shipping with this information instead
-                //UPDATE 6/16/2017:  Preserve the selected ship-to from C1 and if dropship has value, load up the dropship fields
+
                 XmlNodeList xnlds = xmldoc.GetElementsByTagName("Input");
                 foreach (XmlNode nodeds in xnlds)
                 {
-                    if (nodeds.ChildNodes[2].InnerText.Length >= 9 && nodeds.ChildNodes[2].InnerText.Substring(0, 9) == "DROP SHIP")
-                    {
-                        switch (nodeds.ChildNodes[2].InnerText)
-                        {
-                            case "DROP SHIP NAME":
-                                co.DropShipName = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? " " : nodeds.ChildNodes[0].Attributes["name"].Value;
-                                break;
-                            case "DROP SHIP ADDRESS 1":
-                                co.DropShipAddress1 = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? " " : nodeds.ChildNodes[0].Attributes["name"].Value;
-                                break;
-                            case "DROP SHIP ADDRESS 2":
-                                co.DropShipAddress2 = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? " " : nodeds.ChildNodes[0].Attributes["name"].Value;
-                                break;
-                            case "DROP SHIP ADDRESS 3":
-                                co.DropShipAddress3 = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? " " : nodeds.ChildNodes[0].Attributes["name"].Value;
-                                break;
-                            case "DROP SHIP ADDRESS 4":
-                                co.DropShipAddress4 = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? " " : nodeds.ChildNodes[0].Attributes["name"].Value;
-                                break;
-                            case "DROP SHIP CITY":
-                                co.DropShipCity = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? " " : nodeds.ChildNodes[0].Attributes["name"].Value;
-                                break;
-                            case "DROP SHIP STATE":
-                                co.DropShipState = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? " " : nodeds.ChildNodes[0].Attributes["name"].Value;
-                                break;
-                            case "DROP SHIP ZIP CODE":
-                                co.DropShipZip = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? " " : nodeds.ChildNodes[0].Attributes["name"].Value;
-                                break;
-                            case "DROP SHIP CONTACT":
-                                co.DropShipContact = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? " " : nodeds.ChildNodes[0].Attributes["name"].Value;
-                                break;
-                            case "DROP SHIP PHONE":
-                                co.DropShipPhone = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? " " : nodeds.ChildNodes[0].Attributes["name"].Value;
-                                break;
-                            case "DROP SHIP COUNTRY":
-                                co.DropShipCountry = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? " " : DatabaseFactory.RetrieveISOCountry(nodeds.ChildNodes[0].Attributes["name"].Value.Substring(0, 2));
-                                break;
-                            case "DROP SHIP EMAIL":
-                                co.DropShipEmail = nodeds.ChildNodes[0].Attributes["name"].Value.Length == 0 ? " " : nodeds.ChildNodes[0].Attributes["name"].Value;
-                                break;
-                            default:
-                                //do nothing
-                                break;
-                        }
-                    }
+                    //If dropship has value, override the order-header shipping with this information instead
+                    //UPDATE 6/16/2017:  Preserve the selected ship-to from C1 and if dropship has value, load up the dropship fields
+                    XmlNode nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_NAME']", nsmgr);
+                    co.DropShipName = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_1']", nsmgr);
+                    co.DropShipAddress1 = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_2']", nsmgr);
+                    co.DropShipAddress2 = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_3']", nsmgr);
+                    co.DropShipAddress3 = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_4']", nsmgr);
+                    co.DropShipAddress4 = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_CITY']", nsmgr);
+                    co.DropShipCity = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_STATE']", nsmgr);
+                    co.DropShipState = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ZIP_CODE']", nsmgr);
+                    co.DropShipZip = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_COUNTRY']", nsmgr);
+                    co.DropShipCountry = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_CONTACT']", nsmgr);
+                    co.DropShipContact = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_PHONE']", nsmgr);
+                    co.DropShipPhone = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_EMAIL']", nsmgr);
+                    co.DropShipEmail = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
                 }
 
                 //item-master for the line we are working with

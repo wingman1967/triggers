@@ -36,8 +36,8 @@ namespace ConfigureOneFlag
             objRequest.Method = "POST";
             objRequest.ContentType = "text/xml";
             objRequest.Headers.Add("SOAPAction", key);
-            objRequest.Timeout = 120000;        //increased
-            objRequest.ReadWriteTimeout = 120000;   //increased
+            objRequest.Timeout = 120000;        
+            objRequest.ReadWriteTimeout = 120000;   
             objRequest.Credentials = new NetworkCredential(DatabaseFactory.ws_uname, DatabaseFactory.ws_password);
             string xmlPayload = payload;
             StringBuilder data = new StringBuilder();

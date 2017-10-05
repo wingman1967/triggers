@@ -121,8 +121,8 @@ Processing for calls to ConfigureOne web service and return for further handling
 36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Method&#32;=&#32;<emphasis class="stringliteral">&quot;POST&quot;</emphasis>;
 37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ContentType&#32;=&#32;<emphasis class="stringliteral">&quot;text/xml&quot;</emphasis>;
 38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Headers.Add(<emphasis class="stringliteral">&quot;SOAPAction&quot;</emphasis>,&#32;key);
-39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Timeout&#32;=&#32;120000;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//increased</emphasis>
-40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ReadWriteTimeout&#32;=&#32;120000;&#32;&#32;&#32;<emphasis class="comment">//increased</emphasis>
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Timeout&#32;=&#32;120000;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.ReadWriteTimeout&#32;=&#32;120000;&#32;&#32;&#32;
 41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;objRequest.Credentials&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;NetworkCredential(<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_aafd935142831b5cb6f0e09079aafc8c6_1aafd935142831b5cb6f0e09079aafc8c6">ws_uname</link>,&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_aa53cf825cde12636ecebfcde3330e911_1aa53cf825cde12636ecebfcde3330e911">ws_password</link>);
 42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;xmlPayload&#32;=&#32;payload;
 43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;StringBuilder&#32;data&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;StringBuilder();
