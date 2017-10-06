@@ -150,12 +150,12 @@ Management of dictionaries used for C1 data mapping/processing
 93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;COItem:ser_num&quot;</emphasis>,&#32;15);
 94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;COItem:item_num&quot;</emphasis>,&#32;30);
 95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;COItem:smartpart_num&quot;</emphasis>,&#32;30);
-96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;COItem:description&quot;</emphasis>,&#32;40);
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;COItem:description&quot;</emphasis>,&#32;1000);
 97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//CfgItem&#32;Fields</emphasis>
 98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CfgItem:order_num&quot;</emphasis>,&#32;15);
 99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CfgItem:smartpart_num&quot;</emphasis>,&#32;40);
 100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CfgItem:item_num&quot;</emphasis>,&#32;40);
-101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CfgItem:description&quot;</emphasis>,&#32;40);
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CfgItem:description&quot;</emphasis>,&#32;1000);
 102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CfgItem:uom&quot;</emphasis>,&#32;10);
 103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CfgItem:im_VAR1&quot;</emphasis>,&#32;200);
 104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;fieldLengths.Add(<emphasis class="stringliteral">&quot;CfgItem:im_VAR2&quot;</emphasis>,&#32;200);

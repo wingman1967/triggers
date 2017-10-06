@@ -93,12 +93,12 @@ namespace ConfigureOneFlag
             fieldLengths.Add("COItem:ser_num", 15);
             fieldLengths.Add("COItem:item_num", 30);
             fieldLengths.Add("COItem:smartpart_num", 30);
-            fieldLengths.Add("COItem:description", 40);
+            fieldLengths.Add("COItem:description", 1000);
             //CfgItem Fields
             fieldLengths.Add("CfgItem:order_num", 15);
             fieldLengths.Add("CfgItem:smartpart_num", 40);
             fieldLengths.Add("CfgItem:item_num", 40);
-            fieldLengths.Add("CfgItem:description", 40);
+            fieldLengths.Add("CfgItem:description", 1000);
             fieldLengths.Add("CfgItem:uom", 10);
             fieldLengths.Add("CfgItem:im_VAR1", 200);
             fieldLengths.Add("CfgItem:im_VAR2", 200);

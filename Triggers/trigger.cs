@@ -96,14 +96,10 @@ namespace ConfigureOneFlag
             caller = "ORDER";
             orderNum = orderValue;
             pubOrderNumber = orderNum;
-            
-            //*** DEBOOG
+                        
             logEvent = "Connection String For Session: " + DatabaseFactory.connectionString;
             System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-            //DatabaseFactory.WriteTestRecord(logEvent);
-            //return;                     //stop processing of trigger at this point
-            //*** END DEBOOG
-
+            
             //Ensure the mE array is initialized, in case it is never addressed again before an array.clear is attempted
             Audit.mE = new string[50];
             Audit.mEIndex = 0;
