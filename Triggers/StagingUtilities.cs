@@ -305,12 +305,67 @@ namespace ConfigureOneFlag
             co.DestinationCountry = " ";
             XmlNode nodeDC = xmldoc.SelectSingleNode("//c1:Input[@name='DESTINATION_COUNTRY']", nsmgr);
             co.DestinationCountry = nodeDC.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : DatabaseFactory.RetrieveISOCountry(nodeDC.ChildNodes[0].Attributes["name"].InnerXml.Substring(0, 2));
-            
+
+            //Dropship data
+            co.DropShipName = " ";
+            co.DropShipAddress1 = " ";
+            co.DropShipAddress2 = " ";
+            co.DropShipAddress3 = " ";
+            co.DropShipAddress4 = " ";
+            co.DropShipCity = " ";
+            co.DropShipState = " ";
+            co.DropShipZip = " ";
+            co.DropShipCountry = " ";
+            co.DropShipContact = " ";
+            co.DropShipPhone = " ";
+            co.DropShipEmail = " ";
+            XmlNodeList xnlds = xmldoc.GetElementsByTagName("Input");
+            foreach (XmlNode nodeds in xnlds)
+            {
+                //If dropship has value, override the order-header shipping with this information instead
+                //UPDATE 6/16/2017:  Preserve the selected ship-to from C1 and if dropship has value, load up the dropship fields
+                XmlNode nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_NAME']", nsmgr);
+                co.DropShipName = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_1']", nsmgr);
+                co.DropShipAddress1 = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_2']", nsmgr);
+                co.DropShipAddress2 = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_3']", nsmgr);
+                co.DropShipAddress3 = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_4']", nsmgr);
+                co.DropShipAddress4 = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+
+                try
+                {
+                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_CITY']", nsmgr);
+                    co.DropShipCity = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                }
+                catch (Exception dd1)
+                {
+                    co.DropShipCity = " ";
+                }
+                //nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_CITY']", nsmgr);
+                //co.DropShipCity = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_STATE']", nsmgr);
+                co.DropShipState = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ZIP_CODE']", nsmgr);
+                co.DropShipZip = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_COUNTRY']", nsmgr);
+                co.DropShipCountry = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_CONTACT']", nsmgr);
+                co.DropShipContact = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_PHONE']", nsmgr);
+                co.DropShipPhone = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_EMAIL']", nsmgr);
+                co.DropShipEmail = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                break;
+            }
+
             //build COITEM records, per line
             xnl = xmldoc.GetElementsByTagName("Detail");
             foreach (XmlNode node in xnl)
             {
-                XmlNode nodertv = node.SelectSingleNode("//c1:ORDER_LINE_NUM", nsmgr);
+                XmlNode nodertv = node.SelectSingleNode("c1:ORDER_LINE_NUM", nsmgr);
                 coitem.CO_Line = Convert.ToInt16(nodertv.ChildNodes[0].InnerText);
                 nodertv = node.SelectSingleNode("c1:SERIAL_NUM", nsmgr); 
                 coitem.Serial = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].InnerText;
@@ -334,7 +389,7 @@ namespace ConfigureOneFlag
                 globalOrderLineNum = coitem.CO_Line;
                 //output coitem record
                 DatabaseFactory.WriteRecordCOItem(ref coitem);
-
+                
                 if (coitem.ConfigType == "A" || coitem.ConfigType == "K")
                 {
                     Triggers.logEvent = "WARNING: Config Type Is: " + coitem.ConfigType + " On C1 Order#: " + co.CO_Num;
@@ -362,42 +417,54 @@ namespace ConfigureOneFlag
                 }
 
                 //Look for SHIP_VIA in INPUTS 
+                co.ShipVia = " ";
                 XmlNodeList xnlisv = xmldoc.GetElementsByTagName("Input");
                 foreach (XmlNode nodeisv in xnlisv)
                 {
                     if (nodeisv.ChildNodes[2].InnerText == "SHIP_VIA") { co.ShipVia = nodeisv.ChildNodes[0].Attributes["name"].Value; }
                 }
 
-                XmlNodeList xnlds = xmldoc.GetElementsByTagName("Input");
-                foreach (XmlNode nodeds in xnlds)
-                {
-                    //If dropship has value, override the order-header shipping with this information instead
-                    //UPDATE 6/16/2017:  Preserve the selected ship-to from C1 and if dropship has value, load up the dropship fields
-                    XmlNode nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_NAME']", nsmgr);
-                    co.DropShipName = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
-                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_1']", nsmgr);
-                    co.DropShipAddress1 = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
-                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_2']", nsmgr);
-                    co.DropShipAddress2 = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
-                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_3']", nsmgr);
-                    co.DropShipAddress3 = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
-                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_4']", nsmgr);
-                    co.DropShipAddress4 = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
-                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_CITY']", nsmgr);
-                    co.DropShipCity = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
-                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_STATE']", nsmgr);
-                    co.DropShipState = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
-                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ZIP_CODE']", nsmgr);
-                    co.DropShipZip = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
-                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_COUNTRY']", nsmgr);
-                    co.DropShipCountry = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
-                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_CONTACT']", nsmgr);
-                    co.DropShipContact = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
-                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_PHONE']", nsmgr);
-                    co.DropShipPhone = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
-                    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_EMAIL']", nsmgr);
-                    co.DropShipEmail = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
-                }
+                
+                //XmlNodeList xnlds = xmldoc.GetElementsByTagName("Input");
+                //foreach (XmlNode nodeds in xnlds)
+                //{
+                //    //If dropship has value, override the order-header shipping with this information instead
+                //    //UPDATE 6/16/2017:  Preserve the selected ship-to from C1 and if dropship has value, load up the dropship fields
+                //    XmlNode nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_NAME']", nsmgr);
+                //    co.DropShipName = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                //    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_1']", nsmgr);
+                //    co.DropShipAddress1 = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                //    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_2']", nsmgr);
+                //    co.DropShipAddress2 = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                //    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_3']", nsmgr);
+                //    co.DropShipAddress3 = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                //    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_4']", nsmgr);
+                //    co.DropShipAddress4 = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+
+                //    try
+                //    {
+                //        nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_CITY']", nsmgr);
+                //        co.DropShipCity = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                //    }
+                //    catch (Exception dd1)
+                //    {
+                //        co.DropShipCity = " ";
+                //    }
+                //    //nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_CITY']", nsmgr);
+                //    //co.DropShipCity = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                //    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_STATE']", nsmgr);
+                //    co.DropShipState = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                //    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ZIP_CODE']", nsmgr);
+                //    co.DropShipZip = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                //    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_COUNTRY']", nsmgr);
+                //    co.DropShipCountry = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                //    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_CONTACT']", nsmgr);
+                //    co.DropShipContact = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                //    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_PHONE']", nsmgr);
+                //    co.DropShipPhone = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                //    nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_EMAIL']", nsmgr);
+                //    co.DropShipEmail = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                //}
 
                 //item-master for the line we are working with
                 int recordSequence = 1;

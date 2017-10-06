@@ -203,7 +203,7 @@ namespace ConfigureOneFlag
                                         if (!alreadySent)
                                         {
                                             alreadySent = true;
-                                            SendMail.MailMessage(logEvent, "No Syteline Coitem Item For Order: " + C1WebService.SPOrderNumber);
+                                            //SendMail.MailMessage(logEvent, "No Syteline Coitem Item For Order: " + C1WebService.SPOrderNumber);
                                         }
                                     }
                                 }
