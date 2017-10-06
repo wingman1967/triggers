@@ -335,6 +335,7 @@ namespace ConfigureOneFlag
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_4']", nsmgr);
                 co.DropShipAddress4 = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
 
+                //evaluate CITY and then CIty if the former fails, as some XML is loaded improperly with mixed-case for City
                 try
                 {
                     nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_CITY']", nsmgr);
@@ -342,7 +343,15 @@ namespace ConfigureOneFlag
                 }
                 catch (Exception dd1)
                 {
-                    co.DropShipCity = " ";
+                    try
+                    {
+                        nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_CIty']", nsmgr);
+                        co.DropShipCity = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                    }
+                    catch (Exception dd2)
+                    {
+                        co.DropShipCity = " ";
+                    }
                 }
                 //nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_CITY']", nsmgr);
                 //co.DropShipCity = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
