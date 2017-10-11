@@ -84,7 +84,7 @@ namespace ConfigureOneFlag
                     SharepointLocation = @"\\ecm.gormanrupp.com\ecm\NPC\Oper\ConfOrd\" + StagingUtilities.dbSite + "\\";
                 }
                 
-                //*** deboog TEST PRODUCTION LOCATIONS IN SHAREPOINT
+                //*** deboog TEST the PRODUCTION LOCATIONS IN SHAREPOINT
                 //SharepointLocation = @"\\ecm.gormanrupp.com\ecm\NPC\Oper\ConfOrd\" + StagingUtilities.dbSite + "\\";
                 //*** end deboog
 
@@ -228,7 +228,7 @@ namespace ConfigureOneFlag
                                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
                                 startTime = DateTime.Now;
-
+                                
                                 try
                                 {
                                     byte[] pdfByteArray = Convert.FromBase64String(node.InnerText);
@@ -299,7 +299,10 @@ namespace ConfigureOneFlag
                 }
                 
                 //Save XML output to SharePoint as well
-                File.Copy(C1WebService.SPPUBOrderNumber + "_XMLOutput.txt", SharepointCopyLocation + C1WebService.SPPUBOrderNumber + "_XMLOutput.txt", true);
+                File.Copy(@"C:\C1\XMLOUTPUTS\" + C1WebService.SPPUBOrderNumber + "_XMLOutput.txt", SharepointCopyLocation + C1WebService.SPPUBOrderNumber + "_XMLOutput.txt", true);
+
+                //Housekeeping - delete the temporary XML output file
+                File.Delete(@"C:\C1\XMLOUTPUTS\" + C1WebService.SPPUBOrderNumber + "_XMLOutput.txt");
 
                 logEvent = "Retrieved/Saved Following Document Files: " + Environment.NewLine + Environment.NewLine + documentFilesSaved;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);

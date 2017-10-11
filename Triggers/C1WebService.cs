@@ -131,7 +131,7 @@ namespace ConfigureOneFlag
                 SPOrderNumber = DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
                 SPPUBOrderNumber = SPOrderNumber;
                 if (SPOrderNumber != "") { break; }
-                Thread.Sleep(3000);
+                Thread.Sleep(2000);
             }
             
             //Final attempt to retrieve the SL order# (if not found, default to using the C1 order# and notify user):
@@ -185,11 +185,11 @@ namespace ConfigureOneFlag
                 formattedXML = System.Xml.Linq.XDocument.Parse(xmlOut).ToString();
             }
 
-            if (File.Exists(SPPUBOrderNumber + "_XMLOutput.txt"))
+            if (File.Exists(@"C:\C1\XMLOUTPUTS\" + SPPUBOrderNumber + "_XMLOutput.txt"))
             {
-                File.Delete(SPPUBOrderNumber + "_XMLOutput.txt");
+                File.Delete(@"C:\C1\XMLOUTPUTS\" + SPPUBOrderNumber + "_XMLOutput.txt");
             }
-            using (System.IO.StreamWriter file = new System.IO.StreamWriter(SPPUBOrderNumber + "_XMLOutput.txt", true))
+            using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\C1\XMLOUTPUTS\" + SPPUBOrderNumber + "_XMLOutput.txt", true))
             {
                 file.WriteLine(formattedXML);
             }

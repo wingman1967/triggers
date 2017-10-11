@@ -417,7 +417,7 @@ Utilities used for staging of data from C1 to SQL databases
 367 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipEmail&#32;=&#32;<emphasis class="keywordtype">string</emphasis>.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].InnerXml)&#32;?&#32;<emphasis class="stringliteral">&quot;&#32;&quot;</emphasis>&#32;:&#32;nodeDRS.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].InnerXml;
 368 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
 369 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-370 
+370 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
 371 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//build&#32;COITEM&#32;records,&#32;per&#32;line</emphasis>
 372 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;xnl&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Detail&quot;</emphasis>);
 373 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(XmlNode&#32;node&#32;<emphasis class="keywordflow">in</emphasis>&#32;xnl)

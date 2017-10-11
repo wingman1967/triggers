@@ -25,7 +25,7 @@ namespace ConfigureOneFlag
                     "C1ORDER", "Application");
             }
                                     
-            logEvent = "TRIGGER FIRING ON INSERT";
+            logEvent = "TRIGGER FIRING ON INSERT EVENT - GR_CFG_QUEUE";
             System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
             switch (C1Dictionaries.webmethods.ContainsKey("getOrder"))
@@ -72,7 +72,7 @@ namespace ConfigureOneFlag
                 default:
                     return;
             }
-
+            
             //Determine whether incoming order is production or dev/test
             string incomingOrder = orderValue.Substring(0, 1);
             dbEnvironment = "DEV";
