@@ -376,10 +376,23 @@ namespace ConfigureOneFlag
                 coitem.CO_Line = Convert.ToInt16(nodertv.ChildNodes[0].InnerText);
                 nodertv = node.SelectSingleNode("c1:SERIAL_NUM", nsmgr); 
                 coitem.Serial = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].InnerText;
-                nodertv = node.SelectSingleNode("c1:ITEM_NUM", nsmgr);
-                coitem.Item = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].InnerText;
-                nodertv = node.SelectSingleNode("c1:SMARTPART_NUM", nsmgr);
-                coitem.Smartpart = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].InnerText;
+
+                try
+                {
+                    nodertv = node.SelectSingleNode("c1:ITEM_NUM", nsmgr);
+                    coitem.Item = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].InnerText;
+                    nodertv = node.SelectSingleNode("c1:SMARTPART_NUM", nsmgr);
+                    coitem.Smartpart = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].InnerText;
+                }
+                catch (Exception c11)
+                {
+                    coitem.Item = " ";
+                    coitem.Smartpart = " ";
+                }
+                
+                if (coitem.Item == "") { coitem.Item = " "; }
+                if (coitem.Smartpart == "") { coitem.Smartpart = " "; }
+                
                 nodertv = node.SelectSingleNode("c1:DESCRIPTION", nsmgr);
                 coitem.Desc = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].InnerText;
                 nodertv = node.SelectSingleNode("c1:TYPE", nsmgr);
@@ -394,16 +407,17 @@ namespace ConfigureOneFlag
                 coitem.QTY = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
                 coitem.PriorityLevel = co.PriorityLevel;
                 globalOrderLineNum = coitem.CO_Line;
-                //output coitem record
-                DatabaseFactory.WriteRecordCOItem(ref coitem);
-                
+                                
                 if (coitem.ConfigType == "K")
                 {
-                    Triggers.logEvent = "WARNING: Config Type Is: " + coitem.ConfigType + " On C1 Order#: " + co.CO_Num;
+                    Triggers.logEvent = "WARNING: Config Type Is: " + coitem.ConfigType + " On C1 Order#: " + co.CO_Num + ". Ignoring line# " + coitem.CO_Line;
                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
-                    //SendMail.MailMessage(Triggers.logEvent, "Config-Type Warning");
+                    SendMail.MailMessage(Triggers.logEvent, "Config-Type Warning");
+                    continue;           //we cannot process a type K; notify, ignore this line, and continue with the next detail node
                 }
-                
+                //output coitem record
+                DatabaseFactory.WriteRecordCOItem(ref coitem);
+
                 //*** Everything else here builds on the COITEM ***
                 var detailParent = node.SelectSingleNode(".");     //ensure we traverse ONLY children of this node (Detail) as the new parent (root) element
                 XmlDocument detailDoc = new XmlDocument();
