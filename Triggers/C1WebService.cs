@@ -125,13 +125,16 @@ namespace ConfigureOneFlag
                 (MapResult.AsyncState as Action).EndInvoke(MapResult);
             }), MapToSytelineAsync);
 
+            //administrative HALT to give SP's time to process all coitem records
+            Thread.Sleep(2500);
+
             //Iteratively check for SL order#
             for (int r = 0; r < 5; r += 1)
             {
                 SPOrderNumber = DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
                 SPPUBOrderNumber = SPOrderNumber;
                 if (SPOrderNumber != "") { break; }
-                Thread.Sleep(3000);
+                Thread.Sleep(2000);
             }
             
             //Final attempt to retrieve the SL order# (if not found, default to using the C1 order# and notify user):
