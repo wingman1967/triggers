@@ -131,7 +131,7 @@ namespace ConfigureOneFlag
                 SPOrderNumber = DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
                 SPPUBOrderNumber = SPOrderNumber;
                 if (SPOrderNumber != "") { break; }
-                Thread.Sleep(2000);
+                Thread.Sleep(2500);
             }
             
             //Final attempt to retrieve the SL order# (if not found, default to using the C1 order# and notify user):
