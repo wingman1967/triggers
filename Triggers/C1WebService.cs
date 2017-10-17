@@ -124,10 +124,10 @@ namespace ConfigureOneFlag
             {
                 (MapResult.AsyncState as Action).EndInvoke(MapResult);
             }), MapToSytelineAsync);
-
+            
             //administrative HALT to give SP's time to process all coitem records
             Thread.Sleep(2500);
-
+            
             //Iteratively check for SL order#
             for (int r = 0; r < 5; r += 1)
             {

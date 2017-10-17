@@ -23,6 +23,17 @@ namespace ConfigureOneFlag
 
             StringBuilder data = new StringBuilder();
 
+            //namespace manager
+            XmlNamespaceManager nsmgr = new XmlNamespaceManager(xmlResult.NameTable);
+            nsmgr.AddNamespace("xsl", "http://www.w3.org/1999/XSL/Transform");
+            nsmgr.AddNamespace("soapenv", "http://schemas.xmlsoap.org/soap/envelope/");
+
+            XmlNodeList nodeInfo = xmlResult.GetElementsByTagName("getOrderResponse");
+            string xmlNamespace = "";
+            xmlNamespace = Convert.ToString(nodeInfo[0].Attributes["xmlns"].Value);
+            nsmgr.AddNamespace("c1", xmlNamespace);
+            nsmgr.AddNamespace("c2", "http://mod.ws.configure.com");
+
             //Timing vars
             DateTime startTime = DateTime.Now;
             DateTime endTime = DateTime.Now;
@@ -61,13 +72,43 @@ namespace ConfigureOneFlag
                 string documentSerialNumber = configSerial;
                 arrayindex = 0;
 
-                XmlNodeList xnl = xmlResult.GetElementsByTagName("fileName");
+                //** deboog
+                logEvent = "Namespace: " + xmlNamespace;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                XmlNodeList xnl = xmlResult.SelectNodes("//c1:files", nsmgr);
                 foreach (XmlNode node in xnl)
                 {
-                    docs[arrayindex] = node.InnerText;
+                    XmlNode nodeFile = node.SelectSingleNode("c1:fileName", nsmgr);
+                    docs[arrayindex] = node.ChildNodes[0].InnerText;
                     arrayindex += 1;
+
+                    logEvent = "Filename #" + arrayindex + " : " + node.ChildNodes[0].InnerText;
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                 }
-                
+
+
+
+                //XmlNodeList xnl = xmlResult.GetElementsByTagName("files", "*");
+                //foreach (XmlNode node in xnl)
+                //{
+                //    docs[arrayindex] = node.ChildNodes[0].InnerText;
+                //    arrayindex += 1;
+
+                //    logEvent = "Filename #" + arrayindex + " : " + node.ChildNodes[0].InnerText;
+                //    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                //}
+
+                //XmlNodeList xnl = xmlResult.GetElementsByTagName("fileName");
+                //foreach (XmlNode node in xnl)
+                //{
+                //    docs[arrayindex] = node.InnerText;
+                //    arrayindex += 1;
+
+                //    logEvent = "Filename #" + arrayindex + " : " + node.ChildNodes[0].InnerText;
+                //    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                //}
+
+
                 logEvent = "DEBUG: Finished building document filename array";
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
@@ -94,6 +135,23 @@ namespace ConfigureOneFlag
                 logEvent = "DEBUG: SP Share credential fixed.  UNAME: " + DatabaseFactory.spuname + " -> PWD: " + DatabaseFactory.sppassword;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
+
+
+                //*** deboog
+                string documentList = "";
+                while (arrayindex < upperBound)
+                {
+                    logEvent = "File #" + (arrayindex + 1) + " : " + docs[arrayindex];
+                    documentList += logEvent + Environment.NewLine;
+                    
+                    arrayindex += 1;
+                }
+                logEvent = "Files stored are: " + Environment.NewLine + Environment.NewLine + documentList;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+                //*** end deboog
+                arrayindex = 0;
+
                 //Create Sharepoint BASE folder for order# (each line will have its own folder by item#)
                 string SharepointCopyLocation = SharepointLocation + C1WebService.SPOrderNumber + "\\";
                 try { DirectoryInfo di = Directory.CreateDirectory(SharepointCopyLocation); }
@@ -115,6 +173,7 @@ namespace ConfigureOneFlag
                     documentName = docs[arrayindex];
                     int strPos = documentName.IndexOf("_");
                     documentSerialNumber = documentName.Substring(0, strPos);
+
                     xmlPayload = "<?xml version=\"1.0\" encoding=\"utf-8\"?><soapenv:Envelope xmlns:xsi=" + (char)34 + "http://www.w3.org/2001/XMLSchema-instance" + (char)34 + " xmlns:xsd=" + (char)34 + "http://www.w3.org/2001/XMLSchema" + (char)34 + " xmlns:ws=" + (char)34 + "http://ws.configureone.com" + (char)34 + " xmlns:mod=" + (char)34 + "http://model.ws.configureone.com" + (char)34 + " xmlns:soapenv=" + (char)34 + "http://schemas.xmlsoap.org/soap/envelope/" + (char)34 + ">" + "<soapenv:Body><ws:" + key + " xmlns=" + (char)34 + "http://ws.configureone.com" + (char)34 + "><ws:document><mod:type>" + documentType + "</mod:type><mod:serialNumber>" + documentSerialNumber + "</mod:serialNumber><mod:files><mod:fileName>" + documentName + "</mod:fileName><mod:content>" + documentName + "</mod:content></mod:files></ws:document></ws:" + key + "></soapenv:Body></soapenv:Envelope>";
                     sURL = useMethod;
                     objRequest = (HttpWebRequest)WebRequest.Create(sURL.ToString());
@@ -166,7 +225,7 @@ namespace ConfigureOneFlag
                                 return;
                             }
 
-                            logEvent = "DEBUG: Response received from C1";
+                            logEvent = "DEBUG: Response received from C1: " + result;
                             if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
                             
                             // *** LOG TIME
@@ -178,7 +237,9 @@ namespace ConfigureOneFlag
                             if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
                             string copyToLocation = "";
                             bool alreadySent = false;
-                            XmlNodeList xnldoc = xmlResult.GetElementsByTagName("content");
+                            //XmlNodeList xnldoc = xmlResult.GetElementsByTagName("content");
+                            
+                            XmlNodeList xnldoc = xmlResult.SelectNodes("//c1:files", nsmgr);
                             foreach (XmlNode node in xnldoc)
                             {
                                 logEvent = "DEBUG: Copying file to Sharepoint: " + C1WebService.SPOrderNumber + "_" + docs[arrayindex];
@@ -231,7 +292,11 @@ namespace ConfigureOneFlag
                                 
                                 try
                                 {
-                                    byte[] pdfByteArray = Convert.FromBase64String(node.InnerText);
+                                    //string deboogString = node.ChildNodes[1].InnerText;
+                                    //logEvent = "File Node Base 64: " + deboogString;
+                                    //System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+                                    byte[] pdfByteArray = Convert.FromBase64String(node.ChildNodes[1].InnerText);
                                     //File.WriteAllBytes(SharepointCopyLocation + C1WebService.SPOrderNumber + "_" + docs[arrayindex], pdfByteArray);
                                     File.WriteAllBytes(SharepointCopyLocation + copyToLocation + "\\" + docs[arrayindex], pdfByteArray);
                                     documentFilesSaved = documentFilesSaved + docs[arrayindex] + Environment.NewLine;
@@ -246,7 +311,7 @@ namespace ConfigureOneFlag
                                 }
                                 catch (Exception ts1)
                                 {
-                                    logEvent = "An error occurred copying file to Sharepoint: " + C1WebService.SPOrderNumber + "_" + docs[arrayindex] + "  >  " + "TS1 Exception.  A maximum of 5 retries will be attempted.";
+                                    logEvent = "An error occurred copying file to Sharepoint: " + C1WebService.SPOrderNumber + "_" + docs[arrayindex] + "  >  " + "TS1 Exception ( " + ts1.Message + ").  A maximum of 5 retries will be attempted.";
                                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                                     bool successfulDocument = false;
                                     for (int i = 0; i < 5; i += 1)
@@ -254,7 +319,7 @@ namespace ConfigureOneFlag
                                         if (successfulDocument) { break; }
                                         try
                                         {
-                                            byte[] pdfByteArray = Convert.FromBase64String(node.InnerText);
+                                            byte[] pdfByteArray = Convert.FromBase64String(node.ChildNodes[1].InnerText);
                                             File.WriteAllBytes(SharepointCopyLocation + C1WebService.SPOrderNumber + "_" + docs[arrayindex], pdfByteArray);
                                             documentFilesSaved = documentFilesSaved + docs[arrayindex] + Environment.NewLine;
 
