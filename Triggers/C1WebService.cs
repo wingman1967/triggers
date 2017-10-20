@@ -129,12 +129,12 @@ namespace ConfigureOneFlag
             Thread.Sleep(2500);
             
             //Iteratively check for SL order#
-            for (int r = 0; r < 5; r += 1)
+            for (int r = 0; r < 20; r += 1)
             {
                 SPOrderNumber = DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
                 SPPUBOrderNumber = SPOrderNumber;
                 if (SPOrderNumber != "") { break; }
-                Thread.Sleep(2000);
+                Thread.Sleep(1000);
             }
             
             //Final attempt to retrieve the SL order# (if not found, default to using the C1 order# and notify user):
@@ -144,7 +144,7 @@ namespace ConfigureOneFlag
                 SPPUBOrderNumber = SPOrderNumber;
             }
 
-            if (SPOrderNumber == Triggers.pubOrderNumber) { SendMail.MailMessage("Syteline Order# Could Not Be Retrieved After 6 Retries.  Documents Will Be Copied Using ConfigureOne Order#.", "No Syteline Order# For Order: " + Triggers.pubOrderNumber); }
+            if (SPOrderNumber == Triggers.pubOrderNumber) { SendMail.MailMessage("Syteline Order# Could Not Be Retrieved After 20 seconds.  GR_ImportSp stored procedure may have timed out or failed.  Documents Will Be Copied Using ConfigureOne Order#.", "No Syteline Order# For Order: " + Triggers.pubOrderNumber); }
 
             logEvent = "Order created in Syteline is: " + SPOrderNumber;
             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);

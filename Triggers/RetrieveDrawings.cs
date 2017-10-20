@@ -71,43 +71,21 @@ namespace ConfigureOneFlag
                 useMethod = C1Dictionaries.webmethods[key];
                 string documentSerialNumber = configSerial;
                 arrayindex = 0;
-
-                //** deboog
-                logEvent = "Namespace: " + xmlNamespace;
-                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                                
                 XmlNodeList xnl = xmlResult.SelectNodes("//c1:files", nsmgr);
                 foreach (XmlNode node in xnl)
                 {
                     XmlNode nodeFile = node.SelectSingleNode("c1:fileName", nsmgr);
                     docs[arrayindex] = node.ChildNodes[0].InnerText;
                     arrayindex += 1;
-
-                    logEvent = "Filename #" + arrayindex + " : " + node.ChildNodes[0].InnerText;
-                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                 }
-
-
-
-                //XmlNodeList xnl = xmlResult.GetElementsByTagName("files", "*");
-                //foreach (XmlNode node in xnl)
-                //{
-                //    docs[arrayindex] = node.ChildNodes[0].InnerText;
-                //    arrayindex += 1;
-
-                //    logEvent = "Filename #" + arrayindex + " : " + node.ChildNodes[0].InnerText;
-                //    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-                //}
 
                 //XmlNodeList xnl = xmlResult.GetElementsByTagName("fileName");
                 //foreach (XmlNode node in xnl)
                 //{
                 //    docs[arrayindex] = node.InnerText;
                 //    arrayindex += 1;
-
-                //    logEvent = "Filename #" + arrayindex + " : " + node.ChildNodes[0].InnerText;
-                //    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                 //}
-
 
                 logEvent = "DEBUG: Finished building document filename array";
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
@@ -134,10 +112,7 @@ namespace ConfigureOneFlag
 
                 logEvent = "DEBUG: SP Share credential fixed.  UNAME: " + DatabaseFactory.spuname + " -> PWD: " + DatabaseFactory.sppassword;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-
-
-
-                //*** deboog
+                
                 string documentList = "";
                 while (arrayindex < upperBound)
                 {
@@ -149,7 +124,6 @@ namespace ConfigureOneFlag
                 logEvent = "Files stored are: " + Environment.NewLine + Environment.NewLine + documentList;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
-                //*** end deboog
                 arrayindex = 0;
 
                 //Create Sharepoint BASE folder for order# (each line will have its own folder by item#)
@@ -237,20 +211,18 @@ namespace ConfigureOneFlag
                             if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
                             string copyToLocation = "";
                             bool alreadySent = false;
-                            //XmlNodeList xnldoc = xmlResult.GetElementsByTagName("content");
-                            
                             XmlNodeList xnldoc = xmlResult.SelectNodes("//c1:files", nsmgr);
                             foreach (XmlNode node in xnldoc)
                             {
                                 logEvent = "DEBUG: Copying file to Sharepoint: " + C1WebService.SPOrderNumber + "_" + docs[arrayindex];
                                 if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
-                                //Format Sharepoint directory, create if not exist, and copy document to that location (5 retries)
-                                for (int r = 0; r < 5; r += 1)
+                                //Format Sharepoint directory, create if not exist, and copy document to that location (20 retries)
+                                for (int r = 0; r < 20; r += 1)
                                 {
                                     copyToLocation = DatabaseFactory.COItemitem(C1WebService.SPOrderNumber, documentSerialNumber);
                                     if (copyToLocation != "") { break; }
-                                    System.Threading.Thread.Sleep(500);
+                                    System.Threading.Thread.Sleep(1000);
                                 }
                                 
                                 //One last retry if we still did not retrieve the coitem item:
@@ -259,12 +231,13 @@ namespace ConfigureOneFlag
                                     copyToLocation = DatabaseFactory.COItemitem(C1WebService.SPOrderNumber, documentSerialNumber);
                                     if (copyToLocation == "")
                                     {
-                                        logEvent = "Syteline Coitem Item Could Not Be Retrieved After 6 Retries.  Documents Will Be Copied To The Root Of Order Folder For Order: " + C1WebService.SPOrderNumber;
+                                        logEvent = "Syteline Coitem Item Could Not Be Retrieved After 20 seconds.  The GR_ImportSp stored procedure may have timed-out or otherwise failed.  Documents Will Be Copied To The Root Of Order Folder For Order: " + C1WebService.SPOrderNumber;
                                         System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
                                         if (!alreadySent)
                                         {
                                             alreadySent = true;
                                             //SendMail.MailMessage(logEvent, "No Syteline Coitem Item For Order: " + C1WebService.SPOrderNumber);
+                                            //possible TODO:  wait a little longer for the coitem to appear, though this can run into CLR timeout
                                         }
                                     }
                                 }
@@ -275,7 +248,7 @@ namespace ConfigureOneFlag
                                 {
                                     //directory already exists, nothing further needs done
                                 }
-
+                                
                                 logEvent = "SharepointCopyLocation Value: " + SharepointCopyLocation;
                                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
@@ -292,12 +265,7 @@ namespace ConfigureOneFlag
                                 
                                 try
                                 {
-                                    //string deboogString = node.ChildNodes[1].InnerText;
-                                    //logEvent = "File Node Base 64: " + deboogString;
-                                    //System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-
                                     byte[] pdfByteArray = Convert.FromBase64String(node.ChildNodes[1].InnerText);
-                                    //File.WriteAllBytes(SharepointCopyLocation + C1WebService.SPOrderNumber + "_" + docs[arrayindex], pdfByteArray);
                                     File.WriteAllBytes(SharepointCopyLocation + copyToLocation + "\\" + docs[arrayindex], pdfByteArray);
                                     documentFilesSaved = documentFilesSaved + docs[arrayindex] + Environment.NewLine;
 
@@ -334,8 +302,9 @@ namespace ConfigureOneFlag
                                         }
                                         catch (Exception rt1)
                                         {
-                                            logEvent = "An error occurred copying file to Sharepoint: " + C1WebService.SPOrderNumber + "_" + docs[arrayindex] + "  >  " + "rt1 Exception on Retry#: " + (i + 1).ToString();
+                                            logEvent = "An error occurred copying file to Sharepoint: " + C1WebService.SPOrderNumber + "_" + docs[arrayindex] + "  >  " + "rt1 Exception (" + rt1.Message + ") on Retry#: " + (i + 1).ToString();
                                             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                                            System.Threading.Thread.Sleep(500);
                                         }
                                     }
 
@@ -356,7 +325,7 @@ namespace ConfigureOneFlag
                     }
                     catch (Exception ts2)
                     {
-                        logEvent = "An error occurred copying file to Sharepoint: " + C1WebService.SPOrderNumber + "_" + docs[arrayindex] + "  >  " + "TS2 Exception";
+                        logEvent = "An error occurred copying file to Sharepoint: " + C1WebService.SPOrderNumber + "_" + docs[arrayindex] + "  >  " + "TS2 Exception (" + ts2.Message + ")";
                         System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                         SendMail.MailMessage(logEvent, "TIMEOUT");
                     }

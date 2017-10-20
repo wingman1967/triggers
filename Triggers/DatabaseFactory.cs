@@ -2,6 +2,7 @@
 using System.Data;
 using Microsoft.Win32;
 using System.IO;
+using System;
 
 namespace ConfigureOneFlag
 {
@@ -188,6 +189,7 @@ namespace ConfigureOneFlag
             command.Parameters.AddWithValue("@OrderNumber", orderNumber);
             command.Parameters.AddWithValue("@OrderLine", orderLine);
             command.CommandTimeout = 120000;
+           
             connection.Open();
             command.ExecuteNonQuery();
             connection.Close();
@@ -212,7 +214,21 @@ namespace ConfigureOneFlag
             command.Parameters.AddWithValue("@pCreateOrder", CreateOrder);
             command.CommandTimeout = 120000;
             connection.Open();
-            command.ExecuteNonQuery();
+            try
+            {
+                command.ExecuteNonQuery();
+            }
+            catch (Exception spI)
+            {
+                //A timeout has likely occurred; try again
+                string logEvent = "An error occurred: " + spI.Message + " -> Retrying...";
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
+
+                connection.Close();
+                connection.Open();
+                command.ExecuteNonQuery();
+            }
+            
             connection.Close();
         }
         public static void CleanupOrder(string orderNum)
