@@ -14,10 +14,10 @@ namespace ConfigureOneFlag
         {
             //DEV and TEST objects
             webmethods.Clear();
-            webmethods.Add("getOrder", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getOrder");
-            webmethods.Add("updateOrder", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=updateOrder");
-            webmethods.Add("getConfiguration", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getConfiguration");
-            webmethods.Add("getDocument", "http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getDocument");
+            webmethods.Add("getOrder", "http://national.conceptconfigurator.com/webservices/services/ConceptAccess?method=getOrder");
+            webmethods.Add("updateOrder", "http://national.conceptconfigurator.com/webservices/services/ConceptAccess?method=updateOrder");
+            webmethods.Add("getConfiguration", "http://national.conceptconfigurator.com/webservices/services/ConceptAccess?method=getConfiguration");
+            webmethods.Add("getDocument", "http://national.conceptconfigurator.com/webservices/services/ConceptAccess?method=getDocument");
             //Production objects
             webmethods.Add("getOrderPROD", "http://national.conceptconfigurator.com/webservices/services/ConceptAccess?method=getOrder");
             webmethods.Add("updateOrderPROD", "http://national.conceptconfigurator.com/webservices/services/ConceptAccess?method=updateOrder");

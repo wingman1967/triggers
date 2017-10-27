@@ -68,6 +68,9 @@ namespace ConfigureOneFlag
                 key = "getDocument";
                 if (Triggers.dbEnvironment == "PROD" && DatabaseFactory.dbprotect != "YES") { key = "getDocumentPROD"; }
 
+                //force prod
+                key = "getDocument";
+
                 useMethod = C1Dictionaries.webmethods[key];
                 string documentSerialNumber = configSerial;
                 arrayindex = 0;
@@ -344,6 +347,9 @@ namespace ConfigureOneFlag
                 //Update order-status and ref number in C1 to Ordered and SL order#, respectively
                 key = "updateOrder";
                 if (Triggers.dbEnvironment == "PROD" && DatabaseFactory.dbprotect != "YES") { key = "updateOrderPROD"; }
+
+                //force prod
+                key = "updateOrder";
 
                 useMethod = C1Dictionaries.webmethods[key];
                 string C1orderNumber = orderNumber;

@@ -39,7 +39,24 @@ namespace ConfigureOneFlag
             objRequest.Timeout = 120000;        
             objRequest.ReadWriteTimeout = 120000;   
             objRequest.Credentials = new NetworkCredential(DatabaseFactory.ws_uname, DatabaseFactory.ws_password);
+
+            //*** deboog
+            logEvent = "WS creds: " + DatabaseFactory.ws_uname + ", " + DatabaseFactory.ws_password;
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+            //*** end deboog
+
             string xmlPayload = payload;
+
+            //*** deboog
+            logEvent = "Payload: " + xmlPayload;
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+            //*** end deboog
+
+            //*** deboog
+            logEvent = "URL: " + url;
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+            //*** end deboog
+
             StringBuilder data = new StringBuilder();
             data.Append(xmlPayload);
             byte[] byteData = Encoding.UTF8.GetBytes(data.ToString());          // Sending our request to Apache AXIS in a byte array
