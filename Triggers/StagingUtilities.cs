@@ -29,24 +29,25 @@ namespace ConfigureOneFlag
             nsmgr.AddNamespace("c1", "http://ws.configureone.com");
 
             //*** Determine what site we are working with and re-set the connection string accordingly, else default to NOVB
-            foundSite = false;
+            foundSite = true;
             XmlNodeList xnlsite = xmldoc.GetElementsByTagName("Input");
             foreach (XmlNode node in xnlsite)
             {
-                switch (node.ChildNodes[2].InnerText == "ORDER SITE")
-                //switch (node.ChildNodes[0].Attributes["name"].Value == "ORDER_SITE")
+                XmlNode nodeSite = node.SelectSingleNode("//c1:Input[@name='ORDER_SITE']", nsmgr);
+                dbSite = nodeSite.ChildNodes[0].Attributes["name"].InnerXml;
+                if (dbSite == null) { foundSite = false; }
+                
+                switch (foundSite == true)
                 {
                     case true:
-                        foundSite = true;
                         string rplConnectionString = DatabaseFactory.connectionString;
                         int csPos = rplConnectionString.IndexOf("NOVB");
-                        dbSite = node.ChildNodes[0].Attributes["name"].Value;
-                        DatabaseFactory.connectionString = rplConnectionString.Substring(0, csPos) + node.ChildNodes[0].Attributes["name"].Value + rplConnectionString.Substring(csPos + 4, rplConnectionString.Length - (csPos + 4));
+                        DatabaseFactory.connectionString = rplConnectionString.Substring(0, csPos) + dbSite + rplConnectionString.Substring(csPos + 4, rplConnectionString.Length - (csPos + 4));
                         Triggers.logEvent = "Connection String: " + DatabaseFactory.connectionString;
                         System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                         break;
                     default:
-                        //continue with NOVB default
+                        //prepare to log the no-site and abort
                         break;
                 }
             }
@@ -193,7 +194,8 @@ namespace ConfigureOneFlag
             {
                 co.BillToEmailAddress = node.InnerText.Length == 0 ? " " : node.InnerText;
             }
-            xnl = xmldoc.GetElementsByTagName("BILL_TO_REF_NUM");
+            //xnl = xmldoc.GetElementsByTagName("BILL_TO_REF_NUM");
+            xnl = xmldoc.GetElementsByTagName("BILL_TO_ERP_CONTACT_REF_NUM");
             foreach (XmlNode node in xnl)
             {
                 co.BillToRefNum = node.InnerText;
@@ -253,7 +255,8 @@ namespace ConfigureOneFlag
             {
                 co.ShipToEmailAddress = node.InnerText.Length == 0 ? " " : node.InnerText;
             }
-            xnl = xmldoc.GetElementsByTagName("SHIP_TO_REF_NUM");
+            //xnl = xmldoc.GetElementsByTagName("SHIP_TO_REF_NUM");
+            xnl = xmldoc.GetElementsByTagName("SHIP_TO_ERP_CONTACT_REF_NUM");
             foreach (XmlNode node in xnl)
             {
                 co.ShipToRefNum = node.InnerText;

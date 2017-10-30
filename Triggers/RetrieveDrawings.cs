@@ -69,9 +69,10 @@ namespace ConfigureOneFlag
                 if (Triggers.dbEnvironment == "PROD" && DatabaseFactory.dbprotect != "YES") { key = "getDocumentPROD"; }
 
                 //force prod
-                key = "getDocument";
+                //key = "getDocument";
 
                 useMethod = C1Dictionaries.webmethods[key];
+                key = "getDocument";
                 string documentSerialNumber = configSerial;
                 arrayindex = 0;
                                 
@@ -82,13 +83,6 @@ namespace ConfigureOneFlag
                     docs[arrayindex] = node.ChildNodes[0].InnerText;
                     arrayindex += 1;
                 }
-
-                //XmlNodeList xnl = xmlResult.GetElementsByTagName("fileName");
-                //foreach (XmlNode node in xnl)
-                //{
-                //    docs[arrayindex] = node.InnerText;
-                //    arrayindex += 1;
-                //}
 
                 logEvent = "DEBUG: Finished building document filename array";
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
@@ -239,7 +233,6 @@ namespace ConfigureOneFlag
                                         if (!alreadySent)
                                         {
                                             alreadySent = true;
-                                            //SendMail.MailMessage(logEvent, "No Syteline Coitem Item For Order: " + C1WebService.SPOrderNumber);
                                             //possible TODO:  wait a little longer for the coitem to appear, though this can run into CLR timeout
                                         }
                                     }
@@ -320,7 +313,6 @@ namespace ConfigureOneFlag
                                         elapsedTimeSeconds = ts.Seconds;
                                         logEvent = "DEBUG: Time that elapsed before timeout occurred for current document: " + Convert.ToString(elapsedTimeMS) + "ms, " + Convert.ToString(elapsedTimeSeconds) + " s";
                                         System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-                                        //SendMail.MailMessage(logEvent, "TIMEOUT");
                                     }
                                 }
                             }
@@ -349,9 +341,10 @@ namespace ConfigureOneFlag
                 if (Triggers.dbEnvironment == "PROD" && DatabaseFactory.dbprotect != "YES") { key = "updateOrderPROD"; }
 
                 //force prod
-                key = "updateOrder";
+                //key = "updateOrder";
 
                 useMethod = C1Dictionaries.webmethods[key];
+                key = "updateOrder";
                 string C1orderNumber = orderNumber;
                 string C1orderReference = C1WebService.SPOrderNumber;
                 string C1orderStatus = "OR";              //Ordered
