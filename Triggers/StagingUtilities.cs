@@ -28,7 +28,7 @@ namespace ConfigureOneFlag
             nsmgr.AddNamespace("soapenv", "http://schemas.xmlsoap.org/soap/envelope/");
             nsmgr.AddNamespace("c1", "http://ws.configureone.com");
 
-            //*** Determine what site we are working with and re-set the connection string accordingly, else default to NOVB
+            //*** Determine what site we are working with and re-set the connection string accordingly, else default to NOVB and abort
             foundSite = true;
             XmlNodeList xnlsite = xmldoc.GetElementsByTagName("Input");
             foreach (XmlNode node in xnlsite)
@@ -416,7 +416,7 @@ namespace ConfigureOneFlag
                     Triggers.logEvent = "WARNING: Config Type Is: " + coitem.ConfigType + " On C1 Order#: " + co.CO_Num + ". Ignoring line# " + coitem.CO_Line;
                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
                     SendMail.MailMessage(Triggers.logEvent, "Config-Type Warning");
-                    continue;           //we cannot process a type K; notify, ignore this line, and continue with the next detail node
+                    continue;           //we cannot process a type K; notify, ignore this line and continue with the next detail node if any exist
                 }
                 //output coitem record
                 DatabaseFactory.WriteRecordCOItem(ref coitem);

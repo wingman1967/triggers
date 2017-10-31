@@ -33,6 +33,7 @@ namespace ConfigureOneFlag
                 reg = Registry.CurrentUser.CreateSubKey("SOFTWARE\\Microsoft\\ConfigureOneAssembly\\1.0");
                 string dbConnectionData = File.ReadAllText(@"C:\C1\dbconnection.dat");
                 string dbkey = File.ReadAllText(@"C:\C1\dbkey.dat");
+                string proddbConnectionData = File.ReadAllText(@"C:\C1\proddbconnection.dat");
                 emailaddr = File.ReadAllText(@"C:\C1\emailaddr.dat");
                 emailServer = File.ReadAllText(@"C:\C1\emailserver.dat");
                 emailFrom = File.ReadAllText(@"C:\C1\emailFromAddress.dat");
@@ -43,7 +44,7 @@ namespace ConfigureOneFlag
                 ws_uname = File.ReadAllText(@"C:\C1\ws_uname.dat");
                 ws_password = File.ReadAllText(@"C:\C1\ws_password.dat");
                 //set registry values with defaults
-                reg.SetValue("PROD_DB", @"C:\C1\proddbconnection.dat");
+                reg.SetValue("PROD_DB", proddbConnectionData);
                 reg.SetValue("DB", dbConnectionData);
                 reg.SetValue("ENCKEY", dbkey);
                 reg.SetValue("EMAILADDR", emailaddr);
@@ -85,10 +86,6 @@ namespace ConfigureOneFlag
             {
                 connectionString = reg.GetValue("PROD_DB").ToString();
             }
-
-            //deboog
-            //connectionString = "server = grcdslsql0.dom.grc; database = SL_man_App; enlist=false; User ID = sa_config; Password = options23";
-            //end deboog
         }        
         public static void WriteRecordBOM(ref zCfgBOM bom)
         {
@@ -175,14 +172,6 @@ namespace ConfigureOneFlag
         public static void ResequenceBOM(string orderNumber, int orderLine)
         {
             //call SP to resequence BOM records based on parentIDs
-            //string commandtext = "EXEC GR_Cfg_ResequenceBOMSp '" + orderNumber + "', '" + orderLine + "' WITH RECOMPILE";
-            //SqlConnection connection = new SqlConnection(connectionString);
-            //SqlCommand command = new SqlCommand(commandtext, connection);
-            //command.CommandTimeout = 120000;
-            //connection.Open();
-            //command.ExecuteNonQuery();
-            //connection.Close();
-
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand("GR_Cfg_ResequenceBOMSp", connection);
             command.CommandType = CommandType.StoredProcedure;
@@ -198,14 +187,7 @@ namespace ConfigureOneFlag
         {
             //call SP to import data into Syteline
             int CreateOrder = 1;
-            //string commandtext = "EXEC GR_CfgImportSp '" + orderNumber + "', '" + orderNumber + "', '" + CreateOrder + "' WITH RECOMPILE";
-            //SqlConnection connection = new SqlConnection(connectionString);
-            //SqlCommand command = new SqlCommand(commandtext, connection);
-            //command.CommandTimeout = 120000;
-            //connection.Open();
-            //command.ExecuteNonQuery();
-            //connection.Close();
-
+            
             SqlConnection connection = new SqlConnection(connectionString);
             SqlCommand command = new SqlCommand("GR_CfgImportSp", connection);
             command.CommandType = CommandType.StoredProcedure;
@@ -221,7 +203,7 @@ namespace ConfigureOneFlag
             catch (Exception spI)
             {
                 //A timeout has likely occurred; try again
-                string logEvent = "An error occurred: " + spI.Message + " -> Retrying...";
+                string logEvent = "An error executing GR_CfgImportSp has occurred: " + spI.Message + " -> Retrying...";
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
 
                 connection.Close();

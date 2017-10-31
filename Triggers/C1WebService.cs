@@ -40,22 +40,16 @@ namespace ConfigureOneFlag
             objRequest.ReadWriteTimeout = 120000;   
             objRequest.Credentials = new NetworkCredential(DatabaseFactory.ws_uname, DatabaseFactory.ws_password);
 
-            //*** deboog
             logEvent = "WS creds: " + DatabaseFactory.ws_uname + ", " + DatabaseFactory.ws_password;
-            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-            //*** end deboog
+            if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
             string xmlPayload = payload;
 
-            //*** deboog
             logEvent = "Payload: " + xmlPayload;
-            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-            //*** end deboog
+            if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
-            //*** deboog
             logEvent = "URL: " + url;
-            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-            //*** end deboog
+            if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
             StringBuilder data = new StringBuilder();
             data.Append(xmlPayload);
@@ -99,7 +93,7 @@ namespace ConfigureOneFlag
                 elapsedTimeSeconds = ts.Seconds;
                 logEvent = "DEBUG: XML Order data returned from ConfigureOne in: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
                 if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
-
+                
                 startTime = DateTime.Now;
                 
                 //Save XML output to object for further handling

@@ -16,11 +16,9 @@ namespace ConfigureOneFlag
         {
             string key;
             string payload;
-            
             string logEvent;
             string xmlPayload;
             string sURL = url;
-
             StringBuilder data = new StringBuilder();
 
             //namespace manager
@@ -28,6 +26,7 @@ namespace ConfigureOneFlag
             nsmgr.AddNamespace("xsl", "http://www.w3.org/1999/XSL/Transform");
             nsmgr.AddNamespace("soapenv", "http://schemas.xmlsoap.org/soap/envelope/");
 
+            //dynamically elucidate namespace directly from XML 
             XmlNodeList nodeInfo = xmlResult.GetElementsByTagName("getOrderResponse");
             string xmlNamespace = "";
             xmlNamespace = Convert.ToString(nodeInfo[0].Attributes["xmlns"].Value);
@@ -68,9 +67,6 @@ namespace ConfigureOneFlag
                 key = "getDocument";
                 if (Triggers.dbEnvironment == "PROD" && DatabaseFactory.dbprotect != "YES") { key = "getDocumentPROD"; }
 
-                //force prod
-                //key = "getDocument";
-
                 useMethod = C1Dictionaries.webmethods[key];
                 key = "getDocument";
                 string documentSerialNumber = configSerial;
@@ -85,7 +81,7 @@ namespace ConfigureOneFlag
                 }
 
                 logEvent = "DEBUG: Finished building document filename array";
-                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
                 //We now have an array of document filenames; process by retrieving and saving each file
                 int upperBound = arrayindex;
@@ -108,8 +104,8 @@ namespace ConfigureOneFlag
                 NetworkShare.ConnectToShare(SharepointLocation, DatabaseFactory.spuname, DatabaseFactory.sppassword);
 
                 logEvent = "DEBUG: SP Share credential fixed.  UNAME: " + DatabaseFactory.spuname + " -> PWD: " + DatabaseFactory.sppassword;
-                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-                
+                if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
+
                 string documentList = "";
                 while (arrayindex < upperBound)
                 {
@@ -119,7 +115,7 @@ namespace ConfigureOneFlag
                     arrayindex += 1;
                 }
                 logEvent = "Files stored are: " + Environment.NewLine + Environment.NewLine + documentList;
-                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
                 arrayindex = 0;
 
@@ -246,16 +242,16 @@ namespace ConfigureOneFlag
                                 }
                                 
                                 logEvent = "SharepointCopyLocation Value: " + SharepointCopyLocation;
-                                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                                if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
                                 logEvent = "CopyToLocation Value: " + copyToLocation;
-                                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                                if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
                                 logEvent = "Full-Path Value: " + SharepointCopyLocation + copyToLocation;
-                                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                                if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
                                 logEvent = "Full-Path with file Value: " + SharepointCopyLocation + copyToLocation + "\\" + docs[arrayindex];
-                                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                                if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
                                 startTime = DateTime.Now;
                                 
@@ -322,7 +318,7 @@ namespace ConfigureOneFlag
                     {
                         logEvent = "An error occurred copying file to Sharepoint: " + C1WebService.SPOrderNumber + "_" + docs[arrayindex] + "  >  " + "TS2 Exception (" + ts2.Message + ")";
                         System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-                        SendMail.MailMessage(logEvent, "TIMEOUT");
+                        SendMail.MailMessage(logEvent, "ERROR");
                     }
                     arrayindex += 1;
                 }
@@ -339,9 +335,6 @@ namespace ConfigureOneFlag
                 //Update order-status and ref number in C1 to Ordered and SL order#, respectively
                 key = "updateOrder";
                 if (Triggers.dbEnvironment == "PROD" && DatabaseFactory.dbprotect != "YES") { key = "updateOrderPROD"; }
-
-                //force prod
-                //key = "updateOrder";
 
                 useMethod = C1Dictionaries.webmethods[key];
                 key = "updateOrder";
