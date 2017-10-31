@@ -25,8 +25,8 @@ namespace ConfigureOneFlag
                     "C1ORDER", "Application");
             }
                                     
-            logEvent = "TRIGGER FIRING ON INSERT EVENT - GR_CFG_QUEUE";
-            System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+            logEvent = "TRIGGER - GR_CFG_QUEUE : INCOMING ORDER";
+            if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
 
             switch (C1Dictionaries.webmethods.ContainsKey("getOrder"))
             {
@@ -65,7 +65,7 @@ namespace ConfigureOneFlag
                         qRowPointerValue = qRowPointer.Value.ToString();
                          
                         conn.Close();
-                        logEvent = "ORDER NUMBER: " + orderValue;
+                        logEvent = "INCOMING C1 ORDER NUMBER: " + orderValue;
                         System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                     }
                     break;
@@ -98,8 +98,8 @@ namespace ConfigureOneFlag
             orderNum = orderValue;
             pubOrderNumber = orderNum;
                         
-            logEvent = "Connection String For Session: " + DatabaseFactory.connectionString;
-            System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+            logEvent = "Connection String (Initial): " + DatabaseFactory.connectionString;
+            if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
             
             //Ensure the mE array is initialized, in case it is never addressed again before an array.clear is attempted
             Audit.mE = new string[50];
