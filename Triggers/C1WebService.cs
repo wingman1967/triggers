@@ -198,7 +198,7 @@ namespace ConfigureOneFlag
                 string xmlOut = XML;
                 formattedXML = System.Xml.Linq.XDocument.Parse(xmlOut).ToString();
             }
-
+            
             if (File.Exists(@"C:\C1\XMLOUTPUTS\" + SPPUBOrderNumber + "_XMLOutput.txt"))
             {
                 File.Delete(@"C:\C1\XMLOUTPUTS\" + SPPUBOrderNumber + "_XMLOutput.txt");
@@ -210,7 +210,16 @@ namespace ConfigureOneFlag
         }
         private static void StartCopy()
         {
-            RetrieveDrawings.CopyDrawings(xmlResultParm, urlParm);
+            try
+            {
+                RetrieveDrawings.CopyDrawings(xmlResultParm, urlParm);
+            }
+            catch (Exception sc1)
+            {
+                Triggers.logEvent = "ERROR: " + sc1.Message;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+            }
+            //RetrieveDrawings.CopyDrawings(xmlResultParm, urlParm);
         }
         private static void MapToSyteline()
         {

@@ -119,6 +119,27 @@
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string queueControlConnectionString</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string queueControlConnectionStringValueDEV</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string queueControlConnectionStringValuePROD</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
         <section>
             <title></title>
@@ -253,6 +274,22 @@ string order_num, string ser_num)</para>
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_a58f013f5a91fe754f457a1e3ad26ebea_1a58f013f5a91fe754f457a1e3ad26ebea">InsertDocumentRecord</link> (
+XmlDocument xml, string orderNum, string environment, string site, string SLorderNumber)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static bool <link linkend="class_configure_one_flag_1_1_database_factory_a51459bb022678d9e0defecb0adb1ac15_1a51459bb022678d9e0defecb0adb1ac15">OrderCompleted</link> (
+string order_num)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
     <simplesect>
 
@@ -260,7 +297,7 @@ string order_num, string ser_num)</para>
     </simplesect>
         <simplesect>
             <title>Detailed Description</title>
-                <para>Definition at line 13 of file DatabaseFactory.cs</para>
+                <para>Definition at line 16 of file DatabaseFactory.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>DatabaseFactory.cs</para></listitem></itemizedlist></para>
         </simplesect>
@@ -326,6 +363,14 @@ string order_num, string ser_num)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_a85857ab755db44ae9b4e7efcec96748b_1a85857ab755db44ae9b4e7efcec96748b">
                 <title>static string ConfigureOneFlag.DatabaseFactory.COItemitem (string order_num, string ser_num)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_a58f013f5a91fe754f457a1e3ad26ebea_1a58f013f5a91fe754f457a1e3ad26ebea">
+                <title>static void ConfigureOneFlag.DatabaseFactory.InsertDocumentRecord (XmlDocument xml, string orderNum, string environment, string site, string SLorderNumber)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_a51459bb022678d9e0defecb0adb1ac15_1a51459bb022678d9e0defecb0adb1ac15">
+                <title>static bool ConfigureOneFlag.DatabaseFactory.OrderCompleted (string order_num)</title> <emphasis></emphasis>
                 
             </section>
 </section>

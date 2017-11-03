@@ -3,3 +3,7 @@ c:\users\hinesj\documents\visual studio 2015\Projects\Triggers\Triggers\bin\Debu
 c:\users\hinesj\documents\visual studio 2015\Projects\Triggers\Triggers\bin\Debug\ConfigureOne.pdb
 c:\users\hinesj\documents\visual studio 2015\Projects\Triggers\Triggers\obj\Debug\ConfigureOne.dll
 c:\users\hinesj\documents\visual studio 2015\Projects\Triggers\Triggers\obj\Debug\ConfigureOne.pdb
+C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debug\clrzmq-ext.dll
+C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debug\clrzmq.dll
+C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debug\clrzmq-ext.pdb
+C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debug\clrzmq-ext.xml

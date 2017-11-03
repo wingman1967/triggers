@@ -101,6 +101,15 @@ namespace ConfigureOneFlag
             logEvent = "Connection String (Initial): " + DatabaseFactory.connectionString;
             if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
             
+            //Check if this order has already been completely processed:
+            if (DatabaseFactory.OrderCompleted(orderNum))
+            {
+                logEvent = "Order# " + orderNum + " has already been completed.  Further processing aborted";
+                System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
+                SendMail.MailMessage(logEvent, "Aborted Status-C Order");
+                return;     //abort
+            }
+            
             //Ensure the mE array is initialized, in case it is never addressed again before an array.clear is attempted
             Audit.mE = new string[50];
             Audit.mEIndex = 0;

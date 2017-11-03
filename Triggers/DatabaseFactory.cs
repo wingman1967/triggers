@@ -3,6 +3,9 @@ using System.Data;
 using Microsoft.Win32;
 using System.IO;
 using System;
+using System.Xml;
+using System.Xml.Linq;
+using System.Data.SqlTypes;
 
 namespace ConfigureOneFlag
 {
@@ -24,6 +27,9 @@ namespace ConfigureOneFlag
         public static string dbprotect = "";
         public static string ws_uname = "";
         public static string ws_password = "";
+        public static string queueControlConnectionString = "";
+        public static string queueControlConnectionStringValueDEV = "server = grctslsql0.dom.grc; database = GR_C1_DocumentQueue; enlist=false; User ID = sa_config; Password = options23";
+        public static string queueControlConnectionStringValuePROD = "server = grcpslsql0.dom.grc; database = GR_C1_DocumentQueue; enlist=false; User ID = sa_config; Password = options23";
         public void SetConnectionString()
         {
             RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\ConfigureOneAssembly\\1.0", true);
@@ -80,11 +86,15 @@ namespace ConfigureOneFlag
             {
                 debugLogging = true;
             }
-            
+
+            queueControlConnectionString = queueControlConnectionStringValueDEV;
+            if (reg.GetValue("ENVIRONMENT").ToString() == "PROD") { queueControlConnectionString = queueControlConnectionStringValuePROD; }
+
             //if requested environment is not dev/test, change connectionString to prod; override to DEV if we sensed PROD but PROTECT in registry is YES
             if (Triggers.dbEnvironment == "PROD" && reg.GetValue("PROTECT").ToString() != "YES")
             {
                 connectionString = reg.GetValue("PROD_DB").ToString();
+                queueControlConnectionString = queueControlConnectionStringValuePROD;   //override ENVIRONMENT if incoming order is production
             }
         }        
         public static void WriteRecordBOM(ref zCfgBOM bom)
@@ -361,6 +371,38 @@ namespace ConfigureOneFlag
                 myConnection.Close();
             }
             return itemNumber;
+        }
+        public static void InsertDocumentRecord(XmlDocument xml, string orderNum, string environment, string site, string SLorderNumber)
+        {
+            using (SqlConnection myConnection = new SqlConnection(queueControlConnectionString))
+            {
+                myConnection.Open();
+                SqlCommand SQLCommand = new SqlCommand("Insert Into GR_Cfg_DocumentQueue (order_num, environment, site, SLOrderNumber, orderXML) values (" + (char)39 + orderNum + (char)39 + "," + (char)39 + environment + (char)39 + "," + (char)39 + site + (char)39 + "," + (char)39 + SLorderNumber + (char)39 + ", @xmldata)", myConnection);
+                SQLCommand.Parameters.Add(new SqlParameter("@xmldata", System.Data.SqlDbType.Xml) { Value = new SqlXml(new XmlTextReader(xml.InnerXml, XmlNodeType.Document, null)) });
+                SQLCommand.CommandTimeout = 120000;
+                SQLCommand.ExecuteNonQuery();
+            }
+        }
+        public static bool OrderCompleted(string order_num)
+        {
+            bool rowExists = false;
+            SQLCommand = "Select order_num, co_num, stat from GR_CfgCO with(nolock) where order_num = " + (char)39 + order_num + (char)39 + " and stat = 'C' and co_num is not null";
+            using (SqlConnection myConnection = new SqlConnection(connectionString))
+            {
+                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
+                myCommand.CommandTimeout = 120000;
+                myConnection.Open();
+                using (SqlDataReader reader = myCommand.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        rowExists = true;
+                    }
+                    reader.Close();
+                }
+                myConnection.Close();
+            }
+            return rowExists;
         }
     }
 }

@@ -44,7 +44,7 @@ namespace ConfigureOneFlag
                         int csPos = rplConnectionString.IndexOf("NOVB");
                         DatabaseFactory.connectionString = rplConnectionString.Substring(0, csPos) + dbSite + rplConnectionString.Substring(csPos + 4, rplConnectionString.Length - (csPos + 4));
                         Triggers.logEvent = "Connection String: " + DatabaseFactory.connectionString;
-                        System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                        //System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                         break;
                     default:
                         //prepare to log the no-site and abort

@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using System.Net;
 using System.Xml;
 using System.IO;
+using ZMQ;
+using ZMQ.ZMQExt;
 
 namespace ConfigureOneFlag
 {
@@ -14,13 +15,71 @@ namespace ConfigureOneFlag
         public static string result;
         public static void CopyDrawings(XmlDocument xmlResult, string url)
         {
+            //PLAN-B: For now, copy XML and order to GR_Cfg_DocumentQueue for processing by remote webclient service
+            Triggers.logEvent = "About to insert queue record";
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+            
+            try
+            {
+                DatabaseFactory.InsertDocumentRecord(xmlResult, Triggers.pubOrderNumber, Triggers.dbEnvironment, StagingUtilities.dbSite, C1WebService.SPOrderNumber);
+            }
+            catch (System.Exception dbf1)
+            {
+                Triggers.logEvent = "ERROR QR: " + dbf1.Message;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+            }
+
+            //DatabaseFactory.InsertDocumentRecord(xmlResult, Triggers.pubOrderNumber, Triggers.dbEnvironment, StagingUtilities.dbSite, C1WebService.SPOrderNumber);
+                        
+            Triggers.logEvent = "Sending command via Message Queue to begin document processing for: " + Triggers.pubOrderNumber + " -> " + C1WebService.SPOrderNumber;
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+            //Send command to ZMQ listener to process newly created record from queue
+            string[] args = new string[] { "tcp://192.168.23.19:5555" };
+            byte[] zmq_buffer = new byte[1024];
+            //string endpoint = args[0];
+            //setup
+                        
+            using (ZMQ.Context context = new ZMQ.Context())
+            using (ZMQ.Socket requester = context.Socket(ZMQ.SocketType.REQ))
+            {
+                Triggers.logEvent = "1";
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                                
+                requester.Connect("tcp://172.16.1.60:5555");
+
+                Triggers.logEvent = "2";
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+                //requester.Connect(endpoint);
+                for (int n = 0; n < 10; ++n)
+                {
+                    string requestText = "PROCESS:" + Triggers.pubOrderNumber;
+                    //send
+                    requester.Send(Encoding.ASCII.GetBytes(requestText.ToCharArray()));
+
+                    Triggers.logEvent = "3";
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+                    //receive
+                    string ackMsg = requester.Recv(Encoding.Unicode);
+                    Triggers.logEvent = "Received from ZMQ Processing: " + ackMsg;
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                }
+            }
+
+            Triggers.logEvent = "Command Sent";
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+            return;
+            
             string key;
             string payload;
             string logEvent;
             string xmlPayload;
             string sURL = url;
             StringBuilder data = new StringBuilder();
-
+            
             //namespace manager
             XmlNamespaceManager nsmgr = new XmlNamespaceManager(xmlResult.NameTable);
             nsmgr.AddNamespace("xsl", "http://www.w3.org/1999/XSL/Transform");
@@ -95,10 +154,6 @@ namespace ConfigureOneFlag
                 {
                     SharepointLocation = @"\\ecm.gormanrupp.com\ecm\NPC\Oper\ConfOrd\" + StagingUtilities.dbSite + "\\";
                 }
-                
-                //*** deboog TEST the PRODUCTION LOCATIONS IN SHAREPOINT
-                //SharepointLocation = @"\\ecm.gormanrupp.com\ecm\NPC\Oper\ConfOrd\" + StagingUtilities.dbSite + "\\";
-                //*** end deboog
 
                 NetworkShare.DisconnectFromShare(SharepointLocation, true);
                 NetworkShare.ConnectToShare(SharepointLocation, DatabaseFactory.spuname, DatabaseFactory.sppassword);
@@ -122,7 +177,7 @@ namespace ConfigureOneFlag
                 //Create Sharepoint BASE folder for order# (each line will have its own folder by item#)
                 string SharepointCopyLocation = SharepointLocation + C1WebService.SPOrderNumber + "\\";
                 try { DirectoryInfo di = Directory.CreateDirectory(SharepointCopyLocation); }
-                catch (Exception edi)
+                catch (System.Exception edi)
                 {
                     //directory already exists, nothing further needs done
                 }
@@ -187,7 +242,7 @@ namespace ConfigureOneFlag
                             {
                                 xmlResult.LoadXml(result);
                             }
-                            catch (Exception ex1)
+                            catch (System.Exception ex1)
                             {
                                 return;
                             }
@@ -236,7 +291,7 @@ namespace ConfigureOneFlag
 
                                 //Create directory if not exists
                                 try { DirectoryInfo di = Directory.CreateDirectory(SharepointCopyLocation + copyToLocation); }
-                                catch (Exception edi)
+                                catch (System.Exception edi)
                                 {
                                     //directory already exists, nothing further needs done
                                 }
@@ -269,7 +324,7 @@ namespace ConfigureOneFlag
                                     logEvent = "DEBUG: Document copied to Sharepoint in: " + Convert.ToString(elapsedTimeMS) + "ms / " + Convert.ToString(elapsedTimeSeconds) + " s";
                                     if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
                                 }
-                                catch (Exception ts1)
+                                catch (System.Exception ts1)
                                 {
                                     logEvent = "An error occurred copying file to Sharepoint: " + C1WebService.SPOrderNumber + "_" + docs[arrayindex] + "  >  " + "TS1 Exception ( " + ts1.Message + ").  A maximum of 5 retries will be attempted.";
                                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
@@ -292,7 +347,7 @@ namespace ConfigureOneFlag
                                             if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
                                             successfulDocument = true;
                                         }
-                                        catch (Exception rt1)
+                                        catch (System.Exception rt1)
                                         {
                                             logEvent = "An error occurred copying file to Sharepoint: " + C1WebService.SPOrderNumber + "_" + docs[arrayindex] + "  >  " + "rt1 Exception (" + rt1.Message + ") on Retry#: " + (i + 1).ToString();
                                             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
@@ -314,7 +369,7 @@ namespace ConfigureOneFlag
                             }
                         }
                     }
-                    catch (Exception ts2)
+                    catch (System.Exception ts2)
                     {
                         logEvent = "An error occurred copying file to Sharepoint: " + C1WebService.SPOrderNumber + "_" + docs[arrayindex] + "  >  " + "TS2 Exception (" + ts2.Message + ")";
                         System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
@@ -331,7 +386,7 @@ namespace ConfigureOneFlag
 
                 logEvent = "Retrieved/Saved Following Document Files: " + Environment.NewLine + Environment.NewLine + documentFilesSaved;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-
+                
                 //Update order-status and ref number in C1 to Ordered and SL order#, respectively
                 key = "updateOrder";
                 if (Triggers.dbEnvironment == "PROD" && DatabaseFactory.dbprotect != "YES") { key = "updateOrderPROD"; }
@@ -396,7 +451,7 @@ namespace ConfigureOneFlag
                         }
                     }
                 }
-                catch (Exception ex2)
+                catch (System.Exception ex2)
                 {
                     logEvent = "ERROR LOADING XML FROM WEB SERVICE ON C1 ORDER STATUS SET: " + ex2.Message;
                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
@@ -406,7 +461,7 @@ namespace ConfigureOneFlag
                 logEvent = "C1 Order Status And Reference Completed For C1 Order: " + orderNumber + " - Syteline Order: " + C1WebService.SPOrderNumber;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             }
-            catch (Exception exd)
+            catch (System.Exception exd)
             {
                 logEvent = "ERROR: " + exd.Message + " -> " + exd.Source;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);

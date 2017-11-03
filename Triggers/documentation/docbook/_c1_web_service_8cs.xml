@@ -283,7 +283,7 @@ Processing for calls to ConfigureOne web service and return for further handling
 198 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;xmlOut&#32;=&#32;XML;
 199 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;formattedXML&#32;=&#32;<link linkend="namespace_system">System</link>.Xml.Linq.XDocument.Parse(xmlOut).ToString();
 200 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-201 
+201 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
 202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(File.Exists(<emphasis class="stringliteral">@&quot;C:\C1\XMLOUTPUTS\&quot;</emphasis>&#32;+&#32;SPPUBOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;_XMLOutput.txt&quot;</emphasis>))
 203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;File.Delete(<emphasis class="stringliteral">@&quot;C:\C1\XMLOUTPUTS\&quot;</emphasis>&#32;+&#32;SPPUBOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;_XMLOutput.txt&quot;</emphasis>);
@@ -295,14 +295,23 @@ Processing for calls to ConfigureOne web service and return for further handling
 210 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 <link linkend="class_configure_one_flag_1_1_c1_web_service_a5c55f707a8abfce00f492231cb598c25_1a5c55f707a8abfce00f492231cb598c25">211 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_a5c55f707a8abfce00f492231cb598c25_1a5c55f707a8abfce00f492231cb598c25">StartCopy</link>()
 212 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_retrieve_drawings">RetrieveDrawings</link>.<link linkend="class_configure_one_flag_1_1_retrieve_drawings_a9eb1774070853cdd5601e1d8a6270757_1a9eb1774070853cdd5601e1d8a6270757">CopyDrawings</link>(xmlResultParm,&#32;urlParm);
-214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<link linkend="class_configure_one_flag_1_1_c1_web_service_acb3007f1151100e69c7fdbc3f6d35812_1acb3007f1151100e69c7fdbc3f6d35812">215 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_acb3007f1151100e69c7fdbc3f6d35812_1acb3007f1151100e69c7fdbc3f6d35812">MapToSyteline</link>()
-216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_ae4aeef8c1f02cf82b17a4e1c2ca0ffed_1ae4aeef8c1f02cf82b17a4e1c2ca0ffed">CfgImport</link>(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_1afd0957296af9cc27c0a677ba2c027bf1">pubOrderNumber</link>);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//map&#32;staging-table&#32;data&#32;into&#32;Syteline</emphasis>
-218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-219 &#32;&#32;&#32;&#32;}
-220 }
-221 
+213 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>
+214 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+215 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_retrieve_drawings">RetrieveDrawings</link>.<link linkend="class_configure_one_flag_1_1_retrieve_drawings_a9eb1774070853cdd5601e1d8a6270757_1a9eb1774070853cdd5601e1d8a6270757">CopyDrawings</link>(xmlResultParm,&#32;urlParm);
+216 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+217 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;sc1)
+218 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+219 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a3cd5e3e64a361f5e3a8d7fbd724a471f_1a3cd5e3e64a361f5e3a8d7fbd724a471f">logEvent</link>&#32;=&#32;<emphasis class="stringliteral">&quot;ERROR:&#32;&quot;</emphasis>&#32;+&#32;sc1.Message;
+220 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_1aeb15437df6eb15652ae79ee607ccdc11">logSource</link>,&#32;<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_a3cd5e3e64a361f5e3a8d7fbd724a471f_1a3cd5e3e64a361f5e3a8d7fbd724a471f">logEvent</link>,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
+221 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+222 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//RetrieveDrawings.CopyDrawings(xmlResultParm,&#32;urlParm);</emphasis>
+223 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_c1_web_service_acb3007f1151100e69c7fdbc3f6d35812_1acb3007f1151100e69c7fdbc3f6d35812">224 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_acb3007f1151100e69c7fdbc3f6d35812_1acb3007f1151100e69c7fdbc3f6d35812">MapToSyteline</link>()
+225 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+226 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_ae4aeef8c1f02cf82b17a4e1c2ca0ffed_1ae4aeef8c1f02cf82b17a4e1c2ca0ffed">CfgImport</link>(<link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>.<link linkend="class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_1afd0957296af9cc27c0a677ba2c027bf1">pubOrderNumber</link>);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//map&#32;staging-table&#32;data&#32;into&#32;Syteline</emphasis>
+227 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+228 &#32;&#32;&#32;&#32;}
+229 }
+230 
     </computeroutput></literallayout>
 </section>
