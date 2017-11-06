@@ -71,8 +71,8 @@ namespace ConfigureOneFlag
             fieldLengths.Add("CO:ship_to_ref_num", 15);
             fieldLengths.Add("CO:CustPO", 22);
             fieldLengths.Add("CO:ship_address_line_4", 40);
-            fieldLengths.Add("CO:freight_terms", 30);
-            fieldLengths.Add("CO:freight_acct", 30);
+            fieldLengths.Add("CO:freight_terms", 100);
+            fieldLengths.Add("CO:freight_acct", 100);
             fieldLengths.Add("CO:quote_nbr", 10);
             fieldLengths.Add("CO:web_user_name", 30);
             fieldLengths.Add("CO:dropship_address1", 50);

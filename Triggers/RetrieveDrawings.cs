@@ -15,10 +15,7 @@ namespace ConfigureOneFlag
         public static string result;
         public static void CopyDrawings(XmlDocument xmlResult, string url)
         {
-            //PLAN-B: For now, copy XML and order to GR_Cfg_DocumentQueue for processing by remote webclient service
-            Triggers.logEvent = "About to insert queue record";
-            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-            
+            //PLAN-B: For now, copy XML and order to GR_Cfg_DocumentQueue and send process-command through message queue to remote Windows service
             try
             {
                 DatabaseFactory.InsertDocumentRecord(xmlResult, Triggers.pubOrderNumber, Triggers.dbEnvironment, StagingUtilities.dbSite, C1WebService.SPOrderNumber);
@@ -28,51 +25,46 @@ namespace ConfigureOneFlag
                 Triggers.logEvent = "ERROR QR: " + dbf1.Message;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             }
-
-            //DatabaseFactory.InsertDocumentRecord(xmlResult, Triggers.pubOrderNumber, Triggers.dbEnvironment, StagingUtilities.dbSite, C1WebService.SPOrderNumber);
                         
-            Triggers.logEvent = "Sending command via Message Queue to begin document processing for: " + Triggers.pubOrderNumber + " -> " + C1WebService.SPOrderNumber;
+            Triggers.logEvent = "Signal Message Queue to begin document processing for: " + Triggers.pubOrderNumber + " -> " + C1WebService.SPOrderNumber;
             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
             //Send command to ZMQ listener to process newly created record from queue
             string[] args = new string[] { "tcp://192.168.23.19:5555" };
             byte[] zmq_buffer = new byte[1024];
-            //string endpoint = args[0];
+
             //setup
-                        
             using (ZMQ.Context context = new ZMQ.Context())
             using (ZMQ.Socket requester = context.Socket(ZMQ.SocketType.REQ))
             {
-                Triggers.logEvent = "1";
-                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-                                
-                requester.Connect("tcp://172.16.1.60:5555");
+                //connect to remote endpoint, <server>  
+                if (Triggers.dbEnvironment == "PROD")
+                {
+                    requester.Connect("tcp://192.168.23.19:5555");  //grc000dmzbus
+                }
+                else
+                {
+                    requester.Connect("tcp://172.16.1.60:5555");    //grctslsql0 (dev)
+                }
 
-                Triggers.logEvent = "2";
-                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-
-                //requester.Connect(endpoint);
                 for (int n = 0; n < 10; ++n)
                 {
                     string requestText = "PROCESS:" + Triggers.pubOrderNumber;
                     //send
                     requester.Send(Encoding.ASCII.GetBytes(requestText.ToCharArray()));
-
-                    Triggers.logEvent = "3";
-                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-
+                                       
                     //receive
-                    string ackMsg = requester.Recv(Encoding.Unicode);
+                    string ackMsg = requester.Recv(Encoding.ASCII);
                     Triggers.logEvent = "Received from ZMQ Processing: " + ackMsg;
                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                    break;
                 }
             }
 
-            Triggers.logEvent = "Command Sent";
-            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-
             return;
             
+            //code below is for when we do not need to split document processing
+
             string key;
             string payload;
             string logEvent;
