@@ -47,18 +47,14 @@ namespace ConfigureOneFlag
                     requester.Connect("tcp://172.16.1.60:5555");    //grctslsql0 (dev)
                 }
 
-                for (int n = 0; n < 10; ++n)
-                {
-                    string requestText = "PROCESS:" + Triggers.pubOrderNumber;
-                    //send
-                    requester.Send(Encoding.ASCII.GetBytes(requestText.ToCharArray()));
-                                       
-                    //receive
-                    string ackMsg = requester.Recv(Encoding.ASCII);
-                    Triggers.logEvent = "Received from ZMQ Processing: " + ackMsg;
-                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-                    break;
-                }
+                //send
+                string requestText = "PROCESS:" + Triggers.pubOrderNumber;
+                requester.Send(Encoding.ASCII.GetBytes(requestText.ToCharArray()));
+
+                //receive
+                string ackMsg = requester.Recv(Encoding.ASCII);
+                Triggers.logEvent = "Received from ZMQ Processing: " + ackMsg;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             }
 
             return;
