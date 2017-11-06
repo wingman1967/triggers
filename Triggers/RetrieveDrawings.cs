@@ -30,9 +30,6 @@ namespace ConfigureOneFlag
             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
             //Send command to ZMQ listener to process newly created record from queue
-            string[] args = new string[] { "tcp://192.168.23.19:5555" };
-            byte[] zmq_buffer = new byte[1024];
-
             //setup
             using (ZMQ.Context context = new ZMQ.Context())
             using (ZMQ.Socket requester = context.Socket(ZMQ.SocketType.REQ))
