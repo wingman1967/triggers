@@ -361,7 +361,7 @@ namespace ConfigureOneFlag
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ZIP_CODE']", nsmgr);
                 co.DropShipZip = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_COUNTRY']", nsmgr);
-                co.DropShipCountry = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                co.DropShipCountry = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : DatabaseFactory.RetrieveISOCountry(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml);
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_CONTACT']", nsmgr);
                 co.DropShipContact = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_PHONE']", nsmgr);
@@ -552,7 +552,7 @@ namespace ConfigureOneFlag
                     bom.UnitCost = Convert.ToDecimal(string.IsNullOrEmpty(nodeib.ChildNodes[4].InnerText) ? "0" : nodeib.ChildNodes[4].InnerText);
                     bom.Discount = Convert.ToDecimal(string.IsNullOrEmpty(nodeib.ChildNodes[5].InnerText) ? "0" : nodeib.ChildNodes[5].InnerText);
                     bom.QTY = Convert.ToDecimal(string.IsNullOrEmpty(nodeib.ChildNodes[6].InnerText) ? "0" : nodeib.ChildNodes[6].InnerText);
-
+                    
                     //Search the ItemMaster XML records for the matching smartpart_num and retrieve its priority level for this BOM record
                     bool foundchild = false;
                     bool imdone = false;
