@@ -404,6 +404,25 @@ namespace ConfigureOneFlag
             }
             return rowExists;
         }
+        public static int CoLines(string SLOrderNumber)
+        {
+            int coitems = 0;
+            SQLCommand = "Select ISNULL(COUNT(co_line), 0) as lines From COITEM with(nolock) where co_num = " + (char)39 + SLOrderNumber + (char)39;
+            using (SqlConnection myConnection = new SqlConnection(connectionString))
+            {
+                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
+                myCommand.CommandTimeout = 120000;
+                myConnection.Open();
+                using (SqlDataReader reader = myCommand.ExecuteReader())
+                {
+                    reader.Read();
+                    coitems = Convert.ToInt16(reader["lines"].ToString());
+                    reader.Close();
+                }
+                myConnection.Close();
+            }
+            return coitems;
+        }
     }
 }
 

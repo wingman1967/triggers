@@ -43,12 +43,12 @@ namespace ConfigureOneFlag
                 {
                     requester.Connect("tcp://172.16.1.60:5555");    //grctslsql0 (dev)
                 }
-
-                //send
+                
+                //send on the REQ pattern
                 string requestText = "PROCESS:" + Triggers.pubOrderNumber;
                 requester.Send(Encoding.ASCII.GetBytes(requestText.ToCharArray()));
 
-                //receive
+                //receive Response on the REP pattern
                 string ackMsg = requester.Recv(Encoding.ASCII);
                 Triggers.logEvent = "Received from ZMQ Processing: " + ackMsg;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);

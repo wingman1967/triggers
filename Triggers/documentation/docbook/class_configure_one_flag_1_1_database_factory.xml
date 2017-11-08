@@ -290,6 +290,14 @@ string order_num)</para>
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="class_configure_one_flag_1_1_database_factory_a193fa120851ec2ce5d7632db4e875c65_1a193fa120851ec2ce5d7632db4e875c65">CoLines</link> (
+string SLOrderNumber)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
     <simplesect>
 
@@ -371,6 +379,10 @@ string order_num)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_a51459bb022678d9e0defecb0adb1ac15_1a51459bb022678d9e0defecb0adb1ac15">
                 <title>static bool ConfigureOneFlag.DatabaseFactory.OrderCompleted (string order_num)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_a193fa120851ec2ce5d7632db4e875c65_1a193fa120851ec2ce5d7632db4e875c65">
+                <title>static int ConfigureOneFlag.DatabaseFactory.CoLines (string SLOrderNumber)</title> <emphasis></emphasis>
                 
             </section>
 </section>

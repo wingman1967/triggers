@@ -140,7 +140,7 @@ namespace ConfigureOneFlag
             Thread.Sleep(2500);
             
             //Iteratively check for SL order#
-            for (int r = 0; r < 20; r += 1)
+            for (int r = 0; r < 30; r += 1)
             {
                 SPOrderNumber = DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
                 SPPUBOrderNumber = SPOrderNumber;
@@ -155,7 +155,7 @@ namespace ConfigureOneFlag
                 SPPUBOrderNumber = SPOrderNumber;
             }
 
-            if (SPOrderNumber == Triggers.pubOrderNumber) { SendMail.MailMessage("Syteline Order# Could Not Be Retrieved After 20 seconds.  GR_ImportSp stored procedure may have timed out or failed.  Documents Will Be Copied Using ConfigureOne Order#.", "No Syteline Order# For Order: " + Triggers.pubOrderNumber); }
+            if (SPOrderNumber == Triggers.pubOrderNumber) { SendMail.MailMessage("Syteline Order# Could Not Be Retrieved After 30 seconds.  GR_CfgImportSp stored procedure may have timed out or failed.  Documents Will Be Copied Using ConfigureOne Order# and there will be no coitem folder structure available.", "No Syteline Order# For Order: " + Triggers.pubOrderNumber); }
 
             logEvent = "Order created in Syteline is: " + SPOrderNumber;
             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
@@ -163,6 +163,29 @@ namespace ConfigureOneFlag
             logEvent = "Writing XML output file...";
             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             OutputXMLToFile(Triggers.wsReturn);             //so file will be there for the worker-thread
+
+            //If we have a good SL order#, we now need to check for existence of at least one coitem; iteratively check 20 times
+            if (SPOrderNumber != Triggers.pubOrderNumber)
+            {
+                try
+                {
+                    for (int r = 0; r < 20; r += 1)
+                    {
+                        int colines = DatabaseFactory.CoLines(SPOrderNumber);
+                        logEvent = "Coitem line count returned: " + colines;
+                        System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                        if (colines > 0) { break; }
+                    }
+                    logEvent = "After 40 seconds Syteline order# " + SPOrderNumber + " still has no coitem records created.  This may indicate a problem or timeout occurred before GR_CfgImportSp could finish its processing.";
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                }
+                catch (Exception cor)
+                {
+                    logEvent = "ERROR: " + cor.Message;
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
+                }
+                
+            }
 
             //start downloading and copying drawing files on separate thread so main thread can return control to CLR
             xmlResultParm = xmlResult;

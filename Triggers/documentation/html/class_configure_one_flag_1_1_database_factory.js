@@ -3,6 +3,7 @@ var class_configure_one_flag_1_1_database_factory =
     [ "CfgImport", "class_configure_one_flag_1_1_database_factory_ae4aeef8c1f02cf82b17a4e1c2ca0ffed.html#ae4aeef8c1f02cf82b17a4e1c2ca0ffed", null ],
     [ "CleanupOrder", "class_configure_one_flag_1_1_database_factory_a1cba3b4ca48fe4e537bdc28925a61719.html#a1cba3b4ca48fe4e537bdc28925a61719", null ],
     [ "COItemitem", "class_configure_one_flag_1_1_database_factory_a85857ab755db44ae9b4e7efcec96748b.html#a85857ab755db44ae9b4e7efcec96748b", null ],
+    [ "CoLines", "class_configure_one_flag_1_1_database_factory_a193fa120851ec2ce5d7632db4e875c65.html#a193fa120851ec2ce5d7632db4e875c65", null ],
     [ "InsertDocumentRecord", "class_configure_one_flag_1_1_database_factory_a58f013f5a91fe754f457a1e3ad26ebea.html#a58f013f5a91fe754f457a1e3ad26ebea", null ],
     [ "OrderCompleted", "class_configure_one_flag_1_1_database_factory_a51459bb022678d9e0defecb0adb1ac15.html#a51459bb022678d9e0defecb0adb1ac15", null ],
     [ "ResequenceBOM", "class_configure_one_flag_1_1_database_factory_acd9475f1b9763dfab5896656f96789a0.html#acd9475f1b9763dfab5896656f96789a0", null ],
