@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Xml;
+using System.Web;
 
 namespace ConfigureOneFlag
 {
@@ -370,7 +371,22 @@ namespace ConfigureOneFlag
                 co.DropShipEmail = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
                 break;
             }
-            
+
+            //Replace &amp; in any dropship fields with &
+            //co.DropShipName.Replace(HttpUtility.HtmlEncode("&"), "&");
+            //co.DropShipAddress1.Replace(HttpUtility.HtmlEncode("&"), "&");
+            //co.DropShipAddress2.Replace(HttpUtility.HtmlEncode("&"), "&");
+            //co.DropShipAddress3.Replace(HttpUtility.HtmlEncode("&"), "&");
+            //co.DropShipAddress4.Replace(HttpUtility.HtmlEncode("&"), "&");
+            //co.DropShipContact.Replace(HttpUtility.HtmlEncode("&"), "&");
+
+            co.DropShipName.Replace("&amp;", "&");
+            co.DropShipAddress1.Replace("&amp;", "&");
+            co.DropShipAddress2.Replace("&amp;", "&");
+            co.DropShipAddress3.Replace("&amp;", "&");
+            co.DropShipAddress4.Replace("&amp;", "&");
+            co.DropShipContact.Replace("&amp;", "&");
+
             //build COITEM records, per line
             xnl = xmldoc.GetElementsByTagName("Detail");
             foreach (XmlNode node in xnl)

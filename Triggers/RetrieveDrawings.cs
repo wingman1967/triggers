@@ -28,7 +28,7 @@ namespace ConfigureOneFlag
                         
             Triggers.logEvent = "Signal Message Queue to begin document processing for: " + Triggers.pubOrderNumber + " -> " + C1WebService.SPOrderNumber;
             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-
+            
             //Send command to ZMQ listener to process newly created record from queue
             //setup
             using (ZMQ.Context context = new ZMQ.Context())
