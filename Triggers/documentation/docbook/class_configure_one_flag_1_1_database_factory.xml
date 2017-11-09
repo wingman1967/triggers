@@ -298,6 +298,14 @@ string SLOrderNumber)</para>
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_adb8f7b260d9ace708051700d1e20528f_1adb8f7b260d9ace708051700d1e20528f">ExecutePreCache</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
     <simplesect>
 
@@ -383,6 +391,10 @@ string SLOrderNumber)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_a193fa120851ec2ce5d7632db4e875c65_1a193fa120851ec2ce5d7632db4e875c65">
                 <title>static int ConfigureOneFlag.DatabaseFactory.CoLines (string SLOrderNumber)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_adb8f7b260d9ace708051700d1e20528f_1adb8f7b260d9ace708051700d1e20528f">
+                <title>static void ConfigureOneFlag.DatabaseFactory.ExecutePreCache ()</title> <emphasis></emphasis>
                 
             </section>
 </section>

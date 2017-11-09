@@ -163,21 +163,26 @@ namespace ConfigureOneFlag
             logEvent = "Writing XML output file...";
             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             OutputXMLToFile(Triggers.wsReturn);             //so file will be there for the worker-thread
-
+            
             //If we have a good SL order#, we now need to check for existence of at least one coitem; iteratively check 20 times
+            int colines = 0;
             if (SPOrderNumber != Triggers.pubOrderNumber)
             {
                 try
                 {
-                    for (int r = 0; r < 20; r += 1)
+                    for (int r = 0; r < 30; r += 1)
                     {
-                        int colines = DatabaseFactory.CoLines(SPOrderNumber);
+                        colines = DatabaseFactory.CoLines(SPOrderNumber);
                         logEvent = "Coitem line count returned: " + colines;
                         System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                         if (colines > 0) { break; }
+                        System.Threading.Thread.Sleep(500);
                     }
-                    logEvent = "After 40 seconds Syteline order# " + SPOrderNumber + " still has no coitem records created.  This may indicate a problem or timeout occurred before GR_CfgImportSp could finish its processing.";
-                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                    if (colines == 0)
+                    {
+                        logEvent = "After 60 seconds Syteline order# " + SPOrderNumber + " still has no coitem records created.  This may indicate a problem or timeout occurred before GR_CfgImportSp could finish its processing.";
+                        System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                    }
                 }
                 catch (Exception cor)
                 {

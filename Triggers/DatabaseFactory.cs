@@ -423,6 +423,23 @@ namespace ConfigureOneFlag
             }
             return coitems;
         }
+        public static void ExecutePreCache()
+        {
+            //Execute Pre-caching of the SP's to force an on-demand recompile while we are preparing
+            int CreateOrder = 1;
+
+            SqlConnection connection = new SqlConnection(connectionString);
+            SqlCommand command = new SqlCommand("GR_CfgImportSp", connection);
+            command.CommandType = CommandType.StoredProcedure;
+            command.Parameters.AddWithValue("@pStartingOrderNum", "PRECACHE");
+            command.Parameters.AddWithValue("@pEndingOrderNum", "PRECACHE");
+            command.Parameters.AddWithValue("@pCreateOrder", CreateOrder);
+            command.CommandTimeout = 120000;
+            
+            connection.Open();
+            command.ExecuteNonQuery();
+            connection.Close();
+        }
     }
 }
 

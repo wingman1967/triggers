@@ -60,7 +60,11 @@ namespace ConfigureOneFlag
                 SendMail.MailMessage(Triggers.logEvent, "MISSING ORDER_SITE For Order: " + Triggers.pubOrderNumber);
                 return;
             }
-            
+
+            Triggers.logEvent = "Execute SP Pre-cache on site: " + dbSite;
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+            DatabaseFactory.ExecutePreCache();
+
             //Pre-staging activities
             XmlNodeList xnl = xmldoc.GetElementsByTagName("ORDER_NUM");
             foreach (XmlNode node in xnl)

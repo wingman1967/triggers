@@ -501,8 +501,25 @@ Repository for all database functions and calls on behalf of the assembly
 423 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 424 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;coitems;
 425 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-426 &#32;&#32;&#32;&#32;}
-427 }
-428 
+<link linkend="class_configure_one_flag_1_1_database_factory_adb8f7b260d9ace708051700d1e20528f_1adb8f7b260d9ace708051700d1e20528f">426 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_adb8f7b260d9ace708051700d1e20528f_1adb8f7b260d9ace708051700d1e20528f">ExecutePreCache</link>()
+427 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+428 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Execute&#32;Pre-caching&#32;of&#32;the&#32;SP&apos;s&#32;to&#32;force&#32;an&#32;on-demand&#32;recompile&#32;while&#32;we&#32;are&#32;preparing</emphasis>
+429 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;CreateOrder&#32;=&#32;1;
+430 
+431 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlConnection&#32;connection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString);
+432 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;command&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(<emphasis class="stringliteral">&quot;GR_CfgImportSp&quot;</emphasis>,&#32;connection);
+433 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.CommandType&#32;=&#32;CommandType.StoredProcedure;
+434 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.Parameters.AddWithValue(<emphasis class="stringliteral">&quot;@pStartingOrderNum&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;PRECACHE&quot;</emphasis>);
+435 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.Parameters.AddWithValue(<emphasis class="stringliteral">&quot;@pEndingOrderNum&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;PRECACHE&quot;</emphasis>);
+436 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.Parameters.AddWithValue(<emphasis class="stringliteral">&quot;@pCreateOrder&quot;</emphasis>,&#32;CreateOrder);
+437 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.CommandTimeout&#32;=&#32;120000;
+438 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+439 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;connection.Open();
+440 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;command.ExecuteNonQuery();
+441 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;connection.Close();
+442 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+443 &#32;&#32;&#32;&#32;}
+444 }
+445 
     </computeroutput></literallayout>
 </section>
