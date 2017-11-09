@@ -373,13 +373,6 @@ namespace ConfigureOneFlag
             }
 
             //Replace &amp; in any dropship fields with &
-            //co.DropShipName.Replace(HttpUtility.HtmlEncode("&"), "&");
-            //co.DropShipAddress1.Replace(HttpUtility.HtmlEncode("&"), "&");
-            //co.DropShipAddress2.Replace(HttpUtility.HtmlEncode("&"), "&");
-            //co.DropShipAddress3.Replace(HttpUtility.HtmlEncode("&"), "&");
-            //co.DropShipAddress4.Replace(HttpUtility.HtmlEncode("&"), "&");
-            //co.DropShipContact.Replace(HttpUtility.HtmlEncode("&"), "&");
-
             co.DropShipName.Replace("&amp;", "&");
             co.DropShipAddress1.Replace("&amp;", "&");
             co.DropShipAddress2.Replace("&amp;", "&");
