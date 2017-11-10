@@ -145,7 +145,7 @@ namespace ConfigureOneFlag
                 SPOrderNumber = DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
                 SPPUBOrderNumber = SPOrderNumber;
                 if (SPOrderNumber != "") { break; }
-                Thread.Sleep(1000);
+                Thread.Sleep(500);
             }
             
             //Final attempt to retrieve the SL order# (if not found, default to using the C1 order# and notify user):
@@ -155,7 +155,7 @@ namespace ConfigureOneFlag
                 SPPUBOrderNumber = SPOrderNumber;
             }
 
-            if (SPOrderNumber == Triggers.pubOrderNumber) { SendMail.MailMessage("Syteline Order# Could Not Be Retrieved After 30 seconds.  GR_CfgImportSp stored procedure may have timed out or failed.  Documents Will Be Copied Using ConfigureOne Order# and there will be no coitem folder structure available.", "No Syteline Order# For Order: " + Triggers.pubOrderNumber); }
+            if (SPOrderNumber == Triggers.pubOrderNumber) { SendMail.MailMessage("Syteline Order# Could Not Be Retrieved After 60 seconds.  GR_CfgImportSp stored procedure may have timed out or failed.  Documents Will Be Copied Using ConfigureOne Order# and there will be no coitem folder structure available.", "No Syteline Order# For Order: " + Triggers.pubOrderNumber); }
 
             logEvent = "Order created in Syteline is: " + SPOrderNumber;
             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
