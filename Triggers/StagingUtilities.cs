@@ -238,7 +238,7 @@ namespace ConfigureOneFlag
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_COUNTRY");
             foreach (XmlNode node in xnl)
             {
-                co.ShipToCountry = node.InnerText.Length == 0 ? " " : node.InnerText;
+                co.ShipToCountry = node.InnerText.Length == 0 ? " " : DatabaseFactory.RetrieveISOCountry(node.InnerText);
             }
             xnl = xmldoc.GetElementsByTagName("SHIP_TO_POSTAL_CODE");
             foreach (XmlNode node in xnl)
