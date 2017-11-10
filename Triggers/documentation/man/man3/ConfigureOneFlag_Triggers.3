@@ -1,4 +1,4 @@
-.TH "ConfigureOneFlag.Triggers" 3 "Thu Nov 9 2017" "ConfigureOne Trigger" \" -*- nroff -*-
+.TH "ConfigureOneFlag.Triggers" 3 "Fri Nov 10 2017" "ConfigureOne Trigger" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -15,6 +15,9 @@ ConfigureOneFlag.Triggers \- Primary entrypoint called from C1ORDER trigger for 
 .br
 .ti -1c
 .RI "static void \fBC1Order\fP ()"
+.br
+.ti -1c
+.RI "static void \fBBeginProcessing\fP ()"
 .br
 .in -1c
 .SS "Static Public Attributes"
@@ -44,6 +47,15 @@ ConfigureOneFlag.Triggers \- Primary entrypoint called from C1ORDER trigger for 
 .ti -1c
 .RI "static string \fBdbEnvironment\fP = ''"
 .br
+.ti -1c
+.RI "static string \fBkey\fP = 'getOrder'"
+.br
+.ti -1c
+.RI "static string \fBxmlPayload\fP = ''"
+.br
+.ti -1c
+.RI "static string \fBorderValue\fP = ''"
+.br
 .in -1c
 .SS "Static Private Attributes"
 
@@ -61,6 +73,10 @@ Primary entrypoint called from C1ORDER trigger for accessing C1 web service and 
 Definition at line 11 of file Class1\&.cs\&.
 .SH "Member Function Documentation"
 .PP 
+.SS "static void ConfigureOneFlag\&.Triggers\&.BeginProcessing ()\fC [static]\fP"
+
+.PP
+Definition at line 131 of file trigger\&.cs\&.
 .SS "static void ConfigureOneFlag\&.Triggers\&.C1Order ()\fC [static]\fP"
 
 .PP
@@ -68,7 +84,7 @@ Definition at line 18 of file Class1\&.cs\&.
 .SS "static void ConfigureOneFlag\&.Triggers\&.C1Order ()\fC [static]\fP"
 
 .PP
-Definition at line 20 of file trigger\&.cs\&.
+Definition at line 24 of file trigger\&.cs\&.
 .SH "Member Data Documentation"
 .PP 
 .SS "static string ConfigureOneFlag\&.Triggers\&.C1URL\fC [static]\fP"
@@ -82,23 +98,31 @@ Definition at line 15 of file Class1\&.cs\&.
 .SS "string ConfigureOneFlag\&.Triggers\&.dbEnvironment = ''\fC [static]\fP"
 
 .PP
-Definition at line 18 of file trigger\&.cs\&.
+Definition at line 19 of file trigger\&.cs\&.
+.SS "string ConfigureOneFlag\&.Triggers\&.key = 'getOrder'\fC [static]\fP"
+
+.PP
+Definition at line 20 of file trigger\&.cs\&.
 .SS "string ConfigureOneFlag\&.Triggers\&.logEvent\fC [static]\fP"
 
 .PP
-Definition at line 15 of file trigger\&.cs\&.
+Definition at line 16 of file trigger\&.cs\&.
 .SS "string ConfigureOneFlag\&.Triggers\&.logName = 'Application'\fC [static]\fP"
 
 .PP
-Definition at line 16 of file trigger\&.cs\&.
+Definition at line 17 of file trigger\&.cs\&.
 .SS "string ConfigureOneFlag\&.Triggers\&.logSource = 'C1ORDER'\fC [static]\fP"
 
 .PP
-Definition at line 14 of file trigger\&.cs\&.
+Definition at line 15 of file trigger\&.cs\&.
+.SS "string ConfigureOneFlag\&.Triggers\&.orderValue = ''\fC [static]\fP"
+
+.PP
+Definition at line 22 of file trigger\&.cs\&.
 .SS "string ConfigureOneFlag\&.Triggers\&.pubOrderNumber = ''\fC [static]\fP"
 
 .PP
-Definition at line 17 of file trigger\&.cs\&.
+Definition at line 18 of file trigger\&.cs\&.
 .SS "Dictionary<string, string> ConfigureOneFlag\&.Triggers\&.webmethods = new Dictionary<string, string>()\fC [static]\fP, \fC [private]\fP"
 
 .PP
@@ -107,6 +131,10 @@ Definition at line 13 of file Class1\&.cs\&.
 
 .PP
 Definition at line 14 of file Class1\&.cs\&.
+.SS "string ConfigureOneFlag\&.Triggers\&.xmlPayload = ''\fC [static]\fP"
+
+.PP
+Definition at line 21 of file trigger\&.cs\&.
 
 .SH "Author"
 .PP 

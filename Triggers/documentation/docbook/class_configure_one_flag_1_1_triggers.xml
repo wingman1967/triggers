@@ -91,6 +91,27 @@
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string key</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string xmlPayload</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string orderValue</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
         <section>
             <title></title>
@@ -106,6 +127,14 @@
                 <itemizedlist>
                     <listitem>
                         <para>static void <link linkend="class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f_1a7446070eb1c5dd9f63f7043525014c9f">C1Order</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_triggers_a246cde167d6b8c1ab05cf0acb22c79a7_1a246cde167d6b8c1ab05cf0acb22c79a7">BeginProcessing</link> (
 )</para>
                     </listitem>
                 </itemizedlist>
@@ -127,6 +156,10 @@
             </section>
             <section xml:id="class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f_1a7446070eb1c5dd9f63f7043525014c9f">
                 <title>static void ConfigureOneFlag.Triggers.C1Order ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_triggers_a246cde167d6b8c1ab05cf0acb22c79a7_1a246cde167d6b8c1ab05cf0acb22c79a7">
+                <title>static void ConfigureOneFlag.Triggers.BeginProcessing ()</title> <emphasis></emphasis>
                 
             </section>
 </section>

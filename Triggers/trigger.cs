@@ -1,4 +1,5 @@
 ﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Data.SqlClient;
 
 namespace ConfigureOneFlag
@@ -16,6 +17,9 @@ namespace ConfigureOneFlag
         public static string logName = "Application";
         public static string pubOrderNumber = "";
         public static string dbEnvironment = "";
+        public static string key = "getOrder";
+        public static string xmlPayload = "";
+        public static string orderValue = "";
         [SqlTrigger(Name = "C1Order", Target = "GR_Cfg_Queue", Event = "AFTER INSERT")]
         public static void C1Order()
         {
@@ -40,7 +44,7 @@ namespace ConfigureOneFlag
             }
            
             string orderNum;
-            string orderValue = "";
+            orderValue = "";
             string qRowPointerValue = "";
             SqlTriggerContext triggContext = SqlContext.TriggerContext;
             SqlParameter orderNumber = new SqlParameter("@order_num", System.Data.SqlDbType.NVarChar);
@@ -82,7 +86,6 @@ namespace ConfigureOneFlag
             }
 
             string useMethod = "";
-            string key = "getOrder";
             if (Triggers.dbEnvironment == "PROD" && DatabaseFactory.dbprotect != "YES") { key = "getOrderPROD"; }
             
             if (C1Dictionaries.webmethods.ContainsKey(key))
@@ -113,7 +116,20 @@ namespace ConfigureOneFlag
             //Ensure the mE array is initialized, in case it is never addressed again before an array.clear is attempted
             Audit.mE = new string[50];
             Audit.mEIndex = 0;
-            string xmlPayload = "<soap:Envelope xmlns:xsi=" + (char)34 + "http://www.w3.org/2001/XMLSchema-instance" + (char)34 + " xmlns:xsd=" + (char)34 + "http://www.w3.org/2001/XMLSchema" + (char)34 + " xmlns:soap=" + (char)34 + "http://schemas.xmlsoap.org/soap/envelope/" + (char)34 + ">" + "<soap:Body><" + key + " xmlns=" + (char)34 + "http://ws.configureone.com" + (char)34 + "><orderNum>" + orderNum + "</orderNum></" + key + "></soap:Body></soap:Envelope>";
+            xmlPayload = "<soap:Envelope xmlns:xsi=" + (char)34 + "http://www.w3.org/2001/XMLSchema-instance" + (char)34 + " xmlns:xsd=" + (char)34 + "http://www.w3.org/2001/XMLSchema" + (char)34 + " xmlns:soap=" + (char)34 + "http://schemas.xmlsoap.org/soap/envelope/" + (char)34 + ">" + "<soap:Body><" + key + " xmlns=" + (char)34 + "http://ws.configureone.com" + (char)34 + "><orderNum>" + orderNum + "</orderNum></" + key + "></soap:Body></soap:Envelope>";
+
+            //Begin order-processing as an async task and allow trigger to reset
+            Action ProcessXMLAsync = new Action(BeginProcessing);
+            ProcessXMLAsync.BeginInvoke(new AsyncCallback(MTresult =>
+            {
+                (MTresult.AsyncState as Action).EndInvoke(MTresult);
+            }), ProcessXMLAsync);
+
+            logEvent = "De-coupled order-processing from trigger and resetting (" + orderNum + ")";
+            System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+        }
+        public static void BeginProcessing()
+        {
             C1WebService.CallConfigureOne(key, xmlPayload, C1URL);
             logEvent = "PROCESSING COMPLETE FOR ORDER: " + orderValue;
             System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);

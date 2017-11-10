@@ -1,5 +1,6 @@
 <map id="ConfigureOneFlag.RetrieveDrawings.CopyDrawings" name="ConfigureOneFlag.RetrieveDrawings.CopyDrawings">
 <area shape="rect" id="node2" href="$class_configure_one_flag_1_1_c1_web_service_a5c55f707a8abfce00f492231cb598c25.html#a5c55f707a8abfce00f492231cb598c25" title="ConfigureOneFlag.C1WebService.\lStartCopy" alt="" coords="228,5,447,47"/>
 <area shape="rect" id="node3" href="$class_configure_one_flag_1_1_c1_web_service_ae826903f85694f4cf481680e115076f3.html#ae826903f85694f4cf481680e115076f3" title="ConfigureOneFlag.C1WebService.\lCallConfigureOne" alt="" coords="495,5,713,47"/>
-<area shape="rect" id="node4" href="$class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f.html#a7446070eb1c5dd9f63f7043525014c9f" title="ConfigureOneFlag.Triggers.\lC1Order" alt="" coords="761,5,940,47"/>
+<area shape="rect" id="node4" href="$class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f.html#a7446070eb1c5dd9f63f7043525014c9f" title="ConfigureOneFlag.Triggers.\lC1Order" alt="" coords="988,5,1167,47"/>
+<area shape="rect" id="node5" href="$class_configure_one_flag_1_1_triggers_a246cde167d6b8c1ab05cf0acb22c79a7.html#a246cde167d6b8c1ab05cf0acb22c79a7" title="ConfigureOneFlag.Triggers.\lBeginProcessing" alt="" coords="761,35,940,76"/>
 </map>
