@@ -173,7 +173,7 @@ namespace ConfigureOneFlag
                     for (int r = 0; r < 60; r += 1)
                     {
                         colines = DatabaseFactory.CoLines(SPOrderNumber);
-                        logEvent = "Coitem line count returned: " + colines;
+                        logEvent = "SECONDS = " + r.ToString() + " -> Coitem line count returned: " + colines;
                         System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                         if (colines > 0) { break; }
                         System.Threading.Thread.Sleep(1000);
@@ -189,7 +189,6 @@ namespace ConfigureOneFlag
                     logEvent = "ERROR: " + cor.Message;
                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
                 }
-                
             }
 
             //start downloading and copying drawing files on separate thread so main thread can return control to CLR

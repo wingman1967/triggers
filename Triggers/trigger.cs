@@ -148,7 +148,7 @@ namespace ConfigureOneFlag
 
             try
             {
-                System.Threading.Thread.Sleep(5000);
+                System.Threading.Thread.Sleep(10000);
             }
             catch (Exception tt1)
             {

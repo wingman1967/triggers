@@ -50,7 +50,7 @@ namespace ConfigureOneFlag
 
                 //receive Response on the REP pattern
                 string ackMsg = requester.Recv(Encoding.ASCII);
-                Triggers.logEvent = "Received from ZMQ Processing: " + ackMsg;
+                Triggers.logEvent = "Message received from ZMQ: " + ackMsg;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             }
 
