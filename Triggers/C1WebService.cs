@@ -140,12 +140,12 @@ namespace ConfigureOneFlag
             Thread.Sleep(2500);
             
             //Iteratively check for SL order#
-            for (int r = 0; r < 30; r += 1)
+            for (int r = 0; r < 60; r += 1)
             {
                 SPOrderNumber = DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
                 SPPUBOrderNumber = SPOrderNumber;
                 if (SPOrderNumber != "") { break; }
-                Thread.Sleep(500);
+                Thread.Sleep(1000);
             }
             
             //Final attempt to retrieve the SL order# (if not found, default to using the C1 order# and notify user):
@@ -170,13 +170,13 @@ namespace ConfigureOneFlag
             {
                 try
                 {
-                    for (int r = 0; r < 30; r += 1)
+                    for (int r = 0; r < 60; r += 1)
                     {
                         colines = DatabaseFactory.CoLines(SPOrderNumber);
                         logEvent = "Coitem line count returned: " + colines;
                         System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                         if (colines > 0) { break; }
-                        System.Threading.Thread.Sleep(500);
+                        System.Threading.Thread.Sleep(1000);
                     }
                     if (colines == 0)
                     {
