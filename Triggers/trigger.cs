@@ -20,6 +20,8 @@ namespace ConfigureOneFlag
         public static string key = "getOrder";
         public static string xmlPayload = "";
         public static string orderValue = "";
+        public static DateTime AsOf = DateTime.Now;
+        public static int itr = 0;
         [SqlTrigger(Name = "C1Order", Target = "GR_Cfg_Queue", Event = "AFTER INSERT")]
         public static void C1Order()
         {
@@ -118,6 +120,8 @@ namespace ConfigureOneFlag
             Audit.mEIndex = 0;
             xmlPayload = "<soap:Envelope xmlns:xsi=" + (char)34 + "http://www.w3.org/2001/XMLSchema-instance" + (char)34 + " xmlns:xsd=" + (char)34 + "http://www.w3.org/2001/XMLSchema" + (char)34 + " xmlns:soap=" + (char)34 + "http://schemas.xmlsoap.org/soap/envelope/" + (char)34 + ">" + "<soap:Body><" + key + " xmlns=" + (char)34 + "http://ws.configureone.com" + (char)34 + "><orderNum>" + orderNum + "</orderNum></" + key + "></soap:Body></soap:Envelope>";
 
+            AsOf = DateTime.Now;
+
             //Begin order-processing as an async task and allow trigger to reset
             Action ProcessXMLAsync = new Action(BeginProcessing);
             ProcessXMLAsync.BeginInvoke(new AsyncCallback(MTresult =>
@@ -125,8 +129,31 @@ namespace ConfigureOneFlag
                 (MTresult.AsyncState as Action).EndInvoke(MTresult);
             }), ProcessXMLAsync);
 
+            //Hold trigger context open for up to 30 seconds waiting for order# so portal can display to user
+            for (int r = 0; r < 60; r += 1)
+            {
+                if (DatabaseFactory.OrderExists(orderNum))
+                {
+                    logEvent = "SL Order found within " + itr.ToString() + " seconds";
+                    System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                    break;
+                }
+
+                System.Threading.Thread.Sleep(1000);
+                itr = r + 1;
+            }
+
             logEvent = "De-coupled order-processing from trigger and resetting (" + orderNum + ")";
             System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+            try
+            {
+                System.Threading.Thread.Sleep(5000);
+            }
+            catch (Exception tt1)
+            {
+                //disregard, as any error would likely be a thread-abort by the trigger
+            }
         }
         public static void BeginProcessing()
         {

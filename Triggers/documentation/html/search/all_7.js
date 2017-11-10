@@ -48,5 +48,6 @@ var searchData=
   ['itemcost',['ItemCost',['../class_configure_one_flag_1_1z_cfg_item_a2d657e52e9e0607cdb8223478ae911a6.html#a2d657e52e9e0607cdb8223478ae911a6',1,'ConfigureOneFlag::zCfgItem']]],
   ['itemprice',['ItemPrice',['../class_configure_one_flag_1_1z_cfg_item_a87ca4e88e98a33d8d38ec65931a81204.html#a87ca4e88e98a33d8d38ec65931a81204',1,'ConfigureOneFlag::zCfgItem']]],
   ['itemsellprice',['ItemSellPrice',['../class_configure_one_flag_1_1z_cfg_item_a86ec84c1ed65f8000ea68d7a80d13710.html#a86ec84c1ed65f8000ea68d7a80d13710',1,'ConfigureOneFlag::zCfgItem']]],
-  ['itemweight',['ItemWeight',['../class_configure_one_flag_1_1z_cfg_item_ab90e9242ce379a47ecf335a64e541625.html#ab90e9242ce379a47ecf335a64e541625',1,'ConfigureOneFlag::zCfgItem']]]
+  ['itemweight',['ItemWeight',['../class_configure_one_flag_1_1z_cfg_item_ab90e9242ce379a47ecf335a64e541625.html#ab90e9242ce379a47ecf335a64e541625',1,'ConfigureOneFlag::zCfgItem']]],
+  ['itr',['itr',['../class_configure_one_flag_1_1_triggers_ac398f00656b42765494f9ef31bbfddbf.html#ac398f00656b42765494f9ef31bbfddbf',1,'ConfigureOneFlag::Triggers']]]
 ];

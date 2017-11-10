@@ -7,6 +7,7 @@ var class_configure_one_flag_1_1_database_factory =
     [ "ExecutePreCache", "class_configure_one_flag_1_1_database_factory_adb8f7b260d9ace708051700d1e20528f.html#adb8f7b260d9ace708051700d1e20528f", null ],
     [ "InsertDocumentRecord", "class_configure_one_flag_1_1_database_factory_a58f013f5a91fe754f457a1e3ad26ebea.html#a58f013f5a91fe754f457a1e3ad26ebea", null ],
     [ "OrderCompleted", "class_configure_one_flag_1_1_database_factory_a51459bb022678d9e0defecb0adb1ac15.html#a51459bb022678d9e0defecb0adb1ac15", null ],
+    [ "OrderExists", "class_configure_one_flag_1_1_database_factory_a4c86e61821f40ef2483dde7fbf125710.html#a4c86e61821f40ef2483dde7fbf125710", null ],
     [ "ResequenceBOM", "class_configure_one_flag_1_1_database_factory_acd9475f1b9763dfab5896656f96789a0.html#acd9475f1b9763dfab5896656f96789a0", null ],
     [ "RetrieveISOCountry", "class_configure_one_flag_1_1_database_factory_a0b3faff4145a97817540e0ab92ae9101.html#a0b3faff4145a97817540e0ab92ae9101", null ],
     [ "RetrieveSLCO", "class_configure_one_flag_1_1_database_factory_a64f0488a247638877def2f773331d184.html#a64f0488a247638877def2f773331d184", null ],

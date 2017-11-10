@@ -56,6 +56,12 @@ ConfigureOneFlag.Triggers \- Primary entrypoint called from C1ORDER trigger for 
 .ti -1c
 .RI "static string \fBorderValue\fP = ''"
 .br
+.ti -1c
+.RI "static DateTime \fBAsOf\fP = DateTime\&.Now"
+.br
+.ti -1c
+.RI "static int \fBitr\fP = 0"
+.br
 .in -1c
 .SS "Static Private Attributes"
 
@@ -76,7 +82,7 @@ Definition at line 11 of file Class1\&.cs\&.
 .SS "static void ConfigureOneFlag\&.Triggers\&.BeginProcessing ()\fC [static]\fP"
 
 .PP
-Definition at line 131 of file trigger\&.cs\&.
+Definition at line 158 of file trigger\&.cs\&.
 .SS "static void ConfigureOneFlag\&.Triggers\&.C1Order ()\fC [static]\fP"
 
 .PP
@@ -84,9 +90,13 @@ Definition at line 18 of file Class1\&.cs\&.
 .SS "static void ConfigureOneFlag\&.Triggers\&.C1Order ()\fC [static]\fP"
 
 .PP
-Definition at line 24 of file trigger\&.cs\&.
+Definition at line 26 of file trigger\&.cs\&.
 .SH "Member Data Documentation"
 .PP 
+.SS "DateTime ConfigureOneFlag\&.Triggers\&.AsOf = DateTime\&.Now\fC [static]\fP"
+
+.PP
+Definition at line 23 of file trigger\&.cs\&.
 .SS "static string ConfigureOneFlag\&.Triggers\&.C1URL\fC [static]\fP"
 
 .PP
@@ -99,6 +109,10 @@ Definition at line 15 of file Class1\&.cs\&.
 
 .PP
 Definition at line 19 of file trigger\&.cs\&.
+.SS "int ConfigureOneFlag\&.Triggers\&.itr = 0\fC [static]\fP"
+
+.PP
+Definition at line 24 of file trigger\&.cs\&.
 .SS "string ConfigureOneFlag\&.Triggers\&.key = 'getOrder'\fC [static]\fP"
 
 .PP

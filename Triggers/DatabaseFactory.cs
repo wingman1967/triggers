@@ -440,6 +440,30 @@ namespace ConfigureOneFlag
             command.ExecuteNonQuery();
             connection.Close();
         }
+        public static bool OrderExists(string C1orderNum)
+        {
+            bool orderExists = false;
+            SQLCommand = "Select TOP 1 co_num as SLCO From CO c with (nolock) Where c.uf_weborder = " + (char)39 + C1orderNum + (char)39 + " Order By c.order_date desc, c.co_num desc";
+            using (SqlConnection myConnection = new SqlConnection(connectionString))
+            {
+                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
+                myCommand.CommandTimeout = 120000;
+                myConnection.Open();
+                using (SqlDataReader reader = myCommand.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        if (reader.Read())
+                        {
+                            orderExists = true;
+                        }
+                    }
+                    reader.Close();
+                }
+                myConnection.Close();
+            }
+            return orderExists;
+        }
     }
 }
 
