@@ -88,12 +88,14 @@ namespace ConfigureOneFlag
             fieldLengths.Add("CO:dropship_phone", 25);
             fieldLengths.Add("CO:dropship_email", 60);
             fieldLengths.Add("CO:destination_country", 40);
+            fieldLengths.Add("CO:ORDER_HEADER_NOTES", 1000);
             //COITEM Fields
             fieldLengths.Add("COItem:order_num", 15);
             fieldLengths.Add("COItem:ser_num", 15);
             fieldLengths.Add("COItem:item_num", 30);
             fieldLengths.Add("COItem:smartpart_num", 30);
             fieldLengths.Add("COItem:description", 1000);
+            fieldLengths.Add("COItem:LINE_NOTES", 1000);
             //CfgItem Fields
             fieldLengths.Add("CfgItem:order_num", 15);
             fieldLengths.Add("CfgItem:smartpart_num", 40);
@@ -158,6 +160,7 @@ namespace ConfigureOneFlag
                 case "CO:ship_to_fax_number": switch (co.ShipToFaxNumber.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.ShipToFaxNumber.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.ShipToFaxNumber); break; default: fieldlength = co.ShipToFaxNumber.Length; break; } break;
                 case "CO:ship_to_phone_number": switch (co.ShipToPhoneNumber.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.ShipToPhoneNumber.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.ShipToPhoneNumber); break; default: fieldlength = co.ShipToPhoneNumber.Length; break; } break;
                 case "CO:destination_country": switch (co.DestinationCountry.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.DestinationCountry.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.DestinationCountry); break; default: fieldlength = co.DestinationCountry.Length; break; } break;
+                case "CO:ORDER_HEADER_NOTES": switch (co.OrderHeaderNotes.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.OrderHeaderNotes.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.OrderHeaderNotes); break; default: fieldlength = co.OrderHeaderNotes.Length; break; } break;
             }
 
             return fieldlength;
@@ -171,6 +174,7 @@ namespace ConfigureOneFlag
                 case "COItem:item_num": switch (coitem.Item.Length >= fieldlength) { case true: Audit.SetTruncate(field, coitem.Item.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, coitem.Item); break; default: fieldlength = coitem.Item.Length; break; } break;
                 case "COItem:smartpart_num": switch (coitem.Smartpart.Length >= fieldlength) { case true: Audit.SetTruncate(field, coitem.Smartpart.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, coitem.Smartpart); break; default: fieldlength = coitem.Smartpart.Length; break; } break;
                 case "COItem:description": switch (coitem.Desc.Length >= fieldlength) { case true: Audit.SetTruncate(field, coitem.Desc.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, coitem.Desc); break; default: fieldlength = coitem.Desc.Length; break; } break;
+                case "COItem:LINE_NOTES": switch (coitem.OrderLineNotes.Length >= fieldlength) { case true: Audit.SetTruncate(field, coitem.OrderLineNotes.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, coitem.OrderLineNotes); break; default: fieldlength = coitem.OrderLineNotes.Length; break; } break;
             }
             return fieldlength;
         }

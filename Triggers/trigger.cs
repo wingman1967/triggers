@@ -142,7 +142,7 @@ namespace ConfigureOneFlag
                 System.Threading.Thread.Sleep(1000);
                 itr = r + 1;
             }
-
+            
             logEvent = "De-coupled order-processing from trigger and resetting (" + orderNum + ")";
             System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 

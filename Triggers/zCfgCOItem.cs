@@ -25,6 +25,7 @@ namespace ConfigureOneFlag
         private DateTime due_date;
         private string config_type;
         private string cust_po;
+        private string orderline_notes;
         public string CO_Num
         {
             get { return order_num; }
@@ -94,6 +95,11 @@ namespace ConfigureOneFlag
         {
             get { return cust_po; }
             set { cust_po = value; }
+        }
+        public string OrderLineNotes
+        {
+            get { return orderline_notes; }
+            set { orderline_notes = value; }
         }
     }
 }

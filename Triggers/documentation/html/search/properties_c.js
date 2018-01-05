@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['weborderdate',['WebOrderDate',['../class_configure_one_flag_1_1z_cfg_c_o_a4b30d314a200e4ab6cd0e953ea9ea831.html#a4b30d314a200e4ab6cd0e953ea9ea831',1,'ConfigureOneFlag::zCfgCO']]],
-  ['webusername',['WebUserName',['../class_configure_one_flag_1_1z_cfg_c_o_ae5eb10eaee29ad12cd7ef705a9d04c0b.html#ae5eb10eaee29ad12cd7ef705a9d04c0b',1,'ConfigureOneFlag::zCfgCO']]]
+  ['unitcost',['UnitCost',['../class_configure_one_flag_1_1z_cfg_b_o_m_ab11758596a2f51da2a4c3de5ea0ed323.html#ab11758596a2f51da2a4c3de5ea0ed323',1,'ConfigureOneFlag.zCfgBOM.UnitCost()'],['../class_configure_one_flag_1_1z_cfg_c_oitem_a696aeb0722def400ba87c8590b9dffb4.html#a696aeb0722def400ba87c8590b9dffb4',1,'ConfigureOneFlag.zCfgCOitem.UnitCost()']]],
+  ['unitofmeasure',['UnitOfMeasure',['../class_configure_one_flag_1_1z_cfg_item_a23697e9c7d051d3141bc4358b198060b.html#a23697e9c7d051d3141bc4358b198060b',1,'ConfigureOneFlag::zCfgItem']]],
+  ['unitprice',['UnitPrice',['../class_configure_one_flag_1_1z_cfg_b_o_m_a4261a88c871589b98f6d684492fdaede.html#a4261a88c871589b98f6d684492fdaede',1,'ConfigureOneFlag.zCfgBOM.UnitPrice()'],['../class_configure_one_flag_1_1z_cfg_c_oitem_a3644a18b466314c7c47d5009848be997.html#a3644a18b466314c7c47d5009848be997',1,'ConfigureOneFlag.zCfgCOitem.UnitPrice()']]]
 ];

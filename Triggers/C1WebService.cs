@@ -139,7 +139,7 @@ namespace ConfigureOneFlag
             //administrative HALT to give SP's time to process all coitem records
             Thread.Sleep(2500);
             
-            //Iteratively check for SL order#
+            //Iteratively check for SL order# 60 times (one minute)
             for (int r = 0; r < 60; r += 1)
             {
                 SPOrderNumber = DatabaseFactory.RetrieveSLCO(Triggers.pubOrderNumber);
@@ -164,7 +164,7 @@ namespace ConfigureOneFlag
             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             OutputXMLToFile(Triggers.wsReturn);             //so file will be there for the worker-thread
             
-            //If we have a good SL order#, we now need to check for existence of at least one coitem; iteratively check 20 times
+            //If we have a good SL order#, we now need to check for existence of at least one coitem; iteratively check 60 times (one minute)
             int colines = 0;
             if (SPOrderNumber != Triggers.pubOrderNumber)
             {
@@ -190,7 +190,7 @@ namespace ConfigureOneFlag
                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
                 }
             }
-
+            
             //start downloading and copying drawing files on separate thread so main thread can return control to CLR
             xmlResultParm = xmlResult;
             urlParm = url;

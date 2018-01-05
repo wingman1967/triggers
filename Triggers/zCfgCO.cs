@@ -69,6 +69,7 @@ namespace ConfigureOneFlag
         private string dropship_email;
         private DateTime request_date;
         private string destination_country;
+        private string orderheader_notes;
         public string Identifier
         {
             get { return id; }
@@ -358,6 +359,11 @@ namespace ConfigureOneFlag
         {
             get { return destination_country; }
             set { destination_country = value; }
+        }
+        public string OrderHeaderNotes
+        {
+            get { return orderheader_notes; }
+            set { orderheader_notes = value; }
         }
     }
 }

@@ -53,7 +53,7 @@ namespace ConfigureOneFlag
                 Triggers.logEvent = "Message received from ZMQ: " + ackMsg;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             }
-
+            
             return;
             
             //code below is for when we do not need to split document processing

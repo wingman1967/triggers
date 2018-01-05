@@ -1,4 +1,4 @@
-.TH "ConfigureOneFlag.zCfgCOitem" 3 "Fri Nov 10 2017" "ConfigureOne Trigger" \" -*- nroff -*-
+.TH "ConfigureOneFlag.zCfgCOitem" 3 "Fri Jan 5 2018" "ConfigureOne Trigger" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -52,6 +52,9 @@ ConfigureOneFlag.zCfgCOitem \- Accessor class for the CO Item
 .ti -1c
 .RI "string \fBCustPO\fP\fC [get, set]\fP"
 .br
+.ti -1c
+.RI "string \fBOrderLineNotes\fP\fC [get, set]\fP"
+.br
 .in -1c
 .SS "Private Attributes"
 
@@ -98,6 +101,9 @@ ConfigureOneFlag.zCfgCOitem \- Accessor class for the CO Item
 .ti -1c
 .RI "string \fBcust_po\fP"
 .br
+.ti -1c
+.RI "string \fBorderline_notes\fP"
+.br
 .in -1c
 .SH "Detailed Description"
 .PP 
@@ -140,6 +146,10 @@ Definition at line 15 of file zCfgCOItem\&.cs\&.
 
 .PP
 Definition at line 14 of file zCfgCOItem\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCOitem\&.orderline_notes\fC [private]\fP"
+
+.PP
+Definition at line 28 of file zCfgCOItem\&.cs\&.
 .SS "int ConfigureOneFlag\&.zCfgCOitem\&.priority_level\fC [private]\fP"
 
 .PP
@@ -169,59 +179,63 @@ Definition at line 20 of file zCfgCOItem\&.cs\&.
 .SS "int ConfigureOneFlag\&.zCfgCOitem\&.CO_Line\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 34 of file zCfgCOItem\&.cs\&.
+Definition at line 35 of file zCfgCOItem\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCOitem\&.CO_Num\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 29 of file zCfgCOItem\&.cs\&.
+Definition at line 30 of file zCfgCOItem\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCOitem\&.ConfigType\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 89 of file zCfgCOItem\&.cs\&.
+Definition at line 90 of file zCfgCOItem\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCOitem\&.CustPO\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 94 of file zCfgCOItem\&.cs\&.
+Definition at line 95 of file zCfgCOItem\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCOitem\&.Desc\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 54 of file zCfgCOItem\&.cs\&.
+Definition at line 55 of file zCfgCOItem\&.cs\&.
 .SS "decimal ConfigureOneFlag\&.zCfgCOitem\&.Discount\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 69 of file zCfgCOItem\&.cs\&.
+Definition at line 70 of file zCfgCOItem\&.cs\&.
 .SS "DateTime ConfigureOneFlag\&.zCfgCOitem\&.DueDate\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 84 of file zCfgCOItem\&.cs\&.
+Definition at line 85 of file zCfgCOItem\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCOitem\&.Item\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 44 of file zCfgCOItem\&.cs\&.
+Definition at line 45 of file zCfgCOItem\&.cs\&.
+.SS "string ConfigureOneFlag\&.zCfgCOitem\&.OrderLineNotes\fC [get]\fP, \fC [set]\fP"
+
+.PP
+Definition at line 100 of file zCfgCOItem\&.cs\&.
 .SS "int ConfigureOneFlag\&.zCfgCOitem\&.PriorityLevel\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 79 of file zCfgCOItem\&.cs\&.
+Definition at line 80 of file zCfgCOItem\&.cs\&.
 .SS "decimal ConfigureOneFlag\&.zCfgCOitem\&.QTY\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 74 of file zCfgCOItem\&.cs\&.
+Definition at line 75 of file zCfgCOItem\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCOitem\&.Serial\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 39 of file zCfgCOItem\&.cs\&.
+Definition at line 40 of file zCfgCOItem\&.cs\&.
 .SS "string ConfigureOneFlag\&.zCfgCOitem\&.Smartpart\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 49 of file zCfgCOItem\&.cs\&.
+Definition at line 50 of file zCfgCOItem\&.cs\&.
 .SS "decimal ConfigureOneFlag\&.zCfgCOitem\&.UnitCost\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 64 of file zCfgCOItem\&.cs\&.
+Definition at line 65 of file zCfgCOItem\&.cs\&.
 .SS "decimal ConfigureOneFlag\&.zCfgCOitem\&.UnitPrice\fC [get]\fP, \fC [set]\fP"
 
 .PP
-Definition at line 59 of file zCfgCOItem\&.cs\&.
+Definition at line 60 of file zCfgCOItem\&.cs\&.
 
 .SH "Author"
 .PP 

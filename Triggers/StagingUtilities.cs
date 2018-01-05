@@ -298,6 +298,10 @@ namespace ConfigureOneFlag
             XmlNode nodeFT = xmldoc.SelectSingleNode("//c1:Input[@name='FREIGHT_TERMS']", nsmgr);
             co.FreightTerms = nodeFT.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeFT.ChildNodes[0].Attributes["name"].InnerXml;
 
+            //Look for Order Header Notes, load into CO
+            XmlNode nodeOHN = xmldoc.SelectSingleNode("//c1:Input[@name='ORDER_HEADER_NOTES']", nsmgr);
+            co.OrderHeaderNotes = nodeOHN.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeOHN.ChildNodes[0].Attributes["name"].InnerXml;
+
             //Retrieve due date
             co.DueDate = DateTime.Now;
             XmlNode nodedd = xmldoc.SelectSingleNode("//c1:Input[@name='DUE_DATE']", nsmgr);
@@ -423,7 +427,11 @@ namespace ConfigureOneFlag
                 coitem.QTY = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
                 coitem.PriorityLevel = co.PriorityLevel;
                 globalOrderLineNum = coitem.CO_Line;
-                                
+
+                //Look for Line Notes, load into COItem
+                XmlNode nodeLN = xmldoc.SelectSingleNode("//c1:Input[@name='LINE_NOTES']", nsmgr);
+                coitem.OrderLineNotes = nodeLN.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeLN.ChildNodes[0].Attributes["name"].InnerXml;
+
                 if (coitem.ConfigType == "K")
                 {
                     Triggers.logEvent = "WARNING: Config Type Is: " + coitem.ConfigType + " On C1 Order#: " + co.CO_Num + ". Ignoring line# " + coitem.CO_Line;
