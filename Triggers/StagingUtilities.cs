@@ -266,6 +266,33 @@ namespace ConfigureOneFlag
             {
                 co.ShipToRefNum = node.InnerText;
             }
+
+            //See if customer is on hold and if so, log and abort
+            string custSeq = "";
+            int sPos = co.ShipToRefNum.IndexOf("-");
+            custSeq = co.ShipToRefNum.Substring(sPos + 1, (co.ShipToRefNum.Length - (sPos + 1)));
+            string customerHoldReason = "";
+            
+            try
+            {
+                customerHoldReason = DatabaseFactory.CustomerOnHold(co.CustRefNum, custSeq);
+            }
+            catch (Exception ex9)
+            {
+                Triggers.logEvent = "ERROR: " + ex9.Message + ".  Processing Aborted";
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                Triggers.forceStop = 1;
+                return;
+            }
+            
+            if (customerHoldReason != "")
+            {
+                Triggers.forceStop = 1;
+                Triggers.logEvent = "Processing Aborted.  Customer " + co.ShipToRefNum + " Is On Hold: " + customerHoldReason;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                return;
+            }
+
             xnl = xmldoc.GetElementsByTagName("PRIORITY_LEVEL");
             foreach (XmlNode node in xnl)
             {

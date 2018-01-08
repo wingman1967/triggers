@@ -22,6 +22,7 @@ namespace ConfigureOneFlag
         public static string orderValue = "";
         public static DateTime AsOf = DateTime.Now;
         public static int itr = 0;
+        public static int forceStop = 0;
         [SqlTrigger(Name = "C1Order", Target = "GR_Cfg_Queue", Event = "AFTER INSERT")]
         public static void C1Order()
         {
@@ -121,6 +122,7 @@ namespace ConfigureOneFlag
             xmlPayload = "<soap:Envelope xmlns:xsi=" + (char)34 + "http://www.w3.org/2001/XMLSchema-instance" + (char)34 + " xmlns:xsd=" + (char)34 + "http://www.w3.org/2001/XMLSchema" + (char)34 + " xmlns:soap=" + (char)34 + "http://schemas.xmlsoap.org/soap/envelope/" + (char)34 + ">" + "<soap:Body><" + key + " xmlns=" + (char)34 + "http://ws.configureone.com" + (char)34 + "><orderNum>" + orderNum + "</orderNum></" + key + "></soap:Body></soap:Envelope>";
 
             AsOf = DateTime.Now;
+            forceStop = 0;
 
             //Begin order-processing as an async task and allow trigger to reset
             Action ProcessXMLAsync = new Action(BeginProcessing);
@@ -142,6 +144,8 @@ namespace ConfigureOneFlag
                 System.Threading.Thread.Sleep(1000);
                 itr = r + 1;
             }
+
+            if (forceStop == 1) { return; }
             
             logEvent = "De-coupled order-processing from trigger and resetting (" + orderNum + ")";
             System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);

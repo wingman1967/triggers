@@ -464,6 +464,30 @@ namespace ConfigureOneFlag
             }
             return orderExists;
         }
+        public static string CustomerOnHold(string custnum, string seq)
+        {
+            string holdReason = "";
+            SQLCommand = "Select uf_coholddescription From customer cust with (nolock) Where cust.cust_num = " + (char)39 + custnum + (char)39 + " and cust_seq = " + (char)39 + seq + (char)39 + " and uf_cohold = 1";
+            using (SqlConnection myConnection = new SqlConnection(connectionString))
+            {
+                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
+                myCommand.CommandTimeout = 120000;
+                myConnection.Open();
+                using (SqlDataReader reader = myCommand.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        if (reader.Read())
+                        {
+                            holdReason = reader["uf_coholddescription"].ToString();
+                        }
+                    }
+                    reader.Close();
+                }
+                myConnection.Close();
+            }
+            return holdReason;
+        }
     }
 }
 

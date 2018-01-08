@@ -314,6 +314,14 @@ string C1orderNum)</para>
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string <link linkend="class_configure_one_flag_1_1_database_factory_ad0311ab55adaa79f6211e1377ad7d65e_1ad0311ab55adaa79f6211e1377ad7d65e">CustomerOnHold</link> (
+string custnum, string seq)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
     <simplesect>
 
@@ -407,6 +415,10 @@ string C1orderNum)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_a4c86e61821f40ef2483dde7fbf125710_1a4c86e61821f40ef2483dde7fbf125710">
                 <title>static bool ConfigureOneFlag.DatabaseFactory.OrderExists (string C1orderNum)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_ad0311ab55adaa79f6211e1377ad7d65e_1ad0311ab55adaa79f6211e1377ad7d65e">
+                <title>static string ConfigureOneFlag.DatabaseFactory.CustomerOnHold (string custnum, string seq)</title> <emphasis></emphasis>
                 
             </section>
 </section>

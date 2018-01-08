@@ -542,8 +542,32 @@ Repository for all database functions and calls on behalf of the assembly
 464 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 465 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;orderExists;
 466 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-467 &#32;&#32;&#32;&#32;}
-468 }
-469 
+<link linkend="class_configure_one_flag_1_1_database_factory_ad0311ab55adaa79f6211e1377ad7d65e_1ad0311ab55adaa79f6211e1377ad7d65e">467 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_ad0311ab55adaa79f6211e1377ad7d65e_1ad0311ab55adaa79f6211e1377ad7d65e">CustomerOnHold</link>(<emphasis class="keywordtype">string</emphasis>&#32;custnum,&#32;<emphasis class="keywordtype">string</emphasis>&#32;seq)
+468 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+469 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;holdReason&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+470 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;Select&#32;uf_coholddescription&#32;From&#32;customer&#32;cust&#32;with&#32;(nolock)&#32;Where&#32;cust.cust_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;custnum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;and&#32;cust_seq&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;seq&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;and&#32;uf_cohold&#32;=&#32;1&quot;</emphasis>;
+471 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
+472 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+473 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
+474 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.CommandTimeout&#32;=&#32;120000;
+475 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
+476 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlDataReader&#32;reader&#32;=&#32;myCommand.ExecuteReader())
+477 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+478 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(reader.HasRows)
+479 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+480 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(reader.Read())
+481 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+482 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;holdReason&#32;=&#32;reader[<emphasis class="stringliteral">&quot;uf_coholddescription&quot;</emphasis>].ToString();
+483 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+484 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+485 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;reader.Close();
+486 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+487 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Close();
+488 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+489 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;holdReason;
+490 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+491 &#32;&#32;&#32;&#32;}
+492 }
+493 
     </computeroutput></literallayout>
 </section>
