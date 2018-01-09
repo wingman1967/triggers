@@ -272,7 +272,10 @@ namespace ConfigureOneFlag
             int sPos = co.ShipToRefNum.IndexOf("-");
             custSeq = co.ShipToRefNum.Substring(sPos + 1, (co.ShipToRefNum.Length - (sPos + 1)));
             string customerHoldReason = "";
-            
+
+            Triggers.logEvent = "Checking customer ON-HOLD status...";
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
             try
             {
                 customerHoldReason = DatabaseFactory.CustomerOnHold(co.CustRefNum, custSeq);
@@ -281,6 +284,7 @@ namespace ConfigureOneFlag
             {
                 Triggers.logEvent = "ERROR: " + ex9.Message + ".  Processing Aborted";
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                SendMail.MailMessage(Triggers.logEvent, "C1 Processing Aborted");
                 Triggers.forceStop = 1;
                 return;
             }
@@ -290,6 +294,7 @@ namespace ConfigureOneFlag
                 Triggers.forceStop = 1;
                 Triggers.logEvent = "Processing Aborted.  Customer " + co.ShipToRefNum + " Is On Hold: " + customerHoldReason;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                SendMail.MailMessage(Triggers.logEvent, "C1 Processing Aborted");
                 return;
             }
 

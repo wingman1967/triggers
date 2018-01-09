@@ -467,7 +467,7 @@ namespace ConfigureOneFlag
         public static string CustomerOnHold(string custnum, string seq)
         {
             string holdReason = "";
-            SQLCommand = "Select uf_coholddescription From customer cust with (nolock) Where cust.cust_num = " + (char)39 + custnum + (char)39 + " and cust_seq = " + (char)39 + seq + (char)39 + " and uf_cohold = 1";
+            SQLCommand = "Select uf_coholddescription From customer cust with (nolock) Where ltrim(rtrim(cust.cust_num)) = " + (char)39 + custnum + (char)39 + " and cust_seq = " + (char)39 + seq + (char)39 + " and uf_cohold = 1";
             using (SqlConnection myConnection = new SqlConnection(connectionString))
             {
                 SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
@@ -480,6 +480,8 @@ namespace ConfigureOneFlag
                         if (reader.Read())
                         {
                             holdReason = reader["uf_coholddescription"].ToString();
+                            Triggers.logEvent = "Found an on-hold record match";
+                            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                         }
                     }
                     reader.Close();

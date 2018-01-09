@@ -108,6 +108,7 @@ namespace ConfigureOneFlag
                 
                 if (Triggers.caller == "ORDER") {StagingUtilities.MapXMLToSQL(xmlResult);}
                 if (!StagingUtilities.foundSite) { return; }            //order_site not in the XML, processing must be aborted
+                if (Triggers.forceStop == 1) { return; }
 
                 // *** LOG TIME
                 endTime = DateTime.Now;
@@ -124,6 +125,8 @@ namespace ConfigureOneFlag
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
                 return;
             }
+
+            if (Triggers.forceStop == 1) { return; }
             
             logEvent = "Calling IMPORT of staging data to Syteline";
             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
