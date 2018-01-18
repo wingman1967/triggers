@@ -288,7 +288,7 @@ namespace ConfigureOneFlag
                 Triggers.forceStop = 1;
                 return;
             }
-            
+
             if (customerHoldReason != "")
             {
                 Triggers.forceStop = 1;
@@ -460,9 +460,20 @@ namespace ConfigureOneFlag
                 coitem.PriorityLevel = co.PriorityLevel;
                 globalOrderLineNum = coitem.CO_Line;
 
+                Triggers.logEvent = "About to access Line_Notes";
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
                 //Look for Line Notes, load into COItem
-                XmlNode nodeLN = xmldoc.SelectSingleNode("//c1:Input[@name='LINE_NOTES']", nsmgr);
-                coitem.OrderLineNotes = nodeLN.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeLN.ChildNodes[0].Attributes["name"].InnerXml;
+                try
+                {
+                    nodertv = node.SelectSingleNode("c1:Input[@name='LINE_NOTES']", nsmgr);
+                    coitem.OrderLineNotes = nodertv.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodertv.ChildNodes[0].Attributes["name"].InnerXml;
+                }
+                catch (Exception exrtv)
+                {
+                    Triggers.logEvent = "Line_Note error: " + exrtv.Message;
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
+                }
 
                 if (coitem.ConfigType == "K")
                 {
