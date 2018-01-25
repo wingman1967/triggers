@@ -460,9 +460,6 @@ namespace ConfigureOneFlag
                 coitem.PriorityLevel = co.PriorityLevel;
                 globalOrderLineNum = coitem.CO_Line;
 
-                Triggers.logEvent = "About to access Line_Notes";
-                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-
                 //Look for Line Notes, load into COItem
                 try
                 {
