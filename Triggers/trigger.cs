@@ -83,10 +83,7 @@ namespace ConfigureOneFlag
             //Determine whether incoming order is production or dev/test
             string incomingOrder = orderValue.Substring(0, 1);
             dbEnvironment = "DEV";
-            if (incomingOrder != "D")
-            {
-                dbEnvironment = "PROD";
-            }
+            if (incomingOrder != "D") { dbEnvironment = "PROD"; }
 
             string useMethod = "";
             if (Triggers.dbEnvironment == "PROD" && DatabaseFactory.dbprotect != "YES") { key = "getOrderPROD"; }
@@ -116,7 +113,7 @@ namespace ConfigureOneFlag
                 return;     //abort
             }
             
-            //Ensure the mE array is initialized, in case it is never addressed again before an array.clear is attempted
+            //Ensure the mE array is initialized in case it is never addressed again before an array.clear is attempted
             Audit.mE = new string[50];
             Audit.mEIndex = 0;
             xmlPayload = "<soap:Envelope xmlns:xsi=" + (char)34 + "http://www.w3.org/2001/XMLSchema-instance" + (char)34 + " xmlns:xsd=" + (char)34 + "http://www.w3.org/2001/XMLSchema" + (char)34 + " xmlns:soap=" + (char)34 + "http://schemas.xmlsoap.org/soap/envelope/" + (char)34 + ">" + "<soap:Body><" + key + " xmlns=" + (char)34 + "http://ws.configureone.com" + (char)34 + "><orderNum>" + orderNum + "</orderNum></" + key + "></soap:Body></soap:Envelope>";
@@ -131,7 +128,7 @@ namespace ConfigureOneFlag
                 (MTresult.AsyncState as Action).EndInvoke(MTresult);
             }), ProcessXMLAsync);
 
-            //Hold trigger context open for up to 30 seconds waiting for order# so portal can display to user
+            //Hold trigger context open for up to 60 seconds waiting for order# so portal can display to user
             for (int r = 0; r < 60; r += 1)
             {
                 if (DatabaseFactory.OrderExists(orderNum))
@@ -147,7 +144,7 @@ namespace ConfigureOneFlag
 
             if (forceStop == 1) { return; }
             
-            logEvent = "De-coupled order-processing from trigger and resetting (" + orderNum + ")";
+            logEvent = "Trigger context decoupled/resetting... (" + orderNum + ")";
             System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
             try

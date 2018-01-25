@@ -52,7 +52,6 @@ namespace ConfigureOneFlag
                 string ackMsg = requester.Recv(Encoding.ASCII);
                 Triggers.logEvent = "Message received from ZMQ: " + ackMsg;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-                SendMail.MailMessage("Order Processed: " + Triggers.pubOrderNumber + " / " + C1WebService.SPOrderNumber, "CONFIGURE ONE ORDER PROCESSED");
             }
             
             return;
