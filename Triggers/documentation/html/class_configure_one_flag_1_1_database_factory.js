@@ -4,6 +4,7 @@ var class_configure_one_flag_1_1_database_factory =
     [ "CleanupOrder", "class_configure_one_flag_1_1_database_factory_a1cba3b4ca48fe4e537bdc28925a61719.html#a1cba3b4ca48fe4e537bdc28925a61719", null ],
     [ "COItemitem", "class_configure_one_flag_1_1_database_factory_a85857ab755db44ae9b4e7efcec96748b.html#a85857ab755db44ae9b4e7efcec96748b", null ],
     [ "CoLines", "class_configure_one_flag_1_1_database_factory_a193fa120851ec2ce5d7632db4e875c65.html#a193fa120851ec2ce5d7632db4e875c65", null ],
+    [ "CustomerOnCreditHold", "class_configure_one_flag_1_1_database_factory_ad56ef7e2eb2407d562a8a065878fbbdd.html#ad56ef7e2eb2407d562a8a065878fbbdd", null ],
     [ "CustomerOnHold", "class_configure_one_flag_1_1_database_factory_ad0311ab55adaa79f6211e1377ad7d65e.html#ad0311ab55adaa79f6211e1377ad7d65e", null ],
     [ "ExecutePreCache", "class_configure_one_flag_1_1_database_factory_adb8f7b260d9ace708051700d1e20528f.html#adb8f7b260d9ace708051700d1e20528f", null ],
     [ "InsertDocumentRecord", "class_configure_one_flag_1_1_database_factory_a58f013f5a91fe754f457a1e3ad26ebea.html#a58f013f5a91fe754f457a1e3ad26ebea", null ],

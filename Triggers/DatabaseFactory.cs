@@ -490,6 +490,30 @@ namespace ConfigureOneFlag
             }
             return holdReason;
         }
+        public static bool CustomerOnCreditHold(string custnum)
+        {
+            bool onCreditHold = false;
+            SQLCommand = "Select credit_hold from custaddr ca with (nolock) Where ca.cust_num = " + (char)39 + custnum + (char)39 + " and ca.cust_seq = 0 and credit_hold = 1";
+            using (SqlConnection myConnection = new SqlConnection(connectionString))
+            {
+                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
+                myCommand.CommandTimeout = 120000;
+                myConnection.Open();
+                using (SqlDataReader reader = myCommand.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        if (reader.Read())
+                        {
+                            onCreditHold = true;
+                        }
+                    }
+                    reader.Close();
+                }
+                myConnection.Close();
+            }
+            return onCreditHold;
+        }
     }
 }
 

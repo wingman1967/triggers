@@ -1,4 +1,4 @@
-.TH "ConfigureOneFlag.DatabaseFactory" 3 "Thu Jan 25 2018" "ConfigureOne Trigger" \" -*- nroff -*-
+.TH "ConfigureOneFlag.DatabaseFactory" 3 "Tue Jan 30 2018" "ConfigureOne Trigger" \" -*- nroff -*-
 .ad l
 .nh
 .SH NAME
@@ -79,6 +79,9 @@ ConfigureOneFlag.DatabaseFactory \- Repository for all database functions and ca
 .br
 .ti -1c
 .RI "static string \fBCustomerOnHold\fP (string custnum, string seq)"
+.br
+.ti -1c
+.RI "static bool \fBCustomerOnCreditHold\fP (string custnum)"
 .br
 .in -1c
 .SS "Static Public Attributes"
@@ -162,6 +165,10 @@ Definition at line 351 of file DatabaseFactory\&.cs\&.
 
 .PP
 Definition at line 407 of file DatabaseFactory\&.cs\&.
+.SS "static bool ConfigureOneFlag\&.DatabaseFactory\&.CustomerOnCreditHold (string custnum)\fC [static]\fP"
+
+.PP
+Definition at line 493 of file DatabaseFactory\&.cs\&.
 .SS "static string ConfigureOneFlag\&.DatabaseFactory\&.CustomerOnHold (string custnum, string seq)\fC [static]\fP"
 
 .PP

@@ -568,8 +568,32 @@ Repository for all database functions and calls on behalf of the assembly
 490 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 491 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;holdReason;
 492 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-493 &#32;&#32;&#32;&#32;}
-494 }
-495 
+<link linkend="class_configure_one_flag_1_1_database_factory_ad56ef7e2eb2407d562a8a065878fbbdd_1ad56ef7e2eb2407d562a8a065878fbbdd">493 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_ad56ef7e2eb2407d562a8a065878fbbdd_1ad56ef7e2eb2407d562a8a065878fbbdd">CustomerOnCreditHold</link>(<emphasis class="keywordtype">string</emphasis>&#32;custnum)
+494 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+495 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">bool</emphasis>&#32;onCreditHold&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+496 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SQLCommand&#32;=&#32;<emphasis class="stringliteral">&quot;Select&#32;credit_hold&#32;from&#32;custaddr&#32;ca&#32;with&#32;(nolock)&#32;Where&#32;ca.cust_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;custnum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;and&#32;ca.cust_seq&#32;=&#32;0&#32;and&#32;credit_hold&#32;=&#32;1&quot;</emphasis>;
+497 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(connectionString))
+498 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+499 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(SQLCommand,&#32;myConnection);
+500 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.CommandTimeout&#32;=&#32;120000;
+501 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
+502 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlDataReader&#32;reader&#32;=&#32;myCommand.ExecuteReader())
+503 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+504 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(reader.HasRows)
+505 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+506 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(reader.Read())
+507 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+508 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;onCreditHold&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+509 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+510 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+511 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;reader.Close();
+512 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+513 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Close();
+514 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+515 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;onCreditHold;
+516 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+517 &#32;&#32;&#32;&#32;}
+518 }
+519 
     </computeroutput></literallayout>
 </section>

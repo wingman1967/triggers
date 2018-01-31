@@ -322,6 +322,14 @@ string custnum, string seq)</para>
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static bool <link linkend="class_configure_one_flag_1_1_database_factory_ad56ef7e2eb2407d562a8a065878fbbdd_1ad56ef7e2eb2407d562a8a065878fbbdd">CustomerOnCreditHold</link> (
+string custnum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
     <simplesect>
 
@@ -419,6 +427,10 @@ string custnum, string seq)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_ad0311ab55adaa79f6211e1377ad7d65e_1ad0311ab55adaa79f6211e1377ad7d65e">
                 <title>static string ConfigureOneFlag.DatabaseFactory.CustomerOnHold (string custnum, string seq)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_ad56ef7e2eb2407d562a8a065878fbbdd_1ad56ef7e2eb2407d562a8a065878fbbdd">
+                <title>static bool ConfigureOneFlag.DatabaseFactory.CustomerOnCreditHold (string custnum)</title> <emphasis></emphasis>
                 
             </section>
 </section>
