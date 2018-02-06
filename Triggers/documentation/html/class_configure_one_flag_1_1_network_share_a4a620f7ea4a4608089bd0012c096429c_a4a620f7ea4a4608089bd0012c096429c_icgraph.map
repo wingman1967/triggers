@@ -1,9 +1,4 @@
 <map id="ConfigureOneFlag.NetworkShare.WNetUseConnection" name="ConfigureOneFlag.NetworkShare.WNetUseConnection">
 <area shape="rect" id="node2" href="$class_configure_one_flag_1_1_network_share_ab976148d295a3aad7cdf5c850cc3fed9.html#ab976148d295a3aad7cdf5c850cc3fed9" title="Network authentication HELPER class. Connects to and disconnects from an endpoint using explicit cred..." alt="" coords="241,5,417,47"/>
-<area shape="rect" id="node8" href="$class_configure_one_flag_1_1_network_share_af61100f22e1ebd4895ad0313c0130ecf.html#af61100f22e1ebd4895ad0313c0130ecf" title="Remove the share from cache. " alt="" coords="235,71,424,112"/>
-<area shape="rect" id="node3" href="$class_configure_one_flag_1_1_retrieve_drawings_a9eb1774070853cdd5601e1d8a6270757.html#a9eb1774070853cdd5601e1d8a6270757" title="ConfigureOneFlag.Retrieve\lDrawings.CopyDrawings" alt="" coords="472,39,647,80"/>
-<area shape="rect" id="node4" href="$class_configure_one_flag_1_1_c1_web_service_a5c55f707a8abfce00f492231cb598c25.html#a5c55f707a8abfce00f492231cb598c25" title="ConfigureOneFlag.C1WebService.\lStartCopy" alt="" coords="695,39,913,80"/>
-<area shape="rect" id="node5" href="$class_configure_one_flag_1_1_c1_web_service_ae826903f85694f4cf481680e115076f3.html#ae826903f85694f4cf481680e115076f3" title="ConfigureOneFlag.C1WebService.\lCallConfigureOne" alt="" coords="961,39,1180,80"/>
-<area shape="rect" id="node6" href="$class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f.html#a7446070eb1c5dd9f63f7043525014c9f" title="ConfigureOneFlag.Triggers.\lC1Order" alt="" coords="1455,39,1633,80"/>
-<area shape="rect" id="node7" href="$class_configure_one_flag_1_1_triggers_a246cde167d6b8c1ab05cf0acb22c79a7.html#a246cde167d6b8c1ab05cf0acb22c79a7" title="ConfigureOneFlag.Triggers.\lBeginProcessing" alt="" coords="1228,68,1407,109"/>
+<area shape="rect" id="node3" href="$class_configure_one_flag_1_1_network_share_af61100f22e1ebd4895ad0313c0130ecf.html#af61100f22e1ebd4895ad0313c0130ecf" title="Remove the share from cache. " alt="" coords="235,71,424,112"/>
 </map>
