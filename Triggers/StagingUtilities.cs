@@ -330,9 +330,20 @@ namespace ConfigureOneFlag
             XmlNode nodeFT = xmldoc.SelectSingleNode("//c1:Input[@name='FREIGHT_TERMS']", nsmgr);
             co.FreightTerms = nodeFT.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeFT.ChildNodes[0].Attributes["name"].InnerXml;
 
+            co.OrderHeaderNotes = " ";
+
             //Look for Order Header Notes, load into CO
-            XmlNode nodeOHN = xmldoc.SelectSingleNode("//c1:Input[@name='ORDER_HEADER_NOTES']", nsmgr);
-            co.OrderHeaderNotes = nodeOHN.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeOHN.ChildNodes[0].Attributes["name"].InnerXml;
+            try
+            {
+                XmlNode nodeOHN = xmldoc.SelectSingleNode("//c1:Input[@name='ORDER_HEADER_NOTES']", nsmgr);
+                co.OrderHeaderNotes = nodeOHN.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeOHN.ChildNodes[0].Attributes["name"].InnerXml;
+            }
+            catch (Exception lnex)
+            {
+                Triggers.logEvent = "Order_Note error: " + lnex.Message;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
+            }
+            
 
             //Retrieve due date
             co.DueDate = DateTime.Now;
@@ -460,6 +471,8 @@ namespace ConfigureOneFlag
                 coitem.PriorityLevel = co.PriorityLevel;
                 globalOrderLineNum = coitem.CO_Line;
 
+                coitem.OrderLineNotes = " ";
+                
                 //Look for Line Notes, load into COItem
                 try
                 {
@@ -479,6 +492,7 @@ namespace ConfigureOneFlag
                     SendMail.MailMessage(Triggers.logEvent, "Config-Type Warning");
                     continue;           //we cannot process a type K; notify, ignore this line and continue with the next detail node if any exist
                 }
+
                 //output coitem record
                 DatabaseFactory.WriteRecordCOItem(ref coitem);
 
