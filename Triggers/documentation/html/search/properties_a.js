@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['recordsequence',['RecordSequence',['../class_configure_one_flag_1_1z_cfg_b_o_m_a6c41d071633e9f4b00e95be1c95a2875.html#a6c41d071633e9f4b00e95be1c95a2875',1,'ConfigureOneFlag::zCfgBOM']]],
-  ['requestdate',['RequestDate',['../class_configure_one_flag_1_1z_cfg_c_o_aa78d3fbb0f30d803317b896e3ac3665a.html#aa78d3fbb0f30d803317b896e3ac3665a',1,'ConfigureOneFlag::zCfgCO']]]
+  ['operation',['OPERATION',['../class_configure_one_flag_1_1z_cfg_route_a07e81ad0118190046e378b17a28c6260.html#a07e81ad0118190046e378b17a28c6260',1,'ConfigureOneFlag::zCfgRoute']]],
+  ['orderheadernotes',['OrderHeaderNotes',['../class_configure_one_flag_1_1z_cfg_c_o_a308c1d4964fa8272fde6d6aacafb0bdf.html#a308c1d4964fa8272fde6d6aacafb0bdf',1,'ConfigureOneFlag::zCfgCO']]],
+  ['orderlinenotes',['OrderLineNotes',['../class_configure_one_flag_1_1z_cfg_c_oitem_aac8a3ebd144fff3a5f8859eea2698ded.html#aac8a3ebd144fff3a5f8859eea2698ded',1,'ConfigureOneFlag::zCfgCOitem']]]
 ];

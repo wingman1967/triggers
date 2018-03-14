@@ -8,3 +8,4 @@ C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debu
 C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debug\clrzmq-ext.pdb
 C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debug\clrzmq-ext.xml
 C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\obj\Debug\Triggers.csproj.CoreCompileInputs.cache
+C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\obj\Debug\Triggers.csproj.CopyComplete

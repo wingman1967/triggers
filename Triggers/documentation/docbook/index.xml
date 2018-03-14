@@ -48,6 +48,7 @@
         <xi:include href="class_configure_one_flag_1_1z_cfg_c_oitem.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1z_cfg_item.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1z_cfg_parm_val.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_configure_one_flag_1_1z_cfg_route.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     </chapter>
     <chapter>
         <title>File Documentation</title>
@@ -71,6 +72,7 @@
         <xi:include href="z_cfg_c_o_item_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="z_cfg_item_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="z_cfg_parm_val_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="z_cfg_route_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
     </chapter>
     <chapter>
         <title>Directory Documentation</title>

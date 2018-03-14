@@ -1,0 +1,13 @@
+digraph "C:/Users/hinesj/Documents" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_2b35a75e194e9b3385c05b6f3a72b0a3 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="hinesj" fontname="Helvetica", fontsize="10", URL="dir_2b35a75e194e9b3385c05b6f3a72b0a3.html"]
+  subgraph clusterdir_31ff94d8705ffade2bb854ac426f07a2 {
+    graph [ bgcolor="#eeeeff", pencolor="black", label="" URL="dir_31ff94d8705ffade2bb854ac426f07a2.html"];
+    dir_31ff94d8705ffade2bb854ac426f07a2 [shape=plaintext label="Documents"];
+    dir_171601122d77eabedd0630b46fc3534f [shape=box label="Visual Studio 2015" color="red" fillcolor="white" style="filled" URL="dir_171601122d77eabedd0630b46fc3534f.html"];
+  }
+  }
+}

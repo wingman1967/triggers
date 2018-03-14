@@ -105,6 +105,14 @@ string field, ref <link linkend="class_configure_one_flag_1_1z_cfg_b_o_m">zCfgBO
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int <link linkend="class_configure_one_flag_1_1_c1_dictionaries_ad4f6694f98646dc93c977ac1f10cb8f9_1ad4f6694f98646dc93c977ac1f10cb8f9">DBFieldLenRoute</link> (
+string field, ref <link linkend="class_configure_one_flag_1_1z_cfg_route">zCfgRoute</link> route)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
     <simplesect>
 
@@ -142,6 +150,10 @@ string field, ref <link linkend="class_configure_one_flag_1_1z_cfg_b_o_m">zCfgBO
             </section>
             <section xml:id="class_configure_one_flag_1_1_c1_dictionaries_aef02fef832352fba236b3be1375daa4c_1aef02fef832352fba236b3be1375daa4c">
                 <title>static int ConfigureOneFlag.C1Dictionaries.DBFieldLenBOM (string field, ref zCfgBOM bom)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_c1_dictionaries_ad4f6694f98646dc93c977ac1f10cb8f9_1ad4f6694f98646dc93c977ac1f10cb8f9">
+                <title>static int ConfigureOneFlag.C1Dictionaries.DBFieldLenRoute (string field, ref zCfgRoute route)</title> <emphasis></emphasis>
                 
             </section>
 </section>

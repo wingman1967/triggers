@@ -197,6 +197,14 @@ ref <link linkend="class_configure_one_flag_1_1z_cfg_c_o">zCfgCO</link> co)</par
             <para>
                 <itemizedlist>
                     <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_a0b616fafdb354df961cb94c784943bc4_1a0b616fafdb354df961cb94c784943bc4">WriteRecordCfgRoute</link> (
+ref <link linkend="class_configure_one_flag_1_1z_cfg_route">zCfgRoute</link> route)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
                         <para>static string <link linkend="class_configure_one_flag_1_1_database_factory_acd76eb3da8e1214f25d11c0460997f43_1acd76eb3da8e1214f25d11c0460997f43">UserName</link> (
 string id)</para>
                     </listitem>
@@ -363,6 +371,10 @@ string custnum)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_a628dded3ecd9efab9c21a01a864dc518_1a628dded3ecd9efab9c21a01a864dc518">
                 <title>static void ConfigureOneFlag.DatabaseFactory.WriteRecordCO (ref zCfgCO co)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_a0b616fafdb354df961cb94c784943bc4_1a0b616fafdb354df961cb94c784943bc4">
+                <title>static void ConfigureOneFlag.DatabaseFactory.WriteRecordCfgRoute (ref zCfgRoute route)</title> <emphasis></emphasis>
                 
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_acd76eb3da8e1214f25d11c0460997f43_1acd76eb3da8e1214f25d11c0460997f43">

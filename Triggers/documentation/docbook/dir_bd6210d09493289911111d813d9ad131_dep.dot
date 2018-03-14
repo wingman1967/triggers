@@ -1,0 +1,9 @@
+digraph "C:/Users/hinesj/Documents/Visual Studio 2015/Projects/Triggers/Triggers/Properties" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_0dafcf5e8a3c18ade4ec8c2cc605bd76 {
+    graph [ bgcolor="#ddddee", pencolor="black", label="Triggers" fontname="Helvetica", fontsize="10", URL="dir_0dafcf5e8a3c18ade4ec8c2cc605bd76.html"]
+  dir_bd6210d09493289911111d813d9ad131 [shape=box, label="Properties", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_bd6210d09493289911111d813d9ad131.html"];
+  }
+}

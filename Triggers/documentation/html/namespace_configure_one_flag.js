@@ -14,5 +14,6 @@ var namespace_configure_one_flag =
     [ "zCfgCO", "class_configure_one_flag_1_1z_cfg_c_o.html", "class_configure_one_flag_1_1z_cfg_c_o" ],
     [ "zCfgCOitem", "class_configure_one_flag_1_1z_cfg_c_oitem.html", "class_configure_one_flag_1_1z_cfg_c_oitem" ],
     [ "zCfgItem", "class_configure_one_flag_1_1z_cfg_item.html", "class_configure_one_flag_1_1z_cfg_item" ],
-    [ "zCfgParmVal", "class_configure_one_flag_1_1z_cfg_parm_val.html", "class_configure_one_flag_1_1z_cfg_parm_val" ]
+    [ "zCfgParmVal", "class_configure_one_flag_1_1z_cfg_parm_val.html", "class_configure_one_flag_1_1z_cfg_parm_val" ],
+    [ "zCfgRoute", "class_configure_one_flag_1_1z_cfg_route.html", "class_configure_one_flag_1_1z_cfg_route" ]
 ];

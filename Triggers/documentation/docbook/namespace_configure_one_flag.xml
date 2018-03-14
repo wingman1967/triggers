@@ -148,5 +148,15 @@ Accessor class for the cfg parmValue object (C1 Inputs)
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1z_cfg_route">ConfigureOneFlag::zCfgRoute</link></para>
+<para><emphasis>&lt;summary&gt;
+Accessor class for the cfg route object (C1 routing module data)
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
 </section>

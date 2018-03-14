@@ -51,5 +51,8 @@ var files =
     ] ],
     [ "zCfgParmVal.cs", "z_cfg_parm_val_8cs.html", [
       [ "zCfgParmVal", "class_configure_one_flag_1_1z_cfg_parm_val.html", "class_configure_one_flag_1_1z_cfg_parm_val" ]
+    ] ],
+    [ "zCfgRoute.cs", "z_cfg_route_8cs.html", [
+      [ "zCfgRoute", "class_configure_one_flag_1_1z_cfg_route.html", "class_configure_one_flag_1_1z_cfg_route" ]
     ] ]
 ];

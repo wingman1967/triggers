@@ -76,6 +76,7 @@
     <Compile Include="zCfgCOItem.cs" />
     <Compile Include="zCfgItem.cs" />
     <Compile Include="zCfgParmVal.cs" />
+    <Compile Include="zCfgRoute.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GormanRupp.pfx" />

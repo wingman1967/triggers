@@ -113,6 +113,12 @@ namespace ConfigureOneFlag
             fieldLengths.Add("CfgParmVal:value", 1024);
             fieldLengths.Add("CfgParmVal:type", 15);
             fieldLengths.Add("CfgParmVal:label", 255);
+            //CfgRoute Fields
+            fieldLengths.Add("CfgRoute:order_num", 15);
+            fieldLengths.Add("CfgRoute:bom_id", 30);
+            fieldLengths.Add("CfgRoute:description", 50);
+            fieldLengths.Add("CfgRoute:notes", 500);
+            fieldLengths.Add("CfgRoute:mach_name", 50);
         }
         public static int DBFieldLenCO(string field, ref zCfgCO co)
         {
@@ -215,6 +221,19 @@ namespace ConfigureOneFlag
                 case "BOM:id": switch (bom.Identifier.Length >= fieldlength) { case true: Audit.SetTruncate(field, bom.Identifier.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, bom.Identifier); break; default: fieldlength = bom.Identifier.Length; break; } break;
                 case "BOM:item_num": switch (bom.Item.Length >= fieldlength) { case true: Audit.SetTruncate(field, bom.Item.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, bom.Item); break; default: fieldlength = bom.Item.Length; break; } break;
                 case "BOM:smartpart_num": switch (bom.Smartpart.Length >= fieldlength) { case true: Audit.SetTruncate(field, bom.Smartpart.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, bom.Smartpart); break; default: fieldlength = bom.Smartpart.Length; break; } break;
+            }
+            return fieldlength;
+        }
+        public static int DBFieldLenRoute(string field, ref zCfgRoute route)
+        {
+            int fieldlength = (!fieldLengths.ContainsKey(field)) ? 15 : fieldLengths[field];
+            switch (field)
+            {
+                case "CfgRoute:order_num": switch (route.CO_Num.Length >= fieldlength) { case true: Audit.SetTruncate(field, route.CO_Num.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, route.CO_Num); break; default: fieldlength = route.CO_Num.Length; break; } break;
+                case "CfgRoute:bom_id": switch (route.BOM_ID.Length >= fieldlength) { case true: Audit.SetTruncate(field, route.BOM_ID.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, route.BOM_ID); break; default: fieldlength = route.BOM_ID.Length; break; } break;
+                case "CfgRoute:description": switch (route.Description.Length >= fieldlength) { case true: Audit.SetTruncate(field, route.Description.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, route.Description); break; default: fieldlength = route.Description.Length; break; } break;
+                case "CfgRoute:notes": switch (route.Notes.Length >= fieldlength) { case true: Audit.SetTruncate(field, route.Notes.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, route.Notes); break; default: fieldlength = route.Notes.Length; break; } break;
+                case "CfgRoute:mach_name": switch (route.Machine_Name.Length >= fieldlength) { case true: Audit.SetTruncate(field, route.Machine_Name.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, route.Machine_Name); break; default: fieldlength = route.Machine_Name.Length; break; } break;
             }
             return fieldlength;
         }
