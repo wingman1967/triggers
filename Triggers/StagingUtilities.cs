@@ -21,6 +21,7 @@ namespace ConfigureOneFlag
             zCfgItem citem = new zCfgItem();
             zCfgParmVal cfg = new zCfgParmVal();
             zCfgBOM bom = new zCfgBOM();
+            zCfgRoute route = new zCfgRoute();
 
             Audit.resetmE = true;       //reset the mE array in case we have any mapping errors to report for this cycle
 
@@ -660,7 +661,86 @@ namespace ConfigureOneFlag
                     //output BOM record
                     DatabaseFactory.WriteRecordBOM(ref bom);
                 }
-                
+                //Routing
+                Triggers.logEvent = "STARTING ROUTING LOGIC";
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+                int routebomSeq = 0;
+                route.CO_Num = coitem.CO_Num;
+                route.CO_Line = coitem.CO_Line;
+                XmlNodeList xnlr = detailDoc.GetElementsByTagName("Routing");
+                foreach (XmlNode nodecr in xnlr)
+                {
+                    XmlNode nodecrtg = nodecr.SelectSingleNode("c1:SMARTPART_NUM", nsmgr);
+                    route.SmartpartNum = nodecrtg.ChildNodes[0].InnerText;
+                    nodecrtg = nodecr.SelectSingleNode("c1:ITEM_NUM", nsmgr);
+                    route.ItemNum = nodecrtg.ChildNodes[0].InnerText;
+                    nodecrtg = nodecr.SelectSingleNode("c1:BOM_ID", nsmgr);
+                    route.BOM_ID = nodecrtg.ChildNodes[0].InnerText;
+
+                    Triggers.logEvent = "SMARTPART: " + route.SmartpartNum;
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+
+                    //isolate OPERATION elements from Routing and iterate
+                    XmlNodeList xnlOperation = detailDoc.GetElementsByTagName("Operation");
+                    foreach(XmlNode nodeol in xnlOperation)
+                    {
+                        var operationParentTL = nodeol.SelectSingleNode("..");             //current operation becomes our new parent
+                        XmlDocument operationDocumentTL = new XmlDocument();
+                        operationDocumentTL.LoadXml(operationParentTL.OuterXml);
+                        
+                        XmlNodeList xnlOP = operationDocumentTL.GetElementsByTagName("OperationParam");
+                        foreach (XmlNode nodeParamChild in xnlOP)
+                        {
+                            Triggers.logEvent = "OperationParam Found";
+                            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+                            //alternative method
+                            if (nodeParamChild.ChildNodes[0].InnerText == "LABOR_HRS") { route.Labor_Hours = Convert.ToDouble(nodeParamChild.ChildNodes[2].InnerText); }
+                            if (nodeParamChild.ChildNodes[0].InnerText == "SETUP_HRS") { route.Setup_Hours = Convert.ToDouble(nodeParamChild.ChildNodes[2].InnerText); }
+                            if (nodeParamChild.ChildNodes[0].InnerText == "WC") { route.WC = nodeParamChild.ChildNodes[2].InnerText; }
+                            if (nodeParamChild.ChildNodes[0].InnerText == "NOTES") { route.Notes = nodeParamChild.ChildNodes[2].InnerText; }
+                            if (nodeParamChild.ChildNodes[0].InnerText == "MACH_NAME") { route.Machine_Name = nodeParamChild.ChildNodes[2].InnerText; }
+
+                        }
+
+                        Triggers.logEvent = "Out of operationparam section";
+                        System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+                        XmlNode nodeOpItem = nodeol.SelectSingleNode("c1:OPER_NUM", nsmgr);
+                        route.OPERATION = Convert.ToInt16(nodeOpItem.ChildNodes[0].InnerText);
+                        nodeOpItem = nodeol.SelectSingleNode("c1:DESCRIPTION", nsmgr);
+                        route.Description = nodeOpItem.ChildNodes[0].InnerText;
+
+                        Triggers.logEvent = "OPERATION#: " + route.OPERATION.ToString();
+                        System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+                        //set current operation as new parent and look ONLY for its OperationInput tags
+                        var operationParent = nodeol.SelectSingleNode(".");     //ensure we traverse ONLY children of this node (Operation) as the new parent (root) element
+                        XmlDocument operationDoc = new XmlDocument();
+                        operationDoc.LoadXml(operationParent.OuterXml);
+                        XmlNodeList xnlOperationInputs = operationDoc.GetElementsByTagName("OperationInput");
+
+                        Triggers.logEvent = "STARTING OperationInput Logic";
+                        System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
+                        foreach (XmlNode nodeOpInput in xnlOperationInputs)
+                        {
+                            XmlNode nodeoin = nodeOpInput.SelectSingleNode("c1:SMARTPART_NUM", nsmgr);
+                            route.MatlSmartpartNum = nodeOpInput.ChildNodes[0].InnerText;
+                            route.MatlItemNum = nodeOpInput.ChildNodes[1].InnerText;
+                            route.MatlQty = Convert.ToDecimal(nodeOpInput.ChildNodes[2].InnerText);
+                            //write to database
+                            Triggers.logEvent = "WRITE TO DATABASE";
+                            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                            routebomSeq += 1;
+                            route.Seq = routebomSeq;
+                            DatabaseFactory.WriteRecordCfgRoute(ref route);
+                        }
+                    }
+                }
+
                 Triggers.logEvent = "RESEQUENCING BOM RECORDS FOR ORDER: " + bom.CO_Num + " LINE: " + bom.CO_Line;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                 DatabaseFactory.ResequenceBOM(bom.CO_Num, bom.CO_Line);
