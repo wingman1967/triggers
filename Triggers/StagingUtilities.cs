@@ -664,7 +664,6 @@ namespace ConfigureOneFlag
                 //Routing
                 Triggers.logEvent = "STARTING ROUTING LOGIC";
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-
                 int routebomSeq = 0;
                 route.CO_Num = coitem.CO_Num;
                 route.CO_Line = coitem.CO_Line;
@@ -678,7 +677,7 @@ namespace ConfigureOneFlag
                     nodecrtg = nodecr.SelectSingleNode("c1:BOM_ID", nsmgr);
                     route.BOM_ID = nodecrtg.ChildNodes[0].InnerText;
                                          
-                    //isolate OPERATION elements from Routing and iterate
+                    //isolate OPERATION elements from Routing and process
                     XmlNodeList xnlOperation = detailDoc.GetElementsByTagName("Operation");
                     foreach(XmlNode nodeol in xnlOperation)
                     {
@@ -701,7 +700,7 @@ namespace ConfigureOneFlag
                         route.Description = nodeOpItem.ChildNodes[0].InnerText;
 
                         //set current operation as new parent and look ONLY for its OperationInput tags
-                        var operationParent = nodeol.SelectSingleNode(".");     //ensure we traverse ONLY children of this node (Operation) as the new parent 
+                        var operationParent = nodeol.SelectSingleNode(".");     //ensure we traverse ONLY descendants of this node (Operation) as the new parent 
                         XmlDocument operationDoc = new XmlDocument();
                         operationDoc.LoadXml(operationParent.OuterXml);
                         XmlNodeList xnlOperationInputs = operationDoc.GetElementsByTagName("OperationInput");
