@@ -621,8 +621,19 @@ Repository for all database functions and calls on behalf of the assembly
 543 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 544 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;onCreditHold;
 545 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-546 &#32;&#32;&#32;&#32;}
-547 }
-548 
+<link linkend="class_configure_one_flag_1_1_database_factory_adec1d318fce610a0e24c55bc7c31cf0e_1adec1d318fce610a0e24c55bc7c31cf0e">546 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_database_factory_adec1d318fce610a0e24c55bc7c31cf0e_1adec1d318fce610a0e24c55bc7c31cf0e">DeleteBOM</link>(<emphasis class="keywordtype">string</emphasis>&#32;orderNum)
+547 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+548 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory_aa5aa82b5ed9dd8d3610b92ed61a9f2d4_1aa5aa82b5ed9dd8d3610b92ed61a9f2d4">SQLCommand</link>&#32;=&#32;<emphasis class="stringliteral">&quot;DELETE&#32;From&#32;GR_CfgBOM&#32;where&#32;order_num&#32;=&#32;&quot;</emphasis>&#32;+&#32;(char)39&#32;+&#32;orderNum&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)39;
+549 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;myConnection&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(<link linkend="class_configure_one_flag_1_1_database_factory_a97a9d57d4ff36a700cc5233c5fdb9ac5_1a97a9d57d4ff36a700cc5233c5fdb9ac5">connectionString</link>))
+550 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+551 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;myCommand&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand(<link linkend="class_configure_one_flag_1_1_database_factory_aa5aa82b5ed9dd8d3610b92ed61a9f2d4_1aa5aa82b5ed9dd8d3610b92ed61a9f2d4">SQLCommand</link>,&#32;myConnection);
+552 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.CommandTimeout&#32;=&#32;120000;
+553 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myConnection.Open();
+554 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;myCommand.ExecuteNonQuery();
+555 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+556 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+557 &#32;&#32;&#32;&#32;}
+558 }
+559 
     </computeroutput></literallayout>
 </section>

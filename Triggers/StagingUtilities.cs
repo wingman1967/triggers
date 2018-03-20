@@ -661,60 +661,65 @@ namespace ConfigureOneFlag
                     //output BOM record
                     DatabaseFactory.WriteRecordBOM(ref bom);
                 }
-                //Routing
+                //Routing - Output only if the Routing tag contains a nodelist count greater than 0
                 Triggers.logEvent = "STARTING ROUTING LOGIC";
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                 int routebomSeq = 0;
+                bool UseRouteBOM = false;
                 route.CO_Num = coitem.CO_Num;
                 route.CO_Line = coitem.CO_Line;
                 XmlNodeList xnlr = detailDoc.GetElementsByTagName("Routing");
-                foreach (XmlNode nodecr in xnlr)
+                if (xnlr.Count > 0)
                 {
-                    XmlNode nodecrtg = nodecr.SelectSingleNode("c1:SMARTPART_NUM", nsmgr);
-                    route.SmartpartNum = nodecrtg.ChildNodes[0].InnerText;
-                    nodecrtg = nodecr.SelectSingleNode("c1:ITEM_NUM", nsmgr);
-                    route.ItemNum = nodecrtg.ChildNodes[0].InnerText;
-                    nodecrtg = nodecr.SelectSingleNode("c1:BOM_ID", nsmgr);
-                    route.BOM_ID = nodecrtg.ChildNodes[0].InnerText;
-                                         
-                    //isolate OPERATION elements from Routing and process
-                    XmlNodeList xnlOperation = detailDoc.GetElementsByTagName("Operation");
-                    foreach(XmlNode nodeol in xnlOperation)
+                    UseRouteBOM = true;
+                    foreach (XmlNode nodecr in xnlr)
                     {
-                        var operationParentTL = nodeol.SelectSingleNode("..");             //current operation becomes our new parent
-                        XmlDocument operationDocumentTL = new XmlDocument();
-                        operationDocumentTL.LoadXml(operationParentTL.OuterXml);
-                        XmlNodeList xnlOP = operationDocumentTL.GetElementsByTagName("OperationParam");
-                        foreach (XmlNode nodeParamChild in xnlOP)
+                        XmlNode nodecrtg = nodecr.SelectSingleNode("c1:SMARTPART_NUM", nsmgr);
+                        route.SmartpartNum = nodecrtg.ChildNodes[0].InnerText;
+                        nodecrtg = nodecr.SelectSingleNode("c1:ITEM_NUM", nsmgr);
+                        route.ItemNum = nodecrtg.ChildNodes[0].InnerText;
+                        nodecrtg = nodecr.SelectSingleNode("c1:BOM_ID", nsmgr);
+                        route.BOM_ID = nodecrtg.ChildNodes[0].InnerText;
+
+                        //isolate OPERATION elements from Routing and process
+                        XmlNodeList xnlOperation = detailDoc.GetElementsByTagName("Operation");
+                        foreach (XmlNode nodeol in xnlOperation)
                         {
-                            if (nodeParamChild.ChildNodes[0].InnerText == "LABOR_HRS") { route.Labor_Hours = Convert.ToDouble(nodeParamChild.ChildNodes[2].InnerText); }
-                            if (nodeParamChild.ChildNodes[0].InnerText == "SETUP_HRS") { route.Setup_Hours = Convert.ToDouble(nodeParamChild.ChildNodes[2].InnerText); }
-                            if (nodeParamChild.ChildNodes[0].InnerText == "WC") { route.WC = nodeParamChild.ChildNodes[2].InnerText; }
-                            if (nodeParamChild.ChildNodes[0].InnerText == "NOTES") { route.Notes = nodeParamChild.ChildNodes[2].InnerText; }
-                            if (nodeParamChild.ChildNodes[0].InnerText == "MACH_NAME") { route.Machine_Name = nodeParamChild.ChildNodes[2].InnerText; }
-                        }
+                            var operationParentTL = nodeol.SelectSingleNode("..");             //current operation becomes our new parent
+                            XmlDocument operationDocumentTL = new XmlDocument();
+                            operationDocumentTL.LoadXml(operationParentTL.OuterXml);
+                            XmlNodeList xnlOP = operationDocumentTL.GetElementsByTagName("OperationParam");
+                            foreach (XmlNode nodeParamChild in xnlOP)
+                            {
+                                if (nodeParamChild.ChildNodes[0].InnerText == "LABOR_HRS") { route.Labor_Hours = Convert.ToDouble(nodeParamChild.ChildNodes[2].InnerText); }
+                                if (nodeParamChild.ChildNodes[0].InnerText == "SETUP_HRS") { route.Setup_Hours = Convert.ToDouble(nodeParamChild.ChildNodes[2].InnerText); }
+                                if (nodeParamChild.ChildNodes[0].InnerText == "WC") { route.WC = nodeParamChild.ChildNodes[2].InnerText; }
+                                if (nodeParamChild.ChildNodes[0].InnerText == "NOTES") { route.Notes = nodeParamChild.ChildNodes[2].InnerText; }
+                                if (nodeParamChild.ChildNodes[0].InnerText == "MACH_NAME") { route.Machine_Name = nodeParamChild.ChildNodes[2].InnerText; }
+                            }
 
-                        XmlNode nodeOpItem = nodeol.SelectSingleNode("c1:OPER_NUM", nsmgr);
-                        route.OPERATION = Convert.ToInt16(nodeOpItem.ChildNodes[0].InnerText);
-                        nodeOpItem = nodeol.SelectSingleNode("c1:DESCRIPTION", nsmgr);
-                        route.Description = nodeOpItem.ChildNodes[0].InnerText;
+                            XmlNode nodeOpItem = nodeol.SelectSingleNode("c1:OPER_NUM", nsmgr);
+                            route.OPERATION = Convert.ToInt16(nodeOpItem.ChildNodes[0].InnerText);
+                            nodeOpItem = nodeol.SelectSingleNode("c1:DESCRIPTION", nsmgr);
+                            route.Description = nodeOpItem.ChildNodes[0].InnerText;
 
-                        //set current operation as new parent and look ONLY for its OperationInput tags
-                        var operationParent = nodeol.SelectSingleNode(".");     //ensure we traverse ONLY descendants of this node (Operation) as the new parent 
-                        XmlDocument operationDoc = new XmlDocument();
-                        operationDoc.LoadXml(operationParent.OuterXml);
-                        XmlNodeList xnlOperationInputs = operationDoc.GetElementsByTagName("OperationInput");
+                            //set current operation as new parent and look ONLY for its OperationInput tags
+                            var operationParent = nodeol.SelectSingleNode(".");     //ensure we traverse ONLY descendants of this node (Operation) as the new parent 
+                            XmlDocument operationDoc = new XmlDocument();
+                            operationDoc.LoadXml(operationParent.OuterXml);
+                            XmlNodeList xnlOperationInputs = operationDoc.GetElementsByTagName("OperationInput");
 
-                        foreach (XmlNode nodeOpInput in xnlOperationInputs)
-                        {
-                            XmlNode nodeoin = nodeOpInput.SelectSingleNode("c1:SMARTPART_NUM", nsmgr);
-                            route.MatlSmartpartNum = nodeOpInput.ChildNodes[0].InnerText;
-                            route.MatlItemNum = nodeOpInput.ChildNodes[1].InnerText;
-                            route.MatlQty = Convert.ToDecimal(nodeOpInput.ChildNodes[2].InnerText);
-                            //write to gr_cfgroutebom
-                            routebomSeq += 1;
-                            route.Seq = routebomSeq;
-                            DatabaseFactory.WriteRecordCfgRoute(ref route);
+                            foreach (XmlNode nodeOpInput in xnlOperationInputs)
+                            {
+                                XmlNode nodeoin = nodeOpInput.SelectSingleNode("c1:SMARTPART_NUM", nsmgr);
+                                route.MatlSmartpartNum = nodeOpInput.ChildNodes[0].InnerText;
+                                route.MatlItemNum = nodeOpInput.ChildNodes[1].InnerText;
+                                route.MatlQty = Convert.ToDecimal(nodeOpInput.ChildNodes[2].InnerText);
+                                //write to gr_cfgroutebom
+                                routebomSeq += 1;
+                                route.Seq = routebomSeq;
+                                DatabaseFactory.WriteRecordCfgRoute(ref route);
+                            }
                         }
                     }
                 }
@@ -722,6 +727,9 @@ namespace ConfigureOneFlag
                 Triggers.logEvent = "RESEQUENCING BOM RECORDS FOR ORDER: " + bom.CO_Num + " LINE: " + bom.CO_Line;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                 DatabaseFactory.ResequenceBOM(bom.CO_Num, bom.CO_Line);
+
+                //If we used routeBOM, dump the old-process BOM records
+                if (UseRouteBOM) { DatabaseFactory.DeleteBOM(co.CORefNum); }
             }
             DatabaseFactory.WriteRecordCO(ref co);              //deferred write
         }

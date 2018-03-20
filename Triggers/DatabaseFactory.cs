@@ -543,6 +543,17 @@ namespace ConfigureOneFlag
             }
             return onCreditHold;
         }
+        public static void DeleteBOM(string orderNum)
+        {
+            SQLCommand = "DELETE From GR_CfgBOM where order_num = " + (char)39 + orderNum + (char)39;
+            using (SqlConnection myConnection = new SqlConnection(connectionString))
+            {
+                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
+                myCommand.CommandTimeout = 120000;
+                myConnection.Open();
+                myCommand.ExecuteNonQuery();
+            }
+        }
     }
 }
 

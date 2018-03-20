@@ -338,6 +338,14 @@ string custnum)</para>
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_adec1d318fce610a0e24c55bc7c31cf0e_1adec1d318fce610a0e24c55bc7c31cf0e">DeleteBOM</link> (
+string orderNum)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
     <simplesect>
 
@@ -443,6 +451,10 @@ string custnum)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_ad56ef7e2eb2407d562a8a065878fbbdd_1ad56ef7e2eb2407d562a8a065878fbbdd">
                 <title>static bool ConfigureOneFlag.DatabaseFactory.CustomerOnCreditHold (string custnum)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_adec1d318fce610a0e24c55bc7c31cf0e_1adec1d318fce610a0e24c55bc7c31cf0e">
+                <title>static void ConfigureOneFlag.DatabaseFactory.DeleteBOM (string orderNum)</title> <emphasis></emphasis>
                 
             </section>
 </section>
