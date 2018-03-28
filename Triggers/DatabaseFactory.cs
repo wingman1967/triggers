@@ -178,11 +178,9 @@ namespace ConfigureOneFlag
             }
             catch (Exception RBError)
             {
-                Triggers.logEvent = "ERROR WRITING GR_CFGCfgRoute: " + RBError.Message;
+                Triggers.logEvent = "ERROR WRITING GR_CfgRouteBOM: " + RBError.Message;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             }
-
-            
         }
         public static string UserName(string id)
         {
