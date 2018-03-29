@@ -682,10 +682,12 @@ namespace ConfigureOneFlag
                         route.BOM_ID = nodecrtg.ChildNodes[0].InnerText;
 
                         //isolate OPERATION elements from Routing and process
-                        XmlNodeList xnlOperation = detailDoc.GetElementsByTagName("Operation");
+                        XmlDocument routeOP = new XmlDocument();
+                        routeOP.LoadXml(nodecr.OuterXml);
+                        XmlNodeList xnlOperation = routeOP.GetElementsByTagName("Operation");
                         foreach (XmlNode nodeol in xnlOperation)
                         {
-                            var operationParentTL = nodeol.SelectSingleNode("..");             //current operation becomes our new parent
+                            var operationParentTL = nodeol.SelectSingleNode(".");             //current operation becomes our new parent (.. to .)
                             XmlDocument operationDocumentTL = new XmlDocument();
                             operationDocumentTL.LoadXml(operationParentTL.OuterXml);
                             XmlNodeList xnlOP = operationDocumentTL.GetElementsByTagName("OperationParam");
@@ -705,6 +707,7 @@ namespace ConfigureOneFlag
 
                             //set current operation as new parent and look ONLY for its OperationInput tags
                             var operationParent = nodeol.SelectSingleNode(".");     //ensure we traverse ONLY descendants of this node (Operation) as the new parent 
+                            
                             XmlDocument operationDoc = new XmlDocument();
                             operationDoc.LoadXml(operationParent.OuterXml);
                             XmlNodeList xnlOperationInputs = operationDoc.GetElementsByTagName("OperationInput");
@@ -729,7 +732,7 @@ namespace ConfigureOneFlag
                 DatabaseFactory.ResequenceBOM(bom.CO_Num, bom.CO_Line);
 
                 //If we used routeBOM, dump the old-process BOM records
-                if (UseRouteBOM) { DatabaseFactory.DeleteBOM(co.CORefNum); }
+                //if (UseRouteBOM) { DatabaseFactory.DeleteBOM(co.CORefNum); }
             }
             DatabaseFactory.WriteRecordCO(ref co);              //deferred write
         }
