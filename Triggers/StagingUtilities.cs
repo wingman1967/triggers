@@ -660,7 +660,6 @@ namespace ConfigureOneFlag
                     }
                     //output BOM record
                     DatabaseFactory.WriteRecordBOM(ref bom);
-                    //just a comment
                 }
                 //Routing - Output only if the Routing tag contains a nodelist  count greater than 0
                 Triggers.logEvent = "STARTING ROUTING LOGIC";
