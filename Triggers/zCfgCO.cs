@@ -70,6 +70,8 @@ namespace ConfigureOneFlag
         private DateTime request_date;
         private string destination_country;
         private string orderheader_notes;
+        private string end_user;
+        private string engineer;
         public string Identifier
         {
             get { return id; }
@@ -364,6 +366,16 @@ namespace ConfigureOneFlag
         {
             get { return orderheader_notes; }
             set { orderheader_notes = value; }
+        }
+        public string EndUser
+        {
+            get { return end_user; }
+            set { end_user = value; }
+        }
+        public string Engineer
+        {
+            get { return engineer; }
+            set { engineer = value; }
         }
     }
 }

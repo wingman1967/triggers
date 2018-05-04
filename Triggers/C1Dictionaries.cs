@@ -89,6 +89,8 @@ namespace ConfigureOneFlag
             fieldLengths.Add("CO:dropship_email", 60);
             fieldLengths.Add("CO:destination_country", 40);
             fieldLengths.Add("CO:ORDER_HEADER_NOTES", 1000);
+            fieldLengths.Add("CO:end_user", 100);
+            fieldLengths.Add("CO:engineer", 100);
             //COITEM Fields
             fieldLengths.Add("COItem:order_num", 15);
             fieldLengths.Add("COItem:ser_num", 15);
@@ -167,6 +169,9 @@ namespace ConfigureOneFlag
                 case "CO:ship_to_phone_number": switch (co.ShipToPhoneNumber.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.ShipToPhoneNumber.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.ShipToPhoneNumber); break; default: fieldlength = co.ShipToPhoneNumber.Length; break; } break;
                 case "CO:destination_country": switch (co.DestinationCountry.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.DestinationCountry.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.DestinationCountry); break; default: fieldlength = co.DestinationCountry.Length; break; } break;
                 case "CO:ORDER_HEADER_NOTES": switch (co.OrderHeaderNotes.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.OrderHeaderNotes.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.OrderHeaderNotes); break; default: fieldlength = co.OrderHeaderNotes.Length; break; } break;
+                case "CO:project": switch (co.Project.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.Project.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.Project); break; default: fieldlength = co.Project.Length; break; } break;
+                case "CO:end_user": switch (co.EndUser.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.EndUser.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.EndUser); break; default: fieldlength = co.EndUser.Length; break; } break;
+                case "CO:engineer": switch (co.Engineer.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.Engineer.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.Engineer); break; default: fieldlength = co.Engineer.Length; break; } break;
             }
 
             return fieldlength;

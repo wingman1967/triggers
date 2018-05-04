@@ -125,11 +125,12 @@ namespace ConfigureOneFlag
             {
                 co.ErpReferenceNum = node.InnerText;
             }
-            xnl = xmldoc.GetElementsByTagName("PROJECT");
-            foreach (XmlNode node in xnl)
-            {
-                co.Project = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
+            //We are now looking for PROJECT in co-header inputs 5/4/2018
+            //xnl = xmldoc.GetElementsByTagName("PROJECT");
+            //foreach (XmlNode node in xnl)
+            //{
+            //    co.Project = node.InnerText.Length == 0 ? " " : node.InnerText;
+            //}
             xnl = xmldoc.GetElementsByTagName("PAYMENT_TERMS");
             foreach (XmlNode node in xnl)
             {
@@ -389,7 +390,13 @@ namespace ConfigureOneFlag
                 co.DropShipAddress3 = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_4']", nsmgr);
                 co.DropShipAddress4 = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
-                
+                nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='PROJECT']", nsmgr);
+                co.Project = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='END_USER']", nsmgr);
+                co.EndUser = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='ENGINEER']", nsmgr);
+                co.Engineer = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+
                 //evaluate CITY and then CIty if the former fails, as some XML is loaded improperly with mixed-case for City
                 try
                 {
