@@ -1,4 +1,3 @@
-c:\users\hinesj\documents\visual studio 2015\Projects\Triggers\Triggers\obj\Debug\Triggers.csprojResolveAssemblyReference.cache
 c:\users\hinesj\documents\visual studio 2015\Projects\Triggers\Triggers\bin\Debug\ConfigureOne.dll
 c:\users\hinesj\documents\visual studio 2015\Projects\Triggers\Triggers\bin\Debug\ConfigureOne.pdb
 c:\users\hinesj\documents\visual studio 2015\Projects\Triggers\Triggers\obj\Debug\ConfigureOne.dll
@@ -9,3 +8,4 @@ C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debu
 C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debug\clrzmq-ext.xml
 C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\obj\Debug\Triggers.csproj.CoreCompileInputs.cache
 C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\obj\Debug\Triggers.csproj.CopyComplete
+C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\obj\Debug\Triggers.csprojAssemblyReference.cache

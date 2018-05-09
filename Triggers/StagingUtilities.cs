@@ -29,7 +29,7 @@ namespace ConfigureOneFlag
             nsmgr.AddNamespace("xsl", "http://www.w3.org/1999/XSL/Transform");
             nsmgr.AddNamespace("soapenv", "http://schemas.xmlsoap.org/soap/envelope/");
             nsmgr.AddNamespace("c1", "http://ws.configureone.com");
-
+            
             //*** Determine what site we are working with and re-set the connection string accordingly, else default to NOVB and abort
             foundSite = true;
             XmlNodeList xnlsite = xmldoc.GetElementsByTagName("Input");
@@ -37,13 +37,14 @@ namespace ConfigureOneFlag
             {
                 XmlNode nodeSite = node.SelectSingleNode("//c1:Input[@name='ORDER_SITE']", nsmgr);
                 dbSite = nodeSite.ChildNodes[0].Attributes["name"].InnerXml;
-                if (dbSite == null) { foundSite = false; }
-                
+                //if (dbSite == null) { foundSite = false; }
+                foundSite &= dbSite != null;
+
                 switch (foundSite == true)
                 {
                     case true:
                         string rplConnectionString = DatabaseFactory.connectionString;
-                        int csPos = rplConnectionString.IndexOf("NOVB");
+                        int csPos = rplConnectionString.IndexOf("NOVB", StringComparison.CurrentCulture);
                         DatabaseFactory.connectionString = rplConnectionString.Substring(0, csPos) + dbSite + rplConnectionString.Substring(csPos + 4, rplConnectionString.Length - (csPos + 4));
                         Triggers.logEvent = "Connection String: " + DatabaseFactory.connectionString;
                         //System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
@@ -67,19 +68,16 @@ namespace ConfigureOneFlag
             DatabaseFactory.ExecutePreCache();
 
             //Pre-staging activities
-            XmlNodeList xnl = xmldoc.GetElementsByTagName("ORDER_NUM");
-            foreach (XmlNode node in xnl)
-            {
-                co.CO_Num = node.InnerText;
-                coitem.CO_Num = node.InnerText;
-                cfg.CO_Num = node.InnerText;
-                citem.CO_Num = node.InnerText;
-                bom.CO_Num = node.InnerText;
-                globalOrderNum = co.CO_Num;
-                globalOrderLineNum = 0;
-            }
+            XmlNode xnode = xmldoc.SelectSingleNode("//c1:ORDER_NUM", nsmgr);
+            co.CO_Num = xnode.InnerText;
+            coitem.CO_Num = xnode.InnerText;
+            cfg.CO_Num = xnode.InnerText;
+            citem.CO_Num = xnode.InnerText;
+            bom.CO_Num = xnode.InnerText;
+            globalOrderNum = co.CO_Num;
+            globalOrderLineNum = 0;
             
-            switch (co.CO_Num == null || co.CO_Num == "")
+            switch (string.IsNullOrEmpty(co.CO_Num))
             {
                 case true:
                     Triggers.logEvent = "ORDER NUMBER NOT FOUND: " + co.CO_Num;
@@ -92,186 +90,48 @@ namespace ConfigureOneFlag
             }
             Triggers.logEvent = "MAPPING XML TO STAGING TABLES";
             System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-            
+
             //build CO header
-            xnl = xmldoc.GetElementsByTagName("ID");
-            foreach (XmlNode node in xnl)
-            {
-                co.Identifier = node.InnerText;
-                break;          //we want first occurrence, ONLY
-            }
-            xnl = xmldoc.GetElementsByTagName("ORDER_REF_NUM");
-            foreach (XmlNode node in xnl)
-            {
-                co.CORefNum = node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("CUST_NAME");
-            foreach (XmlNode node in xnl)
-            {
-                co.CustName = node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("CUST_REF_NUM");
-            foreach (XmlNode node in xnl)
-            {
-                co.CustRefNum = node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("ACCOUNT_NUM");
-            foreach (XmlNode node in xnl)
-            {
-                co.AccountNum = node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("ERP_REFERENCE_NUM");
-            foreach (XmlNode node in xnl)
-            {
-                co.ErpReferenceNum = node.InnerText;
-            }
-            //We are now looking for PROJECT in co-header inputs 5/4/2018
-            //xnl = xmldoc.GetElementsByTagName("PROJECT");
-            //foreach (XmlNode node in xnl)
-            //{
-            //    co.Project = node.InnerText.Length == 0 ? " " : node.InnerText;
-            //}
-            xnl = xmldoc.GetElementsByTagName("PAYMENT_TERMS");
-            foreach (XmlNode node in xnl)
-            {
-                co.PaymentTerms = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("SHIP_VIA");
-            foreach (XmlNode node in xnl)
-            {
-                co.ShipVia = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("SHIPPING_TERMS");
-            foreach (XmlNode node in xnl)
-            {
-                co.ShippingTerms = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("BILL_TO_CONTACT_NAME");
-            foreach (XmlNode node in xnl)
-            {
-                co.BillToContactName = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("BILL_TO_ADDRESS_LINE_1");
-            foreach (XmlNode node in xnl)
-            {
-                co.BillToAddressLine1 = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("BILL_TO_ADDRESS_LINE_2");
-            foreach (XmlNode node in xnl)
-            {
-                co.BillToAddressLine2 = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("BILL_TO_ADDRESS_LINE_3");
-            foreach (XmlNode node in xnl)
-            {
-                co.BillToAddressLine3 = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("BILL_TO_CITY");
-            foreach (XmlNode node in xnl)
-            {
-                co.BillToCity = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("BILL_TO_STATE");
-            foreach (XmlNode node in xnl)
-            {
-                co.BillToState = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("BILL_TO_COUNTRY");
-            foreach (XmlNode node in xnl)
-            {
-                co.BillToCountry = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("BILL_TO_POSTAL_CODE");
-            foreach (XmlNode node in xnl)
-            {
-                co.BillToPostalCode = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("BILL_TO_PHONE_NUMBER");
-            foreach (XmlNode node in xnl)
-            {
-                co.BillToPhoneNumber = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("BILL_TO_FAX_NUMBER");
-            foreach (XmlNode node in xnl)
-            {
-                co.BillToFaxNumber = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("BILL_TO_EMAIL_ADDRESS");
-            foreach (XmlNode node in xnl)
-            {
-                co.BillToEmailAddress = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            //xnl = xmldoc.GetElementsByTagName("BILL_TO_REF_NUM");
-            xnl = xmldoc.GetElementsByTagName("BILL_TO_ERP_CONTACT_REF_NUM");
-            foreach (XmlNode node in xnl)
-            {
-                co.BillToRefNum = node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("SHIP_TO_CONTACT_NAME");
-            foreach (XmlNode node in xnl)
-            {
-                co.ShipToContactName = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("SHIP_TO_ADDRESS_LINE_1");
-            foreach (XmlNode node in xnl)
-            {
-                co.ShipToAddressLine1 = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("SHIP_TO_ADDRESS_LINE_2");
-            foreach (XmlNode node in xnl)
-            {
-                co.ShipToAddressLine2 = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("SHIP_TO_ADDRESS_LINE_3");
-            foreach (XmlNode node in xnl)
-            {
-                co.ShipToAddressLine3 = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("SHIP_TO_CITY");
-            foreach (XmlNode node in xnl)
-            {
-                co.ShipToCity = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("SHIP_TO_STATE");
-            foreach (XmlNode node in xnl)
-            {
-                co.ShipToState = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("SHIP_TO_COUNTRY");
-            foreach (XmlNode node in xnl)
-            {
-                co.ShipToCountry = node.InnerText.Length == 0 ? " " : DatabaseFactory.RetrieveISOCountry(node.InnerText);
-            }
-            xnl = xmldoc.GetElementsByTagName("SHIP_TO_POSTAL_CODE");
-            foreach (XmlNode node in xnl)
-            {
-                co.ShipToPostalCode = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("SHIP_TO_PHONE_NUMBER");
-            foreach (XmlNode node in xnl)
-            {
-                co.ShipToPhoneNumber = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("SHIP_TO_FAX_NUMBER");
-            foreach (XmlNode node in xnl)
-            {
-                co.ShipToFaxNumber = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("SHIP_TO_EMAIL_ADDRESS");
-            foreach (XmlNode node in xnl)
-            {
-                co.ShipToEmailAddress = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            //xnl = xmldoc.GetElementsByTagName("SHIP_TO_REF_NUM");
-            xnl = xmldoc.GetElementsByTagName("SHIP_TO_ERP_CONTACT_REF_NUM");
-            foreach (XmlNode node in xnl)
-            {
-                co.ShipToRefNum = node.InnerText;
-            }
+            co.Identifier = LoadFromXML(xmldoc, "//c1:ID", nsmgr);
+            co.CORefNum = LoadFromXML(xmldoc, "//c1:ORDER_REF_NUM", nsmgr);
+            co.CustName = LoadFromXML(xmldoc, "//c1:CUST_NAME", nsmgr);
+            co.CustRefNum = LoadFromXML(xmldoc, "//c1:CUST_REF_NUM", nsmgr);
+            co.AccountNum = LoadFromXML(xmldoc, "//c1:ACCOUNT_NUM", nsmgr);
+            co.ErpReferenceNum = LoadFromXML(xmldoc, "//c1:ERP_REFERENCE_NUM", nsmgr);
+            co.PaymentTerms = LoadFromXML(xmldoc, "//c1:PAYMENT_TERMS", nsmgr);
+            co.ShipVia = LoadFromXML(xmldoc, "//c1:SHIP_VIA", nsmgr);
+            co.ShippingTerms = LoadFromXML(xmldoc, "//c1:SHIPPING_TERMS", nsmgr);
+            co.BillToContactName = LoadFromXML(xmldoc, "//c1:BILL_TO_CONTACT_NAME", nsmgr);
+            co.BillToAddressLine1 = LoadFromXML(xmldoc, "//c1:BILL_TO_ADDRESS_LINE_1", nsmgr);
+            co.BillToAddressLine2 = LoadFromXML(xmldoc, "//c1:BILL_TO_ADDRESS_LINE_2", nsmgr);
+            co.BillToAddressLine3 = LoadFromXML(xmldoc, "//c1:BILL_TO_ADDRESS_LINE_3", nsmgr);
+            co.BillToCity = LoadFromXML(xmldoc, "//c1:BILL_TO_CITY", nsmgr);
+            co.BillToState = LoadFromXML(xmldoc, "//c1:BILL_TO_STATE", nsmgr);
+            co.BillToCountry = LoadFromXML(xmldoc, "//c1:BILL_TO_COUNTRY", nsmgr);
+            co.BillToPostalCode = LoadFromXML(xmldoc, "//c1:BILL_TO_POSTAL_CODE", nsmgr);
+            co.BillToPhoneNumber = LoadFromXML(xmldoc, "//c1:BILL_TO_PHONE_NUMBER", nsmgr);
+            co.BillToFaxNumber = LoadFromXML(xmldoc, "//c1:BILL_TO_FAX_NUMBER", nsmgr);
+            co.BillToEmailAddress = LoadFromXML(xmldoc, "//c1:BILL_TO_EMAIL_ADDRESS", nsmgr);
+            co.BillToRefNum = LoadFromXML(xmldoc, "//c1:BILL_TO_ERP_CONTACT_REF_NUM", nsmgr);
+            co.ShipToContactName = LoadFromXML(xmldoc, "//c1:SHIP_TO_CONTACT_NAME", nsmgr);
+            co.ShipToAddressLine1 = LoadFromXML(xmldoc, "//c1:SHIP_TO_ADDRESS_LINE_1", nsmgr);
+            co.ShipToAddressLine2 = LoadFromXML(xmldoc, "//c1:SHIP_TO_ADDRESS_LINE_2", nsmgr);
+            co.ShipToAddressLine3 = LoadFromXML(xmldoc, "//c1:SHIP_TO_ADDRESS_LINE_3", nsmgr);
+            co.ShipToCity = LoadFromXML(xmldoc, "//c1:SHIP_TO_CITY", nsmgr);
+            co.ShipToState = LoadFromXML(xmldoc, "//c1:SHIP_TO_STATE", nsmgr);
+
+            xnode = xmldoc.SelectSingleNode("//c1:SHIP_TO_COUNTRY", nsmgr);
+            co.ShipToCountry = xnode.InnerText.Length == 0 ? " " : DatabaseFactory.RetrieveISOCountry(xnode.InnerText);
+
+            co.ShipToPostalCode = LoadFromXML(xmldoc, "//c1:SHIP_TO_POSTAL_CODE", nsmgr);
+            co.ShipToPhoneNumber = LoadFromXML(xmldoc, "//c1:SHIP_TO_PHONE_NUMBER", nsmgr);
+            co.ShipToFaxNumber = LoadFromXML(xmldoc, "//c1:SHIP_TO_FAX_NUMBER", nsmgr);
+            co.ShipToEmailAddress = LoadFromXML(xmldoc, "//c1:SHIP_TO_EMAIL_ADDRESS", nsmgr);
+            co.ShipToRefNum = LoadFromXML(xmldoc, "//c1:SHIP_TO_ERP_CONTACT_REF_NUM", nsmgr);
 
             //See if customer is on hold and if so, log and abort
             string custSeq = "";
-            int sPos = co.ShipToRefNum.IndexOf("-");
+            int sPos = co.ShipToRefNum.IndexOf("-", StringComparison.CurrentCulture);
             custSeq = co.ShipToRefNum.Substring(sPos + 1, (co.ShipToRefNum.Length - (sPos + 1)));
             string customerHoldReason = "";
 
@@ -300,23 +160,11 @@ namespace ConfigureOneFlag
                 return;
             }
 
-            xnl = xmldoc.GetElementsByTagName("PRIORITY_LEVEL");
-            foreach (XmlNode node in xnl)
-            {
-                co.PriorityLevel = Convert.ToInt16(node.InnerText);
-            }
-            xnl = xmldoc.GetElementsByTagName("SERIAL_NUMBER");
-            foreach (XmlNode node in xnl)
-            {
-                co.QuoteNbr = node.InnerText.Length == 0 ? " " : node.InnerText;
-            }
-            xnl = xmldoc.GetElementsByTagName("CREATED_BY_USER_ID");
-            foreach (XmlNode node in xnl)
-            {
-                //co.WebUserName = DatabaseFactory.UserName(node.InnerText);    //per Grant, 10/2017 pass-through the ID as-is
-                co.WebUserName = node.InnerText;
-            }
-            
+            xnode = xmldoc.SelectSingleNode("//c1:PRIORITY_LEVEL", nsmgr);
+            co.PriorityLevel = Convert.ToInt16(xnode.InnerText);
+
+            co.QuoteNbr = LoadFromXML(xmldoc, "//c1:SERIAL_NUMBER", nsmgr);
+            co.WebUserName = LoadFromXML(xmldoc, "//c1:CREATED_BY_USER_ID", nsmgr);
             co.WebOrderDate = System.DateTime.Now;
 
             //Look for PURCHASE ORDER in INPUTS, load into CO and COITEM
@@ -331,7 +179,6 @@ namespace ConfigureOneFlag
             //Look for FREIGHT TERMS in INPUTS, load into CO
             XmlNode nodeFT = xmldoc.SelectSingleNode("//c1:Input[@name='FREIGHT_TERMS']", nsmgr);
             co.FreightTerms = nodeFT.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeFT.ChildNodes[0].Attributes["name"].InnerXml;
-
             co.OrderHeaderNotes = " ";
 
             //Look for Order Header Notes, load into CO
@@ -440,7 +287,7 @@ namespace ConfigureOneFlag
             co.DropShipContact.Replace("&amp;", "&");
 
             //build COITEM records, per line
-            xnl = xmldoc.GetElementsByTagName("Detail");
+            XmlNodeList xnl = xmldoc.GetElementsByTagName("Detail");
             foreach (XmlNode node in xnl)
             {
                 XmlNode nodertv = node.SelectSingleNode("c1:ORDER_LINE_NUM", nsmgr);
@@ -460,10 +307,10 @@ namespace ConfigureOneFlag
                     coitem.Item = " ";
                     coitem.Smartpart = " ";
                 }
-                
+
                 if (coitem.Item == "") { coitem.Item = " "; }
                 if (coitem.Smartpart == "") { coitem.Smartpart = " "; }
-                
+
                 nodertv = node.SelectSingleNode("c1:DESCRIPTION", nsmgr);
                 coitem.Desc = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].InnerText;
                 nodertv = node.SelectSingleNode("c1:TYPE", nsmgr);
@@ -742,6 +589,13 @@ namespace ConfigureOneFlag
                 //if (UseRouteBOM) { DatabaseFactory.DeleteBOM(co.CORefNum); }
             }
             DatabaseFactory.WriteRecordCO(ref co);              //deferred write
+        }
+        public static string LoadFromXML(XmlDocument xmldoc, string element, XmlNamespaceManager nsmgr)
+        {
+            string returnValue = "";
+            XmlNode xnode = xmldoc.SelectSingleNode(element, nsmgr);
+            returnValue = string.IsNullOrEmpty(xnode.InnerText) ? " " : xnode.InnerText;
+            return returnValue;
         }
     }
 }

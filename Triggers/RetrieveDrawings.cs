@@ -32,26 +32,28 @@ namespace ConfigureOneFlag
             //Send command to ZMQ listener to process newly created record from queue
             //setup
             using (ZMQ.Context context = new ZMQ.Context())
-            using (ZMQ.Socket requester = context.Socket(ZMQ.SocketType.REQ))
             {
-                //connect to remote endpoint, <server>  
-                if (Triggers.dbEnvironment == "PROD")
+                using (ZMQ.Socket requester = context.Socket(ZMQ.SocketType.REQ))
                 {
-                    requester.Connect("tcp://192.168.23.19:5555");  //grc000dmzbus
+                    //connect to remote endpoint, <server>  
+                    if (Triggers.dbEnvironment == "PROD")
+                    {
+                        requester.Connect("tcp://192.168.23.19:5555");  //grc000dmzbus
+                    }
+                    else
+                    {
+                        requester.Connect("tcp://172.16.1.60:5555");    //grctslsql0 (dev)
+                    }
+
+                    //send on the REQ pattern
+                    string requestText = "PROCESS:" + Triggers.pubOrderNumber;
+                    requester.Send(Encoding.ASCII.GetBytes(requestText.ToCharArray()));
+
+                    //receive Response on the REP pattern
+                    string ackMsg = requester.Recv(Encoding.ASCII);
+                    Triggers.logEvent = "Message received from ZMQ: " + ackMsg;
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                 }
-                else
-                {
-                    requester.Connect("tcp://172.16.1.60:5555");    //grctslsql0 (dev)
-                }
-                
-                //send on the REQ pattern
-                string requestText = "PROCESS:" + Triggers.pubOrderNumber;
-                requester.Send(Encoding.ASCII.GetBytes(requestText.ToCharArray()));
-                
-                //receive Response on the REP pattern
-                string ackMsg = requester.Recv(Encoding.ASCII);
-                Triggers.logEvent = "Message received from ZMQ: " + ackMsg;
-                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             }
         }
     }
