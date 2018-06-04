@@ -119,10 +119,7 @@ namespace ConfigureOneFlag
             co.ShipToAddressLine3 = LoadFromXML(xmldoc, "//c1:SHIP_TO_ADDRESS_LINE_3", nsmgr);
             co.ShipToCity = LoadFromXML(xmldoc, "//c1:SHIP_TO_CITY", nsmgr);
             co.ShipToState = LoadFromXML(xmldoc, "//c1:SHIP_TO_STATE", nsmgr);
-
-            xnode = xmldoc.SelectSingleNode("//c1:SHIP_TO_COUNTRY", nsmgr);
-            co.ShipToCountry = xnode.InnerText.Length == 0 ? " " : DatabaseFactory.RetrieveISOCountry(xnode.InnerText);
-
+            co.ShipToCountry = DatabaseFactory.RetrieveISOCountry(LoadFromXML(xmldoc, "//c1:SHIP_TO_COUNTRY", nsmgr));
             co.ShipToPostalCode = LoadFromXML(xmldoc, "//c1:SHIP_TO_POSTAL_CODE", nsmgr);
             co.ShipToPhoneNumber = LoadFromXML(xmldoc, "//c1:SHIP_TO_PHONE_NUMBER", nsmgr);
             co.ShipToFaxNumber = LoadFromXML(xmldoc, "//c1:SHIP_TO_FAX_NUMBER", nsmgr);
@@ -160,8 +157,16 @@ namespace ConfigureOneFlag
                 return;
             }
 
-            xnode = xmldoc.SelectSingleNode("//c1:PRIORITY_LEVEL", nsmgr);
-            co.PriorityLevel = Convert.ToInt16(xnode.InnerText);
+            try
+            {
+                co.PriorityLevel = Convert.ToInt16(LoadFromXML(xmldoc, "//c1:PRIORITY_LEVEL", nsmgr));
+            }
+            catch (Exception exPL)
+            {
+                co.PriorityLevel = 0;                //there is no priority_level in the XML
+                Triggers.logEvent = "There is no PRIORITY_LEVEL in the XML.  Defaulting PRIORITY_LEVEL to 0";
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
+            }
 
             co.QuoteNbr = LoadFromXML(xmldoc, "//c1:SERIAL_NUMBER", nsmgr);
             co.WebUserName = LoadFromXML(xmldoc, "//c1:CREATED_BY_USER_ID", nsmgr);
@@ -186,13 +191,13 @@ namespace ConfigureOneFlag
             {
                 XmlNode nodeOHN = xmldoc.SelectSingleNode("//c1:Input[@name='ORDER_HEADER_NOTES']", nsmgr);
                 co.OrderHeaderNotes = nodeOHN.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeOHN.ChildNodes[0].Attributes["name"].InnerXml;
+                co.OrderHeaderNotes.Replace("&amp;", "&");
             }
             catch (Exception lnex)
             {
                 Triggers.logEvent = "Order_Note error: " + lnex.Message;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
             }
-            
 
             //Retrieve due date
             co.DueDate = DateTime.Now;
@@ -325,7 +330,6 @@ namespace ConfigureOneFlag
                 coitem.QTY = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
                 coitem.PriorityLevel = co.PriorityLevel;
                 globalOrderLineNum = coitem.CO_Line;
-
                 coitem.OrderLineNotes = " ";
                 
                 //Look for Line Notes, load into COItem
@@ -333,6 +337,7 @@ namespace ConfigureOneFlag
                 {
                     nodertv = node.SelectSingleNode("c1:Input[@name='LINE_NOTES']", nsmgr);
                     coitem.OrderLineNotes = nodertv.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodertv.ChildNodes[0].Attributes["name"].InnerXml;
+                    coitem.OrderLineNotes.Replace("&amp;", "&");
                 }
                 catch (Exception exrtv)
                 {
@@ -541,7 +546,7 @@ namespace ConfigureOneFlag
                         XmlNodeList xnlOperation = routeOP.GetElementsByTagName("Operation");
                         foreach (XmlNode nodeol in xnlOperation)
                         {
-                            var operationParentTL = nodeol.SelectSingleNode(".");             //current operation becomes our new parent (.. to .)
+                            XmlNode operationParentTL = nodeol.SelectSingleNode(".");             //current operation becomes our new parent (.. to .)
                             XmlDocument operationDocumentTL = new XmlDocument();
                             operationDocumentTL.LoadXml(operationParentTL.OuterXml);
                             XmlNodeList xnlOP = operationDocumentTL.GetElementsByTagName("OperationParam");
