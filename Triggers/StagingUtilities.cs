@@ -36,16 +36,35 @@ namespace ConfigureOneFlag
             foreach (XmlNode node in xnlsite)
             {
                 XmlNode nodeSite = node.SelectSingleNode("//c1:Input[@name='ORDER_SITE']", nsmgr);
+                try
+                {
+                    dbSite = nodeSite.ChildNodes[0].Attributes["name"].InnerXml;
+                    Triggers.logEvent = "Site: " + dbSite;
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+                }
+                catch (Exception exSite)
+                {
+                    Triggers.logEvent = "ERROR occurred: " + exSite.Message;
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
+                }
                 dbSite = nodeSite.ChildNodes[0].Attributes["name"].InnerXml;
-                //if (dbSite == null) { foundSite = false; }
-                foundSite &= dbSite != null;
+                if (dbSite == null) { foundSite = false; }
+                //foundSite &= dbSite != null;
+
+                Triggers.logEvent = "Initial CS: " + DatabaseFactory.connectionString;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
                 switch (foundSite == true)
                 {
                     case true:
                         string rplConnectionString = DatabaseFactory.connectionString;
-                        int csPos = rplConnectionString.IndexOf("NOVB", StringComparison.CurrentCulture);
+                        //int csPos = rplConnectionString.IndexOf("NOVB", StringComparison.CurrentCulture);
+                        //DatabaseFactory.connectionString = rplConnectionString.Substring(0, csPos) + dbSite + rplConnectionString.Substring(csPos + 4, rplConnectionString.Length - (csPos + 4));
+
+                        int csPos = rplConnectionString.IndexOf("SL_", StringComparison.CurrentCulture);
+                        csPos += 3;
                         DatabaseFactory.connectionString = rplConnectionString.Substring(0, csPos) + dbSite + rplConnectionString.Substring(csPos + 4, rplConnectionString.Length - (csPos + 4));
+
                         Triggers.logEvent = "Connection String: " + DatabaseFactory.connectionString;
                         //System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                         break;

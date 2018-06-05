@@ -78,6 +78,8 @@ namespace ConfigureOneFlag
                 try
                 {
                     xmlResult.LoadXml(result);
+                    logEvent = "Order Retrieved";
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                 }
                 catch (Exception ex2)
                 {
@@ -85,6 +87,7 @@ namespace ConfigureOneFlag
                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
                     return;
                 }
+
                 
                 // *** LOG TIME
                 endTime = DateTime.Now;
@@ -95,7 +98,10 @@ namespace ConfigureOneFlag
                 if (DatabaseFactory.debugLogging) { System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234); }
                 
                 startTime = DateTime.Now;
-                
+
+                logEvent = "About to output XML file";
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
                 //Save XML output to object for further handling
                 using (var stringWriter = new StringWriter())
                 using (var xmlTextWriter = XmlWriter.Create(stringWriter))
@@ -105,7 +111,10 @@ namespace ConfigureOneFlag
                     string xmlOut = stringWriter.GetStringBuilder().ToString();
                     Triggers.wsReturn = System.Xml.Linq.XDocument.Parse(xmlOut).ToString();
                 }
-                
+
+                logEvent = "XML output. Starting staging";
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+
                 if (Triggers.caller == "ORDER") {StagingUtilities.MapXMLToSQL(xmlResult);}
                 if (!StagingUtilities.foundSite) { return; }            //order_site not in the XML, processing must be aborted
                 if (Triggers.forceStop == 1) { return; }
