@@ -30,7 +30,7 @@ namespace ConfigureOneFlag
             nsmgr.AddNamespace("soapenv", "http://schemas.xmlsoap.org/soap/envelope/");
             nsmgr.AddNamespace("c1", "http://ws.configureone.com");
             
-            //*** Determine what site we are working with and re-set the connection string accordingly, else default to NOVB and abort
+            //*** Determine what site we are working with and re-set the connection string accordingly, else default and abort
             foundSite = true;
             XmlNodeList xnlsite = xmldoc.GetElementsByTagName("Input");
             foreach (XmlNode node in xnlsite)
@@ -39,8 +39,6 @@ namespace ConfigureOneFlag
                 try
                 {
                     dbSite = nodeSite.ChildNodes[0].Attributes["name"].InnerXml;
-                    Triggers.logEvent = "Site: " + dbSite;
-                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                 }
                 catch (Exception exSite)
                 {
@@ -51,28 +49,22 @@ namespace ConfigureOneFlag
                 if (dbSite == null) { foundSite = false; }
                 //foundSite &= dbSite != null;
 
-                Triggers.logEvent = "Initial CS: " + DatabaseFactory.connectionString;
-                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-
                 switch (foundSite == true)
                 {
                     case true:
                         string rplConnectionString = DatabaseFactory.connectionString;
-                        //int csPos = rplConnectionString.IndexOf("NOVB", StringComparison.CurrentCulture);
-                        //DatabaseFactory.connectionString = rplConnectionString.Substring(0, csPos) + dbSite + rplConnectionString.Substring(csPos + 4, rplConnectionString.Length - (csPos + 4));
-
                         int csPos = rplConnectionString.IndexOf("SL_", StringComparison.CurrentCulture);
                         csPos += 3;
                         DatabaseFactory.connectionString = rplConnectionString.Substring(0, csPos) + dbSite + rplConnectionString.Substring(csPos + 4, rplConnectionString.Length - (csPos + 4));
-
-                        Triggers.logEvent = "Connection String: " + DatabaseFactory.connectionString;
-                        //System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                         break;
                     default:
                         //prepare to log the no-site and abort
                         break;
                 }
             }
+
+            Triggers.logEvent = "Site: " + dbSite;
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
             if (!foundSite)
             {
@@ -250,7 +242,6 @@ namespace ConfigureOneFlag
             XmlNodeList xnlds = xmldoc.GetElementsByTagName("Input");
             foreach (XmlNode nodeds in xnlds)
             {
-                //UPDATE 6/16/2017:  Preserve the selected ship-to from C1 and if dropship has value, load up the dropship fields
                 XmlNode nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_NAME']", nsmgr);
                 co.DropShipName = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_1']", nsmgr);
@@ -610,7 +601,7 @@ namespace ConfigureOneFlag
                 DatabaseFactory.ResequenceBOM(bom.CO_Num, bom.CO_Line);
 
                 //If we used routeBOM, dump the old-process BOM records
-                //if (UseRouteBOM) { DatabaseFactory.DeleteBOM(co.CORefNum); }
+                //if (UseRouteBOM) { DatabaseFactory.DeleteBOM(co.CORefNum); }          //this may be reinstated in the future
             }
             DatabaseFactory.WriteRecordCO(ref co);              //deferred write
         }

@@ -87,7 +87,6 @@ namespace ConfigureOneFlag
 
             string useMethod = "";
             if (Triggers.dbEnvironment == "PROD" && DatabaseFactory.dbprotect != "YES") { key = "getOrderPROD"; }
-            
             if (C1Dictionaries.webmethods.ContainsKey(key))
             {
                 useMethod = C1Dictionaries.webmethods[key];
