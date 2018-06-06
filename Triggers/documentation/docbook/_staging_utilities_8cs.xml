@@ -259,7 +259,7 @@ Utilities used for staging of data from C1 to SQL databases
 202 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 203 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNode&#32;nodeOHN&#32;=&#32;xmldoc.SelectSingleNode(<emphasis class="stringliteral">&quot;//c1:Input[@name=&apos;ORDER_HEADER_NOTES&apos;]&quot;</emphasis>,&#32;nsmgr);
 204 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.OrderHeaderNotes&#32;=&#32;nodeOHN.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].InnerXml.Length&#32;==&#32;0&#32;?&#32;<emphasis class="stringliteral">&quot;&#32;&quot;</emphasis>&#32;:&#32;nodeOHN.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].InnerXml;
-205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.OrderHeaderNotes.Replace(<emphasis class="stringliteral">&quot;&amp;amp;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;&amp;&quot;</emphasis>);
+205 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.OrderHeaderNotes&#32;=&#32;co.OrderHeaderNotes.Replace(<emphasis class="stringliteral">&quot;&amp;amp;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;&amp;&quot;</emphasis>);
 206 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 207 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;lnex)
 208 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
@@ -351,12 +351,12 @@ Utilities used for staging of data from C1 to SQL databases
 294 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 295 
 296 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Replace&#32;&amp;amp;&#32;in&#32;any&#32;dropship&#32;fields&#32;with&#32;&amp;</emphasis>
-297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipName.Replace(<emphasis class="stringliteral">&quot;&amp;amp;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;&amp;&quot;</emphasis>);
-298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress1.Replace(<emphasis class="stringliteral">&quot;&amp;amp;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;&amp;&quot;</emphasis>);
-299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress2.Replace(<emphasis class="stringliteral">&quot;&amp;amp;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;&amp;&quot;</emphasis>);
-300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress3.Replace(<emphasis class="stringliteral">&quot;&amp;amp;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;&amp;&quot;</emphasis>);
-301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress4.Replace(<emphasis class="stringliteral">&quot;&amp;amp;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;&amp;&quot;</emphasis>);
-302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipContact.Replace(<emphasis class="stringliteral">&quot;&amp;amp;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;&amp;&quot;</emphasis>);
+297 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipName&#32;=&#32;co.DropShipName.Replace(<emphasis class="stringliteral">&quot;&amp;amp;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;&amp;&quot;</emphasis>);
+298 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress1&#32;=&#32;co.DropShipAddress1.Replace(<emphasis class="stringliteral">&quot;&amp;amp;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;&amp;&quot;</emphasis>);
+299 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress2&#32;=&#32;co.DropShipAddress2.Replace(<emphasis class="stringliteral">&quot;&amp;amp;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;&amp;&quot;</emphasis>);
+300 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress3&#32;=&#32;co.DropShipAddress3.Replace(<emphasis class="stringliteral">&quot;&amp;amp;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;&amp;&quot;</emphasis>);
+301 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress4&#32;=&#32;co.DropShipAddress4.Replace(<emphasis class="stringliteral">&quot;&amp;amp;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;&amp;&quot;</emphasis>);
+302 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipContact&#32;=&#32;co.DropShipContact.Replace(<emphasis class="stringliteral">&quot;&amp;amp;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;&amp;&quot;</emphasis>);
 303 
 304 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//build&#32;COITEM&#32;records,&#32;per&#32;line</emphasis>
 305 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;XmlNodeList&#32;xnl&#32;=&#32;xmldoc.GetElementsByTagName(<emphasis class="stringliteral">&quot;Detail&quot;</emphasis>);
@@ -404,7 +404,7 @@ Utilities used for staging of data from C1 to SQL databases
 347 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
 348 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;nodertv&#32;=&#32;node.SelectSingleNode(<emphasis class="stringliteral">&quot;c1:Input[@name=&apos;LINE_NOTES&apos;]&quot;</emphasis>,&#32;nsmgr);
 349 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.OrderLineNotes&#32;=&#32;nodertv.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].InnerXml.Length&#32;==&#32;0&#32;?&#32;<emphasis class="stringliteral">&quot;&#32;&quot;</emphasis>&#32;:&#32;nodertv.ChildNodes[0].Attributes[<emphasis class="stringliteral">&quot;name&quot;</emphasis>].InnerXml;
-350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.OrderLineNotes.Replace(<emphasis class="stringliteral">&quot;&amp;amp;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;&amp;&quot;</emphasis>);
+350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.OrderLineNotes&#32;=&#32;coitem.OrderLineNotes.Replace(<emphasis class="stringliteral">&quot;&amp;amp;&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;&amp;&quot;</emphasis>);
 351 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 352 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;exrtv)
 353 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{

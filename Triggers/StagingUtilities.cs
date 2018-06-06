@@ -202,7 +202,7 @@ namespace ConfigureOneFlag
             {
                 XmlNode nodeOHN = xmldoc.SelectSingleNode("//c1:Input[@name='ORDER_HEADER_NOTES']", nsmgr);
                 co.OrderHeaderNotes = nodeOHN.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodeOHN.ChildNodes[0].Attributes["name"].InnerXml;
-                co.OrderHeaderNotes.Replace("&amp;", "&");
+                co.OrderHeaderNotes = co.OrderHeaderNotes.Replace("&amp;", "&");
             }
             catch (Exception lnex)
             {
@@ -294,12 +294,12 @@ namespace ConfigureOneFlag
             }
 
             //Replace &amp; in any dropship fields with &
-            co.DropShipName.Replace("&amp;", "&");
-            co.DropShipAddress1.Replace("&amp;", "&");
-            co.DropShipAddress2.Replace("&amp;", "&");
-            co.DropShipAddress3.Replace("&amp;", "&");
-            co.DropShipAddress4.Replace("&amp;", "&");
-            co.DropShipContact.Replace("&amp;", "&");
+            co.DropShipName = co.DropShipName.Replace("&amp;", "&");
+            co.DropShipAddress1 = co.DropShipAddress1.Replace("&amp;", "&");
+            co.DropShipAddress2 = co.DropShipAddress2.Replace("&amp;", "&");
+            co.DropShipAddress3 = co.DropShipAddress3.Replace("&amp;", "&");
+            co.DropShipAddress4 = co.DropShipAddress4.Replace("&amp;", "&");
+            co.DropShipContact = co.DropShipContact.Replace("&amp;", "&");
 
             //build COITEM records, per line
             XmlNodeList xnl = xmldoc.GetElementsByTagName("Detail");
@@ -347,7 +347,7 @@ namespace ConfigureOneFlag
                 {
                     nodertv = node.SelectSingleNode("c1:Input[@name='LINE_NOTES']", nsmgr);
                     coitem.OrderLineNotes = nodertv.ChildNodes[0].Attributes["name"].InnerXml.Length == 0 ? " " : nodertv.ChildNodes[0].Attributes["name"].InnerXml;
-                    coitem.OrderLineNotes.Replace("&amp;", "&");
+                    coitem.OrderLineNotes = coitem.OrderLineNotes.Replace("&amp;", "&");
                 }
                 catch (Exception exrtv)
                 {
