@@ -10,6 +10,7 @@ namespace ConfigureOneFlag
         public static void MailMessage(string messageBody, string messageSubject)
         {
             MailMessage mail = new MailMessage();
+            mail.IsBodyHtml = true;
             mail.From = new MailAddress(DatabaseFactory.emailFrom);
             mail.To.Add(new MailAddress(DatabaseFactory.emailaddr));
             mail.To.Add(new MailAddress("GrantH@NatlPump.com"));

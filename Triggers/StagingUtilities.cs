@@ -253,11 +253,14 @@ namespace ConfigureOneFlag
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_4']", nsmgr);
                 co.DropShipAddress4 = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='PROJECT']", nsmgr);
-                co.Project = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                //co.Project = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? null : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                co.Project = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='END_USER']", nsmgr);
-                co.EndUser = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                //co.EndUser = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? null : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                co.EndUser = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='ENGINEER']", nsmgr);
-                co.Engineer = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                //co.Engineer = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? null : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                co.Engineer = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
 
                 //evaluate CITY and then CIty if the former fails, as some XML is loaded improperly with mixed-case for City
                 try
