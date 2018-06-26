@@ -71,12 +71,13 @@ Send email to specified users for errors encountered during XML mapping
 14 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.From&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;MailAddress(<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a54d4a975b77e239367db262060b40eed_1a54d4a975b77e239367db262060b40eed">emailFrom</link>);
 15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.To.Add(<emphasis class="keyword">new</emphasis>&#32;MailAddress(<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a18b6157c87df47c35c9b7d4b9bcfa30e_1a18b6157c87df47c35c9b7d4b9bcfa30e">emailaddr</link>));
 16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.To.Add(<emphasis class="keyword">new</emphasis>&#32;MailAddress(<emphasis class="stringliteral">&quot;GrantH@NatlPump.com&quot;</emphasis>));
-17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.Subject&#32;=&#32;messageSubject;
-18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.Body&#32;=&#32;messageBody;
-19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SmtpClient&#32;smtp&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SmtpClient(<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a1410899026bc5e03fb6d023a4d5d9618_1a1410899026bc5e03fb6d023a4d5d9618">emailServer</link>);
-20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;smtp.Send(mail);
-21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-22 &#32;&#32;&#32;&#32;}
-23 }
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.To.Add(<emphasis class="keyword">new</emphasis>&#32;MailAddress(<emphasis class="stringliteral">&quot;Thomas.Stock@NatlPump.com&quot;</emphasis>));
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.Subject&#32;=&#32;messageSubject;
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.Body&#32;=&#32;messageBody;
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SmtpClient&#32;smtp&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SmtpClient(<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a1410899026bc5e03fb6d023a4d5d9618_1a1410899026bc5e03fb6d023a4d5d9618">emailServer</link>);
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;smtp.Send(mail);
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+23 &#32;&#32;&#32;&#32;}
+24 }
     </computeroutput></literallayout>
 </section>

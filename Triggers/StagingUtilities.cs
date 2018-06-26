@@ -87,6 +87,8 @@ namespace ConfigureOneFlag
             bom.CO_Num = xnode.InnerText;
             globalOrderNum = co.CO_Num;
             globalOrderLineNum = 0;
+            co.WebUserName = "";
+            co.WebOrderDate = System.DateTime.Now;
             
             switch (string.IsNullOrEmpty(co.CO_Num))
             {
@@ -253,13 +255,10 @@ namespace ConfigureOneFlag
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_4']", nsmgr);
                 co.DropShipAddress4 = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='PROJECT']", nsmgr);
-                //co.Project = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? null : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
                 co.Project = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='END_USER']", nsmgr);
-                //co.EndUser = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? null : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
                 co.EndUser = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='ENGINEER']", nsmgr);
-                //co.Engineer = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? null : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
                 co.Engineer = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
 
                 //evaluate CITY and then CIty if the former fails, as some XML is loaded improperly with mixed-case for City
@@ -533,7 +532,7 @@ namespace ConfigureOneFlag
                     //output BOM record
                     DatabaseFactory.WriteRecordBOM(ref bom);
                 }
-                //Routing - Output only if the Routing tag contains a nodelist  count greater than 0
+                //Routing - Output only if the Routing tag contains a nodelist count greater than 0
                 Triggers.logEvent = "STARTING ROUTING LOGIC";
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                 int routebomSeq = 0;
@@ -614,6 +613,10 @@ namespace ConfigureOneFlag
             XmlNode xnode = xmldoc.SelectSingleNode(element, nsmgr);
             returnValue = string.IsNullOrEmpty(xnode.InnerText) ? " " : xnode.InnerText;
             return returnValue;
+        }
+        public static void initCOFields()
+        {
+            
         }
     }
 }
