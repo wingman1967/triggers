@@ -309,8 +309,13 @@ namespace ConfigureOneFlag
             {
                 XmlNode nodertv = node.SelectSingleNode("c1:ORDER_LINE_NUM", nsmgr);
                 coitem.CO_Line = Convert.ToInt16(nodertv.ChildNodes[0].InnerText);
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
+
                 nodertv = node.SelectSingleNode("c1:SERIAL_NUM", nsmgr); 
                 coitem.Serial = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].InnerText;
+
+                Triggers.logEvent = "Processing line# " + coitem.CO_Line.ToString();
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
 
                 try
                 {
@@ -328,22 +333,48 @@ namespace ConfigureOneFlag
                 if (coitem.Item == "") { coitem.Item = " "; }
                 if (coitem.Smartpart == "") { coitem.Smartpart = " "; }
 
-                nodertv = node.SelectSingleNode("c1:DESCRIPTION", nsmgr);
-                coitem.Desc = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].InnerText;
-                nodertv = node.SelectSingleNode("c1:TYPE", nsmgr);
-                coitem.ConfigType = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].Value;
-                nodertv = node.SelectSingleNode("c1:UNIT_PRICE", nsmgr);
-                coitem.UnitPrice = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
-                nodertv = node.SelectSingleNode("c1:UNIT_COST", nsmgr);
-                coitem.UnitCost = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
-                nodertv = node.SelectSingleNode("c1:DISCOUNT_AMT", nsmgr);
-                coitem.Discount = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
-                nodertv = node.SelectSingleNode("c1:QUANTITY", nsmgr);
-                coitem.QTY = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
-                coitem.PriorityLevel = co.PriorityLevel;
-                globalOrderLineNum = coitem.CO_Line;
-                coitem.OrderLineNotes = " ";
+
+                try
+                {
+                    nodertv = node.SelectSingleNode("c1:DESCRIPTION", nsmgr);
+
+                    string chkPercent = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].InnerText;
+                    coitem.Desc = chkPercent.Replace("%", "[%]");
+
+                    coitem.Desc = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].InnerText;
+                    nodertv = node.SelectSingleNode("c1:TYPE", nsmgr);
+                    coitem.ConfigType = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].Value;
+                    nodertv = node.SelectSingleNode("c1:UNIT_PRICE", nsmgr);
+                    coitem.UnitPrice = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
+                    nodertv = node.SelectSingleNode("c1:UNIT_COST", nsmgr);
+
+                    try
+                    {
+                        coitem.UnitCost = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
+                    }
+                    catch (Exception costex)
+                    {
+                        coitem.UnitCost = 0;
+                        Triggers.logEvent = "Unit Cost invalid: " + costex.Message + " (Incoming value was: " + nodertv.ChildNodes[0].InnerText + "  Defaulting to 0)";
+                        System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
+                    }
+                    
+                    nodertv = node.SelectSingleNode("c1:DISCOUNT_AMT", nsmgr);
+                    coitem.Discount = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
+                    nodertv = node.SelectSingleNode("c1:QUANTITY", nsmgr);
+                    coitem.QTY = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
+                    coitem.PriorityLevel = co.PriorityLevel;
+                    globalOrderLineNum = coitem.CO_Line;
+                    coitem.OrderLineNotes = " ";
+                }
+                catch (Exception ciex)
+                {
+                    Triggers.logEvent = "COITEM Error: " + ciex.Message;
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
+                    return;
+                }
                 
+
                 //Look for Line Notes, load into COItem
                 try
                 {
