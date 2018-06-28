@@ -9,6 +9,7 @@ var class_configure_one_flag_1_1_database_factory =
     [ "DeleteBOM", "class_configure_one_flag_1_1_database_factory_adec1d318fce610a0e24c55bc7c31cf0e.html#adec1d318fce610a0e24c55bc7c31cf0e", null ],
     [ "ExecutePreCache", "class_configure_one_flag_1_1_database_factory_adb8f7b260d9ace708051700d1e20528f.html#adb8f7b260d9ace708051700d1e20528f", null ],
     [ "InsertDocumentRecord", "class_configure_one_flag_1_1_database_factory_a58f013f5a91fe754f457a1e3ad26ebea.html#a58f013f5a91fe754f457a1e3ad26ebea", null ],
+    [ "MoveQueueRecord", "class_configure_one_flag_1_1_database_factory_a6fba3443de3b8beba6d0648a75bff168.html#a6fba3443de3b8beba6d0648a75bff168", null ],
     [ "OrderCompleted", "class_configure_one_flag_1_1_database_factory_a51459bb022678d9e0defecb0adb1ac15.html#a51459bb022678d9e0defecb0adb1ac15", null ],
     [ "OrderExists", "class_configure_one_flag_1_1_database_factory_a4c86e61821f40ef2483dde7fbf125710.html#a4c86e61821f40ef2483dde7fbf125710", null ],
     [ "ResequenceBOM", "class_configure_one_flag_1_1_database_factory_acd9475f1b9763dfab5896656f96789a0.html#acd9475f1b9763dfab5896656f96789a0", null ],

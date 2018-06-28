@@ -55,6 +55,17 @@ namespace ConfigureOneFlag
                     System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                 }
             }
+            
+            //If site was not NOVB, disable the C1Order trigger for the order-site and then move the queue record to the appropriate site queue table
+            switch (StagingUtilities.dbSite)
+            {
+                case "NOVB":
+                    //do nothing
+                    break;
+                default:
+                    DatabaseFactory.MoveQueueRecord(Triggers.pubOrderNumber, StagingUtilities.dbSite);
+                    break;
+            }
         }
     }
 }

@@ -570,6 +570,78 @@ namespace ConfigureOneFlag
                 myCommand.ExecuteNonQuery();
             }
         }
+        public static void MoveQueueRecord(string orderNum, string dbSite)
+        {
+            try
+            {
+                //Delete trigger on target database/table, copy queue record, delete from NOVB
+                SQLCommand = "DISABLE TRIGGER C1Order ON SL_" + dbSite + "_App.dbo.GR_Cfg_Queue";
+                using (SqlConnection myConnection = new SqlConnection(connectionString))
+                {
+                    SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
+                    myCommand.CommandTimeout = 120000;
+                    myConnection.Open();
+                    myCommand.ExecuteNonQuery();
+                }
+
+                string recordRowPointer = "";
+                SQLCommand = "SELECT TOP 1 rowpointer from SL_NOVB_App.dbo.GR_Cfg_Queue where order_num = " + (char)39 + orderNum + (char)39 + " order by recorddate desc";
+                using (SqlConnection myConnection = new SqlConnection(connectionString))
+                {
+                    SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
+                    myCommand.CommandTimeout = 120000;
+                    myConnection.Open();
+                    using (SqlDataReader reader = myCommand.ExecuteReader())
+                    {
+                        if (reader.HasRows)
+                        {
+                            if (reader.Read())              //this should never NOT happen
+                            {
+                                //Copy this record to the target site DB
+                                recordRowPointer = reader["rowpointer"].ToString();
+                                reader.Close();
+
+                                SQLCommand = "insert into SL_" + dbSite + "_App.dbo.GR_Cfg_Queue Select * from SL_NOVB_App.dbo.GR_Cfg_Queue where rowpointer = " + (char)39 + recordRowPointer + (char)39;
+                                using (SqlConnection myConnection2 = new SqlConnection(connectionString))
+                                {
+                                    SqlCommand myCommand2 = new SqlCommand(SQLCommand, myConnection);
+                                    myCommand2.CommandTimeout = 120000;
+                                    myCommand2.ExecuteNonQuery();
+                                }
+
+                                SQLCommand = "DELETE From SL_NOVB_App.dbo.GR_Cfg_Queue where rowpointer = " + (char)39 + recordRowPointer + (char)39;
+                                using (SqlConnection myConnection3 = new SqlConnection(connectionString))
+                                {
+                                    SqlCommand myCommand3 = new SqlCommand(SQLCommand, myConnection3);
+                                    myCommand3.CommandTimeout = 120000;
+                                    myConnection3.Open();
+                                    myCommand3.ExecuteNonQuery();
+                                    myConnection3.Close();
+                                }
+                            }
+                        }
+                    }
+                }
+                Triggers.logEvent = "Queue record was moved to SL_" + StagingUtilities.dbSite + "_App.dbo.GR_Cfg_Queue";
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
+            }
+            catch (Exception mqEx)
+            {
+                //Log and ignore the error and move on with re-enabling the trigger
+                string logEvent = "An error occurred while attempting to move the queue record to " + StagingUtilities.dbSite + ": " + mqEx.Message;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
+            }
+            
+            //Re-enable trigger on db site queue table
+            SQLCommand = "ENABLE TRIGGER C1Order ON SL_" + dbSite + "_App.dbo.GR_Cfg_Queue";
+            using (SqlConnection myConnection = new SqlConnection(connectionString))
+            {
+                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
+                myCommand.CommandTimeout = 120000;
+                myConnection.Open();
+                myCommand.ExecuteNonQuery();
+            }
+        }
     }
 }
 

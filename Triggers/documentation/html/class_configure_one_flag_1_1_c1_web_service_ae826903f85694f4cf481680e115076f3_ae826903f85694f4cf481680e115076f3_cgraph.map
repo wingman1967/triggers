@@ -27,5 +27,6 @@
 <area shape="rect" id="node22" href="$class_configure_one_flag_1_1_c1_dictionaries_ae27861e2b313a9d5e2cf11f8e4c304f5.html#ae27861e2b313a9d5e2cf11f8e4c304f5" title="ConfigureOneFlag.C1Dictionaries.\lDBFieldLenCO" alt="" coords="781,724,999,765"/>
 <area shape="rect" id="node24" href="$class_configure_one_flag_1_1_database_factory_ae4aeef8c1f02cf82b17a4e1c2ca0ffed.html#ae4aeef8c1f02cf82b17a4e1c2ca0ffed" title="ConfigureOneFlag.Database\lFactory.CfgImport" alt="" coords="544,855,728,896"/>
 <area shape="rect" id="node29" href="$class_configure_one_flag_1_1_retrieve_drawings_a9eb1774070853cdd5601e1d8a6270757.html#a9eb1774070853cdd5601e1d8a6270757" title="ConfigureOneFlag.Retrieve\lDrawings.CopyDrawings" alt="" coords="549,920,723,961"/>
-<area shape="rect" id="node30" href="$class_configure_one_flag_1_1_database_factory_a58f013f5a91fe754f457a1e3ad26ebea.html#a58f013f5a91fe754f457a1e3ad26ebea" title="ConfigureOneFlag.Database\lFactory.InsertDocumentRecord" alt="" coords="789,920,991,961"/>
+<area shape="rect" id="node30" href="$class_configure_one_flag_1_1_database_factory_a58f013f5a91fe754f457a1e3ad26ebea.html#a58f013f5a91fe754f457a1e3ad26ebea" title="ConfigureOneFlag.Database\lFactory.InsertDocumentRecord" alt="" coords="789,887,991,928"/>
+<area shape="rect" id="node31" href="$class_configure_one_flag_1_1_database_factory_a6fba3443de3b8beba6d0648a75bff168.html#a6fba3443de3b8beba6d0648a75bff168" title="ConfigureOneFlag.Database\lFactory.MoveQueueRecord" alt="" coords="798,952,982,993"/>
 </map>

@@ -346,6 +346,14 @@ string orderNum)</para>
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_a6fba3443de3b8beba6d0648a75bff168_1a6fba3443de3b8beba6d0648a75bff168">MoveQueueRecord</link> (
+string orderNum, string dbSite)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
     <simplesect>
 
@@ -455,6 +463,10 @@ string orderNum)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_adec1d318fce610a0e24c55bc7c31cf0e_1adec1d318fce610a0e24c55bc7c31cf0e">
                 <title>static void ConfigureOneFlag.DatabaseFactory.DeleteBOM (string orderNum)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_database_factory_a6fba3443de3b8beba6d0648a75bff168_1a6fba3443de3b8beba6d0648a75bff168">
+                <title>static void ConfigureOneFlag.DatabaseFactory.MoveQueueRecord (string orderNum, string dbSite)</title> <emphasis></emphasis>
                 
             </section>
 </section>
