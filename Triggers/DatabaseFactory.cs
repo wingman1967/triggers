@@ -135,14 +135,24 @@ namespace ConfigureOneFlag
         }
         public static void WriteRecordCOItem(ref zCfgCOitem coitem)
         {
-            SQLCommand = "Insert Into GR_CfgCOItem (order_num,order_line_num,ser_num,item_num,smartpart_num,description,unit_price,unit_cost,discount_amt,quantity,priority_level,due_date,config_type,CustPO,LINE_NOTES) values (" + (char)39 + coitem.CO_Num + (char)39 + "," + (char)39 + coitem.CO_Line + (char)39 + "," + (char)39 + coitem.Serial.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:ser_num", ref coitem)) + (char)39 + "," + (char)39 + coitem.Item.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:item_num", ref coitem)) + (char)39 + "," + (char)39 + coitem.Smartpart.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:smartpart_num", ref coitem)) + (char)39 + "," + (char)39 + coitem.Desc.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:description", ref coitem)).Replace("'","''") + (char)39 + "," + (char)39 + coitem.UnitPrice + (char)39 + "," + (char)39 + coitem.UnitCost + (char)39 + "," + (char)39 + coitem.Discount + (char)39 + "," + (char)39 + coitem.QTY + (char)39 + "," + (char)39 + coitem.PriorityLevel + (char)39 + "," + (char)39 + coitem.DueDate + (char)39 + "," + (char)39 + coitem.ConfigType + (char)39 + "," + (char)39 + coitem.CustPO.Replace("'","''") + (char)39 + "," + (char)39 + coitem.OrderLineNotes.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:LINE_NOTES", ref coitem)).Replace("'", "''") + (char)39 + ")";
-            using (SqlConnection myConnection = new SqlConnection(connectionString))
+            try
             {
-                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
-                myCommand.CommandTimeout = 120000;
-                myConnection.Open();
-                myCommand.ExecuteNonQuery();
+                //SQLCommand = "Insert Into GR_CfgCOItem (order_num,order_line_num,ser_num,item_num,smartpart_num,description,unit_price,unit_cost,discount_amt,quantity,priority_level,due_date,config_type,CustPO,LINE_NOTES) values (" + (char)39 + coitem.CO_Num + (char)39 + "," + (char)39 + coitem.CO_Line + (char)39 + "," + (char)39 + coitem.Serial.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:ser_num", ref coitem)) + (char)39 + "," + (char)39 + coitem.Item.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:item_num", ref coitem)) + (char)39 + "," + (char)39 + coitem.Smartpart.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:smartpart_num", ref coitem)) + (char)39 + "," + (char)39 + coitem.Desc.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:description", ref coitem)).Replace("'","''") + (char)39 + "," + (char)39 + coitem.UnitPrice + (char)39 + "," + (char)39 + coitem.UnitCost + (char)39 + "," + (char)39 + coitem.Discount + (char)39 + "," + (char)39 + coitem.QTY + (char)39 + "," + (char)39 + coitem.PriorityLevel + (char)39 + "," + (char)39 + coitem.DueDate + (char)39 + "," + (char)39 + coitem.ConfigType + (char)39 + "," + (char)39 + coitem.CustPO.Replace("'","''") + (char)39 + "," + (char)39 + coitem.OrderLineNotes.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:LINE_NOTES", ref coitem)).Replace("'", "''") + (char)39 + ")";
+                SQLCommand = "Insert Into GR_CfgCOItem (order_num,order_line_num,ser_num,item_num,smartpart_num,description,unit_price,unit_cost,discount_amt,quantity,priority_level,due_date,config_type,CustPO,LINE_NOTES) values (" + (char)39 + coitem.CO_Num + (char)39 + "," + (char)39 + coitem.CO_Line + (char)39 + "," + (char)39 + coitem.Serial.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:ser_num", ref coitem)) + (char)39 + "," + (char)39 + coitem.Item.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:item_num", ref coitem)) + (char)39 + "," + (char)39 + coitem.Smartpart.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:smartpart_num", ref coitem)) + (char)39 + "," + (char)39 + coitem.Desc.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:description", ref coitem)).Replace("'", "''") + (char)39 + "," + (char)39 + coitem.UnitPrice + (char)39 + "," + (char)39 + coitem.UnitCost + (char)39 + "," + (char)39 + coitem.Discount + (char)39 + "," + (char)39 + coitem.QTY + (char)39 + "," + (char)39 + coitem.PriorityLevel + (char)39 + "," + (char)39 + coitem.DueDate + (char)39 + "," + (char)39 + coitem.ConfigType + (char)39 + "," + (char)39 + coitem.CustPO.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:CustPO", ref coitem)).Replace("'", "''") + (char)39 + "," + (char)39 + coitem.OrderLineNotes.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:LINE_NOTES", ref coitem)).Replace("'", "''") + (char)39 + ")";
+                using (SqlConnection myConnection = new SqlConnection(connectionString))
+                {
+                    SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
+                    myCommand.CommandTimeout = 120000;
+                    myConnection.Open();
+                    myCommand.ExecuteNonQuery();
+                }
             }
+            catch (Exception coitemx)
+            {
+                Triggers.logEvent = "ERROR WRITING GR_CFGCOItem: " + coitemx.Message;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
+            }
+            
         }
         public static void WriteRecordCO(ref zCfgCO co)
         {
@@ -574,7 +584,7 @@ namespace ConfigureOneFlag
         {
             try
             {
-                //Delete trigger on target database/table, copy queue record, delete from NOVB
+                //Disable trigger on target database/table, copy queue record, delete from NOVB
                 SQLCommand = "DISABLE TRIGGER C1Order ON SL_" + dbSite + "_App.dbo.GR_Cfg_Queue";
                 using (SqlConnection myConnection = new SqlConnection(connectionString))
                 {
@@ -595,7 +605,7 @@ namespace ConfigureOneFlag
                     {
                         if (reader.HasRows)
                         {
-                            if (reader.Read())              //this should never NOT happen
+                            if (reader.Read())              //this should never NOT happen (ok that's a little obtuse.  How about: This should ALWAYS happen)
                             {
                                 //Copy this record to the target site DB
                                 recordRowPointer = reader["rowpointer"].ToString();

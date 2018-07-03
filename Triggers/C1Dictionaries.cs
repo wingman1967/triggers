@@ -98,6 +98,7 @@ namespace ConfigureOneFlag
             fieldLengths.Add("COItem:smartpart_num", 30);
             fieldLengths.Add("COItem:description", 1000);
             fieldLengths.Add("COItem:LINE_NOTES", 1000);
+            fieldLengths.Add("COItem:CustPO", 22);
             //CfgItem Fields
             fieldLengths.Add("CfgItem:order_num", 15);
             fieldLengths.Add("CfgItem:smartpart_num", 40);
@@ -186,6 +187,7 @@ namespace ConfigureOneFlag
                 case "COItem:smartpart_num": switch (coitem.Smartpart.Length >= fieldlength) { case true: Audit.SetTruncate(field, coitem.Smartpart.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, coitem.Smartpart); break; default: fieldlength = coitem.Smartpart.Length; break; } break;
                 case "COItem:description": switch (coitem.Desc.Length >= fieldlength) { case true: Audit.SetTruncate(field, coitem.Desc.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, coitem.Desc); break; default: fieldlength = coitem.Desc.Length; break; } break;
                 case "COItem:LINE_NOTES": switch (coitem.OrderLineNotes.Length >= fieldlength) { case true: Audit.SetTruncate(field, coitem.OrderLineNotes.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, coitem.OrderLineNotes); break; default: fieldlength = coitem.OrderLineNotes.Length; break; } break;
+                case "COItem:CustPO": switch (coitem.CustPO.Length >= fieldlength) { case true: Audit.SetTruncate(field, coitem.CustPO.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, coitem.CustPO); break; default: fieldlength = coitem.CustPO.Length; break; } break;
             }
             return fieldlength;
         }

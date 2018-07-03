@@ -140,7 +140,7 @@ namespace ConfigureOneFlag
                 System.Threading.Thread.Sleep(1000);
                 itr = r + 1;
             }
-
+            
             if (forceStop == 1) { return; }
             
             logEvent = "Trigger context decoupled/resetting... (" + orderNum + ")";

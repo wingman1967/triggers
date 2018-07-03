@@ -188,7 +188,7 @@ namespace ConfigureOneFlag
             //Look for PURCHASE ORDER in INPUTS, load into CO and COITEM
             XmlNode nodePO = xmldoc.SelectSingleNode("//c1:Input[@name='PURCHASE_ORDER']", nsmgr);
             co.CustPO = string.IsNullOrEmpty(nodePO.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodePO.ChildNodes[0].Attributes["name"].InnerXml;
-            coitem.CustPO = nodePO.ChildNodes[0].Attributes["name"].InnerXml;
+            coitem.CustPO = string.IsNullOrEmpty(nodePO.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodePO.ChildNodes[0].Attributes["name"].InnerXml;
 
             //Look for FREIGHT ACCOUNT#, load into CO
             XmlNode nodeFA = xmldoc.SelectSingleNode("//c1:Input[@name='FREIGHT_ACCT']", nsmgr);

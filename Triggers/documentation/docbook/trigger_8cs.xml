@@ -190,7 +190,7 @@ Primary entrypoint called from C1ORDER trigger for accessing C1 web service and 
 140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Threading.Thread.Sleep(1000);
 141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers_ac398f00656b42765494f9ef31bbfddbf_1ac398f00656b42765494f9ef31bbfddbf">itr</link>&#32;=&#32;r&#32;+&#32;1;
 142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-143 
+143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
 144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_configure_one_flag_1_1_triggers_abca041c712963ee1716274f419555900_1abca041c712963ee1716274f419555900">forceStop</link>&#32;==&#32;1)&#32;{&#32;<emphasis class="keywordflow">return</emphasis>;&#32;}
 145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
 146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers_a3cd5e3e64a361f5e3a8d7fbd724a471f_1a3cd5e3e64a361f5e3a8d7fbd724a471f">logEvent</link>&#32;=&#32;<emphasis class="stringliteral">&quot;Trigger&#32;context&#32;decoupled/resetting...&#32;(&quot;</emphasis>&#32;+&#32;orderNum&#32;+&#32;<emphasis class="stringliteral">&quot;)&quot;</emphasis>;
