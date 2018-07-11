@@ -167,6 +167,7 @@ namespace ConfigureOneFlag
                 Triggers.logEvent = "Processing Aborted.  Customer " + co.ShipToRefNum + " Is On Hold: " + customerHoldReason;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                 SendMail.MailMessage(Triggers.logEvent, "C1 Processing Aborted");
+                Triggers.forceStop = 1;
                 return;
             }
 
@@ -641,8 +642,23 @@ namespace ConfigureOneFlag
         public static string LoadFromXML(XmlDocument xmldoc, string element, XmlNamespaceManager nsmgr)
         {
             string returnValue = "";
-            XmlNode xnode = xmldoc.SelectSingleNode(element, nsmgr);
-            returnValue = string.IsNullOrEmpty(xnode.InnerText) ? " " : xnode.InnerText;
+
+            try
+            {
+                XmlNode xnode = xmldoc.SelectSingleNode(element, nsmgr);
+                returnValue = string.IsNullOrEmpty(xnode.InnerText) ? " " : xnode.InnerText;
+            }
+            catch (Exception exLoad)
+            {
+                Triggers.logEvent = "Attempt to access XML tag <" + element + "> failed:  " + exLoad.Message;
+                string auditMessage = "Attempt to access XML tag (" + element + ") failed:  " + exLoad.Message;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
+                returnValue = " ";
+
+                Audit.SetTruncate("MAPPING", 2, 1, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, auditMessage);
+
+            }
+            
             return returnValue;
         }
         public static void initCOFields()

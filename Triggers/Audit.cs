@@ -24,12 +24,20 @@ namespace ConfigureOneFlag
                 case false:
                     return;
                 default:
-                    auditMessageL = "Truncated Data - Order: " + order_num + "  Line: " + order_line_num + "  Field: " + field  + "  Field Length: " + fieldLen + "  Max Length: " + maxLen + "  Field Content: " + fieldContent;
-                    DatabaseFactory.WriteAuditRecord(auditMessageL, order_num, order_line_num, "TRUNCATION");
-                    Triggers.logEvent = auditMessageL;
-                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
-                    auditMessageL = "Truncated Data - Order: " + order_num + "  Line: " + order_line_num + "  Field: " + field + "  Field Length: " + fieldLen + "  Max Length: " + maxLen + Environment.NewLine + "  Field Content: " + fieldContent;
-                    mE[mEIndex] = auditMessageL.ToString();
+                    if (field == "MAPPING")
+                    {
+                        auditMessageL = "XML Mapping Error Has Occurred: " + fieldContent;
+                    }
+                    else
+                    {
+                        auditMessageL = "Truncated Data - Order: " + order_num + "  Line: " + order_line_num + "  Field: " + field + "  Field Length: " + fieldLen + "  Max Length: " + maxLen + "  Field Content: " + fieldContent;
+                        DatabaseFactory.WriteAuditRecord(auditMessageL, order_num, order_line_num, "TRUNCATION");
+                        Triggers.logEvent = auditMessageL;
+                        System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
+                        auditMessageL = "Truncated Data - Order: " + order_num + "  Line: " + order_line_num + "  Field: " + field + "  Field Length: " + fieldLen + "  Max Length: " + maxLen + Environment.NewLine + "  Field Content: " + fieldContent;
+                        
+                    }
+                    mE[mEIndex] = auditMessageL;
                     mEIndex += 1;
                     break;
             }
