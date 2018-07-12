@@ -72,14 +72,6 @@ XmlDocument xmldoc, string element, XmlNamespaceManager nsmgr)</para>
                     </listitem>
                 </itemizedlist>
             </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>static void <link linkend="class_configure_one_flag_1_1_staging_utilities_aca6c9566baa18016103f397f6bf9a96b_1aca6c9566baa18016103f397f6bf9a96b">initCOFields</link> (
-)</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
         </section>
     <simplesect>
 
@@ -97,10 +89,6 @@ XmlDocument xmldoc, string element, XmlNamespaceManager nsmgr)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_staging_utilities_ad9b35cce2cfa5b2aaf68f003e87f5e45_1ad9b35cce2cfa5b2aaf68f003e87f5e45">
                 <title>static string ConfigureOneFlag.StagingUtilities.LoadFromXML (XmlDocument xmldoc, string element, XmlNamespaceManager nsmgr)</title> <emphasis></emphasis>
-                
-            </section>
-            <section xml:id="class_configure_one_flag_1_1_staging_utilities_aca6c9566baa18016103f397f6bf9a96b_1aca6c9566baa18016103f397f6bf9a96b">
-                <title>static void ConfigureOneFlag.StagingUtilities.initCOFields ()</title> <emphasis></emphasis>
                 
             </section>
 </section>

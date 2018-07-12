@@ -661,10 +661,6 @@ namespace ConfigureOneFlag
             
             return returnValue;
         }
-        public static void initCOFields()
-        {
-            
-        }
     }
 }
 

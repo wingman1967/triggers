@@ -718,12 +718,8 @@ Utilities used for staging of data from C1 to SQL databases
 661 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
 662 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;returnValue;
 663 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<link linkend="class_configure_one_flag_1_1_staging_utilities_aca6c9566baa18016103f397f6bf9a96b_1aca6c9566baa18016103f397f6bf9a96b">664 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities_aca6c9566baa18016103f397f6bf9a96b_1aca6c9566baa18016103f397f6bf9a96b">initCOFields</link>()
-665 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-666 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
-667 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-668 &#32;&#32;&#32;&#32;}
-669 }
-670 
+664 &#32;&#32;&#32;&#32;}
+665 }
+666 
     </computeroutput></literallayout>
 </section>
