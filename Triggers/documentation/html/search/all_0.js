@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['abdatabase',['abDatabase',['../class_triggers_1_1ab_database.html',1,'Triggers']]],
+  ['abdatabase_2ecs',['abDatabase.cs',['../ab_database_8cs.html',1,'']]],
   ['account_5fnum',['account_num',['../class_configure_one_flag_1_1z_cfg_c_o_a949cef1a81eab5b64212cc7c5410485a.html#a949cef1a81eab5b64212cc7c5410485a',1,'ConfigureOneFlag::zCfgCO']]],
   ['accountnum',['AccountNum',['../class_configure_one_flag_1_1z_cfg_c_o_a9da40b96702c70de289734bfe9cef1b7.html#a9da40b96702c70de289734bfe9cef1b7',1,'ConfigureOneFlag::zCfgCO']]],
   ['asof',['AsOf',['../class_configure_one_flag_1_1_triggers_a128cacd0c5db2359b84ce2677752b8a1.html#a128cacd0c5db2359b84ce2677752b8a1',1,'ConfigureOneFlag::Triggers']]],

@@ -174,7 +174,7 @@ namespace ConfigureOneFlag
                 case "CO:end_user": switch (co.EndUser.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.EndUser.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.EndUser); break; default: fieldlength = co.EndUser.Length; break; } break;
                 case "CO:engineer": switch (co.Engineer.Length >= fieldlength) { case true: Audit.SetTruncate(field, co.Engineer.Length, fieldlength, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, co.Engineer); break; default: fieldlength = co.Engineer.Length; break; } break;
             }
-
+            
             return fieldlength;
         }
         public static int DBFieldLenCOItem(string field, ref zCfgCOitem coitem)

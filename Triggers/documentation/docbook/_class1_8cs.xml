@@ -48,21 +48,7 @@ Primary entrypoint called from C1ORDER trigger for accessing C1 web service and 
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>struct <link linkend="namespace_system_1_1_linq">System::Linq</link></para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
                         <para>struct <link linkend="namespace_microsoft_1_1_sql_server_1_1_server">Microsoft::SqlServer::Server</link></para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>struct <link linkend="namespace_system_1_1_data_1_1_sql_client">System::Data::SqlClient</link></para>
                     </listitem>
                 </itemizedlist>
             </para>
@@ -82,7 +68,7 @@ Primary entrypoint called from C1ORDER trigger for accessing C1 web service and 
 8 
 9 <emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>
 10 {
-<link linkend="class_configure_one_flag_1_1_triggers">11 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_configure_one_flag_1_1_triggers">Triggers</link>
+<link linkend="class_configure_one_flag_1_1_triggers">11 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="namespace_triggers">Triggers</link>
 12 &#32;&#32;&#32;&#32;{
 <link linkend="class_configure_one_flag_1_1_triggers_a38d825801f6fbe1c3c2df19538892c57_1a38d825801f6fbe1c3c2df19538892c57">13 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">static</emphasis>&#32;Dictionary&lt;string,&#32;string&gt;&#32;<link linkend="class_configure_one_flag_1_1_triggers_a38d825801f6fbe1c3c2df19538892c57_1a38d825801f6fbe1c3c2df19538892c57">webmethods</link>&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;Dictionary&lt;string,&#32;string&gt;();
 <link linkend="class_configure_one_flag_1_1_triggers_adb47d391c1eb7baeb5780f3dd9322a6d_1adb47d391c1eb7baeb5780f3dd9322a6d">14 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_triggers_adb47d391c1eb7baeb5780f3dd9322a6d_1adb47d391c1eb7baeb5780f3dd9322a6d">wsReturn</link>;

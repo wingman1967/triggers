@@ -110,7 +110,7 @@ namespace ConfigureOneFlag
             co.CustName = LoadFromXML(xmldoc, "//c1:CUST_NAME", nsmgr);
             co.CustRefNum = LoadFromXML(xmldoc, "//c1:CUST_REF_NUM", nsmgr);
             co.AccountNum = LoadFromXML(xmldoc, "//c1:ACCOUNT_NUM", nsmgr);
-            co.ErpReferenceNum = LoadFromXML(xmldoc, "//c1:ERP_REFERENCE_NUM", nsmgr);
+            //co.ErpReferenceNum = LoadFromXML(xmldoc, "//c1:ERP_REFERENCE_NUM", nsmgr);
             co.PaymentTerms = LoadFromXML(xmldoc, "//c1:PAYMENT_TERMS", nsmgr);
             co.ShipVia = LoadFromXML(xmldoc, "//c1:SHIP_VIA", nsmgr);
             co.ShippingTerms = LoadFromXML(xmldoc, "//c1:SHIPPING_TERMS", nsmgr);
@@ -143,6 +143,8 @@ namespace ConfigureOneFlag
             string custSeq = "";
             int sPos = co.ShipToRefNum.IndexOf("-", StringComparison.CurrentCulture);
             custSeq = co.ShipToRefNum.Substring(sPos + 1, (co.ShipToRefNum.Length - (sPos + 1)));
+            Triggers.logEvent = "Ship-To: " + custSeq;
+            System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             string customerHoldReason = "";
 
             Triggers.logEvent = "Checking customer ON-HOLD status...";
@@ -164,7 +166,7 @@ namespace ConfigureOneFlag
             if (customerHoldReason != "")
             {
                 Triggers.forceStop = 1;
-                Triggers.logEvent = "Processing Aborted.  Customer " + co.ShipToRefNum + " Is On Hold: " + customerHoldReason;
+                Triggers.logEvent = "Processing Aborted (" + co.CO_Num + ").  Customer " + co.ShipToRefNum + " Is On Hold: " + customerHoldReason;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
                 SendMail.MailMessage(Triggers.logEvent, "C1 Processing Aborted");
                 Triggers.forceStop = 1;
@@ -255,12 +257,24 @@ namespace ConfigureOneFlag
                 co.DropShipAddress3 = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='DROP_SHIP_ADDRESS_4']", nsmgr);
                 co.DropShipAddress4 = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='PROJECT']", nsmgr);
-                co.Project = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                co.Project = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='END_USER']", nsmgr);
-                co.EndUser = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                co.EndUser = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='ENGINEER']", nsmgr);
-                co.Engineer = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                co.Engineer = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+
+
+
+
+
+                //nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='PROJECT']", nsmgr);
+                //co.Project = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                //nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='END_USER']", nsmgr);
+                //co.EndUser = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
+                //nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='ENGINEER']", nsmgr);
+                //co.Engineer = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
 
                 //evaluate CITY and then CIty if the former fails, as some XML is loaded improperly with mixed-case for City
                 try
@@ -426,6 +440,8 @@ namespace ConfigureOneFlag
                 {
                     if (nodeisv.ChildNodes[2].InnerText == "SHIP_VIA") { co.ShipVia = nodeisv.ChildNodes[0].Attributes["name"].Value; }
                 }
+
+                if (co.ShipVia.Length == 0) { co.ShipVia = " "; }
                 
                 //item-master for the line we are working with
                 int recordSequence = 1;
@@ -641,7 +657,7 @@ namespace ConfigureOneFlag
         }
         public static string LoadFromXML(XmlDocument xmldoc, string element, XmlNamespaceManager nsmgr)
         {
-            string returnValue = "";
+            string returnValue = " ";
 
             try
             {
@@ -656,9 +672,9 @@ namespace ConfigureOneFlag
                 returnValue = " ";
 
                 Audit.SetTruncate("MAPPING", 2, 1, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, auditMessage);
-
             }
-            
+            if (returnValue.Length == 0) { returnValue = " "; }
+
             return returnValue;
         }
     }

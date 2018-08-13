@@ -2,6 +2,9 @@ var files_dup =
 [
     [ "obj", "dir_43724e81dd40e09f32417973865cdd64.html", "dir_43724e81dd40e09f32417973865cdd64" ],
     [ "Properties", "dir_d051c76eebdc544d9c3d734575641c72.html", "dir_d051c76eebdc544d9c3d734575641c72" ],
+    [ "abDatabase.cs", "ab_database_8cs.html", [
+      [ "abDatabase", "class_triggers_1_1ab_database.html", "class_triggers_1_1ab_database" ]
+    ] ],
     [ "Audit.cs", "_audit_8cs.html", [
       [ "Audit", "class_configure_one_flag_1_1_audit.html", "class_configure_one_flag_1_1_audit" ]
     ] ],

@@ -45,13 +45,6 @@ Management of dictionaries used for C1 data mapping/processing
                     </listitem>
                 </itemizedlist>
             </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>struct <link linkend="namespace_system_1_1_collections_1_1_generic">System::Collections::Generic</link></para>
-                    </listitem>
-                </itemizedlist>
-            </para>
         </simplesect>
     <simplesect>
         <title>Detailed Description</title>
@@ -231,7 +224,7 @@ Management of dictionaries used for C1 data mapping/processing
 174 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;CO:end_user&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(co.EndUser.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<link linkend="class_configure_one_flag_1_1_audit">Audit</link>.<link linkend="class_configure_one_flag_1_1_audit_ab7a15d124f661d9f251f17cf042f00ac_1ab7a15d124f661d9f251f17cf042f00ac">SetTruncate</link>(field,&#32;co.EndUser.Length,&#32;fieldlength,&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a7c8cb30970114fab7e2cb28fc8275b76_1a7c8cb30970114fab7e2cb28fc8275b76">globalOrderNum</link>,&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a62810055c0e03f0cc3568275245a1c07_1a62810055c0e03f0cc3568275245a1c07">globalOrderLineNum</link>,&#32;co.EndUser);&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;co.EndUser.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
 175 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;CO:engineer&quot;</emphasis>:&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(co.Engineer.Length&#32;&gt;=&#32;fieldlength)&#32;{&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="keyword">true</emphasis>:&#32;<link linkend="class_configure_one_flag_1_1_audit">Audit</link>.<link linkend="class_configure_one_flag_1_1_audit_ab7a15d124f661d9f251f17cf042f00ac_1ab7a15d124f661d9f251f17cf042f00ac">SetTruncate</link>(field,&#32;co.Engineer.Length,&#32;fieldlength,&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a7c8cb30970114fab7e2cb28fc8275b76_1a7c8cb30970114fab7e2cb28fc8275b76">globalOrderNum</link>,&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a62810055c0e03f0cc3568275245a1c07_1a62810055c0e03f0cc3568275245a1c07">globalOrderLineNum</link>,&#32;co.Engineer);&#32;<emphasis class="keywordflow">break</emphasis>;&#32;<emphasis class="keywordflow">default</emphasis>:&#32;fieldlength&#32;=&#32;co.Engineer.Length;&#32;<emphasis class="keywordflow">break</emphasis>;&#32;}&#32;<emphasis class="keywordflow">break</emphasis>;
 176 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-177 
+177 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
 178 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;fieldlength;
 179 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 <link linkend="class_configure_one_flag_1_1_c1_dictionaries_a62d37086ac3e73ea188a506c45d1b965_1a62d37086ac3e73ea188a506c45d1b965">180 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_dictionaries_a62d37086ac3e73ea188a506c45d1b965_1a62d37086ac3e73ea188a506c45d1b965">DBFieldLenCOItem</link>(<emphasis class="keywordtype">string</emphasis>&#32;field,&#32;ref&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem">zCfgCOitem</link>&#32;coitem)
