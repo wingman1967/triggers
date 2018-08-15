@@ -11,6 +11,7 @@ namespace ConfigureOneFlag
         public static string[] mE;
         public static int mEIndex;
         public static bool resetmE;
+        public static string ValidationMessages = "";
         public static void SetTruncate(string field, int fieldLen, int maxLen, string order_num, int order_line_num, string fieldContent)
         {
             if (resetmE == true)
@@ -26,7 +27,7 @@ namespace ConfigureOneFlag
                 default:
                     if (field == "MAPPING")
                     {
-                        auditMessageL = "XML Mapping Error Has Occurred: " + fieldContent;
+                        auditMessageL = "XML Mapping Error Has Occurred - Order: " + order_num + "  Line: " + order_line_num + Environment.NewLine + Environment.NewLine + fieldContent;
                     }
                     else
                     {
@@ -61,6 +62,20 @@ namespace ConfigureOneFlag
             catch (Exception ex5)
             {
                 Triggers.logEvent = ex5.Message + " -> " + ex5.Source + " -> " + ex5.InnerException;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
+            }
+            //process validation framework error messages, if any
+            try
+            {
+                if (!string.IsNullOrEmpty(ValidationMessages))
+                {
+                    string frameworkMessage = ValidationMessages;
+                    SendMail.MailMessage(frameworkMessage, "Configure One Validation Errors");
+                }
+            }
+            catch (Exception ex6)
+            {
+                Triggers.logEvent = ex6.Message + " -> " + ex6.Source + " -> " + ex6.InnerException;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
             }
         }

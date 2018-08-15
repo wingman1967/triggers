@@ -46,6 +46,9 @@
     <Reference Include="clrzmq-ext, Version=2.2.0.0, Culture=neutral, processorArchitecture=AMD64">
       <HintPath>..\packages\clrzmq-x64.2.2.5\lib\clrzmq-ext.dll</HintPath>
     </Reference>
+    <Reference Include="FluentValidation, Version=2.0.0.0, Culture=neutral, PublicKeyToken=a82054b837897c66, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentValidation.2.0.0.0\lib\NET35\FluentValidation.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
@@ -62,11 +65,17 @@
   <ItemGroup>
     <Compile Include="abDatabase.cs" />
     <Compile Include="Audit.cs" />
+    <Compile Include="BOMValidator.cs" />
     <Compile Include="C1WebService.cs" />
+    <Compile Include="COItemValidator.cs" />
+    <Compile Include="COValidator.cs" />
     <Compile Include="crypto.cs" />
     <Compile Include="C1Dictionaries.cs" />
+    <Compile Include="ItemValidator.cs" />
     <Compile Include="NetworkShare.cs" />
+    <Compile Include="ParmValValidator.cs" />
     <Compile Include="RetrieveDrawings.cs" />
+    <Compile Include="RouteValidator.cs" />
     <Compile Include="SendMail.cs" />
     <Compile Include="trigger.cs" />
     <Compile Include="DatabaseFactory.cs" />

@@ -377,5 +377,60 @@ namespace ConfigureOneFlag
             get { return engineer; }
             set { engineer = value; }
         }
+        public static void ClearCO(ref zCfgCO co)
+        {
+            co.BillToAddressLine1 = "";
+            co.BillToAddressLine2 = "";
+            co.BillToAddressLine3 = "";
+            co.BillToCity = "";
+            co.BillToContactName = "";
+            co.BillToCountry = "";
+            co.BillToEmailAddress = "";
+            co.BillToFaxNumber = "";
+            co.BillToPhoneNumber = "";
+            co.BillToPostalCode = "";
+            co.BillToRefNum = "";
+            co.BillToState = "";
+            co.ShipToAddressLine1 = "";
+            co.ShipToAddressLine2 = "";
+            co.ShipToAddressLine3 = "";
+            co.ShipToAddressLine4 = "";
+            co.ShipToCity = "";
+            co.ShipToContactName = "";
+            co.ShipToCountry = "";
+            co.ShipToEmailAddress = "";
+            co.ShipToFaxNumber = "";
+            co.ShipToPhoneNumber = "";
+            co.ShipToPostalCode = "";
+            co.ShipToRefNum = "";
+            co.ShipToState = "";
+            co.DropShipAddress1 = "";
+            co.DropShipAddress2 = "";
+            co.DropShipAddress3 = "";
+            co.DropShipAddress4 = "";
+            co.DropShipCity = "";
+            co.DropShipContact = "";
+            co.DropShipCountry = "";
+            co.DropShipEmail = "";
+            co.DropShipName = "";
+            co.DropShipPhone = "";
+            co.DropShipState = "";
+            co.DropShipZip = "";
+            co.CustPO = "";
+            co.Project = "";
+            co.WebUserName = "";
+            co.Engineer = "";
+            co.EndUser = "";
+            co.ShippingTerms = "";
+            co.ShipVia = "";
+            co.FreightAcct = "";
+            co.FreightTerms = "";
+            co.ErpReferenceNum = "";
+            co.CustName = "";
+            co.PaymentTerms = "";
+            co.DestinationCountry = "";
+            co.OrderHeaderNotes = "";
+            co.QuoteNbr = "";
+        }
     }
 }

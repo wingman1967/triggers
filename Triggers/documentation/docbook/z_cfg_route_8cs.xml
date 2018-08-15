@@ -174,7 +174,29 @@ Accessor class for the cfg route object (C1 routing module data)
 124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a602fde6fa4e202c14f0c0c517d24bf23_1a602fde6fa4e202c14f0c0c517d24bf23">matl_quantity</link>;&#32;}
 125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a602fde6fa4e202c14f0c0c517d24bf23_1a602fde6fa4e202c14f0c0c517d24bf23">matl_quantity</link>&#32;=&#32;value;&#32;}
 126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-127 &#32;&#32;&#32;&#32;}
-128 }
+<link linkend="class_configure_one_flag_1_1z_cfg_route_aae5de3a2a20826f77e0cbb080706c654_1aae5de3a2a20826f77e0cbb080706c654">127 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_aae5de3a2a20826f77e0cbb080706c654_1aae5de3a2a20826f77e0cbb080706c654">ClearRoute</link>(ref&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route">zCfgRoute</link>&#32;route)
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.BOM_ID&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.CO_Line&#32;=&#32;1;
+131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.CO_Num&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.Description&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.ItemNum&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.Labor_Hours&#32;=&#32;0;
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.Labor_Rate&#32;=&#32;0;
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.Machine_Name&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.MatlItemNum&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.MatlQty&#32;=&#32;0;
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.MatlSmartpartNum&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.Notes&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.OPERATION&#32;=&#32;0;
+142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.Run_Time&#32;=&#32;0;
+143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.Seq&#32;=&#32;0;
+144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.Setup_Hours&#32;=&#32;0;
+145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.SmartpartNum&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.Type&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.WC&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+149 &#32;&#32;&#32;&#32;}
+150 }
     </computeroutput></literallayout>
 </section>

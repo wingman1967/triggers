@@ -7,14 +7,19 @@ namespace ConfigureOneFlag
     /// </summary>
     class SendMail
     {
+        public static bool suppressRecips = false;
         public static void MailMessage(string messageBody, string messageSubject)
         {
             MailMessage mail = new MailMessage();
             mail.IsBodyHtml = true;
             mail.From = new MailAddress(DatabaseFactory.emailFrom);
             mail.To.Add(new MailAddress(DatabaseFactory.emailaddr));
-            mail.To.Add(new MailAddress("GrantH@NatlPump.com"));
-            mail.To.Add(new MailAddress("Thomas.Stock@NatlPump.com"));
+            if (!suppressRecips)
+            {
+                mail.To.Add(new MailAddress("GrantH@NatlPump.com"));
+                mail.To.Add(new MailAddress("Thomas.Stock@NatlPump.com"));
+            }
+            
             mail.Subject = messageSubject;
             mail.Body = messageBody;
             SmtpClient smtp = new SmtpClient(DatabaseFactory.emailServer);

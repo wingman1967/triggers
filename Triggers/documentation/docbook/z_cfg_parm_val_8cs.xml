@@ -103,7 +103,17 @@ Accessor class for the cfg parmValue object (C1 Inputs)
 53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a18d38106dc703f3b1eddfb36972f3997_1a18d38106dc703f3b1eddfb36972f3997">priority_level</link>;&#32;}
 54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_a18d38106dc703f3b1eddfb36972f3997_1a18d38106dc703f3b1eddfb36972f3997">priority_level</link>&#32;=&#32;value;&#32;}
 55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-56 &#32;&#32;&#32;&#32;}
-57 }
+<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_ac695cdfc5260e3275898f1f023c0772d_1ac695cdfc5260e3275898f1f023c0772d">56 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val_ac695cdfc5260e3275898f1f023c0772d_1ac695cdfc5260e3275898f1f023c0772d">ClearParmVal</link>(ref&#32;<link linkend="class_configure_one_flag_1_1z_cfg_parm_val">zCfgParmVal</link>&#32;cfg)
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CO_Num&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CO_Line&#32;=&#32;1;
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CName&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CValue&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CType&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.CLabel&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;cfg.PriorityLevel&#32;=&#32;0;
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+66 &#32;&#32;&#32;&#32;}
+67 }
     </computeroutput></literallayout>
 </section>

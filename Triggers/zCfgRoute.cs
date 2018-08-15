@@ -124,5 +124,27 @@ namespace ConfigureOneFlag
             get { return matl_quantity; }
             set { matl_quantity = value; }
         }
+        public static void ClearRoute(ref zCfgRoute route)
+        {
+            route.BOM_ID = "";
+            route.CO_Line = 1;
+            route.CO_Num = "";
+            route.Description = "";
+            route.ItemNum = "";
+            route.Labor_Hours = 0;
+            route.Labor_Rate = 0;
+            route.Machine_Name = "";
+            route.MatlItemNum = "";
+            route.MatlQty = 0;
+            route.MatlSmartpartNum = "";
+            route.Notes = "";
+            route.OPERATION = 0;
+            route.Run_Time = 0;
+            route.Seq = 0;
+            route.Setup_Hours = 0;
+            route.SmartpartNum = "";
+            route.Type = "";
+            route.WC = "";
+        }
     }
 }

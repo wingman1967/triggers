@@ -10,5 +10,47 @@
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_b_o_m_validator">Triggers::BOMValidator</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_c_o_item_validator">Triggers::COItemValidator</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_c_o_validator">Triggers::COValidator</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_item_validator">Triggers::ItemValidator</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_parm_val_validator">Triggers::ParmValValidator</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_route_validator">Triggers::RouteValidator</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
 </section>

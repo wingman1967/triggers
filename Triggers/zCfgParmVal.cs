@@ -53,5 +53,15 @@ namespace ConfigureOneFlag
             get { return priority_level; }
             set { priority_level = value; }
         }
+        public static void ClearParmVal(ref zCfgParmVal cfg)
+        {
+            cfg.CO_Num = "";
+            cfg.CO_Line = 1;
+            cfg.CName = "";
+            cfg.CValue = "";
+            cfg.CType = "";
+            cfg.CLabel = "";
+            cfg.PriorityLevel = 0;
+        }
     }
 }

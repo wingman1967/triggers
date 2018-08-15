@@ -120,6 +120,17 @@
                 </itemizedlist>
             </para>
         </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1z_cfg_parm_val_ac695cdfc5260e3275898f1f023c0772d_1ac695cdfc5260e3275898f1f023c0772d">ClearParmVal</link> (
+ref <link linkend="class_configure_one_flag_1_1z_cfg_parm_val">zCfgParmVal</link> cfg)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
     <simplesect>
 
 <para>Accessor class for the cfg parmValue object (C1 Inputs) </para>
@@ -133,4 +144,8 @@
         <section>
             <title>Member Data Documentation</title>
         </section>
+            <section xml:id="class_configure_one_flag_1_1z_cfg_parm_val_ac695cdfc5260e3275898f1f023c0772d_1ac695cdfc5260e3275898f1f023c0772d">
+                <title>static void ConfigureOneFlag.zCfgParmVal.ClearParmVal (ref zCfgParmVal cfg)</title> <emphasis></emphasis>
+                
+            </section>
 </section>

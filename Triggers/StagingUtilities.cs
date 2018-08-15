@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Xml;
 using System.Web;
+using FluentValidation;
+using Triggers;
 
 namespace ConfigureOneFlag
 {
@@ -13,6 +15,12 @@ namespace ConfigureOneFlag
         public static int globalOrderLineNum;
         public static string dbSite = "";
         public static bool foundSite = false;
+        public static zCfgCO coValidator;
+        public static zCfgCOitem coitemValidator;
+        public static zCfgItem citemValidator;
+        public static zCfgParmVal parmvalValidator;
+        public static zCfgRoute routeValidator;
+        public static zCfgBOM bomValidator;
                 
         public static void MapXMLToSQL(XmlDocument xmldoc)
         {
@@ -22,6 +30,23 @@ namespace ConfigureOneFlag
             zCfgParmVal cfg = new zCfgParmVal();
             zCfgBOM bom = new zCfgBOM();
             zCfgRoute route = new zCfgRoute();
+
+            zCfgCO.ClearCO(ref co);
+            zCfgCOitem.ClearCOItem(ref coitem);
+            zCfgItem.ClearItem(ref citem);
+            zCfgParmVal.ClearParmVal(ref cfg);
+            zCfgRoute.ClearRoute(ref route);
+            zCfgBOM.ClearBOM(ref bom);
+
+            //Set validator objects based on the accessors
+            coValidator = co;
+            coitemValidator = coitem;
+            citemValidator = citem;
+            parmvalValidator = cfg;
+            routeValidator = route;
+            bomValidator = bom;
+
+            Audit.ValidationMessages = "";
 
             Audit.resetmE = true;       //reset the mE array in case we have any mapping errors to report for this cycle
 
@@ -172,7 +197,7 @@ namespace ConfigureOneFlag
                 Triggers.forceStop = 1;
                 return;
             }
-
+            
             try
             {
                 co.PriorityLevel = Convert.ToInt16(LoadFromXML(xmldoc, "//c1:PRIORITY_LEVEL", nsmgr));
@@ -264,17 +289,6 @@ namespace ConfigureOneFlag
                 co.EndUser = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
                 nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='ENGINEER']", nsmgr);
                 co.Engineer = string.IsNullOrEmpty(nodeDRS.ChildNodes[0].Attributes["name"].InnerXml) ? " " : nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
-
-
-
-
-
-                //nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='PROJECT']", nsmgr);
-                //co.Project = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
-                //nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='END_USER']", nsmgr);
-                //co.EndUser = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
-                //nodeDRS = nodeds.SelectSingleNode("//c1:Input[@name='ENGINEER']", nsmgr);
-                //co.Engineer = nodeDRS.ChildNodes[0].Attributes["name"].InnerXml;
 
                 //evaluate CITY and then CIty if the former fails, as some XML is loaded improperly with mixed-case for City
                 try
@@ -412,6 +426,8 @@ namespace ConfigureOneFlag
                 }
 
                 //output coitem record
+                COItemValidator civ = new COItemValidator();
+                civ.ValidateCOItem();
                 DatabaseFactory.WriteRecordCOItem(ref coitem);
 
                 //*** Everything else here builds on the COITEM ***
@@ -516,6 +532,9 @@ namespace ConfigureOneFlag
                         citem.Sequence = recordSequence;
                     }
                     recordSequence += 1;
+                    //output citem
+                    ItemValidator ci = new ItemValidator();
+                    ci.ValidateCitem();
                     DatabaseFactory.WriteRecordCItem(ref citem);
                     cost = "";
                     price = "";
@@ -653,6 +672,8 @@ namespace ConfigureOneFlag
                 //If we used routeBOM, dump the old-process BOM records
                 //if (UseRouteBOM) { DatabaseFactory.DeleteBOM(co.CORefNum); }          //this may be reinstated in the future
             }
+            COValidator cv = new COValidator();
+            cv.ValidateCO();
             DatabaseFactory.WriteRecordCO(ref co);              //deferred write
         }
         public static string LoadFromXML(XmlDocument xmldoc, string element, XmlNamespaceManager nsmgr)
@@ -669,9 +690,11 @@ namespace ConfigureOneFlag
                 Triggers.logEvent = "Attempt to access XML tag <" + element + "> failed:  " + exLoad.Message;
                 string auditMessage = "Attempt to access XML tag (" + element + ") failed:  " + exLoad.Message;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
-                returnValue = " ";
 
-                Audit.SetTruncate("MAPPING", 2, 1, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, auditMessage);
+                if (element != "//c1:PRIORITY_LEVEL")
+                {
+                    Audit.SetTruncate("MAPPING", 2, 1, StagingUtilities.globalOrderNum, StagingUtilities.globalOrderLineNum, auditMessage);
+                }
             }
             if (returnValue.Length == 0) { returnValue = " "; }
 

@@ -1,5 +1,6 @@
 var class_configure_one_flag_1_1z_cfg_route =
 [
+    [ "ClearRoute", "class_configure_one_flag_1_1z_cfg_route_aae5de3a2a20826f77e0cbb080706c654.html#aae5de3a2a20826f77e0cbb080706c654", null ],
     [ "bom_id", "class_configure_one_flag_1_1z_cfg_route_abcb14104a7686c1e4ee59a26be0572c2.html#abcb14104a7686c1e4ee59a26be0572c2", null ],
     [ "description", "class_configure_one_flag_1_1z_cfg_route_a9d6c07cbbb6f878a2e4df56f9f21f329.html#a9d6c07cbbb6f878a2e4df56f9f21f329", null ],
     [ "item_num", "class_configure_one_flag_1_1z_cfg_route_a9c4bdcbb00f6e44fae7318fc43421b74.html#a9c4bdcbb00f6e44fae7318fc43421b74", null ],

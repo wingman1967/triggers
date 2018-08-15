@@ -89,5 +89,21 @@ namespace ConfigureOneFlag
             get { return recsequence; }
             set { recsequence = value; }
         }
+        public static void ClearBOM(ref zCfgBOM bom)
+        {
+            bom.CO_Line = 1;
+            bom.CO_Num = "";
+            bom.Discount = 0;
+            bom.Identifier = "";
+            bom.Item = "";
+            bom.Parent = "";
+            bom.PriorityLevel = 0;
+            bom.QTY = 0;
+            bom.RecordSequence = 0;
+            bom.Sequence = 0;
+            bom.Smartpart = "";
+            bom.UnitCost = 0;
+            bom.UnitPrice = 0;
+        }
     }
 }

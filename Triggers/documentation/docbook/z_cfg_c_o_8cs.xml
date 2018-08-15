@@ -427,7 +427,62 @@ Accessor class for CO object
 377 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a95226d497d6b88d2048efc56ef6b3fb8_1a95226d497d6b88d2048efc56ef6b3fb8">engineer</link>;&#32;}
 378 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a95226d497d6b88d2048efc56ef6b3fb8_1a95226d497d6b88d2048efc56ef6b3fb8">engineer</link>&#32;=&#32;value;&#32;}
 379 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-380 &#32;&#32;&#32;&#32;}
-381 }
+<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a52e23f5ed755fecd4f4413c19dd1cfb1_1a52e23f5ed755fecd4f4413c19dd1cfb1">380 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o_a52e23f5ed755fecd4f4413c19dd1cfb1_1a52e23f5ed755fecd4f4413c19dd1cfb1">ClearCO</link>(ref&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_o">zCfgCO</link>&#32;co)
+381 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+382 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.BillToAddressLine1&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+383 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.BillToAddressLine2&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+384 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.BillToAddressLine3&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+385 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.BillToCity&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+386 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.BillToContactName&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+387 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.BillToCountry&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+388 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.BillToEmailAddress&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+389 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.BillToFaxNumber&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+390 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.BillToPhoneNumber&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+391 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.BillToPostalCode&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+392 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.BillToRefNum&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+393 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.BillToState&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+394 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.ShipToAddressLine1&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+395 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.ShipToAddressLine2&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+396 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.ShipToAddressLine3&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+397 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.ShipToAddressLine4&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+398 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.ShipToCity&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+399 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.ShipToContactName&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+400 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.ShipToCountry&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+401 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.ShipToEmailAddress&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+402 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.ShipToFaxNumber&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+403 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.ShipToPhoneNumber&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+404 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.ShipToPostalCode&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+405 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.ShipToRefNum&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+406 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.ShipToState&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+407 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress1&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+408 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress2&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+409 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress3&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+410 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipAddress4&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+411 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipCity&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+412 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipContact&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+413 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipCountry&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+414 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipEmail&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+415 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipName&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+416 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipPhone&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+417 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipState&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+418 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DropShipZip&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+419 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.CustPO&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+420 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.Project&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+421 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.WebUserName&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+422 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.Engineer&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+423 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.EndUser&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+424 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.ShippingTerms&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+425 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.ShipVia&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+426 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.FreightAcct&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+427 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.FreightTerms&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+428 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.ErpReferenceNum&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+429 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.CustName&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+430 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.PaymentTerms&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+431 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.DestinationCountry&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+432 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.OrderHeaderNotes&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+433 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;co.QuoteNbr&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+434 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+435 &#32;&#32;&#32;&#32;}
+436 }
     </computeroutput></literallayout>
 </section>

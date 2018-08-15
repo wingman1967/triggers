@@ -373,7 +373,55 @@ Accessor class for the item-master object
 323 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_item_a27bf6faa77bdc7f5b4985fa93fa21bd4_1a27bf6faa77bdc7f5b4985fa93fa21bd4">VAR40</link>;&#32;}
 324 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_item_a27bf6faa77bdc7f5b4985fa93fa21bd4_1a27bf6faa77bdc7f5b4985fa93fa21bd4">VAR40</link>&#32;=&#32;value;&#32;}
 325 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-326 &#32;&#32;&#32;&#32;}
-327 }
+<link linkend="class_configure_one_flag_1_1z_cfg_item_ae7f38f55ff54c562801c082387e848fe_1ae7f38f55ff54c562801c082387e848fe">326 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_item_ae7f38f55ff54c562801c082387e848fe_1ae7f38f55ff54c562801c082387e848fe">ClearItem</link>(ref&#32;<link linkend="class_configure_one_flag_1_1z_cfg_item">zCfgItem</link>&#32;citem)
+327 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+328 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.CO_Line&#32;=&#32;1;
+329 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.CO_Num&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+330 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.Desc&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+331 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.description&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+332 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR1&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+333 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR2&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+334 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR3&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+335 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR4&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+336 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR5&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+337 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR6&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+338 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR7&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+339 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR8&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+340 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR9&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+341 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR10&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+342 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR11&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+343 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR12&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+344 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR13&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+345 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR14&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+346 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR15&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+347 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR16&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+348 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR17&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+349 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR18&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+350 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR19&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+351 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR20&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+352 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR21&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+353 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR22&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+354 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR23&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+355 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR24&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+356 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR25&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+357 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR26&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+358 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR27&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+359 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR28&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+360 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR29&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+361 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR30&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+362 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR31&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+363 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR32&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+364 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR333&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+365 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR34&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+366 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR35&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+367 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR36&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+368 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR37&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+369 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR1&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+370 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR38&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+371 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR39&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+372 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;citem.IM_VAR40&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+373 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+374 &#32;&#32;&#32;&#32;}
+375 }
     </computeroutput></literallayout>
 </section>

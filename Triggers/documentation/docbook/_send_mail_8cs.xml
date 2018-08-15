@@ -64,20 +64,25 @@ Send email to specified users for errors encountered during XML mapping
 4 {
 <link linkend="class_configure_one_flag_1_1_send_mail">8 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_configure_one_flag_1_1_send_mail">SendMail</link>
 9 &#32;&#32;&#32;&#32;{
-<link linkend="class_configure_one_flag_1_1_send_mail_a2e1c2d0826f023cb2684a2b9bbd74ad9_1a2e1c2d0826f023cb2684a2b9bbd74ad9">10 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_send_mail_a2e1c2d0826f023cb2684a2b9bbd74ad9_1a2e1c2d0826f023cb2684a2b9bbd74ad9">MailMessage</link>(<emphasis class="keywordtype">string</emphasis>&#32;messageBody,&#32;<emphasis class="keywordtype">string</emphasis>&#32;messageSubject)
-11 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-12 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_send_mail_a2e1c2d0826f023cb2684a2b9bbd74ad9_1a2e1c2d0826f023cb2684a2b9bbd74ad9">MailMessage</link>&#32;mail&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_send_mail_a2e1c2d0826f023cb2684a2b9bbd74ad9_1a2e1c2d0826f023cb2684a2b9bbd74ad9">MailMessage</link>();
-13 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.IsBodyHtml&#32;=&#32;<emphasis class="keyword">true</emphasis>;
-14 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.From&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;MailAddress(<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a54d4a975b77e239367db262060b40eed_1a54d4a975b77e239367db262060b40eed">emailFrom</link>);
-15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.To.Add(<emphasis class="keyword">new</emphasis>&#32;MailAddress(<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a18b6157c87df47c35c9b7d4b9bcfa30e_1a18b6157c87df47c35c9b7d4b9bcfa30e">emailaddr</link>));
-16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.To.Add(<emphasis class="keyword">new</emphasis>&#32;MailAddress(<emphasis class="stringliteral">&quot;GrantH@NatlPump.com&quot;</emphasis>));
-17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.To.Add(<emphasis class="keyword">new</emphasis>&#32;MailAddress(<emphasis class="stringliteral">&quot;Thomas.Stock@NatlPump.com&quot;</emphasis>));
-18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.Subject&#32;=&#32;messageSubject;
-19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.Body&#32;=&#32;messageBody;
-20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SmtpClient&#32;smtp&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SmtpClient(<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a1410899026bc5e03fb6d023a4d5d9618_1a1410899026bc5e03fb6d023a4d5d9618">emailServer</link>);
-21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;smtp.Send(mail);
-22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-23 &#32;&#32;&#32;&#32;}
-24 }
+<link linkend="class_configure_one_flag_1_1_send_mail_abf4e25ed064e9ce6d23a2bdb715a92eb_1abf4e25ed064e9ce6d23a2bdb715a92eb">10 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">bool</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_send_mail_abf4e25ed064e9ce6d23a2bdb715a92eb_1abf4e25ed064e9ce6d23a2bdb715a92eb">suppressRecips</link>&#32;=&#32;<emphasis class="keyword">false</emphasis>;
+<link linkend="class_configure_one_flag_1_1_send_mail_a2e1c2d0826f023cb2684a2b9bbd74ad9_1a2e1c2d0826f023cb2684a2b9bbd74ad9">11 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_send_mail_a2e1c2d0826f023cb2684a2b9bbd74ad9_1a2e1c2d0826f023cb2684a2b9bbd74ad9">MailMessage</link>(<emphasis class="keywordtype">string</emphasis>&#32;messageBody,&#32;<emphasis class="keywordtype">string</emphasis>&#32;messageSubject)
+12 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+13 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_send_mail_a2e1c2d0826f023cb2684a2b9bbd74ad9_1a2e1c2d0826f023cb2684a2b9bbd74ad9">MailMessage</link>&#32;mail&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_send_mail_a2e1c2d0826f023cb2684a2b9bbd74ad9_1a2e1c2d0826f023cb2684a2b9bbd74ad9">MailMessage</link>();
+14 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.IsBodyHtml&#32;=&#32;<emphasis class="keyword">true</emphasis>;
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.From&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;MailAddress(<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a54d4a975b77e239367db262060b40eed_1a54d4a975b77e239367db262060b40eed">emailFrom</link>);
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.To.Add(<emphasis class="keyword">new</emphasis>&#32;MailAddress(<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a18b6157c87df47c35c9b7d4b9bcfa30e_1a18b6157c87df47c35c9b7d4b9bcfa30e">emailaddr</link>));
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(!<link linkend="class_configure_one_flag_1_1_send_mail_abf4e25ed064e9ce6d23a2bdb715a92eb_1abf4e25ed064e9ce6d23a2bdb715a92eb">suppressRecips</link>)
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.To.Add(<emphasis class="keyword">new</emphasis>&#32;MailAddress(<emphasis class="stringliteral">&quot;GrantH@NatlPump.com&quot;</emphasis>));
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.To.Add(<emphasis class="keyword">new</emphasis>&#32;MailAddress(<emphasis class="stringliteral">&quot;Thomas.Stock@NatlPump.com&quot;</emphasis>));
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.Subject&#32;=&#32;messageSubject;
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;mail.Body&#32;=&#32;messageBody;
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SmtpClient&#32;smtp&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SmtpClient(<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a1410899026bc5e03fb6d023a4d5d9618_1a1410899026bc5e03fb6d023a4d5d9618">emailServer</link>);
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;smtp.Send(mail);
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+28 &#32;&#32;&#32;&#32;}
+29 }
     </computeroutput></literallayout>
 </section>

@@ -8,6 +8,9 @@ var files_dup =
     [ "Audit.cs", "_audit_8cs.html", [
       [ "Audit", "class_configure_one_flag_1_1_audit.html", "class_configure_one_flag_1_1_audit" ]
     ] ],
+    [ "BOMValidator.cs", "_b_o_m_validator_8cs.html", [
+      [ "BOMValidator", "class_triggers_1_1_b_o_m_validator.html", null ]
+    ] ],
     [ "C1Dictionaries.cs", "_c1_dictionaries_8cs.html", [
       [ "C1Dictionaries", "class_configure_one_flag_1_1_c1_dictionaries.html", "class_configure_one_flag_1_1_c1_dictionaries" ]
     ] ],
@@ -17,19 +20,34 @@ var files_dup =
     [ "Class1.cs", "_class1_8cs.html", [
       [ "Triggers", "class_configure_one_flag_1_1_triggers.html", "class_configure_one_flag_1_1_triggers" ]
     ] ],
+    [ "COItemValidator.cs", "_c_o_item_validator_8cs.html", [
+      [ "COItemValidator", "class_triggers_1_1_c_o_item_validator.html", "class_triggers_1_1_c_o_item_validator" ]
+    ] ],
+    [ "COValidator.cs", "_c_o_validator_8cs.html", [
+      [ "COValidator", "class_triggers_1_1_c_o_validator.html", "class_triggers_1_1_c_o_validator" ]
+    ] ],
     [ "crypto.cs", "crypto_8cs.html", [
       [ "crypto", "class_configure_one_flag_1_1crypto.html", "class_configure_one_flag_1_1crypto" ]
     ] ],
     [ "DatabaseFactory.cs", "_database_factory_8cs.html", [
       [ "DatabaseFactory", "class_configure_one_flag_1_1_database_factory.html", "class_configure_one_flag_1_1_database_factory" ]
     ] ],
+    [ "ItemValidator.cs", "_item_validator_8cs.html", [
+      [ "ItemValidator", "class_triggers_1_1_item_validator.html", null ]
+    ] ],
     [ "NetworkShare.cs", "_network_share_8cs.html", [
       [ "NetworkShare", "class_configure_one_flag_1_1_network_share.html", "class_configure_one_flag_1_1_network_share" ],
       [ "NETRESOURCE", "class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e.html", "class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e" ],
       [ "ErrorClass", "struct_configure_one_flag_1_1_network_share_1_1_error_class.html", "struct_configure_one_flag_1_1_network_share_1_1_error_class" ]
     ] ],
+    [ "ParmValValidator.cs", "_parm_val_validator_8cs.html", [
+      [ "ParmValValidator", "class_triggers_1_1_parm_val_validator.html", null ]
+    ] ],
     [ "RetrieveDrawings.cs", "_retrieve_drawings_8cs.html", [
       [ "RetrieveDrawings", "class_configure_one_flag_1_1_retrieve_drawings.html", "class_configure_one_flag_1_1_retrieve_drawings" ]
+    ] ],
+    [ "RouteValidator.cs", "_route_validator_8cs.html", [
+      [ "RouteValidator", "class_triggers_1_1_route_validator.html", null ]
     ] ],
     [ "SendMail.cs", "_send_mail_8cs.html", [
       [ "SendMail", "class_configure_one_flag_1_1_send_mail.html", "class_configure_one_flag_1_1_send_mail" ]

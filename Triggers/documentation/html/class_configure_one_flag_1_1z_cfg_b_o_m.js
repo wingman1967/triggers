@@ -1,5 +1,6 @@
 var class_configure_one_flag_1_1z_cfg_b_o_m =
 [
+    [ "ClearBOM", "class_configure_one_flag_1_1z_cfg_b_o_m_ac9298da0c2a92f4d4b756faa818ac18f.html#ac9298da0c2a92f4d4b756faa818ac18f", null ],
     [ "discount_amt", "class_configure_one_flag_1_1z_cfg_b_o_m_a914d1f005cc50678801afa863e1bcfe5.html#a914d1f005cc50678801afa863e1bcfe5", null ],
     [ "id", "class_configure_one_flag_1_1z_cfg_b_o_m_af76d5379906e7ae256808537a9df744f.html#af76d5379906e7ae256808537a9df744f", null ],
     [ "item_num", "class_configure_one_flag_1_1z_cfg_b_o_m_a83a44505f18fa6624ff5667e1ce80f7c.html#a83a44505f18fa6624ff5667e1ce80f7c", null ],

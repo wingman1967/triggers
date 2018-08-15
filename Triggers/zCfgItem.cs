@@ -323,5 +323,53 @@ namespace ConfigureOneFlag
             get { return VAR40; }
             set { VAR40 = value; }
         }
+        public static void ClearItem(ref zCfgItem citem)
+        {
+            citem.CO_Line = 1;
+            citem.CO_Num = "";
+            citem.Desc = "";
+            citem.description = "";
+            citem.IM_VAR1 = "";
+            citem.IM_VAR2 = "";
+            citem.IM_VAR3 = "";
+            citem.IM_VAR4 = "";
+            citem.IM_VAR5 = "";
+            citem.IM_VAR6 = "";
+            citem.IM_VAR7 = "";
+            citem.IM_VAR8 = "";
+            citem.IM_VAR9 = "";
+            citem.IM_VAR10 = "";
+            citem.IM_VAR11 = "";
+            citem.IM_VAR12 = "";
+            citem.IM_VAR13 = "";
+            citem.IM_VAR14 = "";
+            citem.IM_VAR15 = "";
+            citem.IM_VAR16 = "";
+            citem.IM_VAR17 = "";
+            citem.IM_VAR18 = "";
+            citem.IM_VAR19 = "";
+            citem.IM_VAR20 = "";
+            citem.IM_VAR21 = "";
+            citem.IM_VAR22 = "";
+            citem.IM_VAR23 = "";
+            citem.IM_VAR24 = "";
+            citem.IM_VAR25 = "";
+            citem.IM_VAR26 = "";
+            citem.IM_VAR27 = "";
+            citem.IM_VAR28 = "";
+            citem.IM_VAR29 = "";
+            citem.IM_VAR30 = "";
+            citem.IM_VAR31 = "";
+            citem.IM_VAR32 = "";
+            citem.IM_VAR333 = "";
+            citem.IM_VAR34 = "";
+            citem.IM_VAR35 = "";
+            citem.IM_VAR36 = "";
+            citem.IM_VAR37 = "";
+            citem.IM_VAR1 = "";
+            citem.IM_VAR38 = "";
+            citem.IM_VAR39 = "";
+            citem.IM_VAR40 = "";
+        }
     }
 }

@@ -705,6 +705,17 @@
                 </itemizedlist>
             </para>
         </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1z_cfg_item_ae7f38f55ff54c562801c082387e848fe_1ae7f38f55ff54c562801c082387e848fe">ClearItem</link> (
+ref <link linkend="class_configure_one_flag_1_1z_cfg_item">zCfgItem</link> citem)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
     <simplesect>
 
 <para>Accessor class for the item-master object </para>
@@ -718,4 +729,8 @@
         <section>
             <title>Member Data Documentation</title>
         </section>
+            <section xml:id="class_configure_one_flag_1_1z_cfg_item_ae7f38f55ff54c562801c082387e848fe_1ae7f38f55ff54c562801c082387e848fe">
+                <title>static void ConfigureOneFlag.zCfgItem.ClearItem (ref zCfgItem citem)</title> <emphasis></emphasis>
+                
+            </section>
 </section>

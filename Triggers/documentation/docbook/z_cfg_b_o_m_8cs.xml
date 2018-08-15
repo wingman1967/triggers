@@ -139,7 +139,23 @@ Accessor class for the BOM object
 89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_b_o_m_a0f8d3a42f460bff181b88cd9ccd3643e_1a0f8d3a42f460bff181b88cd9ccd3643e">recsequence</link>;&#32;}
 90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_b_o_m_a0f8d3a42f460bff181b88cd9ccd3643e_1a0f8d3a42f460bff181b88cd9ccd3643e">recsequence</link>&#32;=&#32;value;&#32;}
 91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-92 &#32;&#32;&#32;&#32;}
-93 }
+<link linkend="class_configure_one_flag_1_1z_cfg_b_o_m_ac9298da0c2a92f4d4b756faa818ac18f_1ac9298da0c2a92f4d4b756faa818ac18f">92 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_b_o_m_ac9298da0c2a92f4d4b756faa818ac18f_1ac9298da0c2a92f4d4b756faa818ac18f">ClearBOM</link>(ref&#32;<link linkend="class_configure_one_flag_1_1z_cfg_b_o_m">zCfgBOM</link>&#32;bom)
+93 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.CO_Line&#32;=&#32;1;
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.CO_Num&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Discount&#32;=&#32;0;
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Identifier&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+98 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Item&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Parent&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.PriorityLevel&#32;=&#32;0;
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.QTY&#32;=&#32;0;
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.RecordSequence&#32;=&#32;0;
+103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Sequence&#32;=&#32;0;
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.Smartpart&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.UnitCost&#32;=&#32;0;
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;bom.UnitPrice&#32;=&#32;0;
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+108 &#32;&#32;&#32;&#32;}
+109 }
     </computeroutput></literallayout>
 </section>

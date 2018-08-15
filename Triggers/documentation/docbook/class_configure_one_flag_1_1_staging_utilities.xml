@@ -53,6 +53,48 @@
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static zCfgCO coValidator</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static zCfgCOitem coitemValidator</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static zCfgItem citemValidator</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static zCfgParmVal parmvalValidator</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static zCfgRoute routeValidator</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static zCfgBOM bomValidator</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </section>
         <section>
             <title></title>
@@ -79,7 +121,7 @@ XmlDocument xmldoc, string element, XmlNamespaceManager nsmgr)</para>
     </simplesect>
         <simplesect>
             <title>Detailed Description</title>
-                <para>Definition at line 11 of file StagingUtilities.cs</para>
+                <para>Definition at line 13 of file StagingUtilities.cs</para>
                 <para>The Documentation for this struct was generated from the following file: </para>
                 <para><itemizedlist><listitem><para>StagingUtilities.cs</para></listitem></itemizedlist></para>
         </simplesect>

@@ -9,3 +9,13 @@ C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debu
 C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\obj\Debug\Triggers.csproj.CoreCompileInputs.cache
 C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\obj\Debug\Triggers.csproj.CopyComplete
 C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\obj\Debug\Triggers.csprojAssemblyReference.cache
+C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debug\FluentValidation.dll
+C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debug\FluentValidation.pdb
+C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debug\FluentValidation.xml
+C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debug\de\FluentValidation.resources.dll
+C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debug\es\FluentValidation.resources.dll
+C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debug\fr\FluentValidation.resources.dll
+C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debug\it\FluentValidation.resources.dll
+C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debug\nl\FluentValidation.resources.dll
+C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debug\pt\FluentValidation.resources.dll
+C:\Users\hinesj\Documents\Visual Studio 2015\Projects\Triggers\Triggers\bin\Debug\sv\FluentValidation.resources.dll

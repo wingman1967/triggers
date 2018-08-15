@@ -1,5 +1,6 @@
 var class_configure_one_flag_1_1z_cfg_c_oitem =
 [
+    [ "ClearCOItem", "class_configure_one_flag_1_1z_cfg_c_oitem_aeac7d5ff2ab08c02f1f11310626da91d.html#aeac7d5ff2ab08c02f1f11310626da91d", null ],
     [ "config_type", "class_configure_one_flag_1_1z_cfg_c_oitem_a03abb064616f2d89e3f4ed6afcdef5f9.html#a03abb064616f2d89e3f4ed6afcdef5f9", null ],
     [ "cust_po", "class_configure_one_flag_1_1z_cfg_c_oitem_a11434d57f26a9ae26056b0e8308e34ad.html#a11434d57f26a9ae26056b0e8308e34ad", null ],
     [ "description", "class_configure_one_flag_1_1z_cfg_c_oitem_ae654033e98a250bc562635e7a0864068.html#ae654033e98a250bc562635e7a0864068", null ],

@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_c_o_item_validator_8cs">
+    <title>COItemValidator.cs File Reference</title>
+<para>Include dependency diagram for COItemValidator.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_c_o_item_validator_8cs__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for COItemValidator.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_c_o_item_validator_8cs__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_c_o_item_validator">Triggers::COItemValidator</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_triggers">Triggers</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_fluent_validation">FluentValidation</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_fluent_validation_1_1_results">FluentValidation::Results</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file C:/Users/hinesj/Documents/Visual Studio 2015/Projects/Triggers/Triggers/COItemValidator.cs</para>
+    </simplesect>
+    <literallayout><computeroutput>
+1 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>;
+2 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Collections.Generic;
+3 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Linq;
+4 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Text;
+5 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_fluent_validation">FluentValidation</link>;
+6 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_fluent_validation">FluentValidation</link>.Results;
+7 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>;
+8 
+9 <emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_triggers">Triggers</link>
+10 {
+<link linkend="class_triggers_1_1_c_o_item_validator">11 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_triggers_1_1_c_o_item_validator">COItemValidator</link>&#32;:&#32;AbstractValidator&lt;zCfgCOitem&gt;
+12 &#32;&#32;&#32;&#32;{
+<link linkend="class_triggers_1_1_c_o_item_validator_a6224099922cbef1781d23b840168231d_1a6224099922cbef1781d23b840168231d">13 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_triggers_1_1_c_o_item_validator_a6224099922cbef1781d23b840168231d_1a6224099922cbef1781d23b840168231d">ConfigType</link>()
+14 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;RuleFor(x&#32;=&gt;&#32;x.ConfigType).Length(1);
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ValidationResult&#32;results&#32;=&#32;this.Validate(<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>);
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(results.Errors.Count&#32;&gt;&#32;0)&#32;{&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>.<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a82d4481426f3189d8d324fb7ca9d85cb_1a82d4481426f3189d8d324fb7ca9d85cb">ConfigType</link>&#32;=&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>.<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a82d4481426f3189d8d324fb7ca9d85cb_1a82d4481426f3189d8d324fb7ca9d85cb">ConfigType</link>.Substring(0,&#32;1);&#32;<link linkend="class_configure_one_flag_1_1_audit">Audit</link>.<link linkend="class_configure_one_flag_1_1_audit_a7fdb2725da88b566b149e39976b4c48c_1a7fdb2725da88b566b149e39976b4c48c">ValidationMessages</link>&#32;+=&#32;results.ToString();&#32;}
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_triggers_1_1_c_o_item_validator_a79bfc754b5e15a44cbb5971437e94ad0_1a79bfc754b5e15a44cbb5971437e94ad0">19 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_triggers_1_1_c_o_item_validator_a79bfc754b5e15a44cbb5971437e94ad0_1a79bfc754b5e15a44cbb5971437e94ad0">CO_Num</link>()
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;RuleFor(x&#32;=&gt;&#32;x.CO_Num).Length(0,&#32;15);
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ValidationResult&#32;results&#32;=&#32;this.Validate(<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>);
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(results.Errors.Count&#32;&gt;&#32;0)&#32;{&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>.<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a81b1d61f51869b4d7681186d0269e4b4_1a81b1d61f51869b4d7681186d0269e4b4">CO_Num</link>&#32;=&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>.<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a81b1d61f51869b4d7681186d0269e4b4_1a81b1d61f51869b4d7681186d0269e4b4">CO_Num</link>.Substring(0,&#32;15);&#32;<link linkend="class_configure_one_flag_1_1_audit">Audit</link>.<link linkend="class_configure_one_flag_1_1_audit_a7fdb2725da88b566b149e39976b4c48c_1a7fdb2725da88b566b149e39976b4c48c">ValidationMessages</link>&#32;+=&#32;results.ToString();&#32;}
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_triggers_1_1_c_o_item_validator_af2db6c198237f397e7ee0d5b39174fa7_1af2db6c198237f397e7ee0d5b39174fa7">25 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_triggers_1_1_c_o_item_validator_af2db6c198237f397e7ee0d5b39174fa7_1af2db6c198237f397e7ee0d5b39174fa7">Serial</link>()
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;RuleFor(x&#32;=&gt;&#32;x.Serial).Length(0,&#32;15);
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ValidationResult&#32;results&#32;=&#32;this.Validate(<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>);
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(results.Errors.Count&#32;&gt;&#32;0)&#32;{&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>.<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ab32f3dab6b3e8d51c58debe13b9761b0_1ab32f3dab6b3e8d51c58debe13b9761b0">Serial</link>&#32;=&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>.<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_ab32f3dab6b3e8d51c58debe13b9761b0_1ab32f3dab6b3e8d51c58debe13b9761b0">Serial</link>.Substring(0,&#32;15);&#32;<link linkend="class_configure_one_flag_1_1_audit">Audit</link>.<link linkend="class_configure_one_flag_1_1_audit_a7fdb2725da88b566b149e39976b4c48c_1a7fdb2725da88b566b149e39976b4c48c">ValidationMessages</link>&#32;+=&#32;results.ToString();&#32;}
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_triggers_1_1_c_o_item_validator_a6e031061ed664b4cc06c89e2f4f09bf5_1a6e031061ed664b4cc06c89e2f4f09bf5">31 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_triggers_1_1_c_o_item_validator_a6e031061ed664b4cc06c89e2f4f09bf5_1a6e031061ed664b4cc06c89e2f4f09bf5">Item</link>()
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;RuleFor(x&#32;=&gt;&#32;x.Item).Length(0,&#32;30);
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ValidationResult&#32;results&#32;=&#32;this.Validate(<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>);
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(results.Errors.Count&#32;&gt;&#32;0)&#32;{&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>.<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a9a0eb460ce1cd0dc9a4d8ad2d1503e60_1a9a0eb460ce1cd0dc9a4d8ad2d1503e60">Item</link>&#32;=&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>.<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a9a0eb460ce1cd0dc9a4d8ad2d1503e60_1a9a0eb460ce1cd0dc9a4d8ad2d1503e60">Item</link>.Substring(0,&#32;30);&#32;<link linkend="class_configure_one_flag_1_1_audit">Audit</link>.<link linkend="class_configure_one_flag_1_1_audit_a7fdb2725da88b566b149e39976b4c48c_1a7fdb2725da88b566b149e39976b4c48c">ValidationMessages</link>&#32;+=&#32;results.ToString();&#32;}
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_triggers_1_1_c_o_item_validator_ad7c2cd622f188fb7eff6910c81a16cd0_1ad7c2cd622f188fb7eff6910c81a16cd0">37 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_triggers_1_1_c_o_item_validator_ad7c2cd622f188fb7eff6910c81a16cd0_1ad7c2cd622f188fb7eff6910c81a16cd0">Smartpart</link>()
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;RuleFor(x&#32;=&gt;&#32;x.Smartpart).Length(0,&#32;30);
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ValidationResult&#32;results&#32;=&#32;this.Validate(<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>);
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(results.Errors.Count&#32;&gt;&#32;0)&#32;{&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>.<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a483e5f3a7d282bbb3ebde0af3287a810_1a483e5f3a7d282bbb3ebde0af3287a810">Smartpart</link>&#32;=&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>.<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a483e5f3a7d282bbb3ebde0af3287a810_1a483e5f3a7d282bbb3ebde0af3287a810">Smartpart</link>.Substring(0,&#32;30);&#32;<link linkend="class_configure_one_flag_1_1_audit">Audit</link>.<link linkend="class_configure_one_flag_1_1_audit_a7fdb2725da88b566b149e39976b4c48c_1a7fdb2725da88b566b149e39976b4c48c">ValidationMessages</link>&#32;+=&#32;results.ToString();&#32;}
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_triggers_1_1_c_o_item_validator_ad0e2a26cbf24e908d5c9c7990f29ef20_1ad0e2a26cbf24e908d5c9c7990f29ef20">43 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_triggers_1_1_c_o_item_validator_ad0e2a26cbf24e908d5c9c7990f29ef20_1ad0e2a26cbf24e908d5c9c7990f29ef20">Desc</link>()
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;RuleFor(x&#32;=&gt;&#32;x.Desc).Length(0,&#32;1000);
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ValidationResult&#32;results&#32;=&#32;this.Validate(<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>);
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(results.Errors.Count&#32;&gt;&#32;0)&#32;{&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>.<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a9dd76b402819ba05697e297121c18be5_1a9dd76b402819ba05697e297121c18be5">Desc</link>&#32;=&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>.<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a9dd76b402819ba05697e297121c18be5_1a9dd76b402819ba05697e297121c18be5">Desc</link>.Substring(0,&#32;1000);&#32;<link linkend="class_configure_one_flag_1_1_audit">Audit</link>.<link linkend="class_configure_one_flag_1_1_audit_a7fdb2725da88b566b149e39976b4c48c_1a7fdb2725da88b566b149e39976b4c48c">ValidationMessages</link>&#32;+=&#32;results.ToString();&#32;}
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_triggers_1_1_c_o_item_validator_ae3fcfa4c04aa2107e3e77986a77086e6_1ae3fcfa4c04aa2107e3e77986a77086e6">49 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_triggers_1_1_c_o_item_validator_ae3fcfa4c04aa2107e3e77986a77086e6_1ae3fcfa4c04aa2107e3e77986a77086e6">CustPO</link>()
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;RuleFor(x&#32;=&gt;&#32;x.CustPO).Length(0,&#32;22);
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ValidationResult&#32;results&#32;=&#32;this.Validate(<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>);
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(results.Errors.Count&#32;&gt;&#32;0)&#32;{&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>.<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a3b21ee495e73019733920e6943cac2d4_1a3b21ee495e73019733920e6943cac2d4">CustPO</link>&#32;=&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>.<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_a3b21ee495e73019733920e6943cac2d4_1a3b21ee495e73019733920e6943cac2d4">CustPO</link>.Substring(0,&#32;22);&#32;<link linkend="class_configure_one_flag_1_1_audit">Audit</link>.<link linkend="class_configure_one_flag_1_1_audit_a7fdb2725da88b566b149e39976b4c48c_1a7fdb2725da88b566b149e39976b4c48c">ValidationMessages</link>&#32;+=&#32;results.ToString();&#32;}
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_triggers_1_1_c_o_item_validator_aa5f0f6f9ec265be18492e4ac821fd081_1aa5f0f6f9ec265be18492e4ac821fd081">55 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_triggers_1_1_c_o_item_validator_aa5f0f6f9ec265be18492e4ac821fd081_1aa5f0f6f9ec265be18492e4ac821fd081">OrderLineNotes</link>()
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;RuleFor(x&#32;=&gt;&#32;x.OrderLineNotes).Length(0,&#32;1000);
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;ValidationResult&#32;results&#32;=&#32;this.Validate(<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>);
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(results.Errors.Count&#32;&gt;&#32;0)&#32;{&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>.<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_aac8a3ebd144fff3a5f8859eea2698ded_1aac8a3ebd144fff3a5f8859eea2698ded">OrderLineNotes</link>&#32;=&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a8a268851e41b0f7a57c22c15bce6e78e_1a8a268851e41b0f7a57c22c15bce6e78e">coitemValidator</link>.<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_aac8a3ebd144fff3a5f8859eea2698ded_1aac8a3ebd144fff3a5f8859eea2698ded">OrderLineNotes</link>.Substring(0,&#32;1000);&#32;<link linkend="class_configure_one_flag_1_1_audit">Audit</link>.<link linkend="class_configure_one_flag_1_1_audit_a7fdb2725da88b566b149e39976b4c48c_1a7fdb2725da88b566b149e39976b4c48c">ValidationMessages</link>&#32;+=&#32;results.ToString();&#32;}
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_triggers_1_1_c_o_item_validator_a124ef6347ef724d60c9141bbd1dba233_1a124ef6347ef724d60c9141bbd1dba233">61 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_triggers_1_1_c_o_item_validator_a124ef6347ef724d60c9141bbd1dba233_1a124ef6347ef724d60c9141bbd1dba233">ValidateCOItem</link>()
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_triggers_1_1_c_o_item_validator_a6224099922cbef1781d23b840168231d_1a6224099922cbef1781d23b840168231d">ConfigType</link>();
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_triggers_1_1_c_o_item_validator_a79bfc754b5e15a44cbb5971437e94ad0_1a79bfc754b5e15a44cbb5971437e94ad0">CO_Num</link>();
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_triggers_1_1_c_o_item_validator_af2db6c198237f397e7ee0d5b39174fa7_1af2db6c198237f397e7ee0d5b39174fa7">Serial</link>();
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_triggers_1_1_c_o_item_validator_a6e031061ed664b4cc06c89e2f4f09bf5_1a6e031061ed664b4cc06c89e2f4f09bf5">Item</link>();
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_triggers_1_1_c_o_item_validator_ad7c2cd622f188fb7eff6910c81a16cd0_1ad7c2cd622f188fb7eff6910c81a16cd0">Smartpart</link>();
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_triggers_1_1_c_o_item_validator_ad0e2a26cbf24e908d5c9c7990f29ef20_1ad0e2a26cbf24e908d5c9c7990f29ef20">Desc</link>();
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_triggers_1_1_c_o_item_validator_ae3fcfa4c04aa2107e3e77986a77086e6_1ae3fcfa4c04aa2107e3e77986a77086e6">CustPO</link>();
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_triggers_1_1_c_o_item_validator_aa5f0f6f9ec265be18492e4ac821fd081_1aa5f0f6f9ec265be18492e4ac821fd081">OrderLineNotes</link>();
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+72 &#32;&#32;&#32;&#32;}
+73 }
+    </computeroutput></literallayout>
+</section>

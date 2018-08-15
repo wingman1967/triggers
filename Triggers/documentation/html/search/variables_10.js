@@ -25,5 +25,6 @@ var searchData=
   ['sppassword',['sppassword',['../class_configure_one_flag_1_1_database_factory_a10149307929348e6d16785e15fc7fbdc.html#a10149307929348e6d16785e15fc7fbdc',1,'ConfigureOneFlag::DatabaseFactory']]],
   ['sppubordernumber',['SPPUBOrderNumber',['../class_configure_one_flag_1_1_c1_web_service_a3b62f1740b69427db998d338c386e3fd.html#a3b62f1740b69427db998d338c386e3fd',1,'ConfigureOneFlag::C1WebService']]],
   ['spuname',['spuname',['../class_configure_one_flag_1_1_database_factory_a11d432b379e9e80f1b11ac4884a25ead.html#a11d432b379e9e80f1b11ac4884a25ead',1,'ConfigureOneFlag::DatabaseFactory']]],
-  ['sqlcommand',['SQLCommand',['../class_configure_one_flag_1_1_database_factory_aa5aa82b5ed9dd8d3610b92ed61a9f2d4.html#aa5aa82b5ed9dd8d3610b92ed61a9f2d4',1,'ConfigureOneFlag::DatabaseFactory']]]
+  ['sqlcommand',['SQLCommand',['../class_configure_one_flag_1_1_database_factory_aa5aa82b5ed9dd8d3610b92ed61a9f2d4.html#aa5aa82b5ed9dd8d3610b92ed61a9f2d4',1,'ConfigureOneFlag::DatabaseFactory']]],
+  ['suppressrecips',['suppressRecips',['../class_configure_one_flag_1_1_send_mail_abf4e25ed064e9ce6d23a2bdb715a92eb.html#abf4e25ed064e9ce6d23a2bdb715a92eb',1,'ConfigureOneFlag::SendMail']]]
 ];

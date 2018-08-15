@@ -151,7 +151,25 @@ Accessor class for the CO Item
 101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_afdcd25d15137456cefeaa455f40fe0a5_1afdcd25d15137456cefeaa455f40fe0a5">orderline_notes</link>;&#32;}
 102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_afdcd25d15137456cefeaa455f40fe0a5_1afdcd25d15137456cefeaa455f40fe0a5">orderline_notes</link>&#32;=&#32;value;&#32;}
 103 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-104 &#32;&#32;&#32;&#32;}
-105 }
+<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_aeac7d5ff2ab08c02f1f11310626da91d_1aeac7d5ff2ab08c02f1f11310626da91d">104 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem_aeac7d5ff2ab08c02f1f11310626da91d_1aeac7d5ff2ab08c02f1f11310626da91d">ClearCOItem</link>(ref&#32;<link linkend="class_configure_one_flag_1_1z_cfg_c_oitem">zCfgCOitem</link>&#32;coitem)
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.ConfigType&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.CO_Line&#32;=&#32;1;
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.CO_Num&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.CustPO&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.Desc&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.Discount&#32;=&#32;0;
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.DueDate&#32;=&#32;<link linkend="namespace_system">System</link>.DateTime.Now;
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.Item&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.OrderLineNotes&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.PriorityLevel&#32;=&#32;0;
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.QTY&#32;=&#32;0;
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.Serial&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+118 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.Smartpart&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.UnitCost&#32;=&#32;0;
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;coitem.UnitPrice&#32;=&#32;0;
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+122 &#32;&#32;&#32;&#32;}
+123 }
     </computeroutput></literallayout>
 </section>

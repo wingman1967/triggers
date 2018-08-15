@@ -822,6 +822,17 @@
                 </itemizedlist>
             </para>
         </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1z_cfg_c_o_a52e23f5ed755fecd4f4413c19dd1cfb1_1a52e23f5ed755fecd4f4413c19dd1cfb1">ClearCO</link> (
+ref <link linkend="class_configure_one_flag_1_1z_cfg_c_o">zCfgCO</link> co)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
     <simplesect>
 
 <para>Accessor class for CO object </para>
@@ -835,4 +846,8 @@
         <section>
             <title>Member Data Documentation</title>
         </section>
+            <section xml:id="class_configure_one_flag_1_1z_cfg_c_o_a52e23f5ed755fecd4f4413c19dd1cfb1_1a52e23f5ed755fecd4f4413c19dd1cfb1">
+                <title>static void ConfigureOneFlag.zCfgCO.ClearCO (ref zCfgCO co)</title> <emphasis></emphasis>
+                
+            </section>
 </section>

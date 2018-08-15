@@ -101,5 +101,23 @@ namespace ConfigureOneFlag
             get { return orderline_notes; }
             set { orderline_notes = value; }
         }
+        public static void ClearCOItem(ref zCfgCOitem coitem)
+        {
+            coitem.ConfigType = "";
+            coitem.CO_Line = 1;
+            coitem.CO_Num = "";
+            coitem.CustPO = "";
+            coitem.Desc = "";
+            coitem.Discount = 0;
+            coitem.DueDate = System.DateTime.Now;
+            coitem.Item = "";
+            coitem.OrderLineNotes = "";
+            coitem.PriorityLevel = 0;
+            coitem.QTY = 0;
+            coitem.Serial = "";
+            coitem.Smartpart = "";
+            coitem.UnitCost = 0;
+            coitem.UnitPrice = 0;
+        }
     }
 }
