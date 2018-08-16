@@ -1,0 +1,27 @@
+var class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row =
+[
+    [ "GR_Cfg_AuditRow", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_a46c732148f2445220d54a9d0b328c862.html#a46c732148f2445220d54a9d0b328c862", null ],
+    [ "IsauditEventNull", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_ae3d1ebf41c909451766bcacc499bb845.html#ae3d1ebf41c909451766bcacc499bb845", null ],
+    [ "IsauditMessageLNull", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_ab240c71f66488180d13d3c125f6ae96e.html#ab240c71f66488180d13d3c125f6ae96e", null ],
+    [ "Isorder_line_numNull", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_acc77cd2b46d081ed6a8723de0f4edbeb.html#acc77cd2b46d081ed6a8723de0f4edbeb", null ],
+    [ "Isorder_numNull", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_a1feed0ad35ac5fe87e6036583c8cd42f.html#a1feed0ad35ac5fe87e6036583c8cd42f", null ],
+    [ "IsstepNull", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_a89a0cbc0a3920e43353cf94da54dc8ca.html#a89a0cbc0a3920e43353cf94da54dc8ca", null ],
+    [ "SetauditEventNull", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_a7654e47cc7c7caec2edf663b21028773.html#a7654e47cc7c7caec2edf663b21028773", null ],
+    [ "SetauditMessageLNull", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_a0b4814f679a42f810be8a5302b48fa90.html#a0b4814f679a42f810be8a5302b48fa90", null ],
+    [ "Setorder_line_numNull", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_afd06b343807ca972046f5dbdceff94a7.html#afd06b343807ca972046f5dbdceff94a7", null ],
+    [ "Setorder_numNull", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_a41c05a5395b3938434940ae292a9d0de.html#a41c05a5395b3938434940ae292a9d0de", null ],
+    [ "SetstepNull", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_adfc0007c3125b1870ef6df1396b4667c.html#adfc0007c3125b1870ef6df1396b4667c", null ],
+    [ "tableGR_Cfg_Audit", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_a3274ea8770606938254f4d5abe1cdd6f.html#a3274ea8770606938254f4d5abe1cdd6f", null ],
+    [ "auditEvent", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_aae5b212a298d6899447c08b565a7f9fb.html#aae5b212a298d6899447c08b565a7f9fb", null ],
+    [ "auditMessageL", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_aa9b170c557bd10de12a218a35a31adec.html#aa9b170c557bd10de12a218a35a31adec", null ],
+    [ "CreateDate", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_afc2584c6d0cfe8412002a63545024be0.html#afc2584c6d0cfe8412002a63545024be0", null ],
+    [ "CreatedBy", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_a59b9bfc83a46a3d2f52b0d2efc18272e.html#a59b9bfc83a46a3d2f52b0d2efc18272e", null ],
+    [ "InWorkflow", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_a0bbee96b1ceeb476b10684b9d2a57f1b.html#a0bbee96b1ceeb476b10684b9d2a57f1b", null ],
+    [ "NoteExistsFlag", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_aa297fd8cad6d4072f9a6f30b4a99318f.html#aa297fd8cad6d4072f9a6f30b4a99318f", null ],
+    [ "order_line_num", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_a24fefdd03b5e681ea5fc9b797e9afcfa.html#a24fefdd03b5e681ea5fc9b797e9afcfa", null ],
+    [ "order_num", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_a55fd27e090acd509a143783d60eb7708.html#a55fd27e090acd509a143783d60eb7708", null ],
+    [ "RecordDate", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_a7a1817619af5367cbe67f65aaee7d12c.html#a7a1817619af5367cbe67f65aaee7d12c", null ],
+    [ "RowPointer", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_acbb5fe2e959b0ad8c368c0a84ec3af73.html#acbb5fe2e959b0ad8c368c0a84ec3af73", null ],
+    [ "step", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_a00b9db31ea7027d245a5971400e53085.html#a00b9db31ea7027d245a5971400e53085", null ],
+    [ "UpdatedBy", "class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_a48c6cf99f5835f623c6c2256e3f40145.html#a48c6cf99f5835f623c6c2256e3f40145", null ]
+];

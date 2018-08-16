@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter">
+<title>Triggers::GRCfgTableAdapters::GR_Cfg_ProgressTableAdapter class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfgTableAdapters::GR_Cfg_ProgressTableAdapter</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfgTableAdapters::GR_Cfg_ProgressTableAdapter</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.OleDb.OleDbDataAdapter _adapter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.OleDb.OleDbConnection _connection</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.OleDb.OleDbTransaction _transaction</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.OleDb.OleDbCommand [] _commandCollection</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool _clearBeforeFill</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_af86e32b23fb729fe7e8adb66754b1cb9_1af86e32b23fb729fe7e8adb66754b1cb9">GR_Cfg_ProgressTableAdapter</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_a623403811a70a8f08873371080f70f17_1a623403811a70a8f08873371080f70f17">Fill</link> (
+<link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___progress_data_table">GRCfg.GR_Cfg_ProgressDataTable</link> dataTable)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___progress_data_table">GRCfg.GR_Cfg_ProgressDataTable</link> <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_a9509f0a79ab54e5730f7e59e9df4852b_1a9509f0a79ab54e5730f7e59e9df4852b">GetData</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_ad1de02f9ede3204293a15d3af18474c3_1ad1de02f9ede3204293a15d3af18474c3">Update</link> (
+<link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___progress_data_table">GRCfg.GR_Cfg_ProgressDataTable</link> dataTable)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_a518cec3f489bae8c24d3fd5b2356111f_1a518cec3f489bae8c24d3fd5b2356111f">Update</link> (
+<link linkend="class_triggers_1_1_g_r_cfg">GRCfg</link> dataSet)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_a8bdd37fc4ca5066ec9778c39dc729128_1a8bdd37fc4ca5066ec9778c39dc729128">Update</link> (
+global::System.Data.DataRow dataRow)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_ad0f419891c6698bed129861d9cd162d7_1ad0f419891c6698bed129861d9cd162d7">Update</link> (
+global::System.Data.DataRow [] dataRows)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_af77d7a0b20b838b9c902d6fd01ea6539_1af77d7a0b20b838b9c902d6fd01ea6539">Insert</link> (
+string order_num, string step, string CreatedBy, string UpdatedBy, System.DateTime CreateDate, System.DateTime RecordDate, System.Guid RowPointer, byte NoteExistsFlag, byte InWorkflow)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_a1463ceb178a2894e49eaa98e8bc187f7_1a1463ceb178a2894e49eaa98e8bc187f7">InitAdapter</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_abe90f3b5ae24c5fd3bbcc6c30482c80a_1abe90f3b5ae24c5fd3bbcc6c30482c80a">InitConnection</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_ab270ccb462adb1f8a28c7f00751cabde_1ab270ccb462adb1f8a28c7f00751cabde">InitCommandCollection</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represents the connection and commands used to retrieve and save data. /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_af86e32b23fb729fe7e8adb66754b1cb9_1af86e32b23fb729fe7e8adb66754b1cb9">
+                <title>Triggers.GRCfgTableAdapters.GR_Cfg_ProgressTableAdapter.GR_Cfg_ProgressTableAdapter ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_a623403811a70a8f08873371080f70f17_1a623403811a70a8f08873371080f70f17">
+                <title>virtual int Triggers.GRCfgTableAdapters.GR_Cfg_ProgressTableAdapter.Fill (GRCfg.GR_Cfg_ProgressDataTable dataTable)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_a9509f0a79ab54e5730f7e59e9df4852b_1a9509f0a79ab54e5730f7e59e9df4852b">
+                <title>virtual GRCfg.GR_Cfg_ProgressDataTable Triggers.GRCfgTableAdapters.GR_Cfg_ProgressTableAdapter.GetData ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_ad1de02f9ede3204293a15d3af18474c3_1ad1de02f9ede3204293a15d3af18474c3">
+                <title>virtual int Triggers.GRCfgTableAdapters.GR_Cfg_ProgressTableAdapter.Update (GRCfg.GR_Cfg_ProgressDataTable dataTable)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_a518cec3f489bae8c24d3fd5b2356111f_1a518cec3f489bae8c24d3fd5b2356111f">
+                <title>virtual int Triggers.GRCfgTableAdapters.GR_Cfg_ProgressTableAdapter.Update (GRCfg dataSet)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_a8bdd37fc4ca5066ec9778c39dc729128_1a8bdd37fc4ca5066ec9778c39dc729128">
+                <title>virtual int Triggers.GRCfgTableAdapters.GR_Cfg_ProgressTableAdapter.Update (global::System.Data.DataRow dataRow)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_ad0f419891c6698bed129861d9cd162d7_1ad0f419891c6698bed129861d9cd162d7">
+                <title>virtual int Triggers.GRCfgTableAdapters.GR_Cfg_ProgressTableAdapter.Update (global::System.Data.DataRow[] dataRows)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_af77d7a0b20b838b9c902d6fd01ea6539_1af77d7a0b20b838b9c902d6fd01ea6539">
+                <title>virtual int Triggers.GRCfgTableAdapters.GR_Cfg_ProgressTableAdapter.Insert (string order_num, string step, string CreatedBy, string UpdatedBy, System.DateTime CreateDate, System.DateTime RecordDate, System.Guid RowPointer, byte NoteExistsFlag, byte InWorkflow)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_a1463ceb178a2894e49eaa98e8bc187f7_1a1463ceb178a2894e49eaa98e8bc187f7">
+                <title>void Triggers.GRCfgTableAdapters.GR_Cfg_ProgressTableAdapter.InitAdapter ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_abe90f3b5ae24c5fd3bbcc6c30482c80a_1abe90f3b5ae24c5fd3bbcc6c30482c80a">
+                <title>void Triggers.GRCfgTableAdapters.GR_Cfg_ProgressTableAdapter.InitConnection ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter_ab270ccb462adb1f8a28c7f00751cabde_1ab270ccb462adb1f8a28c7f00751cabde">
+                <title>void Triggers.GRCfgTableAdapters.GR_Cfg_ProgressTableAdapter.InitCommandCollection ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

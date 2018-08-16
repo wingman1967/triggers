@@ -1,0 +1,706 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row">
+<title>Triggers::GRCfg::GR_CfgBOMRow class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfg::GR_CfgBOMRow</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfg::GR_CfgBOMRow</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_CfgBOMDataTable tableGR_CfgBOM</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_ac7ba8e088a1beadb40bbe4ad55a5f49d_1ac7ba8e088a1beadb40bbe4ad55a5f49d">GR_CfgBOMRow</link> (
+global::System.Data.DataRowBuilder rb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a759c181b6ae510c28af8717f59794478_1a759c181b6ae510c28af8717f59794478">Isorder_numNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a652b91a17d220490afa64b94aaaab522_1a652b91a17d220490afa64b94aaaab522">Setorder_numNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_ad604b1e46621159333e8cd1c53223da0_1ad604b1e46621159333e8cd1c53223da0">Isorder_line_numNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a85cdff84fc5f63a211872f5021bebe7a_1a85cdff84fc5f63a211872f5021bebe7a">Setorder_line_numNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a3d4783153e3acfb318a51cbf8e8ab3bb_1a3d4783153e3acfb318a51cbf8e8ab3bb">IsseqNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_aea46a62c1f234669dfbcddbcad20780f_1aea46a62c1f234669dfbcddbcad20780f">SetseqNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_ad0c47553f1b50fc1bdbfd9a20a4ed14f_1ad0c47553f1b50fc1bdbfd9a20a4ed14f">Isparent_idNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a203edfa9a111aa51fe1e6797e81ca7dc_1a203edfa9a111aa51fe1e6797e81ca7dc">Setparent_idNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_ad345f497027c829059fa59534f69a9d8_1ad345f497027c829059fa59534f69a9d8">IsidNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a939cfe312eb58c7d0322d16f4227eff8_1a939cfe312eb58c7d0322d16f4227eff8">SetidNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a57c7e89342ee0b4f98fb405aa916b5a1_1a57c7e89342ee0b4f98fb405aa916b5a1">Isitem_numNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a03b8ab3266c69475819bfa7dd9d52fdd_1a03b8ab3266c69475819bfa7dd9d52fdd">Setitem_numNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_ad9100f558e32e2356bcaeb62e8f26662_1ad9100f558e32e2356bcaeb62e8f26662">Issmartpart_numNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a4f283f1ab4ae553d963f64587acc71b7_1a4f283f1ab4ae553d963f64587acc71b7">Setsmartpart_numNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a171fc68aa92b8d43b445b56dbff215ae_1a171fc68aa92b8d43b445b56dbff215ae">Isunit_priceNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a8a3fedd67f886cb4aa0afd66c46faaeb_1a8a3fedd67f886cb4aa0afd66c46faaeb">Setunit_priceNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_aba6cedf1ab388863a2cf73104e5854c7_1aba6cedf1ab388863a2cf73104e5854c7">Isunit_costNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a980af51bba01839f142be957b9c5125e_1a980af51bba01839f142be957b9c5125e">Setunit_costNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a79a3df57ca693549105829be131cae94_1a79a3df57ca693549105829be131cae94">Isdiscount_amtNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_acd45c99f92902d1e800278c3ed99ee49_1acd45c99f92902d1e800278c3ed99ee49">Setdiscount_amtNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_afd1032fffff4e06cfd2a034782b32c27_1afd1032fffff4e06cfd2a034782b32c27">IsquantityNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a9daf23ff2aa7c3456b3b972700648de0_1a9daf23ff2aa7c3456b3b972700648de0">SetquantityNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a5e2f8a9323fabb5922138a21b2189044_1a5e2f8a9323fabb5922138a21b2189044">Ispriority_levelNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_aee6dfd73464d4dbc06e16806a1e9b855_1aee6dfd73464d4dbc06e16806a1e9b855">Setpriority_levelNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a980603f34bf7d5b8d9213f8254c96513_1a980603f34bf7d5b8d9213f8254c96513">Isjm_ref_typeNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a73835fbb914c09c5ee13603366b25364_1a73835fbb914c09c5ee13603366b25364">Setjm_ref_typeNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a81aa7ea250d38d6f638293bdca13678e_1a81aa7ea250d38d6f638293bdca13678e">Isjm_jobNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a5f3e1c0ed61cafbdf8f0d1f1654438a1_1a5f3e1c0ed61cafbdf8f0d1f1654438a1">Setjm_jobNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a6536c68a0723e1a5526e3b8d2996b7f9_1a6536c68a0723e1a5526e3b8d2996b7f9">Isjm_suffixNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a0f891c2d28c524b87fef5f0c96a0eba9_1a0f891c2d28c524b87fef5f0c96a0eba9">Setjm_suffixNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a02e5ba0af58501cf368f81a66fda9312_1a02e5ba0af58501cf368f81a66fda9312">Isjm_oper_numNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a8e4430c01697d0dc1940151404799efb_1a8e4430c01697d0dc1940151404799efb">Setjm_oper_numNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_ac3323d76f8f78a621085cc46c45d96ab_1ac3323d76f8f78a621085cc46c45d96ab">Isjm_sequenceNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a808215990a2ef4402789de551cb47d94_1a808215990a2ef4402789de551cb47d94">Setjm_sequenceNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_ab8b826b3389500b15c9b56aba5669f97_1ab8b826b3389500b15c9b56aba5669f97">Isjm_itemNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a96bd97b7ff1d204f86d517127ebaa256_1a96bd97b7ff1d204f86d517127ebaa256">Setjm_itemNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a356b3dc7484ab623ca776c415b302e1d_1a356b3dc7484ab623ca776c415b302e1d">Isjm_processedNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_aaa5a404d00dae94e98b26867e576573f_1aaa5a404d00dae94e98b26867e576573f">Setjm_processedNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a32516edbcd71cab597b614e5094877f7_1a32516edbcd71cab597b614e5094877f7">IsrecsequenceNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a7801957dd6bd6da43263301656b168a3_1a7801957dd6bd6da43263301656b168a3">SetrecsequenceNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represents strongly named DataRow class. /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_ac7ba8e088a1beadb40bbe4ad55a5f49d_1ac7ba8e088a1beadb40bbe4ad55a5f49d">
+                <title>Triggers.GRCfg.GR_CfgBOMRow.GR_CfgBOMRow (global::System.Data.DataRowBuilder rb)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a759c181b6ae510c28af8717f59794478_1a759c181b6ae510c28af8717f59794478">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.Isorder_numNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a652b91a17d220490afa64b94aaaab522_1a652b91a17d220490afa64b94aaaab522">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.Setorder_numNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_ad604b1e46621159333e8cd1c53223da0_1ad604b1e46621159333e8cd1c53223da0">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.Isorder_line_numNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a85cdff84fc5f63a211872f5021bebe7a_1a85cdff84fc5f63a211872f5021bebe7a">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.Setorder_line_numNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a3d4783153e3acfb318a51cbf8e8ab3bb_1a3d4783153e3acfb318a51cbf8e8ab3bb">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.IsseqNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_aea46a62c1f234669dfbcddbcad20780f_1aea46a62c1f234669dfbcddbcad20780f">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.SetseqNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_ad0c47553f1b50fc1bdbfd9a20a4ed14f_1ad0c47553f1b50fc1bdbfd9a20a4ed14f">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.Isparent_idNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a203edfa9a111aa51fe1e6797e81ca7dc_1a203edfa9a111aa51fe1e6797e81ca7dc">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.Setparent_idNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_ad345f497027c829059fa59534f69a9d8_1ad345f497027c829059fa59534f69a9d8">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.IsidNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a939cfe312eb58c7d0322d16f4227eff8_1a939cfe312eb58c7d0322d16f4227eff8">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.SetidNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a57c7e89342ee0b4f98fb405aa916b5a1_1a57c7e89342ee0b4f98fb405aa916b5a1">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.Isitem_numNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a03b8ab3266c69475819bfa7dd9d52fdd_1a03b8ab3266c69475819bfa7dd9d52fdd">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.Setitem_numNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_ad9100f558e32e2356bcaeb62e8f26662_1ad9100f558e32e2356bcaeb62e8f26662">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.Issmartpart_numNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a4f283f1ab4ae553d963f64587acc71b7_1a4f283f1ab4ae553d963f64587acc71b7">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.Setsmartpart_numNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a171fc68aa92b8d43b445b56dbff215ae_1a171fc68aa92b8d43b445b56dbff215ae">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.Isunit_priceNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a8a3fedd67f886cb4aa0afd66c46faaeb_1a8a3fedd67f886cb4aa0afd66c46faaeb">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.Setunit_priceNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_aba6cedf1ab388863a2cf73104e5854c7_1aba6cedf1ab388863a2cf73104e5854c7">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.Isunit_costNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a980af51bba01839f142be957b9c5125e_1a980af51bba01839f142be957b9c5125e">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.Setunit_costNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a79a3df57ca693549105829be131cae94_1a79a3df57ca693549105829be131cae94">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.Isdiscount_amtNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_acd45c99f92902d1e800278c3ed99ee49_1acd45c99f92902d1e800278c3ed99ee49">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.Setdiscount_amtNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_afd1032fffff4e06cfd2a034782b32c27_1afd1032fffff4e06cfd2a034782b32c27">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.IsquantityNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a9daf23ff2aa7c3456b3b972700648de0_1a9daf23ff2aa7c3456b3b972700648de0">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.SetquantityNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a5e2f8a9323fabb5922138a21b2189044_1a5e2f8a9323fabb5922138a21b2189044">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.Ispriority_levelNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_aee6dfd73464d4dbc06e16806a1e9b855_1aee6dfd73464d4dbc06e16806a1e9b855">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.Setpriority_levelNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a980603f34bf7d5b8d9213f8254c96513_1a980603f34bf7d5b8d9213f8254c96513">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.Isjm_ref_typeNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a73835fbb914c09c5ee13603366b25364_1a73835fbb914c09c5ee13603366b25364">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.Setjm_ref_typeNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a81aa7ea250d38d6f638293bdca13678e_1a81aa7ea250d38d6f638293bdca13678e">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.Isjm_jobNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a5f3e1c0ed61cafbdf8f0d1f1654438a1_1a5f3e1c0ed61cafbdf8f0d1f1654438a1">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.Setjm_jobNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a6536c68a0723e1a5526e3b8d2996b7f9_1a6536c68a0723e1a5526e3b8d2996b7f9">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.Isjm_suffixNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a0f891c2d28c524b87fef5f0c96a0eba9_1a0f891c2d28c524b87fef5f0c96a0eba9">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.Setjm_suffixNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a02e5ba0af58501cf368f81a66fda9312_1a02e5ba0af58501cf368f81a66fda9312">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.Isjm_oper_numNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a8e4430c01697d0dc1940151404799efb_1a8e4430c01697d0dc1940151404799efb">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.Setjm_oper_numNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_ac3323d76f8f78a621085cc46c45d96ab_1ac3323d76f8f78a621085cc46c45d96ab">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.Isjm_sequenceNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a808215990a2ef4402789de551cb47d94_1a808215990a2ef4402789de551cb47d94">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.Setjm_sequenceNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_ab8b826b3389500b15c9b56aba5669f97_1ab8b826b3389500b15c9b56aba5669f97">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.Isjm_itemNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a96bd97b7ff1d204f86d517127ebaa256_1a96bd97b7ff1d204f86d517127ebaa256">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.Setjm_itemNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a356b3dc7484ab623ca776c415b302e1d_1a356b3dc7484ab623ca776c415b302e1d">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.Isjm_processedNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_aaa5a404d00dae94e98b26867e576573f_1aaa5a404d00dae94e98b26867e576573f">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.Setjm_processedNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a32516edbcd71cab597b614e5094877f7_1a32516edbcd71cab597b614e5094877f7">
+                <title>bool Triggers.GRCfg.GR_CfgBOMRow.IsrecsequenceNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_a7801957dd6bd6da43263301656b168a3_1a7801957dd6bd6da43263301656b168a3">
+                <title>void Triggers.GRCfg.GR_CfgBOMRow.SetrecsequenceNull ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

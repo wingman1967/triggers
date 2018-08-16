@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter">
+<title>Triggers::GRCfg2TableAdapters::GR_CfgRouteTableAdapter class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfg2TableAdapters::GR_CfgRouteTableAdapter</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfg2TableAdapters::GR_CfgRouteTableAdapter</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.OleDb.OleDbDataAdapter _adapter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.OleDb.OleDbConnection _connection</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.OleDb.OleDbTransaction _transaction</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.OleDb.OleDbCommand [] _commandCollection</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool _clearBeforeFill</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_a8b4d86adf13ca64abdb81186f3b0c866_1a8b4d86adf13ca64abdb81186f3b0c866">GR_CfgRouteTableAdapter</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_ab1151636b1be78599bc6524825360012_1ab1151636b1be78599bc6524825360012">Fill</link> (
+<link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_route_data_table">GRCfg2.GR_CfgRouteDataTable</link> dataTable)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_route_data_table">GRCfg2.GR_CfgRouteDataTable</link> <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_ab6843ef28d992fc9c0857ed50bc7a538_1ab6843ef28d992fc9c0857ed50bc7a538">GetData</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_ac0da0266d746c953ae8c5c5b3f5f16ea_1ac0da0266d746c953ae8c5c5b3f5f16ea">Update</link> (
+<link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_route_data_table">GRCfg2.GR_CfgRouteDataTable</link> dataTable)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_a9476228e78568e1cc9b3c811dcd70dc4_1a9476228e78568e1cc9b3c811dcd70dc4">Update</link> (
+<link linkend="class_triggers_1_1_g_r_cfg2">GRCfg2</link> dataSet)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_a863dbe0d38f0416c4f63c0ab7cdab1aa_1a863dbe0d38f0416c4f63c0ab7cdab1aa">Update</link> (
+global::System.Data.DataRow dataRow)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_ade2ae6155ddf9f9305c047703d288596_1ade2ae6155ddf9f9305c047703d288596">Update</link> (
+global::System.Data.DataRow [] dataRows)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_a87e58b4f7cb7b1709f47c63a7d3a8473_1a87e58b4f7cb7b1709f47c63a7d3a8473">Insert</link> (
+string order_num, global::System.Nullable&lt; int &gt; order_line_num, string bom_id, global::System.Nullable&lt; int &gt; oper_num, string description, global::System.Nullable&lt; decimal &gt; labor_hrs, global::System.Nullable&lt; decimal &gt; setup_hrs, global::System.Nullable&lt; decimal &gt; labor_rate, string notes, string mach_name, global::System.Nullable&lt; decimal &gt; run_time, string CreatedBy, string UpdatedBy, System.DateTime CreateDate, System.DateTime RecordDate, System.Guid RowPointer, byte NoteExistsFlag, byte InWorkflow)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_a2654ca7e53e9595f624bb2a15065f611_1a2654ca7e53e9595f624bb2a15065f611">InitAdapter</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_ae83a7d4f03c20963e1df3047ec60dd9c_1ae83a7d4f03c20963e1df3047ec60dd9c">InitConnection</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_a123eefbc9ac8caed4f17f370a7cab384_1a123eefbc9ac8caed4f17f370a7cab384">InitCommandCollection</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represents the connection and commands used to retrieve and save data. /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_a8b4d86adf13ca64abdb81186f3b0c866_1a8b4d86adf13ca64abdb81186f3b0c866">
+                <title>Triggers.GRCfg2TableAdapters.GR_CfgRouteTableAdapter.GR_CfgRouteTableAdapter ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_ab1151636b1be78599bc6524825360012_1ab1151636b1be78599bc6524825360012">
+                <title>virtual int Triggers.GRCfg2TableAdapters.GR_CfgRouteTableAdapter.Fill (GRCfg2.GR_CfgRouteDataTable dataTable)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_ab6843ef28d992fc9c0857ed50bc7a538_1ab6843ef28d992fc9c0857ed50bc7a538">
+                <title>virtual GRCfg2.GR_CfgRouteDataTable Triggers.GRCfg2TableAdapters.GR_CfgRouteTableAdapter.GetData ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_ac0da0266d746c953ae8c5c5b3f5f16ea_1ac0da0266d746c953ae8c5c5b3f5f16ea">
+                <title>virtual int Triggers.GRCfg2TableAdapters.GR_CfgRouteTableAdapter.Update (GRCfg2.GR_CfgRouteDataTable dataTable)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_a9476228e78568e1cc9b3c811dcd70dc4_1a9476228e78568e1cc9b3c811dcd70dc4">
+                <title>virtual int Triggers.GRCfg2TableAdapters.GR_CfgRouteTableAdapter.Update (GRCfg2 dataSet)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_a863dbe0d38f0416c4f63c0ab7cdab1aa_1a863dbe0d38f0416c4f63c0ab7cdab1aa">
+                <title>virtual int Triggers.GRCfg2TableAdapters.GR_CfgRouteTableAdapter.Update (global::System.Data.DataRow dataRow)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_ade2ae6155ddf9f9305c047703d288596_1ade2ae6155ddf9f9305c047703d288596">
+                <title>virtual int Triggers.GRCfg2TableAdapters.GR_CfgRouteTableAdapter.Update (global::System.Data.DataRow[] dataRows)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_a87e58b4f7cb7b1709f47c63a7d3a8473_1a87e58b4f7cb7b1709f47c63a7d3a8473">
+                <title>virtual int Triggers.GRCfg2TableAdapters.GR_CfgRouteTableAdapter.Insert (string order_num, global::System.Nullable&lt; int &gt; order_line_num, string bom_id, global::System.Nullable&lt; int &gt; oper_num, string description, global::System.Nullable&lt; decimal &gt; labor_hrs, global::System.Nullable&lt; decimal &gt; setup_hrs, global::System.Nullable&lt; decimal &gt; labor_rate, string notes, string mach_name, global::System.Nullable&lt; decimal &gt; run_time, string CreatedBy, string UpdatedBy, System.DateTime CreateDate, System.DateTime RecordDate, System.Guid RowPointer, byte NoteExistsFlag, byte InWorkflow)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_a2654ca7e53e9595f624bb2a15065f611_1a2654ca7e53e9595f624bb2a15065f611">
+                <title>void Triggers.GRCfg2TableAdapters.GR_CfgRouteTableAdapter.InitAdapter ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_ae83a7d4f03c20963e1df3047ec60dd9c_1ae83a7d4f03c20963e1df3047ec60dd9c">
+                <title>void Triggers.GRCfg2TableAdapters.GR_CfgRouteTableAdapter.InitConnection ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter_a123eefbc9ac8caed4f17f370a7cab384_1a123eefbc9ac8caed4f17f370a7cab384">
+                <title>void Triggers.GRCfg2TableAdapters.GR_CfgRouteTableAdapter.InitCommandCollection ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

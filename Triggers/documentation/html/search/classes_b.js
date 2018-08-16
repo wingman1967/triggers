@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['zcfgbom',['zCfgBOM',['../class_configure_one_flag_1_1z_cfg_b_o_m.html',1,'ConfigureOneFlag']]],
-  ['zcfgco',['zCfgCO',['../class_configure_one_flag_1_1z_cfg_c_o.html',1,'ConfigureOneFlag']]],
-  ['zcfgcoitem',['zCfgCOitem',['../class_configure_one_flag_1_1z_cfg_c_oitem.html',1,'ConfigureOneFlag']]],
-  ['zcfgitem',['zCfgItem',['../class_configure_one_flag_1_1z_cfg_item.html',1,'ConfigureOneFlag']]],
-  ['zcfgparmval',['zCfgParmVal',['../class_configure_one_flag_1_1z_cfg_parm_val.html',1,'ConfigureOneFlag']]],
-  ['zcfgroute',['zCfgRoute',['../class_configure_one_flag_1_1z_cfg_route.html',1,'ConfigureOneFlag']]]
+  ['tableadaptermanager',['TableAdapterManager',['../class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager.html',1,'Triggers.GRCfgTableAdapters.TableAdapterManager'],['../class_triggers_1_1_g_r_cfg2_table_adapters_1_1_table_adapter_manager.html',1,'Triggers.GRCfg2TableAdapters.TableAdapterManager']]],
+  ['triggers',['Triggers',['../class_configure_one_flag_1_1_triggers.html',1,'ConfigureOneFlag']]]
 ];

@@ -1,0 +1,5 @@
+<map id="Triggers.GRCfg2TableAdapters.GR_CfgParmValTableAdapter.Update" name="Triggers.GRCfg2TableAdapters.GR_CfgParmValTableAdapter.Update">
+<area shape="rect" id="node2" href="$class_triggers_1_1_g_r_cfg2_table_adapters_1_1_table_adapter_manager_a56f18be8b5a0acb21426e392f5b6aa09.html#a56f18be8b5a0acb21426e392f5b6aa09" title="Update rows in top&#45;down order. /summary&gt; " alt="" coords="292,5,565,47"/>
+<area shape="rect" id="node3" href="$class_triggers_1_1_g_r_cfg2_table_adapters_1_1_table_adapter_manager_a5adc74b16118b11df5cd4982267b8f64.html#a5adc74b16118b11df5cd4982267b8f64" title="Insert rows in top&#45;down order. /summary&gt; " alt="" coords="293,71,564,112"/>
+<area shape="rect" id="node4" href="$class_triggers_1_1_g_r_cfg2_table_adapters_1_1_table_adapter_manager_a2632333313512ab698a39889fe7e4df3.html#a2632333313512ab698a39889fe7e4df3" title="Delete rows in bottom&#45;up order. /summary&gt; " alt="" coords="294,136,563,177"/>
+</map>

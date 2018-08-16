@@ -21,6 +21,13 @@
                     </listitem>
                 </itemizedlist>
             </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>file <link linkend="_settings_8_designer_8cs">Settings.Designer.cs</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
         </simplesect>
     <simplesect>
         <title>Detailed Description</title>

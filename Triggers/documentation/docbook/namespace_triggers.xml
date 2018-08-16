@@ -34,6 +34,26 @@
             <para>
                 <itemizedlist>
                     <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg">Triggers::GRCfg</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents a strongly typed in-memory cache of data.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2">Triggers::GRCfg2</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents a strongly typed in-memory cache of data.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
                         <para>struct <link linkend="class_triggers_1_1_item_validator">Triggers::ItemValidator</link></para>
                     </listitem>
                 </itemizedlist>
@@ -53,4 +73,28 @@
                 </itemizedlist>
             </para>
         </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_triggers_1_1_g_r_cfg2_table_adapters">Triggers::GRCfg2TableAdapters</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_triggers_1_1_g_r_cfg_table_adapters">Triggers::GRCfgTableAdapters</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_triggers_1_1_properties">Triggers::Properties</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
 </section>

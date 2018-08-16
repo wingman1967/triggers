@@ -56,7 +56,9 @@
     <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
@@ -71,9 +73,24 @@
     <Compile Include="COValidator.cs" />
     <Compile Include="crypto.cs" />
     <Compile Include="C1Dictionaries.cs" />
+    <Compile Include="GRCfg.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GRCfg.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GRCfg2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GRCfg2.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ItemValidator.cs" />
     <Compile Include="NetworkShare.cs" />
     <Compile Include="ParmValValidator.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
     <Compile Include="RetrieveDrawings.cs" />
     <Compile Include="RouteValidator.cs" />
     <Compile Include="SendMail.cs" />
@@ -89,8 +106,35 @@
     <Compile Include="zCfgRoute.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="GormanRupp.pfx" />
+    <None Include="GRCfg.xsc">
+      <DependentUpon>GRCfg.xsd</DependentUpon>
+    </None>
+    <None Include="GRCfg.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>GRCfg.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="GRCfg.xss">
+      <DependentUpon>GRCfg.xsd</DependentUpon>
+    </None>
+    <None Include="GRCfg2.xsc">
+      <DependentUpon>GRCfg2.xsd</DependentUpon>
+    </None>
+    <None Include="GRCfg2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GRCfg2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GRCfg2.xss">
+      <DependentUpon>GRCfg2.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="libzmq.dll" />
