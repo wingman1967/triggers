@@ -13,7 +13,6 @@ var class_configure_one_flag_1_1_database_factory =
     [ "RetrieveISOCountry", "class_configure_one_flag_1_1_database_factory_a0b3faff4145a97817540e0ab92ae9101.html#a0b3faff4145a97817540e0ab92ae9101", null ],
     [ "RetrieveSLCO", "class_configure_one_flag_1_1_database_factory_a64f0488a247638877def2f773331d184.html#a64f0488a247638877def2f773331d184", null ],
     [ "SetConnectionString", "class_configure_one_flag_1_1_database_factory_ae1ec057e7696e9c9439a12e6988970d7.html#ae1ec057e7696e9c9439a12e6988970d7", null ],
-    [ "UpdateCO", "class_configure_one_flag_1_1_database_factory_a74068a0088a2ac8a40607cf6c83cfdd4.html#a74068a0088a2ac8a40607cf6c83cfdd4", null ],
     [ "UserName", "class_configure_one_flag_1_1_database_factory_acd76eb3da8e1214f25d11c0460997f43.html#acd76eb3da8e1214f25d11c0460997f43", null ],
     [ "WriteAuditRecord", "class_configure_one_flag_1_1_database_factory_a59987be56acf3f8cbf7681d6b4866e81.html#a59987be56acf3f8cbf7681d6b4866e81", null ],
     [ "WriteRecordBOM", "class_configure_one_flag_1_1_database_factory_a7d20594ae96a13614accd3e7d8d8a04a.html#a7d20594ae96a13614accd3e7d8d8a04a", null ],

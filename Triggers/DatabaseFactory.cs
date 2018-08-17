@@ -360,53 +360,55 @@ namespace ConfigureOneFlag
             try
             {
                 //call SP to resequence BOM records based on parentIDs
-                SqlConnection connection = new SqlConnection(connectionString);
-                SqlCommand command = new SqlCommand("GR_Cfg_ResequenceBOMSp", connection);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@OrderNumber", orderNumber);
-                command.Parameters.AddWithValue("@OrderLine", orderLine);
-                command.CommandTimeout = 120000;
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    SqlCommand command = new SqlCommand("GR_Cfg_ResequenceBOMSp", connection);
+                    command.CommandType = CommandType.StoredProcedure;
+                    command.Parameters.AddWithValue("@OrderNumber", orderNumber);
+                    command.Parameters.AddWithValue("@OrderLine", orderLine);
+                    command.CommandTimeout = 120000;
 
-                connection.Open();
-                command.ExecuteNonQuery();
-                connection.Close();
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                    connection.Close();
+                }
             }
             catch (Exception bomreseq)
             {
                 string logEvent = "An error resequence-BOM occurred: " + bomreseq.Message;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
             }
-            
         }
         public static void CfgImport(string orderNumber)
         {
             //call SP to import data into Syteline
             int CreateOrder = 1;
-            
-            SqlConnection connection = new SqlConnection(connectionString);
-            SqlCommand command = new SqlCommand("GR_CfgImportSp", connection);
-            command.CommandType = CommandType.StoredProcedure;
-            command.Parameters.AddWithValue("@pStartingOrderNum", orderNumber);
-            command.Parameters.AddWithValue("@pEndingOrderNum", orderNumber);
-            command.Parameters.AddWithValue("@pCreateOrder", CreateOrder);
-            command.CommandTimeout = 120000;
-            connection.Open();
-            try
-            {
-                command.ExecuteNonQuery();
-            }
-            catch (Exception spI)
-            {
-                //A timeout has likely occurred; try again
-                string logEvent = "An error executing GR_CfgImportSp has occurred: " + spI.Message + " -> Retrying...";
-                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
 
-                connection.Close();
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand("GR_CfgImportSp", connection);
+                command.CommandType = CommandType.StoredProcedure;
+                command.Parameters.AddWithValue("@pStartingOrderNum", orderNumber);
+                command.Parameters.AddWithValue("@pEndingOrderNum", orderNumber);
+                command.Parameters.AddWithValue("@pCreateOrder", CreateOrder);
+                command.CommandTimeout = 120000;
                 connection.Open();
-                command.ExecuteNonQuery();
+                try
+                {
+                    command.ExecuteNonQuery();
+                }
+                catch (Exception spI)
+                {
+                    //A timeout has likely occurred; try again
+                    string logEvent = "An error executing GR_CfgImportSp has occurred: " + spI.Message + " -> Retrying...";
+                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
+
+                    connection.Close();
+                    connection.Open();
+                    command.ExecuteNonQuery();
+                }
+                connection.Close();
             }
-            
-            connection.Close();
         }
         public static void CleanupOrder(string orderNum)
         {
@@ -518,17 +520,6 @@ namespace ConfigureOneFlag
                 myConnection.Close();
             }
             return ISOCountry;
-        }
-        public static void UpdateCO(string conum)
-        {
-            SQLCommand = "Update GR_CfgCO set order_ref_num = co_num where order_num = " + (char)39 + Triggers.pubOrderNumber + (char)39;
-            using (SqlConnection myConnection = new SqlConnection(connectionString))
-            {
-                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
-                myCommand.CommandTimeout = 120000;
-                myConnection.Open();
-                myCommand.ExecuteNonQuery();
-            }
         }
         public static void InsertDocumentRecord(XmlDocument xml, string orderNum, string environment, string site, string SLorderNumber)
         {
