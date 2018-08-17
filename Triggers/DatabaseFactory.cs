@@ -9,7 +9,7 @@ using System.Xml.Linq;
 using System.Data.SqlTypes;
 using Triggers;
 //using Triggers.GRCfgTableAdapters;
-using Triggers.GRCfg2TableAdapters;
+using Triggers.GRCfg3TableAdapters;
 
 namespace ConfigureOneFlag
 {
@@ -104,68 +104,126 @@ namespace ConfigureOneFlag
         }        
         public static void WriteRecordBOM(ref zCfgBOM bom)
         {
-            SQLCommand = "Insert Into GR_CfgBOM (order_num,order_line_num,seq,parent_id,id,item_num,smartpart_num,unit_price,unit_cost,discount_amt,quantity,priority_level,recsequence) values (" + (char)39 + bom.CO_Num + (char)39 + "," + (char)39 + bom.CO_Line + (char)39 + "," + (char)39 + bom.Sequence + (char)39 + "," + (char)39 + bom.Parent + (char)39 + "," + (char)39 + bom.Identifier.Substring(0, C1Dictionaries.DBFieldLenBOM("BOM:id", ref bom)) + (char)39 + "," + (char)39 + bom.Item.Substring(0, C1Dictionaries.DBFieldLenBOM("BOM:item_num", ref bom)).Replace("'","''") + (char)39 + "," + (char)39 + bom.Smartpart.Substring(0, C1Dictionaries.DBFieldLenBOM("BOM:smartpart_num", ref bom)).Replace("'","''") + (char)39 + "," + (char)39 + bom.UnitPrice + (char)39 + "," + (char)39 + bom.UnitCost + (char)39 + "," + (char)39 + bom.Discount + (char)39 + "," + (char)39 + bom.QTY + (char)39 + "," + (char)39 + bom.PriorityLevel + (char)39 + "," + (char)39 + bom.RecordSequence + (char)39 + ")";
-            using (SqlConnection myConnection = new SqlConnection(connectionString))
+            try
             {
-                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
-                myCommand.CommandTimeout = 120000;
-                myConnection.Open();
-                myCommand.ExecuteNonQuery();
+                GR_CfgBOMTableAdapter tbl = new GR_CfgBOMTableAdapter();
+                tbl.Connection.ConnectionString = connectionString;
+
+                tbl.Insert(
+                    bom.CO_Num,
+                    bom.CO_Line,
+                    bom.Sequence,
+                    bom.Parent,
+                    bom.Identifier,
+                    bom.Item,
+                    bom.Smartpart,
+                    bom.UnitPrice,
+                    bom.UnitCost,
+                    bom.Discount,
+                    bom.QTY,
+                    bom.PriorityLevel,
+                    bom.RecordSequence
+                    );
+            }
+            catch (Exception eBOM)
+            {
+                Triggers.logEvent = "ERROR WRITING GR_CFGBOM: " + eBOM.Message;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
             }
         }
         public static void WriteRecordCItem(ref zCfgItem item)
         {
-            SQLCommand = "Insert Into GR_CfgItem (order_num,order_line_num,seq,smartpart_num,item_num,description,cost,price,sell_price,weight,uom,priority_level,im_VAR1,im_VAR2,im_VAR3,im_VAR4,im_VAR5) values (" + (char)39 + item.CO_Num + (char)39 + "," + (char)39 + item.CO_Line + (char)39 + "," + (char)39 + item.Sequence + (char)39 + "," + (char)39 + item.Smartpart.Substring(0, C1Dictionaries.DBFieldLenCfgItem("CfgItem:smartpart_num", ref item)).Replace("'","''") + (char)39 + "," + (char)39 + item.Item.Substring(0, C1Dictionaries.DBFieldLenCfgItem("CfgItem:item_num", ref item)).Replace("'","''") + (char)39 + "," + (char)39 + item.Desc.Substring(0, C1Dictionaries.DBFieldLenCfgItem("CfgItem:description", ref item)).Replace("'","''") + (char)39 + "," + (char)39 + item.ItemCost + (char)39 + "," + (char)39 + item.ItemPrice + (char)39 + "," + (char)39 + item.ItemSellPrice + (char)39 + "," + (char)39 + item.ItemWeight + (char)39 + "," + (char)39 + item.UnitOfMeasure.Substring(0, C1Dictionaries.DBFieldLenCfgItem("CfgItem:uom", ref item)).Replace("'","''") + (char)39 + "," + (char)39 + item.PriorityLevel + (char)39 + "," + (char)39 + item.IM_VAR1.Substring(0, C1Dictionaries.DBFieldLenCfgItem("CfgItem:im_VAR1", ref item)).Replace("'", "''") + (char)39 + "," + (char)39 + item.IM_VAR2.Substring(0, C1Dictionaries.DBFieldLenCfgItem("CfgItem:im_VAR2", ref item)).Replace("'", "''") + (char)39 + "," + (char)39 + item.IM_VAR3.Substring(0, C1Dictionaries.DBFieldLenCfgItem("CfgItem:im_VAR3", ref item)).Replace("'", "''") + (char)39 + "," + (char)39 + item.IM_VAR4.Substring(0, C1Dictionaries.DBFieldLenCfgItem("CfgItem:im_VAR4", ref item)).Replace("'", "''") + (char)39 + "," + (char)39 + item.IM_VAR5.Substring(0, C1Dictionaries.DBFieldLenCfgItem("CfgItem:im_VAR5", ref item)).Replace("'", "''") + (char)39 + ")";
-            using (SqlConnection myConnection = new SqlConnection(connectionString))
+            try
             {
-                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
-                myCommand.CommandTimeout = 120000;
-                myConnection.Open();
-                myCommand.ExecuteNonQuery();
+                GR_CfgItemTableAdapter tbl = new GR_CfgItemTableAdapter();
+                tbl.Connection.ConnectionString = connectionString;
+
+                tbl.Insert(
+                    item.CO_Num,
+                    item.CO_Line,
+                    item.Sequence,
+                    item.Smartpart,
+                    item.Item,
+                    item.Desc,
+                    item.ItemCost,
+                    item.ItemPrice,
+                    item.ItemSellPrice,
+                    item.ItemWeight,
+                    item.UnitOfMeasure,
+                    item.PriorityLevel,
+                    item.IM_VAR1,
+                    item.IM_VAR2,
+                    item.IM_VAR3,
+                    item.IM_VAR4,
+                    item.IM_VAR5
+                    );
+            }
+            catch (Exception eCI)
+            {
+                Triggers.logEvent = "ERROR WRITING GR_CFGITEM: " + eCI.Message;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
             }
         }
         public static void WriteRecordCfg(ref zCfgParmVal cfg)
         {
-            string cfName = cfg.CName;
-            string cfValue = cfg.CValue;
-            string cfLabel = cfg.CLabel;
-            SQLCommand = "Insert Into GR_CfgParmVal (order_num,order_line_num,name,value,type,label,priority_level) values (" + (char)39 + cfg.CO_Num + (char)39 + "," + (char)39 + cfg.CO_Line + (char)39 + "," + (char)39 + cfName.Substring(0, C1Dictionaries.DBFieldLenParmVal("CfgParmVal:name", ref cfg)).Replace("'","''") + (char)39 + "," + (char)39 + cfValue.Substring(0, C1Dictionaries.DBFieldLenParmVal("CfgParmVal:value", ref cfg)).Replace("'","''") + (char)39 + "," + (char)39 + cfg.CType.Substring(0, C1Dictionaries.DBFieldLenParmVal("CfgParmVal:type", ref cfg)).Replace("'","''") + (char)39 + "," + (char)39 + cfLabel.Substring(0, C1Dictionaries.DBFieldLenParmVal("CfgParmVal:label", ref cfg)).Replace("'","''") + (char)39 + "," + (char)39 + cfg.PriorityLevel + (char)39 + ")";
-            using (SqlConnection myConnection = new SqlConnection(connectionString))
+            try
             {
-                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
-                myCommand.CommandTimeout = 120000;
-                myConnection.Open();
-                myCommand.ExecuteNonQuery();
+                GR_CfgParmValTableAdapter tbl = new GR_CfgParmValTableAdapter();
+                tbl.Connection.ConnectionString = connectionString;
+
+                tbl.Insert(
+                    cfg.CO_Num,
+                    cfg.CO_Line,
+                    cfg.CName,
+                    cfg.CValue,
+                    cfg.CType,
+                    cfg.CLabel,
+                    cfg.PriorityLevel
+                    );
+            }
+            catch (Exception eCFG)
+            {
+                Triggers.logEvent = "ERROR WRITING GR_CFGPARMVAL: " + eCFG.Message;
+                System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
             }
         }
         public static void WriteRecordCOItem(ref zCfgCOitem coitem)
         {
             try
             {
-                //SQLCommand = "Insert Into GR_CfgCOItem (order_num,order_line_num,ser_num,item_num,smartpart_num,description,unit_price,unit_cost,discount_amt,quantity,priority_level,due_date,config_type,CustPO,LINE_NOTES) values (" + (char)39 + coitem.CO_Num + (char)39 + "," + (char)39 + coitem.CO_Line + (char)39 + "," + (char)39 + coitem.Serial.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:ser_num", ref coitem)) + (char)39 + "," + (char)39 + coitem.Item.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:item_num", ref coitem)) + (char)39 + "," + (char)39 + coitem.Smartpart.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:smartpart_num", ref coitem)) + (char)39 + "," + (char)39 + coitem.Desc.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:description", ref coitem)).Replace("'","''") + (char)39 + "," + (char)39 + coitem.UnitPrice + (char)39 + "," + (char)39 + coitem.UnitCost + (char)39 + "," + (char)39 + coitem.Discount + (char)39 + "," + (char)39 + coitem.QTY + (char)39 + "," + (char)39 + coitem.PriorityLevel + (char)39 + "," + (char)39 + coitem.DueDate + (char)39 + "," + (char)39 + coitem.ConfigType + (char)39 + "," + (char)39 + coitem.CustPO.Replace("'","''") + (char)39 + "," + (char)39 + coitem.OrderLineNotes.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:LINE_NOTES", ref coitem)).Replace("'", "''") + (char)39 + ")";
-                SQLCommand = "Insert Into GR_CfgCOItem (order_num,order_line_num,ser_num,item_num,smartpart_num,description,unit_price,unit_cost,discount_amt,quantity,priority_level,due_date,config_type,CustPO,LINE_NOTES) values (" + (char)39 + coitem.CO_Num + (char)39 + "," + (char)39 + coitem.CO_Line + (char)39 + "," + (char)39 + coitem.Serial.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:ser_num", ref coitem)) + (char)39 + "," + (char)39 + coitem.Item.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:item_num", ref coitem)) + (char)39 + "," + (char)39 + coitem.Smartpart.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:smartpart_num", ref coitem)) + (char)39 + "," + (char)39 + coitem.Desc.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:description", ref coitem)).Replace("'", "''") + (char)39 + "," + (char)39 + coitem.UnitPrice + (char)39 + "," + (char)39 + coitem.UnitCost + (char)39 + "," + (char)39 + coitem.Discount + (char)39 + "," + (char)39 + coitem.QTY + (char)39 + "," + (char)39 + coitem.PriorityLevel + (char)39 + "," + (char)39 + coitem.DueDate + (char)39 + "," + (char)39 + coitem.ConfigType + (char)39 + "," + (char)39 + coitem.CustPO.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:CustPO", ref coitem)).Replace("'", "''") + (char)39 + "," + (char)39 + coitem.OrderLineNotes.Substring(0, C1Dictionaries.DBFieldLenCOItem("COItem:LINE_NOTES", ref coitem)).Replace("'", "''") + (char)39 + ")";
-                using (SqlConnection myConnection = new SqlConnection(connectionString))
-                {
-                    SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
-                    myCommand.CommandTimeout = 120000;
-                    myConnection.Open();
-                    myCommand.ExecuteNonQuery();
-                }
+                GR_CfgCoitemTableAdapter tbl = new GR_CfgCoitemTableAdapter();
+                tbl.Connection.ConnectionString = connectionString;
+
+                tbl.Insert(
+                    coitem.CO_Num,
+                    coitem.CO_Line,
+                    coitem.Serial,
+                    coitem.Item,
+                    coitem.Smartpart,
+                    coitem.Desc,
+                    coitem.UnitPrice,
+                    coitem.UnitCost,
+                    coitem.Discount,
+                    coitem.QTY,
+                    coitem.PriorityLevel,
+                    coitem.DueDate,
+                    coitem.ConfigType,
+                    coitem.CustPO,
+                    coitem.OrderLineNotes
+                    );
             }
             catch (Exception coitemx)
             {
                 Triggers.logEvent = "ERROR WRITING GR_CFGCOItem: " + coitemx.Message;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
             }
-            
         }
         public static void WriteRecordCO(ref zCfgCO co)
         {
-            string tempConnectionString = "server = grctslsql0.dom.grc; database = SL_NOVB_App; User ID = sa_config; Password = options23";
             try
             {
                 GR_CfgCOTableAdapter tbl = new GR_CfgCOTableAdapter();
-                tbl.Connection.ConnectionString = tempConnectionString;
+                tbl.Connection.ConnectionString = connectionString;
 
                 tbl.Insert(
                     co.Identifier,
@@ -231,116 +289,41 @@ namespace ConfigureOneFlag
                     co.OrderHeaderNotes,
                     co.EndUser,
                     co.Engineer);
-
-
-                //tbl.Insert(
-                //    co.AccountNum,
-                //    co.BillToAddressLine1,
-                //    co.BillToAddressLine2,
-                //    co.BillToAddressLine3,
-                //    co.BillToCity,
-                //    co.BillToContactName,
-                //    co.BillToCountry,
-                //    co.BillToEmailAddress,
-                //    co.BillToFaxNumber,
-                //    co.BillToPhoneNumber,
-                //    co.BillToPostalCode,
-                //    co.BillToRefNum,
-                //    co.BillToState,
-                //    co.CORefNum,
-                //    co.CO_Num,
-                //    co.CustName,
-                //    co.CustPO,
-                //    co.CustRefNum,
-                //    co.DestinationCountry,
-                //    co.DropShipAddress1,
-                //    co.DropShipAddress2,
-                //    co.DropShipAddress3,
-                //    co.DropShipAddress4,
-                //    co.DropShipCity,
-                //    co.DropShipContact,
-                //    co.DropShipCountry,
-                //    co.DropShipEmail,
-                //    co.DropShipName,
-                //    co.DropShipPhone,
-                //    co.DropShipState,
-                //    co.DropShipZip,
-                //    co.DueDate,
-                //    co.EndUser,
-                //    co.Engineer,
-                //    co.ErpReferenceNum,
-                //    co.FreightAcct,
-                //    co.FreightTerms,
-                //    co.Identifier,
-                //    co.OrderHeaderNotes,
-                //    co.PaymentTerms,
-                //    co.PriorityLevel,
-                //    co.Project,
-                //    co.QuoteNbr,
-                //    co.RequestDate,
-                //    co.ShippingTerms,
-                //    co.ShipToAddressLine1,
-                //    co.ShipToAddressLine2,
-                //    co.ShipToAddressLine3,
-                //    co.ShipToAddressLine4,
-                //    co.ShipToCity,
-                //    co.ShipToContactName,
-                //    co.ShipToCountry,
-                //    co.ShipToEmailAddress,
-                //    co.ShipToFaxNumber,
-                //    co.ShipToPhoneNumber,
-                //    co.ShipToPostalCode,
-                //    co.ShipToRefNum,
-                //    co.ShipToState,
-                //    co.ShipVia,
-                //    co.WebOrderDate,
-                //    co.WebUserName);
             }
             catch (Exception coex)
             {
                 Triggers.logEvent = "ERROR WRITING GR_CFGCO: " + coex.Message;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
-
-                //Triggers.logEvent = "Connection String: " + tempConnectionString;
-                //System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
             }
-
-
-
-            //try
-            //{
-            //    SQLCommand = "Insert Into GR_CfgCO (id,order_num,cust_name,cust_ref_num,account_num,project,ship_via,shipping_terms,bill_to_contact_name,bill_address_line_1,bill_address_line_2,bill_address_line_3,bill_to_city,bill_to_state,bill_to_country,bill_to_postal_code,bill_to_phone_number,bill_to_fax_number,bill_to_email_address,bill_to_ref_num,ship_to_contact_name,ship_address_line_1,ship_address_line_2,ship_address_line_3,ship_to_city,ship_to_state,ship_to_country,ship_to_postal_code,ship_to_phone_number,ship_to_fax_number,ship_to_email_address,ship_to_ref_num,priority_level,due_date,CustPO,ship_address_line_4,freight_terms,freight_acct,quote_nbr,web_user_name,web_order_date,dropship_address1, dropship_address2,dropship_address3,dropship_address4,dropship_city,dropship_state,dropship_zip,dropship_name,dropship_contact,dropship_country,dropship_phone,dropship_email,request_date,destination_country,ORDER_HEADER_NOTES,end_user,engineer) values (" + (char)39 + co.Identifier.Replace("'", "''") + (char)39 + "," + (char)39 + co.CO_Num.Replace("'", "''") + (char)39 + "," + (char)39 + co.CustName.Replace("'", "''") + (char)39 + "," + (char)39 + co.CustRefNum.Replace("'", "''") + (char)39 + "," + (char)39 + co.AccountNum.Replace("'", "''") + (char)39 + "," + (char)39 + co.Project.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipVia.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShippingTerms.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToContactName.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToAddressLine1.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToAddressLine2.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToAddressLine3.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToCity.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToState.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToCountry.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToPostalCode.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToPhoneNumber.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToFaxNumber.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToEmailAddress.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToRefNum.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToContactName.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToAddressLine1.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToAddressLine2.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToAddressLine3.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToCity.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToState.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToCountry.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToPostalCode.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToPhoneNumber.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToFaxNumber.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToEmailAddress.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToRefNum.Replace("'", "''") + (char)39 + "," + (char)39 + co.PriorityLevel + (char)39 + "," + (char)39 + co.DueDate + (char)39 + "," + (char)39 + co.CustPO.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToAddressLine4.Replace("'", "''") + (char)39 + "," + (char)39 + co.FreightTerms.Replace("'", "''") + (char)39 + "," + (char)39 + co.FreightAcct.Replace("'", "''") + (char)39 + "," + (char)39 + co.QuoteNbr.Replace("'", "''") + (char)39 + "," + (char)39 + co.WebUserName.Replace("'", "''") + (char)39 + "," + (char)39 + co.WebOrderDate + (char)39 + "," + (char)39 + co.DropShipAddress1.Replace("'", "''") + (char)39 + "," + (char)39 + co.DropShipAddress2.Replace("'", "''") + (char)39 + "," + (char)39 + co.DropShipAddress3.Replace("'", "''") + (char)39 + "," + (char)39 + co.DropShipAddress4.Replace("'", "''") + (char)39 + "," + (char)39 + co.DropShipCity.Replace("'", "''") + (char)39 + "," + (char)39 + co.DropShipState.Replace("'", "''") + (char)39 + "," + (char)39 + co.DropShipZip.Replace("'", "''") + (char)39 + "," + (char)39 + co.DropShipName.Replace("'", "''") + (char)39 + "," + (char)39 + co.DropShipContact.Replace("'", "''") + (char)39 + "," + (char)39 + co.DropShipCountry.Replace("'", "''") + (char)39 + "," + (char)39 + co.DropShipPhone.Replace("'", "''") + (char)39 + "," + (char)39 + co.DropShipEmail.Replace("'", "''") + (char)39 + "," + (char)39 + co.RequestDate + (char)39 + "," + (char)39 + co.DestinationCountry.Replace("'", "''") + (char)39 + "," + (char)39 + co.OrderHeaderNotes.Replace("'", "''") + (char)39 + "," + (char)39 + co.EndUser.Replace("'", "''") + (char)39 + "," + (char)39 + co.Engineer.Replace("'", "''") + (char)39 + ")";
-            //    // commented out following line to move to new validator framework
-            //    //SQLCommand = "Insert Into GR_CfgCO (id,order_num,cust_name,cust_ref_num,account_num,erp_reference_num,project,ship_via,shipping_terms,bill_to_contact_name,bill_address_line_1,bill_address_line_2,bill_address_line_3,bill_to_city,bill_to_state,bill_to_country,bill_to_postal_code,bill_to_phone_number,bill_to_fax_number,bill_to_email_address,bill_to_ref_num,ship_to_contact_name,ship_address_line_1,ship_address_line_2,ship_address_line_3,ship_to_city,ship_to_state,ship_to_country,ship_to_postal_code,ship_to_phone_number,ship_to_fax_number,ship_to_email_address,ship_to_ref_num,priority_level,due_date,CustPO,ship_address_line_4,freight_terms,freight_acct,quote_nbr,web_user_name,web_order_date,dropship_address1, dropship_address2,dropship_address3,dropship_address4,dropship_city,dropship_state,dropship_zip,dropship_name,dropship_contact,dropship_country,dropship_phone,dropship_email,request_date,destination_country,ORDER_HEADER_NOTES,end_user,engineer) values (" + (char)39 + co.Identifier + (char)39 + "," + (char)39 + co.CO_Num + (char)39 + "," + (char)39 + co.CustName.Replace("'", "''") + (char)39 + "," + (char)39 + co.CustRefNum + (char)39 + "," + (char)39 + co.AccountNum + (char)39 + "," + (char)39 + co.ErpReferenceNum + (char)39 + "," + (char)39 + co.Project.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipVia.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShippingTerms.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToContactName.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToAddressLine1.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToAddressLine2.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToAddressLine3.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToCity + (char)39 + "," + (char)39 + co.BillToState + (char)39 + "," + (char)39 + co.BillToCountry + (char)39 + "," + (char)39 + co.BillToPostalCode + (char)39 + "," + (char)39 + co.BillToPhoneNumber.Substring(0, C1Dictionaries.DBFieldLenCO("CO:bill_to_phone_number", ref co)) + (char)39 + "," + (char)39 + co.BillToFaxNumber + (char)39 + "," + (char)39 + co.BillToEmailAddress.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToRefNum.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToContactName.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToAddressLine1.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToAddressLine2.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToAddressLine3.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToCity.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToState + (char)39 + "," + (char)39 + co.ShipToCountry + (char)39 + "," + (char)39 + co.ShipToPostalCode + (char)39 + "," + (char)39 + co.ShipToPhoneNumber + (char)39 + "," + (char)39 + co.ShipToFaxNumber.Substring(0, C1Dictionaries.DBFieldLenCO("CO:ship_to_fax_number", ref co)) + (char)39 + "," + (char)39 + co.ShipToEmailAddress.Substring(0, C1Dictionaries.DBFieldLenCO("CO:ship_to_email_address", ref co)) + (char)39 + "," + (char)39 + co.ShipToRefNum + (char)39 + "," + (char)39 + co.PriorityLevel + (char)39 + "," + (char)39 + co.DueDate + (char)39 + "," + (char)39 + co.CustPO.Substring(0, C1Dictionaries.DBFieldLenCO("CO:CustPO", ref co)) + (char)39 + "," + (char)39 + co.ShipToAddressLine4 + (char)39 + "," + (char)39 + co.FreightTerms + (char)39 + "," + (char)39 + co.FreightAcct + (char)39 + "," + (char)39 + co.QuoteNbr + (char)39 + "," + (char)39 + co.WebUserName.Replace("'", "''") + (char)39 + "," + (char)39 + co.WebOrderDate + (char)39 + "," + (char)39 + co.DropShipAddress1.Replace("'", "''") + (char)39 + "," + (char)39 + co.DropShipAddress2.Replace("'", "''") + (char)39 + "," + (char)39 + co.DropShipAddress3.Replace("'", "''") + (char)39 + "," + (char)39 + co.DropShipAddress4.Replace("'", "''") + (char)39 + "," + (char)39 + co.DropShipCity + (char)39 + "," + (char)39 + co.DropShipState + (char)39 + "," + (char)39 + co.DropShipZip + (char)39 + "," + (char)39 + co.DropShipName + (char)39 + "," + (char)39 + co.DropShipContact + (char)39 + "," + (char)39 + co.DropShipCountry + (char)39 + "," + (char)39 + co.DropShipPhone + (char)39 + "," + (char)39 + co.DropShipEmail + (char)39 + "," + (char)39 + co.RequestDate + (char)39 + "," + (char)39 + co.DestinationCountry + (char)39 + "," + (char)39 + co.OrderHeaderNotes.Substring(0, C1Dictionaries.DBFieldLenCO("CO:ORDER_HEADER_NOTES", ref co)).Replace("'", "''") + (char)39 + "," + (char)39 + co.EndUser + (char)39 + "," + (char)39 + co.Engineer + (char)39 + ")";
-            //    //commented out line below to stop bringing over payment terms as unneeded
-            //    //SQLCommand = "Insert Into GR_CfgCO (id,order_num,cust_name,cust_ref_num,account_num,erp_reference_num,project,payment_terms,ship_via,shipping_terms,bill_to_contact_name,bill_address_line_1,bill_address_line_2,bill_address_line_3,bill_to_city,bill_to_state,bill_to_country,bill_to_postal_code,bill_to_phone_number,bill_to_fax_number,bill_to_email_address,bill_to_ref_num,ship_to_contact_name,ship_address_line_1,ship_address_line_2,ship_address_line_3,ship_to_city,ship_to_state,ship_to_country,ship_to_postal_code,ship_to_phone_number,ship_to_fax_number,ship_to_email_address,ship_to_ref_num,priority_level,due_date,CustPO,ship_address_line_4,freight_terms,freight_acct,quote_nbr,web_user_name,web_order_date,dropship_address1, dropship_address2,dropship_address3,dropship_address4,dropship_city,dropship_state,dropship_zip,dropship_name,dropship_contact,dropship_country,dropship_phone,dropship_email,request_date,destination_country,ORDER_HEADER_NOTES,end_user,engineer) values (" + (char)39 + co.Identifier + (char)39 + "," + (char)39 + co.CO_Num + (char)39 + "," + (char)39 + co.CustName.Replace("'", "''") + (char)39 + "," + (char)39 + co.CustRefNum + (char)39 + "," + (char)39 + co.AccountNum + (char)39 + "," + (char)39 + co.ErpReferenceNum + (char)39 + "," + (char)39 + co.Project.Replace("'", "''") + (char)39 + "," + (char)39 + co.PaymentTerms.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipVia.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShippingTerms.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToContactName.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToAddressLine1.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToAddressLine2.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToAddressLine3.Replace("'", "''") + (char)39 + "," + (char)39 + co.BillToCity + (char)39 + "," + (char)39 + co.BillToState + (char)39 + "," + (char)39 + co.BillToCountry + (char)39 + "," + (char)39 + co.BillToPostalCode + (char)39 + "," + (char)39 + co.BillToPhoneNumber.Substring(0, C1Dictionaries.DBFieldLenCO("CO:bill_to_phone_number", ref co)) + (char)39 + "," + (char)39 + co.BillToFaxNumber + (char)39 + "," + (char)39 + co.BillToEmailAddress.Replace("'","''") + (char)39 + "," + (char)39 + co.BillToRefNum.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToContactName.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToAddressLine1.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToAddressLine2.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToAddressLine3.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToCity.Replace("'", "''") + (char)39 + "," + (char)39 + co.ShipToState + (char)39 + "," + (char)39 + co.ShipToCountry + (char)39 + "," + (char)39 + co.ShipToPostalCode + (char)39 + "," + (char)39 + co.ShipToPhoneNumber + (char)39 + "," + (char)39 + co.ShipToFaxNumber.Substring(0, C1Dictionaries.DBFieldLenCO("CO:ship_to_fax_number", ref co)) + (char)39 + "," + (char)39 + co.ShipToEmailAddress.Substring(0, C1Dictionaries.DBFieldLenCO("CO:ship_to_email_address", ref co)) + (char)39 + "," + (char)39 + co.ShipToRefNum + (char)39 + "," + (char)39 + co.PriorityLevel + (char)39 + "," + (char)39 + co.DueDate + (char)39 + "," + (char)39 + co.CustPO.Substring(0, C1Dictionaries.DBFieldLenCO("CO:CustPO", ref co)) + (char)39 + "," + (char)39 + co.ShipToAddressLine4 + (char)39 + "," + (char)39 + co.FreightTerms + (char)39 + "," + (char)39 + co.FreightAcct + (char)39 + "," + (char)39 + co.QuoteNbr + (char)39 + "," + (char)39 + co.WebUserName.Replace("'", "''") + (char)39 + "," + (char)39 + co.WebOrderDate + (char)39 + "," + (char)39 + co.DropShipAddress1.Replace("'", "''") + (char)39 + "," + (char)39 + co.DropShipAddress2.Replace("'", "''") + (char)39 + "," + (char)39 + co.DropShipAddress3.Replace("'", "''") + (char)39 + "," + (char)39 + co.DropShipAddress4.Replace("'", "''") + (char)39 + "," + (char)39 + co.DropShipCity + (char)39 + "," + (char)39 + co.DropShipState + (char)39 + "," + (char)39 + co.DropShipZip + (char)39 + "," + (char)39 + co.DropShipName + (char)39 + "," + (char)39 + co.DropShipContact + (char)39 + "," + (char)39 + co.DropShipCountry + (char)39 + "," + (char)39 + co.DropShipPhone + (char)39 + "," + (char)39 + co.DropShipEmail + (char)39 + "," + (char)39 + co.RequestDate + (char)39 + "," + (char)39 + co.DestinationCountry + (char)39 + "," + (char)39 + co.OrderHeaderNotes.Substring(0, C1Dictionaries.DBFieldLenCO("CO:ORDER_HEADER_NOTES", ref co)).Replace("'", "''") + (char)39 + "," + (char)39 + co.EndUser + (char)39 + "," + (char)39 + co.Engineer + (char)39 + ")";
-
-            //    using (SqlConnection myConnection = new SqlConnection(connectionString))
-            //    {
-            //        SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
-            //        myCommand.CommandTimeout = 120000;
-            //        myConnection.Open();
-            //        myCommand.ExecuteNonQuery();
-            //    }
-            //}
-            //catch (Exception coex)
-            //{
-            //    Triggers.logEvent = "ERROR WRITING GR_CFGCO: " + coex.Message;
-            //    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Error, 234);
-            //}
         }
         public static void WriteRecordCfgRoute(ref zCfgRoute route)
         {
             try
             {
-                SQLCommand = "Insert Into GR_CfgRouteBOM (order_num,order_line_num,seq,type,bom_id,item_num,smartpart_num,oper_num,wc,description,labor_hrs,setup_hrs,labor_rate,notes,mach_name,run_time,matl_item_num,matl_smartpart_num,matl_quantity) values (" + (char)39 + route.CO_Num + (char)39 + "," + (char)39 + route.CO_Line + (char)39 + "," + (char)39 + route.Seq + (char)39 + "," + (char)39 + route.Type + (char)39 + "," + (char)39 + route.BOM_ID + (char)39 + "," + (char)39 + route.ItemNum + (char)39 + "," + (char)39 + route.SmartpartNum + (char)39 + "," + (char)39 + route.OPERATION + (char)39 + "," + (char)39 + route.WC + (char)39 + "," + (char)39 + route.Description + (char)39 + "," + (char)39 + route.Labor_Hours + (char)39 + "," + (char)39 + route.Setup_Hours + (char)39 + "," + (char)39 + route.Labor_Rate + (char)39 + "," + (char)39 + route.Notes + (char)39 + "," + (char)39 + route.Machine_Name + (char)39 + "," + (char)39 + route.Run_Time + (char)39 + "," + (char)39 + route.MatlItemNum + (char)39 + "," + (char)39 + route.MatlSmartpartNum + (char)39 + "," + (char)39 + route.MatlQty + (char)39 + ")";
-                using (SqlConnection myConnection = new SqlConnection(connectionString))
-                {
-                    SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
-                    myCommand.CommandTimeout = 120000;
-                    myConnection.Open();
-                    myCommand.ExecuteNonQuery();
-                }
+                GR_CfgRouteBOMTableAdapter tbl = new GR_CfgRouteBOMTableAdapter();
+                tbl.Connection.ConnectionString = connectionString;
+
+                tbl.Insert(
+                    route.CO_Num,
+                    route.CO_Line,
+                    route.Seq,
+                    route.Type,
+                    route.BOM_ID,
+                    route.ItemNum,
+                    route.SmartpartNum,
+                    route.OPERATION,
+                    route.WC,
+                    route.Description,
+                    (decimal?)route.Labor_Hours,
+                    (decimal?)route.Setup_Hours,
+                    (decimal?)route.Labor_Rate,
+                    route.Notes,
+                    route.Machine_Name,
+                    (decimal?)route.Run_Time,
+                    route.MatlItemNum,
+                    route.MatlSmartpartNum,
+                    route.MatlQty
+                    );
             }
             catch (Exception RBError)
             {
@@ -547,41 +530,6 @@ namespace ConfigureOneFlag
                 myCommand.ExecuteNonQuery();
             }
         }
-        public static void WriteTestRecord(string eventText)
-        {
-            SQLCommand = "Insert Into GR_JHTESTING (eventText) values (" + (char)39 + eventText + (char)39 + ")";
-            using (SqlConnection myConnection = new SqlConnection(connectionString))
-            {
-                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
-                myCommand.CommandTimeout = 120000;
-                myConnection.Open();
-                myCommand.ExecuteNonQuery();
-            }
-        }
-        public static string COItemitem(string order_num, string ser_num)
-        {
-            string itemNumber = "";
-            SQLCommand = "Select item from coitem with (nolock) Where co_num = " + (char)39 + order_num + (char)39 + " and Uf_ConfigCode = " + (char)39 + ser_num + (char)39;
-            using (SqlConnection myConnection = new SqlConnection(connectionString))
-            {
-                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
-                myCommand.CommandTimeout = 120000;
-                myConnection.Open();
-                using (SqlDataReader reader = myCommand.ExecuteReader())
-                {
-                    if (reader.HasRows)
-                    {
-                        if (reader.Read())
-                        {
-                            itemNumber = reader["item"].ToString();
-                        }
-                    }
-                    reader.Close();
-                }
-                myConnection.Close();
-            }
-            return itemNumber;
-        }
         public static void InsertDocumentRecord(XmlDocument xml, string orderNum, string environment, string site, string SLorderNumber)
         {
             using (SqlConnection myConnection = new SqlConnection(queueControlConnectionString))
@@ -699,41 +647,6 @@ namespace ConfigureOneFlag
                 myConnection.Close();
             }
             return holdReason;
-        }
-        public static bool CustomerOnCreditHold(string custnum)
-        {
-            bool onCreditHold = false;
-            SQLCommand = "Select credit_hold from custaddr ca with (nolock) Where ca.cust_num = " + (char)39 + custnum + (char)39 + " and ca.cust_seq = 0 and credit_hold = 1";
-            using (SqlConnection myConnection = new SqlConnection(connectionString))
-            {
-                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
-                myCommand.CommandTimeout = 120000;
-                myConnection.Open();
-                using (SqlDataReader reader = myCommand.ExecuteReader())
-                {
-                    if (reader.HasRows)
-                    {
-                        if (reader.Read())
-                        {
-                            onCreditHold = true;
-                        }
-                    }
-                    reader.Close();
-                }
-                myConnection.Close();
-            }
-            return onCreditHold;
-        }
-        public static void DeleteBOM(string orderNum)
-        {
-            SQLCommand = "DELETE From GR_CfgBOM where order_num = " + (char)39 + orderNum + (char)39;
-            using (SqlConnection myConnection = new SqlConnection(connectionString))
-            {
-                SqlCommand myCommand = new SqlCommand(SQLCommand, myConnection);
-                myCommand.CommandTimeout = 120000;
-                myConnection.Open();
-                myCommand.ExecuteNonQuery();
-            }
         }
         public static void MoveQueueRecord(string orderNum, string dbSite)
         {

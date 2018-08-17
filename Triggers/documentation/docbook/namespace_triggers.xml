@@ -54,6 +54,16 @@ Represents a strongly typed in-memory cache of data.
             <para>
                 <itemizedlist>
                     <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg3">Triggers::GRCfg3</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents a strongly typed in-memory cache of data.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
                         <para>struct <link linkend="class_triggers_1_1_item_validator">Triggers::ItemValidator</link></para>
                     </listitem>
                 </itemizedlist>
@@ -79,6 +89,13 @@ Represents a strongly typed in-memory cache of data.
                 <itemizedlist>
                     <listitem>
                         <para>struct <link linkend="namespace_triggers_1_1_g_r_cfg2_table_adapters">Triggers::GRCfg2TableAdapters</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_triggers_1_1_g_r_cfg3_table_adapters">Triggers::GRCfg3TableAdapters</link></para>
                     </listitem>
                 </itemizedlist>
             </para>

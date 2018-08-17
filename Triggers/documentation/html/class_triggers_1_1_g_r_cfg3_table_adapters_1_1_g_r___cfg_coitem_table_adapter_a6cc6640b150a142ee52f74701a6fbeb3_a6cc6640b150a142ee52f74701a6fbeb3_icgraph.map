@@ -1,0 +1,7 @@
+<map id="Triggers.GRCfg3TableAdapters.GR_CfgCoitemTableAdapter.Insert" name="Triggers.GRCfg3TableAdapters.GR_CfgCoitemTableAdapter.Insert">
+<area shape="rect" id="node2" href="$class_configure_one_flag_1_1_database_factory_a7e40f3f0a85ffe44b8c2a3197e6d8925.html#a7e40f3f0a85ffe44b8c2a3197e6d8925" title="ConfigureOneFlag.Database\lFactory.WriteRecordCOItem" alt="" coords="273,5,460,47"/>
+<area shape="rect" id="node3" href="$class_configure_one_flag_1_1_staging_utilities_ad721c5a816e1d3b5a16fec23498ecdf3.html#ad721c5a816e1d3b5a16fec23498ecdf3" title="ConfigureOneFlag.Staging\lUtilities.MapXMLToSQL" alt="" coords="508,5,681,47"/>
+<area shape="rect" id="node4" href="$class_configure_one_flag_1_1_c1_web_service_ae826903f85694f4cf481680e115076f3.html#ae826903f85694f4cf481680e115076f3" title="ConfigureOneFlag.C1WebService.\lCallConfigureOne" alt="" coords="729,5,948,47"/>
+<area shape="rect" id="node5" href="$class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f.html#a7446070eb1c5dd9f63f7043525014c9f" title="ConfigureOneFlag.Triggers.\lC1Order" alt="" coords="1223,5,1401,47"/>
+<area shape="rect" id="node6" href="$class_configure_one_flag_1_1_triggers_a246cde167d6b8c1ab05cf0acb22c79a7.html#a246cde167d6b8c1ab05cf0acb22c79a7" title="ConfigureOneFlag.Triggers.\lBeginProcessing" alt="" coords="996,35,1175,76"/>
+</map>

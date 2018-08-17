@@ -76,8 +76,8 @@
 26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[global::System.Configuration.ApplicationScopedSettingAttribute()]
 27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[global::System.Configuration.DefaultSettingValueAttribute(<emphasis class="stringliteral">&quot;Provider=SQLNCLI11;server=grctslsql0.dom.grc;database=SL_NOVB_App;UID=sa_config;P&quot;</emphasis>&#32;+
-30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;wd&#32;options23&quot;</emphasis>)]
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[global::System.Configuration.DefaultSettingValueAttribute(<emphasis class="stringliteral">&quot;Provider=SQLNCLI11;Data&#32;Source=GRCTSLSQL0;Persist&#32;Security&#32;Info=True;Password=opt&quot;</emphasis>&#32;+
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;ions23;User&#32;ID=sa_config;Initial&#32;Catalog=SL_NOVB_App&quot;</emphasis>)]
 <link linkend="class_triggers_1_1_properties_1_1_settings_a61eb932e3552ba4667a076af4660e85e_1a61eb932e3552ba4667a076af4660e85e">31 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;IConnectionString&#32;{
 32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
 33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;((<emphasis class="keywordtype">string</emphasis>)(<emphasis class="keyword">this</emphasis>[<emphasis class="stringliteral">&quot;IConnectionString&quot;</emphasis>]));
@@ -87,14 +87,25 @@
 37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[global::System.Configuration.ApplicationScopedSettingAttribute()]
 38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
 39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[global::System.Configuration.DefaultSettingValueAttribute(<emphasis class="stringliteral">&quot;Provider=SQLNCLI11;Data&#32;Source=GRCTSLSQL0;Persist&#32;Security&#32;Info=True;Password=opt&quot;</emphasis>&#32;+
-41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;ions23;User&#32;ID=sa_config;Initial&#32;Catalog=SL_NOVB_App&quot;</emphasis>)]
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[global::System.Configuration.DefaultSettingValueAttribute(<emphasis class="stringliteral">&quot;server=GRCTSLSQL0;Password=options23;User&#32;ID=sa_config;Initial&#32;Catalog=SL_NOVB_Ap&quot;</emphasis>&#32;+
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;p&quot;</emphasis>)]
 <link linkend="class_triggers_1_1_properties_1_1_settings_a54c4abb8e8a2f01af5169888f35ce4d2_1a54c4abb8e8a2f01af5169888f35ce4d2">42 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;I2ConnectionString&#32;{
 43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
 44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;((<emphasis class="keywordtype">string</emphasis>)(<emphasis class="keyword">this</emphasis>[<emphasis class="stringliteral">&quot;I2ConnectionString&quot;</emphasis>]));
 45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
 46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-47 &#32;&#32;&#32;&#32;}
-48 }
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[global::System.Configuration.ApplicationScopedSettingAttribute()]
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[global::System.Configuration.DefaultSettingValueAttribute(<emphasis class="stringliteral">&quot;Data&#32;Source=grctslsql0;Initial&#32;Catalog=SL_NOVB_App;Persist&#32;Security&#32;Info=True;Use&quot;</emphasis>&#32;+
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="stringliteral">&quot;r&#32;ID=sa_config;Password=options23&quot;</emphasis>)]
+<link linkend="class_triggers_1_1_properties_1_1_settings_ae4c11adf94a6d0f32260c47796607d52_1ae4c11adf94a6d0f32260c47796607d52">53 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;TA_AppConnectionString&#32;{
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;((<emphasis class="keywordtype">string</emphasis>)(<emphasis class="keyword">this</emphasis>[<emphasis class="stringliteral">&quot;TA_AppConnectionString&quot;</emphasis>]));
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+58 &#32;&#32;&#32;&#32;}
+59 }
     </computeroutput></literallayout>
 </section>

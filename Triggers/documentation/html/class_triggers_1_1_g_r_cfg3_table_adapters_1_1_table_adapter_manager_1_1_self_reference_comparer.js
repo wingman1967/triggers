@@ -1,0 +1,8 @@
+var class_triggers_1_1_g_r_cfg3_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer =
+[
+    [ "SelfReferenceComparer", "class_triggers_1_1_g_r_cfg3_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer_a782b9300f83dc2b7d3284d31055cad50.html#a782b9300f83dc2b7d3284d31055cad50", null ],
+    [ "Compare", "class_triggers_1_1_g_r_cfg3_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer_a71eb01baf0372a4e8494a5ab5e593661.html#a71eb01baf0372a4e8494a5ab5e593661", null ],
+    [ "GetRoot", "class_triggers_1_1_g_r_cfg3_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer_a390f450305b52e0e97805c84e65c0fd8.html#a390f450305b52e0e97805c84e65c0fd8", null ],
+    [ "_childFirst", "class_triggers_1_1_g_r_cfg3_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer_a8ef107c0194eb43413faab68ceb67b74.html#a8ef107c0194eb43413faab68ceb67b74", null ],
+    [ "_relation", "class_triggers_1_1_g_r_cfg3_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer_a7ce1bc9a749217b2f72e2ce0756ec75f.html#a7ce1bc9a749217b2f72e2ce0756ec75f", null ]
+];

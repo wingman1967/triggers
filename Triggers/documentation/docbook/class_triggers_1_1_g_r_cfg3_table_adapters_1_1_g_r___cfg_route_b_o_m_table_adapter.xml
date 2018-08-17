@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter">
+<title>Triggers::GRCfg3TableAdapters::GR_CfgRouteBOMTableAdapter class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfg3TableAdapters::GR_CfgRouteBOMTableAdapter</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfg3TableAdapters::GR_CfgRouteBOMTableAdapter</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.SqlClient.SqlDataAdapter _adapter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.SqlClient.SqlConnection _connection</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.SqlClient.SqlTransaction _transaction</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.SqlClient.SqlCommand [] _commandCollection</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool _clearBeforeFill</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_a7a9cc7d4d5634637ba891151e30dd3c4_1a7a9cc7d4d5634637ba891151e30dd3c4">GR_CfgRouteBOMTableAdapter</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_a4b0cc6137a7911ab895ef52b25817a2c_1a4b0cc6137a7911ab895ef52b25817a2c">Fill</link> (
+<link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_b_o_m_data_table">GRCfg3.GR_CfgRouteBOMDataTable</link> dataTable)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_b_o_m_data_table">GRCfg3.GR_CfgRouteBOMDataTable</link> <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_a90cb8672e835cfd0c95d53d2588ff645_1a90cb8672e835cfd0c95d53d2588ff645">GetData</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_a1424c298ef642f65c46798621f3b0fc7_1a1424c298ef642f65c46798621f3b0fc7">Update</link> (
+<link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_b_o_m_data_table">GRCfg3.GR_CfgRouteBOMDataTable</link> dataTable)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_a460c5ad4171513944916d73c0f5ac0a2_1a460c5ad4171513944916d73c0f5ac0a2">Update</link> (
+<link linkend="class_triggers_1_1_g_r_cfg3">GRCfg3</link> dataSet)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_af0b34e9907d9ababfdf967a53ee9da12_1af0b34e9907d9ababfdf967a53ee9da12">Update</link> (
+global::System.Data.DataRow dataRow)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_a6f2fd0182537a45aa92d1c1abbecdb7b_1a6f2fd0182537a45aa92d1c1abbecdb7b">Update</link> (
+global::System.Data.DataRow [] dataRows)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_ab97d5b40bcdb4d149696bf65db97093b_1ab97d5b40bcdb4d149696bf65db97093b">Insert</link> (
+string order_num, global::System.Nullable&lt; int &gt; order_line_num, global::System.Nullable&lt; int &gt; seq, string type, string bom_id, string item_num, string smartpart_num, global::System.Nullable&lt; int &gt; oper_num, string wc, string description, global::System.Nullable&lt; decimal &gt; labor_hrs, global::System.Nullable&lt; decimal &gt; setup_hrs, global::System.Nullable&lt; decimal &gt; labor_rate, string notes, string mach_name, global::System.Nullable&lt; decimal &gt; run_time, string matl_item_num, string matl_smartpart_num, global::System.Nullable&lt; decimal &gt; matl_quantity)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_ad0ebc1f40ed1fd82bcdc9073e150b3a6_1ad0ebc1f40ed1fd82bcdc9073e150b3a6">InitAdapter</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_aefa49d359764598276553a15179e7c3e_1aefa49d359764598276553a15179e7c3e">InitConnection</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_a61f2c9527c678e7930f4fee6fa60ab8c_1a61f2c9527c678e7930f4fee6fa60ab8c">InitCommandCollection</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represents the connection and commands used to retrieve and save data. /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_a7a9cc7d4d5634637ba891151e30dd3c4_1a7a9cc7d4d5634637ba891151e30dd3c4">
+                <title>Triggers.GRCfg3TableAdapters.GR_CfgRouteBOMTableAdapter.GR_CfgRouteBOMTableAdapter ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_a4b0cc6137a7911ab895ef52b25817a2c_1a4b0cc6137a7911ab895ef52b25817a2c">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgRouteBOMTableAdapter.Fill (GRCfg3.GR_CfgRouteBOMDataTable dataTable)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_a90cb8672e835cfd0c95d53d2588ff645_1a90cb8672e835cfd0c95d53d2588ff645">
+                <title>virtual GRCfg3.GR_CfgRouteBOMDataTable Triggers.GRCfg3TableAdapters.GR_CfgRouteBOMTableAdapter.GetData ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_a1424c298ef642f65c46798621f3b0fc7_1a1424c298ef642f65c46798621f3b0fc7">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgRouteBOMTableAdapter.Update (GRCfg3.GR_CfgRouteBOMDataTable dataTable)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_a460c5ad4171513944916d73c0f5ac0a2_1a460c5ad4171513944916d73c0f5ac0a2">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgRouteBOMTableAdapter.Update (GRCfg3 dataSet)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_af0b34e9907d9ababfdf967a53ee9da12_1af0b34e9907d9ababfdf967a53ee9da12">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgRouteBOMTableAdapter.Update (global::System.Data.DataRow dataRow)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_a6f2fd0182537a45aa92d1c1abbecdb7b_1a6f2fd0182537a45aa92d1c1abbecdb7b">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgRouteBOMTableAdapter.Update (global::System.Data.DataRow[] dataRows)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_ab97d5b40bcdb4d149696bf65db97093b_1ab97d5b40bcdb4d149696bf65db97093b">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgRouteBOMTableAdapter.Insert (string order_num, global::System.Nullable&lt; int &gt; order_line_num, global::System.Nullable&lt; int &gt; seq, string type, string bom_id, string item_num, string smartpart_num, global::System.Nullable&lt; int &gt; oper_num, string wc, string description, global::System.Nullable&lt; decimal &gt; labor_hrs, global::System.Nullable&lt; decimal &gt; setup_hrs, global::System.Nullable&lt; decimal &gt; labor_rate, string notes, string mach_name, global::System.Nullable&lt; decimal &gt; run_time, string matl_item_num, string matl_smartpart_num, global::System.Nullable&lt; decimal &gt; matl_quantity)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_ad0ebc1f40ed1fd82bcdc9073e150b3a6_1ad0ebc1f40ed1fd82bcdc9073e150b3a6">
+                <title>void Triggers.GRCfg3TableAdapters.GR_CfgRouteBOMTableAdapter.InitAdapter ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_aefa49d359764598276553a15179e7c3e_1aefa49d359764598276553a15179e7c3e">
+                <title>void Triggers.GRCfg3TableAdapters.GR_CfgRouteBOMTableAdapter.InitConnection ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter_a61f2c9527c678e7930f4fee6fa60ab8c_1a61f2c9527c678e7930f4fee6fa60ab8c">
+                <title>void Triggers.GRCfg3TableAdapters.GR_CfgRouteBOMTableAdapter.InitCommandCollection ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

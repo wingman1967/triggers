@@ -13457,7 +13457,7 @@ namespace Triggers.GRCfg2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.IConnectionString;
+            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.TA_AppConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -13754,7 +13754,7 @@ namespace Triggers.GRCfg2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.IConnectionString;
+            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.TA_AppConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14045,7 +14045,7 @@ namespace Triggers.GRCfg2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.IConnectionString;
+            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.TA_AppConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14315,7 +14315,7 @@ namespace Triggers.GRCfg2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.IConnectionString;
+            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.TA_AppConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -14619,7 +14619,7 @@ namespace Triggers.GRCfg2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.IConnectionString;
+            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.TA_AppConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15129,7 +15129,7 @@ namespace Triggers.GRCfg2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.IConnectionString;
+            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.TA_AppConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -15838,7 +15838,7 @@ namespace Triggers.GRCfg2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.IConnectionString;
+            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.TA_AppConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16249,7 +16249,7 @@ namespace Triggers.GRCfg2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.IConnectionString;
+            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.TA_AppConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16640,7 +16640,7 @@ namespace Triggers.GRCfg2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.IConnectionString;
+            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.TA_AppConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16957,7 +16957,7 @@ namespace Triggers.GRCfg2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.IConnectionString;
+            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.TA_AppConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17346,7 +17346,7 @@ namespace Triggers.GRCfg2TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.IConnectionString;
+            this._connection.ConnectionString = global::Triggers.Properties.Settings.Default.TA_AppConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

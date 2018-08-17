@@ -83,6 +83,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>GRCfg2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="GRCfg3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GRCfg3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="ItemValidator.cs" />
     <Compile Include="NetworkShare.cs" />
     <Compile Include="ParmValValidator.cs" />
@@ -129,6 +134,17 @@
     </None>
     <None Include="GRCfg2.xss">
       <DependentUpon>GRCfg2.xsd</DependentUpon>
+    </None>
+    <None Include="GRCfg3.xsc">
+      <DependentUpon>GRCfg3.xsd</DependentUpon>
+    </None>
+    <None Include="GRCfg3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GRCfg3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="GRCfg3.xss">
+      <DependentUpon>GRCfg3.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -26,8 +26,8 @@ namespace Triggers.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=SQLNCLI11;server=grctslsql0.dom.grc;database=SL_NOVB_App;UID=sa_config;P" +
-            "wd options23")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=SQLNCLI11;Data Source=GRCTSLSQL0;Persist Security Info=True;Password=opt" +
+            "ions23;User ID=sa_config;Initial Catalog=SL_NOVB_App")]
         public string IConnectionString {
             get {
                 return ((string)(this["IConnectionString"]));
@@ -37,11 +37,22 @@ namespace Triggers.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Provider=SQLNCLI11;Data Source=GRCTSLSQL0;Persist Security Info=True;Password=opt" +
-            "ions23;User ID=sa_config;Initial Catalog=SL_NOVB_App")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=GRCTSLSQL0;Password=options23;User ID=sa_config;Initial Catalog=SL_NOVB_Ap" +
+            "p")]
         public string I2ConnectionString {
             get {
                 return ((string)(this["I2ConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=grctslsql0;Initial Catalog=SL_NOVB_App;Persist Security Info=True;Use" +
+            "r ID=sa_config;Password=options23")]
+        public string TA_AppConnectionString {
+            get {
+                return ((string)(this["TA_AppConnectionString"]));
             }
         }
     }

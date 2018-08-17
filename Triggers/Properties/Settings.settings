@@ -5,18 +5,26 @@
     <Setting Name="IConnectionString" Type="(Connection string)" Scope="Application">
       <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionString&gt;Provider=SQLNCLI11;server=grctslsql0.dom.grc;database=SL_NOVB_App;UID=sa_config;Pwd options23&lt;/ConnectionString&gt;
-  &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
-&lt;/SerializableConnectionString&gt;</DesignTimeValue>
-      <Value Profile="(Default)">Provider=SQLNCLI11;server=grctslsql0.dom.grc;database=SL_NOVB_App;UID=sa_config;Pwd options23</Value>
-    </Setting>
-    <Setting Name="I2ConnectionString" Type="(Connection string)" Scope="Application">
-      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
   &lt;ConnectionString&gt;Provider=SQLNCLI11;Data Source=GRCTSLSQL0;Persist Security Info=True;Password=options23;User ID=sa_config;Initial Catalog=SL_NOVB_App&lt;/ConnectionString&gt;
   &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Provider=SQLNCLI11;Data Source=GRCTSLSQL0;Persist Security Info=True;Password=options23;User ID=sa_config;Initial Catalog=SL_NOVB_App</Value>
+    </Setting>
+    <Setting Name="I2ConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;server=GRCTSLSQL0;Password=options23;User ID=sa_config;Initial Catalog=SL_NOVB_App&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.OleDb&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">server=GRCTSLSQL0;Password=options23;User ID=sa_config;Initial Catalog=SL_NOVB_App</Value>
+    </Setting>
+    <Setting Name="TA_AppConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=grctslsql0;Initial Catalog=SL_NOVB_App;Persist Security Info=True;User ID=sa_config;Password=options23&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=grctslsql0;Initial Catalog=SL_NOVB_App;Persist Security Info=True;User ID=sa_config;Password=options23</Value>
     </Setting>
   </Settings>
 </SettingsFile>

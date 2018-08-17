@@ -32,6 +32,7 @@
         <xi:include href="namespace_system_1_1_xml_1_1_linq.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_triggers.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_triggers_1_1_g_r_cfg2_table_adapters.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="namespace_triggers_1_1_g_r_cfg3_table_adapters.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_triggers_1_1_g_r_cfg_table_adapters.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_triggers_1_1_properties.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="namespace_z_m_q.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -55,95 +56,144 @@
         <xi:include href="classglobal_1_1_system_data_1_1_data_set.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="struct_configure_one_flag_1_1_network_share_1_1_error_class.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___audit_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___audit_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___audit_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg___audit_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg___audit_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___document_queue_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___document_queue_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___document_queue_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___document_queue_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___document_queue_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___document_queue_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg___document_queue_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___document_queue_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg___document_queue_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___progress_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___progress_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___progress_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___progress_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___progress_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___progress_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg___progress_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___progress_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg___progress_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___queue_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___queue_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___queue_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___queue_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___queue_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___queue_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg___queue_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg___queue_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___queue_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_b_o_m_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_b_o_m_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_b_o_m_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_b_o_m_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_b_o_m_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_b_o_m_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_b_o_m_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_b_o_m_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_b_o_m_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg_b_o_m_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_c_o_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_c_o_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_c_o_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_coitem_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_coitem_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_coitem_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_coitem_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_coitem_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_coitem_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-        <xi:include href="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg_coitem_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_coitem_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg_coitem_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_c_o_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_c_o_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_c_o_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_c_o_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_c_o_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_c_o_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_c_o_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg_c_o_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_item_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_item_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_item_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_item_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_item_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_item_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_item_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_item_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_item_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-        <xi:include href="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg_item_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_item_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_item_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg_item_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_parm_val_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-        <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_parm_val_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_parm_val_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-        <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_parm_val_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_parm_val_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_parm_val_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_parm_val_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_parm_val_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_parm_val_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg_parm_val_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-        <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_route_b_o_m_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_route_b_o_m_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-        <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_route_b_o_m_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_b_o_m_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_route_b_o_m_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_b_o_m_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_route_b_o_m_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-        <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_route_b_o_m_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_route_b_o_m_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_route_b_o_m_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_b_o_m_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_route_b_o_m_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_route_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_route_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
-        <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_route_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_route_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_route_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg_route_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_route_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg_route_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_route_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_data_table.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_change_event.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="classglobal_1_1_system_collections_1_1_generic_1_1_i_comparer.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_item_validator.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -152,6 +202,7 @@
         <xi:include href="class_triggers_1_1_parm_val_validator.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1_retrieve_drawings.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_route_validator.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1_send_mail.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -160,6 +211,7 @@
         <xi:include href="classglobal_1_1_system_event_args.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_table_adapter_manager.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_table_adapter_manager.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1_triggers.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="classglobal_1_1_system_data_1_1_typed_table_base.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="class_configure_one_flag_1_1z_cfg_b_o_m.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
@@ -183,6 +235,7 @@
         <xi:include href="_database_factory_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="_g_r_cfg_8_designer_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="_g_r_cfg2_8_designer_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
+        <xi:include href="_g_r_cfg3_8_designer_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="_item_validator_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="_network_share_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>
         <xi:include href="_temporary_generated_file__036_c0_b5_b-1481-4323-8_d20-8_f5_a_d_c_b23_d92_8cs.xml" xmlns:xi="http://www.w3.org/2001/XInclude"/>

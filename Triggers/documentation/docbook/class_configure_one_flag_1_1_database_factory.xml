@@ -269,22 +269,6 @@ string conum)</para>
             <para>
                 <itemizedlist>
                     <listitem>
-                        <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_a9052ce3076b797e9c021864291dc2489_1a9052ce3076b797e9c021864291dc2489">WriteTestRecord</link> (
-string eventText)</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>static string <link linkend="class_configure_one_flag_1_1_database_factory_a85857ab755db44ae9b4e7efcec96748b_1a85857ab755db44ae9b4e7efcec96748b">COItemitem</link> (
-string order_num, string ser_num)</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
                         <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_a58f013f5a91fe754f457a1e3ad26ebea_1a58f013f5a91fe754f457a1e3ad26ebea">InsertDocumentRecord</link> (
 XmlDocument xml, string orderNum, string environment, string site, string SLorderNumber)</para>
                     </listitem>
@@ -327,22 +311,6 @@ string C1orderNum)</para>
                     <listitem>
                         <para>static string <link linkend="class_configure_one_flag_1_1_database_factory_ad0311ab55adaa79f6211e1377ad7d65e_1ad0311ab55adaa79f6211e1377ad7d65e">CustomerOnHold</link> (
 string custnum, string seq)</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>static bool <link linkend="class_configure_one_flag_1_1_database_factory_ad56ef7e2eb2407d562a8a065878fbbdd_1ad56ef7e2eb2407d562a8a065878fbbdd">CustomerOnCreditHold</link> (
-string custnum)</para>
-                    </listitem>
-                </itemizedlist>
-            </para>
-            <para>
-                <itemizedlist>
-                    <listitem>
-                        <para>static void <link linkend="class_configure_one_flag_1_1_database_factory_adec1d318fce610a0e24c55bc7c31cf0e_1adec1d318fce610a0e24c55bc7c31cf0e">DeleteBOM</link> (
-string orderNum)</para>
                     </listitem>
                 </itemizedlist>
             </para>
@@ -425,14 +393,6 @@ string orderNum, string dbSite)</para>
                 <title>static void ConfigureOneFlag.DatabaseFactory.UpdateCO (string conum)</title> <emphasis></emphasis>
                 
             </section>
-            <section xml:id="class_configure_one_flag_1_1_database_factory_a9052ce3076b797e9c021864291dc2489_1a9052ce3076b797e9c021864291dc2489">
-                <title>static void ConfigureOneFlag.DatabaseFactory.WriteTestRecord (string eventText)</title> <emphasis></emphasis>
-                
-            </section>
-            <section xml:id="class_configure_one_flag_1_1_database_factory_a85857ab755db44ae9b4e7efcec96748b_1a85857ab755db44ae9b4e7efcec96748b">
-                <title>static string ConfigureOneFlag.DatabaseFactory.COItemitem (string order_num, string ser_num)</title> <emphasis></emphasis>
-                
-            </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_a58f013f5a91fe754f457a1e3ad26ebea_1a58f013f5a91fe754f457a1e3ad26ebea">
                 <title>static void ConfigureOneFlag.DatabaseFactory.InsertDocumentRecord (XmlDocument xml, string orderNum, string environment, string site, string SLorderNumber)</title> <emphasis></emphasis>
                 
@@ -455,14 +415,6 @@ string orderNum, string dbSite)</para>
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_ad0311ab55adaa79f6211e1377ad7d65e_1ad0311ab55adaa79f6211e1377ad7d65e">
                 <title>static string ConfigureOneFlag.DatabaseFactory.CustomerOnHold (string custnum, string seq)</title> <emphasis></emphasis>
-                
-            </section>
-            <section xml:id="class_configure_one_flag_1_1_database_factory_ad56ef7e2eb2407d562a8a065878fbbdd_1ad56ef7e2eb2407d562a8a065878fbbdd">
-                <title>static bool ConfigureOneFlag.DatabaseFactory.CustomerOnCreditHold (string custnum)</title> <emphasis></emphasis>
-                
-            </section>
-            <section xml:id="class_configure_one_flag_1_1_database_factory_adec1d318fce610a0e24c55bc7c31cf0e_1adec1d318fce610a0e24c55bc7c31cf0e">
-                <title>static void ConfigureOneFlag.DatabaseFactory.DeleteBOM (string orderNum)</title> <emphasis></emphasis>
                 
             </section>
             <section xml:id="class_configure_one_flag_1_1_database_factory_a6fba3443de3b8beba6d0648a75bff168_1a6fba3443de3b8beba6d0648a75bff168">

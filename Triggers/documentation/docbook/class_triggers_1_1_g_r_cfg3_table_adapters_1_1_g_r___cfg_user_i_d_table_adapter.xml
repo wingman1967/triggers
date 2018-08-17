@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter">
+<title>Triggers::GRCfg3TableAdapters::GR_CfgUserIDTableAdapter class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfg3TableAdapters::GR_CfgUserIDTableAdapter</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfg3TableAdapters::GR_CfgUserIDTableAdapter</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.SqlClient.SqlDataAdapter _adapter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.SqlClient.SqlConnection _connection</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.SqlClient.SqlTransaction _transaction</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.SqlClient.SqlCommand [] _commandCollection</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool _clearBeforeFill</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_affa31be7cd72d2dacb18920ba8580e62_1affa31be7cd72d2dacb18920ba8580e62">GR_CfgUserIDTableAdapter</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_a77acda9b141ce5cbbdef958e3d384260_1a77acda9b141ce5cbbdef958e3d384260">Fill</link> (
+<link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_data_table">GRCfg3.GR_CfgUserIDDataTable</link> dataTable)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_data_table">GRCfg3.GR_CfgUserIDDataTable</link> <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_ae90869ea8f04624c9d7a1e98705a3ade_1ae90869ea8f04624c9d7a1e98705a3ade">GetData</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_ab61f6a798ba215221164f8ff0dda802d_1ab61f6a798ba215221164f8ff0dda802d">Update</link> (
+<link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_data_table">GRCfg3.GR_CfgUserIDDataTable</link> dataTable)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_a26b7f0ae8b89da2967126cc52869e2c0_1a26b7f0ae8b89da2967126cc52869e2c0">Update</link> (
+<link linkend="class_triggers_1_1_g_r_cfg3">GRCfg3</link> dataSet)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_ade9c3acfc45ee057e5efa5ad26a3ba6f_1ade9c3acfc45ee057e5efa5ad26a3ba6f">Update</link> (
+global::System.Data.DataRow dataRow)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_a80a5d88013fd315c80f22b0ef942ef1b_1a80a5d88013fd315c80f22b0ef942ef1b">Update</link> (
+global::System.Data.DataRow [] dataRows)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_a23aa5df7ea4d74df72ca91838e7fc66c_1a23aa5df7ea4d74df72ca91838e7fc66c">Insert</link> (
+string cfg_user_name, string cfg_user_id, string CreatedBy, string UpdatedBy, System.DateTime CreateDate, System.DateTime RecordDate, System.Guid RowPointer, byte NoteExistsFlag, byte InWorkflow, string firstName, string lastName, string emailAddress)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_a44cedd333541825cca688af6901a6fcc_1a44cedd333541825cca688af6901a6fcc">InitAdapter</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_a01b239d524c1e3fa20b775785fbd0a8d_1a01b239d524c1e3fa20b775785fbd0a8d">InitConnection</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_acef100f427669cd898051da5f943f012_1acef100f427669cd898051da5f943f012">InitCommandCollection</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represents the connection and commands used to retrieve and save data. /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_affa31be7cd72d2dacb18920ba8580e62_1affa31be7cd72d2dacb18920ba8580e62">
+                <title>Triggers.GRCfg3TableAdapters.GR_CfgUserIDTableAdapter.GR_CfgUserIDTableAdapter ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_a77acda9b141ce5cbbdef958e3d384260_1a77acda9b141ce5cbbdef958e3d384260">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgUserIDTableAdapter.Fill (GRCfg3.GR_CfgUserIDDataTable dataTable)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_ae90869ea8f04624c9d7a1e98705a3ade_1ae90869ea8f04624c9d7a1e98705a3ade">
+                <title>virtual GRCfg3.GR_CfgUserIDDataTable Triggers.GRCfg3TableAdapters.GR_CfgUserIDTableAdapter.GetData ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_ab61f6a798ba215221164f8ff0dda802d_1ab61f6a798ba215221164f8ff0dda802d">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgUserIDTableAdapter.Update (GRCfg3.GR_CfgUserIDDataTable dataTable)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_a26b7f0ae8b89da2967126cc52869e2c0_1a26b7f0ae8b89da2967126cc52869e2c0">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgUserIDTableAdapter.Update (GRCfg3 dataSet)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_ade9c3acfc45ee057e5efa5ad26a3ba6f_1ade9c3acfc45ee057e5efa5ad26a3ba6f">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgUserIDTableAdapter.Update (global::System.Data.DataRow dataRow)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_a80a5d88013fd315c80f22b0ef942ef1b_1a80a5d88013fd315c80f22b0ef942ef1b">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgUserIDTableAdapter.Update (global::System.Data.DataRow[] dataRows)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_a23aa5df7ea4d74df72ca91838e7fc66c_1a23aa5df7ea4d74df72ca91838e7fc66c">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgUserIDTableAdapter.Insert (string cfg_user_name, string cfg_user_id, string CreatedBy, string UpdatedBy, System.DateTime CreateDate, System.DateTime RecordDate, System.Guid RowPointer, byte NoteExistsFlag, byte InWorkflow, string firstName, string lastName, string emailAddress)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_a44cedd333541825cca688af6901a6fcc_1a44cedd333541825cca688af6901a6fcc">
+                <title>void Triggers.GRCfg3TableAdapters.GR_CfgUserIDTableAdapter.InitAdapter ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_a01b239d524c1e3fa20b775785fbd0a8d_1a01b239d524c1e3fa20b775785fbd0a8d">
+                <title>void Triggers.GRCfg3TableAdapters.GR_CfgUserIDTableAdapter.InitConnection ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_user_i_d_table_adapter_acef100f427669cd898051da5f943f012_1acef100f427669cd898051da5f943f012">
+                <title>void Triggers.GRCfg3TableAdapters.GR_CfgUserIDTableAdapter.InitCommandCollection ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

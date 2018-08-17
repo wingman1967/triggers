@@ -1,5 +1,3 @@
 <map id="ConfigureOneFlag.DatabaseFactory.WriteRecordCOItem" name="ConfigureOneFlag.DatabaseFactory.WriteRecordCOItem">
-<area shape="rect" id="node2" href="$class_configure_one_flag_1_1_c1_dictionaries_a62d37086ac3e73ea188a506c45d1b965.html#a62d37086ac3e73ea188a506c45d1b965" title="ConfigureOneFlag.C1Dictionaries.\lDBFieldLenCOItem" alt="" coords="240,5,457,47"/>
-<area shape="rect" id="node3" href="$class_configure_one_flag_1_1_audit_ab7a15d124f661d9f251f17cf042f00ac.html#ab7a15d124f661d9f251f17cf042f00ac" title="ConfigureOneFlag.Audit.Set\lTruncate" alt="" coords="505,5,688,47"/>
-<area shape="rect" id="node4" href="$class_configure_one_flag_1_1_database_factory_a59987be56acf3f8cbf7681d6b4866e81.html#a59987be56acf3f8cbf7681d6b4866e81" title="ConfigureOneFlag.Database\lFactory.WriteAuditRecord" alt="" coords="736,5,920,47"/>
+<area shape="rect" id="node2" href="$class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_a6cc6640b150a142ee52f74701a6fbeb3.html#a6cc6640b150a142ee52f74701a6fbeb3" title="Triggers.GRCfg3TableAdapters.\lGR_CfgCoitemTableAdapter.Insert" alt="" coords="240,5,460,47"/>
 </map>

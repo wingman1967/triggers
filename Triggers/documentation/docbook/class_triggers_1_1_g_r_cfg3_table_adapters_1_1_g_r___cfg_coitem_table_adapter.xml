@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter">
+<title>Triggers::GRCfg3TableAdapters::GR_CfgCoitemTableAdapter class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfg3TableAdapters::GR_CfgCoitemTableAdapter</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfg3TableAdapters::GR_CfgCoitemTableAdapter</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.SqlClient.SqlDataAdapter _adapter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.SqlClient.SqlConnection _connection</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.SqlClient.SqlTransaction _transaction</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.SqlClient.SqlCommand [] _commandCollection</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool _clearBeforeFill</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_a79c2c8d37545bbe21462f1cb0c5a7f8e_1a79c2c8d37545bbe21462f1cb0c5a7f8e">GR_CfgCoitemTableAdapter</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_a1276a0a6629a101a95244fb2283717e1_1a1276a0a6629a101a95244fb2283717e1">Fill</link> (
+<link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table">GRCfg3.GR_CfgCoitemDataTable</link> dataTable)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table">GRCfg3.GR_CfgCoitemDataTable</link> <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_a69cfb9b5302c3bca7b12b5aba3b26b84_1a69cfb9b5302c3bca7b12b5aba3b26b84">GetData</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_aa678043abaad7d351eea136f57d2a6a0_1aa678043abaad7d351eea136f57d2a6a0">Update</link> (
+<link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table">GRCfg3.GR_CfgCoitemDataTable</link> dataTable)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_a070e63a087002c263cb1d302909df300_1a070e63a087002c263cb1d302909df300">Update</link> (
+<link linkend="class_triggers_1_1_g_r_cfg3">GRCfg3</link> dataSet)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_a7b9da55980be2db8b90a3727b8705a77_1a7b9da55980be2db8b90a3727b8705a77">Update</link> (
+global::System.Data.DataRow dataRow)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_a845361f59ec9a5ae8ac4030b79b8c5bd_1a845361f59ec9a5ae8ac4030b79b8c5bd">Update</link> (
+global::System.Data.DataRow [] dataRows)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_a6cc6640b150a142ee52f74701a6fbeb3_1a6cc6640b150a142ee52f74701a6fbeb3">Insert</link> (
+string order_num, global::System.Nullable&lt; int &gt; order_line_num, string ser_num, string item_num, string smartpart_num, string description, global::System.Nullable&lt; decimal &gt; unit_price, global::System.Nullable&lt; decimal &gt; unit_cost, global::System.Nullable&lt; decimal &gt; discount_amt, global::System.Nullable&lt; decimal &gt; quantity, global::System.Nullable&lt; int &gt; priority_level, global::System.Nullable&lt; global::System.DateTime &gt; due_date, string config_type, string CustPO, string LINE_NOTES)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_aa28ebd05471f74d96d51514d0086af39_1aa28ebd05471f74d96d51514d0086af39">InitAdapter</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_a77e4ed333a05640256850aa2e3c8fd15_1a77e4ed333a05640256850aa2e3c8fd15">InitConnection</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_a6354a602a3a561b0d3a46fbcaeac8844_1a6354a602a3a561b0d3a46fbcaeac8844">InitCommandCollection</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represents the connection and commands used to retrieve and save data. /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_a79c2c8d37545bbe21462f1cb0c5a7f8e_1a79c2c8d37545bbe21462f1cb0c5a7f8e">
+                <title>Triggers.GRCfg3TableAdapters.GR_CfgCoitemTableAdapter.GR_CfgCoitemTableAdapter ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_a1276a0a6629a101a95244fb2283717e1_1a1276a0a6629a101a95244fb2283717e1">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgCoitemTableAdapter.Fill (GRCfg3.GR_CfgCoitemDataTable dataTable)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_a69cfb9b5302c3bca7b12b5aba3b26b84_1a69cfb9b5302c3bca7b12b5aba3b26b84">
+                <title>virtual GRCfg3.GR_CfgCoitemDataTable Triggers.GRCfg3TableAdapters.GR_CfgCoitemTableAdapter.GetData ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_aa678043abaad7d351eea136f57d2a6a0_1aa678043abaad7d351eea136f57d2a6a0">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgCoitemTableAdapter.Update (GRCfg3.GR_CfgCoitemDataTable dataTable)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_a070e63a087002c263cb1d302909df300_1a070e63a087002c263cb1d302909df300">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgCoitemTableAdapter.Update (GRCfg3 dataSet)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_a7b9da55980be2db8b90a3727b8705a77_1a7b9da55980be2db8b90a3727b8705a77">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgCoitemTableAdapter.Update (global::System.Data.DataRow dataRow)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_a845361f59ec9a5ae8ac4030b79b8c5bd_1a845361f59ec9a5ae8ac4030b79b8c5bd">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgCoitemTableAdapter.Update (global::System.Data.DataRow[] dataRows)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_a6cc6640b150a142ee52f74701a6fbeb3_1a6cc6640b150a142ee52f74701a6fbeb3">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgCoitemTableAdapter.Insert (string order_num, global::System.Nullable&lt; int &gt; order_line_num, string ser_num, string item_num, string smartpart_num, string description, global::System.Nullable&lt; decimal &gt; unit_price, global::System.Nullable&lt; decimal &gt; unit_cost, global::System.Nullable&lt; decimal &gt; discount_amt, global::System.Nullable&lt; decimal &gt; quantity, global::System.Nullable&lt; int &gt; priority_level, global::System.Nullable&lt; global::System.DateTime &gt; due_date, string config_type, string CustPO, string LINE_NOTES)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_aa28ebd05471f74d96d51514d0086af39_1aa28ebd05471f74d96d51514d0086af39">
+                <title>void Triggers.GRCfg3TableAdapters.GR_CfgCoitemTableAdapter.InitAdapter ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_a77e4ed333a05640256850aa2e3c8fd15_1a77e4ed333a05640256850aa2e3c8fd15">
+                <title>void Triggers.GRCfg3TableAdapters.GR_CfgCoitemTableAdapter.InitConnection ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_coitem_table_adapter_a6354a602a3a561b0d3a46fbcaeac8844_1a6354a602a3a561b0d3a46fbcaeac8844">
+                <title>void Triggers.GRCfg3TableAdapters.GR_CfgCoitemTableAdapter.InitCommandCollection ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>
