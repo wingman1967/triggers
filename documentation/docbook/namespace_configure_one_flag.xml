@@ -1,0 +1,162 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="namespace_configure_one_flag">
+<title>ConfigureOneFlag</title>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_audit">ConfigureOneFlag::Audit</link></para>
+<para><emphasis>&lt;summary&gt;
+Write auditing information regarding mapping and assembly behavior to event log, GR_Cfg_Audit, and send email for error notifications.
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_c1_dictionaries">ConfigureOneFlag::C1Dictionaries</link></para>
+<para><emphasis>&lt;summary&gt;
+Management of dictionaries used for C1 data mapping/processing
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_c1_web_service">ConfigureOneFlag::C1WebService</link></para>
+<para><emphasis>&lt;summary&gt;
+Processing for calls to ConfigureOne web service and return for further handling
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1crypto">ConfigureOneFlag::crypto</link></para>
+<para><emphasis>&lt;summary&gt;
+Cryptography class providing for the decryption of encrypted strings.  Key passed in is the base64 ENCODED version for extra obfuscation.
+Using defaults to maintain FIPS-197 AES compliance/interoperability:  Key size - 256 bits, Block size - 128 bits
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_database_factory">ConfigureOneFlag::DatabaseFactory</link></para>
+<para><emphasis>&lt;summary&gt;
+Repository for all database functions and calls on behalf of the assembly
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_network_share">ConfigureOneFlag::NetworkShare</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_retrieve_drawings">ConfigureOneFlag::RetrieveDrawings</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_send_mail">ConfigureOneFlag::SendMail</link></para>
+<para><emphasis>&lt;summary&gt;
+Send email to specified users for errors encountered during XML mapping
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_staging_utilities">ConfigureOneFlag::StagingUtilities</link></para>
+<para><emphasis>&lt;summary&gt;
+Utilities used for staging of data from C1 to SQL databases
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_triggers">ConfigureOneFlag::Triggers</link></para>
+<para><emphasis>&lt;summary&gt;
+Primary entrypoint called from C1ORDER trigger for accessing C1 web service and returning/mapping data to SQL where appropriate
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1z_cfg_b_o_m">ConfigureOneFlag::zCfgBOM</link></para>
+<para><emphasis>&lt;summary&gt;
+Accessor class for the BOM object
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1z_cfg_c_o">ConfigureOneFlag::zCfgCO</link></para>
+<para><emphasis>&lt;summary&gt;
+Accessor class for CO object
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1z_cfg_c_oitem">ConfigureOneFlag::zCfgCOitem</link></para>
+<para><emphasis>&lt;summary&gt;
+Accessor class for the CO Item
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1z_cfg_item">ConfigureOneFlag::zCfgItem</link></para>
+<para><emphasis>&lt;summary&gt;
+Accessor class for the item-master object
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1z_cfg_parm_val">ConfigureOneFlag::zCfgParmVal</link></para>
+<para><emphasis>&lt;summary&gt;
+Accessor class for the cfg parmValue object (C1 Inputs)
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1z_cfg_route">ConfigureOneFlag::zCfgRoute</link></para>
+<para><emphasis>&lt;summary&gt;
+Accessor class for the cfg route object (C1 routing module data)
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+</section>

@@ -1,0 +1,7 @@
+<map id="Triggers.GRCfg2.GR_CfgCoitemDataTable.GetTypedTableSchema" name="Triggers.GRCfg2.GR_CfgCoitemDataTable.GetTypedTableSchema">
+<area shape="rect" id="node2" href="$class_triggers_1_1_g_r_cfg2_a728d77c289607beae2421086ae48f861.html#a728d77c289607beae2421086ae48f861" title="Triggers.GRCfg2.GRCfg2" alt="" coords="272,31,439,57"/>
+<area shape="rect" id="node6" href="$class_triggers_1_1_g_r_cfg2_a5eeb57b98ef1676610c01f553ddf012d.html#a5eeb57b98ef1676610c01f553ddf012d" title="Triggers.GRCfg2.GetSchema\lSerializable" alt="" coords="260,82,451,123"/>
+<area shape="rect" id="node3" href="$class_triggers_1_1_g_r_cfg2_a56646b584f31ed7daef9d46e8584384f.html#a56646b584f31ed7daef9d46e8584384f" title="Triggers.GRCfg2.InitClass" alt="" coords="523,5,694,32"/>
+<area shape="rect" id="node4" href="$class_triggers_1_1_g_r_cfg2_a74818fe040f96142ba55bb0daba29e08.html#a74818fe040f96142ba55bb0daba29e08" title="Triggers.GRCfg2.SchemaChanged" alt="" coords="499,56,719,83"/>
+<area shape="rect" id="node5" href="$class_triggers_1_1_g_r_cfg2_abd1b979d55d372a946c4f930c90f24a6.html#abd1b979d55d372a946c4f930c90f24a6" title="Triggers.GRCfg2.InitVars" alt="" coords="767,56,932,83"/>
+</map>

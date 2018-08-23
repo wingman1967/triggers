@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_row">
+<title>Triggers::GRCfg2::GR_Cfg_QueueRow class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfg2::GR_Cfg_QueueRow</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_row__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfg2::GR_Cfg_QueueRow</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_row__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_Cfg_QueueDataTable tableGR_Cfg_Queue</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_row_abfe49055240f235854647dc0699fc6df_1abfe49055240f235854647dc0699fc6df">GR_Cfg_QueueRow</link> (
+global::System.Data.DataRowBuilder rb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_row_a7e9cac11c1cd6516c593f8f0e880fdc6_1a7e9cac11c1cd6516c593f8f0e880fdc6">Isorder_numNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_row_a072aa4696aa416ac0b577b26851aef22_1a072aa4696aa416ac0b577b26851aef22">Setorder_numNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_row_a420a75438bf20a55eb015fadd79db647_1a420a75438bf20a55eb015fadd79db647">IsprocessedNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_row_a6ce37a921a0d195da6291ce19f9fbbf8_1a6ce37a921a0d195da6291ce19f9fbbf8">SetprocessedNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represents strongly named DataRow class. /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_row_abfe49055240f235854647dc0699fc6df_1abfe49055240f235854647dc0699fc6df">
+                <title>Triggers.GRCfg2.GR_Cfg_QueueRow.GR_Cfg_QueueRow (global::System.Data.DataRowBuilder rb)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_row_a7e9cac11c1cd6516c593f8f0e880fdc6_1a7e9cac11c1cd6516c593f8f0e880fdc6">
+                <title>bool Triggers.GRCfg2.GR_Cfg_QueueRow.Isorder_numNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_row_a072aa4696aa416ac0b577b26851aef22_1a072aa4696aa416ac0b577b26851aef22">
+                <title>void Triggers.GRCfg2.GR_Cfg_QueueRow.Setorder_numNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_row_a420a75438bf20a55eb015fadd79db647_1a420a75438bf20a55eb015fadd79db647">
+                <title>bool Triggers.GRCfg2.GR_Cfg_QueueRow.IsprocessedNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_row_a6ce37a921a0d195da6291ce19f9fbbf8_1a6ce37a921a0d195da6291ce19f9fbbf8">
+                <title>void Triggers.GRCfg2.GR_Cfg_QueueRow.SetprocessedNull ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

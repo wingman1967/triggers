@@ -1,0 +1,467 @@
+\hypertarget{class_configure_one_flag_1_1_network_share}{}\section{Configure\+One\+Flag.\+Network\+Share Class Reference}
+\label{class_configure_one_flag_1_1_network_share}\index{Configure\+One\+Flag.\+Network\+Share@{Configure\+One\+Flag.\+Network\+Share}}
+
+
+Collaboration diagram for Configure\+One\+Flag.\+Network\+Share\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=212pt]{class_configure_one_flag_1_1_network_share__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_configure_one_flag_1_1_network_share_1_1_error_class}{Error\+Class}}
+\item 
+class \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e}{N\+E\+T\+R\+E\+S\+O\+U\+R\+CE}}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_ab976148d295a3aad7cdf5c850cc3fed9_ab976148d295a3aad7cdf5c850cc3fed9}{Connect\+To\+Share}} (string uri, string username, string password)
+\begin{DoxyCompactList}\small\item\em Network authentication H\+E\+L\+P\+ER class. Connects to and disconnects from an endpoint using explicit credentials. \end{DoxyCompactList}\item 
+static string \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_af61100f22e1ebd4895ad0313c0130ecf_af61100f22e1ebd4895ad0313c0130ecf}{Disconnect\+From\+Share}} (string uri, bool force)
+\begin{DoxyCompactList}\small\item\em Remove the share from cache. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a4a620f7ea4a4608089bd0012c096429c_a4a620f7ea4a4608089bd0012c096429c}{W\+Net\+Use\+Connection}} (Int\+Ptr hwnd\+Owner, \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e}{N\+E\+T\+R\+E\+S\+O\+U\+R\+CE}} lp\+Net\+Resource, string lp\+Password, string lp\+User\+ID, int dw\+Flags, string lp\+Access\+Name, string lp\+Buffer\+Size, string lp\+Result)
+\item 
+static int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_ae3468e9742af300b56a0382bb5cbb969_ae3468e9742af300b56a0382bb5cbb969}{W\+Net\+Cancel\+Connection}} (string lp\+Name, bool f\+Force)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_aec1ed4b4d1202d34aed21172bce91b4d_aec1ed4b4d1202d34aed21172bce91b4d}{Get\+Error}} (int err\+Num)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a6ccf24720f0224237f80fa0d55a00065_a6ccf24720f0224237f80fa0d55a00065}{R\+E\+S\+O\+U\+R\+C\+E\+T\+Y\+P\+E\+\_\+\+D\+I\+SK}} = 0x00000001
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a51148c55b8732059df31e4ac47ac968c_a51148c55b8732059df31e4ac47ac968c}{C\+O\+N\+N\+E\+C\+T\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P\+R\+O\+F\+I\+LE}} = 0x00000001
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_aeda25da9bbd3b7072ed8b9de00da9b0a_aeda25da9bbd3b7072ed8b9de00da9b0a}{N\+O\+\_\+\+E\+R\+R\+OR}} = 0
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_abf24bb0a547108a1aa2d61209473b8bd_abf24bb0a547108a1aa2d61209473b8bd}{E\+R\+R\+O\+R\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+D\+E\+N\+I\+ED}} = 5
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a2026211bed1d0f7d9adef225cdf63f2b_a2026211bed1d0f7d9adef225cdf63f2b}{E\+R\+R\+O\+R\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+A\+S\+S\+I\+G\+N\+ED}} = 85
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_ae27655505f60758582c55bff6f0c1c99_ae27655505f60758582c55bff6f0c1c99}{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+D\+E\+V\+I\+CE}} = 1200
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_ad0801840c1f535938991d05c7e4f4c98_ad0801840c1f535938991d05c7e4f4c98}{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+N\+E\+T\+\_\+\+N\+A\+ME}} = 67
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_ac642bf1a0488558384c4a9300c31e8cd_ac642bf1a0488558384c4a9300c31e8cd}{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+R\+O\+V\+I\+D\+ER}} = 1204
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_afda3d2110a586a4a67d4408e09f8f0e7_afda3d2110a586a4a67d4408e09f8f0e7}{E\+R\+R\+O\+R\+\_\+\+C\+A\+N\+C\+E\+L\+L\+ED}} = 1223
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a43d93fc9e9de3e15933ee2c58f48c157_a43d93fc9e9de3e15933ee2c58f48c157}{E\+R\+R\+O\+R\+\_\+\+E\+X\+T\+E\+N\+D\+E\+D\+\_\+\+E\+R\+R\+OR}} = 1208
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a858bf7c4abbe279759b5dfd12e049ced_a858bf7c4abbe279759b5dfd12e049ced}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}} = 487
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a7728307d5969ed24c6dba0fdd90d9da0_a7728307d5969ed24c6dba0fdd90d9da0}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}} = 87
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a2d4a150254d637e7dd812995f57b5bd9_a2d4a150254d637e7dd812995f57b5bd9}{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+S\+S\+W\+O\+RD}} = 1216
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a3e2a6d9264aaa057ef8c6058a096cef0_a3e2a6d9264aaa057ef8c6058a096cef0}{E\+R\+R\+O\+R\+\_\+\+M\+O\+R\+E\+\_\+\+D\+A\+TA}} = 234
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a40c7765e18151516a701ce3a412282ce_a40c7765e18151516a701ce3a412282ce}{E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+M\+O\+R\+E\+\_\+\+I\+T\+E\+MS}} = 259
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a6a7b6c9f6a4b2cf9f78409d6c860a519_a6a7b6c9f6a4b2cf9f78409d6c860a519}{E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+N\+E\+T\+\_\+\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+TH}} = 1203
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a6b612ec5a42218b102d2586a112acbc9_a6b612ec5a42218b102d2586a112acbc9}{E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+N\+E\+T\+W\+O\+RK}} = 1222
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_ac8ccc83a9f4390a54d559d47204cb80c_ac8ccc83a9f4390a54d559d47204cb80c}{E\+R\+R\+O\+R\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+C\+R\+E\+D\+E\+N\+T\+I\+A\+L\+\_\+\+C\+O\+N\+F\+L\+I\+CT}} = 1219
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_ae26a12efba7e2c298329d46dd4084ed2_ae26a12efba7e2c298329d46dd4084ed2}{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+R\+O\+F\+I\+LE}} = 1206
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a1d96242b702a7416526a5b8b29a6f2cd_a1d96242b702a7416526a5b8b29a6f2cd}{E\+R\+R\+O\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+P\+R\+O\+F\+I\+LE}} = 1205
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a54b4362acbd74141792b18270d3b4124_a54b4362acbd74141792b18270d3b4124}{E\+R\+R\+O\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+I\+N\+\_\+\+U\+SE}} = 2404
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a818a29c26d40e54a8966d25d0363eefe_a818a29c26d40e54a8966d25d0363eefe}{E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+ED}} = 2250
+\item 
+const int \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a2a58550b0929e3275596a567f535a88c_a2a58550b0929e3275596a567f535a88c}{E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+\_\+\+F\+I\+L\+ES}} = 2401
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{struct_configure_one_flag_1_1_network_share_1_1_error_class}{Error\+Class}} \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_configure_one_flag_1_1_network_share_aa6710e5692ec9db0f87bbb32ac827041_aa6710e5692ec9db0f87bbb32ac827041}{E\+R\+R\+O\+R\+\_\+\+L\+I\+ST}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 6 of file Network\+Share.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_ab976148d295a3aad7cdf5c850cc3fed9_ab976148d295a3aad7cdf5c850cc3fed9}\label{class_configure_one_flag_1_1_network_share_ab976148d295a3aad7cdf5c850cc3fed9_ab976148d295a3aad7cdf5c850cc3fed9}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!Connect\+To\+Share@{Connect\+To\+Share}}
+\index{Connect\+To\+Share@{Connect\+To\+Share}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{Connect\+To\+Share()}{ConnectToShare()}}
+{\footnotesize\ttfamily static string Configure\+One\+Flag.\+Network\+Share.\+Connect\+To\+Share (\begin{DoxyParamCaption}\item[{string}]{uri,  }\item[{string}]{username,  }\item[{string}]{password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Network authentication H\+E\+L\+P\+ER class. Connects to and disconnects from an endpoint using explicit credentials. 
+
+\begin{DoxyReturn}{Returns}
+Null if successful, otherwise error message.
+\end{DoxyReturn}
+
+
+Definition at line 12 of file Network\+Share.\+cs.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_network_share_ab976148d295a3aad7cdf5c850cc3fed9_ab976148d295a3aad7cdf5c850cc3fed9_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_af61100f22e1ebd4895ad0313c0130ecf_af61100f22e1ebd4895ad0313c0130ecf}\label{class_configure_one_flag_1_1_network_share_af61100f22e1ebd4895ad0313c0130ecf_af61100f22e1ebd4895ad0313c0130ecf}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!Disconnect\+From\+Share@{Disconnect\+From\+Share}}
+\index{Disconnect\+From\+Share@{Disconnect\+From\+Share}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{Disconnect\+From\+Share()}{DisconnectFromShare()}}
+{\footnotesize\ttfamily static string Configure\+One\+Flag.\+Network\+Share.\+Disconnect\+From\+Share (\begin{DoxyParamCaption}\item[{string}]{uri,  }\item[{bool}]{force }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Remove the share from cache. 
+
+\begin{DoxyReturn}{Returns}
+Null if successful, otherwise error message.
+\end{DoxyReturn}
+
+
+Definition at line 33 of file Network\+Share.\+cs.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_network_share_af61100f22e1ebd4895ad0313c0130ecf_af61100f22e1ebd4895ad0313c0130ecf_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_aec1ed4b4d1202d34aed21172bce91b4d_aec1ed4b4d1202d34aed21172bce91b4d}\label{class_configure_one_flag_1_1_network_share_aec1ed4b4d1202d34aed21172bce91b4d_aec1ed4b4d1202d34aed21172bce91b4d}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!Get\+Error@{Get\+Error}}
+\index{Get\+Error@{Get\+Error}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{Get\+Error()}{GetError()}}
+{\footnotesize\ttfamily static string Configure\+One\+Flag.\+Network\+Share.\+Get\+Error (\begin{DoxyParamCaption}\item[{int}]{err\+Num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 142 of file Network\+Share.\+cs.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_network_share_aec1ed4b4d1202d34aed21172bce91b4d_aec1ed4b4d1202d34aed21172bce91b4d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_ae3468e9742af300b56a0382bb5cbb969_ae3468e9742af300b56a0382bb5cbb969}\label{class_configure_one_flag_1_1_network_share_ae3468e9742af300b56a0382bb5cbb969_ae3468e9742af300b56a0382bb5cbb969}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!W\+Net\+Cancel\+Connection@{W\+Net\+Cancel\+Connection}}
+\index{W\+Net\+Cancel\+Connection@{W\+Net\+Cancel\+Connection}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{W\+Net\+Cancel\+Connection()}{WNetCancelConnection()}}
+{\footnotesize\ttfamily static int Configure\+One\+Flag.\+Network\+Share.\+W\+Net\+Cancel\+Connection (\begin{DoxyParamCaption}\item[{string}]{lp\+Name,  }\item[{bool}]{f\+Force }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_network_share_ae3468e9742af300b56a0382bb5cbb969_ae3468e9742af300b56a0382bb5cbb969_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_a4a620f7ea4a4608089bd0012c096429c_a4a620f7ea4a4608089bd0012c096429c}\label{class_configure_one_flag_1_1_network_share_a4a620f7ea4a4608089bd0012c096429c_a4a620f7ea4a4608089bd0012c096429c}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!W\+Net\+Use\+Connection@{W\+Net\+Use\+Connection}}
+\index{W\+Net\+Use\+Connection@{W\+Net\+Use\+Connection}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{W\+Net\+Use\+Connection()}{WNetUseConnection()}}
+{\footnotesize\ttfamily static int Configure\+One\+Flag.\+Network\+Share.\+W\+Net\+Use\+Connection (\begin{DoxyParamCaption}\item[{Int\+Ptr}]{hwnd\+Owner,  }\item[{\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e}{N\+E\+T\+R\+E\+S\+O\+U\+R\+CE}}}]{lp\+Net\+Resource,  }\item[{string}]{lp\+Password,  }\item[{string}]{lp\+User\+ID,  }\item[{int}]{dw\+Flags,  }\item[{string}]{lp\+Access\+Name,  }\item[{string}]{lp\+Buffer\+Size,  }\item[{string}]{lp\+Result }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_network_share_a4a620f7ea4a4608089bd0012c096429c_a4a620f7ea4a4608089bd0012c096429c_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_a51148c55b8732059df31e4ac47ac968c_a51148c55b8732059df31e4ac47ac968c}\label{class_configure_one_flag_1_1_network_share_a51148c55b8732059df31e4ac47ac968c_a51148c55b8732059df31e4ac47ac968c}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!C\+O\+N\+N\+E\+C\+T\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P\+R\+O\+F\+I\+LE@{C\+O\+N\+N\+E\+C\+T\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P\+R\+O\+F\+I\+LE}}
+\index{C\+O\+N\+N\+E\+C\+T\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P\+R\+O\+F\+I\+LE@{C\+O\+N\+N\+E\+C\+T\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P\+R\+O\+F\+I\+LE}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{C\+O\+N\+N\+E\+C\+T\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P\+R\+O\+F\+I\+LE}{CONNECT\_UPDATE\_PROFILE}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+C\+O\+N\+N\+E\+C\+T\+\_\+\+U\+P\+D\+A\+T\+E\+\_\+\+P\+R\+O\+F\+I\+LE = 0x00000001\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 79 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_abf24bb0a547108a1aa2d61209473b8bd_abf24bb0a547108a1aa2d61209473b8bd}\label{class_configure_one_flag_1_1_network_share_abf24bb0a547108a1aa2d61209473b8bd_abf24bb0a547108a1aa2d61209473b8bd}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+D\+E\+N\+I\+ED@{E\+R\+R\+O\+R\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+D\+E\+N\+I\+ED}}
+\index{E\+R\+R\+O\+R\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+D\+E\+N\+I\+ED@{E\+R\+R\+O\+R\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+D\+E\+N\+I\+ED}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+D\+E\+N\+I\+ED}{ERROR\_ACCESS\_DENIED}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+A\+C\+C\+E\+S\+S\+\_\+\+D\+E\+N\+I\+ED = 5\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 85 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_a2026211bed1d0f7d9adef225cdf63f2b_a2026211bed1d0f7d9adef225cdf63f2b}\label{class_configure_one_flag_1_1_network_share_a2026211bed1d0f7d9adef225cdf63f2b_a2026211bed1d0f7d9adef225cdf63f2b}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+A\+S\+S\+I\+G\+N\+ED@{E\+R\+R\+O\+R\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+A\+S\+S\+I\+G\+N\+ED}}
+\index{E\+R\+R\+O\+R\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+A\+S\+S\+I\+G\+N\+ED@{E\+R\+R\+O\+R\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+A\+S\+S\+I\+G\+N\+ED}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+A\+S\+S\+I\+G\+N\+ED}{ERROR\_ALREADY\_ASSIGNED}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+A\+L\+R\+E\+A\+D\+Y\+\_\+\+A\+S\+S\+I\+G\+N\+ED = 85\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 86 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_ae27655505f60758582c55bff6f0c1c99_ae27655505f60758582c55bff6f0c1c99}\label{class_configure_one_flag_1_1_network_share_ae27655505f60758582c55bff6f0c1c99_ae27655505f60758582c55bff6f0c1c99}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+D\+E\+V\+I\+CE@{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+D\+E\+V\+I\+CE}}
+\index{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+D\+E\+V\+I\+CE@{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+D\+E\+V\+I\+CE}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+D\+E\+V\+I\+CE}{ERROR\_BAD\_DEVICE}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+D\+E\+V\+I\+CE = 1200\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 87 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_ad0801840c1f535938991d05c7e4f4c98_ad0801840c1f535938991d05c7e4f4c98}\label{class_configure_one_flag_1_1_network_share_ad0801840c1f535938991d05c7e4f4c98_ad0801840c1f535938991d05c7e4f4c98}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+N\+E\+T\+\_\+\+N\+A\+ME@{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+N\+E\+T\+\_\+\+N\+A\+ME}}
+\index{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+N\+E\+T\+\_\+\+N\+A\+ME@{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+N\+E\+T\+\_\+\+N\+A\+ME}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+N\+E\+T\+\_\+\+N\+A\+ME}{ERROR\_BAD\_NET\_NAME}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+N\+E\+T\+\_\+\+N\+A\+ME = 67\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 88 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_ae26a12efba7e2c298329d46dd4084ed2_ae26a12efba7e2c298329d46dd4084ed2}\label{class_configure_one_flag_1_1_network_share_ae26a12efba7e2c298329d46dd4084ed2_ae26a12efba7e2c298329d46dd4084ed2}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+R\+O\+F\+I\+LE@{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+R\+O\+F\+I\+LE}}
+\index{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+R\+O\+F\+I\+LE@{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+R\+O\+F\+I\+LE}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+R\+O\+F\+I\+LE}{ERROR\_BAD\_PROFILE}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+R\+O\+F\+I\+LE = 1206\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 101 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_ac642bf1a0488558384c4a9300c31e8cd_ac642bf1a0488558384c4a9300c31e8cd}\label{class_configure_one_flag_1_1_network_share_ac642bf1a0488558384c4a9300c31e8cd_ac642bf1a0488558384c4a9300c31e8cd}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+R\+O\+V\+I\+D\+ER@{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+R\+O\+V\+I\+D\+ER}}
+\index{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+R\+O\+V\+I\+D\+ER@{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+R\+O\+V\+I\+D\+ER}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+R\+O\+V\+I\+D\+ER}{ERROR\_BAD\_PROVIDER}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+R\+O\+V\+I\+D\+ER = 1204\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 89 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_afda3d2110a586a4a67d4408e09f8f0e7_afda3d2110a586a4a67d4408e09f8f0e7}\label{class_configure_one_flag_1_1_network_share_afda3d2110a586a4a67d4408e09f8f0e7_afda3d2110a586a4a67d4408e09f8f0e7}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+C\+A\+N\+C\+E\+L\+L\+ED@{E\+R\+R\+O\+R\+\_\+\+C\+A\+N\+C\+E\+L\+L\+ED}}
+\index{E\+R\+R\+O\+R\+\_\+\+C\+A\+N\+C\+E\+L\+L\+ED@{E\+R\+R\+O\+R\+\_\+\+C\+A\+N\+C\+E\+L\+L\+ED}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+C\+A\+N\+C\+E\+L\+L\+ED}{ERROR\_CANCELLED}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+C\+A\+N\+C\+E\+L\+L\+ED = 1223\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 90 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_a1d96242b702a7416526a5b8b29a6f2cd_a1d96242b702a7416526a5b8b29a6f2cd}\label{class_configure_one_flag_1_1_network_share_a1d96242b702a7416526a5b8b29a6f2cd_a1d96242b702a7416526a5b8b29a6f2cd}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+P\+R\+O\+F\+I\+LE@{E\+R\+R\+O\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+P\+R\+O\+F\+I\+LE}}
+\index{E\+R\+R\+O\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+P\+R\+O\+F\+I\+LE@{E\+R\+R\+O\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+P\+R\+O\+F\+I\+LE}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+P\+R\+O\+F\+I\+LE}{ERROR\_CANNOT\_OPEN\_PROFILE}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+C\+A\+N\+N\+O\+T\+\_\+\+O\+P\+E\+N\+\_\+\+P\+R\+O\+F\+I\+LE = 1205\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 102 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_a54b4362acbd74141792b18270d3b4124_a54b4362acbd74141792b18270d3b4124}\label{class_configure_one_flag_1_1_network_share_a54b4362acbd74141792b18270d3b4124_a54b4362acbd74141792b18270d3b4124}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+I\+N\+\_\+\+U\+SE@{E\+R\+R\+O\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+I\+N\+\_\+\+U\+SE}}
+\index{E\+R\+R\+O\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+I\+N\+\_\+\+U\+SE@{E\+R\+R\+O\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+I\+N\+\_\+\+U\+SE}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+I\+N\+\_\+\+U\+SE}{ERROR\_DEVICE\_IN\_USE}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+D\+E\+V\+I\+C\+E\+\_\+\+I\+N\+\_\+\+U\+SE = 2404\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 103 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_a43d93fc9e9de3e15933ee2c58f48c157_a43d93fc9e9de3e15933ee2c58f48c157}\label{class_configure_one_flag_1_1_network_share_a43d93fc9e9de3e15933ee2c58f48c157_a43d93fc9e9de3e15933ee2c58f48c157}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+E\+X\+T\+E\+N\+D\+E\+D\+\_\+\+E\+R\+R\+OR@{E\+R\+R\+O\+R\+\_\+\+E\+X\+T\+E\+N\+D\+E\+D\+\_\+\+E\+R\+R\+OR}}
+\index{E\+R\+R\+O\+R\+\_\+\+E\+X\+T\+E\+N\+D\+E\+D\+\_\+\+E\+R\+R\+OR@{E\+R\+R\+O\+R\+\_\+\+E\+X\+T\+E\+N\+D\+E\+D\+\_\+\+E\+R\+R\+OR}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+E\+X\+T\+E\+N\+D\+E\+D\+\_\+\+E\+R\+R\+OR}{ERROR\_EXTENDED\_ERROR}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+E\+X\+T\+E\+N\+D\+E\+D\+\_\+\+E\+R\+R\+OR = 1208\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 91 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_a858bf7c4abbe279759b5dfd12e049ced_a858bf7c4abbe279759b5dfd12e049ced}\label{class_configure_one_flag_1_1_network_share_a858bf7c4abbe279759b5dfd12e049ced_a858bf7c4abbe279759b5dfd12e049ced}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS@{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}}
+\index{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS@{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS}{ERROR\_INVALID\_ADDRESS}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+A\+D\+D\+R\+E\+SS = 487\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 92 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_a7728307d5969ed24c6dba0fdd90d9da0_a7728307d5969ed24c6dba0fdd90d9da0}\label{class_configure_one_flag_1_1_network_share_a7728307d5969ed24c6dba0fdd90d9da0_a7728307d5969ed24c6dba0fdd90d9da0}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}}
+\index{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER@{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER}{ERROR\_INVALID\_PARAMETER}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+R\+A\+M\+E\+T\+ER = 87\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 93 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_a2d4a150254d637e7dd812995f57b5bd9_a2d4a150254d637e7dd812995f57b5bd9}\label{class_configure_one_flag_1_1_network_share_a2d4a150254d637e7dd812995f57b5bd9_a2d4a150254d637e7dd812995f57b5bd9}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+S\+S\+W\+O\+RD@{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+S\+S\+W\+O\+RD}}
+\index{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+S\+S\+W\+O\+RD@{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+S\+S\+W\+O\+RD}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+S\+S\+W\+O\+RD}{ERROR\_INVALID\_PASSWORD}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+A\+L\+I\+D\+\_\+\+P\+A\+S\+S\+W\+O\+RD = 1216\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 94 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_aa6710e5692ec9db0f87bbb32ac827041_aa6710e5692ec9db0f87bbb32ac827041}\label{class_configure_one_flag_1_1_network_share_aa6710e5692ec9db0f87bbb32ac827041_aa6710e5692ec9db0f87bbb32ac827041}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+L\+I\+ST@{E\+R\+R\+O\+R\+\_\+\+L\+I\+ST}}
+\index{E\+R\+R\+O\+R\+\_\+\+L\+I\+ST@{E\+R\+R\+O\+R\+\_\+\+L\+I\+ST}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+L\+I\+ST}{ERROR\_LIST}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_configure_one_flag_1_1_network_share_1_1_error_class}{Error\+Class}} \mbox{[}$\,$\mbox{]} Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+L\+I\+ST\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \textcolor{keyword}{new} ErrorClass[] \{
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_abf24bb0a547108a1aa2d61209473b8bd_abf24bb0a547108a1aa2d61209473b8bd}{ERROR\_ACCESS\_DENIED}}, \textcolor{stringliteral}{"Error: Access Denied"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a2026211bed1d0f7d9adef225cdf63f2b_a2026211bed1d0f7d9adef225cdf63f2b}{ERROR\_ALREADY\_ASSIGNED}}, \textcolor{stringliteral}{"Error: Already Assigned"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_ae27655505f60758582c55bff6f0c1c99_ae27655505f60758582c55bff6f0c1c99}{ERROR\_BAD\_DEVICE}}, \textcolor{stringliteral}{"Error: Bad Device"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_ad0801840c1f535938991d05c7e4f4c98_ad0801840c1f535938991d05c7e4f4c98}{ERROR\_BAD\_NET\_NAME}}, \textcolor{stringliteral}{"Error: Bad Net Name"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_ac642bf1a0488558384c4a9300c31e8cd_ac642bf1a0488558384c4a9300c31e8cd}{ERROR\_BAD\_PROVIDER}}, \textcolor{stringliteral}{"Error: Bad Provider"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_afda3d2110a586a4a67d4408e09f8f0e7_afda3d2110a586a4a67d4408e09f8f0e7}{ERROR\_CANCELLED}}, \textcolor{stringliteral}{"Error: Cancelled"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a43d93fc9e9de3e15933ee2c58f48c157_a43d93fc9e9de3e15933ee2c58f48c157}{ERROR\_EXTENDED\_ERROR}}, \textcolor{stringliteral}{"Error: Extended Error"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a858bf7c4abbe279759b5dfd12e049ced_a858bf7c4abbe279759b5dfd12e049ced}{ERROR\_INVALID\_ADDRESS}}, \textcolor{stringliteral}{"Error: Invalid Address"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a7728307d5969ed24c6dba0fdd90d9da0_a7728307d5969ed24c6dba0fdd90d9da0}{ERROR\_INVALID\_PARAMETER}}, \textcolor{stringliteral}{"Error: Invalid Parameter"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a2d4a150254d637e7dd812995f57b5bd9_a2d4a150254d637e7dd812995f57b5bd9}{ERROR\_INVALID\_PASSWORD}}, \textcolor{stringliteral}{"Error: Invalid Password"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a3e2a6d9264aaa057ef8c6058a096cef0_a3e2a6d9264aaa057ef8c6058a096cef0}{ERROR\_MORE\_DATA}}, \textcolor{stringliteral}{"Error: More Data"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a40c7765e18151516a701ce3a412282ce_a40c7765e18151516a701ce3a412282ce}{ERROR\_NO\_MORE\_ITEMS}}, \textcolor{stringliteral}{"Error: No More Items"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a6a7b6c9f6a4b2cf9f78409d6c860a519_a6a7b6c9f6a4b2cf9f78409d6c860a519}{ERROR\_NO\_NET\_OR\_BAD\_PATH}}, \textcolor{stringliteral}{"Error: No Net Or Bad Path"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a6b612ec5a42218b102d2586a112acbc9_a6b612ec5a42218b102d2586a112acbc9}{ERROR\_NO\_NETWORK}}, \textcolor{stringliteral}{"Error: No Network"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_ae26a12efba7e2c298329d46dd4084ed2_ae26a12efba7e2c298329d46dd4084ed2}{ERROR\_BAD\_PROFILE}}, \textcolor{stringliteral}{"Error: Bad Profile"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a1d96242b702a7416526a5b8b29a6f2cd_a1d96242b702a7416526a5b8b29a6f2cd}{ERROR\_CANNOT\_OPEN\_PROFILE}}, \textcolor{stringliteral}{"Error: Cannot Open Profile"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a54b4362acbd74141792b18270d3b4124_a54b4362acbd74141792b18270d3b4124}{ERROR\_DEVICE\_IN\_USE}}, \textcolor{stringliteral}{"Error: Device In Use"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a43d93fc9e9de3e15933ee2c58f48c157_a43d93fc9e9de3e15933ee2c58f48c157}{ERROR\_EXTENDED\_ERROR}}, \textcolor{stringliteral}{"Error: Extended Error"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a818a29c26d40e54a8966d25d0363eefe_a818a29c26d40e54a8966d25d0363eefe}{ERROR\_NOT\_CONNECTED}}, \textcolor{stringliteral}{"Error: Not Connected"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_a2a58550b0929e3275596a567f535a88c_a2a58550b0929e3275596a567f535a88c}{ERROR\_OPEN\_FILES}}, \textcolor{stringliteral}{"Error: Open Files"}),
+        \textcolor{keyword}{new} ErrorClass(\mbox{\hyperlink{class_configure_one_flag_1_1_network_share_ac8ccc83a9f4390a54d559d47204cb80c_ac8ccc83a9f4390a54d559d47204cb80c}{ERROR\_SESSION\_CREDENTIAL\_CONFLICT}}, \textcolor{stringliteral}{"Error:
+       Credential Conflict"}),
+    \}
+\end{DoxyCode}
+
+
+Definition at line 118 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_a3e2a6d9264aaa057ef8c6058a096cef0_a3e2a6d9264aaa057ef8c6058a096cef0}\label{class_configure_one_flag_1_1_network_share_a3e2a6d9264aaa057ef8c6058a096cef0_a3e2a6d9264aaa057ef8c6058a096cef0}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+M\+O\+R\+E\+\_\+\+D\+A\+TA@{E\+R\+R\+O\+R\+\_\+\+M\+O\+R\+E\+\_\+\+D\+A\+TA}}
+\index{E\+R\+R\+O\+R\+\_\+\+M\+O\+R\+E\+\_\+\+D\+A\+TA@{E\+R\+R\+O\+R\+\_\+\+M\+O\+R\+E\+\_\+\+D\+A\+TA}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+M\+O\+R\+E\+\_\+\+D\+A\+TA}{ERROR\_MORE\_DATA}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+M\+O\+R\+E\+\_\+\+D\+A\+TA = 234\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 95 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_a40c7765e18151516a701ce3a412282ce_a40c7765e18151516a701ce3a412282ce}\label{class_configure_one_flag_1_1_network_share_a40c7765e18151516a701ce3a412282ce_a40c7765e18151516a701ce3a412282ce}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+M\+O\+R\+E\+\_\+\+I\+T\+E\+MS@{E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+M\+O\+R\+E\+\_\+\+I\+T\+E\+MS}}
+\index{E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+M\+O\+R\+E\+\_\+\+I\+T\+E\+MS@{E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+M\+O\+R\+E\+\_\+\+I\+T\+E\+MS}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+M\+O\+R\+E\+\_\+\+I\+T\+E\+MS}{ERROR\_NO\_MORE\_ITEMS}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+M\+O\+R\+E\+\_\+\+I\+T\+E\+MS = 259\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 96 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_a6a7b6c9f6a4b2cf9f78409d6c860a519_a6a7b6c9f6a4b2cf9f78409d6c860a519}\label{class_configure_one_flag_1_1_network_share_a6a7b6c9f6a4b2cf9f78409d6c860a519_a6a7b6c9f6a4b2cf9f78409d6c860a519}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+N\+E\+T\+\_\+\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+TH@{E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+N\+E\+T\+\_\+\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+TH}}
+\index{E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+N\+E\+T\+\_\+\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+TH@{E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+N\+E\+T\+\_\+\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+TH}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+N\+E\+T\+\_\+\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+TH}{ERROR\_NO\_NET\_OR\_BAD\_PATH}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+N\+E\+T\+\_\+\+O\+R\+\_\+\+B\+A\+D\+\_\+\+P\+A\+TH = 1203\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 97 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_a6b612ec5a42218b102d2586a112acbc9_a6b612ec5a42218b102d2586a112acbc9}\label{class_configure_one_flag_1_1_network_share_a6b612ec5a42218b102d2586a112acbc9_a6b612ec5a42218b102d2586a112acbc9}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+N\+E\+T\+W\+O\+RK@{E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+N\+E\+T\+W\+O\+RK}}
+\index{E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+N\+E\+T\+W\+O\+RK@{E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+N\+E\+T\+W\+O\+RK}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+N\+E\+T\+W\+O\+RK}{ERROR\_NO\_NETWORK}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+N\+O\+\_\+\+N\+E\+T\+W\+O\+RK = 1222\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 98 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_a818a29c26d40e54a8966d25d0363eefe_a818a29c26d40e54a8966d25d0363eefe}\label{class_configure_one_flag_1_1_network_share_a818a29c26d40e54a8966d25d0363eefe_a818a29c26d40e54a8966d25d0363eefe}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+ED@{E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+ED}}
+\index{E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+ED@{E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+ED}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+ED}{ERROR\_NOT\_CONNECTED}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+N\+O\+T\+\_\+\+C\+O\+N\+N\+E\+C\+T\+ED = 2250\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 104 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_a2a58550b0929e3275596a567f535a88c_a2a58550b0929e3275596a567f535a88c}\label{class_configure_one_flag_1_1_network_share_a2a58550b0929e3275596a567f535a88c_a2a58550b0929e3275596a567f535a88c}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+\_\+\+F\+I\+L\+ES@{E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+\_\+\+F\+I\+L\+ES}}
+\index{E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+\_\+\+F\+I\+L\+ES@{E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+\_\+\+F\+I\+L\+ES}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+\_\+\+F\+I\+L\+ES}{ERROR\_OPEN\_FILES}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+O\+P\+E\+N\+\_\+\+F\+I\+L\+ES = 2401\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 105 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_ac8ccc83a9f4390a54d559d47204cb80c_ac8ccc83a9f4390a54d559d47204cb80c}\label{class_configure_one_flag_1_1_network_share_ac8ccc83a9f4390a54d559d47204cb80c_ac8ccc83a9f4390a54d559d47204cb80c}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!E\+R\+R\+O\+R\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+C\+R\+E\+D\+E\+N\+T\+I\+A\+L\+\_\+\+C\+O\+N\+F\+L\+I\+CT@{E\+R\+R\+O\+R\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+C\+R\+E\+D\+E\+N\+T\+I\+A\+L\+\_\+\+C\+O\+N\+F\+L\+I\+CT}}
+\index{E\+R\+R\+O\+R\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+C\+R\+E\+D\+E\+N\+T\+I\+A\+L\+\_\+\+C\+O\+N\+F\+L\+I\+CT@{E\+R\+R\+O\+R\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+C\+R\+E\+D\+E\+N\+T\+I\+A\+L\+\_\+\+C\+O\+N\+F\+L\+I\+CT}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{E\+R\+R\+O\+R\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+C\+R\+E\+D\+E\+N\+T\+I\+A\+L\+\_\+\+C\+O\+N\+F\+L\+I\+CT}{ERROR\_SESSION\_CREDENTIAL\_CONFLICT}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+E\+R\+R\+O\+R\+\_\+\+S\+E\+S\+S\+I\+O\+N\+\_\+\+C\+R\+E\+D\+E\+N\+T\+I\+A\+L\+\_\+\+C\+O\+N\+F\+L\+I\+CT = 1219\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 99 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_aeda25da9bbd3b7072ed8b9de00da9b0a_aeda25da9bbd3b7072ed8b9de00da9b0a}\label{class_configure_one_flag_1_1_network_share_aeda25da9bbd3b7072ed8b9de00da9b0a_aeda25da9bbd3b7072ed8b9de00da9b0a}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!N\+O\+\_\+\+E\+R\+R\+OR@{N\+O\+\_\+\+E\+R\+R\+OR}}
+\index{N\+O\+\_\+\+E\+R\+R\+OR@{N\+O\+\_\+\+E\+R\+R\+OR}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{N\+O\+\_\+\+E\+R\+R\+OR}{NO\_ERROR}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+N\+O\+\_\+\+E\+R\+R\+OR = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 83 of file Network\+Share.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_network_share_a6ccf24720f0224237f80fa0d55a00065_a6ccf24720f0224237f80fa0d55a00065}\label{class_configure_one_flag_1_1_network_share_a6ccf24720f0224237f80fa0d55a00065_a6ccf24720f0224237f80fa0d55a00065}} 
+\index{Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}!R\+E\+S\+O\+U\+R\+C\+E\+T\+Y\+P\+E\+\_\+\+D\+I\+SK@{R\+E\+S\+O\+U\+R\+C\+E\+T\+Y\+P\+E\+\_\+\+D\+I\+SK}}
+\index{R\+E\+S\+O\+U\+R\+C\+E\+T\+Y\+P\+E\+\_\+\+D\+I\+SK@{R\+E\+S\+O\+U\+R\+C\+E\+T\+Y\+P\+E\+\_\+\+D\+I\+SK}!Configure\+One\+Flag\+::\+Network\+Share@{Configure\+One\+Flag\+::\+Network\+Share}}
+\subsubsection{\texorpdfstring{R\+E\+S\+O\+U\+R\+C\+E\+T\+Y\+P\+E\+\_\+\+D\+I\+SK}{RESOURCETYPE\_DISK}}
+{\footnotesize\ttfamily const int Configure\+One\+Flag.\+Network\+Share.\+R\+E\+S\+O\+U\+R\+C\+E\+T\+Y\+P\+E\+\_\+\+D\+I\+SK = 0x00000001\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 78 of file Network\+Share.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/hinesj/\+Documents/\+Visual Studio 2015/\+Projects/\+Triggers/\+Triggers/\mbox{\hyperlink{_network_share_8cs}{Network\+Share.\+cs}}\end{DoxyCompactItemize}

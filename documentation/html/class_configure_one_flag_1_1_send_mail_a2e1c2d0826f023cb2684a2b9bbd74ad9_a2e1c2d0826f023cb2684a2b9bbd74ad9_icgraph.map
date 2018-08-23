@@ -1,0 +1,8 @@
+<map id="ConfigureOneFlag.SendMail.MailMessage" name="ConfigureOneFlag.SendMail.MailMessage">
+<area shape="rect" id="node2" href="$class_configure_one_flag_1_1_audit_ac9f5188a69320d3d419afed3499e2a26.html#ac9f5188a69320d3d419afed3499e2a26" title="ConfigureOneFlag.Audit.Processing\lCompleted" alt="" coords="240,71,468,112"/>
+<area shape="rect" id="node4" href="$class_configure_one_flag_1_1_c1_web_service_ae826903f85694f4cf481680e115076f3.html#ae826903f85694f4cf481680e115076f3" title="ConfigureOneFlag.C1WebService.\lCallConfigureOne" alt="" coords="783,71,1001,112"/>
+<area shape="rect" id="node5" href="$class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f.html#a7446070eb1c5dd9f63f7043525014c9f" title="ConfigureOneFlag.Triggers.\lC1Order" alt="" coords="1276,129,1455,171"/>
+<area shape="rect" id="node7" href="$class_configure_one_flag_1_1_staging_utilities_ad721c5a816e1d3b5a16fec23498ecdf3.html#ad721c5a816e1d3b5a16fec23498ecdf3" title="ConfigureOneFlag.Staging\lUtilities.MapXMLToSQL" alt="" coords="539,5,712,47"/>
+<area shape="rect" id="node3" href="$class_configure_one_flag_1_1_c1_web_service_a5c55f707a8abfce00f492231cb598c25.html#a5c55f707a8abfce00f492231cb598c25" title="ConfigureOneFlag.C1WebService.\lStartCopy" alt="" coords="516,71,735,112"/>
+<area shape="rect" id="node6" href="$class_configure_one_flag_1_1_triggers_a246cde167d6b8c1ab05cf0acb22c79a7.html#a246cde167d6b8c1ab05cf0acb22c79a7" title="ConfigureOneFlag.Triggers.\lBeginProcessing" alt="" coords="1049,71,1228,112"/>
+</map>

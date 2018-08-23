@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row">
+<title>Triggers::GRCfg3::GR_Cfg_AuditRow class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfg3::GR_Cfg_AuditRow</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfg3::GR_Cfg_AuditRow</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_Cfg_AuditDataTable tableGR_Cfg_Audit</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_a5f12c13c77e67e0451fc5f12319aaf27_1a5f12c13c77e67e0451fc5f12319aaf27">GR_Cfg_AuditRow</link> (
+global::System.Data.DataRowBuilder rb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_a95b065e42120924f11d3b9c5e89a5ae0_1a95b065e42120924f11d3b9c5e89a5ae0">Isorder_numNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_a59dac0cb8231f3c82dbed74cf4e99dd1_1a59dac0cb8231f3c82dbed74cf4e99dd1">Setorder_numNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_aa590125ac0265e807c4170adb6fcd29d_1aa590125ac0265e807c4170adb6fcd29d">Isorder_line_numNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_ab18a8c62aca44243a2d11da1d4ca9328_1ab18a8c62aca44243a2d11da1d4ca9328">Setorder_line_numNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_a9acd1b4d7d77ba01df6fe165e69dd529_1a9acd1b4d7d77ba01df6fe165e69dd529">IsauditEventNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_ab26e30237ec8686801b8210182bee94b_1ab26e30237ec8686801b8210182bee94b">SetauditEventNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_a8ae5f2c4b18e70ef1b0372ed5b96dfc0_1a8ae5f2c4b18e70ef1b0372ed5b96dfc0">IsauditMessageLNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_a2b15ee2cbfcb10e96137a380541318ad_1a2b15ee2cbfcb10e96137a380541318ad">SetauditMessageLNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_aa3f323c325a44451a4bba197026da093_1aa3f323c325a44451a4bba197026da093">IsstepNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_a2653d49b8a830d96507f2b1e5460bffb_1a2653d49b8a830d96507f2b1e5460bffb">SetstepNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represents strongly named DataRow class. /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_a5f12c13c77e67e0451fc5f12319aaf27_1a5f12c13c77e67e0451fc5f12319aaf27">
+                <title>Triggers.GRCfg3.GR_Cfg_AuditRow.GR_Cfg_AuditRow (global::System.Data.DataRowBuilder rb)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_a95b065e42120924f11d3b9c5e89a5ae0_1a95b065e42120924f11d3b9c5e89a5ae0">
+                <title>bool Triggers.GRCfg3.GR_Cfg_AuditRow.Isorder_numNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_a59dac0cb8231f3c82dbed74cf4e99dd1_1a59dac0cb8231f3c82dbed74cf4e99dd1">
+                <title>void Triggers.GRCfg3.GR_Cfg_AuditRow.Setorder_numNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_aa590125ac0265e807c4170adb6fcd29d_1aa590125ac0265e807c4170adb6fcd29d">
+                <title>bool Triggers.GRCfg3.GR_Cfg_AuditRow.Isorder_line_numNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_ab18a8c62aca44243a2d11da1d4ca9328_1ab18a8c62aca44243a2d11da1d4ca9328">
+                <title>void Triggers.GRCfg3.GR_Cfg_AuditRow.Setorder_line_numNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_a9acd1b4d7d77ba01df6fe165e69dd529_1a9acd1b4d7d77ba01df6fe165e69dd529">
+                <title>bool Triggers.GRCfg3.GR_Cfg_AuditRow.IsauditEventNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_ab26e30237ec8686801b8210182bee94b_1ab26e30237ec8686801b8210182bee94b">
+                <title>void Triggers.GRCfg3.GR_Cfg_AuditRow.SetauditEventNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_a8ae5f2c4b18e70ef1b0372ed5b96dfc0_1a8ae5f2c4b18e70ef1b0372ed5b96dfc0">
+                <title>bool Triggers.GRCfg3.GR_Cfg_AuditRow.IsauditMessageLNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_a2b15ee2cbfcb10e96137a380541318ad_1a2b15ee2cbfcb10e96137a380541318ad">
+                <title>void Triggers.GRCfg3.GR_Cfg_AuditRow.SetauditMessageLNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_aa3f323c325a44451a4bba197026da093_1aa3f323c325a44451a4bba197026da093">
+                <title>bool Triggers.GRCfg3.GR_Cfg_AuditRow.IsstepNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_row_a2653d49b8a830d96507f2b1e5460bffb_1a2653d49b8a830d96507f2b1e5460bffb">
+                <title>void Triggers.GRCfg3.GR_Cfg_AuditRow.SetstepNull ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

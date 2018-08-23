@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_c_o_item_validator">
+<title>Triggers::COItemValidator class Reference</title>
+<para>Inheritance diagram for Triggers::COItemValidator</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_c_o_item_validator__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::COItemValidator</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_c_o_item_validator__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_item_validator_a6224099922cbef1781d23b840168231d_1a6224099922cbef1781d23b840168231d">ConfigType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_item_validator_a79bfc754b5e15a44cbb5971437e94ad0_1a79bfc754b5e15a44cbb5971437e94ad0">CO_Num</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_item_validator_af2db6c198237f397e7ee0d5b39174fa7_1af2db6c198237f397e7ee0d5b39174fa7">Serial</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_item_validator_a6e031061ed664b4cc06c89e2f4f09bf5_1a6e031061ed664b4cc06c89e2f4f09bf5">Item</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_item_validator_ad7c2cd622f188fb7eff6910c81a16cd0_1ad7c2cd622f188fb7eff6910c81a16cd0">Smartpart</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_item_validator_ad0e2a26cbf24e908d5c9c7990f29ef20_1ad0e2a26cbf24e908d5c9c7990f29ef20">Desc</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_item_validator_ae3fcfa4c04aa2107e3e77986a77086e6_1ae3fcfa4c04aa2107e3e77986a77086e6">CustPO</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_item_validator_aa5f0f6f9ec265be18492e4ac821fd081_1aa5f0f6f9ec265be18492e4ac821fd081">OrderLineNotes</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_item_validator_a124ef6347ef724d60c9141bbd1dba233_1a124ef6347ef724d60c9141bbd1dba233">ValidateCOItem</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="class_triggers_1_1_c_o_item_validator_a6224099922cbef1781d23b840168231d_1a6224099922cbef1781d23b840168231d">
+                <title>void Triggers.COItemValidator.ConfigType ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_item_validator_a79bfc754b5e15a44cbb5971437e94ad0_1a79bfc754b5e15a44cbb5971437e94ad0">
+                <title>void Triggers.COItemValidator.CO_Num ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_item_validator_af2db6c198237f397e7ee0d5b39174fa7_1af2db6c198237f397e7ee0d5b39174fa7">
+                <title>void Triggers.COItemValidator.Serial ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_item_validator_a6e031061ed664b4cc06c89e2f4f09bf5_1a6e031061ed664b4cc06c89e2f4f09bf5">
+                <title>void Triggers.COItemValidator.Item ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_item_validator_ad7c2cd622f188fb7eff6910c81a16cd0_1ad7c2cd622f188fb7eff6910c81a16cd0">
+                <title>void Triggers.COItemValidator.Smartpart ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_item_validator_ad0e2a26cbf24e908d5c9c7990f29ef20_1ad0e2a26cbf24e908d5c9c7990f29ef20">
+                <title>void Triggers.COItemValidator.Desc ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_item_validator_ae3fcfa4c04aa2107e3e77986a77086e6_1ae3fcfa4c04aa2107e3e77986a77086e6">
+                <title>void Triggers.COItemValidator.CustPO ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_item_validator_aa5f0f6f9ec265be18492e4ac821fd081_1aa5f0f6f9ec265be18492e4ac821fd081">
+                <title>void Triggers.COItemValidator.OrderLineNotes ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_item_validator_a124ef6347ef724d60c9141bbd1dba233_1a124ef6347ef724d60c9141bbd1dba233">
+                <title>void Triggers.COItemValidator.ValidateCOItem ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

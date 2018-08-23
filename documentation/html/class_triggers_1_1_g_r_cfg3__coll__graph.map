@@ -1,0 +1,14 @@
+<map id="Triggers.GRCfg3" name="Triggers.GRCfg3">
+<area shape="rect" id="node3" href="$class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table.html" title="Represents the strongly named DataTable class. /summary&gt; " alt="" coords="411,935,557,977"/>
+<area shape="rect" id="node6" href="$class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_b_o_m_data_table.html" title="Represents the strongly named DataTable class. /summary&gt; " alt="" coords="414,1161,554,1202"/>
+<area shape="rect" id="node8" href="$class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___queue_data_table.html" title="Represents the strongly named DataTable class. /summary&gt; " alt="" coords="409,1307,559,1349"/>
+<area shape="rect" id="node10" href="$class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___audit_data_table.html" title="Represents the strongly named DataTable class. /summary&gt; " alt="" coords="413,514,555,555"/>
+<area shape="rect" id="node12" href="$class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_parm_val_data_table.html" title="Represents the strongly named DataTable class. /summary&gt; " alt="" coords="406,710,562,751"/>
+<area shape="rect" id="node14" href="$class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_item_data_table.html" title="Represents the strongly named DataTable class. /summary&gt; " alt="" coords="414,362,554,403"/>
+<area shape="rect" id="node16" href="$class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___document_queue_data_table.html" title="Represents the strongly named DataTable class. /summary&gt; " alt="" coords="379,2686,589,2727"/>
+<area shape="rect" id="node18" href="$class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_b_o_m_data_table.html" title="Represents the strongly named DataTable class. /summary&gt; " alt="" coords="399,1995,569,2037"/>
+<area shape="rect" id="node20" href="$class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___progress_data_table.html" title="Represents the strongly named DataTable class. /summary&gt; " alt="" coords="401,1741,567,1782"/>
+<area shape="rect" id="node22" href="$class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table.html" title="Represents the strongly named DataTable class. /summary&gt; " alt="" coords="414,2461,554,2502"/>
+<area shape="rect" id="node24" href="$class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_data_table.html" title="Represents the strongly named DataTable class. /summary&gt; " alt="" coords="411,2221,557,2262"/>
+<area shape="rect" id="node26" href="$class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_c_o_data_table.html" title="Represents the strongly named DataTable class. /summary&gt; " alt="" coords="414,1578,554,1619"/>
+</map>

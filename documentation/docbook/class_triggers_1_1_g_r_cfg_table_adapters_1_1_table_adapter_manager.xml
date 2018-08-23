@@ -1,0 +1,404 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager">
+<title>Triggers::GRCfgTableAdapters::TableAdapterManager class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfgTableAdapters::TableAdapterManager</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfgTableAdapters::TableAdapterManager</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer">Triggers::GRCfgTableAdapters::TableAdapterManager::SelfReferenceComparer</link></para>
+<para><emphasis>&lt;summary&gt;
+Used to sort self-referenced table&apos;s rows
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                            <para><literallayout>enum <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_a5d55f1004b1b91397b1f379ba3aba02b_1a5d55f1004b1b91397b1f379ba3aba02b">UpdateOrderOption</link> {
+<link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_a5d55f1004b1b91397b1f379ba3aba02b_1a5d55f1004b1b91397b1f379ba3aba02ba27b77cb15d3da7ded0250d0001bc6755">InsertUpdateDelete</link>= 0,
+<link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_a5d55f1004b1b91397b1f379ba3aba02b_1a5d55f1004b1b91397b1f379ba3aba02ba894fcc001e51f673d3fb5f3096473dd8">UpdateInsertDelete</link>= 1
+}</literallayout>
+<para><emphasis>&lt;summary&gt;
+Update Order Option
+ /summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>UpdateOrderOption _updateOrder</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_Cfg_AuditTableAdapter _gR_Cfg_AuditTableAdapter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_Cfg_DocumentQueueTableAdapter _gR_Cfg_DocumentQueueTableAdapter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_Cfg_ProgressTableAdapter _gR_Cfg_ProgressTableAdapter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_Cfg_QueueTableAdapter _gR_Cfg_QueueTableAdapter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_CfgBOMTableAdapter _gR_CfgBOMTableAdapter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_CfgCOTableAdapter _gR_CfgCOTableAdapter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_CfgCoitemTableAdapter _gR_CfgCoitemTableAdapter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_CfgItemTableAdapter _gR_CfgItemTableAdapter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_CfgParmValTableAdapter _gR_CfgParmValTableAdapter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_CfgRouteTableAdapter _gR_CfgRouteTableAdapter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_CfgRouteBOMTableAdapter _gR_CfgRouteBOMTableAdapter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool _backupDataSetBeforeUpdate</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.IDbConnection _connection</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_af0b09f0a34c82c9d583047d1ba92880b_1af0b09f0a34c82c9d583047d1ba92880b">UpdateUpdatedRows</link> (
+<link linkend="class_triggers_1_1_g_r_cfg">GRCfg</link> dataSet, global::System.Collections.Generic.List&lt; global::System.Data.DataRow &gt; allChangedRows, global::System.Collections.Generic.List&lt; global::System.Data.DataRow &gt; allAddedRows)<para><emphasis>&lt;summary&gt;
+Update rows in top-down order.
+ /summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_a43648b63af4bbd15e3ebce2a23495863_1a43648b63af4bbd15e3ebce2a23495863">UpdateInsertedRows</link> (
+<link linkend="class_triggers_1_1_g_r_cfg">GRCfg</link> dataSet, global::System.Collections.Generic.List&lt; global::System.Data.DataRow &gt; allAddedRows)<para><emphasis>&lt;summary&gt;
+Insert rows in top-down order.
+ /summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_a2671aad4055fd97eec57dbb3d875d646_1a2671aad4055fd97eec57dbb3d875d646">UpdateDeletedRows</link> (
+<link linkend="class_triggers_1_1_g_r_cfg">GRCfg</link> dataSet, global::System.Collections.Generic.List&lt; global::System.Data.DataRow &gt; allChangedRows)<para><emphasis>&lt;summary&gt;
+Delete rows in bottom-up order.
+ /summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataRow [] <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_afb5b67fb6c8ca82b6dece5aeabf0773d_1afb5b67fb6c8ca82b6dece5aeabf0773d">GetRealUpdatedRows</link> (
+global::System.Data.DataRow [] updatedRows, global::System.Collections.Generic.List&lt; global::System.Data.DataRow &gt; allAddedRows)<para><emphasis>&lt;summary&gt;
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+ /summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_aba281d7a5afa25a271901cbbebdd7a74_1aba281d7a5afa25a271901cbbebdd7a74">UpdateAll</link> (
+<link linkend="class_triggers_1_1_g_r_cfg">GRCfg</link> dataSet)<para><emphasis>&lt;summary&gt;
+Update all changes to the dataset.
+ /summary&gt;</emphasis></para>
+</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual void <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_a375eac59a4aeaa0ea56716a7452810f1_1a375eac59a4aeaa0ea56716a7452810f1">SortSelfReferenceRows</link> (
+global::System.Data.DataRow [] rows, global::System.Data.DataRelation relation, bool childFirst)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual bool <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_ad5132df6c80d9b2ebfa359c2aa5a7919_1ad5132df6c80d9b2ebfa359c2aa5a7919">MatchTableAdapterConnection</link> (
+global::System.Data.IDbConnection inputConnection)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para><link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager">TableAdapterManager</link> is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios /summary&gt; </para>
+    </simplesect>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_a5d55f1004b1b91397b1f379ba3aba02b_1a5d55f1004b1b91397b1f379ba3aba02b">
+               <title>enum UpdateOrderOption </title>
+               
+               <formalpara>
+                    <title>Enumerator:</title>
+                    <variablelist>
+                        <varlistentry xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_a5d55f1004b1b91397b1f379ba3aba02b_1a5d55f1004b1b91397b1f379ba3aba02ba27b77cb15d3da7ded0250d0001bc6755">
+                            <term>InsertUpdateDelete</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                        <varlistentry xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_a5d55f1004b1b91397b1f379ba3aba02b_1a5d55f1004b1b91397b1f379ba3aba02ba894fcc001e51f673d3fb5f3096473dd8">
+                            <term>UpdateInsertDelete</term>
+                            <listitem>
+                                <para></para>
+                            </listitem>
+                        </varlistentry>
+                     </variablelist>
+                </formalpara>
+                <para>Definition at line 18890 of file GRCfg.Designer.cs
+                    <computeroutput><literallayout>
+{
+InsertUpdateDelete= 0, 
+UpdateInsertDelete= 1, 
+}UpdateOrderOption;
+                    </literallayout></computeroutput>
+                </para>
+            </section>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_af0b09f0a34c82c9d583047d1ba92880b_1af0b09f0a34c82c9d583047d1ba92880b">
+                <title>int Triggers.GRCfgTableAdapters.TableAdapterManager.UpdateUpdatedRows (GRCfg dataSet, global::System.Collections.Generic.List&lt; global::System.Data.DataRow &gt; allChangedRows, global::System.Collections.Generic.List&lt; global::System.Data.DataRow &gt; allAddedRows)</title> <emphasis>&lt;summary&gt;
+Update rows in top-down order.
+ /summary&gt;</emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_a43648b63af4bbd15e3ebce2a23495863_1a43648b63af4bbd15e3ebce2a23495863">
+                <title>int Triggers.GRCfgTableAdapters.TableAdapterManager.UpdateInsertedRows (GRCfg dataSet, global::System.Collections.Generic.List&lt; global::System.Data.DataRow &gt; allAddedRows)</title> <emphasis>&lt;summary&gt;
+Insert rows in top-down order.
+ /summary&gt;</emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_a2671aad4055fd97eec57dbb3d875d646_1a2671aad4055fd97eec57dbb3d875d646">
+                <title>int Triggers.GRCfgTableAdapters.TableAdapterManager.UpdateDeletedRows (GRCfg dataSet, global::System.Collections.Generic.List&lt; global::System.Data.DataRow &gt; allChangedRows)</title> <emphasis>&lt;summary&gt;
+Delete rows in bottom-up order.
+ /summary&gt;</emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_afb5b67fb6c8ca82b6dece5aeabf0773d_1afb5b67fb6c8ca82b6dece5aeabf0773d">
+                <title>global::System.Data.DataRow [] Triggers.GRCfgTableAdapters.TableAdapterManager.GetRealUpdatedRows (global::System.Data.DataRow[] updatedRows, global::System.Collections.Generic.List&lt; global::System.Data.DataRow &gt; allAddedRows)</title> <emphasis>&lt;summary&gt;
+Remove inserted rows that become updated rows after calling TableAdapter.Update(inserted rows) first
+ /summary&gt;</emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_aba281d7a5afa25a271901cbbebdd7a74_1aba281d7a5afa25a271901cbbebdd7a74">
+                <title>virtual int Triggers.GRCfgTableAdapters.TableAdapterManager.UpdateAll (GRCfg dataSet)</title> <emphasis>&lt;summary&gt;
+Update all changes to the dataset.
+ /summary&gt;</emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_a375eac59a4aeaa0ea56716a7452810f1_1a375eac59a4aeaa0ea56716a7452810f1">
+                <title>virtual void Triggers.GRCfgTableAdapters.TableAdapterManager.SortSelfReferenceRows (global::System.Data.DataRow[] rows, global::System.Data.DataRelation relation, bool childFirst)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_ad5132df6c80d9b2ebfa359c2aa5a7919_1ad5132df6c80d9b2ebfa359c2aa5a7919">
+                <title>virtual bool Triggers.GRCfgTableAdapters.TableAdapterManager.MatchTableAdapterConnection (global::System.Data.IDbConnection inputConnection)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

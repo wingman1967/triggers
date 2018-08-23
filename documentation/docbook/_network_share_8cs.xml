@@ -1,0 +1,219 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_network_share_8cs">
+    <title>NetworkShare.cs File Reference</title>
+<para>Include dependency diagram for NetworkShare.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_network_share_8cs__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for NetworkShare.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_network_share_8cs__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_network_share">ConfigureOneFlag::NetworkShare</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e">ConfigureOneFlag::NetworkShare::NETRESOURCE</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ConfigureOneFlag::NetworkShare::ErrorClass</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_configure_one_flag">ConfigureOneFlag</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system_1_1_runtime_1_1_interop_services">System::Runtime::InteropServices</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file C:/Users/hinesj/Documents/Visual Studio 2015/Projects/Triggers/Triggers/NetworkShare.cs</para>
+    </simplesect>
+    <literallayout><computeroutput>
+1 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>;
+2 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Runtime.InteropServices;
+3 
+4 <emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>
+5 {
+<link linkend="class_configure_one_flag_1_1_network_share">6 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_configure_one_flag_1_1_network_share">NetworkShare</link>
+7 &#32;&#32;&#32;&#32;{
+<link linkend="class_configure_one_flag_1_1_network_share_ab976148d295a3aad7cdf5c850cc3fed9_1ab976148d295a3aad7cdf5c850cc3fed9">12 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_ab976148d295a3aad7cdf5c850cc3fed9_1ab976148d295a3aad7cdf5c850cc3fed9">ConnectToShare</link>(<emphasis class="keywordtype">string</emphasis>&#32;uri,&#32;<emphasis class="keywordtype">string</emphasis>&#32;username,&#32;<emphasis class="keywordtype">string</emphasis>&#32;password)
+13 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+14 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Create&#32;netresource&#32;and&#32;point&#32;it&#32;at&#32;the&#32;share</emphasis>
+15 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e">NETRESOURCE</link>&#32;nr&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e">NETRESOURCE</link>();
+16 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;nr.<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e_a1526e910fd3f83777441683bfef44f25_1a1526e910fd3f83777441683bfef44f25">dwType</link>&#32;=&#32;<link linkend="class_configure_one_flag_1_1_network_share_a6ccf24720f0224237f80fa0d55a00065_1a6ccf24720f0224237f80fa0d55a00065">RESOURCETYPE_DISK</link>;
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;nr.<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e_a43e0e5ca90c9ae08d3005cd926d9d488_1a43e0e5ca90c9ae08d3005cd926d9d488">lpRemoteName</link>&#32;=&#32;uri;
+18 
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Create&#32;the&#32;share</emphasis>
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;ret&#32;=&#32;<link linkend="class_configure_one_flag_1_1_network_share_a4a620f7ea4a4608089bd0012c096429c_1a4a620f7ea4a4608089bd0012c096429c">WNetUseConnection</link>(IntPtr.Zero,&#32;nr,&#32;password,&#32;username,&#32;0,&#32;null,&#32;null,&#32;null);
+21 
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Check&#32;for&#32;errors</emphasis>
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(ret&#32;==&#32;<link linkend="class_configure_one_flag_1_1_network_share_aeda25da9bbd3b7072ed8b9de00da9b0a_1aeda25da9bbd3b7072ed8b9de00da9b0a">NO_ERROR</link>)
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;null;
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_aec1ed4b4d1202d34aed21172bce91b4d_1aec1ed4b4d1202d34aed21172bce91b4d">GetError</link>(ret);
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+28 
+<link linkend="class_configure_one_flag_1_1_network_share_af61100f22e1ebd4895ad0313c0130ecf_1af61100f22e1ebd4895ad0313c0130ecf">33 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_af61100f22e1ebd4895ad0313c0130ecf_1af61100f22e1ebd4895ad0313c0130ecf">DisconnectFromShare</link>(<emphasis class="keywordtype">string</emphasis>&#32;uri,&#32;<emphasis class="keywordtype">bool</emphasis>&#32;force)
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//remove&#32;the&#32;share</emphasis>
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;ret&#32;=&#32;<link linkend="class_configure_one_flag_1_1_network_share_ae3468e9742af300b56a0382bb5cbb969_1ae3468e9742af300b56a0382bb5cbb969">WNetCancelConnection</link>(uri,&#32;force);
+37 
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Check&#32;for&#32;errors</emphasis>
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(ret&#32;==&#32;<link linkend="class_configure_one_flag_1_1_network_share_aeda25da9bbd3b7072ed8b9de00da9b0a_1aeda25da9bbd3b7072ed8b9de00da9b0a">NO_ERROR</link>)
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;null;
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_aec1ed4b4d1202d34aed21172bce91b4d_1aec1ed4b4d1202d34aed21172bce91b4d">GetError</link>(ret);
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+44 
+45 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#region&#32;P/Invoke&#32;Stuff</emphasis>
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[DllImport(<emphasis class="stringliteral">&quot;Mpr.dll&quot;</emphasis>)]
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keyword">extern</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_a4a620f7ea4a4608089bd0012c096429c_1a4a620f7ea4a4608089bd0012c096429c">WNetUseConnection</link>(
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;IntPtr&#32;hwndOwner,
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;NETRESOURCE&#32;lpNetResource,
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;lpPassword,
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;lpUserID,
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">int</emphasis>&#32;dwFlags,
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;lpAccessName,
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;lpBufferSize,
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;lpResult
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;);
+57 
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[DllImport(<emphasis class="stringliteral">&quot;Mpr.dll&quot;</emphasis>)]
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keyword">extern</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_ae3468e9742af300b56a0382bb5cbb969_1ae3468e9742af300b56a0382bb5cbb969">WNetCancelConnection</link>(
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;lpName,
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">bool</emphasis>&#32;fForce
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;);
+63 
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[StructLayout(LayoutKind.Sequential)]
+<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e">65 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e">NETRESOURCE</link>
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e_a2b0ea9834f80153e052fecd22c52e407_1a2b0ea9834f80153e052fecd22c52e407">67 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e_a2b0ea9834f80153e052fecd22c52e407_1a2b0ea9834f80153e052fecd22c52e407">dwScope</link>&#32;=&#32;0;
+<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e_a1526e910fd3f83777441683bfef44f25_1a1526e910fd3f83777441683bfef44f25">68 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e_a1526e910fd3f83777441683bfef44f25_1a1526e910fd3f83777441683bfef44f25">dwType</link>&#32;=&#32;0;
+<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e_acc1feb7eb1fe17db40c123ae982fef21_1acc1feb7eb1fe17db40c123ae982fef21">69 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e_acc1feb7eb1fe17db40c123ae982fef21_1acc1feb7eb1fe17db40c123ae982fef21">dwDisplayType</link>&#32;=&#32;0;
+<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e_a6c5b24e753b90e12dcb0b2de0c4f425c_1a6c5b24e753b90e12dcb0b2de0c4f425c">70 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e_a6c5b24e753b90e12dcb0b2de0c4f425c_1a6c5b24e753b90e12dcb0b2de0c4f425c">dwUsage</link>&#32;=&#32;0;
+<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e_a91f8e1d09fd96d39593b49f87d961b65_1a91f8e1d09fd96d39593b49f87d961b65">71 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e_a91f8e1d09fd96d39593b49f87d961b65_1a91f8e1d09fd96d39593b49f87d961b65">lpLocalName</link>&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e_a43e0e5ca90c9ae08d3005cd926d9d488_1a43e0e5ca90c9ae08d3005cd926d9d488">72 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e_a43e0e5ca90c9ae08d3005cd926d9d488_1a43e0e5ca90c9ae08d3005cd926d9d488">lpRemoteName</link>&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e_a5768fc0012a7df83006b434597bf8afd_1a5768fc0012a7df83006b434597bf8afd">73 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e_a5768fc0012a7df83006b434597bf8afd_1a5768fc0012a7df83006b434597bf8afd">lpComment</link>&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e_a460a95a98788b0bc68543dcca8f9b45c_1a460a95a98788b0bc68543dcca8f9b45c">74 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e_a460a95a98788b0bc68543dcca8f9b45c_1a460a95a98788b0bc68543dcca8f9b45c">lpProvider</link>&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+76 
+77 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#region&#32;Consts</emphasis>
+<link linkend="class_configure_one_flag_1_1_network_share_a6ccf24720f0224237f80fa0d55a00065_1a6ccf24720f0224237f80fa0d55a00065">78 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_a6ccf24720f0224237f80fa0d55a00065_1a6ccf24720f0224237f80fa0d55a00065">RESOURCETYPE_DISK</link>&#32;=&#32;0x00000001;
+<link linkend="class_configure_one_flag_1_1_network_share_a51148c55b8732059df31e4ac47ac968c_1a51148c55b8732059df31e4ac47ac968c">79 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_a51148c55b8732059df31e4ac47ac968c_1a51148c55b8732059df31e4ac47ac968c">CONNECT_UPDATE_PROFILE</link>&#32;=&#32;0x00000001;
+80 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#endregion</emphasis>
+81 
+82 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#region&#32;Errors</emphasis>
+<link linkend="class_configure_one_flag_1_1_network_share_aeda25da9bbd3b7072ed8b9de00da9b0a_1aeda25da9bbd3b7072ed8b9de00da9b0a">83 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_aeda25da9bbd3b7072ed8b9de00da9b0a_1aeda25da9bbd3b7072ed8b9de00da9b0a">NO_ERROR</link>&#32;=&#32;0;
+84 
+<link linkend="class_configure_one_flag_1_1_network_share_abf24bb0a547108a1aa2d61209473b8bd_1abf24bb0a547108a1aa2d61209473b8bd">85 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_abf24bb0a547108a1aa2d61209473b8bd_1abf24bb0a547108a1aa2d61209473b8bd">ERROR_ACCESS_DENIED</link>&#32;=&#32;5;
+<link linkend="class_configure_one_flag_1_1_network_share_a2026211bed1d0f7d9adef225cdf63f2b_1a2026211bed1d0f7d9adef225cdf63f2b">86 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_a2026211bed1d0f7d9adef225cdf63f2b_1a2026211bed1d0f7d9adef225cdf63f2b">ERROR_ALREADY_ASSIGNED</link>&#32;=&#32;85;
+<link linkend="class_configure_one_flag_1_1_network_share_ae27655505f60758582c55bff6f0c1c99_1ae27655505f60758582c55bff6f0c1c99">87 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_ae27655505f60758582c55bff6f0c1c99_1ae27655505f60758582c55bff6f0c1c99">ERROR_BAD_DEVICE</link>&#32;=&#32;1200;
+<link linkend="class_configure_one_flag_1_1_network_share_ad0801840c1f535938991d05c7e4f4c98_1ad0801840c1f535938991d05c7e4f4c98">88 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_ad0801840c1f535938991d05c7e4f4c98_1ad0801840c1f535938991d05c7e4f4c98">ERROR_BAD_NET_NAME</link>&#32;=&#32;67;
+<link linkend="class_configure_one_flag_1_1_network_share_ac642bf1a0488558384c4a9300c31e8cd_1ac642bf1a0488558384c4a9300c31e8cd">89 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_ac642bf1a0488558384c4a9300c31e8cd_1ac642bf1a0488558384c4a9300c31e8cd">ERROR_BAD_PROVIDER</link>&#32;=&#32;1204;
+<link linkend="class_configure_one_flag_1_1_network_share_afda3d2110a586a4a67d4408e09f8f0e7_1afda3d2110a586a4a67d4408e09f8f0e7">90 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_afda3d2110a586a4a67d4408e09f8f0e7_1afda3d2110a586a4a67d4408e09f8f0e7">ERROR_CANCELLED</link>&#32;=&#32;1223;
+<link linkend="class_configure_one_flag_1_1_network_share_a43d93fc9e9de3e15933ee2c58f48c157_1a43d93fc9e9de3e15933ee2c58f48c157">91 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_a43d93fc9e9de3e15933ee2c58f48c157_1a43d93fc9e9de3e15933ee2c58f48c157">ERROR_EXTENDED_ERROR</link>&#32;=&#32;1208;
+<link linkend="class_configure_one_flag_1_1_network_share_a858bf7c4abbe279759b5dfd12e049ced_1a858bf7c4abbe279759b5dfd12e049ced">92 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_a858bf7c4abbe279759b5dfd12e049ced_1a858bf7c4abbe279759b5dfd12e049ced">ERROR_INVALID_ADDRESS</link>&#32;=&#32;487;
+<link linkend="class_configure_one_flag_1_1_network_share_a7728307d5969ed24c6dba0fdd90d9da0_1a7728307d5969ed24c6dba0fdd90d9da0">93 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_a7728307d5969ed24c6dba0fdd90d9da0_1a7728307d5969ed24c6dba0fdd90d9da0">ERROR_INVALID_PARAMETER</link>&#32;=&#32;87;
+<link linkend="class_configure_one_flag_1_1_network_share_a2d4a150254d637e7dd812995f57b5bd9_1a2d4a150254d637e7dd812995f57b5bd9">94 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_a2d4a150254d637e7dd812995f57b5bd9_1a2d4a150254d637e7dd812995f57b5bd9">ERROR_INVALID_PASSWORD</link>&#32;=&#32;1216;
+<link linkend="class_configure_one_flag_1_1_network_share_a3e2a6d9264aaa057ef8c6058a096cef0_1a3e2a6d9264aaa057ef8c6058a096cef0">95 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_a3e2a6d9264aaa057ef8c6058a096cef0_1a3e2a6d9264aaa057ef8c6058a096cef0">ERROR_MORE_DATA</link>&#32;=&#32;234;
+<link linkend="class_configure_one_flag_1_1_network_share_a40c7765e18151516a701ce3a412282ce_1a40c7765e18151516a701ce3a412282ce">96 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_a40c7765e18151516a701ce3a412282ce_1a40c7765e18151516a701ce3a412282ce">ERROR_NO_MORE_ITEMS</link>&#32;=&#32;259;
+<link linkend="class_configure_one_flag_1_1_network_share_a6a7b6c9f6a4b2cf9f78409d6c860a519_1a6a7b6c9f6a4b2cf9f78409d6c860a519">97 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_a6a7b6c9f6a4b2cf9f78409d6c860a519_1a6a7b6c9f6a4b2cf9f78409d6c860a519">ERROR_NO_NET_OR_BAD_PATH</link>&#32;=&#32;1203;
+<link linkend="class_configure_one_flag_1_1_network_share_a6b612ec5a42218b102d2586a112acbc9_1a6b612ec5a42218b102d2586a112acbc9">98 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_a6b612ec5a42218b102d2586a112acbc9_1a6b612ec5a42218b102d2586a112acbc9">ERROR_NO_NETWORK</link>&#32;=&#32;1222;
+<link linkend="class_configure_one_flag_1_1_network_share_ac8ccc83a9f4390a54d559d47204cb80c_1ac8ccc83a9f4390a54d559d47204cb80c">99 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_ac8ccc83a9f4390a54d559d47204cb80c_1ac8ccc83a9f4390a54d559d47204cb80c">ERROR_SESSION_CREDENTIAL_CONFLICT</link>&#32;=&#32;1219;
+100 
+<link linkend="class_configure_one_flag_1_1_network_share_ae26a12efba7e2c298329d46dd4084ed2_1ae26a12efba7e2c298329d46dd4084ed2">101 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_ae26a12efba7e2c298329d46dd4084ed2_1ae26a12efba7e2c298329d46dd4084ed2">ERROR_BAD_PROFILE</link>&#32;=&#32;1206;
+<link linkend="class_configure_one_flag_1_1_network_share_a1d96242b702a7416526a5b8b29a6f2cd_1a1d96242b702a7416526a5b8b29a6f2cd">102 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_a1d96242b702a7416526a5b8b29a6f2cd_1a1d96242b702a7416526a5b8b29a6f2cd">ERROR_CANNOT_OPEN_PROFILE</link>&#32;=&#32;1205;
+<link linkend="class_configure_one_flag_1_1_network_share_a54b4362acbd74141792b18270d3b4124_1a54b4362acbd74141792b18270d3b4124">103 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_a54b4362acbd74141792b18270d3b4124_1a54b4362acbd74141792b18270d3b4124">ERROR_DEVICE_IN_USE</link>&#32;=&#32;2404;
+<link linkend="class_configure_one_flag_1_1_network_share_a818a29c26d40e54a8966d25d0363eefe_1a818a29c26d40e54a8966d25d0363eefe">104 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_a818a29c26d40e54a8966d25d0363eefe_1a818a29c26d40e54a8966d25d0363eefe">ERROR_NOT_CONNECTED</link>&#32;=&#32;2250;
+<link linkend="class_configure_one_flag_1_1_network_share_a2a58550b0929e3275596a567f535a88c_1a2a58550b0929e3275596a567f535a88c">105 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">const</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_a2a58550b0929e3275596a567f535a88c_1a2a58550b0929e3275596a567f535a88c">ERROR_OPEN_FILES</link>&#32;=&#32;2401;
+106 
+<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">107 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">struct&#32;</emphasis><link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>
+108 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class_a2a8ea05147699f598106c5ea4e0379d7_1a2a8ea05147699f598106c5ea4e0379d7">109 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class_a2a8ea05147699f598106c5ea4e0379d7_1a2a8ea05147699f598106c5ea4e0379d7">num</link>;
+<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class_a4b85e5c636944c1b5be9ae895876c975_1a4b85e5c636944c1b5be9ae895876c975">110 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class_a4b85e5c636944c1b5be9ae895876c975_1a4b85e5c636944c1b5be9ae895876c975">message</link>;
+<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class_aa2b1ab8819e1e29696dc4b7e72621e7d_1aa2b1ab8819e1e29696dc4b7e72621e7d">111 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class_aa2b1ab8819e1e29696dc4b7e72621e7d_1aa2b1ab8819e1e29696dc4b7e72621e7d">ErrorClass</link>(<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class_a2a8ea05147699f598106c5ea4e0379d7_1a2a8ea05147699f598106c5ea4e0379d7">num</link>,&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class_a4b85e5c636944c1b5be9ae895876c975_1a4b85e5c636944c1b5be9ae895876c975">message</link>)
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+113 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.num&#32;=&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class_a2a8ea05147699f598106c5ea4e0379d7_1a2a8ea05147699f598106c5ea4e0379d7">num</link>;
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;this.message&#32;=&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class_a4b85e5c636944c1b5be9ae895876c975_1a4b85e5c636944c1b5be9ae895876c975">message</link>;
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+117 
+<link linkend="class_configure_one_flag_1_1_network_share_aa6710e5692ec9db0f87bbb32ac827041_1aa6710e5692ec9db0f87bbb32ac827041">118 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>[]&#32;<link linkend="class_configure_one_flag_1_1_network_share_aa6710e5692ec9db0f87bbb32ac827041_1aa6710e5692ec9db0f87bbb32ac827041">ERROR_LIST</link>&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>[]&#32;{
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_abf24bb0a547108a1aa2d61209473b8bd_1abf24bb0a547108a1aa2d61209473b8bd">ERROR_ACCESS_DENIED</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;Access&#32;Denied&quot;</emphasis>),
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_a2026211bed1d0f7d9adef225cdf63f2b_1a2026211bed1d0f7d9adef225cdf63f2b">ERROR_ALREADY_ASSIGNED</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;Already&#32;Assigned&quot;</emphasis>),
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_ae27655505f60758582c55bff6f0c1c99_1ae27655505f60758582c55bff6f0c1c99">ERROR_BAD_DEVICE</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;Bad&#32;Device&quot;</emphasis>),
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_ad0801840c1f535938991d05c7e4f4c98_1ad0801840c1f535938991d05c7e4f4c98">ERROR_BAD_NET_NAME</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;Bad&#32;Net&#32;Name&quot;</emphasis>),
+123 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_ac642bf1a0488558384c4a9300c31e8cd_1ac642bf1a0488558384c4a9300c31e8cd">ERROR_BAD_PROVIDER</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;Bad&#32;Provider&quot;</emphasis>),
+124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_afda3d2110a586a4a67d4408e09f8f0e7_1afda3d2110a586a4a67d4408e09f8f0e7">ERROR_CANCELLED</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;Cancelled&quot;</emphasis>),
+125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_a43d93fc9e9de3e15933ee2c58f48c157_1a43d93fc9e9de3e15933ee2c58f48c157">ERROR_EXTENDED_ERROR</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;Extended&#32;Error&quot;</emphasis>),
+126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_a858bf7c4abbe279759b5dfd12e049ced_1a858bf7c4abbe279759b5dfd12e049ced">ERROR_INVALID_ADDRESS</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;Invalid&#32;Address&quot;</emphasis>),
+127 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_a7728307d5969ed24c6dba0fdd90d9da0_1a7728307d5969ed24c6dba0fdd90d9da0">ERROR_INVALID_PARAMETER</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;Invalid&#32;Parameter&quot;</emphasis>),
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_a2d4a150254d637e7dd812995f57b5bd9_1a2d4a150254d637e7dd812995f57b5bd9">ERROR_INVALID_PASSWORD</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;Invalid&#32;Password&quot;</emphasis>),
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_a3e2a6d9264aaa057ef8c6058a096cef0_1a3e2a6d9264aaa057ef8c6058a096cef0">ERROR_MORE_DATA</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;More&#32;Data&quot;</emphasis>),
+130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_a40c7765e18151516a701ce3a412282ce_1a40c7765e18151516a701ce3a412282ce">ERROR_NO_MORE_ITEMS</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;No&#32;More&#32;Items&quot;</emphasis>),
+131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_a6a7b6c9f6a4b2cf9f78409d6c860a519_1a6a7b6c9f6a4b2cf9f78409d6c860a519">ERROR_NO_NET_OR_BAD_PATH</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;No&#32;Net&#32;Or&#32;Bad&#32;Path&quot;</emphasis>),
+132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_a6b612ec5a42218b102d2586a112acbc9_1a6b612ec5a42218b102d2586a112acbc9">ERROR_NO_NETWORK</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;No&#32;Network&quot;</emphasis>),
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_ae26a12efba7e2c298329d46dd4084ed2_1ae26a12efba7e2c298329d46dd4084ed2">ERROR_BAD_PROFILE</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;Bad&#32;Profile&quot;</emphasis>),
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_a1d96242b702a7416526a5b8b29a6f2cd_1a1d96242b702a7416526a5b8b29a6f2cd">ERROR_CANNOT_OPEN_PROFILE</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;Cannot&#32;Open&#32;Profile&quot;</emphasis>),
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_a54b4362acbd74141792b18270d3b4124_1a54b4362acbd74141792b18270d3b4124">ERROR_DEVICE_IN_USE</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;Device&#32;In&#32;Use&quot;</emphasis>),
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_a43d93fc9e9de3e15933ee2c58f48c157_1a43d93fc9e9de3e15933ee2c58f48c157">ERROR_EXTENDED_ERROR</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;Extended&#32;Error&quot;</emphasis>),
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_a818a29c26d40e54a8966d25d0363eefe_1a818a29c26d40e54a8966d25d0363eefe">ERROR_NOT_CONNECTED</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;Not&#32;Connected&quot;</emphasis>),
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_a2a58550b0929e3275596a567f535a88c_1a2a58550b0929e3275596a567f535a88c">ERROR_OPEN_FILES</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;Open&#32;Files&quot;</emphasis>),
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>(<link linkend="class_configure_one_flag_1_1_network_share_ac8ccc83a9f4390a54d559d47204cb80c_1ac8ccc83a9f4390a54d559d47204cb80c">ERROR_SESSION_CREDENTIAL_CONFLICT</link>,&#32;<emphasis class="stringliteral">&quot;Error:&#32;Credential&#32;Conflict&quot;</emphasis>),
+140 &#32;&#32;&#32;&#32;};
+141 
+<link linkend="class_configure_one_flag_1_1_network_share_aec1ed4b4d1202d34aed21172bce91b4d_1aec1ed4b4d1202d34aed21172bce91b4d">142 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_aec1ed4b4d1202d34aed21172bce91b4d_1aec1ed4b4d1202d34aed21172bce91b4d">GetError</link>(<emphasis class="keywordtype">int</emphasis>&#32;errNum)
+143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">foreach</emphasis>&#32;(<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class">ErrorClass</link>&#32;er&#32;<emphasis class="keywordflow">in</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_network_share_aa6710e5692ec9db0f87bbb32ac827041_1aa6710e5692ec9db0f87bbb32ac827041">ERROR_LIST</link>)
+145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(er.<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class_a2a8ea05147699f598106c5ea4e0379d7_1a2a8ea05147699f598106c5ea4e0379d7">num</link>&#32;==&#32;errNum)&#32;<emphasis class="keywordflow">return</emphasis>&#32;er.<link linkend="struct_configure_one_flag_1_1_network_share_1_1_error_class_a4b85e5c636944c1b5be9ae895876c975_1a4b85e5c636944c1b5be9ae895876c975">message</link>;
+147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">return</emphasis>&#32;<emphasis class="stringliteral">&quot;Error:&#32;Unknown,&#32;&quot;</emphasis>&#32;+&#32;errNum;
+149 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+150 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#endregion</emphasis>
+151 
+152 <emphasis class="preprocessor">&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;#endregion</emphasis>
+153 &#32;&#32;&#32;&#32;}
+154 }
+    </computeroutput></literallayout>
+</section>

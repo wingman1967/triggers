@@ -1,0 +1,504 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table">
+<title>Triggers::GRCfg3::GR_CfgCoitemDataTable class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfg3::GR_CfgCoitemDataTable</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfg3::GR_CfgCoitemDataTable</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnorder_num</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnorder_line_num</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnser_num</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnitem_num</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnsmartpart_num</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columndescription</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnunit_price</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnunit_cost</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columndiscount_amt</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnquantity</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnpriority_level</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columndue_date</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnconfig_type</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnCustPO</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnLINE_NOTES</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_ae5d9e7a547304abe804c0c4f64f110c9_1ae5d9e7a547304abe804c0c4f64f110c9">GR_CfgCoitemDataTable</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a13ea3984213f07edcbf3b4c4795e156e_1a13ea3984213f07edcbf3b4c4795e156e">AddGR_CfgCoitemRow</link> (
+<link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_row">GR_CfgCoitemRow</link> row)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_row">GR_CfgCoitemRow</link> <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a92a3c1fbe38ee74ea295cdc8cfd86c1c_1a92a3c1fbe38ee74ea295cdc8cfd86c1c">AddGR_CfgCoitemRow</link> (
+string order_num, int order_line_num, string ser_num, string item_num, string smartpart_num, string description, decimal unit_price, decimal unit_cost, decimal discount_amt, decimal quantity, int priority_level, System.DateTime due_date, string config_type, string CustPO, string LINE_NOTES)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Data.DataTable <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a2936f218efeb942fa115a6966c5687ce_1a2936f218efeb942fa115a6966c5687ce">Clone</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_row">GR_CfgCoitemRow</link> <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_affd296ab8cf5ee82d17b80fb6334e2ca_1affd296ab8cf5ee82d17b80fb6334e2ca">NewGR_CfgCoitemRow</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_ae2b6852701f4dfe472d137dd5775ffb9_1ae2b6852701f4dfe472d137dd5775ffb9">RemoveGR_CfgCoitemRow</link> (
+<link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_row">GR_CfgCoitemRow</link> row)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a23e418a3074e16a963fee5e188ade47a_1a23e418a3074e16a963fee5e188ade47a">GR_CfgCoitemDataTable</link> (
+global::System.Data.DataTable table)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a2796953984c2304acc6bd8e51aee703d_1a2796953984c2304acc6bd8e51aee703d">InitVars</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a4be91ccb427f39774702c955ac073109_1a4be91ccb427f39774702c955ac073109">GR_CfgCoitemDataTable</link> (
+global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Data.DataTable <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_ad2790ab7a76dbbe3f5583b7db97b9f2c_1ad2790ab7a76dbbe3f5583b7db97b9f2c">CreateInstance</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Data.DataRow <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_aedf9a3bd3d7cca032935e80d28929c01_1aedf9a3bd3d7cca032935e80d28929c01">NewRowFromBuilder</link> (
+global::System.Data.DataRowBuilder builder)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Type <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a3db6795c896c4cb9fb546bef74889acf_1a3db6795c896c4cb9fb546bef74889acf">GetRowType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_ae8003081c2c1c348908e5c5a9f4c56ff_1ae8003081c2c1c348908e5c5a9f4c56ff">OnRowChanged</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a98eda04476aef2d65b5ad813eff5647f_1a98eda04476aef2d65b5ad813eff5647f">OnRowChanging</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_af144a1692d2697427f2036286412eccd_1af144a1692d2697427f2036286412eccd">OnRowDeleted</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_ab5d0f5f803c63ed2bb79d393f7450025_1ab5d0f5f803c63ed2bb79d393f7450025">OnRowDeleting</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a7eaa7b75793f7e6bf145397fde173eca_1a7eaa7b75793f7e6bf145397fde173eca">InitClass</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static global::System.Xml.Schema.XmlSchemaComplexType <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a0778c7db722f010760d6291ff06e42ce_1a0778c7db722f010760d6291ff06e42ce">GetTypedTableSchema</link> (
+global::System.Xml.Schema.XmlSchemaSet xs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represents the strongly named DataTable class. /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_ae5d9e7a547304abe804c0c4f64f110c9_1ae5d9e7a547304abe804c0c4f64f110c9">
+                <title>Triggers.GRCfg3.GR_CfgCoitemDataTable.GR_CfgCoitemDataTable ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a13ea3984213f07edcbf3b4c4795e156e_1a13ea3984213f07edcbf3b4c4795e156e">
+                <title>void Triggers.GRCfg3.GR_CfgCoitemDataTable.AddGR_CfgCoitemRow (GR_CfgCoitemRow row)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a92a3c1fbe38ee74ea295cdc8cfd86c1c_1a92a3c1fbe38ee74ea295cdc8cfd86c1c">
+                <title>GR_CfgCoitemRow Triggers.GRCfg3.GR_CfgCoitemDataTable.AddGR_CfgCoitemRow (string order_num, int order_line_num, string ser_num, string item_num, string smartpart_num, string description, decimal unit_price, decimal unit_cost, decimal discount_amt, decimal quantity, int priority_level, System.DateTime due_date, string config_type, string CustPO, string LINE_NOTES)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a2936f218efeb942fa115a6966c5687ce_1a2936f218efeb942fa115a6966c5687ce">
+                <title>override global::System.Data.DataTable Triggers.GRCfg3.GR_CfgCoitemDataTable.Clone ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_affd296ab8cf5ee82d17b80fb6334e2ca_1affd296ab8cf5ee82d17b80fb6334e2ca">
+                <title>GR_CfgCoitemRow Triggers.GRCfg3.GR_CfgCoitemDataTable.NewGR_CfgCoitemRow ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_ae2b6852701f4dfe472d137dd5775ffb9_1ae2b6852701f4dfe472d137dd5775ffb9">
+                <title>void Triggers.GRCfg3.GR_CfgCoitemDataTable.RemoveGR_CfgCoitemRow (GR_CfgCoitemRow row)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a23e418a3074e16a963fee5e188ade47a_1a23e418a3074e16a963fee5e188ade47a">
+                <title>Triggers.GRCfg3.GR_CfgCoitemDataTable.GR_CfgCoitemDataTable (global::System.Data.DataTable table)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a2796953984c2304acc6bd8e51aee703d_1a2796953984c2304acc6bd8e51aee703d">
+                <title>void Triggers.GRCfg3.GR_CfgCoitemDataTable.InitVars ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a4be91ccb427f39774702c955ac073109_1a4be91ccb427f39774702c955ac073109">
+                <title>Triggers.GRCfg3.GR_CfgCoitemDataTable.GR_CfgCoitemDataTable (global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_ad2790ab7a76dbbe3f5583b7db97b9f2c_1ad2790ab7a76dbbe3f5583b7db97b9f2c">
+                <title>override global::System.Data.DataTable Triggers.GRCfg3.GR_CfgCoitemDataTable.CreateInstance ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_aedf9a3bd3d7cca032935e80d28929c01_1aedf9a3bd3d7cca032935e80d28929c01">
+                <title>override global::System.Data.DataRow Triggers.GRCfg3.GR_CfgCoitemDataTable.NewRowFromBuilder (global::System.Data.DataRowBuilder builder)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a3db6795c896c4cb9fb546bef74889acf_1a3db6795c896c4cb9fb546bef74889acf">
+                <title>override global::System.Type Triggers.GRCfg3.GR_CfgCoitemDataTable.GetRowType ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_ae8003081c2c1c348908e5c5a9f4c56ff_1ae8003081c2c1c348908e5c5a9f4c56ff">
+                <title>override void Triggers.GRCfg3.GR_CfgCoitemDataTable.OnRowChanged (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a98eda04476aef2d65b5ad813eff5647f_1a98eda04476aef2d65b5ad813eff5647f">
+                <title>override void Triggers.GRCfg3.GR_CfgCoitemDataTable.OnRowChanging (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_af144a1692d2697427f2036286412eccd_1af144a1692d2697427f2036286412eccd">
+                <title>override void Triggers.GRCfg3.GR_CfgCoitemDataTable.OnRowDeleted (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_ab5d0f5f803c63ed2bb79d393f7450025_1ab5d0f5f803c63ed2bb79d393f7450025">
+                <title>override void Triggers.GRCfg3.GR_CfgCoitemDataTable.OnRowDeleting (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a7eaa7b75793f7e6bf145397fde173eca_1a7eaa7b75793f7e6bf145397fde173eca">
+                <title>void Triggers.GRCfg3.GR_CfgCoitemDataTable.InitClass ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_coitem_data_table_a0778c7db722f010760d6291ff06e42ce_1a0778c7db722f010760d6291ff06e42ce">
+                <title>static global::System.Xml.Schema.XmlSchemaComplexType Triggers.GRCfg3.GR_CfgCoitemDataTable.GetTypedTableSchema (global::System.Xml.Schema.XmlSchemaSet xs)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

@@ -1,0 +1,5 @@
+<map id="Triggers.abDatabase" name="Triggers.abDatabase">
+<area shape="rect" id="node2" href="$class_configure_one_flag_1_1_database_factory.html" title="Repository for all database functions and calls on behalf of the assembly " alt="" coords="5,80,189,121"/>
+<area shape="rect" id="node3" href="$class_triggers_1_1_db_connection.html" title="Triggers.DbConnection" alt="" coords="214,87,367,114"/>
+<area shape="rect" id="node4" href="$class_triggers_1_1queue_connection.html" title="Triggers.queueConnection" alt="" coords="391,87,563,114"/>
+</map>

@@ -1,0 +1,256 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row">
+<title>Triggers::GRCfg3::GR_CfgUserIDRow class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfg3::GR_CfgUserIDRow</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfg3::GR_CfgUserIDRow</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_CfgUserIDDataTable tableGR_CfgUserID</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_a480bc4edb0a516c6fa6394ebb6f3c3ce_1a480bc4edb0a516c6fa6394ebb6f3c3ce">GR_CfgUserIDRow</link> (
+global::System.Data.DataRowBuilder rb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_a391f1ccbb1fde81b655efc4c4d668b3e_1a391f1ccbb1fde81b655efc4c4d668b3e">Iscfg_user_nameNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_a7932c1672ee5e80afbe5e0818bc9e4eb_1a7932c1672ee5e80afbe5e0818bc9e4eb">Setcfg_user_nameNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_ae10f04a9b1d05dba6c7a3007957e59e7_1ae10f04a9b1d05dba6c7a3007957e59e7">Iscfg_user_idNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_a2e16884f63b0b10083fbe8c493e0c63b_1a2e16884f63b0b10083fbe8c493e0c63b">Setcfg_user_idNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_a737a378bc7dd2f344abe913cdf7ba0ed_1a737a378bc7dd2f344abe913cdf7ba0ed">IsfirstNameNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_ac09c823e7025016d97c98c964fdebe83_1ac09c823e7025016d97c98c964fdebe83">SetfirstNameNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_a15f59deffe86b069dfad57d6476dcff4_1a15f59deffe86b069dfad57d6476dcff4">IslastNameNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_af493f5699eb9541bf4e5b362ec5f4295_1af493f5699eb9541bf4e5b362ec5f4295">SetlastNameNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_a5218d262d25d657caa2d2633395b516c_1a5218d262d25d657caa2d2633395b516c">IsemailAddressNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_ad09f7780c2b952ae69736d9e9806a882_1ad09f7780c2b952ae69736d9e9806a882">SetemailAddressNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represents strongly named DataRow class. /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_a480bc4edb0a516c6fa6394ebb6f3c3ce_1a480bc4edb0a516c6fa6394ebb6f3c3ce">
+                <title>Triggers.GRCfg3.GR_CfgUserIDRow.GR_CfgUserIDRow (global::System.Data.DataRowBuilder rb)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_a391f1ccbb1fde81b655efc4c4d668b3e_1a391f1ccbb1fde81b655efc4c4d668b3e">
+                <title>bool Triggers.GRCfg3.GR_CfgUserIDRow.Iscfg_user_nameNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_a7932c1672ee5e80afbe5e0818bc9e4eb_1a7932c1672ee5e80afbe5e0818bc9e4eb">
+                <title>void Triggers.GRCfg3.GR_CfgUserIDRow.Setcfg_user_nameNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_ae10f04a9b1d05dba6c7a3007957e59e7_1ae10f04a9b1d05dba6c7a3007957e59e7">
+                <title>bool Triggers.GRCfg3.GR_CfgUserIDRow.Iscfg_user_idNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_a2e16884f63b0b10083fbe8c493e0c63b_1a2e16884f63b0b10083fbe8c493e0c63b">
+                <title>void Triggers.GRCfg3.GR_CfgUserIDRow.Setcfg_user_idNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_a737a378bc7dd2f344abe913cdf7ba0ed_1a737a378bc7dd2f344abe913cdf7ba0ed">
+                <title>bool Triggers.GRCfg3.GR_CfgUserIDRow.IsfirstNameNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_ac09c823e7025016d97c98c964fdebe83_1ac09c823e7025016d97c98c964fdebe83">
+                <title>void Triggers.GRCfg3.GR_CfgUserIDRow.SetfirstNameNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_a15f59deffe86b069dfad57d6476dcff4_1a15f59deffe86b069dfad57d6476dcff4">
+                <title>bool Triggers.GRCfg3.GR_CfgUserIDRow.IslastNameNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_af493f5699eb9541bf4e5b362ec5f4295_1af493f5699eb9541bf4e5b362ec5f4295">
+                <title>void Triggers.GRCfg3.GR_CfgUserIDRow.SetlastNameNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_a5218d262d25d657caa2d2633395b516c_1a5218d262d25d657caa2d2633395b516c">
+                <title>bool Triggers.GRCfg3.GR_CfgUserIDRow.IsemailAddressNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_user_i_d_row_ad09f7780c2b952ae69736d9e9806a882_1ad09f7780c2b952ae69736d9e9806a882">
+                <title>void Triggers.GRCfg3.GR_CfgUserIDRow.SetemailAddressNull ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

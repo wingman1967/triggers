@@ -1,0 +1,438 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table">
+<title>Triggers::GRCfg2::GR_Cfg_ProgressDataTable class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfg2::GR_Cfg_ProgressDataTable</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfg2::GR_Cfg_ProgressDataTable</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnorder_num</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnstep</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnCreatedBy</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnUpdatedBy</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnCreateDate</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnRecordDate</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnRowPointer</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnNoteExistsFlag</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnInWorkflow</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a74676a2dd488a98593bb85827b57bc69_1a74676a2dd488a98593bb85827b57bc69">GR_Cfg_ProgressDataTable</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a17be61ac83857b924d65c0efa59efeef_1a17be61ac83857b924d65c0efa59efeef">AddGR_Cfg_ProgressRow</link> (
+<link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_row">GR_Cfg_ProgressRow</link> row)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_row">GR_Cfg_ProgressRow</link> <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a15bcd929138974aa1f546c6b0a6bf150_1a15bcd929138974aa1f546c6b0a6bf150">AddGR_Cfg_ProgressRow</link> (
+string order_num, string step, string CreatedBy, string UpdatedBy, System.DateTime CreateDate, System.DateTime RecordDate, System.Guid RowPointer, byte NoteExistsFlag, byte InWorkflow)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_row">GR_Cfg_ProgressRow</link> <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a63b2cd8e60c636dec337bcfd2b74513d_1a63b2cd8e60c636dec337bcfd2b74513d">FindByRowPointer</link> (
+System.Guid RowPointer)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Data.DataTable <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_abdf914b227f8fbaf81429ee8f5449ac3_1abdf914b227f8fbaf81429ee8f5449ac3">Clone</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_row">GR_Cfg_ProgressRow</link> <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a577ef8b7649d329ff7aa81b839fee28a_1a577ef8b7649d329ff7aa81b839fee28a">NewGR_Cfg_ProgressRow</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a9db160abf1ba62974bfc74797bd6ace9_1a9db160abf1ba62974bfc74797bd6ace9">RemoveGR_Cfg_ProgressRow</link> (
+<link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_row">GR_Cfg_ProgressRow</link> row)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a628b90f5f0663d7ef417f05df6c5cf10_1a628b90f5f0663d7ef417f05df6c5cf10">GR_Cfg_ProgressDataTable</link> (
+global::System.Data.DataTable table)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a01ca9110dde1cef77b53e9acaf700683_1a01ca9110dde1cef77b53e9acaf700683">InitVars</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_aae69c62c526bb48f488e55d0287841ff_1aae69c62c526bb48f488e55d0287841ff">GR_Cfg_ProgressDataTable</link> (
+global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Data.DataTable <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a2a62af5ccfc473f014825e04a67c6ba5_1a2a62af5ccfc473f014825e04a67c6ba5">CreateInstance</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Data.DataRow <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a4da0776cb9dc39231ba93a360830d97d_1a4da0776cb9dc39231ba93a360830d97d">NewRowFromBuilder</link> (
+global::System.Data.DataRowBuilder builder)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Type <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_ac03465d21464e5a84b73b08988c3276c_1ac03465d21464e5a84b73b08988c3276c">GetRowType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a069f4ea7673acdd248a8c751ee79d6ff_1a069f4ea7673acdd248a8c751ee79d6ff">OnRowChanged</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_aa4c31b3561e6be3c95d354b66147406e_1aa4c31b3561e6be3c95d354b66147406e">OnRowChanging</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_af07eb40ee94bc97f12755788964f7125_1af07eb40ee94bc97f12755788964f7125">OnRowDeleted</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a420390099a661c94643d162c669206c9_1a420390099a661c94643d162c669206c9">OnRowDeleting</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_adc34594b39e55c4b815c9dd84cf6006e_1adc34594b39e55c4b815c9dd84cf6006e">InitClass</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static global::System.Xml.Schema.XmlSchemaComplexType <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_ab1b0b95421155baa1bdad75bf047bd30_1ab1b0b95421155baa1bdad75bf047bd30">GetTypedTableSchema</link> (
+global::System.Xml.Schema.XmlSchemaSet xs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represents the strongly named DataTable class. /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a74676a2dd488a98593bb85827b57bc69_1a74676a2dd488a98593bb85827b57bc69">
+                <title>Triggers.GRCfg2.GR_Cfg_ProgressDataTable.GR_Cfg_ProgressDataTable ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a17be61ac83857b924d65c0efa59efeef_1a17be61ac83857b924d65c0efa59efeef">
+                <title>void Triggers.GRCfg2.GR_Cfg_ProgressDataTable.AddGR_Cfg_ProgressRow (GR_Cfg_ProgressRow row)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a15bcd929138974aa1f546c6b0a6bf150_1a15bcd929138974aa1f546c6b0a6bf150">
+                <title>GR_Cfg_ProgressRow Triggers.GRCfg2.GR_Cfg_ProgressDataTable.AddGR_Cfg_ProgressRow (string order_num, string step, string CreatedBy, string UpdatedBy, System.DateTime CreateDate, System.DateTime RecordDate, System.Guid RowPointer, byte NoteExistsFlag, byte InWorkflow)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a63b2cd8e60c636dec337bcfd2b74513d_1a63b2cd8e60c636dec337bcfd2b74513d">
+                <title>GR_Cfg_ProgressRow Triggers.GRCfg2.GR_Cfg_ProgressDataTable.FindByRowPointer (System.Guid RowPointer)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_abdf914b227f8fbaf81429ee8f5449ac3_1abdf914b227f8fbaf81429ee8f5449ac3">
+                <title>override global::System.Data.DataTable Triggers.GRCfg2.GR_Cfg_ProgressDataTable.Clone ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a577ef8b7649d329ff7aa81b839fee28a_1a577ef8b7649d329ff7aa81b839fee28a">
+                <title>GR_Cfg_ProgressRow Triggers.GRCfg2.GR_Cfg_ProgressDataTable.NewGR_Cfg_ProgressRow ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a9db160abf1ba62974bfc74797bd6ace9_1a9db160abf1ba62974bfc74797bd6ace9">
+                <title>void Triggers.GRCfg2.GR_Cfg_ProgressDataTable.RemoveGR_Cfg_ProgressRow (GR_Cfg_ProgressRow row)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a628b90f5f0663d7ef417f05df6c5cf10_1a628b90f5f0663d7ef417f05df6c5cf10">
+                <title>Triggers.GRCfg2.GR_Cfg_ProgressDataTable.GR_Cfg_ProgressDataTable (global::System.Data.DataTable table)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a01ca9110dde1cef77b53e9acaf700683_1a01ca9110dde1cef77b53e9acaf700683">
+                <title>void Triggers.GRCfg2.GR_Cfg_ProgressDataTable.InitVars ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_aae69c62c526bb48f488e55d0287841ff_1aae69c62c526bb48f488e55d0287841ff">
+                <title>Triggers.GRCfg2.GR_Cfg_ProgressDataTable.GR_Cfg_ProgressDataTable (global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a2a62af5ccfc473f014825e04a67c6ba5_1a2a62af5ccfc473f014825e04a67c6ba5">
+                <title>override global::System.Data.DataTable Triggers.GRCfg2.GR_Cfg_ProgressDataTable.CreateInstance ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a4da0776cb9dc39231ba93a360830d97d_1a4da0776cb9dc39231ba93a360830d97d">
+                <title>override global::System.Data.DataRow Triggers.GRCfg2.GR_Cfg_ProgressDataTable.NewRowFromBuilder (global::System.Data.DataRowBuilder builder)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_ac03465d21464e5a84b73b08988c3276c_1ac03465d21464e5a84b73b08988c3276c">
+                <title>override global::System.Type Triggers.GRCfg2.GR_Cfg_ProgressDataTable.GetRowType ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a069f4ea7673acdd248a8c751ee79d6ff_1a069f4ea7673acdd248a8c751ee79d6ff">
+                <title>override void Triggers.GRCfg2.GR_Cfg_ProgressDataTable.OnRowChanged (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_aa4c31b3561e6be3c95d354b66147406e_1aa4c31b3561e6be3c95d354b66147406e">
+                <title>override void Triggers.GRCfg2.GR_Cfg_ProgressDataTable.OnRowChanging (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_af07eb40ee94bc97f12755788964f7125_1af07eb40ee94bc97f12755788964f7125">
+                <title>override void Triggers.GRCfg2.GR_Cfg_ProgressDataTable.OnRowDeleted (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_a420390099a661c94643d162c669206c9_1a420390099a661c94643d162c669206c9">
+                <title>override void Triggers.GRCfg2.GR_Cfg_ProgressDataTable.OnRowDeleting (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_adc34594b39e55c4b815c9dd84cf6006e_1adc34594b39e55c4b815c9dd84cf6006e">
+                <title>void Triggers.GRCfg2.GR_Cfg_ProgressDataTable.InitClass ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table_ab1b0b95421155baa1bdad75bf047bd30_1ab1b0b95421155baa1bdad75bf047bd30">
+                <title>static global::System.Xml.Schema.XmlSchemaComplexType Triggers.GRCfg2.GR_Cfg_ProgressDataTable.GetTypedTableSchema (global::System.Xml.Schema.XmlSchemaSet xs)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

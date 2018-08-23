@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="namespace_triggers_1_1_properties">
+<title>Triggers::Properties</title>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_properties_1_1_settings">Triggers::Properties::Settings</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+</section>

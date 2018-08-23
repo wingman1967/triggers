@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_item_validator">
+<title>Triggers::ItemValidator class Reference</title>
+<para>Inheritance diagram for Triggers::ItemValidator</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_item_validator__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::ItemValidator</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_item_validator__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_item_validator_a481eb47d1ff45044a1520b26ad28d162_1a481eb47d1ff45044a1520b26ad28d162">CO_Num</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_item_validator_a5196139e40dd30cc772e078683f8f478_1a5196139e40dd30cc772e078683f8f478">Smartpart</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_item_validator_a63fc115a587456b9a5803a6352e4d950_1a63fc115a587456b9a5803a6352e4d950">Item</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_item_validator_a72447a4699037e72ace76b6c56b4e74e_1a72447a4699037e72ace76b6c56b4e74e">Desc</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_item_validator_ad220c17b9c698f88e7d699626eb699f2_1ad220c17b9c698f88e7d699626eb699f2">UnitOfMeasure</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_item_validator_a21b67d9b83f57579e6ff11cfdcde6c46_1a21b67d9b83f57579e6ff11cfdcde6c46">IM_VAR1</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_item_validator_a500578c2bfa8c43060a634783370910b_1a500578c2bfa8c43060a634783370910b">IM_VAR2</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_item_validator_aad3f652a13ebe412f8f28a8bf8f24602_1aad3f652a13ebe412f8f28a8bf8f24602">IM_VAR3</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_item_validator_a3a1310b02d3cce28d27b87c0aecac712_1a3a1310b02d3cce28d27b87c0aecac712">IM_VAR4</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_item_validator_a3d6a3637107a65e7ffabc49869269bf4_1a3d6a3637107a65e7ffabc49869269bf4">IM_VAR5</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_item_validator_a907bdcbadc8fc656b1750ea6ce7d86bb_1a907bdcbadc8fc656b1750ea6ce7d86bb">IM_VAR6</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_item_validator_aa390504e294f0c7aea098e77a3dac13b_1aa390504e294f0c7aea098e77a3dac13b">ValidateCitem</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="class_triggers_1_1_item_validator_a481eb47d1ff45044a1520b26ad28d162_1a481eb47d1ff45044a1520b26ad28d162">
+                <title>void Triggers.ItemValidator.CO_Num ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_item_validator_a5196139e40dd30cc772e078683f8f478_1a5196139e40dd30cc772e078683f8f478">
+                <title>void Triggers.ItemValidator.Smartpart ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_item_validator_a63fc115a587456b9a5803a6352e4d950_1a63fc115a587456b9a5803a6352e4d950">
+                <title>void Triggers.ItemValidator.Item ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_item_validator_a72447a4699037e72ace76b6c56b4e74e_1a72447a4699037e72ace76b6c56b4e74e">
+                <title>void Triggers.ItemValidator.Desc ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_item_validator_ad220c17b9c698f88e7d699626eb699f2_1ad220c17b9c698f88e7d699626eb699f2">
+                <title>void Triggers.ItemValidator.UnitOfMeasure ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_item_validator_a21b67d9b83f57579e6ff11cfdcde6c46_1a21b67d9b83f57579e6ff11cfdcde6c46">
+                <title>void Triggers.ItemValidator.IM_VAR1 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_item_validator_a500578c2bfa8c43060a634783370910b_1a500578c2bfa8c43060a634783370910b">
+                <title>void Triggers.ItemValidator.IM_VAR2 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_item_validator_aad3f652a13ebe412f8f28a8bf8f24602_1aad3f652a13ebe412f8f28a8bf8f24602">
+                <title>void Triggers.ItemValidator.IM_VAR3 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_item_validator_a3a1310b02d3cce28d27b87c0aecac712_1a3a1310b02d3cce28d27b87c0aecac712">
+                <title>void Triggers.ItemValidator.IM_VAR4 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_item_validator_a3d6a3637107a65e7ffabc49869269bf4_1a3d6a3637107a65e7ffabc49869269bf4">
+                <title>void Triggers.ItemValidator.IM_VAR5 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_item_validator_a907bdcbadc8fc656b1750ea6ce7d86bb_1a907bdcbadc8fc656b1750ea6ce7d86bb">
+                <title>void Triggers.ItemValidator.IM_VAR6 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_item_validator_aa390504e294f0c7aea098e77a3dac13b_1aa390504e294f0c7aea098e77a3dac13b">
+                <title>void Triggers.ItemValidator.ValidateCitem ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

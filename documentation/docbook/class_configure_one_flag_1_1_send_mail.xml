@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_configure_one_flag_1_1_send_mail">
+<title>ConfigureOneFlag::SendMail class Reference</title>
+<para>Inheritance diagram for ConfigureOneFlag::SendMail</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_configure_one_flag_1_1_send_mail__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ConfigureOneFlag::SendMail</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_configure_one_flag_1_1_send_mail__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static bool suppressRecips</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_send_mail_a2e1c2d0826f023cb2684a2b9bbd74ad9_1a2e1c2d0826f023cb2684a2b9bbd74ad9">MailMessage</link> (
+string messageBody, string messageSubject)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Send email to specified users for errors encountered during XML mapping </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 9 of file SendMail.cs</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>SendMail.cs</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="class_configure_one_flag_1_1_send_mail_a2e1c2d0826f023cb2684a2b9bbd74ad9_1a2e1c2d0826f023cb2684a2b9bbd74ad9">
+                <title>static void ConfigureOneFlag.SendMail.MailMessage (string messageBody, string messageSubject)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

@@ -1,0 +1,452 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table">
+<title>Triggers::GRCfg3::GR_CfgRouteDataTable class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfg3::GR_CfgRouteDataTable</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfg3::GR_CfgRouteDataTable</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnorder_num</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnorder_line_num</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnbom_id</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnoper_num</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columndescription</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnlabor_hrs</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnsetup_hrs</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnlabor_rate</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnnotes</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnmach_name</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnrun_time</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_af6a5d2d0574228e01f431f6a9879ddf1_1af6a5d2d0574228e01f431f6a9879ddf1">GR_CfgRouteDataTable</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_ac51d52bd2563bae55fa0b44983efeab3_1ac51d52bd2563bae55fa0b44983efeab3">AddGR_CfgRouteRow</link> (
+<link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_row">GR_CfgRouteRow</link> row)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_row">GR_CfgRouteRow</link> <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_af5f169c07da56100180dacf893714516_1af5f169c07da56100180dacf893714516">AddGR_CfgRouteRow</link> (
+string order_num, int order_line_num, string bom_id, int oper_num, string description, decimal labor_hrs, decimal setup_hrs, decimal labor_rate, string notes, string mach_name, decimal run_time)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Data.DataTable <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_a738c4ee8215c30e9ad29c1284f950d10_1a738c4ee8215c30e9ad29c1284f950d10">Clone</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_row">GR_CfgRouteRow</link> <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_a561a3aa006273cfe3b60e241f83dc5e0_1a561a3aa006273cfe3b60e241f83dc5e0">NewGR_CfgRouteRow</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_ace627ea45056dd15f3732cfeb558126b_1ace627ea45056dd15f3732cfeb558126b">RemoveGR_CfgRouteRow</link> (
+<link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_row">GR_CfgRouteRow</link> row)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_a4ec7e2fd4eaeee1d07cc63e023048623_1a4ec7e2fd4eaeee1d07cc63e023048623">GR_CfgRouteDataTable</link> (
+global::System.Data.DataTable table)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_ae32104cc55344a20460712998221710a_1ae32104cc55344a20460712998221710a">InitVars</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_ad18866fbcbbdeadd1972bee52b2a7fa4_1ad18866fbcbbdeadd1972bee52b2a7fa4">GR_CfgRouteDataTable</link> (
+global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Data.DataTable <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_ac6ccdbbbe0deac41c7653f709652ff39_1ac6ccdbbbe0deac41c7653f709652ff39">CreateInstance</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Data.DataRow <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_afa9caeaa6e7023b16aae0f7062f7b303_1afa9caeaa6e7023b16aae0f7062f7b303">NewRowFromBuilder</link> (
+global::System.Data.DataRowBuilder builder)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Type <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_a6c38c4a96fb092968afb0704e07d0b07_1a6c38c4a96fb092968afb0704e07d0b07">GetRowType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_a04a93d2d6599efff2784076564dd57d4_1a04a93d2d6599efff2784076564dd57d4">OnRowChanged</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_a47c85b156f33eb6b39053437872d8bd9_1a47c85b156f33eb6b39053437872d8bd9">OnRowChanging</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_acc30fdf8466554e5b8b36935096b3832_1acc30fdf8466554e5b8b36935096b3832">OnRowDeleted</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_ad36df6503c384ca50a1b3ce58a8e24b5_1ad36df6503c384ca50a1b3ce58a8e24b5">OnRowDeleting</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_aa3f3552a28e94da367a873036393df69_1aa3f3552a28e94da367a873036393df69">InitClass</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static global::System.Xml.Schema.XmlSchemaComplexType <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_a8d6ad01a96b7c3a085a4fc701ebf2035_1a8d6ad01a96b7c3a085a4fc701ebf2035">GetTypedTableSchema</link> (
+global::System.Xml.Schema.XmlSchemaSet xs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represents the strongly named DataTable class. /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_af6a5d2d0574228e01f431f6a9879ddf1_1af6a5d2d0574228e01f431f6a9879ddf1">
+                <title>Triggers.GRCfg3.GR_CfgRouteDataTable.GR_CfgRouteDataTable ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_ac51d52bd2563bae55fa0b44983efeab3_1ac51d52bd2563bae55fa0b44983efeab3">
+                <title>void Triggers.GRCfg3.GR_CfgRouteDataTable.AddGR_CfgRouteRow (GR_CfgRouteRow row)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_af5f169c07da56100180dacf893714516_1af5f169c07da56100180dacf893714516">
+                <title>GR_CfgRouteRow Triggers.GRCfg3.GR_CfgRouteDataTable.AddGR_CfgRouteRow (string order_num, int order_line_num, string bom_id, int oper_num, string description, decimal labor_hrs, decimal setup_hrs, decimal labor_rate, string notes, string mach_name, decimal run_time)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_a738c4ee8215c30e9ad29c1284f950d10_1a738c4ee8215c30e9ad29c1284f950d10">
+                <title>override global::System.Data.DataTable Triggers.GRCfg3.GR_CfgRouteDataTable.Clone ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_a561a3aa006273cfe3b60e241f83dc5e0_1a561a3aa006273cfe3b60e241f83dc5e0">
+                <title>GR_CfgRouteRow Triggers.GRCfg3.GR_CfgRouteDataTable.NewGR_CfgRouteRow ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_ace627ea45056dd15f3732cfeb558126b_1ace627ea45056dd15f3732cfeb558126b">
+                <title>void Triggers.GRCfg3.GR_CfgRouteDataTable.RemoveGR_CfgRouteRow (GR_CfgRouteRow row)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_a4ec7e2fd4eaeee1d07cc63e023048623_1a4ec7e2fd4eaeee1d07cc63e023048623">
+                <title>Triggers.GRCfg3.GR_CfgRouteDataTable.GR_CfgRouteDataTable (global::System.Data.DataTable table)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_ae32104cc55344a20460712998221710a_1ae32104cc55344a20460712998221710a">
+                <title>void Triggers.GRCfg3.GR_CfgRouteDataTable.InitVars ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_ad18866fbcbbdeadd1972bee52b2a7fa4_1ad18866fbcbbdeadd1972bee52b2a7fa4">
+                <title>Triggers.GRCfg3.GR_CfgRouteDataTable.GR_CfgRouteDataTable (global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_ac6ccdbbbe0deac41c7653f709652ff39_1ac6ccdbbbe0deac41c7653f709652ff39">
+                <title>override global::System.Data.DataTable Triggers.GRCfg3.GR_CfgRouteDataTable.CreateInstance ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_afa9caeaa6e7023b16aae0f7062f7b303_1afa9caeaa6e7023b16aae0f7062f7b303">
+                <title>override global::System.Data.DataRow Triggers.GRCfg3.GR_CfgRouteDataTable.NewRowFromBuilder (global::System.Data.DataRowBuilder builder)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_a6c38c4a96fb092968afb0704e07d0b07_1a6c38c4a96fb092968afb0704e07d0b07">
+                <title>override global::System.Type Triggers.GRCfg3.GR_CfgRouteDataTable.GetRowType ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_a04a93d2d6599efff2784076564dd57d4_1a04a93d2d6599efff2784076564dd57d4">
+                <title>override void Triggers.GRCfg3.GR_CfgRouteDataTable.OnRowChanged (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_a47c85b156f33eb6b39053437872d8bd9_1a47c85b156f33eb6b39053437872d8bd9">
+                <title>override void Triggers.GRCfg3.GR_CfgRouteDataTable.OnRowChanging (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_acc30fdf8466554e5b8b36935096b3832_1acc30fdf8466554e5b8b36935096b3832">
+                <title>override void Triggers.GRCfg3.GR_CfgRouteDataTable.OnRowDeleted (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_ad36df6503c384ca50a1b3ce58a8e24b5_1ad36df6503c384ca50a1b3ce58a8e24b5">
+                <title>override void Triggers.GRCfg3.GR_CfgRouteDataTable.OnRowDeleting (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_aa3f3552a28e94da367a873036393df69_1aa3f3552a28e94da367a873036393df69">
+                <title>void Triggers.GRCfg3.GR_CfgRouteDataTable.InitClass ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_route_data_table_a8d6ad01a96b7c3a085a4fc701ebf2035_1a8d6ad01a96b7c3a085a4fc701ebf2035">
+                <title>static global::System.Xml.Schema.XmlSchemaComplexType Triggers.GRCfg3.GR_CfgRouteDataTable.GetTypedTableSchema (global::System.Xml.Schema.XmlSchemaSet xs)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

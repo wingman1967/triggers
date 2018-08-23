@@ -1,0 +1,5 @@
+<map id="Triggers.GRCfgTableAdapters.GR_Cfg_DocumentQueueTableAdapter.Update" name="Triggers.GRCfgTableAdapters.GR_Cfg_DocumentQueueTableAdapter.Update">
+<area shape="rect" id="node2" href="$class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_af0b09f0a34c82c9d583047d1ba92880b.html#af0b09f0a34c82c9d583047d1ba92880b" title="Update rows in top&#45;down order. /summary&gt; " alt="" coords="304,5,577,47"/>
+<area shape="rect" id="node3" href="$class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_a43648b63af4bbd15e3ebce2a23495863.html#a43648b63af4bbd15e3ebce2a23495863" title="Insert rows in top&#45;down order. /summary&gt; " alt="" coords="305,71,576,112"/>
+<area shape="rect" id="node4" href="$class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_a2671aad4055fd97eec57dbb3d875d646.html#a2671aad4055fd97eec57dbb3d875d646" title="Delete rows in bottom&#45;up order. /summary&gt; " alt="" coords="306,136,575,177"/>
+</map>

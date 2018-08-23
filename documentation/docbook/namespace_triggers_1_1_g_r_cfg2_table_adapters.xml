@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="namespace_triggers_1_1_g_r_cfg2_table_adapters">
+<title>Triggers::GRCfg2TableAdapters</title>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg___audit_table_adapter">Triggers::GRCfg2TableAdapters::GR_Cfg_AuditTableAdapter</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the connection and commands used to retrieve and save data.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg___document_queue_table_adapter">Triggers::GRCfg2TableAdapters::GR_Cfg_DocumentQueueTableAdapter</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the connection and commands used to retrieve and save data.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg___progress_table_adapter">Triggers::GRCfg2TableAdapters::GR_Cfg_ProgressTableAdapter</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the connection and commands used to retrieve and save data.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg___queue_table_adapter">Triggers::GRCfg2TableAdapters::GR_Cfg_QueueTableAdapter</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the connection and commands used to retrieve and save data.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_b_o_m_table_adapter">Triggers::GRCfg2TableAdapters::GR_CfgBOMTableAdapter</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the connection and commands used to retrieve and save data.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_coitem_table_adapter">Triggers::GRCfg2TableAdapters::GR_CfgCoitemTableAdapter</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the connection and commands used to retrieve and save data.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_c_o_table_adapter">Triggers::GRCfg2TableAdapters::GR_CfgCOTableAdapter</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the connection and commands used to retrieve and save data.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_item_table_adapter">Triggers::GRCfg2TableAdapters::GR_CfgItemTableAdapter</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the connection and commands used to retrieve and save data.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_parm_val_table_adapter">Triggers::GRCfg2TableAdapters::GR_CfgParmValTableAdapter</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the connection and commands used to retrieve and save data.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_b_o_m_table_adapter">Triggers::GRCfg2TableAdapters::GR_CfgRouteBOMTableAdapter</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the connection and commands used to retrieve and save data.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_g_r___cfg_route_table_adapter">Triggers::GRCfg2TableAdapters::GR_CfgRouteTableAdapter</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the connection and commands used to retrieve and save data.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_table_adapter_manager">Triggers::GRCfg2TableAdapters::TableAdapterManager</link></para>
+<para><emphasis>&lt;summary&gt;
+TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+</section>

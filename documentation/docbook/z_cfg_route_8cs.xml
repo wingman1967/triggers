@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="z_cfg_route_8cs">
+    <title>zCfgRoute.cs File Reference</title>
+<para>Include dependency diagram for zCfgRoute.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="z_cfg_route_8cs__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for zCfgRoute.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="z_cfg_route_8cs__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1z_cfg_route">ConfigureOneFlag::zCfgRoute</link></para>
+<para><emphasis>&lt;summary&gt;
+Accessor class for the cfg route object (C1 routing module data)
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_configure_one_flag">ConfigureOneFlag</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file C:/Users/hinesj/Documents/Visual Studio 2015/Projects/Triggers/Triggers/zCfgRoute.cs</para>
+    </simplesect>
+    <literallayout><computeroutput>
+1 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>;
+2 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Collections.Generic;
+3 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Linq;
+4 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Text;
+5 
+6 <emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>
+7 {
+<link linkend="class_configure_one_flag_1_1z_cfg_route">11 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_configure_one_flag_1_1z_cfg_route">zCfgRoute</link>
+12 &#32;&#32;&#32;&#32;{
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a049c2f3a448179f498e316ccfb630f26_1a049c2f3a448179f498e316ccfb630f26">13 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a049c2f3a448179f498e316ccfb630f26_1a049c2f3a448179f498e316ccfb630f26">order_num</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_route_af64cb8c3ed0782a1ddb3d745e82a806d_1af64cb8c3ed0782a1ddb3d745e82a806d">14 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_af64cb8c3ed0782a1ddb3d745e82a806d_1af64cb8c3ed0782a1ddb3d745e82a806d">order_line_num</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a5fd1c51a62ddd5adcdc5b3cf82e2e47e_1a5fd1c51a62ddd5adcdc5b3cf82e2e47e">15 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a5fd1c51a62ddd5adcdc5b3cf82e2e47e_1a5fd1c51a62ddd5adcdc5b3cf82e2e47e">seq</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a691befe3e6d7354497b3aa2058cb7c1e_1a691befe3e6d7354497b3aa2058cb7c1e">16 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a691befe3e6d7354497b3aa2058cb7c1e_1a691befe3e6d7354497b3aa2058cb7c1e">type</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_route_abcb14104a7686c1e4ee59a26be0572c2_1abcb14104a7686c1e4ee59a26be0572c2">17 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_abcb14104a7686c1e4ee59a26be0572c2_1abcb14104a7686c1e4ee59a26be0572c2">bom_id</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a9c4bdcbb00f6e44fae7318fc43421b74_1a9c4bdcbb00f6e44fae7318fc43421b74">18 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a9c4bdcbb00f6e44fae7318fc43421b74_1a9c4bdcbb00f6e44fae7318fc43421b74">item_num</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a68def445aa1a2410ea07c5e9c884cf0b_1a68def445aa1a2410ea07c5e9c884cf0b">19 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a68def445aa1a2410ea07c5e9c884cf0b_1a68def445aa1a2410ea07c5e9c884cf0b">smartpart_num</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a4c3d59098f2db2e1bd134e6d7198ea7a_1a4c3d59098f2db2e1bd134e6d7198ea7a">20 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a4c3d59098f2db2e1bd134e6d7198ea7a_1a4c3d59098f2db2e1bd134e6d7198ea7a">oper_num</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a6d5eafe850579e817ec53565f8807e44_1a6d5eafe850579e817ec53565f8807e44">21 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a6d5eafe850579e817ec53565f8807e44_1a6d5eafe850579e817ec53565f8807e44">wc</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a9d6c07cbbb6f878a2e4df56f9f21f329_1a9d6c07cbbb6f878a2e4df56f9f21f329">22 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a9d6c07cbbb6f878a2e4df56f9f21f329_1a9d6c07cbbb6f878a2e4df56f9f21f329">description</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a6d8f0bda8559f67c5432ce28ed12d448_1a6d8f0bda8559f67c5432ce28ed12d448">23 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">double</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a6d8f0bda8559f67c5432ce28ed12d448_1a6d8f0bda8559f67c5432ce28ed12d448">labor_hrs</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_route_aa3952f17eda9a84d0e7f7e81576aa52b_1aa3952f17eda9a84d0e7f7e81576aa52b">24 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">double</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_aa3952f17eda9a84d0e7f7e81576aa52b_1aa3952f17eda9a84d0e7f7e81576aa52b">setup_hrs</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a91de036ff12bbdbbd94879dd036618b6_1a91de036ff12bbdbbd94879dd036618b6">25 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">double</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a91de036ff12bbdbbd94879dd036618b6_1a91de036ff12bbdbbd94879dd036618b6">labor_rate</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a726e30a76ffc0fd5c3bdfae8f4958eac_1a726e30a76ffc0fd5c3bdfae8f4958eac">26 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a726e30a76ffc0fd5c3bdfae8f4958eac_1a726e30a76ffc0fd5c3bdfae8f4958eac">notes</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_route_afdb115ad6918373408d8d32c945a7db7_1afdb115ad6918373408d8d32c945a7db7">27 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_afdb115ad6918373408d8d32c945a7db7_1afdb115ad6918373408d8d32c945a7db7">mach_name</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_route_ad3b193e90a3b5b294ddc469f44261eb0_1ad3b193e90a3b5b294ddc469f44261eb0">28 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">double</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_ad3b193e90a3b5b294ddc469f44261eb0_1ad3b193e90a3b5b294ddc469f44261eb0">run_time</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a00e73cfce30e5713a550b10edb341c0b_1a00e73cfce30e5713a550b10edb341c0b">29 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a00e73cfce30e5713a550b10edb341c0b_1a00e73cfce30e5713a550b10edb341c0b">matl_item_num</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a7f8bde3f6f95a539502920cca42239a7_1a7f8bde3f6f95a539502920cca42239a7">30 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a7f8bde3f6f95a539502920cca42239a7_1a7f8bde3f6f95a539502920cca42239a7">matl_smartpart_num</link>;
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a602fde6fa4e202c14f0c0c517d24bf23_1a602fde6fa4e202c14f0c0c517d24bf23">31 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;decimal&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a602fde6fa4e202c14f0c0c517d24bf23_1a602fde6fa4e202c14f0c0c517d24bf23">matl_quantity</link>;
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_ae9c3fdf6364e759ba0ed1cc27f47f712_1ae9c3fdf6364e759ba0ed1cc27f47f712">CO_Num</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_route_ae9c3fdf6364e759ba0ed1cc27f47f712_1ae9c3fdf6364e759ba0ed1cc27f47f712">33 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a049c2f3a448179f498e316ccfb630f26_1a049c2f3a448179f498e316ccfb630f26">order_num</link>;&#32;}
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a049c2f3a448179f498e316ccfb630f26_1a049c2f3a448179f498e316ccfb630f26">order_num</link>&#32;=&#32;value;&#32;}
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a54781d3db34b3dd726298f379ad2e4a8_1a54781d3db34b3dd726298f379ad2e4a8">CO_Line</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a54781d3db34b3dd726298f379ad2e4a8_1a54781d3db34b3dd726298f379ad2e4a8">38 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_af64cb8c3ed0782a1ddb3d745e82a806d_1af64cb8c3ed0782a1ddb3d745e82a806d">order_line_num</link>;&#32;}
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_af64cb8c3ed0782a1ddb3d745e82a806d_1af64cb8c3ed0782a1ddb3d745e82a806d">order_line_num</link>&#32;=&#32;value;&#32;}
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a7c80647d7641434b80e26dd047afd2fa_1a7c80647d7641434b80e26dd047afd2fa">Seq</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a7c80647d7641434b80e26dd047afd2fa_1a7c80647d7641434b80e26dd047afd2fa">43 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a5fd1c51a62ddd5adcdc5b3cf82e2e47e_1a5fd1c51a62ddd5adcdc5b3cf82e2e47e">seq</link>;&#32;}
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a5fd1c51a62ddd5adcdc5b3cf82e2e47e_1a5fd1c51a62ddd5adcdc5b3cf82e2e47e">seq</link>&#32;=&#32;value;&#32;}
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a8ece5324306a544fe8b582268d87b833_1a8ece5324306a544fe8b582268d87b833">Type</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a8ece5324306a544fe8b582268d87b833_1a8ece5324306a544fe8b582268d87b833">48 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a691befe3e6d7354497b3aa2058cb7c1e_1a691befe3e6d7354497b3aa2058cb7c1e">type</link>;&#32;}
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a691befe3e6d7354497b3aa2058cb7c1e_1a691befe3e6d7354497b3aa2058cb7c1e">type</link>&#32;=&#32;value;&#32;}
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a3c2daf30fd79192010b48fead7529260_1a3c2daf30fd79192010b48fead7529260">BOM_ID</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a3c2daf30fd79192010b48fead7529260_1a3c2daf30fd79192010b48fead7529260">53 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_abcb14104a7686c1e4ee59a26be0572c2_1abcb14104a7686c1e4ee59a26be0572c2">bom_id</link>;&#32;}
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_abcb14104a7686c1e4ee59a26be0572c2_1abcb14104a7686c1e4ee59a26be0572c2">bom_id</link>&#32;=&#32;value;&#32;}
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a919158fb160747a63812547eb5a8ac98_1a919158fb160747a63812547eb5a8ac98">ItemNum</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a919158fb160747a63812547eb5a8ac98_1a919158fb160747a63812547eb5a8ac98">58 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a9c4bdcbb00f6e44fae7318fc43421b74_1a9c4bdcbb00f6e44fae7318fc43421b74">item_num</link>;&#32;}
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a9c4bdcbb00f6e44fae7318fc43421b74_1a9c4bdcbb00f6e44fae7318fc43421b74">item_num</link>&#32;=&#32;value;&#32;}
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a638e4ea84f134c096ef60dd3dc485419_1a638e4ea84f134c096ef60dd3dc485419">SmartpartNum</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a638e4ea84f134c096ef60dd3dc485419_1a638e4ea84f134c096ef60dd3dc485419">63 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a68def445aa1a2410ea07c5e9c884cf0b_1a68def445aa1a2410ea07c5e9c884cf0b">smartpart_num</link>;&#32;}
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a68def445aa1a2410ea07c5e9c884cf0b_1a68def445aa1a2410ea07c5e9c884cf0b">smartpart_num</link>&#32;=&#32;value;&#32;}
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">int</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a07e81ad0118190046e378b17a28c6260_1a07e81ad0118190046e378b17a28c6260">OPERATION</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a07e81ad0118190046e378b17a28c6260_1a07e81ad0118190046e378b17a28c6260">68 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a4c3d59098f2db2e1bd134e6d7198ea7a_1a4c3d59098f2db2e1bd134e6d7198ea7a">oper_num</link>;&#32;}
+70 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a4c3d59098f2db2e1bd134e6d7198ea7a_1a4c3d59098f2db2e1bd134e6d7198ea7a">oper_num</link>&#32;=&#32;value;&#32;}
+71 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+72 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_ad81a19c5cd006c339a2d7211e9967ca1_1ad81a19c5cd006c339a2d7211e9967ca1">WC</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_route_ad81a19c5cd006c339a2d7211e9967ca1_1ad81a19c5cd006c339a2d7211e9967ca1">73 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+74 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a6d5eafe850579e817ec53565f8807e44_1a6d5eafe850579e817ec53565f8807e44">wc</link>;&#32;}
+75 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a6d5eafe850579e817ec53565f8807e44_1a6d5eafe850579e817ec53565f8807e44">wc</link>&#32;=&#32;value;&#32;}
+76 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+77 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_acaf1d66ef6cdd2416b92485a0bea24f6_1acaf1d66ef6cdd2416b92485a0bea24f6">Description</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_route_acaf1d66ef6cdd2416b92485a0bea24f6_1acaf1d66ef6cdd2416b92485a0bea24f6">78 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+79 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a9d6c07cbbb6f878a2e4df56f9f21f329_1a9d6c07cbbb6f878a2e4df56f9f21f329">description</link>;&#32;}
+80 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a9d6c07cbbb6f878a2e4df56f9f21f329_1a9d6c07cbbb6f878a2e4df56f9f21f329">description</link>&#32;=&#32;value;&#32;}
+81 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+82 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">double</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a8e1d228732999292414e1b86e536009e_1a8e1d228732999292414e1b86e536009e">Labor_Hours</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a8e1d228732999292414e1b86e536009e_1a8e1d228732999292414e1b86e536009e">83 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+84 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a6d8f0bda8559f67c5432ce28ed12d448_1a6d8f0bda8559f67c5432ce28ed12d448">labor_hrs</link>;&#32;}
+85 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a6d8f0bda8559f67c5432ce28ed12d448_1a6d8f0bda8559f67c5432ce28ed12d448">labor_hrs</link>&#32;=&#32;value;&#32;}
+86 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+87 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">double</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a5d9538f3a78ae76f457ba653d6372ac2_1a5d9538f3a78ae76f457ba653d6372ac2">Setup_Hours</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a5d9538f3a78ae76f457ba653d6372ac2_1a5d9538f3a78ae76f457ba653d6372ac2">88 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+89 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_aa3952f17eda9a84d0e7f7e81576aa52b_1aa3952f17eda9a84d0e7f7e81576aa52b">setup_hrs</link>;&#32;}
+90 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_aa3952f17eda9a84d0e7f7e81576aa52b_1aa3952f17eda9a84d0e7f7e81576aa52b">setup_hrs</link>&#32;=&#32;value;&#32;}
+91 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+92 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">double</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_abcca108e4fccf75e554b9a6322aa9050_1abcca108e4fccf75e554b9a6322aa9050">Labor_Rate</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_route_abcca108e4fccf75e554b9a6322aa9050_1abcca108e4fccf75e554b9a6322aa9050">93 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+94 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a91de036ff12bbdbbd94879dd036618b6_1a91de036ff12bbdbbd94879dd036618b6">labor_rate</link>;&#32;}
+95 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a91de036ff12bbdbbd94879dd036618b6_1a91de036ff12bbdbbd94879dd036618b6">labor_rate</link>&#32;=&#32;value;&#32;}
+96 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+97 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_aae8820953aea4478d8decb42c66d52a1_1aae8820953aea4478d8decb42c66d52a1">Notes</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_route_aae8820953aea4478d8decb42c66d52a1_1aae8820953aea4478d8decb42c66d52a1">98 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+99 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a726e30a76ffc0fd5c3bdfae8f4958eac_1a726e30a76ffc0fd5c3bdfae8f4958eac">notes</link>;&#32;}
+100 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a726e30a76ffc0fd5c3bdfae8f4958eac_1a726e30a76ffc0fd5c3bdfae8f4958eac">notes</link>&#32;=&#32;value;&#32;}
+101 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+102 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_aa134c7ce8f8f85a8d3be1499cd0f26d9_1aa134c7ce8f8f85a8d3be1499cd0f26d9">Machine_Name</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_route_aa134c7ce8f8f85a8d3be1499cd0f26d9_1aa134c7ce8f8f85a8d3be1499cd0f26d9">103 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+104 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_afdb115ad6918373408d8d32c945a7db7_1afdb115ad6918373408d8d32c945a7db7">mach_name</link>;&#32;}
+105 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_afdb115ad6918373408d8d32c945a7db7_1afdb115ad6918373408d8d32c945a7db7">mach_name</link>&#32;=&#32;value;&#32;}
+106 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+107 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">double</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a0a71dc2c61beb14d3968cd325e57ae4d_1a0a71dc2c61beb14d3968cd325e57ae4d">Run_Time</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a0a71dc2c61beb14d3968cd325e57ae4d_1a0a71dc2c61beb14d3968cd325e57ae4d">108 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+109 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_ad3b193e90a3b5b294ddc469f44261eb0_1ad3b193e90a3b5b294ddc469f44261eb0">run_time</link>;&#32;}
+110 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_ad3b193e90a3b5b294ddc469f44261eb0_1ad3b193e90a3b5b294ddc469f44261eb0">run_time</link>&#32;=&#32;value;&#32;}
+111 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+112 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_aab90ed4ce223b93a3cd52b7a2375bc6c_1aab90ed4ce223b93a3cd52b7a2375bc6c">MatlItemNum</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_route_aab90ed4ce223b93a3cd52b7a2375bc6c_1aab90ed4ce223b93a3cd52b7a2375bc6c">113 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+114 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a00e73cfce30e5713a550b10edb341c0b_1a00e73cfce30e5713a550b10edb341c0b">matl_item_num</link>;&#32;}
+115 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a00e73cfce30e5713a550b10edb341c0b_1a00e73cfce30e5713a550b10edb341c0b">matl_item_num</link>&#32;=&#32;value;&#32;}
+116 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+117 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a43e1de9bfc9b4b905e97d312836d8101_1a43e1de9bfc9b4b905e97d312836d8101">MatlSmartpartNum</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_route_a43e1de9bfc9b4b905e97d312836d8101_1a43e1de9bfc9b4b905e97d312836d8101">118 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+119 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a7f8bde3f6f95a539502920cca42239a7_1a7f8bde3f6f95a539502920cca42239a7">matl_smartpart_num</link>;&#32;}
+120 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a7f8bde3f6f95a539502920cca42239a7_1a7f8bde3f6f95a539502920cca42239a7">matl_smartpart_num</link>&#32;=&#32;value;&#32;}
+121 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+122 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;decimal&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_aba9857e09e2a6d762fac401d3d35f845_1aba9857e09e2a6d762fac401d3d35f845">MatlQty</link>
+<link linkend="class_configure_one_flag_1_1z_cfg_route_aba9857e09e2a6d762fac401d3d35f845_1aba9857e09e2a6d762fac401d3d35f845">123 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+124 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">get</emphasis>&#32;{&#32;<emphasis class="keywordflow">return</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a602fde6fa4e202c14f0c0c517d24bf23_1a602fde6fa4e202c14f0c0c517d24bf23">matl_quantity</link>;&#32;}
+125 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">set</emphasis>&#32;{&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_a602fde6fa4e202c14f0c0c517d24bf23_1a602fde6fa4e202c14f0c0c517d24bf23">matl_quantity</link>&#32;=&#32;value;&#32;}
+126 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1z_cfg_route_aae5de3a2a20826f77e0cbb080706c654_1aae5de3a2a20826f77e0cbb080706c654">127 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route_aae5de3a2a20826f77e0cbb080706c654_1aae5de3a2a20826f77e0cbb080706c654">ClearRoute</link>(ref&#32;<link linkend="class_configure_one_flag_1_1z_cfg_route">zCfgRoute</link>&#32;route)
+128 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+129 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.BOM_ID&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+130 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.CO_Line&#32;=&#32;1;
+131 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.CO_Num&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+132 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.Description&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+133 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.ItemNum&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+134 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.Labor_Hours&#32;=&#32;0;
+135 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.Labor_Rate&#32;=&#32;0;
+136 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.Machine_Name&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+137 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.MatlItemNum&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+138 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.MatlQty&#32;=&#32;0;
+139 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.MatlSmartpartNum&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+140 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.Notes&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+141 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.OPERATION&#32;=&#32;0;
+142 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.Run_Time&#32;=&#32;0;
+143 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.Seq&#32;=&#32;0;
+144 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.Setup_Hours&#32;=&#32;0;
+145 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.SmartpartNum&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+146 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.Type&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+147 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;route.WC&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+148 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+149 &#32;&#32;&#32;&#32;}
+150 }
+    </computeroutput></literallayout>
+</section>

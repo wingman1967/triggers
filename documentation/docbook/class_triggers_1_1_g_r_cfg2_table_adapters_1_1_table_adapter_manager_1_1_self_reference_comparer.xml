@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer">
+<title>Triggers::GRCfg2TableAdapters::TableAdapterManager::SelfReferenceComparer class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfg2TableAdapters::TableAdapterManager::SelfReferenceComparer</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfg2TableAdapters::TableAdapterManager::SelfReferenceComparer</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataRelation _relation</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int _childFirst</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer_a89464e78589bd18f6f18f758eebb11f4_1a89464e78589bd18f6f18f758eebb11f4">SelfReferenceComparer</link> (
+global::System.Data.DataRelation relation, bool childFirst)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataRow <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer_aa8a48c8d412bd46097a67d3e78bb71cd_1aa8a48c8d412bd46097a67d3e78bb71cd">GetRoot</link> (
+global::System.Data.DataRow row, out int distance)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>int <link linkend="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer_ae94d82cfda47a2fc9bff81387337bb7a_1ae94d82cfda47a2fc9bff81387337bb7a">Compare</link> (
+global::System.Data.DataRow row1, global::System.Data.DataRow row2)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Used to sort self-referenced table&apos;s rows /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer_a89464e78589bd18f6f18f758eebb11f4_1a89464e78589bd18f6f18f758eebb11f4">
+                <title>Triggers.GRCfg2TableAdapters.TableAdapterManager.SelfReferenceComparer.SelfReferenceComparer (global::System.Data.DataRelation relation, bool childFirst)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer_aa8a48c8d412bd46097a67d3e78bb71cd_1aa8a48c8d412bd46097a67d3e78bb71cd">
+                <title>global::System.Data.DataRow Triggers.GRCfg2TableAdapters.TableAdapterManager.SelfReferenceComparer.GetRoot (global::System.Data.DataRow row, out int distance)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer_ae94d82cfda47a2fc9bff81387337bb7a_1ae94d82cfda47a2fc9bff81387337bb7a">
+                <title>int Triggers.GRCfg2TableAdapters.TableAdapterManager.SelfReferenceComparer.Compare (global::System.Data.DataRow row1, global::System.Data.DataRow row2)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

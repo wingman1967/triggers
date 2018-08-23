@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter">
+<title>Triggers::GRCfg3TableAdapters::GR_CfgCOTableAdapter class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfg3TableAdapters::GR_CfgCOTableAdapter</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfg3TableAdapters::GR_CfgCOTableAdapter</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.SqlClient.SqlDataAdapter _adapter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.SqlClient.SqlConnection _connection</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.SqlClient.SqlTransaction _transaction</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.SqlClient.SqlCommand [] _commandCollection</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool _clearBeforeFill</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_a0e3c6f5d383e95bbf3b7ccca50c5d697_1a0e3c6f5d383e95bbf3b7ccca50c5d697">GR_CfgCOTableAdapter</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_ab46b288292d90189d08b5d5a9766eb10_1ab46b288292d90189d08b5d5a9766eb10">Fill</link> (
+<link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_c_o_data_table">GRCfg3.GR_CfgCODataTable</link> dataTable)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_c_o_data_table">GRCfg3.GR_CfgCODataTable</link> <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_a807d38ccea0b5154a5617fb4146828cf_1a807d38ccea0b5154a5617fb4146828cf">GetData</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_a0f6e274b515bd860a3785e46435780e8_1a0f6e274b515bd860a3785e46435780e8">Update</link> (
+<link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg_c_o_data_table">GRCfg3.GR_CfgCODataTable</link> dataTable)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_aae0a8fb5808c11280fa981ccaae70afe_1aae0a8fb5808c11280fa981ccaae70afe">Update</link> (
+<link linkend="class_triggers_1_1_g_r_cfg3">GRCfg3</link> dataSet)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_a05e182e3727a1f0ce726f11965b6b98d_1a05e182e3727a1f0ce726f11965b6b98d">Update</link> (
+global::System.Data.DataRow dataRow)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_af411f8effc42993f8f396cb87aa38acf_1af411f8effc42993f8f396cb87aa38acf">Update</link> (
+global::System.Data.DataRow [] dataRows)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_aa217e7394161095dfcb281cd4fb3af99_1aa217e7394161095dfcb281cd4fb3af99">Insert</link> (
+string id, string order_num, string order_ref_num, string cust_name, string cust_ref_num, string account_num, string erp_reference_num, string project, string payment_terms, string ship_via, string shipping_terms, string bill_to_contact_name, string bill_address_line_1, string bill_address_line_2, string bill_address_line_3, string bill_to_city, string bill_to_state, string bill_to_country, string bill_to_postal_code, string bill_to_phone_number, string bill_to_fax_number, string bill_to_email_address, string bill_to_ref_num, string ship_to_contact_name, string ship_address_line_1, string ship_address_line_2, string ship_address_line_3, string ship_to_city, string ship_to_state, string ship_to_country, string ship_to_postal_code, string ship_to_phone_number, string ship_to_fax_number, string ship_to_email_address, string ship_to_ref_num, global::System.Nullable&lt; int &gt; priority_level, string stat, string co_num, global::System.Nullable&lt; global::System.DateTime &gt; due_date, string CustPO, string ship_address_line_4, string freight_terms, string freight_acct, string quote_nbr, string web_user_name, global::System.Nullable&lt; global::System.DateTime &gt; web_order_date, string dropship_address1, string dropship_address2, string dropship_address3, string dropship_address4, string dropship_city, string dropship_state, string dropship_zip, string dropship_name, string dropship_contact, string dropship_country, string dropship_phone, string dropship_email, global::System.Nullable&lt; global::System.DateTime &gt; request_date, string destination_country, string ORDER_HEADER_NOTES, string end_user, string engineer)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_a901c522c60376df9db073b0ed9d6d951_1a901c522c60376df9db073b0ed9d6d951">InitAdapter</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_ad4bb5961c93532d12480dae5c0d799e7_1ad4bb5961c93532d12480dae5c0d799e7">InitConnection</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_aaa429f80e3e442d6757a46c7e1429fb0_1aaa429f80e3e442d6757a46c7e1429fb0">InitCommandCollection</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represents the connection and commands used to retrieve and save data. /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_a0e3c6f5d383e95bbf3b7ccca50c5d697_1a0e3c6f5d383e95bbf3b7ccca50c5d697">
+                <title>Triggers.GRCfg3TableAdapters.GR_CfgCOTableAdapter.GR_CfgCOTableAdapter ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_ab46b288292d90189d08b5d5a9766eb10_1ab46b288292d90189d08b5d5a9766eb10">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgCOTableAdapter.Fill (GRCfg3.GR_CfgCODataTable dataTable)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_a807d38ccea0b5154a5617fb4146828cf_1a807d38ccea0b5154a5617fb4146828cf">
+                <title>virtual GRCfg3.GR_CfgCODataTable Triggers.GRCfg3TableAdapters.GR_CfgCOTableAdapter.GetData ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_a0f6e274b515bd860a3785e46435780e8_1a0f6e274b515bd860a3785e46435780e8">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgCOTableAdapter.Update (GRCfg3.GR_CfgCODataTable dataTable)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_aae0a8fb5808c11280fa981ccaae70afe_1aae0a8fb5808c11280fa981ccaae70afe">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgCOTableAdapter.Update (GRCfg3 dataSet)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_a05e182e3727a1f0ce726f11965b6b98d_1a05e182e3727a1f0ce726f11965b6b98d">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgCOTableAdapter.Update (global::System.Data.DataRow dataRow)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_af411f8effc42993f8f396cb87aa38acf_1af411f8effc42993f8f396cb87aa38acf">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgCOTableAdapter.Update (global::System.Data.DataRow[] dataRows)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_aa217e7394161095dfcb281cd4fb3af99_1aa217e7394161095dfcb281cd4fb3af99">
+                <title>virtual int Triggers.GRCfg3TableAdapters.GR_CfgCOTableAdapter.Insert (string id, string order_num, string order_ref_num, string cust_name, string cust_ref_num, string account_num, string erp_reference_num, string project, string payment_terms, string ship_via, string shipping_terms, string bill_to_contact_name, string bill_address_line_1, string bill_address_line_2, string bill_address_line_3, string bill_to_city, string bill_to_state, string bill_to_country, string bill_to_postal_code, string bill_to_phone_number, string bill_to_fax_number, string bill_to_email_address, string bill_to_ref_num, string ship_to_contact_name, string ship_address_line_1, string ship_address_line_2, string ship_address_line_3, string ship_to_city, string ship_to_state, string ship_to_country, string ship_to_postal_code, string ship_to_phone_number, string ship_to_fax_number, string ship_to_email_address, string ship_to_ref_num, global::System.Nullable&lt; int &gt; priority_level, string stat, string co_num, global::System.Nullable&lt; global::System.DateTime &gt; due_date, string CustPO, string ship_address_line_4, string freight_terms, string freight_acct, string quote_nbr, string web_user_name, global::System.Nullable&lt; global::System.DateTime &gt; web_order_date, string dropship_address1, string dropship_address2, string dropship_address3, string dropship_address4, string dropship_city, string dropship_state, string dropship_zip, string dropship_name, string dropship_contact, string dropship_country, string dropship_phone, string dropship_email, global::System.Nullable&lt; global::System.DateTime &gt; request_date, string destination_country, string ORDER_HEADER_NOTES, string end_user, string engineer)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_a901c522c60376df9db073b0ed9d6d951_1a901c522c60376df9db073b0ed9d6d951">
+                <title>void Triggers.GRCfg3TableAdapters.GR_CfgCOTableAdapter.InitAdapter ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_ad4bb5961c93532d12480dae5c0d799e7_1ad4bb5961c93532d12480dae5c0d799e7">
+                <title>void Triggers.GRCfg3TableAdapters.GR_CfgCOTableAdapter.InitConnection ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_table_adapters_1_1_g_r___cfg_c_o_table_adapter_aaa429f80e3e442d6757a46c7e1429fb0_1aaa429f80e3e442d6757a46c7e1429fb0">
+                <title>void Triggers.GRCfg3TableAdapters.GR_CfgCOTableAdapter.InitCommandCollection ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

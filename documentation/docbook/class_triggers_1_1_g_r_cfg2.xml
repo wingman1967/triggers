@@ -1,0 +1,975 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg2">
+<title>Triggers::GRCfg2 class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfg2</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg2__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfg2</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg2__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___audit_data_table">Triggers::GRCfg2::GR_Cfg_AuditDataTable</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the strongly named DataTable class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___audit_row">Triggers::GRCfg2::GR_Cfg_AuditRow</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents strongly named DataRow class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___audit_row_change_event">Triggers::GRCfg2::GR_Cfg_AuditRowChangeEvent</link></para>
+<para><emphasis>&lt;summary&gt;
+Row event argument class
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___document_queue_data_table">Triggers::GRCfg2::GR_Cfg_DocumentQueueDataTable</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the strongly named DataTable class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___document_queue_row">Triggers::GRCfg2::GR_Cfg_DocumentQueueRow</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents strongly named DataRow class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___document_queue_row_change_event">Triggers::GRCfg2::GR_Cfg_DocumentQueueRowChangeEvent</link></para>
+<para><emphasis>&lt;summary&gt;
+Row event argument class
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_data_table">Triggers::GRCfg2::GR_Cfg_ProgressDataTable</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the strongly named DataTable class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_row">Triggers::GRCfg2::GR_Cfg_ProgressRow</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents strongly named DataRow class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_row_change_event">Triggers::GRCfg2::GR_Cfg_ProgressRowChangeEvent</link></para>
+<para><emphasis>&lt;summary&gt;
+Row event argument class
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_data_table">Triggers::GRCfg2::GR_Cfg_QueueDataTable</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the strongly named DataTable class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_row">Triggers::GRCfg2::GR_Cfg_QueueRow</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents strongly named DataRow class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_row_change_event">Triggers::GRCfg2::GR_Cfg_QueueRowChangeEvent</link></para>
+<para><emphasis>&lt;summary&gt;
+Row event argument class
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_b_o_m_data_table">Triggers::GRCfg2::GR_CfgBOMDataTable</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the strongly named DataTable class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_b_o_m_row">Triggers::GRCfg2::GR_CfgBOMRow</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents strongly named DataRow class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_b_o_m_row_change_event">Triggers::GRCfg2::GR_CfgBOMRowChangeEvent</link></para>
+<para><emphasis>&lt;summary&gt;
+Row event argument class
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_c_o_data_table">Triggers::GRCfg2::GR_CfgCODataTable</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the strongly named DataTable class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_coitem_data_table">Triggers::GRCfg2::GR_CfgCoitemDataTable</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the strongly named DataTable class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_coitem_row">Triggers::GRCfg2::GR_CfgCoitemRow</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents strongly named DataRow class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_coitem_row_change_event">Triggers::GRCfg2::GR_CfgCoitemRowChangeEvent</link></para>
+<para><emphasis>&lt;summary&gt;
+Row event argument class
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_c_o_row">Triggers::GRCfg2::GR_CfgCORow</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents strongly named DataRow class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_c_o_row_change_event">Triggers::GRCfg2::GR_CfgCORowChangeEvent</link></para>
+<para><emphasis>&lt;summary&gt;
+Row event argument class
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_item_data_table">Triggers::GRCfg2::GR_CfgItemDataTable</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the strongly named DataTable class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_item_row">Triggers::GRCfg2::GR_CfgItemRow</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents strongly named DataRow class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_item_row_change_event">Triggers::GRCfg2::GR_CfgItemRowChangeEvent</link></para>
+<para><emphasis>&lt;summary&gt;
+Row event argument class
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table">Triggers::GRCfg2::GR_CfgParmValDataTable</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the strongly named DataTable class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_row">Triggers::GRCfg2::GR_CfgParmValRow</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents strongly named DataRow class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_row_change_event">Triggers::GRCfg2::GR_CfgParmValRowChangeEvent</link></para>
+<para><emphasis>&lt;summary&gt;
+Row event argument class
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_route_b_o_m_data_table">Triggers::GRCfg2::GR_CfgRouteBOMDataTable</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the strongly named DataTable class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_route_b_o_m_row">Triggers::GRCfg2::GR_CfgRouteBOMRow</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents strongly named DataRow class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_route_b_o_m_row_change_event">Triggers::GRCfg2::GR_CfgRouteBOMRowChangeEvent</link></para>
+<para><emphasis>&lt;summary&gt;
+Row event argument class
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_route_data_table">Triggers::GRCfg2::GR_CfgRouteDataTable</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents the strongly named DataTable class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_route_row">Triggers::GRCfg2::GR_CfgRouteRow</link></para>
+<para><emphasis>&lt;summary&gt;
+Represents strongly named DataRow class.
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_route_row_change_event">Triggers::GRCfg2::GR_CfgRouteRowChangeEvent</link></para>
+<para><emphasis>&lt;summary&gt;
+Row event argument class
+ /summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_Cfg_AuditDataTable tableGR_Cfg_Audit</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_Cfg_DocumentQueueDataTable tableGR_Cfg_DocumentQueue</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_Cfg_ProgressDataTable tableGR_Cfg_Progress</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_Cfg_QueueDataTable tableGR_Cfg_Queue</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_CfgBOMDataTable tableGR_CfgBOM</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_CfgCODataTable tableGR_CfgCO</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_CfgCoitemDataTable tableGR_CfgCoitem</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_CfgItemDataTable tableGR_CfgItem</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_CfgParmValDataTable tableGR_CfgParmVal</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_CfgRouteDataTable tableGR_CfgRoute</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_CfgRouteBOMDataTable tableGR_CfgRouteBOM</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.SchemaSerializationMode _schemaSerializationMode</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg2_a728d77c289607beae2421086ae48f861_1a728d77c289607beae2421086ae48f861">GRCfg2</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Data.DataSet <link linkend="class_triggers_1_1_g_r_cfg2_ad1880882457ddd7cf45e392755785dfb_1ad1880882457ddd7cf45e392755785dfb">Clone</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>delegate void <link linkend="class_triggers_1_1_g_r_cfg2_a2a4cd279dff04b95b9d591cfbe8b657c_1a2a4cd279dff04b95b9d591cfbe8b657c">GR_Cfg_AuditRowChangeEventHandler</link> (
+object sender, <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___audit_row_change_event">GR_Cfg_AuditRowChangeEvent</link> e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>delegate void <link linkend="class_triggers_1_1_g_r_cfg2_ad40086b858f20dba29f676b1bdf0bbf9_1ad40086b858f20dba29f676b1bdf0bbf9">GR_Cfg_DocumentQueueRowChangeEventHandler</link> (
+object sender, <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___document_queue_row_change_event">GR_Cfg_DocumentQueueRowChangeEvent</link> e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>delegate void <link linkend="class_triggers_1_1_g_r_cfg2_a84bf9ad589e8d46be3ee8339fc068fcd_1a84bf9ad589e8d46be3ee8339fc068fcd">GR_Cfg_ProgressRowChangeEventHandler</link> (
+object sender, <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___progress_row_change_event">GR_Cfg_ProgressRowChangeEvent</link> e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>delegate void <link linkend="class_triggers_1_1_g_r_cfg2_a09d5c2b61db8d2407d0438b216c2c811_1a09d5c2b61db8d2407d0438b216c2c811">GR_Cfg_QueueRowChangeEventHandler</link> (
+object sender, <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg___queue_row_change_event">GR_Cfg_QueueRowChangeEvent</link> e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>delegate void <link linkend="class_triggers_1_1_g_r_cfg2_ad9e947ecc6d215c4d4cc11312449f817_1ad9e947ecc6d215c4d4cc11312449f817">GR_CfgBOMRowChangeEventHandler</link> (
+object sender, <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_b_o_m_row_change_event">GR_CfgBOMRowChangeEvent</link> e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>delegate void <link linkend="class_triggers_1_1_g_r_cfg2_a307dd24727a296b3ee492922062abb2f_1a307dd24727a296b3ee492922062abb2f">GR_CfgCORowChangeEventHandler</link> (
+object sender, <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_c_o_row_change_event">GR_CfgCORowChangeEvent</link> e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>delegate void <link linkend="class_triggers_1_1_g_r_cfg2_a0c3d22dc3c45625c448826df9c58350c_1a0c3d22dc3c45625c448826df9c58350c">GR_CfgCoitemRowChangeEventHandler</link> (
+object sender, <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_coitem_row_change_event">GR_CfgCoitemRowChangeEvent</link> e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>delegate void <link linkend="class_triggers_1_1_g_r_cfg2_a7aeb0d57c291967b0047295fc979a66a_1a7aeb0d57c291967b0047295fc979a66a">GR_CfgItemRowChangeEventHandler</link> (
+object sender, <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_item_row_change_event">GR_CfgItemRowChangeEvent</link> e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>delegate void <link linkend="class_triggers_1_1_g_r_cfg2_aea30990036fc834f43e6fb638b163995_1aea30990036fc834f43e6fb638b163995">GR_CfgParmValRowChangeEventHandler</link> (
+object sender, <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_row_change_event">GR_CfgParmValRowChangeEvent</link> e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>delegate void <link linkend="class_triggers_1_1_g_r_cfg2_afcf64e38c8aaea644aaf6829c8660525_1afcf64e38c8aaea644aaf6829c8660525">GR_CfgRouteRowChangeEventHandler</link> (
+object sender, <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_route_row_change_event">GR_CfgRouteRowChangeEvent</link> e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>delegate void <link linkend="class_triggers_1_1_g_r_cfg2_aa95d33e6844b0c0375b798e34d8a2ff5_1aa95d33e6844b0c0375b798e34d8a2ff5">GR_CfgRouteBOMRowChangeEventHandler</link> (
+object sender, <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_route_b_o_m_row_change_event">GR_CfgRouteBOMRowChangeEvent</link> e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg2_ac9dd77a0996c59b0ac855ae23f6a0ccc_1ac9dd77a0996c59b0ac855ae23f6a0ccc">GRCfg2</link> (
+global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg2_a635cb0702a0a26530d8b05b8428d623f_1a635cb0702a0a26530d8b05b8428d623f">InitializeDerivedDataSet</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override bool <link linkend="class_triggers_1_1_g_r_cfg2_a7685e1d569236b627d72ab199e5eef88_1a7685e1d569236b627d72ab199e5eef88">ShouldSerializeTables</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override bool <link linkend="class_triggers_1_1_g_r_cfg2_a1b246d9841531f94a235d297ccb258c6_1a1b246d9841531f94a235d297ccb258c6">ShouldSerializeRelations</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg2_ac3ccf9509043ed26fc2ca6e81f94a61a_1ac3ccf9509043ed26fc2ca6e81f94a61a">ReadXmlSerializable</link> (
+global::System.Xml.XmlReader reader)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Xml.Schema.XmlSchema <link linkend="class_triggers_1_1_g_r_cfg2_a5eeb57b98ef1676610c01f553ddf012d_1a5eeb57b98ef1676610c01f553ddf012d">GetSchemaSerializable</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg2_abd1b979d55d372a946c4f930c90f24a6_1abd1b979d55d372a946c4f930c90f24a6">InitVars</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg2_ab5f830143e52cc465a59db490051c782_1ab5f830143e52cc465a59db490051c782">InitVars</link> (
+bool initTable)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg2_a56646b584f31ed7daef9d46e8584384f_1a56646b584f31ed7daef9d46e8584384f">InitClass</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg2_a2df81a187669dd076890e6e24b7c6e42_1a2df81a187669dd076890e6e24b7c6e42">ShouldSerializeGR_Cfg_Audit</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg2_a19cba08533071388eeb24576c40662c7_1a19cba08533071388eeb24576c40662c7">ShouldSerializeGR_Cfg_DocumentQueue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg2_acb4c44dd41d5a968e70ca481b7a0982c_1acb4c44dd41d5a968e70ca481b7a0982c">ShouldSerializeGR_Cfg_Progress</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg2_a4cb02d4955b31499987a92385534a4f0_1a4cb02d4955b31499987a92385534a4f0">ShouldSerializeGR_Cfg_Queue</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg2_a737cc6f95a4521fc63d9f3a041e1623e_1a737cc6f95a4521fc63d9f3a041e1623e">ShouldSerializeGR_CfgBOM</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg2_a687a6e83c6d5f8c15851e0d6f527f69b_1a687a6e83c6d5f8c15851e0d6f527f69b">ShouldSerializeGR_CfgCO</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg2_afc9500d5588d50314aaa80d296ab3e21_1afc9500d5588d50314aaa80d296ab3e21">ShouldSerializeGR_CfgCoitem</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg2_a5975f52ae7d5bb324f13d7c9c099304e_1a5975f52ae7d5bb324f13d7c9c099304e">ShouldSerializeGR_CfgItem</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg2_a32d2ba4347b5b8f7bb5e43d1888c8842_1a32d2ba4347b5b8f7bb5e43d1888c8842">ShouldSerializeGR_CfgParmVal</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg2_a72612a2e4fc30e719e9d07ae36d4f5d6_1a72612a2e4fc30e719e9d07ae36d4f5d6">ShouldSerializeGR_CfgRoute</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg2_a75da7a2a87caed37a3cba93cd9d2aae5_1a75da7a2a87caed37a3cba93cd9d2aae5">ShouldSerializeGR_CfgRouteBOM</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg2_a74818fe040f96142ba55bb0daba29e08_1a74818fe040f96142ba55bb0daba29e08">SchemaChanged</link> (
+object sender, global::System.ComponentModel.CollectionChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static global::System.Xml.Schema.XmlSchemaComplexType <link linkend="class_triggers_1_1_g_r_cfg2_a68fb6bc4fad9bbf74c393b063127fd34_1a68fb6bc4fad9bbf74c393b063127fd34">GetTypedDataSetSchema</link> (
+global::System.Xml.Schema.XmlSchemaSet xs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represents a strongly typed in-memory cache of data. /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a728d77c289607beae2421086ae48f861_1a728d77c289607beae2421086ae48f861">
+                <title>Triggers.GRCfg2.GRCfg2 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_ad1880882457ddd7cf45e392755785dfb_1ad1880882457ddd7cf45e392755785dfb">
+                <title>override global::System.Data.DataSet Triggers.GRCfg2.Clone ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a2a4cd279dff04b95b9d591cfbe8b657c_1a2a4cd279dff04b95b9d591cfbe8b657c">
+                <title>delegate void Triggers.GRCfg2.GR_Cfg_AuditRowChangeEventHandler (object sender, GR_Cfg_AuditRowChangeEvent e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_ad40086b858f20dba29f676b1bdf0bbf9_1ad40086b858f20dba29f676b1bdf0bbf9">
+                <title>delegate void Triggers.GRCfg2.GR_Cfg_DocumentQueueRowChangeEventHandler (object sender, GR_Cfg_DocumentQueueRowChangeEvent e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a84bf9ad589e8d46be3ee8339fc068fcd_1a84bf9ad589e8d46be3ee8339fc068fcd">
+                <title>delegate void Triggers.GRCfg2.GR_Cfg_ProgressRowChangeEventHandler (object sender, GR_Cfg_ProgressRowChangeEvent e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a09d5c2b61db8d2407d0438b216c2c811_1a09d5c2b61db8d2407d0438b216c2c811">
+                <title>delegate void Triggers.GRCfg2.GR_Cfg_QueueRowChangeEventHandler (object sender, GR_Cfg_QueueRowChangeEvent e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_ad9e947ecc6d215c4d4cc11312449f817_1ad9e947ecc6d215c4d4cc11312449f817">
+                <title>delegate void Triggers.GRCfg2.GR_CfgBOMRowChangeEventHandler (object sender, GR_CfgBOMRowChangeEvent e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a307dd24727a296b3ee492922062abb2f_1a307dd24727a296b3ee492922062abb2f">
+                <title>delegate void Triggers.GRCfg2.GR_CfgCORowChangeEventHandler (object sender, GR_CfgCORowChangeEvent e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a0c3d22dc3c45625c448826df9c58350c_1a0c3d22dc3c45625c448826df9c58350c">
+                <title>delegate void Triggers.GRCfg2.GR_CfgCoitemRowChangeEventHandler (object sender, GR_CfgCoitemRowChangeEvent e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a7aeb0d57c291967b0047295fc979a66a_1a7aeb0d57c291967b0047295fc979a66a">
+                <title>delegate void Triggers.GRCfg2.GR_CfgItemRowChangeEventHandler (object sender, GR_CfgItemRowChangeEvent e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_aea30990036fc834f43e6fb638b163995_1aea30990036fc834f43e6fb638b163995">
+                <title>delegate void Triggers.GRCfg2.GR_CfgParmValRowChangeEventHandler (object sender, GR_CfgParmValRowChangeEvent e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_afcf64e38c8aaea644aaf6829c8660525_1afcf64e38c8aaea644aaf6829c8660525">
+                <title>delegate void Triggers.GRCfg2.GR_CfgRouteRowChangeEventHandler (object sender, GR_CfgRouteRowChangeEvent e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_aa95d33e6844b0c0375b798e34d8a2ff5_1aa95d33e6844b0c0375b798e34d8a2ff5">
+                <title>delegate void Triggers.GRCfg2.GR_CfgRouteBOMRowChangeEventHandler (object sender, GR_CfgRouteBOMRowChangeEvent e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_ac9dd77a0996c59b0ac855ae23f6a0ccc_1ac9dd77a0996c59b0ac855ae23f6a0ccc">
+                <title>Triggers.GRCfg2.GRCfg2 (global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a635cb0702a0a26530d8b05b8428d623f_1a635cb0702a0a26530d8b05b8428d623f">
+                <title>override void Triggers.GRCfg2.InitializeDerivedDataSet ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a7685e1d569236b627d72ab199e5eef88_1a7685e1d569236b627d72ab199e5eef88">
+                <title>override bool Triggers.GRCfg2.ShouldSerializeTables ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a1b246d9841531f94a235d297ccb258c6_1a1b246d9841531f94a235d297ccb258c6">
+                <title>override bool Triggers.GRCfg2.ShouldSerializeRelations ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_ac3ccf9509043ed26fc2ca6e81f94a61a_1ac3ccf9509043ed26fc2ca6e81f94a61a">
+                <title>override void Triggers.GRCfg2.ReadXmlSerializable (global::System.Xml.XmlReader reader)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a5eeb57b98ef1676610c01f553ddf012d_1a5eeb57b98ef1676610c01f553ddf012d">
+                <title>override global::System.Xml.Schema.XmlSchema Triggers.GRCfg2.GetSchemaSerializable ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_abd1b979d55d372a946c4f930c90f24a6_1abd1b979d55d372a946c4f930c90f24a6">
+                <title>void Triggers.GRCfg2.InitVars ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_ab5f830143e52cc465a59db490051c782_1ab5f830143e52cc465a59db490051c782">
+                <title>void Triggers.GRCfg2.InitVars (bool initTable)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a56646b584f31ed7daef9d46e8584384f_1a56646b584f31ed7daef9d46e8584384f">
+                <title>void Triggers.GRCfg2.InitClass ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a2df81a187669dd076890e6e24b7c6e42_1a2df81a187669dd076890e6e24b7c6e42">
+                <title>bool Triggers.GRCfg2.ShouldSerializeGR_Cfg_Audit ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a19cba08533071388eeb24576c40662c7_1a19cba08533071388eeb24576c40662c7">
+                <title>bool Triggers.GRCfg2.ShouldSerializeGR_Cfg_DocumentQueue ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_acb4c44dd41d5a968e70ca481b7a0982c_1acb4c44dd41d5a968e70ca481b7a0982c">
+                <title>bool Triggers.GRCfg2.ShouldSerializeGR_Cfg_Progress ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a4cb02d4955b31499987a92385534a4f0_1a4cb02d4955b31499987a92385534a4f0">
+                <title>bool Triggers.GRCfg2.ShouldSerializeGR_Cfg_Queue ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a737cc6f95a4521fc63d9f3a041e1623e_1a737cc6f95a4521fc63d9f3a041e1623e">
+                <title>bool Triggers.GRCfg2.ShouldSerializeGR_CfgBOM ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a687a6e83c6d5f8c15851e0d6f527f69b_1a687a6e83c6d5f8c15851e0d6f527f69b">
+                <title>bool Triggers.GRCfg2.ShouldSerializeGR_CfgCO ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_afc9500d5588d50314aaa80d296ab3e21_1afc9500d5588d50314aaa80d296ab3e21">
+                <title>bool Triggers.GRCfg2.ShouldSerializeGR_CfgCoitem ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a5975f52ae7d5bb324f13d7c9c099304e_1a5975f52ae7d5bb324f13d7c9c099304e">
+                <title>bool Triggers.GRCfg2.ShouldSerializeGR_CfgItem ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a32d2ba4347b5b8f7bb5e43d1888c8842_1a32d2ba4347b5b8f7bb5e43d1888c8842">
+                <title>bool Triggers.GRCfg2.ShouldSerializeGR_CfgParmVal ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a72612a2e4fc30e719e9d07ae36d4f5d6_1a72612a2e4fc30e719e9d07ae36d4f5d6">
+                <title>bool Triggers.GRCfg2.ShouldSerializeGR_CfgRoute ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a75da7a2a87caed37a3cba93cd9d2aae5_1a75da7a2a87caed37a3cba93cd9d2aae5">
+                <title>bool Triggers.GRCfg2.ShouldSerializeGR_CfgRouteBOM ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a74818fe040f96142ba55bb0daba29e08_1a74818fe040f96142ba55bb0daba29e08">
+                <title>void Triggers.GRCfg2.SchemaChanged (object sender, global::System.ComponentModel.CollectionChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_a68fb6bc4fad9bbf74c393b063127fd34_1a68fb6bc4fad9bbf74c393b063127fd34">
+                <title>static global::System.Xml.Schema.XmlSchemaComplexType Triggers.GRCfg2.GetTypedDataSetSchema (global::System.Xml.Schema.XmlSchemaSet xs)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

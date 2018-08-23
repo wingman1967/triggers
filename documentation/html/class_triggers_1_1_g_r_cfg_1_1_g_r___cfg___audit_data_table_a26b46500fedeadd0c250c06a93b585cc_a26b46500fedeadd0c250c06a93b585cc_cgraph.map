@@ -1,0 +1,5 @@
+<map id="Triggers.GRCfg.GR_Cfg_AuditDataTable.Clone" name="Triggers.GRCfg.GR_Cfg_AuditDataTable.Clone">
+<area shape="rect" id="node2" href="$class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a5a0715850c062b347aa60d8f0d9ed886.html#a5a0715850c062b347aa60d8f0d9ed886" title="Triggers.GRCfg.GR_Cfg\l_AuditDataTable.GR_Cfg\l_AuditDataTable" alt="" coords="212,5,379,61"/>
+<area shape="rect" id="node4" href="$class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a0c18f03d791d7746cfda72c0bfa8ec48.html#a0c18f03d791d7746cfda72c0bfa8ec48" title="Triggers.GRCfg.GR_Cfg\l_AuditDataTable.InitVars" alt="" coords="213,86,378,127"/>
+<area shape="rect" id="node3" href="$class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a489c32abddcf0e297888537df814cc55.html#a489c32abddcf0e297888537df814cc55" title="Triggers.GRCfg.GR_Cfg\l_AuditDataTable.InitClass" alt="" coords="427,13,597,54"/>
+</map>

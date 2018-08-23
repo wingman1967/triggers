@@ -1,0 +1,4 @@
+<map id="ConfigureOneFlag.NetworkShare.WNetUseConnection" name="ConfigureOneFlag.NetworkShare.WNetUseConnection">
+<area shape="rect" id="node2" href="$class_configure_one_flag_1_1_network_share_ab976148d295a3aad7cdf5c850cc3fed9.html#ab976148d295a3aad7cdf5c850cc3fed9" title="Network authentication HELPER class. Connects to and disconnects from an endpoint using explicit cred..." alt="" coords="241,5,417,47"/>
+<area shape="rect" id="node3" href="$class_configure_one_flag_1_1_network_share_af61100f22e1ebd4895ad0313c0130ecf.html#af61100f22e1ebd4895ad0313c0130ecf" title="Remove the share from cache. " alt="" coords="235,71,424,112"/>
+</map>

@@ -1,0 +1,10 @@
+<map id="Triggers.COItemValidator.ValidateCOItem" name="Triggers.COItemValidator.ValidateCOItem">
+<area shape="rect" id="node2" href="$class_triggers_1_1_c_o_item_validator_a6224099922cbef1781d23b840168231d.html#a6224099922cbef1781d23b840168231d" title="Triggers.COItemValidator.\lConfigType" alt="" coords="239,5,410,47"/>
+<area shape="rect" id="node3" href="$class_triggers_1_1_c_o_item_validator_a79bfc754b5e15a44cbb5971437e94ad0.html#a79bfc754b5e15a44cbb5971437e94ad0" title="Triggers.COItemValidator.\lCO_Num" alt="" coords="239,71,410,112"/>
+<area shape="rect" id="node4" href="$class_triggers_1_1_c_o_item_validator_af2db6c198237f397e7ee0d5b39174fa7.html#af2db6c198237f397e7ee0d5b39174fa7" title="Triggers.COItemValidator.\lSerial" alt="" coords="239,136,410,177"/>
+<area shape="rect" id="node5" href="$class_triggers_1_1_c_o_item_validator_a6e031061ed664b4cc06c89e2f4f09bf5.html#a6e031061ed664b4cc06c89e2f4f09bf5" title="Triggers.COItemValidator.Item" alt="" coords="227,202,423,229"/>
+<area shape="rect" id="node6" href="$class_triggers_1_1_c_o_item_validator_ad7c2cd622f188fb7eff6910c81a16cd0.html#ad7c2cd622f188fb7eff6910c81a16cd0" title="Triggers.COItemValidator.\lSmartpart" alt="" coords="239,253,410,295"/>
+<area shape="rect" id="node7" href="$class_triggers_1_1_c_o_item_validator_ad0e2a26cbf24e908d5c9c7990f29ef20.html#ad0e2a26cbf24e908d5c9c7990f29ef20" title="Triggers.COItemValidator.Desc" alt="" coords="224,319,425,346"/>
+<area shape="rect" id="node8" href="$class_triggers_1_1_c_o_item_validator_ae3fcfa4c04aa2107e3e77986a77086e6.html#ae3fcfa4c04aa2107e3e77986a77086e6" title="Triggers.COItemValidator.\lCustPO" alt="" coords="239,371,410,412"/>
+<area shape="rect" id="node9" href="$class_triggers_1_1_c_o_item_validator_aa5f0f6f9ec265be18492e4ac821fd081.html#aa5f0f6f9ec265be18492e4ac821fd081" title="Triggers.COItemValidator.\lOrderLineNotes" alt="" coords="239,436,410,477"/>
+</map>

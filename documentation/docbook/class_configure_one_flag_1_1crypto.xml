@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_configure_one_flag_1_1crypto">
+<title>ConfigureOneFlag::crypto class Reference</title>
+<para>Inheritance diagram for ConfigureOneFlag::crypto</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_configure_one_flag_1_1crypto__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ConfigureOneFlag::crypto</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_configure_one_flag_1_1crypto__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static Random random</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static byte [] key</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static RijndaelManaged rm</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static UTF8Encoding encoder</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string <link linkend="class_configure_one_flag_1_1crypto_a760d19c12b49813c9ec40da0046d509e_1a760d19c12b49813c9ec40da0046d509e">DecryptCS</link> (
+string cipherText, string sKey)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>byte [] <link linkend="class_configure_one_flag_1_1crypto_a93d9f2386bdaf886fa8b659b4b66471b_1a93d9f2386bdaf886fa8b659b4b66471b">Encrypt</link> (
+byte [] buffer, byte [] vector)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static byte [] <link linkend="class_configure_one_flag_1_1crypto_a4a0b49e7fda03c664866a1a469ece358_1a4a0b49e7fda03c664866a1a469ece358">Decrypt</link> (
+byte [] buffer, byte [] vector)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static byte [] <link linkend="class_configure_one_flag_1_1crypto_a2e60723ef556d883e8e0383c7a189895_1a2e60723ef556d883e8e0383c7a189895">Transform</link> (
+byte [] buffer, ICryptoTransform transform)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Cryptography class providing for the decryption of encrypted strings. Key passed in is the base64 ENCODED version for extra obfuscation. Using defaults to maintain FIPS-197 AES compliance/interoperability: Key size - 256 bits, Block size - 128 bits </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 14 of file crypto.cs</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>crypto.cs</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="class_configure_one_flag_1_1crypto_a760d19c12b49813c9ec40da0046d509e_1a760d19c12b49813c9ec40da0046d509e">
+                <title>static string ConfigureOneFlag.crypto.DecryptCS (string cipherText, string sKey)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1crypto_a93d9f2386bdaf886fa8b659b4b66471b_1a93d9f2386bdaf886fa8b659b4b66471b">
+                <title>byte [] ConfigureOneFlag.crypto.Encrypt (byte[] buffer, byte[] vector)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1crypto_a4a0b49e7fda03c664866a1a469ece358_1a4a0b49e7fda03c664866a1a469ece358">
+                <title>static byte [] ConfigureOneFlag.crypto.Decrypt (byte[] buffer, byte[] vector)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1crypto_a2e60723ef556d883e8e0383c7a189895_1a2e60723ef556d883e8e0383c7a189895">
+                <title>static byte [] ConfigureOneFlag.crypto.Transform (byte[] buffer, ICryptoTransform transform)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

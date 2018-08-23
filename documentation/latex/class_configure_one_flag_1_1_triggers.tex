@@ -1,0 +1,283 @@
+\hypertarget{class_configure_one_flag_1_1_triggers}{}\section{Configure\+One\+Flag.\+Triggers Class Reference}
+\label{class_configure_one_flag_1_1_triggers}\index{Configure\+One\+Flag.\+Triggers@{Configure\+One\+Flag.\+Triggers}}
+
+
+Primary entrypoint called from C1\+O\+R\+D\+ER trigger for accessing C1 web service and returning/mapping data to S\+QL where appropriate  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f_a7446070eb1c5dd9f63f7043525014c9f}{C1\+Order}} ()
+\item 
+static void \mbox{\hyperlink{class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f_a7446070eb1c5dd9f63f7043525014c9f}{C1\+Order}} ()
+\item 
+static void \mbox{\hyperlink{class_configure_one_flag_1_1_triggers_a246cde167d6b8c1ab05cf0acb22c79a7_a246cde167d6b8c1ab05cf0acb22c79a7}{Begin\+Processing}} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{class_configure_one_flag_1_1_triggers_adb47d391c1eb7baeb5780f3dd9322a6d_adb47d391c1eb7baeb5780f3dd9322a6d}{ws\+Return}}
+\item 
+static string \mbox{\hyperlink{class_configure_one_flag_1_1_triggers_ad424a8622609cf34218e92efc07b6870_ad424a8622609cf34218e92efc07b6870}{caller}} = \char`\"{}\char`\"{}
+\item 
+static string \mbox{\hyperlink{class_configure_one_flag_1_1_triggers_a857274f8767a6571894105403ee8e26e_a857274f8767a6571894105403ee8e26e}{C1\+U\+RL}}
+\item 
+static string \mbox{\hyperlink{class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_aeb15437df6eb15652ae79ee607ccdc11}{log\+Source}} = \char`\"{}C1\+O\+R\+D\+ER\char`\"{}
+\item 
+static string \mbox{\hyperlink{class_configure_one_flag_1_1_triggers_a3cd5e3e64a361f5e3a8d7fbd724a471f_a3cd5e3e64a361f5e3a8d7fbd724a471f}{log\+Event}}
+\item 
+static string \mbox{\hyperlink{class_configure_one_flag_1_1_triggers_a1f5e29464bbb7305488f6fac0b1835ad_a1f5e29464bbb7305488f6fac0b1835ad}{log\+Name}} = \char`\"{}Application\char`\"{}
+\item 
+static string \mbox{\hyperlink{class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_afd0957296af9cc27c0a677ba2c027bf1}{pub\+Order\+Number}} = \char`\"{}\char`\"{}
+\item 
+static string \mbox{\hyperlink{class_configure_one_flag_1_1_triggers_a9e9af4ac5f637116d47bcd5e2d12c2e1_a9e9af4ac5f637116d47bcd5e2d12c2e1}{db\+Environment}} = \char`\"{}\char`\"{}
+\item 
+static string \mbox{\hyperlink{class_configure_one_flag_1_1_triggers_a7152b65d47b96c0deebdad4f1b5e86c1_a7152b65d47b96c0deebdad4f1b5e86c1}{key}} = \char`\"{}get\+Order\char`\"{}
+\item 
+static string \mbox{\hyperlink{class_configure_one_flag_1_1_triggers_af96ea08f030e64ce8660fab49a24378d_af96ea08f030e64ce8660fab49a24378d}{xml\+Payload}} = \char`\"{}\char`\"{}
+\item 
+static string \mbox{\hyperlink{class_configure_one_flag_1_1_triggers_a333fd994019bc2afa23c7d70add609de_a333fd994019bc2afa23c7d70add609de}{order\+Value}} = \char`\"{}\char`\"{}
+\item 
+static Date\+Time \mbox{\hyperlink{class_configure_one_flag_1_1_triggers_a128cacd0c5db2359b84ce2677752b8a1_a128cacd0c5db2359b84ce2677752b8a1}{As\+Of}} = Date\+Time.\+Now
+\item 
+static int \mbox{\hyperlink{class_configure_one_flag_1_1_triggers_ac398f00656b42765494f9ef31bbfddbf_ac398f00656b42765494f9ef31bbfddbf}{itr}} = 0
+\item 
+static int \mbox{\hyperlink{class_configure_one_flag_1_1_triggers_abca041c712963ee1716274f419555900_abca041c712963ee1716274f419555900}{force\+Stop}} = 0
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Dictionary$<$ string, string $>$ \mbox{\hyperlink{class_configure_one_flag_1_1_triggers_a38d825801f6fbe1c3c2df19538892c57_a38d825801f6fbe1c3c2df19538892c57}{webmethods}} = new Dictionary$<$string, string$>$()
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Primary entrypoint called from C1\+O\+R\+D\+ER trigger for accessing C1 web service and returning/mapping data to S\+QL where appropriate 
+
+
+
+Definition at line 11 of file Class1.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_configure_one_flag_1_1_triggers_a246cde167d6b8c1ab05cf0acb22c79a7_a246cde167d6b8c1ab05cf0acb22c79a7}\label{class_configure_one_flag_1_1_triggers_a246cde167d6b8c1ab05cf0acb22c79a7_a246cde167d6b8c1ab05cf0acb22c79a7}} 
+\index{Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}!Begin\+Processing@{Begin\+Processing}}
+\index{Begin\+Processing@{Begin\+Processing}!Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}}
+\subsubsection{\texorpdfstring{Begin\+Processing()}{BeginProcessing()}}
+{\footnotesize\ttfamily static void Configure\+One\+Flag.\+Triggers.\+Begin\+Processing (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 159 of file trigger.\+cs.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_triggers_a246cde167d6b8c1ab05cf0acb22c79a7_a246cde167d6b8c1ab05cf0acb22c79a7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_triggers_a246cde167d6b8c1ab05cf0acb22c79a7_a246cde167d6b8c1ab05cf0acb22c79a7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f_a7446070eb1c5dd9f63f7043525014c9f}\label{class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f_a7446070eb1c5dd9f63f7043525014c9f}} 
+\index{Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}!C1\+Order@{C1\+Order}}
+\index{C1\+Order@{C1\+Order}!Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}}
+\subsubsection{\texorpdfstring{C1\+Order()}{C1Order()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily static void Configure\+One\+Flag.\+Triggers.\+C1\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 18 of file Class1.\+cs.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f_a7446070eb1c5dd9f63f7043525014c9f_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f_a7446070eb1c5dd9f63f7043525014c9f}\label{class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f_a7446070eb1c5dd9f63f7043525014c9f}} 
+\index{Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}!C1\+Order@{C1\+Order}}
+\index{C1\+Order@{C1\+Order}!Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}}
+\subsubsection{\texorpdfstring{C1\+Order()}{C1Order()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily static void Configure\+One\+Flag.\+Triggers.\+C1\+Order (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 27 of file trigger.\+cs.
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f_a7446070eb1c5dd9f63f7043525014c9f_cgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_configure_one_flag_1_1_triggers_a128cacd0c5db2359b84ce2677752b8a1_a128cacd0c5db2359b84ce2677752b8a1}\label{class_configure_one_flag_1_1_triggers_a128cacd0c5db2359b84ce2677752b8a1_a128cacd0c5db2359b84ce2677752b8a1}} 
+\index{Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}!As\+Of@{As\+Of}}
+\index{As\+Of@{As\+Of}!Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}}
+\subsubsection{\texorpdfstring{As\+Of}{AsOf}}
+{\footnotesize\ttfamily Date\+Time Configure\+One\+Flag.\+Triggers.\+As\+Of = Date\+Time.\+Now\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 23 of file trigger.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_triggers_a857274f8767a6571894105403ee8e26e_a857274f8767a6571894105403ee8e26e}\label{class_configure_one_flag_1_1_triggers_a857274f8767a6571894105403ee8e26e_a857274f8767a6571894105403ee8e26e}} 
+\index{Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}!C1\+U\+RL@{C1\+U\+RL}}
+\index{C1\+U\+RL@{C1\+U\+RL}!Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}}
+\subsubsection{\texorpdfstring{C1\+U\+RL}{C1URL}}
+{\footnotesize\ttfamily static string Configure\+One\+Flag.\+Triggers.\+C1\+U\+RL\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 16 of file Class1.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_triggers_ad424a8622609cf34218e92efc07b6870_ad424a8622609cf34218e92efc07b6870}\label{class_configure_one_flag_1_1_triggers_ad424a8622609cf34218e92efc07b6870_ad424a8622609cf34218e92efc07b6870}} 
+\index{Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}!caller@{caller}}
+\index{caller@{caller}!Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}}
+\subsubsection{\texorpdfstring{caller}{caller}}
+{\footnotesize\ttfamily static string Configure\+One\+Flag.\+Triggers.\+caller = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 15 of file Class1.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_triggers_a9e9af4ac5f637116d47bcd5e2d12c2e1_a9e9af4ac5f637116d47bcd5e2d12c2e1}\label{class_configure_one_flag_1_1_triggers_a9e9af4ac5f637116d47bcd5e2d12c2e1_a9e9af4ac5f637116d47bcd5e2d12c2e1}} 
+\index{Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}!db\+Environment@{db\+Environment}}
+\index{db\+Environment@{db\+Environment}!Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}}
+\subsubsection{\texorpdfstring{db\+Environment}{dbEnvironment}}
+{\footnotesize\ttfamily string Configure\+One\+Flag.\+Triggers.\+db\+Environment = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 19 of file trigger.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_triggers_abca041c712963ee1716274f419555900_abca041c712963ee1716274f419555900}\label{class_configure_one_flag_1_1_triggers_abca041c712963ee1716274f419555900_abca041c712963ee1716274f419555900}} 
+\index{Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}!force\+Stop@{force\+Stop}}
+\index{force\+Stop@{force\+Stop}!Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}}
+\subsubsection{\texorpdfstring{force\+Stop}{forceStop}}
+{\footnotesize\ttfamily int Configure\+One\+Flag.\+Triggers.\+force\+Stop = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 25 of file trigger.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_triggers_ac398f00656b42765494f9ef31bbfddbf_ac398f00656b42765494f9ef31bbfddbf}\label{class_configure_one_flag_1_1_triggers_ac398f00656b42765494f9ef31bbfddbf_ac398f00656b42765494f9ef31bbfddbf}} 
+\index{Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}!itr@{itr}}
+\index{itr@{itr}!Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}}
+\subsubsection{\texorpdfstring{itr}{itr}}
+{\footnotesize\ttfamily int Configure\+One\+Flag.\+Triggers.\+itr = 0\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 24 of file trigger.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_triggers_a7152b65d47b96c0deebdad4f1b5e86c1_a7152b65d47b96c0deebdad4f1b5e86c1}\label{class_configure_one_flag_1_1_triggers_a7152b65d47b96c0deebdad4f1b5e86c1_a7152b65d47b96c0deebdad4f1b5e86c1}} 
+\index{Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}!key@{key}}
+\index{key@{key}!Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}}
+\subsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily string Configure\+One\+Flag.\+Triggers.\+key = \char`\"{}get\+Order\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 20 of file trigger.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_triggers_a3cd5e3e64a361f5e3a8d7fbd724a471f_a3cd5e3e64a361f5e3a8d7fbd724a471f}\label{class_configure_one_flag_1_1_triggers_a3cd5e3e64a361f5e3a8d7fbd724a471f_a3cd5e3e64a361f5e3a8d7fbd724a471f}} 
+\index{Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}!log\+Event@{log\+Event}}
+\index{log\+Event@{log\+Event}!Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}}
+\subsubsection{\texorpdfstring{log\+Event}{logEvent}}
+{\footnotesize\ttfamily string Configure\+One\+Flag.\+Triggers.\+log\+Event\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 16 of file trigger.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_triggers_a1f5e29464bbb7305488f6fac0b1835ad_a1f5e29464bbb7305488f6fac0b1835ad}\label{class_configure_one_flag_1_1_triggers_a1f5e29464bbb7305488f6fac0b1835ad_a1f5e29464bbb7305488f6fac0b1835ad}} 
+\index{Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}!log\+Name@{log\+Name}}
+\index{log\+Name@{log\+Name}!Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}}
+\subsubsection{\texorpdfstring{log\+Name}{logName}}
+{\footnotesize\ttfamily string Configure\+One\+Flag.\+Triggers.\+log\+Name = \char`\"{}Application\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 17 of file trigger.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_aeb15437df6eb15652ae79ee607ccdc11}\label{class_configure_one_flag_1_1_triggers_aeb15437df6eb15652ae79ee607ccdc11_aeb15437df6eb15652ae79ee607ccdc11}} 
+\index{Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}!log\+Source@{log\+Source}}
+\index{log\+Source@{log\+Source}!Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}}
+\subsubsection{\texorpdfstring{log\+Source}{logSource}}
+{\footnotesize\ttfamily string Configure\+One\+Flag.\+Triggers.\+log\+Source = \char`\"{}C1\+O\+R\+D\+ER\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 15 of file trigger.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_triggers_a333fd994019bc2afa23c7d70add609de_a333fd994019bc2afa23c7d70add609de}\label{class_configure_one_flag_1_1_triggers_a333fd994019bc2afa23c7d70add609de_a333fd994019bc2afa23c7d70add609de}} 
+\index{Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}!order\+Value@{order\+Value}}
+\index{order\+Value@{order\+Value}!Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}}
+\subsubsection{\texorpdfstring{order\+Value}{orderValue}}
+{\footnotesize\ttfamily string Configure\+One\+Flag.\+Triggers.\+order\+Value = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 22 of file trigger.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_afd0957296af9cc27c0a677ba2c027bf1}\label{class_configure_one_flag_1_1_triggers_afd0957296af9cc27c0a677ba2c027bf1_afd0957296af9cc27c0a677ba2c027bf1}} 
+\index{Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}!pub\+Order\+Number@{pub\+Order\+Number}}
+\index{pub\+Order\+Number@{pub\+Order\+Number}!Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}}
+\subsubsection{\texorpdfstring{pub\+Order\+Number}{pubOrderNumber}}
+{\footnotesize\ttfamily string Configure\+One\+Flag.\+Triggers.\+pub\+Order\+Number = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 18 of file trigger.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_triggers_a38d825801f6fbe1c3c2df19538892c57_a38d825801f6fbe1c3c2df19538892c57}\label{class_configure_one_flag_1_1_triggers_a38d825801f6fbe1c3c2df19538892c57_a38d825801f6fbe1c3c2df19538892c57}} 
+\index{Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}!webmethods@{webmethods}}
+\index{webmethods@{webmethods}!Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}}
+\subsubsection{\texorpdfstring{webmethods}{webmethods}}
+{\footnotesize\ttfamily Dictionary$<$string, string$>$ Configure\+One\+Flag.\+Triggers.\+webmethods = new Dictionary$<$string, string$>$()\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 13 of file Class1.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_triggers_adb47d391c1eb7baeb5780f3dd9322a6d_adb47d391c1eb7baeb5780f3dd9322a6d}\label{class_configure_one_flag_1_1_triggers_adb47d391c1eb7baeb5780f3dd9322a6d_adb47d391c1eb7baeb5780f3dd9322a6d}} 
+\index{Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}!ws\+Return@{ws\+Return}}
+\index{ws\+Return@{ws\+Return}!Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}}
+\subsubsection{\texorpdfstring{ws\+Return}{wsReturn}}
+{\footnotesize\ttfamily static string Configure\+One\+Flag.\+Triggers.\+ws\+Return\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 14 of file Class1.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_triggers_af96ea08f030e64ce8660fab49a24378d_af96ea08f030e64ce8660fab49a24378d}\label{class_configure_one_flag_1_1_triggers_af96ea08f030e64ce8660fab49a24378d_af96ea08f030e64ce8660fab49a24378d}} 
+\index{Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}!xml\+Payload@{xml\+Payload}}
+\index{xml\+Payload@{xml\+Payload}!Configure\+One\+Flag\+::\+Triggers@{Configure\+One\+Flag\+::\+Triggers}}
+\subsubsection{\texorpdfstring{xml\+Payload}{xmlPayload}}
+{\footnotesize\ttfamily string Configure\+One\+Flag.\+Triggers.\+xml\+Payload = \char`\"{}\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 21 of file trigger.\+cs.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/hinesj/\+Documents/\+Visual Studio 2015/\+Projects/\+Triggers/\+Triggers/\mbox{\hyperlink{_class1_8cs}{Class1.\+cs}}\item 
+C\+:/\+Users/hinesj/\+Documents/\+Visual Studio 2015/\+Projects/\+Triggers/\+Triggers/\mbox{\hyperlink{trigger_8cs}{trigger.\+cs}}\end{DoxyCompactItemize}

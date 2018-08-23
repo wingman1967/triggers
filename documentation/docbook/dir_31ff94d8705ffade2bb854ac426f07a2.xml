@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="dir_31ff94d8705ffade2bb854ac426f07a2">
+    <title>C:/Users/hinesj/Documents Directory Reference</title>
+<para>Directory dependency diagram for C:/Users/hinesj/Documents</para>
+<para>
+    <figure>
+        <title>Directory Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="dir_31ff94d8705ffade2bb854ac426f07a2_dep.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <simplesect>
+            <title> Directories </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>dir <link linkend="dir_171601122d77eabedd0630b46fc3534f">C:/Users/hinesj/Documents/Visual Studio 2015</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Directory location is C:/Users/hinesj/Documents/</para>
+    </simplesect>
+</section>

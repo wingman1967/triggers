@@ -1,0 +1,162 @@
+.TH "ConfigureOneFlag.Triggers" 3 "Wed Mar 7 2018" "ConfigureOne Trigger" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ConfigureOneFlag.Triggers \- Primary entrypoint called from C1ORDER trigger for accessing C1 web service and returning/mapping data to SQL where appropriate  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBC1Order\fP ()"
+.br
+.ti -1c
+.RI "static void \fBC1Order\fP ()"
+.br
+.ti -1c
+.RI "static void \fBBeginProcessing\fP ()"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static string \fBwsReturn\fP"
+.br
+.ti -1c
+.RI "static string \fBcaller\fP = ''"
+.br
+.ti -1c
+.RI "static string \fBC1URL\fP"
+.br
+.ti -1c
+.RI "static string \fBlogSource\fP = 'C1ORDER'"
+.br
+.ti -1c
+.RI "static string \fBlogEvent\fP"
+.br
+.ti -1c
+.RI "static string \fBlogName\fP = 'Application'"
+.br
+.ti -1c
+.RI "static string \fBpubOrderNumber\fP = ''"
+.br
+.ti -1c
+.RI "static string \fBdbEnvironment\fP = ''"
+.br
+.ti -1c
+.RI "static string \fBkey\fP = 'getOrder'"
+.br
+.ti -1c
+.RI "static string \fBxmlPayload\fP = ''"
+.br
+.ti -1c
+.RI "static string \fBorderValue\fP = ''"
+.br
+.ti -1c
+.RI "static DateTime \fBAsOf\fP = DateTime\&.Now"
+.br
+.ti -1c
+.RI "static int \fBitr\fP = 0"
+.br
+.ti -1c
+.RI "static int \fBforceStop\fP = 0"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static Dictionary< string, string > \fBwebmethods\fP = new Dictionary<string, string>()"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Primary entrypoint called from C1ORDER trigger for accessing C1 web service and returning/mapping data to SQL where appropriate 
+
+
+.PP
+Definition at line 11 of file Class1\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static void ConfigureOneFlag\&.Triggers\&.BeginProcessing ()\fC [static]\fP"
+
+.PP
+Definition at line 159 of file trigger\&.cs\&.
+.SS "static void ConfigureOneFlag\&.Triggers\&.C1Order ()\fC [static]\fP"
+
+.PP
+Definition at line 18 of file Class1\&.cs\&.
+.SS "static void ConfigureOneFlag\&.Triggers\&.C1Order ()\fC [static]\fP"
+
+.PP
+Definition at line 27 of file trigger\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "DateTime ConfigureOneFlag\&.Triggers\&.AsOf = DateTime\&.Now\fC [static]\fP"
+
+.PP
+Definition at line 23 of file trigger\&.cs\&.
+.SS "static string ConfigureOneFlag\&.Triggers\&.C1URL\fC [static]\fP"
+
+.PP
+Definition at line 16 of file Class1\&.cs\&.
+.SS "static string ConfigureOneFlag\&.Triggers\&.caller = ''\fC [static]\fP"
+
+.PP
+Definition at line 15 of file Class1\&.cs\&.
+.SS "string ConfigureOneFlag\&.Triggers\&.dbEnvironment = ''\fC [static]\fP"
+
+.PP
+Definition at line 19 of file trigger\&.cs\&.
+.SS "int ConfigureOneFlag\&.Triggers\&.forceStop = 0\fC [static]\fP"
+
+.PP
+Definition at line 25 of file trigger\&.cs\&.
+.SS "int ConfigureOneFlag\&.Triggers\&.itr = 0\fC [static]\fP"
+
+.PP
+Definition at line 24 of file trigger\&.cs\&.
+.SS "string ConfigureOneFlag\&.Triggers\&.key = 'getOrder'\fC [static]\fP"
+
+.PP
+Definition at line 20 of file trigger\&.cs\&.
+.SS "string ConfigureOneFlag\&.Triggers\&.logEvent\fC [static]\fP"
+
+.PP
+Definition at line 16 of file trigger\&.cs\&.
+.SS "string ConfigureOneFlag\&.Triggers\&.logName = 'Application'\fC [static]\fP"
+
+.PP
+Definition at line 17 of file trigger\&.cs\&.
+.SS "string ConfigureOneFlag\&.Triggers\&.logSource = 'C1ORDER'\fC [static]\fP"
+
+.PP
+Definition at line 15 of file trigger\&.cs\&.
+.SS "string ConfigureOneFlag\&.Triggers\&.orderValue = ''\fC [static]\fP"
+
+.PP
+Definition at line 22 of file trigger\&.cs\&.
+.SS "string ConfigureOneFlag\&.Triggers\&.pubOrderNumber = ''\fC [static]\fP"
+
+.PP
+Definition at line 18 of file trigger\&.cs\&.
+.SS "Dictionary<string, string> ConfigureOneFlag\&.Triggers\&.webmethods = new Dictionary<string, string>()\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 13 of file Class1\&.cs\&.
+.SS "static string ConfigureOneFlag\&.Triggers\&.wsReturn\fC [static]\fP"
+
+.PP
+Definition at line 14 of file Class1\&.cs\&.
+.SS "string ConfigureOneFlag\&.Triggers\&.xmlPayload = ''\fC [static]\fP"
+
+.PP
+Definition at line 21 of file trigger\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ConfigureOne Trigger from the source code\&.

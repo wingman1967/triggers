@@ -1,0 +1,477 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table">
+<title>Triggers::GRCfg::GR_Cfg_AuditDataTable class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfg::GR_Cfg_AuditDataTable</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfg::GR_Cfg_AuditDataTable</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnorder_num</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnorder_line_num</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnauditEvent</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnauditMessageL</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnCreatedBy</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnUpdatedBy</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnCreateDate</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnRecordDate</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnRowPointer</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnNoteExistsFlag</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnInWorkflow</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnstep</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a5a0715850c062b347aa60d8f0d9ed886_1a5a0715850c062b347aa60d8f0d9ed886">GR_Cfg_AuditDataTable</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_abf7075bb815ef6d5dfb853095f1428c1_1abf7075bb815ef6d5dfb853095f1428c1">AddGR_Cfg_AuditRow</link> (
+<link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row">GR_Cfg_AuditRow</link> row)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row">GR_Cfg_AuditRow</link> <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_ae24a2596a49f74abf2c6f17446414c30_1ae24a2596a49f74abf2c6f17446414c30">AddGR_Cfg_AuditRow</link> (
+string order_num, int order_line_num, string auditEvent, string auditMessageL, string CreatedBy, string UpdatedBy, System.DateTime CreateDate, System.DateTime RecordDate, System.Guid RowPointer, byte NoteExistsFlag, byte InWorkflow, string step)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row">GR_Cfg_AuditRow</link> <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a3fd0730e068e1cd2a09a85141a6f5e6e_1a3fd0730e068e1cd2a09a85141a6f5e6e">FindByRowPointer</link> (
+System.Guid RowPointer)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Data.DataTable <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a26b46500fedeadd0c250c06a93b585cc_1a26b46500fedeadd0c250c06a93b585cc">Clone</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row">GR_Cfg_AuditRow</link> <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a71fc15c4f2749a705866ece29615622a_1a71fc15c4f2749a705866ece29615622a">NewGR_Cfg_AuditRow</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a7f45e792e3c0c90c2e77a08aea672c58_1a7f45e792e3c0c90c2e77a08aea672c58">RemoveGR_Cfg_AuditRow</link> (
+<link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_row">GR_Cfg_AuditRow</link> row)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_ac7b06416de043161dc7baae6c6fd276e_1ac7b06416de043161dc7baae6c6fd276e">GR_Cfg_AuditDataTable</link> (
+global::System.Data.DataTable table)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a0c18f03d791d7746cfda72c0bfa8ec48_1a0c18f03d791d7746cfda72c0bfa8ec48">InitVars</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_af544b7a4319fbe499662272815a90cbf_1af544b7a4319fbe499662272815a90cbf">GR_Cfg_AuditDataTable</link> (
+global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Data.DataTable <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_ad56b10b062639de4257620821d02a0d0_1ad56b10b062639de4257620821d02a0d0">CreateInstance</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Data.DataRow <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a5edc8993b15511498661bc03019f3a41_1a5edc8993b15511498661bc03019f3a41">NewRowFromBuilder</link> (
+global::System.Data.DataRowBuilder builder)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Type <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a9af9602e3cf6329d91a413c2802e8308_1a9af9602e3cf6329d91a413c2802e8308">GetRowType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a864d91291bb54c96c2a677462f26c77c_1a864d91291bb54c96c2a677462f26c77c">OnRowChanged</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_ac0c04750cc0723bd08416f334798a883_1ac0c04750cc0723bd08416f334798a883">OnRowChanging</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a7c0d84200feb2cf4421b76241f4485fc_1a7c0d84200feb2cf4421b76241f4485fc">OnRowDeleted</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a13ab40ba43827eb0be88265d6ab94e21_1a13ab40ba43827eb0be88265d6ab94e21">OnRowDeleting</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a489c32abddcf0e297888537df814cc55_1a489c32abddcf0e297888537df814cc55">InitClass</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static global::System.Xml.Schema.XmlSchemaComplexType <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_aca721cec07ac77cdc9741a398a302fee_1aca721cec07ac77cdc9741a398a302fee">GetTypedTableSchema</link> (
+global::System.Xml.Schema.XmlSchemaSet xs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represents the strongly named DataTable class. /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a5a0715850c062b347aa60d8f0d9ed886_1a5a0715850c062b347aa60d8f0d9ed886">
+                <title>Triggers.GRCfg.GR_Cfg_AuditDataTable.GR_Cfg_AuditDataTable ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_abf7075bb815ef6d5dfb853095f1428c1_1abf7075bb815ef6d5dfb853095f1428c1">
+                <title>void Triggers.GRCfg.GR_Cfg_AuditDataTable.AddGR_Cfg_AuditRow (GR_Cfg_AuditRow row)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_ae24a2596a49f74abf2c6f17446414c30_1ae24a2596a49f74abf2c6f17446414c30">
+                <title>GR_Cfg_AuditRow Triggers.GRCfg.GR_Cfg_AuditDataTable.AddGR_Cfg_AuditRow (string order_num, int order_line_num, string auditEvent, string auditMessageL, string CreatedBy, string UpdatedBy, System.DateTime CreateDate, System.DateTime RecordDate, System.Guid RowPointer, byte NoteExistsFlag, byte InWorkflow, string step)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a3fd0730e068e1cd2a09a85141a6f5e6e_1a3fd0730e068e1cd2a09a85141a6f5e6e">
+                <title>GR_Cfg_AuditRow Triggers.GRCfg.GR_Cfg_AuditDataTable.FindByRowPointer (System.Guid RowPointer)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a26b46500fedeadd0c250c06a93b585cc_1a26b46500fedeadd0c250c06a93b585cc">
+                <title>override global::System.Data.DataTable Triggers.GRCfg.GR_Cfg_AuditDataTable.Clone ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a71fc15c4f2749a705866ece29615622a_1a71fc15c4f2749a705866ece29615622a">
+                <title>GR_Cfg_AuditRow Triggers.GRCfg.GR_Cfg_AuditDataTable.NewGR_Cfg_AuditRow ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a7f45e792e3c0c90c2e77a08aea672c58_1a7f45e792e3c0c90c2e77a08aea672c58">
+                <title>void Triggers.GRCfg.GR_Cfg_AuditDataTable.RemoveGR_Cfg_AuditRow (GR_Cfg_AuditRow row)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_ac7b06416de043161dc7baae6c6fd276e_1ac7b06416de043161dc7baae6c6fd276e">
+                <title>Triggers.GRCfg.GR_Cfg_AuditDataTable.GR_Cfg_AuditDataTable (global::System.Data.DataTable table)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a0c18f03d791d7746cfda72c0bfa8ec48_1a0c18f03d791d7746cfda72c0bfa8ec48">
+                <title>void Triggers.GRCfg.GR_Cfg_AuditDataTable.InitVars ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_af544b7a4319fbe499662272815a90cbf_1af544b7a4319fbe499662272815a90cbf">
+                <title>Triggers.GRCfg.GR_Cfg_AuditDataTable.GR_Cfg_AuditDataTable (global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_ad56b10b062639de4257620821d02a0d0_1ad56b10b062639de4257620821d02a0d0">
+                <title>override global::System.Data.DataTable Triggers.GRCfg.GR_Cfg_AuditDataTable.CreateInstance ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a5edc8993b15511498661bc03019f3a41_1a5edc8993b15511498661bc03019f3a41">
+                <title>override global::System.Data.DataRow Triggers.GRCfg.GR_Cfg_AuditDataTable.NewRowFromBuilder (global::System.Data.DataRowBuilder builder)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a9af9602e3cf6329d91a413c2802e8308_1a9af9602e3cf6329d91a413c2802e8308">
+                <title>override global::System.Type Triggers.GRCfg.GR_Cfg_AuditDataTable.GetRowType ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a864d91291bb54c96c2a677462f26c77c_1a864d91291bb54c96c2a677462f26c77c">
+                <title>override void Triggers.GRCfg.GR_Cfg_AuditDataTable.OnRowChanged (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_ac0c04750cc0723bd08416f334798a883_1ac0c04750cc0723bd08416f334798a883">
+                <title>override void Triggers.GRCfg.GR_Cfg_AuditDataTable.OnRowChanging (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a7c0d84200feb2cf4421b76241f4485fc_1a7c0d84200feb2cf4421b76241f4485fc">
+                <title>override void Triggers.GRCfg.GR_Cfg_AuditDataTable.OnRowDeleted (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a13ab40ba43827eb0be88265d6ab94e21_1a13ab40ba43827eb0be88265d6ab94e21">
+                <title>override void Triggers.GRCfg.GR_Cfg_AuditDataTable.OnRowDeleting (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_a489c32abddcf0e297888537df814cc55_1a489c32abddcf0e297888537df814cc55">
+                <title>void Triggers.GRCfg.GR_Cfg_AuditDataTable.InitClass ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table_aca721cec07ac77cdc9741a398a302fee_1aca721cec07ac77cdc9741a398a302fee">
+                <title>static global::System.Xml.Schema.XmlSchemaComplexType Triggers.GRCfg.GR_Cfg_AuditDataTable.GetTypedTableSchema (global::System.Xml.Schema.XmlSchemaSet xs)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

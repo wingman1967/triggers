@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="ab_database_8cs">
+    <title>abDatabase.cs File Reference</title>
+<para>Include dependency diagram for abDatabase.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="ab_database_8cs__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for abDatabase.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="ab_database_8cs__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_triggers_1_1ab_database">Triggers::abDatabase</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_triggers">Triggers</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system">System</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system_1_1_collections_1_1_generic">System::Collections::Generic</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system_1_1_linq">System::Linq</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system_1_1_text">System::Text</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system_1_1_data_1_1_sql_client">System::Data::SqlClient</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_system_1_1_data_1_1_common">System::Data::Common</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file C:/Users/hinesj/Documents/Visual Studio 2015/Projects/Triggers/Triggers/abDatabase.cs</para>
+    </simplesect>
+    <literallayout><computeroutput>
+1 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>;
+2 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Collections.Generic;
+3 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Linq;
+4 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Text;
+5 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Data.SqlClient;
+6 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Data.Common;
+7 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>;
+8 
+<link linkend="namespace_triggers">9 </link><emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_triggers">Triggers</link>
+10 {
+<link linkend="class_triggers_1_1ab_database">11 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">abstract</emphasis>&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_triggers_1_1ab_database">abDatabase</link>
+12 &#32;&#32;&#32;&#32;{
+<link linkend="class_triggers_1_1ab_database_ad2de26dae4b5e20a805a9342b2fa16d3_1ad2de26dae4b5e20a805a9342b2fa16d3">13 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">virtual</emphasis>&#32;SqlConnection&#32;<link linkend="class_triggers_1_1ab_database_ad2de26dae4b5e20a805a9342b2fa16d3_1ad2de26dae4b5e20a805a9342b2fa16d3">Connection</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}
+<link linkend="class_triggers_1_1ab_database_a18245991d3f202764179f8cfb8ada0b5_1a18245991d3f202764179f8cfb8ada0b5">14 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">virtual</emphasis>&#32;SqlCommand&#32;<link linkend="class_triggers_1_1ab_database_a18245991d3f202764179f8cfb8ada0b5_1a18245991d3f202764179f8cfb8ada0b5">Command</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}
+15 &#32;&#32;&#32;&#32;}
+16 }
+    </computeroutput></literallayout>
+</section>

@@ -1,0 +1,503 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table">
+<title>Triggers::GRCfg2::GR_CfgParmValDataTable class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfg2::GR_CfgParmValDataTable</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfg2::GR_CfgParmValDataTable</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnorder_num</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnorder_line_num</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnname</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnvalue</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columntype</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnlabel</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnpriority_level</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnCreatedBy</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnUpdatedBy</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnCreateDate</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnRecordDate</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnRowPointer</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnNoteExistsFlag</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnInWorkflow</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a8dca2cde333575af0cc9df2dcbcdfcb4_1a8dca2cde333575af0cc9df2dcbcdfcb4">GR_CfgParmValDataTable</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a8710f4466f632f8c8cd6a517ddeba7b3_1a8710f4466f632f8c8cd6a517ddeba7b3">AddGR_CfgParmValRow</link> (
+<link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_row">GR_CfgParmValRow</link> row)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_row">GR_CfgParmValRow</link> <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_ae58a5d5781418805dc64b62232806ded_1ae58a5d5781418805dc64b62232806ded">AddGR_CfgParmValRow</link> (
+string order_num, int order_line_num, string name, string value, string type, string label, int priority_level, string CreatedBy, string UpdatedBy, System.DateTime CreateDate, System.DateTime RecordDate, System.Guid RowPointer, byte NoteExistsFlag, byte InWorkflow)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_row">GR_CfgParmValRow</link> <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a2a64d44bdda9cc74579c44d30f82764a_1a2a64d44bdda9cc74579c44d30f82764a">FindByRowPointer</link> (
+System.Guid RowPointer)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Data.DataTable <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_addd145f5109e3f9128bafd54cdbabff5_1addd145f5109e3f9128bafd54cdbabff5">Clone</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_row">GR_CfgParmValRow</link> <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a6bb2a6ed856ce9d3e4f9ca32492dd016_1a6bb2a6ed856ce9d3e4f9ca32492dd016">NewGR_CfgParmValRow</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_aea33c510b4848a830750bd8ff7c6b3e9_1aea33c510b4848a830750bd8ff7c6b3e9">RemoveGR_CfgParmValRow</link> (
+<link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_row">GR_CfgParmValRow</link> row)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a56003ec0d1e70c27dbf4089d3189029c_1a56003ec0d1e70c27dbf4089d3189029c">GR_CfgParmValDataTable</link> (
+global::System.Data.DataTable table)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a774138c3dc9e993edc6b529f486c9ea3_1a774138c3dc9e993edc6b529f486c9ea3">InitVars</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a28357358e6818bd927602c2ebc8381f0_1a28357358e6818bd927602c2ebc8381f0">GR_CfgParmValDataTable</link> (
+global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Data.DataTable <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_ad8f5860430f4ad4fc59093ec8866c0f8_1ad8f5860430f4ad4fc59093ec8866c0f8">CreateInstance</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Data.DataRow <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a39454526ffa3697e83e4e22fd87813ab_1a39454526ffa3697e83e4e22fd87813ab">NewRowFromBuilder</link> (
+global::System.Data.DataRowBuilder builder)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Type <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a510cabfc5e485003e0708982bb357a48_1a510cabfc5e485003e0708982bb357a48">GetRowType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a23156ab066e8832df99d88f401e2fc90_1a23156ab066e8832df99d88f401e2fc90">OnRowChanged</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_acb8c2539786294e9ecd975d4c303b46d_1acb8c2539786294e9ecd975d4c303b46d">OnRowChanging</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_ad8e11c6fe746d8d72e08e1c30bd1e29e_1ad8e11c6fe746d8d72e08e1c30bd1e29e">OnRowDeleted</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a20173c701cb08909cd39e056f6cca5ee_1a20173c701cb08909cd39e056f6cca5ee">OnRowDeleting</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a6dfc75f7a82fb1f365d21d394c6777f9_1a6dfc75f7a82fb1f365d21d394c6777f9">InitClass</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static global::System.Xml.Schema.XmlSchemaComplexType <link linkend="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a0da506c0e129db52e70dff22f7309cd2_1a0da506c0e129db52e70dff22f7309cd2">GetTypedTableSchema</link> (
+global::System.Xml.Schema.XmlSchemaSet xs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represents the strongly named DataTable class. /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a8dca2cde333575af0cc9df2dcbcdfcb4_1a8dca2cde333575af0cc9df2dcbcdfcb4">
+                <title>Triggers.GRCfg2.GR_CfgParmValDataTable.GR_CfgParmValDataTable ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a8710f4466f632f8c8cd6a517ddeba7b3_1a8710f4466f632f8c8cd6a517ddeba7b3">
+                <title>void Triggers.GRCfg2.GR_CfgParmValDataTable.AddGR_CfgParmValRow (GR_CfgParmValRow row)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_ae58a5d5781418805dc64b62232806ded_1ae58a5d5781418805dc64b62232806ded">
+                <title>GR_CfgParmValRow Triggers.GRCfg2.GR_CfgParmValDataTable.AddGR_CfgParmValRow (string order_num, int order_line_num, string name, string value, string type, string label, int priority_level, string CreatedBy, string UpdatedBy, System.DateTime CreateDate, System.DateTime RecordDate, System.Guid RowPointer, byte NoteExistsFlag, byte InWorkflow)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a2a64d44bdda9cc74579c44d30f82764a_1a2a64d44bdda9cc74579c44d30f82764a">
+                <title>GR_CfgParmValRow Triggers.GRCfg2.GR_CfgParmValDataTable.FindByRowPointer (System.Guid RowPointer)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_addd145f5109e3f9128bafd54cdbabff5_1addd145f5109e3f9128bafd54cdbabff5">
+                <title>override global::System.Data.DataTable Triggers.GRCfg2.GR_CfgParmValDataTable.Clone ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a6bb2a6ed856ce9d3e4f9ca32492dd016_1a6bb2a6ed856ce9d3e4f9ca32492dd016">
+                <title>GR_CfgParmValRow Triggers.GRCfg2.GR_CfgParmValDataTable.NewGR_CfgParmValRow ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_aea33c510b4848a830750bd8ff7c6b3e9_1aea33c510b4848a830750bd8ff7c6b3e9">
+                <title>void Triggers.GRCfg2.GR_CfgParmValDataTable.RemoveGR_CfgParmValRow (GR_CfgParmValRow row)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a56003ec0d1e70c27dbf4089d3189029c_1a56003ec0d1e70c27dbf4089d3189029c">
+                <title>Triggers.GRCfg2.GR_CfgParmValDataTable.GR_CfgParmValDataTable (global::System.Data.DataTable table)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a774138c3dc9e993edc6b529f486c9ea3_1a774138c3dc9e993edc6b529f486c9ea3">
+                <title>void Triggers.GRCfg2.GR_CfgParmValDataTable.InitVars ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a28357358e6818bd927602c2ebc8381f0_1a28357358e6818bd927602c2ebc8381f0">
+                <title>Triggers.GRCfg2.GR_CfgParmValDataTable.GR_CfgParmValDataTable (global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_ad8f5860430f4ad4fc59093ec8866c0f8_1ad8f5860430f4ad4fc59093ec8866c0f8">
+                <title>override global::System.Data.DataTable Triggers.GRCfg2.GR_CfgParmValDataTable.CreateInstance ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a39454526ffa3697e83e4e22fd87813ab_1a39454526ffa3697e83e4e22fd87813ab">
+                <title>override global::System.Data.DataRow Triggers.GRCfg2.GR_CfgParmValDataTable.NewRowFromBuilder (global::System.Data.DataRowBuilder builder)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a510cabfc5e485003e0708982bb357a48_1a510cabfc5e485003e0708982bb357a48">
+                <title>override global::System.Type Triggers.GRCfg2.GR_CfgParmValDataTable.GetRowType ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a23156ab066e8832df99d88f401e2fc90_1a23156ab066e8832df99d88f401e2fc90">
+                <title>override void Triggers.GRCfg2.GR_CfgParmValDataTable.OnRowChanged (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_acb8c2539786294e9ecd975d4c303b46d_1acb8c2539786294e9ecd975d4c303b46d">
+                <title>override void Triggers.GRCfg2.GR_CfgParmValDataTable.OnRowChanging (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_ad8e11c6fe746d8d72e08e1c30bd1e29e_1ad8e11c6fe746d8d72e08e1c30bd1e29e">
+                <title>override void Triggers.GRCfg2.GR_CfgParmValDataTable.OnRowDeleted (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a20173c701cb08909cd39e056f6cca5ee_1a20173c701cb08909cd39e056f6cca5ee">
+                <title>override void Triggers.GRCfg2.GR_CfgParmValDataTable.OnRowDeleting (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a6dfc75f7a82fb1f365d21d394c6777f9_1a6dfc75f7a82fb1f365d21d394c6777f9">
+                <title>void Triggers.GRCfg2.GR_CfgParmValDataTable.InitClass ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg2_1_1_g_r___cfg_parm_val_data_table_a0da506c0e129db52e70dff22f7309cd2_1a0da506c0e129db52e70dff22f7309cd2">
+                <title>static global::System.Xml.Schema.XmlSchemaComplexType Triggers.GRCfg2.GR_CfgParmValDataTable.GetTypedTableSchema (global::System.Xml.Schema.XmlSchemaSet xs)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

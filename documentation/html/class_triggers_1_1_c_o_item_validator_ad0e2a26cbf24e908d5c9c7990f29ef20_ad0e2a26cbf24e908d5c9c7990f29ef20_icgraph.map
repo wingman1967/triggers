@@ -1,0 +1,7 @@
+<map id="Triggers.COItemValidator.Desc" name="Triggers.COItemValidator.Desc">
+<area shape="rect" id="node2" href="$class_triggers_1_1_c_o_item_validator_a124ef6347ef724d60c9141bbd1dba233.html#a124ef6347ef724d60c9141bbd1dba233" title="Triggers.COItemValidator.\lValidateCOItem" alt="" coords="255,5,425,47"/>
+<area shape="rect" id="node3" href="$class_configure_one_flag_1_1_staging_utilities_ad721c5a816e1d3b5a16fec23498ecdf3.html#ad721c5a816e1d3b5a16fec23498ecdf3" title="ConfigureOneFlag.Staging\lUtilities.MapXMLToSQL" alt="" coords="473,5,647,47"/>
+<area shape="rect" id="node4" href="$class_configure_one_flag_1_1_c1_web_service_ae826903f85694f4cf481680e115076f3.html#ae826903f85694f4cf481680e115076f3" title="ConfigureOneFlag.C1WebService.\lCallConfigureOne" alt="" coords="695,5,913,47"/>
+<area shape="rect" id="node5" href="$class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f.html#a7446070eb1c5dd9f63f7043525014c9f" title="ConfigureOneFlag.Triggers.\lC1Order" alt="" coords="1188,5,1367,47"/>
+<area shape="rect" id="node6" href="$class_configure_one_flag_1_1_triggers_a246cde167d6b8c1ab05cf0acb22c79a7.html#a246cde167d6b8c1ab05cf0acb22c79a7" title="ConfigureOneFlag.Triggers.\lBeginProcessing" alt="" coords="961,35,1140,76"/>
+</map>

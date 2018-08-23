@@ -1,0 +1,177 @@
+\hypertarget{class_configure_one_flag_1_1crypto}{}\section{Configure\+One\+Flag.\+crypto Class Reference}
+\label{class_configure_one_flag_1_1crypto}\index{Configure\+One\+Flag.\+crypto@{Configure\+One\+Flag.\+crypto}}
+
+
+Cryptography class providing for the decryption of encrypted strings. Key passed in is the base64 E\+N\+C\+O\+D\+ED version for extra obfuscation. Using defaults to maintain F\+I\+P\+S-\/197 A\+ES compliance/interoperability\+: Key size -\/ 256 bits, Block size -\/ 128 bits  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static string \mbox{\hyperlink{class_configure_one_flag_1_1crypto_a760d19c12b49813c9ec40da0046d509e_a760d19c12b49813c9ec40da0046d509e}{Decrypt\+CS}} (string cipher\+Text, string s\+Key)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+byte \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_configure_one_flag_1_1crypto_a93d9f2386bdaf886fa8b659b4b66471b_a93d9f2386bdaf886fa8b659b4b66471b}{Encrypt}} (byte\mbox{[}$\,$\mbox{]} buffer, byte\mbox{[}$\,$\mbox{]} vector)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static byte \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_configure_one_flag_1_1crypto_a4a0b49e7fda03c664866a1a469ece358_a4a0b49e7fda03c664866a1a469ece358}{Decrypt}} (byte\mbox{[}$\,$\mbox{]} buffer, byte\mbox{[}$\,$\mbox{]} vector)
+\item 
+static byte \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_configure_one_flag_1_1crypto_a2e60723ef556d883e8e0383c7a189895_a2e60723ef556d883e8e0383c7a189895}{Transform}} (byte\mbox{[}$\,$\mbox{]} buffer, I\+Crypto\+Transform transform)
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Random \mbox{\hyperlink{class_configure_one_flag_1_1crypto_aeeaa3a18595a6b90c92e3837728bd371_aeeaa3a18595a6b90c92e3837728bd371}{random}}
+\item 
+static byte \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_configure_one_flag_1_1crypto_a4c56be6527cabbbd58ea3c4f1472964f_a4c56be6527cabbbd58ea3c4f1472964f}{key}}
+\item 
+static Rijndael\+Managed \mbox{\hyperlink{class_configure_one_flag_1_1crypto_a297bd06028260f8d47586961e7f386f8_a297bd06028260f8d47586961e7f386f8}{rm}}
+\item 
+static U\+T\+F8\+Encoding \mbox{\hyperlink{class_configure_one_flag_1_1crypto_a309c0d830cd438fab07086ab9c49c308_a309c0d830cd438fab07086ab9c49c308}{encoder}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Cryptography class providing for the decryption of encrypted strings. Key passed in is the base64 E\+N\+C\+O\+D\+ED version for extra obfuscation. Using defaults to maintain F\+I\+P\+S-\/197 A\+ES compliance/interoperability\+: Key size -\/ 256 bits, Block size -\/ 128 bits 
+
+
+
+Definition at line 13 of file crypto.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_configure_one_flag_1_1crypto_a4a0b49e7fda03c664866a1a469ece358_a4a0b49e7fda03c664866a1a469ece358}\label{class_configure_one_flag_1_1crypto_a4a0b49e7fda03c664866a1a469ece358_a4a0b49e7fda03c664866a1a469ece358}} 
+\index{Configure\+One\+Flag\+::crypto@{Configure\+One\+Flag\+::crypto}!Decrypt@{Decrypt}}
+\index{Decrypt@{Decrypt}!Configure\+One\+Flag\+::crypto@{Configure\+One\+Flag\+::crypto}}
+\subsubsection{\texorpdfstring{Decrypt()}{Decrypt()}}
+{\footnotesize\ttfamily static byte \mbox{[}$\,$\mbox{]} Configure\+One\+Flag.\+crypto.\+Decrypt (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 44 of file crypto.\+cs.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1crypto_a4a0b49e7fda03c664866a1a469ece358_a4a0b49e7fda03c664866a1a469ece358_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1crypto_a4a0b49e7fda03c664866a1a469ece358_a4a0b49e7fda03c664866a1a469ece358_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_configure_one_flag_1_1crypto_a760d19c12b49813c9ec40da0046d509e_a760d19c12b49813c9ec40da0046d509e}\label{class_configure_one_flag_1_1crypto_a760d19c12b49813c9ec40da0046d509e_a760d19c12b49813c9ec40da0046d509e}} 
+\index{Configure\+One\+Flag\+::crypto@{Configure\+One\+Flag\+::crypto}!Decrypt\+CS@{Decrypt\+CS}}
+\index{Decrypt\+CS@{Decrypt\+CS}!Configure\+One\+Flag\+::crypto@{Configure\+One\+Flag\+::crypto}}
+\subsubsection{\texorpdfstring{Decrypt\+C\+S()}{DecryptCS()}}
+{\footnotesize\ttfamily static string Configure\+One\+Flag.\+crypto.\+Decrypt\+CS (\begin{DoxyParamCaption}\item[{string}]{cipher\+Text,  }\item[{string}]{s\+Key }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 19 of file crypto.\+cs.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1crypto_a760d19c12b49813c9ec40da0046d509e_a760d19c12b49813c9ec40da0046d509e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1crypto_a760d19c12b49813c9ec40da0046d509e_a760d19c12b49813c9ec40da0046d509e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_configure_one_flag_1_1crypto_a93d9f2386bdaf886fa8b659b4b66471b_a93d9f2386bdaf886fa8b659b4b66471b}\label{class_configure_one_flag_1_1crypto_a93d9f2386bdaf886fa8b659b4b66471b_a93d9f2386bdaf886fa8b659b4b66471b}} 
+\index{Configure\+One\+Flag\+::crypto@{Configure\+One\+Flag\+::crypto}!Encrypt@{Encrypt}}
+\index{Encrypt@{Encrypt}!Configure\+One\+Flag\+::crypto@{Configure\+One\+Flag\+::crypto}}
+\subsubsection{\texorpdfstring{Encrypt()}{Encrypt()}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} Configure\+One\+Flag.\+crypto.\+Encrypt (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{vector }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 38 of file crypto.\+cs.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1crypto_a93d9f2386bdaf886fa8b659b4b66471b_a93d9f2386bdaf886fa8b659b4b66471b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_configure_one_flag_1_1crypto_a2e60723ef556d883e8e0383c7a189895_a2e60723ef556d883e8e0383c7a189895}\label{class_configure_one_flag_1_1crypto_a2e60723ef556d883e8e0383c7a189895_a2e60723ef556d883e8e0383c7a189895}} 
+\index{Configure\+One\+Flag\+::crypto@{Configure\+One\+Flag\+::crypto}!Transform@{Transform}}
+\index{Transform@{Transform}!Configure\+One\+Flag\+::crypto@{Configure\+One\+Flag\+::crypto}}
+\subsubsection{\texorpdfstring{Transform()}{Transform()}}
+{\footnotesize\ttfamily static byte \mbox{[}$\,$\mbox{]} Configure\+One\+Flag.\+crypto.\+Transform (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buffer,  }\item[{I\+Crypto\+Transform}]{transform }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 50 of file crypto.\+cs.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1crypto_a2e60723ef556d883e8e0383c7a189895_a2e60723ef556d883e8e0383c7a189895_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_configure_one_flag_1_1crypto_a309c0d830cd438fab07086ab9c49c308_a309c0d830cd438fab07086ab9c49c308}\label{class_configure_one_flag_1_1crypto_a309c0d830cd438fab07086ab9c49c308_a309c0d830cd438fab07086ab9c49c308}} 
+\index{Configure\+One\+Flag\+::crypto@{Configure\+One\+Flag\+::crypto}!encoder@{encoder}}
+\index{encoder@{encoder}!Configure\+One\+Flag\+::crypto@{Configure\+One\+Flag\+::crypto}}
+\subsubsection{\texorpdfstring{encoder}{encoder}}
+{\footnotesize\ttfamily U\+T\+F8\+Encoding Configure\+One\+Flag.\+crypto.\+encoder\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 18 of file crypto.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1crypto_a4c56be6527cabbbd58ea3c4f1472964f_a4c56be6527cabbbd58ea3c4f1472964f}\label{class_configure_one_flag_1_1crypto_a4c56be6527cabbbd58ea3c4f1472964f_a4c56be6527cabbbd58ea3c4f1472964f}} 
+\index{Configure\+One\+Flag\+::crypto@{Configure\+One\+Flag\+::crypto}!key@{key}}
+\index{key@{key}!Configure\+One\+Flag\+::crypto@{Configure\+One\+Flag\+::crypto}}
+\subsubsection{\texorpdfstring{key}{key}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} Configure\+One\+Flag.\+crypto.\+key\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 16 of file crypto.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1crypto_aeeaa3a18595a6b90c92e3837728bd371_aeeaa3a18595a6b90c92e3837728bd371}\label{class_configure_one_flag_1_1crypto_aeeaa3a18595a6b90c92e3837728bd371_aeeaa3a18595a6b90c92e3837728bd371}} 
+\index{Configure\+One\+Flag\+::crypto@{Configure\+One\+Flag\+::crypto}!random@{random}}
+\index{random@{random}!Configure\+One\+Flag\+::crypto@{Configure\+One\+Flag\+::crypto}}
+\subsubsection{\texorpdfstring{random}{random}}
+{\footnotesize\ttfamily Random Configure\+One\+Flag.\+crypto.\+random\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 15 of file crypto.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1crypto_a297bd06028260f8d47586961e7f386f8_a297bd06028260f8d47586961e7f386f8}\label{class_configure_one_flag_1_1crypto_a297bd06028260f8d47586961e7f386f8_a297bd06028260f8d47586961e7f386f8}} 
+\index{Configure\+One\+Flag\+::crypto@{Configure\+One\+Flag\+::crypto}!rm@{rm}}
+\index{rm@{rm}!Configure\+One\+Flag\+::crypto@{Configure\+One\+Flag\+::crypto}}
+\subsubsection{\texorpdfstring{rm}{rm}}
+{\footnotesize\ttfamily Rijndael\+Managed Configure\+One\+Flag.\+crypto.\+rm\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}
+
+
+
+Definition at line 17 of file crypto.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/hinesj/\+Documents/\+Visual Studio 2015/\+Projects/\+Triggers/\+Triggers/\mbox{\hyperlink{crypto_8cs}{crypto.\+cs}}\end{DoxyCompactItemize}

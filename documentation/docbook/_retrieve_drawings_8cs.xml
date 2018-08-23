@@ -1,0 +1,137 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_retrieve_drawings_8cs">
+    <title>RetrieveDrawings.cs File Reference</title>
+<para>Include dependency diagram for RetrieveDrawings.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_retrieve_drawings_8cs__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for RetrieveDrawings.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_retrieve_drawings_8cs__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_retrieve_drawings">ConfigureOneFlag::RetrieveDrawings</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_configure_one_flag">ConfigureOneFlag</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_z_m_q">ZMQ</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_z_m_q_1_1_z_m_q_ext">ZMQ::ZMQExt</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file C:/Users/hinesj/Documents/Visual Studio 2015/Projects/Triggers/Triggers/RetrieveDrawings.cs</para>
+    </simplesect>
+    <literallayout><computeroutput>
+1 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>;
+2 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Collections.Generic;
+3 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Linq;
+4 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Text;
+5 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Net;
+6 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Xml;
+7 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.IO;
+8 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_z_m_q">ZMQ</link>;
+9 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_z_m_q">ZMQ</link>.ZMQExt;
+10 
+11 <emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>
+12 {
+<link linkend="class_configure_one_flag_1_1_retrieve_drawings">13 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_configure_one_flag_1_1_retrieve_drawings">RetrieveDrawings</link>
+14 &#32;&#32;&#32;&#32;{
+<link linkend="class_configure_one_flag_1_1_retrieve_drawings_a392493678c1a4c1392b166ea8fedafa2_1a392493678c1a4c1392b166ea8fedafa2">15 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_retrieve_drawings_a392493678c1a4c1392b166ea8fedafa2_1a392493678c1a4c1392b166ea8fedafa2">result</link>;
+<link linkend="class_configure_one_flag_1_1_retrieve_drawings_a9eb1774070853cdd5601e1d8a6270757_1a9eb1774070853cdd5601e1d8a6270757">16 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_retrieve_drawings_a9eb1774070853cdd5601e1d8a6270757_1a9eb1774070853cdd5601e1d8a6270757">CopyDrawings</link>(XmlDocument&#32;xmlResult,&#32;<emphasis class="keywordtype">string</emphasis>&#32;url)
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Copy&#32;XML&#32;and&#32;order&#32;to&#32;GR_Cfg_DocumentQueue&#32;and&#32;send&#32;process-command&#32;through&#32;message&#32;queue&#32;to&#32;remote&#32;Windows&#32;service</emphasis>
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a58f013f5a91fe754f457a1e3ad26ebea_1a58f013f5a91fe754f457a1e3ad26ebea">InsertDocumentRecord</link>(xmlResult,&#32;<link linkend="namespace_triggers">Triggers</link>.pubOrderNumber,&#32;<link linkend="namespace_triggers">Triggers</link>.dbEnvironment,&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a4bbfcbf56b350859fc9a8ca73f3c3c4c_1a4bbfcbf56b350859fc9a8ca73f3c3c4c">dbSite</link>,&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service">C1WebService</link>.<link linkend="class_configure_one_flag_1_1_c1_web_service_ae10595c3cbff0ef87cb607d9c6f2b250_1ae10595c3cbff0ef87cb607d9c6f2b250">SPOrderNumber</link>);
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(<link linkend="namespace_system">System</link>.Exception&#32;dbf1)
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_triggers">Triggers</link>.logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;ERROR&#32;QR:&#32;&quot;</emphasis>&#32;+&#32;dbf1.Message;
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="namespace_triggers">Triggers</link>.logSource,&#32;<link linkend="namespace_triggers">Triggers</link>.logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_triggers">Triggers</link>.logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;Signal&#32;Message&#32;Queue&#32;to&#32;begin&#32;document&#32;processing&#32;for:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="namespace_triggers">Triggers</link>.pubOrderNumber&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;-&gt;&#32;&quot;</emphasis>&#32;+&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service">C1WebService</link>.<link linkend="class_configure_one_flag_1_1_c1_web_service_ae10595c3cbff0ef87cb607d9c6f2b250_1ae10595c3cbff0ef87cb607d9c6f2b250">SPOrderNumber</link>;
+30 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="namespace_triggers">Triggers</link>.logSource,&#32;<link linkend="namespace_triggers">Triggers</link>.logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//Send&#32;command&#32;to&#32;ZMQ&#32;listener&#32;to&#32;process&#32;newly&#32;created&#32;record&#32;from&#32;queue</emphasis>
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//setup</emphasis>
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(<link linkend="namespace_z_m_q">ZMQ</link>.Context&#32;context&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;<link linkend="namespace_z_m_q">ZMQ</link>.Context())
+35 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+36 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(<link linkend="namespace_z_m_q">ZMQ</link>.Socket&#32;requester&#32;=&#32;context.Socket(<link linkend="namespace_z_m_q">ZMQ</link>.SocketType.REQ))
+37 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//connect&#32;to&#32;remote&#32;endpoint,&#32;&lt;server&gt;&#32;&#32;</emphasis>
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="namespace_triggers">Triggers</link>.dbEnvironment&#32;==&#32;<emphasis class="stringliteral">&quot;PROD&quot;</emphasis>)
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;requester.Connect(<emphasis class="stringliteral">&quot;tcp://192.168.23.19:5555&quot;</emphasis>);&#32;&#32;<emphasis class="comment">//grc000dmzbus</emphasis>
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">else</emphasis>
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+45 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;requester.Connect(<emphasis class="stringliteral">&quot;tcp://172.16.1.60:5555&quot;</emphasis>);&#32;&#32;&#32;&#32;<emphasis class="comment">//grctslsql0&#32;(dev)</emphasis>
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+47 
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//send&#32;on&#32;the&#32;REQ&#32;pattern</emphasis>
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;requestText&#32;=&#32;<emphasis class="stringliteral">&quot;PROCESS:&quot;</emphasis>&#32;+&#32;<link linkend="namespace_triggers">Triggers</link>.pubOrderNumber;
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;requester.Send(Encoding.ASCII.GetBytes(requestText.ToCharArray()));
+51 
+52 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//receive&#32;Response&#32;on&#32;the&#32;REP&#32;pattern</emphasis>
+53 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;ackMsg&#32;=&#32;requester.Recv(Encoding.ASCII);
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_triggers">Triggers</link>.logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;Message&#32;received&#32;from&#32;ZMQ:&#32;&quot;</emphasis>&#32;+&#32;ackMsg;
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLog.WriteEntry(<link linkend="namespace_triggers">Triggers</link>.logSource,&#32;<link linkend="namespace_triggers">Triggers</link>.logEvent,&#32;<link linkend="namespace_system">System</link>.Diagnostics.EventLogEntryType.Information,&#32;234);
+56 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//If&#32;site&#32;was&#32;not&#32;NOVB,&#32;disable&#32;the&#32;C1Order&#32;trigger&#32;for&#32;the&#32;order-site&#32;and&#32;then&#32;move&#32;the&#32;queue&#32;record&#32;to&#32;the&#32;appropriate&#32;site&#32;queue&#32;table</emphasis>
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a4bbfcbf56b350859fc9a8ca73f3c3c4c_1a4bbfcbf56b350859fc9a8ca73f3c3c4c">dbSite</link>)
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+62 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;NOVB&quot;</emphasis>:
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//do&#32;nothing</emphasis>
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">default</emphasis>:
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a6fba3443de3b8beba6d0648a75bff168_1a6fba3443de3b8beba6d0648a75bff168">MoveQueueRecord</link>(<link linkend="namespace_triggers">Triggers</link>.pubOrderNumber,&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a4bbfcbf56b350859fc9a8ca73f3c3c4c_1a4bbfcbf56b350859fc9a8ca73f3c3c4c">dbSite</link>);
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+68 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+69 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+70 &#32;&#32;&#32;&#32;}
+71 }
+    </computeroutput></literallayout>
+</section>

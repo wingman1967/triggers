@@ -1,0 +1,242 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter">
+<title>Triggers::GRCfgTableAdapters::GR_Cfg_AuditTableAdapter class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfgTableAdapters::GR_Cfg_AuditTableAdapter</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfgTableAdapters::GR_Cfg_AuditTableAdapter</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.OleDb.OleDbDataAdapter _adapter</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.OleDb.OleDbConnection _connection</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.OleDb.OleDbTransaction _transaction</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.OleDb.OleDbCommand [] _commandCollection</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool _clearBeforeFill</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_a2cea5843047435d25b308e23ebbfd186_1a2cea5843047435d25b308e23ebbfd186">GR_Cfg_AuditTableAdapter</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_aff7a2b01a42dfa2182cb2f5b15629780_1aff7a2b01a42dfa2182cb2f5b15629780">Fill</link> (
+<link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table">GRCfg.GR_Cfg_AuditDataTable</link> dataTable)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table">GRCfg.GR_Cfg_AuditDataTable</link> <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_a458f3483c1f0604cef8f34e079a8574a_1a458f3483c1f0604cef8f34e079a8574a">GetData</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_a269109397e3345bde8537f1860f75a03_1a269109397e3345bde8537f1860f75a03">Update</link> (
+<link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___audit_data_table">GRCfg.GR_Cfg_AuditDataTable</link> dataTable)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_a740ceca0877248f9d581f70608b1a8a3_1a740ceca0877248f9d581f70608b1a8a3">Update</link> (
+<link linkend="class_triggers_1_1_g_r_cfg">GRCfg</link> dataSet)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_ab6b51033e1ac32eb2ef178d78904d653_1ab6b51033e1ac32eb2ef178d78904d653">Update</link> (
+global::System.Data.DataRow dataRow)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_a4999d0b7ca8cd67f357818187ba05e16_1a4999d0b7ca8cd67f357818187ba05e16">Update</link> (
+global::System.Data.DataRow [] dataRows)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>virtual int <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_aa61fe8ef35a0fcffdd5860e41e89192d_1aa61fe8ef35a0fcffdd5860e41e89192d">Insert</link> (
+string order_num, global::System.Nullable&lt; int &gt; order_line_num, string auditEvent, string auditMessageL, string CreatedBy, string UpdatedBy, System.DateTime CreateDate, System.DateTime RecordDate, System.Guid RowPointer, byte NoteExistsFlag, byte InWorkflow, string step)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_a68c3680be1eb4c52af0fd9cca46d7ea0_1a68c3680be1eb4c52af0fd9cca46d7ea0">InitAdapter</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_a525c9f72cf374074439d7f5162c40d9f_1a525c9f72cf374074439d7f5162c40d9f">InitConnection</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_a4e143f330eed58bc0cf7d9acec495b45_1a4e143f330eed58bc0cf7d9acec495b45">InitCommandCollection</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represents the connection and commands used to retrieve and save data. /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_a2cea5843047435d25b308e23ebbfd186_1a2cea5843047435d25b308e23ebbfd186">
+                <title>Triggers.GRCfgTableAdapters.GR_Cfg_AuditTableAdapter.GR_Cfg_AuditTableAdapter ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_aff7a2b01a42dfa2182cb2f5b15629780_1aff7a2b01a42dfa2182cb2f5b15629780">
+                <title>virtual int Triggers.GRCfgTableAdapters.GR_Cfg_AuditTableAdapter.Fill (GRCfg.GR_Cfg_AuditDataTable dataTable)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_a458f3483c1f0604cef8f34e079a8574a_1a458f3483c1f0604cef8f34e079a8574a">
+                <title>virtual GRCfg.GR_Cfg_AuditDataTable Triggers.GRCfgTableAdapters.GR_Cfg_AuditTableAdapter.GetData ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_a269109397e3345bde8537f1860f75a03_1a269109397e3345bde8537f1860f75a03">
+                <title>virtual int Triggers.GRCfgTableAdapters.GR_Cfg_AuditTableAdapter.Update (GRCfg.GR_Cfg_AuditDataTable dataTable)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_a740ceca0877248f9d581f70608b1a8a3_1a740ceca0877248f9d581f70608b1a8a3">
+                <title>virtual int Triggers.GRCfgTableAdapters.GR_Cfg_AuditTableAdapter.Update (GRCfg dataSet)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_ab6b51033e1ac32eb2ef178d78904d653_1ab6b51033e1ac32eb2ef178d78904d653">
+                <title>virtual int Triggers.GRCfgTableAdapters.GR_Cfg_AuditTableAdapter.Update (global::System.Data.DataRow dataRow)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_a4999d0b7ca8cd67f357818187ba05e16_1a4999d0b7ca8cd67f357818187ba05e16">
+                <title>virtual int Triggers.GRCfgTableAdapters.GR_Cfg_AuditTableAdapter.Update (global::System.Data.DataRow[] dataRows)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_aa61fe8ef35a0fcffdd5860e41e89192d_1aa61fe8ef35a0fcffdd5860e41e89192d">
+                <title>virtual int Triggers.GRCfgTableAdapters.GR_Cfg_AuditTableAdapter.Insert (string order_num, global::System.Nullable&lt; int &gt; order_line_num, string auditEvent, string auditMessageL, string CreatedBy, string UpdatedBy, System.DateTime CreateDate, System.DateTime RecordDate, System.Guid RowPointer, byte NoteExistsFlag, byte InWorkflow, string step)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_a68c3680be1eb4c52af0fd9cca46d7ea0_1a68c3680be1eb4c52af0fd9cca46d7ea0">
+                <title>void Triggers.GRCfgTableAdapters.GR_Cfg_AuditTableAdapter.InitAdapter ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_a525c9f72cf374074439d7f5162c40d9f_1a525c9f72cf374074439d7f5162c40d9f">
+                <title>void Triggers.GRCfgTableAdapters.GR_Cfg_AuditTableAdapter.InitConnection ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_table_adapters_1_1_g_r___cfg___audit_table_adapter_a4e143f330eed58bc0cf7d9acec495b45_1a4e143f330eed58bc0cf7d9acec495b45">
+                <title>void Triggers.GRCfgTableAdapters.GR_Cfg_AuditTableAdapter.InitCommandCollection ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

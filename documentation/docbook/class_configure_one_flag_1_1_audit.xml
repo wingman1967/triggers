@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_configure_one_flag_1_1_audit">
+<title>ConfigureOneFlag::Audit class Reference</title>
+<para>Inheritance diagram for ConfigureOneFlag::Audit</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_configure_one_flag_1_1_audit__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for ConfigureOneFlag::Audit</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_configure_one_flag_1_1_audit__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string auditMessageL</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string [] mE</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static int mEIndex</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static bool resetmE</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static string ValidationMessages</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_audit_ab7a15d124f661d9f251f17cf042f00ac_1ab7a15d124f661d9f251f17cf042f00ac">SetTruncate</link> (
+string field, int fieldLen, int maxLen, string order_num, int order_line_num, string fieldContent)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static void <link linkend="class_configure_one_flag_1_1_audit_ac9f5188a69320d3d419afed3499e2a26_1ac9f5188a69320d3d419afed3499e2a26">ProcessingCompleted</link> (
+string auditMessage)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Write auditing information regarding mapping and assembly behavior to event log, GR_Cfg_Audit, and send email for error notifications. </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 9 of file Audit.cs</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>Audit.cs</para></listitem></itemizedlist></para>
+        </simplesect>
+            <section xml:id="class_configure_one_flag_1_1_audit_ab7a15d124f661d9f251f17cf042f00ac_1ab7a15d124f661d9f251f17cf042f00ac">
+                <title>static void ConfigureOneFlag.Audit.SetTruncate (string field, int fieldLen, int maxLen, string order_num, int order_line_num, string fieldContent)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_configure_one_flag_1_1_audit_ac9f5188a69320d3d419afed3499e2a26_1ac9f5188a69320d3d419afed3499e2a26">
+                <title>static void ConfigureOneFlag.Audit.ProcessingCompleted (string auditMessage)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

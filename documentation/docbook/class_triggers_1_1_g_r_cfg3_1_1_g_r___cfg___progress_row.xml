@@ -1,0 +1,166 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___progress_row">
+<title>Triggers::GRCfg3::GR_Cfg_ProgressRow class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfg3::GR_Cfg_ProgressRow</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___progress_row__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfg3::GR_Cfg_ProgressRow</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___progress_row__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>GR_Cfg_ProgressDataTable tableGR_Cfg_Progress</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___progress_row_a0a294e150e0d7a5de3860e8c3461db84_1a0a294e150e0d7a5de3860e8c3461db84">GR_Cfg_ProgressRow</link> (
+global::System.Data.DataRowBuilder rb)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___progress_row_ab42d89a1f70cd61474b3ab5ba9c9c687_1ab42d89a1f70cd61474b3ab5ba9c9c687">Isorder_numNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___progress_row_a1a7175d120f80ef31e24f677ffbba69c_1a1a7175d120f80ef31e24f677ffbba69c">Setorder_numNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>bool <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___progress_row_ac138bfaa6d4c9e1406d9b6389325898a_1ac138bfaa6d4c9e1406d9b6389325898a">IsstepNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___progress_row_a60e369e82279166b1df58d74b2f965e0_1a60e369e82279166b1df58d74b2f965e0">SetstepNull</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represents strongly named DataRow class. /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___progress_row_a0a294e150e0d7a5de3860e8c3461db84_1a0a294e150e0d7a5de3860e8c3461db84">
+                <title>Triggers.GRCfg3.GR_Cfg_ProgressRow.GR_Cfg_ProgressRow (global::System.Data.DataRowBuilder rb)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___progress_row_ab42d89a1f70cd61474b3ab5ba9c9c687_1ab42d89a1f70cd61474b3ab5ba9c9c687">
+                <title>bool Triggers.GRCfg3.GR_Cfg_ProgressRow.Isorder_numNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___progress_row_a1a7175d120f80ef31e24f677ffbba69c_1a1a7175d120f80ef31e24f677ffbba69c">
+                <title>void Triggers.GRCfg3.GR_Cfg_ProgressRow.Setorder_numNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___progress_row_ac138bfaa6d4c9e1406d9b6389325898a_1ac138bfaa6d4c9e1406d9b6389325898a">
+                <title>bool Triggers.GRCfg3.GR_Cfg_ProgressRow.IsstepNull ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg3_1_1_g_r___cfg___progress_row_a60e369e82279166b1df58d74b2f965e0_1a60e369e82279166b1df58d74b2f965e0">
+                <title>void Triggers.GRCfg3.GR_Cfg_ProgressRow.SetstepNull ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>

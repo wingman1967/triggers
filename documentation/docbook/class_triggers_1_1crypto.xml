@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1crypto">
+<title>Triggers::crypto class Reference</title>
+<para>Inheritance diagram for Triggers::crypto</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1crypto__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::crypto</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1crypto__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>Random random</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>byte [] key</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>RijndaelManaged rm</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>UTF8Encoding encoder</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1crypto_ac8bfa90ed91c27ed4e74fd8f979e6ed6_1ac8bfa90ed91c27ed4e74fd8f979e6ed6">DecryptCS</link> (
+string cipherText, string sKey)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>byte [] <link linkend="class_triggers_1_1crypto_aa55aefe9e277d745a4f33463d8c2d5ab_1aa55aefe9e277d745a4f33463d8c2d5ab">Encrypt</link> (
+byte [] buffer, byte [] vector)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>byte [] <link linkend="class_triggers_1_1crypto_afe2121a3af399065a11050f1ff3858b5_1afe2121a3af399065a11050f1ff3858b5">Decrypt</link> (
+byte [] buffer, byte [] vector)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>byte [] <link linkend="class_triggers_1_1crypto_afe0024500c9ac06d4f7447a8a87d56ea_1afe0024500c9ac06d4f7447a8a87d56ea">Transform</link> (
+byte [] buffer, ICryptoTransform transform)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Cryptography class providing for the decryption of server connection string culled from server registry </para>
+    </simplesect>
+        <simplesect>
+            <title>Detailed Description</title>
+                <para>Definition at line 17 of file crypto.cs</para>
+                <para>The Documentation for this struct was generated from the following file: </para>
+                <para><itemizedlist><listitem><para>crypto.cs</para></listitem></itemizedlist></para>
+        </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1crypto_ac8bfa90ed91c27ed4e74fd8f979e6ed6_1ac8bfa90ed91c27ed4e74fd8f979e6ed6">
+                <title>void Triggers.crypto.DecryptCS (string cipherText, string sKey)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1crypto_aa55aefe9e277d745a4f33463d8c2d5ab_1aa55aefe9e277d745a4f33463d8c2d5ab">
+                <title>byte [] Triggers.crypto.Encrypt (byte[] buffer, byte[] vector)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1crypto_afe2121a3af399065a11050f1ff3858b5_1afe2121a3af399065a11050f1ff3858b5">
+                <title>byte [] Triggers.crypto.Decrypt (byte[] buffer, byte[] vector)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1crypto_afe0024500c9ac06d4f7447a8a87d56ea_1afe0024500c9ac06d4f7447a8a87d56ea">
+                <title>byte [] Triggers.crypto.Transform (byte[] buffer, ICryptoTransform transform)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

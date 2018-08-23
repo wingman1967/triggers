@@ -1,0 +1,263 @@
+\hypertarget{class_configure_one_flag_1_1_c1_dictionaries}{}\section{Configure\+One\+Flag.\+C1\+Dictionaries Class Reference}
+\label{class_configure_one_flag_1_1_c1_dictionaries}\index{Configure\+One\+Flag.\+C1\+Dictionaries@{Configure\+One\+Flag.\+C1\+Dictionaries}}
+
+
+Management of dictionaries used for C1 data mapping/processing  
+
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_configure_one_flag_1_1_c1_dictionaries_a5fbd06a46c2864f55b7b43946048c3b4_a5fbd06a46c2864f55b7b43946048c3b4}{Load\+W\+M\+Dictionary}} ()
+\item 
+static void \mbox{\hyperlink{class_configure_one_flag_1_1_c1_dictionaries_ac09be8def5557047288f25a46fd85ed9_ac09be8def5557047288f25a46fd85ed9}{Load\+D\+B\+F\+Length\+Dictionary}} ()
+\item 
+static int \mbox{\hyperlink{class_configure_one_flag_1_1_c1_dictionaries_ae27861e2b313a9d5e2cf11f8e4c304f5_ae27861e2b313a9d5e2cf11f8e4c304f5}{D\+B\+Field\+Len\+CO}} (string field, ref \mbox{\hyperlink{class_configure_one_flag_1_1z_cfg_c_o}{z\+Cfg\+CO}} co)
+\item 
+static int \mbox{\hyperlink{class_configure_one_flag_1_1_c1_dictionaries_a62d37086ac3e73ea188a506c45d1b965_a62d37086ac3e73ea188a506c45d1b965}{D\+B\+Field\+Len\+C\+O\+Item}} (string field, ref \mbox{\hyperlink{class_configure_one_flag_1_1z_cfg_c_oitem}{z\+Cfg\+C\+Oitem}} coitem)
+\item 
+static int \mbox{\hyperlink{class_configure_one_flag_1_1_c1_dictionaries_af0ae761a8dc88119f05de12eb725bbc1_af0ae761a8dc88119f05de12eb725bbc1}{D\+B\+Field\+Len\+Cfg\+Item}} (string field, ref \mbox{\hyperlink{class_configure_one_flag_1_1z_cfg_item}{z\+Cfg\+Item}} citem)
+\item 
+static int \mbox{\hyperlink{class_configure_one_flag_1_1_c1_dictionaries_a2c81b7f3d9a6f3aa4663246c084536c6_a2c81b7f3d9a6f3aa4663246c084536c6}{D\+B\+Field\+Len\+Parm\+Val}} (string field, ref \mbox{\hyperlink{class_configure_one_flag_1_1z_cfg_parm_val}{z\+Cfg\+Parm\+Val}} cfg)
+\item 
+static int \mbox{\hyperlink{class_configure_one_flag_1_1_c1_dictionaries_aef02fef832352fba236b3be1375daa4c_aef02fef832352fba236b3be1375daa4c}{D\+B\+Field\+Len\+B\+OM}} (string field, ref \mbox{\hyperlink{class_configure_one_flag_1_1z_cfg_b_o_m}{z\+Cfg\+B\+OM}} bom)
+\item 
+static int \mbox{\hyperlink{class_configure_one_flag_1_1_c1_dictionaries_ad4f6694f98646dc93c977ac1f10cb8f9_ad4f6694f98646dc93c977ac1f10cb8f9}{D\+B\+Field\+Len\+Route}} (string field, ref \mbox{\hyperlink{class_configure_one_flag_1_1z_cfg_route}{z\+Cfg\+Route}} route)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static Dictionary$<$ string, string $>$ \mbox{\hyperlink{class_configure_one_flag_1_1_c1_dictionaries_a192b4ea45e2b5d46ed02929db9c9d320_a192b4ea45e2b5d46ed02929db9c9d320}{webmethods}} = new Dictionary$<$string, string$>$()
+\item 
+static Dictionary$<$ string, int $>$ \mbox{\hyperlink{class_configure_one_flag_1_1_c1_dictionaries_a1652a36e934b6107a2b2456c224d5655_a1652a36e934b6107a2b2456c224d5655}{field\+Lengths}} = new Dictionary$<$string, int$>$()
+\item 
+static int \mbox{\hyperlink{class_configure_one_flag_1_1_c1_dictionaries_a6fe68f2e6c0b848c34730d84a0894a98_a6fe68f2e6c0b848c34730d84a0894a98}{object\+Length}}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Management of dictionaries used for C1 data mapping/processing 
+
+
+
+Definition at line 8 of file C1\+Dictionaries.\+cs.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_configure_one_flag_1_1_c1_dictionaries_aef02fef832352fba236b3be1375daa4c_aef02fef832352fba236b3be1375daa4c}\label{class_configure_one_flag_1_1_c1_dictionaries_aef02fef832352fba236b3be1375daa4c_aef02fef832352fba236b3be1375daa4c}} 
+\index{Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}!D\+B\+Field\+Len\+B\+OM@{D\+B\+Field\+Len\+B\+OM}}
+\index{D\+B\+Field\+Len\+B\+OM@{D\+B\+Field\+Len\+B\+OM}!Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}}
+\subsubsection{\texorpdfstring{D\+B\+Field\+Len\+B\+O\+M()}{DBFieldLenBOM()}}
+{\footnotesize\ttfamily static int Configure\+One\+Flag.\+C1\+Dictionaries.\+D\+B\+Field\+Len\+B\+OM (\begin{DoxyParamCaption}\item[{string}]{field,  }\item[{ref \mbox{\hyperlink{class_configure_one_flag_1_1z_cfg_b_o_m}{z\+Cfg\+B\+OM}}}]{bom }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 216 of file C1\+Dictionaries.\+cs.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_c1_dictionaries_aef02fef832352fba236b3be1375daa4c_aef02fef832352fba236b3be1375daa4c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_c1_dictionaries_aef02fef832352fba236b3be1375daa4c_aef02fef832352fba236b3be1375daa4c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_configure_one_flag_1_1_c1_dictionaries_af0ae761a8dc88119f05de12eb725bbc1_af0ae761a8dc88119f05de12eb725bbc1}\label{class_configure_one_flag_1_1_c1_dictionaries_af0ae761a8dc88119f05de12eb725bbc1_af0ae761a8dc88119f05de12eb725bbc1}} 
+\index{Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}!D\+B\+Field\+Len\+Cfg\+Item@{D\+B\+Field\+Len\+Cfg\+Item}}
+\index{D\+B\+Field\+Len\+Cfg\+Item@{D\+B\+Field\+Len\+Cfg\+Item}!Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}}
+\subsubsection{\texorpdfstring{D\+B\+Field\+Len\+Cfg\+Item()}{DBFieldLenCfgItem()}}
+{\footnotesize\ttfamily static int Configure\+One\+Flag.\+C1\+Dictionaries.\+D\+B\+Field\+Len\+Cfg\+Item (\begin{DoxyParamCaption}\item[{string}]{field,  }\item[{ref \mbox{\hyperlink{class_configure_one_flag_1_1z_cfg_item}{z\+Cfg\+Item}}}]{citem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 187 of file C1\+Dictionaries.\+cs.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_c1_dictionaries_af0ae761a8dc88119f05de12eb725bbc1_af0ae761a8dc88119f05de12eb725bbc1_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_c1_dictionaries_af0ae761a8dc88119f05de12eb725bbc1_af0ae761a8dc88119f05de12eb725bbc1_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_configure_one_flag_1_1_c1_dictionaries_ae27861e2b313a9d5e2cf11f8e4c304f5_ae27861e2b313a9d5e2cf11f8e4c304f5}\label{class_configure_one_flag_1_1_c1_dictionaries_ae27861e2b313a9d5e2cf11f8e4c304f5_ae27861e2b313a9d5e2cf11f8e4c304f5}} 
+\index{Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}!D\+B\+Field\+Len\+CO@{D\+B\+Field\+Len\+CO}}
+\index{D\+B\+Field\+Len\+CO@{D\+B\+Field\+Len\+CO}!Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}}
+\subsubsection{\texorpdfstring{D\+B\+Field\+Len\+C\+O()}{DBFieldLenCO()}}
+{\footnotesize\ttfamily static int Configure\+One\+Flag.\+C1\+Dictionaries.\+D\+B\+Field\+Len\+CO (\begin{DoxyParamCaption}\item[{string}]{field,  }\item[{ref \mbox{\hyperlink{class_configure_one_flag_1_1z_cfg_c_o}{z\+Cfg\+CO}}}]{co }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 123 of file C1\+Dictionaries.\+cs.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_c1_dictionaries_ae27861e2b313a9d5e2cf11f8e4c304f5_ae27861e2b313a9d5e2cf11f8e4c304f5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_c1_dictionaries_ae27861e2b313a9d5e2cf11f8e4c304f5_ae27861e2b313a9d5e2cf11f8e4c304f5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_configure_one_flag_1_1_c1_dictionaries_a62d37086ac3e73ea188a506c45d1b965_a62d37086ac3e73ea188a506c45d1b965}\label{class_configure_one_flag_1_1_c1_dictionaries_a62d37086ac3e73ea188a506c45d1b965_a62d37086ac3e73ea188a506c45d1b965}} 
+\index{Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}!D\+B\+Field\+Len\+C\+O\+Item@{D\+B\+Field\+Len\+C\+O\+Item}}
+\index{D\+B\+Field\+Len\+C\+O\+Item@{D\+B\+Field\+Len\+C\+O\+Item}!Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}}
+\subsubsection{\texorpdfstring{D\+B\+Field\+Len\+C\+O\+Item()}{DBFieldLenCOItem()}}
+{\footnotesize\ttfamily static int Configure\+One\+Flag.\+C1\+Dictionaries.\+D\+B\+Field\+Len\+C\+O\+Item (\begin{DoxyParamCaption}\item[{string}]{field,  }\item[{ref \mbox{\hyperlink{class_configure_one_flag_1_1z_cfg_c_oitem}{z\+Cfg\+C\+Oitem}}}]{coitem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 174 of file C1\+Dictionaries.\+cs.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_c1_dictionaries_a62d37086ac3e73ea188a506c45d1b965_a62d37086ac3e73ea188a506c45d1b965_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_c1_dictionaries_a62d37086ac3e73ea188a506c45d1b965_a62d37086ac3e73ea188a506c45d1b965_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_configure_one_flag_1_1_c1_dictionaries_a2c81b7f3d9a6f3aa4663246c084536c6_a2c81b7f3d9a6f3aa4663246c084536c6}\label{class_configure_one_flag_1_1_c1_dictionaries_a2c81b7f3d9a6f3aa4663246c084536c6_a2c81b7f3d9a6f3aa4663246c084536c6}} 
+\index{Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}!D\+B\+Field\+Len\+Parm\+Val@{D\+B\+Field\+Len\+Parm\+Val}}
+\index{D\+B\+Field\+Len\+Parm\+Val@{D\+B\+Field\+Len\+Parm\+Val}!Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}}
+\subsubsection{\texorpdfstring{D\+B\+Field\+Len\+Parm\+Val()}{DBFieldLenParmVal()}}
+{\footnotesize\ttfamily static int Configure\+One\+Flag.\+C1\+Dictionaries.\+D\+B\+Field\+Len\+Parm\+Val (\begin{DoxyParamCaption}\item[{string}]{field,  }\item[{ref \mbox{\hyperlink{class_configure_one_flag_1_1z_cfg_parm_val}{z\+Cfg\+Parm\+Val}}}]{cfg }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 204 of file C1\+Dictionaries.\+cs.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_c1_dictionaries_a2c81b7f3d9a6f3aa4663246c084536c6_a2c81b7f3d9a6f3aa4663246c084536c6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_c1_dictionaries_a2c81b7f3d9a6f3aa4663246c084536c6_a2c81b7f3d9a6f3aa4663246c084536c6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_configure_one_flag_1_1_c1_dictionaries_ad4f6694f98646dc93c977ac1f10cb8f9_ad4f6694f98646dc93c977ac1f10cb8f9}\label{class_configure_one_flag_1_1_c1_dictionaries_ad4f6694f98646dc93c977ac1f10cb8f9_ad4f6694f98646dc93c977ac1f10cb8f9}} 
+\index{Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}!D\+B\+Field\+Len\+Route@{D\+B\+Field\+Len\+Route}}
+\index{D\+B\+Field\+Len\+Route@{D\+B\+Field\+Len\+Route}!Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}}
+\subsubsection{\texorpdfstring{D\+B\+Field\+Len\+Route()}{DBFieldLenRoute()}}
+{\footnotesize\ttfamily static int Configure\+One\+Flag.\+C1\+Dictionaries.\+D\+B\+Field\+Len\+Route (\begin{DoxyParamCaption}\item[{string}]{field,  }\item[{ref \mbox{\hyperlink{class_configure_one_flag_1_1z_cfg_route}{z\+Cfg\+Route}}}]{route }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 227 of file C1\+Dictionaries.\+cs.
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_c1_dictionaries_ad4f6694f98646dc93c977ac1f10cb8f9_ad4f6694f98646dc93c977ac1f10cb8f9_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_c1_dictionaries_ad4f6694f98646dc93c977ac1f10cb8f9_ad4f6694f98646dc93c977ac1f10cb8f9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_configure_one_flag_1_1_c1_dictionaries_ac09be8def5557047288f25a46fd85ed9_ac09be8def5557047288f25a46fd85ed9}\label{class_configure_one_flag_1_1_c1_dictionaries_ac09be8def5557047288f25a46fd85ed9_ac09be8def5557047288f25a46fd85ed9}} 
+\index{Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}!Load\+D\+B\+F\+Length\+Dictionary@{Load\+D\+B\+F\+Length\+Dictionary}}
+\index{Load\+D\+B\+F\+Length\+Dictionary@{Load\+D\+B\+F\+Length\+Dictionary}!Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}}
+\subsubsection{\texorpdfstring{Load\+D\+B\+F\+Length\+Dictionary()}{LoadDBFLengthDictionary()}}
+{\footnotesize\ttfamily static void Configure\+One\+Flag.\+C1\+Dictionaries.\+Load\+D\+B\+F\+Length\+Dictionary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 27 of file C1\+Dictionaries.\+cs.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_c1_dictionaries_ac09be8def5557047288f25a46fd85ed9_ac09be8def5557047288f25a46fd85ed9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{class_configure_one_flag_1_1_c1_dictionaries_a5fbd06a46c2864f55b7b43946048c3b4_a5fbd06a46c2864f55b7b43946048c3b4}\label{class_configure_one_flag_1_1_c1_dictionaries_a5fbd06a46c2864f55b7b43946048c3b4_a5fbd06a46c2864f55b7b43946048c3b4}} 
+\index{Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}!Load\+W\+M\+Dictionary@{Load\+W\+M\+Dictionary}}
+\index{Load\+W\+M\+Dictionary@{Load\+W\+M\+Dictionary}!Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}}
+\subsubsection{\texorpdfstring{Load\+W\+M\+Dictionary()}{LoadWMDictionary()}}
+{\footnotesize\ttfamily static void Configure\+One\+Flag.\+C1\+Dictionaries.\+Load\+W\+M\+Dictionary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 13 of file C1\+Dictionaries.\+cs.
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_configure_one_flag_1_1_c1_dictionaries_a5fbd06a46c2864f55b7b43946048c3b4_a5fbd06a46c2864f55b7b43946048c3b4_icgraph}
+\end{center}
+\end{figure}
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_configure_one_flag_1_1_c1_dictionaries_a1652a36e934b6107a2b2456c224d5655_a1652a36e934b6107a2b2456c224d5655}\label{class_configure_one_flag_1_1_c1_dictionaries_a1652a36e934b6107a2b2456c224d5655_a1652a36e934b6107a2b2456c224d5655}} 
+\index{Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}!field\+Lengths@{field\+Lengths}}
+\index{field\+Lengths@{field\+Lengths}!Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}}
+\subsubsection{\texorpdfstring{field\+Lengths}{fieldLengths}}
+{\footnotesize\ttfamily Dictionary$<$string, int$>$ Configure\+One\+Flag.\+C1\+Dictionaries.\+field\+Lengths = new Dictionary$<$string, int$>$()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 11 of file C1\+Dictionaries.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_c1_dictionaries_a6fe68f2e6c0b848c34730d84a0894a98_a6fe68f2e6c0b848c34730d84a0894a98}\label{class_configure_one_flag_1_1_c1_dictionaries_a6fe68f2e6c0b848c34730d84a0894a98_a6fe68f2e6c0b848c34730d84a0894a98}} 
+\index{Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}!object\+Length@{object\+Length}}
+\index{object\+Length@{object\+Length}!Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}}
+\subsubsection{\texorpdfstring{object\+Length}{objectLength}}
+{\footnotesize\ttfamily int Configure\+One\+Flag.\+C1\+Dictionaries.\+object\+Length\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 12 of file C1\+Dictionaries.\+cs.
+
+\mbox{\Hypertarget{class_configure_one_flag_1_1_c1_dictionaries_a192b4ea45e2b5d46ed02929db9c9d320_a192b4ea45e2b5d46ed02929db9c9d320}\label{class_configure_one_flag_1_1_c1_dictionaries_a192b4ea45e2b5d46ed02929db9c9d320_a192b4ea45e2b5d46ed02929db9c9d320}} 
+\index{Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}!webmethods@{webmethods}}
+\index{webmethods@{webmethods}!Configure\+One\+Flag\+::\+C1\+Dictionaries@{Configure\+One\+Flag\+::\+C1\+Dictionaries}}
+\subsubsection{\texorpdfstring{webmethods}{webmethods}}
+{\footnotesize\ttfamily Dictionary$<$string, string$>$ Configure\+One\+Flag.\+C1\+Dictionaries.\+webmethods = new Dictionary$<$string, string$>$()\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 10 of file C1\+Dictionaries.\+cs.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/hinesj/\+Documents/\+Visual Studio 2015/\+Projects/\+Triggers/\+Triggers/\mbox{\hyperlink{_c1_dictionaries_8cs}{C1\+Dictionaries.\+cs}}\end{DoxyCompactItemize}

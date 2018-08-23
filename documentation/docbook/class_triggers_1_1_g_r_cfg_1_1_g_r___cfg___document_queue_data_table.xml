@@ -1,0 +1,503 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table">
+<title>Triggers::GRCfg::GR_Cfg_DocumentQueueDataTable class Reference</title>
+<para>Inheritance diagram for Triggers::GRCfg::GR_Cfg_DocumentQueueDataTable</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::GRCfg::GR_Cfg_DocumentQueueDataTable</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title>Private Attributes</title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnorder_num</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnorderXML</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnprocState</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnenvironment</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnsite</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnSLOrderNumber</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnID</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnCreatedBy</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnUpdatedBy</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnCreateDate</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnRecordDate</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnRowPointer</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnNoteExistsFlag</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>global::System.Data.DataColumn columnInWorkflow</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a912880a895f9b2b12cd04259db552fcb_1a912880a895f9b2b12cd04259db552fcb">GR_Cfg_DocumentQueueDataTable</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a10867117831415a64ca77ab1597dbfe1_1a10867117831415a64ca77ab1597dbfe1">AddGR_Cfg_DocumentQueueRow</link> (
+<link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_row">GR_Cfg_DocumentQueueRow</link> row)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_row">GR_Cfg_DocumentQueueRow</link> <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a3e37f577fa49d0ea875a241a862ba968_1a3e37f577fa49d0ea875a241a862ba968">AddGR_Cfg_DocumentQueueRow</link> (
+string order_num, string orderXML, int procState, string environment, string site, string SLOrderNumber, System.Guid ID, string CreatedBy, string UpdatedBy, System.DateTime CreateDate, System.DateTime RecordDate, System.Guid RowPointer, byte NoteExistsFlag, byte InWorkflow)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_row">GR_Cfg_DocumentQueueRow</link> <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_ac8f92f85249b492e0b7e922b9cd1eb9e_1ac8f92f85249b492e0b7e922b9cd1eb9e">FindByRowPointer</link> (
+System.Guid RowPointer)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Data.DataTable <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a317cf68ce8ca5fec30dcd9e165bd1600_1a317cf68ce8ca5fec30dcd9e165bd1600">Clone</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para><link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_row">GR_Cfg_DocumentQueueRow</link> <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_ab21fdccc9b94a2f065a57677662bfbde_1ab21fdccc9b94a2f065a57677662bfbde">NewGR_Cfg_DocumentQueueRow</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a5e4d414cef50c6f752d74d81cd1e2fbc_1a5e4d414cef50c6f752d74d81cd1e2fbc">RemoveGR_Cfg_DocumentQueueRow</link> (
+<link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_row">GR_Cfg_DocumentQueueRow</link> row)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a6752958bad01b45c7c38a5af0526cfd6_1a6752958bad01b45c7c38a5af0526cfd6">GR_Cfg_DocumentQueueDataTable</link> (
+global::System.Data.DataTable table)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a9302bd33087e90ebcfe37003b323fe0f_1a9302bd33087e90ebcfe37003b323fe0f">InitVars</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para> <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a67743e2a6526f8b5e8121792125e339d_1a67743e2a6526f8b5e8121792125e339d">GR_Cfg_DocumentQueueDataTable</link> (
+global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Data.DataTable <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a6452a9568d21ed6aad6b203b7bf51bf8_1a6452a9568d21ed6aad6b203b7bf51bf8">CreateInstance</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Data.DataRow <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_ac06dccefcd02f0ab13f29119d93a4473_1ac06dccefcd02f0ab13f29119d93a4473">NewRowFromBuilder</link> (
+global::System.Data.DataRowBuilder builder)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override global::System.Type <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a9ef1c8e1c6fc241637fe55e8025a5960_1a9ef1c8e1c6fc241637fe55e8025a5960">GetRowType</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a41fd60847fe4967a6d9dc309103f9a35_1a41fd60847fe4967a6d9dc309103f9a35">OnRowChanged</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_ab792e94619d52854864731ce61ff01ad_1ab792e94619d52854864731ce61ff01ad">OnRowChanging</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a6cef8004e66723796c46b5c246b53b0a_1a6cef8004e66723796c46b5c246b53b0a">OnRowDeleted</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>override void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_acb5762d009d3d7c53e38f23e40d60ed2_1acb5762d009d3d7c53e38f23e40d60ed2">OnRowDeleting</link> (
+global::System.Data.DataRowChangeEventArgs e)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_ac8b76b0daa30fc02bffc30f28c779fdb_1ac8b76b0daa30fc02bffc30f28c779fdb">InitClass</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>static global::System.Xml.Schema.XmlSchemaComplexType <link linkend="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_ac724dca3cdc7e740d26b92593a0ed248_1ac724dca3cdc7e740d26b92593a0ed248">GetTypedTableSchema</link> (
+global::System.Xml.Schema.XmlSchemaSet xs)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+    <simplesect>
+
+<para>Represents the strongly named DataTable class. /summary&gt; </para>
+    </simplesect>
+        <section>
+            <title>Member Data Documentation</title>
+        </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a912880a895f9b2b12cd04259db552fcb_1a912880a895f9b2b12cd04259db552fcb">
+                <title>Triggers.GRCfg.GR_Cfg_DocumentQueueDataTable.GR_Cfg_DocumentQueueDataTable ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a10867117831415a64ca77ab1597dbfe1_1a10867117831415a64ca77ab1597dbfe1">
+                <title>void Triggers.GRCfg.GR_Cfg_DocumentQueueDataTable.AddGR_Cfg_DocumentQueueRow (GR_Cfg_DocumentQueueRow row)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a3e37f577fa49d0ea875a241a862ba968_1a3e37f577fa49d0ea875a241a862ba968">
+                <title>GR_Cfg_DocumentQueueRow Triggers.GRCfg.GR_Cfg_DocumentQueueDataTable.AddGR_Cfg_DocumentQueueRow (string order_num, string orderXML, int procState, string environment, string site, string SLOrderNumber, System.Guid ID, string CreatedBy, string UpdatedBy, System.DateTime CreateDate, System.DateTime RecordDate, System.Guid RowPointer, byte NoteExistsFlag, byte InWorkflow)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_ac8f92f85249b492e0b7e922b9cd1eb9e_1ac8f92f85249b492e0b7e922b9cd1eb9e">
+                <title>GR_Cfg_DocumentQueueRow Triggers.GRCfg.GR_Cfg_DocumentQueueDataTable.FindByRowPointer (System.Guid RowPointer)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a317cf68ce8ca5fec30dcd9e165bd1600_1a317cf68ce8ca5fec30dcd9e165bd1600">
+                <title>override global::System.Data.DataTable Triggers.GRCfg.GR_Cfg_DocumentQueueDataTable.Clone ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_ab21fdccc9b94a2f065a57677662bfbde_1ab21fdccc9b94a2f065a57677662bfbde">
+                <title>GR_Cfg_DocumentQueueRow Triggers.GRCfg.GR_Cfg_DocumentQueueDataTable.NewGR_Cfg_DocumentQueueRow ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a5e4d414cef50c6f752d74d81cd1e2fbc_1a5e4d414cef50c6f752d74d81cd1e2fbc">
+                <title>void Triggers.GRCfg.GR_Cfg_DocumentQueueDataTable.RemoveGR_Cfg_DocumentQueueRow (GR_Cfg_DocumentQueueRow row)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a6752958bad01b45c7c38a5af0526cfd6_1a6752958bad01b45c7c38a5af0526cfd6">
+                <title>Triggers.GRCfg.GR_Cfg_DocumentQueueDataTable.GR_Cfg_DocumentQueueDataTable (global::System.Data.DataTable table)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a9302bd33087e90ebcfe37003b323fe0f_1a9302bd33087e90ebcfe37003b323fe0f">
+                <title>void Triggers.GRCfg.GR_Cfg_DocumentQueueDataTable.InitVars ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a67743e2a6526f8b5e8121792125e339d_1a67743e2a6526f8b5e8121792125e339d">
+                <title>Triggers.GRCfg.GR_Cfg_DocumentQueueDataTable.GR_Cfg_DocumentQueueDataTable (global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a6452a9568d21ed6aad6b203b7bf51bf8_1a6452a9568d21ed6aad6b203b7bf51bf8">
+                <title>override global::System.Data.DataTable Triggers.GRCfg.GR_Cfg_DocumentQueueDataTable.CreateInstance ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_ac06dccefcd02f0ab13f29119d93a4473_1ac06dccefcd02f0ab13f29119d93a4473">
+                <title>override global::System.Data.DataRow Triggers.GRCfg.GR_Cfg_DocumentQueueDataTable.NewRowFromBuilder (global::System.Data.DataRowBuilder builder)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a9ef1c8e1c6fc241637fe55e8025a5960_1a9ef1c8e1c6fc241637fe55e8025a5960">
+                <title>override global::System.Type Triggers.GRCfg.GR_Cfg_DocumentQueueDataTable.GetRowType ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a41fd60847fe4967a6d9dc309103f9a35_1a41fd60847fe4967a6d9dc309103f9a35">
+                <title>override void Triggers.GRCfg.GR_Cfg_DocumentQueueDataTable.OnRowChanged (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_ab792e94619d52854864731ce61ff01ad_1ab792e94619d52854864731ce61ff01ad">
+                <title>override void Triggers.GRCfg.GR_Cfg_DocumentQueueDataTable.OnRowChanging (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_a6cef8004e66723796c46b5c246b53b0a_1a6cef8004e66723796c46b5c246b53b0a">
+                <title>override void Triggers.GRCfg.GR_Cfg_DocumentQueueDataTable.OnRowDeleted (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_acb5762d009d3d7c53e38f23e40d60ed2_1acb5762d009d3d7c53e38f23e40d60ed2">
+                <title>override void Triggers.GRCfg.GR_Cfg_DocumentQueueDataTable.OnRowDeleting (global::System.Data.DataRowChangeEventArgs e)</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_ac8b76b0daa30fc02bffc30f28c779fdb_1ac8b76b0daa30fc02bffc30f28c779fdb">
+                <title>void Triggers.GRCfg.GR_Cfg_DocumentQueueDataTable.InitClass ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_g_r_cfg_1_1_g_r___cfg___document_queue_data_table_ac724dca3cdc7e740d26b92593a0ed248_1ac724dca3cdc7e740d26b92593a0ed248">
+                <title>static global::System.Xml.Schema.XmlSchemaComplexType Triggers.GRCfg.GR_Cfg_DocumentQueueDataTable.GetTypedTableSchema (global::System.Xml.Schema.XmlSchemaSet xs)</title> <emphasis></emphasis>
+                
+            </section>
+</section>

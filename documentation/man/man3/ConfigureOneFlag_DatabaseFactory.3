@@ -1,0 +1,320 @@
+.TH "ConfigureOneFlag.DatabaseFactory" 3 "Wed Mar 7 2018" "ConfigureOne Trigger" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+ConfigureOneFlag.DatabaseFactory \- Repository for all database functions and calls on behalf of the assembly  
+
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBSetConnectionString\fP ()"
+.br
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static void \fBWriteRecordBOM\fP (ref \fBzCfgBOM\fP bom)"
+.br
+.ti -1c
+.RI "static void \fBWriteRecordCItem\fP (ref \fBzCfgItem\fP item)"
+.br
+.ti -1c
+.RI "static void \fBWriteRecordCfg\fP (ref \fBzCfgParmVal\fP cfg)"
+.br
+.ti -1c
+.RI "static void \fBWriteRecordCOItem\fP (ref \fBzCfgCOitem\fP coitem)"
+.br
+.ti -1c
+.RI "static void \fBWriteRecordCO\fP (ref \fBzCfgCO\fP co)"
+.br
+.ti -1c
+.RI "static void \fBWriteRecordCfgRoute\fP (ref \fBzCfgRoute\fP route)"
+.br
+.ti -1c
+.RI "static string \fBUserName\fP (string id)"
+.br
+.ti -1c
+.RI "static void \fBResequenceBOM\fP (string orderNumber, int orderLine)"
+.br
+.ti -1c
+.RI "static void \fBCfgImport\fP (string orderNumber)"
+.br
+.ti -1c
+.RI "static void \fBCleanupOrder\fP (string orderNum)"
+.br
+.ti -1c
+.RI "static void \fBWriteAuditRecord\fP (string auditMessageL, string orderNum, int orderLine, string auditEvent)"
+.br
+.ti -1c
+.RI "static string \fBRetrieveSLCO\fP (string orderNum)"
+.br
+.ti -1c
+.RI "static string \fBRetrieveISOCountry\fP (string ISOCode)"
+.br
+.ti -1c
+.RI "static void \fBUpdateCO\fP (string conum)"
+.br
+.ti -1c
+.RI "static void \fBWriteTestRecord\fP (string eventText)"
+.br
+.ti -1c
+.RI "static string \fBCOItemitem\fP (string order_num, string ser_num)"
+.br
+.ti -1c
+.RI "static void \fBInsertDocumentRecord\fP (XmlDocument xml, string orderNum, string environment, string site, string SLorderNumber)"
+.br
+.ti -1c
+.RI "static bool \fBOrderCompleted\fP (string order_num)"
+.br
+.ti -1c
+.RI "static int \fBCoLines\fP (string SLOrderNumber)"
+.br
+.ti -1c
+.RI "static void \fBExecutePreCache\fP ()"
+.br
+.ti -1c
+.RI "static bool \fBOrderExists\fP (string C1orderNum)"
+.br
+.ti -1c
+.RI "static string \fBCustomerOnHold\fP (string custnum, string seq)"
+.br
+.ti -1c
+.RI "static bool \fBCustomerOnCreditHold\fP (string custnum)"
+.br
+.in -1c
+.SS "Static Public Attributes"
+
+.in +1c
+.ti -1c
+.RI "static string \fBconnectionString\fP = ''"
+.br
+.ti -1c
+.RI "static string \fBemailaddr\fP = ''"
+.br
+.ti -1c
+.RI "static string \fBemailServer\fP = ''"
+.br
+.ti -1c
+.RI "static string \fBemailFrom\fP = ''"
+.br
+.ti -1c
+.RI "static string \fBsplocation\fP = ''"
+.br
+.ti -1c
+.RI "static string \fBspuname\fP = ''"
+.br
+.ti -1c
+.RI "static string \fBsppassword\fP = ''"
+.br
+.ti -1c
+.RI "static string \fBdecryptedValue\fP = ''"
+.br
+.ti -1c
+.RI "static bool \fBdebugLogging\fP = false"
+.br
+.ti -1c
+.RI "static string \fBdbprotect\fP = ''"
+.br
+.ti -1c
+.RI "static string \fBws_uname\fP = ''"
+.br
+.ti -1c
+.RI "static string \fBws_password\fP = ''"
+.br
+.ti -1c
+.RI "static string \fBqueueControlConnectionString\fP = ''"
+.br
+.ti -1c
+.RI "static string \fBqueueControlConnectionStringValueDEV\fP = 'server = grctslsql0\&.dom\&.grc; database = GR_C1_DocumentQueue; enlist=false; User ID = sa_config; Password = options23'"
+.br
+.ti -1c
+.RI "static string \fBqueueControlConnectionStringValuePROD\fP = 'server = grcpslsql0\&.dom\&.grc; database = GR_C1_DocumentQueue; enlist=false; User ID = sa_config; Password = options23'"
+.br
+.in -1c
+.SS "Static Private Attributes"
+
+.in +1c
+.ti -1c
+.RI "static string \fBSQLCommand\fP"
+.br
+.in -1c
+.SH "Detailed Description"
+.PP 
+Repository for all database functions and calls on behalf of the assembly 
+
+
+.PP
+Definition at line 15 of file DatabaseFactory\&.cs\&.
+.SH "Member Function Documentation"
+.PP 
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.CfgImport (string orderNumber)\fC [static]\fP"
+
+.PP
+Definition at line 215 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.CleanupOrder (string orderNum)\fC [static]\fP"
+
+.PP
+Definition at line 245 of file DatabaseFactory\&.cs\&.
+.SS "static string ConfigureOneFlag\&.DatabaseFactory\&.COItemitem (string order_num, string ser_num)\fC [static]\fP"
+
+.PP
+Definition at line 370 of file DatabaseFactory\&.cs\&.
+.SS "static int ConfigureOneFlag\&.DatabaseFactory\&.CoLines (string SLOrderNumber)\fC [static]\fP"
+
+.PP
+Definition at line 426 of file DatabaseFactory\&.cs\&.
+.SS "static bool ConfigureOneFlag\&.DatabaseFactory\&.CustomerOnCreditHold (string custnum)\fC [static]\fP"
+
+.PP
+Definition at line 512 of file DatabaseFactory\&.cs\&.
+.SS "static string ConfigureOneFlag\&.DatabaseFactory\&.CustomerOnHold (string custnum, string seq)\fC [static]\fP"
+
+.PP
+Definition at line 486 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.ExecutePreCache ()\fC [static]\fP"
+
+.PP
+Definition at line 445 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.InsertDocumentRecord (XmlDocument xml, string orderNum, string environment, string site, string SLorderNumber)\fC [static]\fP"
+
+.PP
+Definition at line 394 of file DatabaseFactory\&.cs\&.
+.SS "static bool ConfigureOneFlag\&.DatabaseFactory\&.OrderCompleted (string order_num)\fC [static]\fP"
+
+.PP
+Definition at line 405 of file DatabaseFactory\&.cs\&.
+.SS "static bool ConfigureOneFlag\&.DatabaseFactory\&.OrderExists (string C1orderNum)\fC [static]\fP"
+
+.PP
+Definition at line 462 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.ResequenceBOM (string orderNumber, int orderLine)\fC [static]\fP"
+
+.PP
+Definition at line 201 of file DatabaseFactory\&.cs\&.
+.SS "static string ConfigureOneFlag\&.DatabaseFactory\&.RetrieveISOCountry (string ISOCode)\fC [static]\fP"
+
+.PP
+Definition at line 324 of file DatabaseFactory\&.cs\&.
+.SS "static string ConfigureOneFlag\&.DatabaseFactory\&.RetrieveSLCO (string orderNum)\fC [static]\fP"
+
+.PP
+Definition at line 299 of file DatabaseFactory\&.cs\&.
+.SS "void ConfigureOneFlag\&.DatabaseFactory\&.SetConnectionString ()"
+
+.PP
+Definition at line 33 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.UpdateCO (string conum)\fC [static]\fP"
+
+.PP
+Definition at line 348 of file DatabaseFactory\&.cs\&.
+.SS "static string ConfigureOneFlag\&.DatabaseFactory\&.UserName (string id)\fC [static]\fP"
+
+.PP
+Definition at line 177 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteAuditRecord (string auditMessageL, string orderNum, int orderLine, string auditEvent)\fC [static]\fP"
+
+.PP
+Definition at line 288 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordBOM (ref \fBzCfgBOM\fP bom)\fC [static]\fP"
+
+.PP
+Definition at line 100 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCfg (ref \fBzCfgParmVal\fP cfg)\fC [static]\fP"
+
+.PP
+Definition at line 122 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCfgRoute (ref \fBzCfgRoute\fP route)\fC [static]\fP"
+
+.PP
+Definition at line 166 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCItem (ref \fBzCfgItem\fP item)\fC [static]\fP"
+
+.PP
+Definition at line 111 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCO (ref \fBzCfgCO\fP co)\fC [static]\fP"
+
+.PP
+Definition at line 147 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteRecordCOItem (ref \fBzCfgCOitem\fP coitem)\fC [static]\fP"
+
+.PP
+Definition at line 136 of file DatabaseFactory\&.cs\&.
+.SS "static void ConfigureOneFlag\&.DatabaseFactory\&.WriteTestRecord (string eventText)\fC [static]\fP"
+
+.PP
+Definition at line 359 of file DatabaseFactory\&.cs\&.
+.SH "Member Data Documentation"
+.PP 
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.connectionString = ''\fC [static]\fP"
+
+.PP
+Definition at line 18 of file DatabaseFactory\&.cs\&.
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.dbprotect = ''\fC [static]\fP"
+
+.PP
+Definition at line 27 of file DatabaseFactory\&.cs\&.
+.SS "bool ConfigureOneFlag\&.DatabaseFactory\&.debugLogging = false\fC [static]\fP"
+
+.PP
+Definition at line 26 of file DatabaseFactory\&.cs\&.
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.decryptedValue = ''\fC [static]\fP"
+
+.PP
+Definition at line 25 of file DatabaseFactory\&.cs\&.
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.emailaddr = ''\fC [static]\fP"
+
+.PP
+Definition at line 19 of file DatabaseFactory\&.cs\&.
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.emailFrom = ''\fC [static]\fP"
+
+.PP
+Definition at line 21 of file DatabaseFactory\&.cs\&.
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.emailServer = ''\fC [static]\fP"
+
+.PP
+Definition at line 20 of file DatabaseFactory\&.cs\&.
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.queueControlConnectionString = ''\fC [static]\fP"
+
+.PP
+Definition at line 30 of file DatabaseFactory\&.cs\&.
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.queueControlConnectionStringValueDEV = 'server = grctslsql0\&.dom\&.grc; database = GR_C1_DocumentQueue; enlist=false; User ID = sa_config; Password = options23'\fC [static]\fP"
+
+.PP
+Definition at line 31 of file DatabaseFactory\&.cs\&.
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.queueControlConnectionStringValuePROD = 'server = grcpslsql0\&.dom\&.grc; database = GR_C1_DocumentQueue; enlist=false; User ID = sa_config; Password = options23'\fC [static]\fP"
+
+.PP
+Definition at line 32 of file DatabaseFactory\&.cs\&.
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.splocation = ''\fC [static]\fP"
+
+.PP
+Definition at line 22 of file DatabaseFactory\&.cs\&.
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.sppassword = ''\fC [static]\fP"
+
+.PP
+Definition at line 24 of file DatabaseFactory\&.cs\&.
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.spuname = ''\fC [static]\fP"
+
+.PP
+Definition at line 23 of file DatabaseFactory\&.cs\&.
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.SQLCommand\fC [static]\fP, \fC [private]\fP"
+
+.PP
+Definition at line 17 of file DatabaseFactory\&.cs\&.
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.ws_password = ''\fC [static]\fP"
+
+.PP
+Definition at line 29 of file DatabaseFactory\&.cs\&.
+.SS "string ConfigureOneFlag\&.DatabaseFactory\&.ws_uname = ''\fC [static]\fP"
+
+.PP
+Definition at line 28 of file DatabaseFactory\&.cs\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for ConfigureOne Trigger from the source code\&.

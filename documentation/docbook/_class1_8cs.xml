@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="_class1_8cs">
+    <title>Class1.cs File Reference</title>
+<para>Include dependency diagram for Class1.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_class1_8cs__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Included by dependency diagram for Class1.cs</para>
+<para>
+    <figure>
+        <title>Dependency diagram</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="_class1_8cs__dep__incl.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title> Classes </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="class_configure_one_flag_1_1_triggers">ConfigureOneFlag::Triggers</link></para>
+<para><emphasis>&lt;summary&gt;
+Primary entrypoint called from C1ORDER trigger for accessing C1 web service and returning/mapping data to SQL where appropriate
+&lt;/summary&gt;</emphasis></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+        <simplesect>
+            <title> Namespaces </title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_configure_one_flag">ConfigureOneFlag</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>struct <link linkend="namespace_microsoft_1_1_sql_server_1_1_server">Microsoft::SqlServer::Server</link></para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </simplesect>
+    <simplesect>
+        <title>Detailed Description</title>
+    <para>Definition in file C:/Users/hinesj/Documents/Visual Studio 2015/Projects/Triggers/Triggers/Class1.cs</para>
+    </simplesect>
+    <literallayout><computeroutput>
+1 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>;
+2 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Collections.Generic;
+3 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Linq;
+4 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Text;
+5 <emphasis class="comment">//using&#32;System.Threading.Tasks;</emphasis>
+6 <emphasis class="keyword">using</emphasis>&#32;Microsoft.SqlServer.Server;
+7 <emphasis class="keyword">using</emphasis>&#32;<link linkend="namespace_system">System</link>.Data.SqlClient;
+8 
+9 <emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_configure_one_flag">ConfigureOneFlag</link>
+10 {
+<link linkend="class_configure_one_flag_1_1_triggers">11 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="namespace_triggers">Triggers</link>
+12 &#32;&#32;&#32;&#32;{
+<link linkend="class_configure_one_flag_1_1_triggers_a38d825801f6fbe1c3c2df19538892c57_1a38d825801f6fbe1c3c2df19538892c57">13 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">static</emphasis>&#32;Dictionary&lt;string,&#32;string&gt;&#32;<link linkend="class_configure_one_flag_1_1_triggers_a38d825801f6fbe1c3c2df19538892c57_1a38d825801f6fbe1c3c2df19538892c57">webmethods</link>&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;Dictionary&lt;string,&#32;string&gt;();
+<link linkend="class_configure_one_flag_1_1_triggers_adb47d391c1eb7baeb5780f3dd9322a6d_1adb47d391c1eb7baeb5780f3dd9322a6d">14 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_triggers_adb47d391c1eb7baeb5780f3dd9322a6d_1adb47d391c1eb7baeb5780f3dd9322a6d">wsReturn</link>;
+<link linkend="class_configure_one_flag_1_1_triggers_ad424a8622609cf34218e92efc07b6870_1ad424a8622609cf34218e92efc07b6870">15 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_triggers_ad424a8622609cf34218e92efc07b6870_1ad424a8622609cf34218e92efc07b6870">caller</link>&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+<link linkend="class_configure_one_flag_1_1_triggers_a857274f8767a6571894105403ee8e26e_1a857274f8767a6571894105403ee8e26e">16 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_triggers_a857274f8767a6571894105403ee8e26e_1a857274f8767a6571894105403ee8e26e">C1URL</link>;
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;[SqlTrigger(Name&#32;=&#32;<emphasis class="stringliteral">&quot;C1Order&quot;</emphasis>,&#32;Target&#32;=&#32;<emphasis class="stringliteral">&quot;GR_Cfg_Queue&quot;</emphasis>,&#32;Event&#32;=&#32;<emphasis class="stringliteral">&quot;FOR&#32;INSERT&quot;</emphasis>)]
+<link linkend="class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f_1a7446070eb1c5dd9f63f7043525014c9f">18 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_triggers_a7446070eb1c5dd9f63f7043525014c9f_1a7446070eb1c5dd9f63f7043525014c9f">C1Order</link>()
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">try</emphasis>
+21 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+22 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers_a38d825801f6fbe1c3c2df19538892c57_1a38d825801f6fbe1c3c2df19538892c57">webmethods</link>.Add(<emphasis class="stringliteral">&quot;getOrder&quot;</emphasis>,&#32;<emphasis class="stringliteral">&quot;http://nationaldev.conceptconfigurator.com/webservices/services/ConceptAccess?method=getOrder&quot;</emphasis>);
+23 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+24 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">catch</emphasis>&#32;(Exception&#32;ex1)
+25 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+26 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//fallthru</emphasis>
+27 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+28 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;connectionString&#32;=&#32;<emphasis class="stringliteral">&quot;server&#32;=&#32;grcdslsql0.dom.grc;&#32;enlist=false;&#32;database&#32;=&#32;SL_MAN_App;&#32;User&#32;ID&#32;=&#32;sa_config;&#32;Password&#32;=&#32;options23&quot;</emphasis>;
+29 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//using&#32;(SqlConnection&#32;conn&#32;=&#32;new&#32;SqlConnection(&quot;context&#32;connection=true&quot;))</emphasis>
+30 
+31 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;orderNum;
+32 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_triggers_a333fd994019bc2afa23c7d70add609de_1a333fd994019bc2afa23c7d70add609de">orderValue</link>&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+33 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlTriggerContext&#32;triggContext&#32;=&#32;SqlContext.TriggerContext;
+34 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlParameter&#32;orderNumber&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlParameter(<emphasis class="stringliteral">&quot;@order_num&quot;</emphasis>,&#32;<link linkend="namespace_system">System</link>.Data.SqlDbType.NVarChar);
+35 
+36 
+37 
+38 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(triggContext.TriggerAction&#32;==&#32;TriggerAction.Insert)
+39 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+40 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">using</emphasis>&#32;(SqlConnection&#32;conn&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlConnection(<emphasis class="stringliteral">&quot;context&#32;connection=true&quot;</emphasis>))
+41 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+42 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;conn.Open();
+43 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlCommand&#32;sqlComm&#32;=&#32;<emphasis class="keyword">new</emphasis>&#32;SqlCommand();
+44 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;SqlPipe&#32;sqlP&#32;=&#32;SqlContext.Pipe;
+45 
+46 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlComm.Connection&#32;=&#32;conn;
+47 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;sqlComm.CommandText&#32;=&#32;<emphasis class="stringliteral">&quot;SELECT&#32;order_num&#32;from&#32;INSERTED&quot;</emphasis>;
+48 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;orderNumber.Value&#32;=&#32;sqlComm.ExecuteScalar().ToString();
+49 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers_a333fd994019bc2afa23c7d70add609de_1a333fd994019bc2afa23c7d70add609de">orderValue</link>&#32;=&#32;orderNumber.Value.ToString();
+50 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+51 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+52 
+53 
+54 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;useMethod&#32;=&#32;<emphasis class="stringliteral">&quot;&quot;</emphasis>;
+55 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_triggers_a7152b65d47b96c0deebdad4f1b5e86c1_1a7152b65d47b96c0deebdad4f1b5e86c1">key</link>&#32;=&#32;<emphasis class="stringliteral">&quot;getOrder&quot;</emphasis>;
+56 
+57 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">if</emphasis>&#32;(<link linkend="class_configure_one_flag_1_1_triggers_a38d825801f6fbe1c3c2df19538892c57_1a38d825801f6fbe1c3c2df19538892c57">webmethods</link>.ContainsKey(<link linkend="class_configure_one_flag_1_1_triggers_a7152b65d47b96c0deebdad4f1b5e86c1_1a7152b65d47b96c0deebdad4f1b5e86c1">key</link>))
+58 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+59 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;useMethod&#32;=&#32;<link linkend="class_configure_one_flag_1_1_triggers_a38d825801f6fbe1c3c2df19538892c57_1a38d825801f6fbe1c3c2df19538892c57">webmethods</link>[<link linkend="class_configure_one_flag_1_1_triggers_a7152b65d47b96c0deebdad4f1b5e86c1_1a7152b65d47b96c0deebdad4f1b5e86c1">key</link>];
+60 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers_a857274f8767a6571894105403ee8e26e_1a857274f8767a6571894105403ee8e26e">C1URL</link>&#32;=&#32;useMethod;
+61 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+62 
+63 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_triggers_ad424a8622609cf34218e92efc07b6870_1ad424a8622609cf34218e92efc07b6870">caller</link>&#32;=&#32;<emphasis class="stringliteral">&quot;ORDER&quot;</emphasis>;
+64 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;orderNum&#32;=&#32;<link linkend="class_configure_one_flag_1_1_triggers_a333fd994019bc2afa23c7d70add609de_1a333fd994019bc2afa23c7d70add609de">orderValue</link>;
+65 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_triggers_af96ea08f030e64ce8660fab49a24378d_1af96ea08f030e64ce8660fab49a24378d">xmlPayload</link>&#32;=&#32;<emphasis class="stringliteral">&quot;&lt;soap:Envelope&#32;xmlns:xsi=&quot;</emphasis>&#32;+&#32;(char)34&#32;+&#32;<emphasis class="stringliteral">&quot;http://www.w3.org/2001/XMLSchema-instance&quot;</emphasis>&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)34&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;xmlns:xsd=&quot;</emphasis>&#32;+&#32;(char)34&#32;+&#32;<emphasis class="stringliteral">&quot;http://www.w3.org/2001/XMLSchema&quot;</emphasis>&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)34&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;xmlns:soap=&quot;</emphasis>&#32;+&#32;(char)34&#32;+&#32;<emphasis class="stringliteral">&quot;http://schemas.xmlsoap.org/soap/envelope/&quot;</emphasis>&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)34&#32;+&#32;<emphasis class="stringliteral">&quot;&gt;&quot;</emphasis>&#32;+&#32;<emphasis class="stringliteral">&quot;&lt;soap:Body&gt;&lt;&quot;</emphasis>&#32;+&#32;<link linkend="class_configure_one_flag_1_1_triggers_a7152b65d47b96c0deebdad4f1b5e86c1_1a7152b65d47b96c0deebdad4f1b5e86c1">key</link>&#32;+&#32;<emphasis class="stringliteral">&quot;&#32;xmlns=&quot;</emphasis>&#32;+&#32;(char)34&#32;+&#32;<emphasis class="stringliteral">&quot;http://ws.configureone.com&quot;</emphasis>&#32;+&#32;(<emphasis class="keywordtype">char</emphasis>)34&#32;+&#32;<emphasis class="stringliteral">&quot;&gt;&lt;orderNum&gt;&quot;</emphasis>&#32;+&#32;orderNum&#32;+&#32;<emphasis class="stringliteral">&quot;&lt;/orderNum&gt;&lt;/&quot;</emphasis>&#32;+&#32;<link linkend="class_configure_one_flag_1_1_triggers_a7152b65d47b96c0deebdad4f1b5e86c1_1a7152b65d47b96c0deebdad4f1b5e86c1">key</link>&#32;+&#32;<emphasis class="stringliteral">&quot;&gt;&lt;/soap:Body&gt;&lt;/soap:Envelope&gt;&quot;</emphasis>;
+66 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service">C1WebService</link>.<link linkend="class_configure_one_flag_1_1_c1_web_service_ae826903f85694f4cf481680e115076f3_1ae826903f85694f4cf481680e115076f3">CallConfigureOne</link>(<link linkend="class_configure_one_flag_1_1_triggers_a7152b65d47b96c0deebdad4f1b5e86c1_1a7152b65d47b96c0deebdad4f1b5e86c1">key</link>,&#32;<link linkend="class_configure_one_flag_1_1_triggers_af96ea08f030e64ce8660fab49a24378d_1af96ea08f030e64ce8660fab49a24378d">xmlPayload</link>,&#32;<link linkend="class_configure_one_flag_1_1_triggers_a857274f8767a6571894105403ee8e26e_1a857274f8767a6571894105403ee8e26e">C1URL</link>);
+67 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+68 &#32;&#32;&#32;&#32;}
+69 }
+    </computeroutput></literallayout>
+</section>

@@ -1,0 +1,665 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<section xmlns="http://docbook.org/ns/docbook" version="5.0" xmlns:xlink="http://www.w3.org/1999/xlink" xml:id="class_triggers_1_1_c_o_validator">
+<title>Triggers::COValidator class Reference</title>
+<para>Inheritance diagram for Triggers::COValidator</para>
+<para>
+    <figure>
+        <title>Inheritance graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_c_o_validator__inherit__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+<para>Collaboration diagram for Triggers::COValidator</para>
+<para>
+    <figure>
+        <title>Collaboration graph</title>
+        <mediaobject>
+            <imageobject>
+                <imagedata width="50%" align="center" valign="middle" scalefit="1" fileref="class_triggers_1_1_c_o_validator__coll__graph.png"></imagedata>
+            </imageobject>
+        </mediaobject>
+    </figure>
+</para>
+        <section>
+            <title></title>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a2305fa5b5bf76eaffb48da163f1fed8c_1a2305fa5b5bf76eaffb48da163f1fed8c">BillToAddress1</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a91082203389b0564913fe417c3249664_1a91082203389b0564913fe417c3249664">BillToAddress2</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_ad75616932aedcf0f4526efba52836851_1ad75616932aedcf0f4526efba52836851">BillToAddress3</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a16d2dd0bb1774209909dc7d583903c92_1a16d2dd0bb1774209909dc7d583903c92">CustName</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a0f690ae82576f92941209118939b331a_1a0f690ae82576f92941209118939b331a">ErpRefNum</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a396c3e86c94a4689956795bb1fcf3d1c_1a396c3e86c94a4689956795bb1fcf3d1c">Project</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_aa5537534901252239040b720a2a34976_1aa5537534901252239040b720a2a34976">PaymentTerms</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a93906392d84e34a856492b5f38a75e40_1a93906392d84e34a856492b5f38a75e40">ShipVia</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a7ee7a633d8d4bf99b076b14c048a8fa6_1a7ee7a633d8d4bf99b076b14c048a8fa6">ShippingTerms</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a7fb46b158ef8f973c056a3a107ad69ce_1a7fb46b158ef8f973c056a3a107ad69ce">BillToContactName</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a242875a1a764304a82b367c82b2c0a4a_1a242875a1a764304a82b367c82b2c0a4a">BillToCity</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a294078e2da37527bbb69ee044fb67911_1a294078e2da37527bbb69ee044fb67911">BillToState</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a35dbd41c227927299d1866f0afba9d55_1a35dbd41c227927299d1866f0afba9d55">BillToCountry</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_abeb6826205afb0d5bb0a101fbed8e898_1abeb6826205afb0d5bb0a101fbed8e898">BillToPostalCode</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a0c0961cd7b492b0a60cd8d8a0026faf8_1a0c0961cd7b492b0a60cd8d8a0026faf8">BillToPhoneNumber</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a335f527d3596cbaa05020e08c26c1bf1_1a335f527d3596cbaa05020e08c26c1bf1">BillToFaxNumber</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a70297f439da1894dfe51f34c73810d98_1a70297f439da1894dfe51f34c73810d98">BillToEmailAddress</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a0c623c04be8a7ef40a14df1aa1f8ca85_1a0c623c04be8a7ef40a14df1aa1f8ca85">BillToRefNum</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_abf48adad6c266cbbdf39f064666ceedb_1abf48adad6c266cbbdf39f064666ceedb">ShipToContactName</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a1fe6b5f23b067f7d58a8ca8b7a77c0b5_1a1fe6b5f23b067f7d58a8ca8b7a77c0b5">ShipToAddressLine1</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_acc0a9f3497026ef5652fad2b73076245_1acc0a9f3497026ef5652fad2b73076245">ShipToAddressLine2</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a8fd686ddf097e4628c41899bc16b50fd_1a8fd686ddf097e4628c41899bc16b50fd">ShipToAddressLine3</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a14808a2b509ac228d9a4fb38057ada5e_1a14808a2b509ac228d9a4fb38057ada5e">ShipToAddressLine4</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_ab49fce07e574852e1ba6bcce777c4021_1ab49fce07e574852e1ba6bcce777c4021">ShipToCity</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a549678fe317f2611a39762ad9c9564fe_1a549678fe317f2611a39762ad9c9564fe">ShipToState</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a4e232e8d5f2db081571ba6d8fd8aa5b8_1a4e232e8d5f2db081571ba6d8fd8aa5b8">ShipToCountry</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_ace916f995b5bf2b114f752650f47e425_1ace916f995b5bf2b114f752650f47e425">ShipToPostalCode</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a49a31b43726be4943d5a93d811a091d0_1a49a31b43726be4943d5a93d811a091d0">ShipToPhoneNumber</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a42941cccc1f8f4a4e701afa8f22482cd_1a42941cccc1f8f4a4e701afa8f22482cd">ShipToFaxNumber</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a52e8274c2c5810d673b049bc890195de_1a52e8274c2c5810d673b049bc890195de">ShipToEmailAddress</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_ad2a850a9edc29e5b1ab4d21e9b58accc_1ad2a850a9edc29e5b1ab4d21e9b58accc">ShipToRefNum</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_ade52e7d80892eb73767cc8afa20e35b6_1ade52e7d80892eb73767cc8afa20e35b6">CustPO</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a9330a30975bc7393c575bf7122ac6a9d_1a9330a30975bc7393c575bf7122ac6a9d">FreightTerms</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_ab81e6cad8929a368b3852d97348d4845_1ab81e6cad8929a368b3852d97348d4845">FreightAccount</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a9217cf0e48c9f90b2dc54ac0d6d7a4be_1a9217cf0e48c9f90b2dc54ac0d6d7a4be">QuoteNbr</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a2dd0b7fd52ac7430b3bae2ffc8790633_1a2dd0b7fd52ac7430b3bae2ffc8790633">WebUserName</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_aad5b22deef6f041b64d55e88e10adda6_1aad5b22deef6f041b64d55e88e10adda6">DropShipAddress1</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a801ae73a698076e7b45de74771124cd1_1a801ae73a698076e7b45de74771124cd1">DropShipAddress2</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a9b9bcd9beea3b32152f57ab98f37734c_1a9b9bcd9beea3b32152f57ab98f37734c">DropShipAddress3</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a8ccb6280f9011c1f473c39198ef971d3_1a8ccb6280f9011c1f473c39198ef971d3">DropShipAddress4</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_ae89eedf41acbf8b08538ca12a8fdba8e_1ae89eedf41acbf8b08538ca12a8fdba8e">DropShipCity</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a2852c73bae32c5af23df02d4f803bbaf_1a2852c73bae32c5af23df02d4f803bbaf">DropShipState</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a6c62fb3081a9420c5a4532f3b1876efe_1a6c62fb3081a9420c5a4532f3b1876efe">DropShipZip</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a08d03f03014629df9f0deba2c0a08480_1a08d03f03014629df9f0deba2c0a08480">DropShipName</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a8d8ad7bf01a5f69f7276489378b85ee0_1a8d8ad7bf01a5f69f7276489378b85ee0">DropShipContact</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a61a95b3da872281266c7938e80fe5bf0_1a61a95b3da872281266c7938e80fe5bf0">DropShipCountry</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_aa79efb48adf6b96585ab789b9c10a61f_1aa79efb48adf6b96585ab789b9c10a61f">DropShipPhone</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a440e434434d1df2b0128071e395fe6c5_1a440e434434d1df2b0128071e395fe6c5">DropShipEmail</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a5bdb31712a129ab6f24f84538fa0192a_1a5bdb31712a129ab6f24f84538fa0192a">DestinationCountry</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_aab3c2d917d9dfad824f05ad0f3edb42d_1aab3c2d917d9dfad824f05ad0f3edb42d">OrderHeaderNotes</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a220a0e9fdaf33e4d46da7ca323d4df2b_1a220a0e9fdaf33e4d46da7ca323d4df2b">EndUser</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_aad543bf2758d58c98e4615ad8016c2ae_1aad543bf2758d58c98e4615ad8016c2ae">Engineer</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+            <para>
+                <itemizedlist>
+                    <listitem>
+                        <para>void <link linkend="class_triggers_1_1_c_o_validator_a950dc6050ca6286fe593c7788ea8e28f_1a950dc6050ca6286fe593c7788ea8e28f">ValidateCO</link> (
+)</para>
+                    </listitem>
+                </itemizedlist>
+            </para>
+        </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a2305fa5b5bf76eaffb48da163f1fed8c_1a2305fa5b5bf76eaffb48da163f1fed8c">
+                <title>void Triggers.COValidator.BillToAddress1 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a91082203389b0564913fe417c3249664_1a91082203389b0564913fe417c3249664">
+                <title>void Triggers.COValidator.BillToAddress2 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_ad75616932aedcf0f4526efba52836851_1ad75616932aedcf0f4526efba52836851">
+                <title>void Triggers.COValidator.BillToAddress3 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a16d2dd0bb1774209909dc7d583903c92_1a16d2dd0bb1774209909dc7d583903c92">
+                <title>void Triggers.COValidator.CustName ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a0f690ae82576f92941209118939b331a_1a0f690ae82576f92941209118939b331a">
+                <title>void Triggers.COValidator.ErpRefNum ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a396c3e86c94a4689956795bb1fcf3d1c_1a396c3e86c94a4689956795bb1fcf3d1c">
+                <title>void Triggers.COValidator.Project ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_aa5537534901252239040b720a2a34976_1aa5537534901252239040b720a2a34976">
+                <title>void Triggers.COValidator.PaymentTerms ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a93906392d84e34a856492b5f38a75e40_1a93906392d84e34a856492b5f38a75e40">
+                <title>void Triggers.COValidator.ShipVia ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a7ee7a633d8d4bf99b076b14c048a8fa6_1a7ee7a633d8d4bf99b076b14c048a8fa6">
+                <title>void Triggers.COValidator.ShippingTerms ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a7fb46b158ef8f973c056a3a107ad69ce_1a7fb46b158ef8f973c056a3a107ad69ce">
+                <title>void Triggers.COValidator.BillToContactName ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a242875a1a764304a82b367c82b2c0a4a_1a242875a1a764304a82b367c82b2c0a4a">
+                <title>void Triggers.COValidator.BillToCity ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a294078e2da37527bbb69ee044fb67911_1a294078e2da37527bbb69ee044fb67911">
+                <title>void Triggers.COValidator.BillToState ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a35dbd41c227927299d1866f0afba9d55_1a35dbd41c227927299d1866f0afba9d55">
+                <title>void Triggers.COValidator.BillToCountry ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_abeb6826205afb0d5bb0a101fbed8e898_1abeb6826205afb0d5bb0a101fbed8e898">
+                <title>void Triggers.COValidator.BillToPostalCode ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a0c0961cd7b492b0a60cd8d8a0026faf8_1a0c0961cd7b492b0a60cd8d8a0026faf8">
+                <title>void Triggers.COValidator.BillToPhoneNumber ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a335f527d3596cbaa05020e08c26c1bf1_1a335f527d3596cbaa05020e08c26c1bf1">
+                <title>void Triggers.COValidator.BillToFaxNumber ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a70297f439da1894dfe51f34c73810d98_1a70297f439da1894dfe51f34c73810d98">
+                <title>void Triggers.COValidator.BillToEmailAddress ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a0c623c04be8a7ef40a14df1aa1f8ca85_1a0c623c04be8a7ef40a14df1aa1f8ca85">
+                <title>void Triggers.COValidator.BillToRefNum ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_abf48adad6c266cbbdf39f064666ceedb_1abf48adad6c266cbbdf39f064666ceedb">
+                <title>void Triggers.COValidator.ShipToContactName ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a1fe6b5f23b067f7d58a8ca8b7a77c0b5_1a1fe6b5f23b067f7d58a8ca8b7a77c0b5">
+                <title>void Triggers.COValidator.ShipToAddressLine1 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_acc0a9f3497026ef5652fad2b73076245_1acc0a9f3497026ef5652fad2b73076245">
+                <title>void Triggers.COValidator.ShipToAddressLine2 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a8fd686ddf097e4628c41899bc16b50fd_1a8fd686ddf097e4628c41899bc16b50fd">
+                <title>void Triggers.COValidator.ShipToAddressLine3 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a14808a2b509ac228d9a4fb38057ada5e_1a14808a2b509ac228d9a4fb38057ada5e">
+                <title>void Triggers.COValidator.ShipToAddressLine4 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_ab49fce07e574852e1ba6bcce777c4021_1ab49fce07e574852e1ba6bcce777c4021">
+                <title>void Triggers.COValidator.ShipToCity ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a549678fe317f2611a39762ad9c9564fe_1a549678fe317f2611a39762ad9c9564fe">
+                <title>void Triggers.COValidator.ShipToState ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a4e232e8d5f2db081571ba6d8fd8aa5b8_1a4e232e8d5f2db081571ba6d8fd8aa5b8">
+                <title>void Triggers.COValidator.ShipToCountry ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_ace916f995b5bf2b114f752650f47e425_1ace916f995b5bf2b114f752650f47e425">
+                <title>void Triggers.COValidator.ShipToPostalCode ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a49a31b43726be4943d5a93d811a091d0_1a49a31b43726be4943d5a93d811a091d0">
+                <title>void Triggers.COValidator.ShipToPhoneNumber ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a42941cccc1f8f4a4e701afa8f22482cd_1a42941cccc1f8f4a4e701afa8f22482cd">
+                <title>void Triggers.COValidator.ShipToFaxNumber ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a52e8274c2c5810d673b049bc890195de_1a52e8274c2c5810d673b049bc890195de">
+                <title>void Triggers.COValidator.ShipToEmailAddress ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_ad2a850a9edc29e5b1ab4d21e9b58accc_1ad2a850a9edc29e5b1ab4d21e9b58accc">
+                <title>void Triggers.COValidator.ShipToRefNum ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_ade52e7d80892eb73767cc8afa20e35b6_1ade52e7d80892eb73767cc8afa20e35b6">
+                <title>void Triggers.COValidator.CustPO ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a9330a30975bc7393c575bf7122ac6a9d_1a9330a30975bc7393c575bf7122ac6a9d">
+                <title>void Triggers.COValidator.FreightTerms ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_ab81e6cad8929a368b3852d97348d4845_1ab81e6cad8929a368b3852d97348d4845">
+                <title>void Triggers.COValidator.FreightAccount ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a9217cf0e48c9f90b2dc54ac0d6d7a4be_1a9217cf0e48c9f90b2dc54ac0d6d7a4be">
+                <title>void Triggers.COValidator.QuoteNbr ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a2dd0b7fd52ac7430b3bae2ffc8790633_1a2dd0b7fd52ac7430b3bae2ffc8790633">
+                <title>void Triggers.COValidator.WebUserName ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_aad5b22deef6f041b64d55e88e10adda6_1aad5b22deef6f041b64d55e88e10adda6">
+                <title>void Triggers.COValidator.DropShipAddress1 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a801ae73a698076e7b45de74771124cd1_1a801ae73a698076e7b45de74771124cd1">
+                <title>void Triggers.COValidator.DropShipAddress2 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a9b9bcd9beea3b32152f57ab98f37734c_1a9b9bcd9beea3b32152f57ab98f37734c">
+                <title>void Triggers.COValidator.DropShipAddress3 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a8ccb6280f9011c1f473c39198ef971d3_1a8ccb6280f9011c1f473c39198ef971d3">
+                <title>void Triggers.COValidator.DropShipAddress4 ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_ae89eedf41acbf8b08538ca12a8fdba8e_1ae89eedf41acbf8b08538ca12a8fdba8e">
+                <title>void Triggers.COValidator.DropShipCity ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a2852c73bae32c5af23df02d4f803bbaf_1a2852c73bae32c5af23df02d4f803bbaf">
+                <title>void Triggers.COValidator.DropShipState ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a6c62fb3081a9420c5a4532f3b1876efe_1a6c62fb3081a9420c5a4532f3b1876efe">
+                <title>void Triggers.COValidator.DropShipZip ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a08d03f03014629df9f0deba2c0a08480_1a08d03f03014629df9f0deba2c0a08480">
+                <title>void Triggers.COValidator.DropShipName ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a8d8ad7bf01a5f69f7276489378b85ee0_1a8d8ad7bf01a5f69f7276489378b85ee0">
+                <title>void Triggers.COValidator.DropShipContact ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a61a95b3da872281266c7938e80fe5bf0_1a61a95b3da872281266c7938e80fe5bf0">
+                <title>void Triggers.COValidator.DropShipCountry ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_aa79efb48adf6b96585ab789b9c10a61f_1aa79efb48adf6b96585ab789b9c10a61f">
+                <title>void Triggers.COValidator.DropShipPhone ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a440e434434d1df2b0128071e395fe6c5_1a440e434434d1df2b0128071e395fe6c5">
+                <title>void Triggers.COValidator.DropShipEmail ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a5bdb31712a129ab6f24f84538fa0192a_1a5bdb31712a129ab6f24f84538fa0192a">
+                <title>void Triggers.COValidator.DestinationCountry ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_aab3c2d917d9dfad824f05ad0f3edb42d_1aab3c2d917d9dfad824f05ad0f3edb42d">
+                <title>void Triggers.COValidator.OrderHeaderNotes ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a220a0e9fdaf33e4d46da7ca323d4df2b_1a220a0e9fdaf33e4d46da7ca323d4df2b">
+                <title>void Triggers.COValidator.EndUser ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_aad543bf2758d58c98e4615ad8016c2ae_1aad543bf2758d58c98e4615ad8016c2ae">
+                <title>void Triggers.COValidator.Engineer ()</title> <emphasis></emphasis>
+                
+            </section>
+            <section xml:id="class_triggers_1_1_c_o_validator_a950dc6050ca6286fe593c7788ea8e28f_1a950dc6050ca6286fe593c7788ea8e28f">
+                <title>void Triggers.COValidator.ValidateCO ()</title> <emphasis></emphasis>
+                
+            </section>
+</section>
