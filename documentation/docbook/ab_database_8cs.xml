@@ -100,11 +100,17 @@
 8 
 <link linkend="namespace_triggers">9 </link><emphasis class="keyword">namespace&#32;</emphasis><link linkend="namespace_triggers">Triggers</link>
 10 {
-<link linkend="class_triggers_1_1ab_database">11 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">abstract</emphasis>&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_triggers_1_1ab_database">abDatabase</link>
+<link linkend="class_triggers_1_1ab_database">11 </link>&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">abstract</emphasis>&#32;<emphasis class="keyword">class&#32;</emphasis><link linkend="class_triggers_1_1ab_database">abDatabase</link>&#32;:&#32;IDisposable
 12 &#32;&#32;&#32;&#32;{
 <link linkend="class_triggers_1_1ab_database_ad2de26dae4b5e20a805a9342b2fa16d3_1ad2de26dae4b5e20a805a9342b2fa16d3">13 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">virtual</emphasis>&#32;SqlConnection&#32;<link linkend="class_triggers_1_1ab_database_ad2de26dae4b5e20a805a9342b2fa16d3_1ad2de26dae4b5e20a805a9342b2fa16d3">Connection</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}
 <link linkend="class_triggers_1_1ab_database_a18245991d3f202764179f8cfb8ada0b5_1a18245991d3f202764179f8cfb8ada0b5">14 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keyword">virtual</emphasis>&#32;SqlCommand&#32;<link linkend="class_triggers_1_1ab_database_a18245991d3f202764179f8cfb8ada0b5_1a18245991d3f202764179f8cfb8ada0b5">Command</link>&#32;{&#32;<emphasis class="keyword">get</emphasis>;&#32;<emphasis class="keyword">set</emphasis>;&#32;}
-15 &#32;&#32;&#32;&#32;}
-16 }
+15 
+<link linkend="class_triggers_1_1ab_database_a4184c25e736df4708596604ec7450a02_1a4184c25e736df4708596604ec7450a02">16 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">public</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_triggers_1_1ab_database_a4184c25e736df4708596604ec7450a02_1a4184c25e736df4708596604ec7450a02">Dispose</link>()
+17 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+18 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_triggers_1_1ab_database_ad2de26dae4b5e20a805a9342b2fa16d3_1ad2de26dae4b5e20a805a9342b2fa16d3">Connection</link>.Dispose();
+19 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_triggers_1_1ab_database_a18245991d3f202764179f8cfb8ada0b5_1a18245991d3f202764179f8cfb8ada0b5">Command</link>.Dispose();
+20 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+21 &#32;&#32;&#32;&#32;}
+22 }
     </computeroutput></literallayout>
 </section>

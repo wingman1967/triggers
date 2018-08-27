@@ -11,6 +11,7 @@ var searchData=
   ['desc',['Desc',['../class_triggers_1_1_c_o_item_validator_ad0e2a26cbf24e908d5c9c7990f29ef20.html#ad0e2a26cbf24e908d5c9c7990f29ef20',1,'Triggers.COItemValidator.Desc()'],['../class_triggers_1_1_item_validator_a72447a4699037e72ace76b6c56b4e74e.html#a72447a4699037e72ace76b6c56b4e74e',1,'Triggers.ItemValidator.Desc()']]],
   ['destinationcountry',['DestinationCountry',['../class_triggers_1_1_c_o_validator_a5bdb31712a129ab6f24f84538fa0192a.html#a5bdb31712a129ab6f24f84538fa0192a',1,'Triggers::COValidator']]],
   ['disconnectfromshare',['DisconnectFromShare',['../class_configure_one_flag_1_1_network_share_af61100f22e1ebd4895ad0313c0130ecf.html#af61100f22e1ebd4895ad0313c0130ecf',1,'ConfigureOneFlag::NetworkShare']]],
+  ['dispose',['Dispose',['../class_triggers_1_1ab_database_a4184c25e736df4708596604ec7450a02.html#a4184c25e736df4708596604ec7450a02',1,'Triggers::abDatabase']]],
   ['dropshipaddress1',['DropShipAddress1',['../class_triggers_1_1_c_o_validator_aad5b22deef6f041b64d55e88e10adda6.html#aad5b22deef6f041b64d55e88e10adda6',1,'Triggers::COValidator']]],
   ['dropshipaddress2',['DropShipAddress2',['../class_triggers_1_1_c_o_validator_a801ae73a698076e7b45de74771124cd1.html#a801ae73a698076e7b45de74771124cd1',1,'Triggers::COValidator']]],
   ['dropshipaddress3',['DropShipAddress3',['../class_triggers_1_1_c_o_validator_a9b9bcd9beea3b32152f57ab98f37734c.html#a9b9bcd9beea3b32152f57ab98f37734c',1,'Triggers::COValidator']]],

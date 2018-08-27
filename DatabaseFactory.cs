@@ -34,7 +34,6 @@ namespace ConfigureOneFlag
         public static string queueControlConnectionString = "";
         public static string queueControlConnectionStringValueDEV = "";
         public static string queueControlConnectionStringValuePROD = "";
-        
         public void SetConnectionString()
         {
             RegistryKey reg = Registry.CurrentUser.OpenSubKey("SOFTWARE\\Microsoft\\ConfigureOneAssembly\\1.0", true);
@@ -341,19 +340,16 @@ namespace ConfigureOneFlag
         {
             try
             {
-                database = new DbConnection();
-                var command = database.Command;
-
-                using (database.Connection)
+                using (DbConnection database = new DbConnection())
                 {
-                    command = new SqlCommand("GR_Cfg_ResequenceBOMSp", database.Connection);
-                    command.CommandType = CommandType.StoredProcedure;
-                    command.Parameters.AddWithValue("@OrderNumber", orderNumber);
-                    command.Parameters.AddWithValue("@OrderLine", orderLine);
-                    command.CommandTimeout = 120000;
+                    database.Command = new SqlCommand("GR_Cfg_ResequenceBOMSp", database.Connection);
+                    database.Command.CommandType = CommandType.StoredProcedure;
+                    database.Command.Parameters.AddWithValue("@OrderNumber", orderNumber);
+                    database.Command.Parameters.AddWithValue("@OrderLine", orderLine);
+                    database.Command.CommandTimeout = 120000;
 
                     database.Connection.Open();
-                    command.ExecuteNonQuery();
+                    database.Command.ExecuteNonQuery();
                     database.Connection.Close();
                 }
             }
@@ -367,22 +363,18 @@ namespace ConfigureOneFlag
         {
             //call SP to import data into Syteline
             int CreateOrder = 1;
-            database = new DbConnection();
-            var command = database.Command;
-
-            using (database.Connection)
+            using (DbConnection database = new DbConnection())
             {
-                command = new SqlCommand("GR_CfgImportSp", database.Connection);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@pStartingOrderNum", orderNumber);
-                command.Parameters.AddWithValue("@pEndingOrderNum", orderNumber);
-                command.Parameters.AddWithValue("@pCreateOrder", CreateOrder);
-                command.CommandTimeout = 120000;
-
+                database.Command = new SqlCommand("GR_CfgImportSp", database.Connection);
+                database.Command.CommandType = CommandType.StoredProcedure;
+                database.Command.Parameters.AddWithValue("@pStartingOrderNum", orderNumber);
+                database.Command.Parameters.AddWithValue("@pEndingOrderNum", orderNumber);
+                database.Command.Parameters.AddWithValue("@pCreateOrder", CreateOrder);
+                database.Command.CommandTimeout = 120000;
                 database.Connection.Open();
                 try
                 {
-                    command.ExecuteNonQuery();
+                    database.Command.ExecuteNonQuery();
                 }
                 catch (Exception spI)
                 {
@@ -392,26 +384,22 @@ namespace ConfigureOneFlag
 
                     database.Connection.Close();
                     database.Connection.Open();
-                    command.ExecuteNonQuery();
+                    database.Command.ExecuteNonQuery();
                 }
             }
         }
         public static void CleanupOrder(string orderNum)
         {
-            database = new DbConnection();
-            var command = database.Command;
-
-            using (database.Connection)
+            using (DbConnection database = new DbConnection())
             {
-                command = new SqlCommand("GR_CfgOrderCleanupSp", database.Connection);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@OrderNumber", orderNum);
-                command.CommandTimeout = 120000;
-
+                database.Command = new SqlCommand("GR_CfgOrderCleanupSp", database.Connection);
+                database.Command.CommandType = CommandType.StoredProcedure;
+                database.Command.Parameters.AddWithValue("@OrderNumber", orderNum);
+                database.Command.CommandTimeout = 120000;
                 database.Connection.Open();
                 try
                 {
-                    command.ExecuteNonQuery();
+                    database.Command.ExecuteNonQuery();
                 }
                 catch (Exception spI)
                 {
@@ -423,51 +411,44 @@ namespace ConfigureOneFlag
         }
         public static void WriteAuditRecord(string auditMessageL, string orderNum, int orderLine, string auditEvent)
         {
-            database = new DbConnection();
-            var command = database.Command;
-
             try
             {
-                using (database.Connection)
+                using (DbConnection database = new DbConnection())
                 {
                     SQLCommand = "Insert Into GR_Cfg_Audit (order_num,order_line_num,auditEvent,auditMessageL) values (@orderNum, @orderLine, @auditEvent, @auditMessageL)";
-                    command = new SqlCommand(SQLCommand, database.Connection);
-                    command.Connection = database.Connection;
-                    command.CommandTimeout = 120000;
-                    SqlParameter order_num = command.Parameters.AddWithValue("@orderNum", orderNum);
-                    SqlParameter order_line = command.Parameters.AddWithValue("@orderLine", orderLine);
-                    SqlParameter audit_event = command.Parameters.AddWithValue("@auditEvent", auditEvent);
-                    SqlParameter audit_message = command.Parameters.AddWithValue("@auditMessageL", auditMessageL);
+                    database.Command = new SqlCommand(SQLCommand, database.Connection);
+                    database.Command.CommandTimeout = 120000;
+                    SqlParameter order_num = database.Command.Parameters.AddWithValue("@orderNum", orderNum);
+                    SqlParameter order_line = database.Command.Parameters.AddWithValue("@orderLine", orderLine);
+                    SqlParameter audit_event = database.Command.Parameters.AddWithValue("@auditEvent", auditEvent);
+                    SqlParameter audit_message = database.Command.Parameters.AddWithValue("@auditMessageL", auditMessageL);
 
                     database.Connection.Open();
-                    command.ExecuteNonQuery();
+                    database.Command.ExecuteNonQuery();
                 }
             }
             catch (Exception auditex)
             {
-                string logEvent = "Ignoring Audit message error: " + auditex.Message;
+                string logEvent = "Audit message error: " + auditex.Message;
                 System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
             }
         }
         public static string RetrieveSLCO(string orderNum)
         {
             string SLOrderNumber = "";
-            database = new DbConnection();
-            var command = database.Command;
 
-            using (database.Connection)
+            using (DbConnection database = new DbConnection())
             {
                 try
                 {
                     SQLCommand = "Select TOP 1 co_num as SLCO From GR_CfgCO c with(nolock) Where c.order_num = @order_num";
-                    command = new SqlCommand(SQLCommand, database.Connection);
-                    command.Connection = database.Connection;
-                    command.CommandTimeout = 120000;
-                    SqlParameter order_num = command.Parameters.Add("@order_num", SqlDbType.NVarChar, 15);
+                    database.Command = new SqlCommand(SQLCommand, database.Connection);
+                    database.Command.CommandTimeout = 120000;
+                    SqlParameter order_num = database.Command.Parameters.Add("@order_num", SqlDbType.NVarChar, 15);
                     order_num.Value = orderNum;
                     database.Connection.Open();
 
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    using (SqlDataReader reader = database.Command.ExecuteReader())
                     {
                         if (reader.HasRows)
                         {
@@ -493,19 +474,15 @@ namespace ConfigureOneFlag
         {
             string ISOCountry = "";
 
-            database = new DbConnection();
-            var command = database.Command;
-
             SQLCommand = "Select IsNULL(country, ' ') as country from country with (nolock) Where iso_country_code = @isoCode";
-            using (database.Connection)
+            using (DbConnection database = new DbConnection())
             {
-                command = new SqlCommand(SQLCommand, database.Connection);
-                command.Connection = database.Connection;
-                command.CommandTimeout = 120000;
-                SqlParameter iso_code = command.Parameters.AddWithValue("@isoCode", ISOCode);
+                database.Command = new SqlCommand(SQLCommand, database.Connection);
+                database.Command.CommandTimeout = 120000;
+                SqlParameter iso_code = database.Command.Parameters.AddWithValue("@isoCode", ISOCode);
                 database.Connection.Open();
 
-                using (SqlDataReader reader = command.ExecuteReader())
+                using (SqlDataReader reader = database.Command.ExecuteReader())
                 {
                     if (reader.HasRows)
                     {
@@ -525,64 +502,43 @@ namespace ConfigureOneFlag
         {
             string maintConnectionString = connectionString;
             connectionString = queueControlConnectionString;
-
-            database = new DbConnection();
-            var command = database.Command;
-            database.Connection.Close();
-
-            //ensure connection is closed before setting up to use it on a different CS
-            if (database.Connection.State == ConnectionState.Open)
-            {
-                System.Threading.Thread.Sleep(1000);
-            }
             
             SQLCommand = "Insert Into GR_Cfg_DocumentQueue(order_num, environment, site, SLOrderNumber, orderXML) values(@orderNum, @environment, @site, @SLorderNumber, @xmldata)";
-            using (database.Connection)
+            using (DbConnection database = new DbConnection())
             {
-                command = new SqlCommand(SQLCommand, database.Connection);
-                command.Connection = database.Connection;
-                command.Parameters.AddWithValue("@orderNum", orderNum);
-                command.Parameters.AddWithValue("@environment", environment);
-                command.Parameters.AddWithValue("@site", site);
-                command.Parameters.AddWithValue("@SlorderNumber", SLorderNumber);
-                command.Parameters.Add(new SqlParameter("@xmldata", System.Data.SqlDbType.Xml) { Value = new SqlXml(new XmlTextReader(xml.InnerXml, XmlNodeType.Document, null)) });
-                command.CommandTimeout = 120000;
+                database.Command = new SqlCommand(SQLCommand, database.Connection);
+                database.Command.Parameters.AddWithValue("@orderNum", orderNum);
+                database.Command.Parameters.AddWithValue("@environment", environment);
+                database.Command.Parameters.AddWithValue("@site", site);
+                database.Command.Parameters.AddWithValue("@SlorderNumber", SLorderNumber);
+                database.Command.Parameters.Add(new SqlParameter("@xmldata", System.Data.SqlDbType.Xml) { Value = new SqlXml(new XmlTextReader(xml.InnerXml, XmlNodeType.Document, null)) });
+                database.Command.CommandTimeout = 120000;
                 database.Connection.Open();
 
-                //wait until connection is live before attempting to execute I/O
-                if (database.Connection.State == ConnectionState.Connecting)
-                {
-                    System.Threading.Thread.Sleep(1000);
-                }
-
-                command.ExecuteNonQuery();
+                database.Command.ExecuteNonQuery();
                 database.Connection.Close();
             }
 
-            connectionString = maintConnectionString;
             //to force the abstract class to reload our primary connnection string
-            database = new DbConnection();
-            command = database.Command;
-            command.Connection = database.Connection;
-            database.Connection.Open();
-            database.Connection.Close();
+            connectionString = maintConnectionString;
+            using (DbConnection database = new DbConnection())
+            {
+                database.Connection.Open();
+                database.Connection.Close();
+            }
         }
         public static bool OrderCompleted(string order_num)
         {
             bool rowExists = false;
 
-            database = new DbConnection();
-            var command = database.Command;
-
             SQLCommand = "Select order_num, co_num, stat from GR_CfgCO with(nolock) where order_num = @order_num and stat = 'C' and co_num is not null";
-            using (database.Connection)
+            using (DbConnection database = new DbConnection())
             {
-                command = new SqlCommand(SQLCommand, database.Connection);
-                command.Connection = database.Connection;
-                command.CommandTimeout = 120000;
-                SqlParameter ordernum = command.Parameters.AddWithValue("@order_num", order_num);
+                database.Command = new SqlCommand(SQLCommand, database.Connection);
+                database.Command.CommandTimeout = 120000;
+                SqlParameter ordernum = database.Command.Parameters.AddWithValue("@order_num", order_num);
                 database.Connection.Open();
-                using (SqlDataReader reader = command.ExecuteReader())
+                using (SqlDataReader reader = database.Command.ExecuteReader())
                 {
                     if (reader.HasRows)
                     {
@@ -599,18 +555,14 @@ namespace ConfigureOneFlag
         {
             int coitems = 0;
 
-            database = new DbConnection();
-            var command = database.Command;
-
             SQLCommand = "Select ISNULL(COUNT(co_line), 0) as lines From COITEM with(nolock) where co_num = @orderNumber";
-            using (database.Connection)
+            using (DbConnection database = new DbConnection())
             {
-                command = new SqlCommand(SQLCommand, database.Connection);
-                command.Connection = database.Connection;
-                command.CommandTimeout = 120000;
-                SqlParameter ordernum = command.Parameters.AddWithValue("@orderNumber", SLOrderNumber);
+                database.Command = new SqlCommand(SQLCommand, database.Connection);
+                database.Command.CommandTimeout = 120000;
+                SqlParameter ordernum = database.Command.Parameters.AddWithValue("@orderNumber", SLOrderNumber);
                 database.Connection.Open();
-                using (SqlDataReader reader = command.ExecuteReader())
+                using (SqlDataReader reader = database.Command.ExecuteReader())
                 {
                     reader.Read();
                     coitems = Convert.ToInt16(reader["lines"].ToString());
@@ -625,40 +577,32 @@ namespace ConfigureOneFlag
             //Execute Pre-caching of the SP's to force an on-demand recompile while we are preparing
             int CreateOrder = 1;
 
-            database = new DbConnection();
-            var command = database.Command;
-
-            using (database.Connection)
+            using (DbConnection database = new DbConnection())
             {
-                command = new SqlCommand("GR_CfgImportSp", database.Connection);
-                command.CommandType = CommandType.StoredProcedure;
-                command.Parameters.AddWithValue("@pStartingOrderNum", "PRECACHE");
-                command.Parameters.AddWithValue("@pEndingOrderNum", "PRECACHE");
-                command.Parameters.AddWithValue("@pCreateOrder", CreateOrder);
-                command.CommandTimeout = 120000;
+                database.Command = new SqlCommand("GR_CfgImportSp", database.Connection);
+                database.Command.CommandType = CommandType.StoredProcedure;
+                database.Command.Parameters.AddWithValue("@pStartingOrderNum", "PRECACHE");
+                database.Command.Parameters.AddWithValue("@pEndingOrderNum", "PRECACHE");
+                database.Command.Parameters.AddWithValue("@pCreateOrder", CreateOrder);
+                database.Command.CommandTimeout = 120000;
 
                 database.Connection.Open();
-                command.ExecuteNonQuery();
+                database.Command.ExecuteNonQuery();
                 database.Connection.Close();
             }
-                        
         }
         public static bool OrderExists(string C1orderNum)
         {
             bool orderExists = false;
 
-            database = new DbConnection();
-            var command = database.Command;
-
             SQLCommand = "Select TOP 1 co_num as SLCO From CO c with (nolock) Where c.uf_weborder = @C1OrderNum Order By c.order_date desc, c.co_num desc";
-            using (database.Connection)
+            using (DbConnection database = new DbConnection())
             {
-                command = new SqlCommand(SQLCommand, database.Connection);
-                command.Connection = database.Connection;
-                command.CommandTimeout = 120000;
-                SqlParameter c1ordernum = command.Parameters.AddWithValue("@C1OrderNum", C1orderNum);
+                database.Command = new SqlCommand(SQLCommand, database.Connection);
+                database.Command.CommandTimeout = 120000;
+                SqlParameter c1ordernum = database.Command.Parameters.AddWithValue("@C1OrderNum", C1orderNum);
                 database.Connection.Open();
-                using (SqlDataReader reader = command.ExecuteReader())
+                using (SqlDataReader reader = database.Command.ExecuteReader())
                 {
                     if (reader.HasRows)
                     {
@@ -677,19 +621,15 @@ namespace ConfigureOneFlag
         {
             string holdReason = "";
 
-            database = new DbConnection();
-            var command = database.Command;
-
             SQLCommand = "Select uf_coholddescription From customer cust with (nolock) Where ltrim(rtrim(cust.cust_num)) = @custnum and cust_seq = @seq and uf_cohold = 1";
-            using (database.Connection)
+            using (DbConnection database = new DbConnection())
             {
-                command = new SqlCommand(SQLCommand, database.Connection);
-                command.Connection = database.Connection;
-                command.CommandTimeout = 120000;
-                SqlParameter CustNumber = command.Parameters.AddWithValue("@custnum", custnum);
-                SqlParameter CustSeq = command.Parameters.AddWithValue("@seq", seq);
+                database.Command = new SqlCommand(SQLCommand, database.Connection);
+                database.Command.CommandTimeout = 120000;
+                SqlParameter CustNumber = database.Command.Parameters.AddWithValue("@custnum", custnum);
+                SqlParameter CustSeq = database.Command.Parameters.AddWithValue("@seq", seq);
                 database.Connection.Open();
-                using (SqlDataReader reader = command.ExecuteReader())
+                using (SqlDataReader reader = database.Command.ExecuteReader())
                 {
                     if (reader.HasRows)
                     {
@@ -708,32 +648,27 @@ namespace ConfigureOneFlag
         }
         public static void MoveQueueRecord(string orderNum, string dbSite)
         {
-            database = new DbConnection();
-            var command = database.Command;
-
             try
             {
                 //Disable trigger on target database/table, copy queue record, delete from NOVB
                 SQLCommand = "DISABLE TRIGGER C1Order ON SL_" + dbSite + "_App.dbo.GR_Cfg_Queue";
-                using (database.Connection)
+                using (DbConnection database = new DbConnection())
                 {
-                    command = new SqlCommand(SQLCommand, database.Connection);
-                    command.Connection = database.Connection;
-                    command.CommandTimeout = 120000;
+                    database.Command = new SqlCommand(SQLCommand, database.Connection);
+                    database.Command.CommandTimeout = 120000;
                     database.Connection.Open();
-                    command.ExecuteNonQuery();
+                    database.Command.ExecuteNonQuery();
                 }
 
                 string recordRowPointer = "";
                 SQLCommand = "SELECT TOP 1 rowpointer from SL_NOVB_App.dbo.GR_Cfg_Queue where order_num = @orderNum order by recorddate desc";
-                using (database.Connection)
+                using (DbConnection database = new DbConnection())
                 {
-                    command = new SqlCommand(SQLCommand, database.Connection);
-                    command.Connection = database.Connection;
-                    command.CommandTimeout = 120000;
-                    SqlParameter CustNumber = command.Parameters.AddWithValue("@orderNum", orderNum);
+                    database.Command = new SqlCommand(SQLCommand, database.Connection);
+                    database.Command.CommandTimeout = 120000;
+                    SqlParameter CustNumber = database.Command.Parameters.AddWithValue("@orderNum", orderNum);
                     database.Connection.Open();
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    using (SqlDataReader reader = database.Command.ExecuteReader())
                     {
                         if (reader.HasRows)
                         {
@@ -746,23 +681,21 @@ namespace ConfigureOneFlag
                                 SQLCommand = "insert into SL_" + dbSite + "_App.dbo.GR_Cfg_Queue Select * from SL_NOVB_App.dbo.GR_Cfg_Queue where rowpointer = @recordrowpointer";
                                 using (database.Connection)
                                 {
-                                    command = new SqlCommand(SQLCommand, database.Connection);
-                                    command.Connection = database.Connection;
-                                    command.CommandTimeout = 120000;
-                                    SqlParameter RecRowPointer = command.Parameters.AddWithValue("@recordrowpointer", recordRowPointer);
+                                    database.Command = new SqlCommand(SQLCommand, database.Connection);
+                                    database.Command.CommandTimeout = 120000;
+                                    SqlParameter RecRowPointer = database.Command.Parameters.AddWithValue("@recordrowpointer", recordRowPointer);
                                     database.Connection.Open();
-                                    command.ExecuteNonQuery();
+                                    database.Command.ExecuteNonQuery();
                                 }
 
                                 SQLCommand = "DELETE From SL_NOVB_App.dbo.GR_Cfg_Queue where rowpointer = @recordrowpointer";
                                 using (database.Connection)
                                 {
-                                    command = new SqlCommand(SQLCommand, database.Connection);
-                                    command.Connection = database.Connection;
-                                    command.CommandTimeout = 120000;
-                                    SqlParameter RecRowPointer = command.Parameters.AddWithValue("@recordrowpointer", recordRowPointer);
+                                    database.Command = new SqlCommand(SQLCommand, database.Connection);
+                                    database.Command.CommandTimeout = 120000;
+                                    SqlParameter RecRowPointer = database.Command.Parameters.AddWithValue("@recordrowpointer", recordRowPointer);
                                     database.Connection.Open();
-                                    command.ExecuteNonQuery();
+                                    database.Command.ExecuteNonQuery();
                                     database.Connection.Close();
                                 }
                             }
@@ -781,13 +714,12 @@ namespace ConfigureOneFlag
 
             //Re-enable trigger on db site queue table
             SQLCommand = "ENABLE TRIGGER C1Order ON SL_" + dbSite + "_App.dbo.GR_Cfg_Queue";
-            using (database.Connection)
+            using (DbConnection database = new DbConnection())
             {
-                command = new SqlCommand(SQLCommand, database.Connection);
-                command.Connection = database.Connection;
-                command.CommandTimeout = 120000;
+                database.Command = new SqlCommand(SQLCommand, database.Connection);
+                database.Command.CommandTimeout = 120000;
                 database.Connection.Open();
-                command.ExecuteNonQuery();
+                database.Command.ExecuteNonQuery();
             }
         }
     }

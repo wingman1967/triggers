@@ -1,10 +1,5 @@
 var hierarchy =
 [
-    [ "Triggers.abDatabase", "class_triggers_1_1ab_database.html", [
-      [ "ConfigureOneFlag.DatabaseFactory", "class_configure_one_flag_1_1_database_factory.html", null ],
-      [ "Triggers.DbConnection", "class_triggers_1_1_db_connection.html", null ],
-      [ "Triggers.queueConnection", "class_triggers_1_1queue_connection.html", null ]
-    ] ],
     [ "AbstractValidator", null, [
       [ "Triggers.COItemValidator", "class_triggers_1_1_c_o_item_validator.html", null ],
       [ "Triggers.COValidator", "class_triggers_1_1_c_o_validator.html", null ],
@@ -103,6 +98,13 @@ var hierarchy =
       [ "Triggers.GRCfg2TableAdapters.TableAdapterManager.SelfReferenceComparer", "class_triggers_1_1_g_r_cfg2_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer.html", null ],
       [ "Triggers.GRCfg3TableAdapters.TableAdapterManager.SelfReferenceComparer", "class_triggers_1_1_g_r_cfg3_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer.html", null ],
       [ "Triggers.GRCfgTableAdapters.TableAdapterManager.SelfReferenceComparer", "class_triggers_1_1_g_r_cfg_table_adapters_1_1_table_adapter_manager_1_1_self_reference_comparer.html", null ]
+    ] ],
+    [ "IDisposable", null, [
+      [ "Triggers.abDatabase", "class_triggers_1_1ab_database.html", [
+        [ "ConfigureOneFlag.DatabaseFactory", "class_configure_one_flag_1_1_database_factory.html", null ],
+        [ "Triggers.DbConnection", "class_triggers_1_1_db_connection.html", null ],
+        [ "Triggers.queueConnection", "class_triggers_1_1queue_connection.html", null ]
+      ] ]
     ] ],
     [ "ConfigureOneFlag.NetworkShare.NETRESOURCE", "class_configure_one_flag_1_1_network_share_1_1_n_e_t_r_e_s_o_u_r_c_e.html", null ],
     [ "ConfigureOneFlag.NetworkShare", "class_configure_one_flag_1_1_network_share.html", null ],

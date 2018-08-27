@@ -8,9 +8,15 @@ using ConfigureOneFlag;
 
 namespace Triggers
 {
-    public abstract class abDatabase
+    public abstract class abDatabase : IDisposable
     {
         public virtual SqlConnection Connection { get; set; }
         public virtual SqlCommand Command { get; set; }
+
+        public void Dispose()
+        {
+            Connection.Dispose();
+            Command.Dispose();
+        }
     }
 }
