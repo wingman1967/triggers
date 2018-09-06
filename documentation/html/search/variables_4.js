@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['database',['database',['../class_configure_one_flag_1_1_database_factory_a4795a2107c9c5f717b3831246505cb2e.html#a4795a2107c9c5f717b3831246505cb2e',1,'ConfigureOneFlag::DatabaseFactory']]],
   ['dbenvironment',['dbEnvironment',['../class_configure_one_flag_1_1_triggers_a9e9af4ac5f637116d47bcd5e2d12c2e1.html#a9e9af4ac5f637116d47bcd5e2d12c2e1',1,'ConfigureOneFlag::Triggers']]],
   ['dbprotect',['dbprotect',['../class_configure_one_flag_1_1_database_factory_a7ea71eed70f97c7b89407ce8d2c84a27.html#a7ea71eed70f97c7b89407ce8d2c84a27',1,'ConfigureOneFlag::DatabaseFactory']]],
   ['dbsite',['dbSite',['../class_configure_one_flag_1_1_staging_utilities_a4bbfcbf56b350859fc9a8ca73f3c3c4c.html#a4bbfcbf56b350859fc9a8ca73f3c3c4c',1,'ConfigureOneFlag::StagingUtilities']]],

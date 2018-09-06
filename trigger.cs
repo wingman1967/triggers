@@ -153,6 +153,8 @@ namespace ConfigureOneFlag
             catch (Exception tt1)
             {
                 //disregard, as any error would likely be a thread-abort by the trigger
+                logEvent = "Error occurred (can be ignored) during the 10-second window after trigger-decouple: " + tt1.Message;
+                System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
             }
         }
         public static void BeginProcessing()
@@ -160,7 +162,6 @@ namespace ConfigureOneFlag
             C1WebService.CallConfigureOne(key, xmlPayload, C1URL);
             logEvent = "PROCESSING COMPLETE FOR ORDER: " + orderValue;
             System.Diagnostics.EventLog.WriteEntry(logSource, logEvent, System.Diagnostics.EventLogEntryType.Information, 234);
-            //Audit.ProcessingCompleted(logEvent);
         }
     }
 }

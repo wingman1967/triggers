@@ -387,8 +387,8 @@ namespace ConfigureOneFlag
                     coitem.ConfigType = string.IsNullOrEmpty(nodertv.ChildNodes[0].InnerText) ? " " : nodertv.ChildNodes[0].Value;
                     nodertv = node.SelectSingleNode("c1:UNIT_PRICE", nsmgr);
                     coitem.UnitPrice = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
-                    nodertv = node.SelectSingleNode("c1:UNIT_COST", nsmgr);
 
+                    nodertv = node.SelectSingleNode("c1:UNIT_COST", nsmgr);
                     try
                     {
                         coitem.UnitCost = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
@@ -396,14 +396,34 @@ namespace ConfigureOneFlag
                     catch (Exception costex)
                     {
                         coitem.UnitCost = 0;
-                        Triggers.logEvent = "Unit Cost invalid: " + costex.Message + " (Incoming value was: " + nodertv.ChildNodes[0].InnerText + "  Defaulting to 0)";
+                        Triggers.logEvent = "COITEM (LINE# " + coitem.CO_Line + ") - Unit Cost invalid: " + costex.Message + Environment.NewLine + Environment.NewLine + " (Incoming value was: " + nodertv.ChildNodes[0].InnerText + "  Defaulting to 0)";
                         System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
                     }
                     
                     nodertv = node.SelectSingleNode("c1:DISCOUNT_AMT", nsmgr);
-                    coitem.Discount = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
+                    try
+                    {
+                        coitem.Discount = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
+                    }
+                    catch (Exception exdiscount)
+                    {
+                        coitem.Discount = 0;
+                        Triggers.logEvent = "COITEM (LINE# " + coitem.CO_Line + ") - Discount value invalid: " + exdiscount.Message + Environment.NewLine + Environment.NewLine + " (Incoming value was: " + nodertv.ChildNodes[0].InnerText + "  Defaulting to 0)";
+                        System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
+                    }
+                                        
                     nodertv = node.SelectSingleNode("c1:QUANTITY", nsmgr);
-                    coitem.QTY = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
+                    try
+                    {
+                        coitem.QTY = Convert.ToDecimal(nodertv.ChildNodes[0].InnerText);
+                    }
+                    catch (Exception extQty)
+                    {
+                        coitem.Discount = 0;
+                        Triggers.logEvent = "COITEM (LINE# " + coitem.CO_Line + ") - Quantity value invalid: " + extQty.Message + Environment.NewLine + Environment.NewLine + " (Incoming value was: " + nodertv.ChildNodes[0].InnerText + "  Defaulting to 1)";
+                        System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, Triggers.logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
+                    }
+                                        
                     coitem.PriorityLevel = co.PriorityLevel;
                     globalOrderLineNum = coitem.CO_Line;
                     coitem.OrderLineNotes = " ";

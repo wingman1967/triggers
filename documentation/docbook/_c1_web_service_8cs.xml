@@ -339,13 +339,24 @@ Processing for calls to ConfigureOne web service and return for further handling
 261 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//RetrieveDrawings.CopyDrawings(xmlResultParm,&#32;urlParm);</emphasis>
 262 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordtype">string</emphasis>&#32;logEvent&#32;=&#32;<emphasis class="stringliteral">&quot;PROCESSING&#32;COMPLETE&#32;FOR&#32;ORDER:&#32;&quot;</emphasis>&#32;+&#32;<link linkend="namespace_triggers">Triggers</link>.orderValue;
 263 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_audit">Audit</link>.<link linkend="class_configure_one_flag_1_1_audit_ac9f5188a69320d3d419afed3499e2a26_1ac9f5188a69320d3d419afed3499e2a26">ProcessingCompleted</link>(logEvent);
-264 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-<link linkend="class_configure_one_flag_1_1_c1_web_service_acb3007f1151100e69c7fdbc3f6d35812_1acb3007f1151100e69c7fdbc3f6d35812">265 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_acb3007f1151100e69c7fdbc3f6d35812_1acb3007f1151100e69c7fdbc3f6d35812">MapToSyteline</link>()
-266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
-267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_ae4aeef8c1f02cf82b17a4e1c2ca0ffed_1ae4aeef8c1f02cf82b17a4e1c2ca0ffed">CfgImport</link>(<link linkend="namespace_triggers">Triggers</link>.pubOrderNumber);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//map&#32;staging-table&#32;data&#32;into&#32;Syteline</emphasis>
-268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
-269 &#32;&#32;&#32;&#32;}
-270 }
-271 
+264 
+265 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//If&#32;site&#32;was&#32;not&#32;NOVB,&#32;disable&#32;the&#32;C1Order&#32;trigger&#32;for&#32;the&#32;order-site&#32;and&#32;then&#32;move&#32;the&#32;queue&#32;record&#32;to&#32;the&#32;appropriate&#32;site&#32;queue&#32;table</emphasis>
+266 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">switch</emphasis>&#32;(<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a4bbfcbf56b350859fc9a8ca73f3c3c4c_1a4bbfcbf56b350859fc9a8ca73f3c3c4c">dbSite</link>)
+267 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+268 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">case</emphasis>&#32;<emphasis class="stringliteral">&quot;NOVB&quot;</emphasis>:
+269 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//do&#32;nothing</emphasis>
+270 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+271 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">default</emphasis>:
+272 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_a6fba3443de3b8beba6d0648a75bff168_1a6fba3443de3b8beba6d0648a75bff168">MoveQueueRecord</link>(<link linkend="namespace_triggers">Triggers</link>.pubOrderNumber,&#32;<link linkend="class_configure_one_flag_1_1_staging_utilities">StagingUtilities</link>.<link linkend="class_configure_one_flag_1_1_staging_utilities_a4bbfcbf56b350859fc9a8ca73f3c3c4c_1a4bbfcbf56b350859fc9a8ca73f3c3c4c">dbSite</link>);
+273 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keywordflow">break</emphasis>;
+274 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+275 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+<link linkend="class_configure_one_flag_1_1_c1_web_service_acb3007f1151100e69c7fdbc3f6d35812_1acb3007f1151100e69c7fdbc3f6d35812">276 </link>&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="keyword">private</emphasis>&#32;<emphasis class="keyword">static</emphasis>&#32;<emphasis class="keywordtype">void</emphasis>&#32;<link linkend="class_configure_one_flag_1_1_c1_web_service_acb3007f1151100e69c7fdbc3f6d35812_1acb3007f1151100e69c7fdbc3f6d35812">MapToSyteline</link>()
+277 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;{
+278 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<link linkend="class_configure_one_flag_1_1_database_factory">DatabaseFactory</link>.<link linkend="class_configure_one_flag_1_1_database_factory_ae4aeef8c1f02cf82b17a4e1c2ca0ffed_1ae4aeef8c1f02cf82b17a4e1c2ca0ffed">CfgImport</link>(<link linkend="namespace_triggers">Triggers</link>.pubOrderNumber);&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;<emphasis class="comment">//map&#32;staging-table&#32;data&#32;into&#32;Syteline</emphasis>
+279 &#32;&#32;&#32;&#32;&#32;&#32;&#32;&#32;}
+280 &#32;&#32;&#32;&#32;}
+281 }
+282 
     </computeroutput></literallayout>
 </section>

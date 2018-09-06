@@ -17,9 +17,10 @@ namespace ConfigureOneFlag
     /// </summary>
     class DatabaseFactory : abDatabase
     {
-        static abDatabase database;
+        //static abDatabase database;
         static string SQLCommand;
         public static string connectionString = "";
+        public static string backupCS = "";
         public static string emailaddr = "";
         public static string emailServer = "";
         public static string emailFrom = "";
@@ -106,6 +107,7 @@ namespace ConfigureOneFlag
                 connectionString = reg.GetValue("PROD_DB").ToString();
                 queueControlConnectionString = queueControlConnectionStringValuePROD;   //override ENVIRONMENT if incoming order is production
             }
+            backupCS = connectionString;
         }        
         public static void WriteRecordBOM(ref zCfgBOM bom)
         {
@@ -392,21 +394,32 @@ namespace ConfigureOneFlag
         {
             using (DbConnection database = new DbConnection())
             {
-                database.Command = new SqlCommand("GR_CfgOrderCleanupSp", database.Connection);
-                database.Command.CommandType = CommandType.StoredProcedure;
-                database.Command.Parameters.AddWithValue("@OrderNumber", orderNum);
+                database.Command = new SqlCommand("DELETE from GR_CfgCO where order_num = @ordernum", database.Connection);
+                database.Command.Parameters.AddWithValue("@ordernum", orderNum);
                 database.Command.CommandTimeout = 120000;
                 database.Connection.Open();
-                try
-                {
-                    database.Command.ExecuteNonQuery();
-                }
-                catch (Exception spI)
-                {
-                    //A timeout has likely occurred
-                    string logEvent = "An error executing GR_CfgOrderCleanupSp has occurred: " + spI.Message;
-                    System.Diagnostics.EventLog.WriteEntry(Triggers.logSource, logEvent, System.Diagnostics.EventLogEntryType.Warning, 234);
-                }
+                database.Command.ExecuteNonQuery();
+
+                database.Command = new SqlCommand("DELETE from GR_CfgCOItem where order_num = @ordernum", database.Connection);
+                database.Command.Parameters.AddWithValue("@ordernum", orderNum);
+                database.Command.ExecuteNonQuery();
+
+                database.Command = new SqlCommand("DELETE from GR_CfgBOM where order_num = @ordernum", database.Connection);
+                database.Command.Parameters.AddWithValue("@ordernum", orderNum);
+                database.Command.ExecuteNonQuery();
+
+                database.Command = new SqlCommand("DELETE from GR_CfgItem where order_num = @ordernum", database.Connection);
+                database.Command.Parameters.AddWithValue("@ordernum", orderNum);
+                database.Command.ExecuteNonQuery();
+
+                database.Command = new SqlCommand("DELETE from GR_CfgParmVal where order_num = @ordernum", database.Connection);
+                database.Command.Parameters.AddWithValue("@ordernum", orderNum);
+                database.Command.ExecuteNonQuery();
+
+                database.Command = new SqlCommand("DELETE from GR_CfgRouteBOM where order_num = @ordernum", database.Connection);
+                database.Command.Parameters.AddWithValue("@ordernum", orderNum);
+                database.Command.ExecuteNonQuery();
+                database.Connection.Close();
             }
         }
         public static void WriteAuditRecord(string auditMessageL, string orderNum, int orderLine, string auditEvent)
@@ -658,6 +671,7 @@ namespace ConfigureOneFlag
                     database.Command.CommandTimeout = 120000;
                     database.Connection.Open();
                     database.Command.ExecuteNonQuery();
+                    database.Connection.Close();
                 }
 
                 string recordRowPointer = "";
@@ -684,17 +698,12 @@ namespace ConfigureOneFlag
                                     database.Command = new SqlCommand(SQLCommand, database.Connection);
                                     database.Command.CommandTimeout = 120000;
                                     SqlParameter RecRowPointer = database.Command.Parameters.AddWithValue("@recordrowpointer", recordRowPointer);
-                                    database.Connection.Open();
                                     database.Command.ExecuteNonQuery();
-                                }
 
-                                SQLCommand = "DELETE From SL_NOVB_App.dbo.GR_Cfg_Queue where rowpointer = @recordrowpointer";
-                                using (database.Connection)
-                                {
+                                    SQLCommand = "DELETE From SL_NOVB_App.dbo.GR_Cfg_Queue where rowpointer = @recordrowpointer";
                                     database.Command = new SqlCommand(SQLCommand, database.Connection);
                                     database.Command.CommandTimeout = 120000;
-                                    SqlParameter RecRowPointer = database.Command.Parameters.AddWithValue("@recordrowpointer", recordRowPointer);
-                                    database.Connection.Open();
+                                    RecRowPointer = database.Command.Parameters.AddWithValue("@recordrowpointer", recordRowPointer);
                                     database.Command.ExecuteNonQuery();
                                     database.Connection.Close();
                                 }
@@ -720,8 +729,8 @@ namespace ConfigureOneFlag
                 database.Command.CommandTimeout = 120000;
                 database.Connection.Open();
                 database.Command.ExecuteNonQuery();
+                database.Connection.Close();
             }
         }
     }
 }
-

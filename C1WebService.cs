@@ -261,6 +261,17 @@ namespace ConfigureOneFlag
             //RetrieveDrawings.CopyDrawings(xmlResultParm, urlParm);
             string logEvent = "PROCESSING COMPLETE FOR ORDER: " + Triggers.orderValue;
             Audit.ProcessingCompleted(logEvent);
+
+            //If site was not NOVB, disable the C1Order trigger for the order-site and then move the queue record to the appropriate site queue table
+            switch (StagingUtilities.dbSite)
+            {
+                case "NOVB":
+                    //do nothing
+                    break;
+                default:
+                    DatabaseFactory.MoveQueueRecord(Triggers.pubOrderNumber, StagingUtilities.dbSite);
+                    break;
+            }
         }
         private static void MapToSyteline()
         {

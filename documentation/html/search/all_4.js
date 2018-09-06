@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['database',['database',['../class_configure_one_flag_1_1_database_factory_a4795a2107c9c5f717b3831246505cb2e.html#a4795a2107c9c5f717b3831246505cb2e',1,'ConfigureOneFlag::DatabaseFactory']]],
   ['databasefactory',['DatabaseFactory',['../class_configure_one_flag_1_1_database_factory.html',1,'ConfigureOneFlag']]],
   ['databasefactory_2ecs',['DatabaseFactory.cs',['../_database_factory_8cs.html',1,'']]],
   ['dbconnection',['DbConnection',['../class_triggers_1_1_db_connection.html',1,'Triggers']]],
